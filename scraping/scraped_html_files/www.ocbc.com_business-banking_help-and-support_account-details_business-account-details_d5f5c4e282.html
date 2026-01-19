@@ -1,0 +1,1865 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Help &amp; Support - Business Account Details | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/help-and-support/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/help-and-support/account-details/business-account-details/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Find out how to update your OCBC business account details and other services here. Download and complete the required forms to update your business account.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[stylesheet]-->
+      <link rel="stylesheet" href="/iwov-resources/sg/ocbc/business/css/style-bb.css" type="text/css" data-ocde-desktop_or_tablet_or_phone="show">
+      <!--ls:end[stylesheet]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/help-and-support/account-details/business-account-details">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:ocbc business banking:help and support:account details:business account details",
+            language: "en",
+            pageCategory: "pre-login help and support page",
+            bannerName: "",
+            channel: "help and support",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+    </script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1a5c4u3">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4u4">
+  <div class="iw_columns col-lg-12" id="colk1a5c4u5">
+   <div class="iw_component" id="iw_comp1583231793016">
+    <style>#iw_comp1579255493740{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/smes" class="" target="_self">SMEs</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises" class="" target="_self">Enterprises</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/corporates" class="" target="_self">Corporates</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/financial-institutions" class="" target="_self">Financial Institutions</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/sustainability" class="" target="_self">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in </p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view"></div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+<section id="main-wrapper">
+ <div class="container-fluid iw_section" id="sectionk1a5c4uu">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4uv">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uw">
+    <div class="iw_placeholder" id="iw_placeholder1570073690261">
+     <div class="iw_component" id="iw_comp1583231793020">
+      <!--ls:begin[component-1583231793020]--><style>#iw_comp1583231793020{}</style><div class="spacing"></div><div class="container animate bp-width-med3">
+   <div class="row">
+      <div class="col-lg-4 col-md-4">
+         <h3 class="mb-4 mb-sm-5"><strong>Help And Support</strong></h3>
+      </div>
+   </div>
+</div><div class="module container animate bp-width-med3">
+   <div class="com__left-nav">
+      <div class="mb2"><a class="link" href="/business-banking/help-and-support.page"><i class="far fa-chevron-left"></i>Back to help & support</a></div>
+      <h4 class="com__side-nav-title mb5 d-block d-md-none">Update of company or account details  - Update business account services and other
+         services</h4>
+      <div class="row">
+         <div class="b-p-side-nav col-lg-4 col-md-4 d-none d-md-block">
+            <div sticky-content="">
+               <div class="side-nav-with-sub"><input type="hidden" name="leftnav" value="update-company-account-details"><div class="com__side-nav scrolling has-styled-nav nav--2 mb-4 ">
+                     <ul class="com__nav-dd" close-others="false">
+                        <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Business Internet Banking</a><div class="com__nav-dd-main">
+                              <ul class="styled-nav">
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/login" class="com__nav-dd-title business-internet-banking-login-faqs" target="">Login</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/general" class="com__nav-dd-title business-internet-banking-general-faq" target="">General</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/authoriser" class="com__nav-dd-title authoriser-faqs" target="">Authoriser</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/maker" class="com__nav-dd-title maker-faqs" target="">Maker</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/administrator" class="com__nav-dd-title business-internet-banking-administrator-faqs" target="">Administrator</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/uses-of-token" class="com__nav-dd-title business-internet-banking-token-faq" target="">Uses of token</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/security" class="com__nav-dd-title business-internet-banking-security-faq" target="">Security</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Mobile Banking</a><div class="com__nav-dd-main">
+                              <ul class="styled-nav">
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/registration" class="com__nav-dd-title mobile-banking-registration-faq" target="">Registration</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/login" class="com__nav-dd-title mobile-banking-login-faq" target="">Login</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/payment" class="com__nav-dd-title mobile-banking-payments-faq" target="">Payments</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/authorisation" class="com__nav-dd-title mobile-banking-authorisation-faq" target="">Authorisation</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/about-ocbc-onetouch" class="com__nav-dd-title mobile-banking-ocbc-onetouch" target="">About OCBC OneTouch</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/about-ocbc-onelook" class="com__nav-dd-title mobile-banking-ocbc-onelook" target="">About OCBC OneLook</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/general" class="com__nav-dd-title mobile-banking-general-faq" target="">General</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/security" class="com__nav-dd-title mobile-banking-security-faq" target="">Security</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/features" class="com__nav-dd-title mobile-banking-features" target="">Features</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/managing-alerts" class="com__nav-dd-title mobile-banking-managing-alerts" target="">Managing alerts</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Update of company or account details </a><div class="com__nav-dd-main">
+                              <ul class="styled-nav">
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/account-details/business-account-details" class="com__nav-dd-title update-company-account-details" target="">Update business account services and other services</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/account-details/e-statements" class="com__nav-dd-title e-statements" target="">e-Statements</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Payments, collections and transactions</a><div class="com__nav-dd-main">
+                              <ul class="styled-nav">
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/one-collect" class="com__nav-dd-title ocbc-onecollect-faq" target="">OCBC OneCollect</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/invoice-management" class="com__nav-dd-title invoice-management-faq" target="">Invoice Management</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/cheque-sunsetting" class="com__nav-dd-title cheque-sunsetting-faq" target="">Cheque Sunsetting</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/fast" class="com__nav-dd-title fast-faq" target="">FAST (Fast and Secure)</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/egiro" class="com__nav-dd-title egiro-faq" target="">eGIRO</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/inward-tt" class="com__nav-dd-title inward-telegraphic-transfer-faq" target="">Inward Telegraphic Transfer</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/outward-tt" class="com__nav-dd-title outward-telegraphic-transfer-faq" target="">Outward Telegraphic Transfer</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/business-deposit-card" class="com__nav-dd-title business-deposit-card-faq" target="">Business Deposit Card</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/iso20022" class="com__nav-dd-title iso-20022-cbprplus-faq" target="">ISO 20022 CBPR+</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/fees-and-charges" class="com__nav-dd-title fees-and-charges-faq" target="">Fees and Charges</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/edp" class="com__nav-dd-title edp-faq" target="">EDP</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Application of banking services</a><div class="com__nav-dd-main">
+                              <ul class="styled-nav">
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/apply-for-banking-account/opening-business-account" class="com__nav-dd-title open-account-faq" target="">Opening a Business Account</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/apply-for-banking-account/applying-business-account" class="com__nav-dd-title apply-business-debit-card-faq" target="">Applying a Business Debit Card</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Accounts and Services</a><div class="com__nav-dd-main">
+                              <ul class="styled-nav">
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/accounts-and-services/business-pricing-guide" class="com__nav-dd-title business-pricing-guide" target="">Business Banking Pricing Guide</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/accounts-and-services/business-foreign-accounts-pricing-guide" class="com__nav-dd-title business-foreign-account-pricing-guide" target="">Business Foreign Accounts Pricing Guide</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/accounts-and-services/corporate-institutional-banking-pricing-guide" class="com__nav-dd-title corporate-institutional-banking-pricing-guide" target="">Corporate Institutional Banking Pricing Guide</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Trade Services</a><div class="com__nav-dd-main">
+                              <ul class="styled-nav">
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/trade-services-cut-off-time" class="com__nav-dd-title trade-services-cut-off-time-faq" target="">Trade services cut-off time</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/trade-services-centres-located" class="com__nav-dd-title trade-services-centres-located-faq" target="">Trade services centres located</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/general" class="com__nav-dd-title trade-services-general-faq" target="">General</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <ul class="com__nav-dd">
+                                       <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/invoice-financing" class="com__nav-dd-title trade-services-financing-faq" target="">Trade financing</a><div class="com__nav-dd-main">
+                                             <ul class="styled-nav">
+                                                <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                             </ul>
+                                          </div>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8 col-md-8">
+            <div class="accordion-mobile-nav-items type2 d-none">
+               <div class="accordion-mobile-nav">
+                  <div class="accordion-mobile-nav-list">
+                     <div class="accordion-mobile-nav-close"><i class="fal fa-times"></i></div>
+                     <div class="com__side-nav  has-styled-nav nav--2">
+                        <ul class="com__nav-dd" close-others="false">
+                           <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Business Internet Banking</a><div class="com__nav-dd-main">
+                                 <ul class="styled-nav">
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/login" class="com__nav-dd-title business-internet-banking-login-faqs" target="">Login</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/general" class="com__nav-dd-title business-internet-banking-general-faq" target="">General</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/authoriser" class="com__nav-dd-title authoriser-faqs" target="">Authoriser</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/maker" class="com__nav-dd-title maker-faqs" target="">Maker</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/administrator" class="com__nav-dd-title business-internet-banking-administrator-faqs" target="">Administrator</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/uses-of-token" class="com__nav-dd-title business-internet-banking-token-faq" target="">Uses of token</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/business-internet-banking/security" class="com__nav-dd-title business-internet-banking-security-faq" target="">Security</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Mobile Banking</a><div class="com__nav-dd-main">
+                                 <ul class="styled-nav">
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/registration" class="com__nav-dd-title mobile-banking-registration-faq" target="">Registration</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/login" class="com__nav-dd-title mobile-banking-login-faq" target="">Login</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/payment" class="com__nav-dd-title mobile-banking-payments-faq" target="">Payments</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/authorisation" class="com__nav-dd-title mobile-banking-authorisation-faq" target="">Authorisation</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/about-ocbc-onetouch" class="com__nav-dd-title mobile-banking-ocbc-onetouch" target="">About OCBC OneTouch</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/about-ocbc-onelook" class="com__nav-dd-title mobile-banking-ocbc-onelook" target="">About OCBC OneLook</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/general" class="com__nav-dd-title mobile-banking-general-faq" target="">General</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/security" class="com__nav-dd-title mobile-banking-security-faq" target="">Security</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/features" class="com__nav-dd-title mobile-banking-features" target="">Features</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/mobile-banking/managing-alerts" class="com__nav-dd-title mobile-banking-managing-alerts" target="">Managing alerts</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Update of company or account details </a><div class="com__nav-dd-main">
+                                 <ul class="styled-nav">
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/account-details/business-account-details" class="com__nav-dd-title update-company-account-details" target="">Update business account services and other services</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/account-details/e-statements" class="com__nav-dd-title e-statements" target="">e-Statements</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Payments, collections and transactions</a><div class="com__nav-dd-main">
+                                 <ul class="styled-nav">
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/one-collect" class="com__nav-dd-title ocbc-onecollect-faq" target="">OCBC OneCollect</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/invoice-management" class="com__nav-dd-title invoice-management-faq" target="">Invoice Management</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/cheque-sunsetting" class="com__nav-dd-title cheque-sunsetting-faq" target="">Cheque Sunsetting</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/fast" class="com__nav-dd-title fast-faq" target="">FAST (Fast and Secure)</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/egiro" class="com__nav-dd-title egiro-faq" target="">eGIRO</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/inward-tt" class="com__nav-dd-title inward-telegraphic-transfer-faq" target="">Inward Telegraphic Transfer</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/outward-tt" class="com__nav-dd-title outward-telegraphic-transfer-faq" target="">Outward Telegraphic Transfer</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/business-deposit-card" class="com__nav-dd-title business-deposit-card-faq" target="">Business Deposit Card</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/iso20022" class="com__nav-dd-title iso-20022-cbprplus-faq" target="">ISO 20022 CBPR+</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/fees-and-charges" class="com__nav-dd-title fees-and-charges-faq" target="">Fees and Charges</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/payment-collection-transactions/edp" class="com__nav-dd-title edp-faq" target="">EDP</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Application of banking services</a><div class="com__nav-dd-main">
+                                 <ul class="styled-nav">
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/apply-for-banking-account/opening-business-account" class="com__nav-dd-title open-account-faq" target="">Opening a Business Account</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/apply-for-banking-account/applying-business-account" class="com__nav-dd-title apply-business-debit-card-faq" target="">Applying a Business Debit Card</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Accounts and Services</a><div class="com__nav-dd-main">
+                                 <ul class="styled-nav">
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/accounts-and-services/business-pricing-guide" class="com__nav-dd-title business-pricing-guide" target="">Business Banking Pricing Guide</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/accounts-and-services/business-foreign-accounts-pricing-guide" class="com__nav-dd-title business-foreign-account-pricing-guide" target="">Business Foreign Accounts Pricing Guide</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/accounts-and-services/corporate-institutional-banking-pricing-guide" class="com__nav-dd-title corporate-institutional-banking-pricing-guide" target="">Corporate Institutional Banking Pricing Guide</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="com__nav-dd-set "><a class="com__nav-dd-title" href="#">Trade Services</a><div class="com__nav-dd-main">
+                                 <ul class="styled-nav">
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/trade-services-cut-off-time" class="com__nav-dd-title trade-services-cut-off-time-faq" target="">Trade services cut-off time</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/trade-services-centres-located" class="com__nav-dd-title trade-services-centres-located-faq" target="">Trade services centres located</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/general" class="com__nav-dd-title trade-services-general-faq" target="">General</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                    <li>
+                                       <ul class="com__nav-dd">
+                                          <li class="com__nav-dd-set "><a href="/business-banking/help-and-support/trade-service/invoice-financing" class="com__nav-dd-title trade-services-financing-faq" target="">Trade financing</a><div class="com__nav-dd-main">
+                                                <ul class="styled-nav">
+                                                   <li class="side-nav-item selected"><a href="#content-faq">Frequently asked questions</a></li>
+                                                   <li class="side-nav-item "><a href="#content-useful-forms"></a></li>
+                                                </ul>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="content-faq" class="mb-4 mb-sm-5">
+               <div class="accordion" init-mode="first">
+                  <div class="mb2"><a class="accordion__button link fz-14 link--underline float-right" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a><div class="clr"></div>
+                  </div>
+                  <div class="subcategory subcategory--black">Frequently asked questions</div>
+                  <ul class="accordion__list list--3">
+                     <li class="accordion__item" id="update-company-account-details-q1">
+                        <div class="accordion__item__title">
+                           <p><strong>How to update my business account details and other services? </strong></p>
+                        </div>
+                        <div class="accordion__item__content">
+                           <div class="com__paragraph"><p>If you are a sole proprietor or single director company, you can now update your mailing address or business name instantly when you login with <a href="https://velocity.ocbc.com/login.html" target="_blank">OCBC Velocity</a>. Select the update you would like under &ldquo;Tools&rdquo;.</p>
+<p>
+  No access to OCBC Velocity? Use our online forms here:
+  <br>
+  <a href="https://www.ocbc.com/business-banking/webform/?action=upcnt" target="_blank">Update contact details</a>
+  <br>
+  <a href="https://www.ocbc.com/business-banking/webform/?action=upadd" target="_blank">Update business address</a>
+  <br>
+  <a href="https://www.ocbc.com/business-banking/webform/?action=up-name-uen" target="_blank">Update business name or number</a>
+</p>
+<p>For other updates to your business accounts, please download and complete these forms that allow you to change authorised signatories, business name, address etc</p>
+<p>
+  <a href="/iwov-resources/sg/ocbc/business/pdf/forms/account%20activities/Business-Account-Update-Form.pdf" target="_blank">Business Account Update Form</a>
+  <br>
+  <a href="/iwov-resources/sg/ocbc/business/pdf/forms/account%20opening/board-resolution.pdf" target="_blank">Board Resolution</a> (if required)
+  <br><br>
+</p>
+<p>If you are holding on to a Business Debit Card, please download and complete this form to update your contact details (including your mobile number which will allow you to receive SMS One-Time Password (OTP) for your Card). Note that your personal account notification for all your personal accounts with OCBC Bank will be sent to this mobile number and email address.</p>
+<p>
+  <a href="/assets/pdf/changeaddresscontactdetails.pdf" target="_blank">Update your Card contact details</a>
+  <br><br>
+  <strong><u>Important:</u></strong>
+</p>
+<p class="mb-0">
+  If you have other services linked to this business account, please also complete the corresponding forms so that these services are updated:
+  <br>
+  <a href="https://www.ocbc.com/business-banking/webform-amv/" target="_blank">OCBC Velocity (Business Internet Banking)</a>
+  <ul class="mb-0">
+    <li><a href="/business-banking/help-and-support/business-internet-banking/velocity-mailbox-submission" target="_blank">Check out our step-by-step guide on how to submit your forms via secured email on Velocity.</a></li>
+  </ul>
+  <a href="/iwov-resources/sg/ocbc/business/PDF/ebanking/ealerts-maintenance-form.pdf" target="_blank">eAlerts@ocbc (SMS and email alerts)</a>
+  <br>
+  <a href="/iwov-resources/sg/ocbc/business/pdf/forms/ocbc%20business%20card/ocbc-business-card-maintenance-form.pdf" target="_blank">Business Debit Card</a>
+  <br>
+  <a href="/iwov-resources/sg/ocbc/business/PDF/ebanking/business-phonebanking-maintenance-form.pdf"  target="_blank">Business Phone Banking (Phone Banking Services)</a>
+</p>
+<br>
+<p><strong>IF YOU ARE UNABLE TO VIEW THE FORMS:</strong> You may not be able to open or view the PDF forms using your web browser e.g. Google Chrome. If you are unable to view the form, we recommend that you <u>save a copy in your local drive</u> to access the form outside of your web browser.</p></div>
+                        </div>
+                     </li>
+                     <li class="accordion__item" id="update-company-account-details-q2">
+                        <div class="accordion__item__title">
+                           <p><strong>How do I download and open the PDF Form?</strong></p>
+                        </div>
+                        <div class="accordion__item__content">
+                           <div class="com__paragraph">Forms are best viewed on desktop using Adobe Acrobat Reader. If you are unable to view the content of this form, please download and save a copy in your local drive to access the form or upgrade your Adobe Reader to version 9 and above.</div>
+                        </div>
+                     </li>
+                     <li class="accordion__item" id="update-company-account-details-q3">
+                        <div class="accordion__item__title">
+                           <p><strong>How do I unlock my OCBC Velocity account</strong></p>
+                        </div>
+                        <div class="accordion__item__content">
+                           <div class="com__paragraph"><p><strong>Please ensure that you have:</strong></p>
+<ol>
+  <li>Registered a valid mobile number/email address with us</li>
+  <li>Activated your hardware or digital token (OCBC OneToken) &ndash; you will need this to get a validation code</li>
+</ol>
+<br>
+<p><strong>You may unlock your OCBC Velocity account immediately by going to:</strong></p>
+<ul>
+  <li>
+    Our OCBC Velocity login page. Select &lsquo;Forgot / Unlock&rsquo; and enter your login credentials to proceed:
+    <ul>
+      <li>Go to OCBC Velocity login page, look out for &lsquo;Forgot / Unlock&rsquo; below the &lsquo;Password&rsquo; field and click it</li>
+      <li>Enter your Organisation ID and User ID</li>
+      <li>Check the checkbox for &lsquo;I agree and accept the Agreement&rsquo;</li>
+      <li>Click &lsquo;Submit&rsquo;</li>
+      <li>Follow the on-screen instructions</li>
+    </ul>
+  </li>
+  <li>
+    Our OCBC Business Banking app. Select &lsquo;Forgot password / Unlock account&rsquo; to proceed:
+    <ul>
+      <li>Tap &ldquo;Login&rdquo; or &ldquo;Need help?&rdquo;</li>
+      <li>Look out for &lsquo;Forgot password / Unlock account&rsquo; and click it</li>
+      <li>Enter your OCBC Velocity Org ID and User ID</li>
+      <li>Key in the OTP send to your registered number</li>
+      <li>Key in your OneToken PIN</li>
+      <li>
+        Select the option and click submit
+        <ul>
+          <li>I forgot my password. I wish to reset my password</li>
+          <li>I remember my password. I will use it to unlock my account (for locked accounts only)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<br>
+<p>If you have not activated your new token and have not registered a valid mobile number with us, complete the Apply & Manage OCBC Velocity Form to unlock your OCBC Velocity account. <a href="/business-banking/help-and-support/business-internet-banking/velocity-mailbox-submission" target="_blank">Check out our step-by-step guide on how to submit your forms via secured email on Velocity.</a></p>
+<p>Submit the original form, signed by the authorised persons, to any of our branches or mail it back to us. Once we receive and verify your form, we may take up to 7 business days to process your request.</p></div>
+                        </div>
+                     </li>
+                     <li class="accordion__item" id="update-company-account-details-q4">
+                        <div class="accordion__item__title">
+                           <p><strong>How do I get a new password?</strong></p>
+                        </div>
+                        <div class="accordion__item__content">
+                           <div class="com__paragraph"><p><strong>If you have already activated your new token and registered a valid mobile number with us,</strong></p>
+<ol>
+  <li>On the login page, look out for &lsquo;Reset Password/ Unlock User&rsquo; below the &lsquo;Password&rsquo; field and click it</li>
+  <li>Enter your Organisation ID and User ID</li>
+  <li>Check the checkbox for &lsquo;I agree and accept the Agreement&rsquo;</li>
+  <li>Click &lsquo;Submit&rsquo;</li>
+  <li>Follow the on-screen instructions</li>
+</ol>
+<br>
+<p>
+  <strong>Note:</strong>
+  <br>
+  If you have not registered a valid mobile number with us, a new password will be mailed to you within 3 business days (mailing to a non-Singapore address may take longer). We will send you the new password to your mailing address in our records.
+</p>
+<p>If you have not activated your new token:</p>
+<ul>
+  <li>Complete the Apply and Manage OCBC Velocity to request for a new password. Please ensure that the business details and &lsquo;Get new password&rsquo; fields are completed. <a href="/business-banking/help-and-support/business-internet-banking/velocity-mailbox-submission" target="_blank">Check out our step-by-step guide on how to submit your forms via secured email on Velocity.</a></li>
+  <li>Submit the original form, signed by the authorised persons, to any of our branches or mail it back to us</li>
+  <li>We take 7 business days to act on your request. We will send you the new password to your mailing address in our records</li>
+</ul></div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1583231793020]-->
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="container-fluid iw_section" id="sectionk1a5c4uy">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4uz">
+  <div class="iw_columns col-lg-12" id="colk1a5c4v0">
+   <div class="iw_component" id="iw_comp1583231793017">
+    <style>#iw_comp1570073690265{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.spacing').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.group-2-component').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1a5c4v8">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4v9">
+  <div class="iw_columns col-lg-12" id="colk1a5c4va">
+   <div class="iw_component" id="iw_comp1583231793018">
+    <style>#iw_comp1570073690275{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1583231793019">
+    <!--ls:begin[component-1583231793019]--><style>#iw_comp1583231793019{}</style><div></div><!--ls:end[component-1583231793019]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

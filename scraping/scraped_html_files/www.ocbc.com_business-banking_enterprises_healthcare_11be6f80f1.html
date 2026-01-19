@@ -1,0 +1,1522 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Medipreneurs - Healthcare Business Solutions | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/enterprises/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/enterprises/healthcare/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="healthcare financing,healthcare business solutions,healthcare practitioners">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Are you operating a business in the healthcare sector? Check out various digital solutions and personalised financial solutions for your business.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[stylesheet]-->
+      <link rel="stylesheet" href="/iwov-resources/sg/ocbc/business/css/style-bb.css" type="text/css" data-ocde-desktop_or_tablet_or_phone="show">
+      <!--ls:end[stylesheet]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/enterprises/healthcare">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="Please insert the text here" class="Please insert the text here"><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:business:enterprises:healthcare",
+            language: "en",
+            pageCategory: "pre-login enterprises page",
+            bannerName: "setting up day to day operations practice expansion were here for medipreneurs to start and grow their practice",
+            channel: "enterprises",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        },
+form: {
+                formName: "chart your next milestone with us:running a business",
+                formId: "", //dynamic random id to be created and passed on the thank you page
+                formType: "chart your next milestone with us",
+                formStepName: "form loaded"
+            }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "true"
+        }
+    };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1a5c4u3">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4u4">
+  <div class="iw_columns col-lg-12" id="colk1a5c4u5">
+   <div class="iw_component" id="iw_comp1570073690234">
+    <style>#iw_comp1570073690234{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/education" class="" target="_self">Education</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/fnb" class="" target="_self">F&B</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/healthcare" class="" target="_self">Healthcare</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/logistics" class="" target="_self">Logistics</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#runningbiz" class="header__navi">Running a business</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/international" class="" target="_self">International</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in </p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="/Premier">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <div class="dropdown__bb dropdown__second__bb d-lg-inline">
+                           <div class="dropdown__theme  dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location-option-filter" class="selectize selectize--navigation" id="header-businessBanking">
+                                 <option value="/business-banking/enterprises">Enterprises</option>
+                                 <option value="/business-banking/smes">SMEs</option>
+                                 <option value="/business-banking/corporates">Corporates</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support#" class="" target="_self">Help and support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="runningbiz" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Running a business</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2"><h2>Running a business</h2></div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Starting your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#starting-first-business" class="link link link-arrow-right" target="_blank">Uncover blind spots and start your business <span class="text-nowrap">right<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Growing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#growing-your-business" class="link link link-arrow-right" target="_blank">Grow local, go <span class="text-nowrap">international<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Managing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#managing-your-business" class="link link link-arrow-right" target="_blank">Optimise your everyday <span class="text-nowrap">operations<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Scaling your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#scaling-your-business" class="link link link-arrow-right" target="_blank">Take your business further, <span class="text-nowrap">faster<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/business-tools" class="button button--secondary button--link" target="_blank"><span>See all tools</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Other tools</div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_blank">Must-read articles for <span class="text-nowrap">SMEs<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="navigation__product-anchor container bp-width-med3 bp-sticky-content navigation__product-anchor--hidden">
+      <div class="he-bo-title"><span class="capt"></span><div class="arrow"><i class="far fa-chevron-down"></i></div>
+      </div>
+      <div class="he-bo-main">
+         <div class="he-bo-row">
+            <div class="hb-co-list">
+               <div class="long">
+                  <div class="hb-co-menu">
+                     <ul nav-scroller="">
+                        <li class="active hidden" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-1"><a href="#section-solutions" title="Business Solutions" target="external">Business Solutions</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-2"><a href="#section-customersuccessstories" title="Customer Success Stories" target="external">Customer Success Stories</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="short">
+                  <div class="action-button"><a class="button button--primary button--red2 undefined d-block" href="#section-cta" target="external"><span>Contact Us</span></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+<section id="main-wrapper">
+ <div class="container-fluid iw_section" id="sectionk1a5c4um">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4un">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uo">
+    <div class="iw_component" id="iw_comp1570073690253">
+     <!--ls:begin[component-1570073690253]--><style>#iw_comp1570073690253{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/business-banking/index.page">Business Banking</a></li>
+         <li><a href="/business-banking/enterprises.page">Enterprises</a></li>
+         <li>Healthcare</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1570073690253]-->
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="container-fluid iw_section" id="sectionk1a5c4uu">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4uv">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uw">
+    <div class="iw_placeholder" id="iw_placeholder1570073690261">
+     <div class="iw_component" id="iw_comp1576827602540">
+      <style>#iw_comp1576827602540{}</style><div class="masthead-component"></div><div class="bp-rel bp-banner mob-mb1 animate featured__hero featured__hero-feathero" style="background-color: #000000;">
+   <div class="bp-banner bp-ab d-none d-lg-block" style="background-image: url('/iwov-resources/sg/ocbc/business/img/enterprises/Masthead.jpg'); background-position: 80% 50%;"></div>
+   <div class="bp-banner-main container bp-width-med3">
+      <div class="row flex-row-reverse align-items-center feature__image">
+         <div class="col-lg-6">
+            <div class="bp-banner banner-wide d-none d-md-block d-lg-none tab-pull-left tab-pull-right" style="background-image: url('/iwov-resources/sg/ocbc/business/img/enterprises/Masthead.jpg'); background-position: 100% 50%;"></div>
+            <div class="bp-img wide d-block d-sm-block d-md-none tab-pull-left tab-pull-right"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/Masthead-Mobile.jpg" alt=""></div>
+         </div>
+         <div class="col-lg-6 pt8 pb8 mob-pt3 mob-pb3">
+            <div class="feature__image--text feature__image--width-longer">
+               <div class="com__par co-white">
+                  <h1 class="feature__image--title co-white">Setting Up, Day to Day Operations & Practice Expansion. We’re here for Medipreneurs to start and grow their practice.</h1>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111107901">
+      <style>#iw_comp1610111107901{}</style><div class="intro-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-custom-8">
+         <div class="theme theme--grey">
+            <h2 class="bold text-gradient common__intro-paragraph pt-1 pb-1 ">
+            A medipreneur is a medical entrepreneur who manages a business providing health and wellness services or products. We help you to run your clinic practice efficiently so that you can focus on your patients.
+         </h2>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111107904">
+      <style>#iw_comp1610111107904{}</style><div class="solutions-component"></div><div class="section">
+   <div anim-control="parent" class="module container bp-width-med3 animate">
+      <div class="subcategory subcategory--black">END-TO-END SOLUTIONS FOR MEDIPRENEURS</div>
+      <div class="row">
+         <div class="col-custom-10">
+            <div class="accordion accordion__loan theme theme--green animate" anim-control="parent" init-mode="first" close-others="true">
+               <div class="accordion__item expanded">
+                  <div class="accordion__item__title">
+                     <div class="accordion__loan-row">
+                        <div class="icon"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/thumbnail-1.jpg" alt="Get Medipreneur financing now"></div>
+                        <div>
+                           <h4><strong>Start it</strong></h4>
+                           <p>It&rsquo;s not brain surgery. Getting financing to open your new healthcare practice shouldn&rsquo;t be a complicated procedure. No business track record needed. No financial statements needed.</p>
+                        </div><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                  </div>
+                  <div class="accordion__item__content" style="display: block;">
+                     <div class="accordion__loan-row">
+                        <div class="icon"></div>
+                        <div>
+                           <div class="mw--780"><p><strong>Upfront funding of up to S$300K* with a Medi-Starter&nbsp;loan</strong></p>
+<p>If you are setting up your clinic practice for the first time, we offer an upfront starter loan to help you get started. This is useful to cover your setup costs such as renovation, general working capital needs and practice acquisition. No business track record or any financial records are needed.</p>
+<p><em>* Non-Western clinics &amp; Allied Health clinics (up to S$150,000) and Western Clinics, Dental, and Specialists clinics (up to S$300,000). If you are operating a chain of clinics, financial documentation will be required. Other terms and conditions apply.</em></p>
+<p><strong><br />Pre-approved funding of up to S$500K^ with a Medi-Expansion loan</strong></p>
+<p>If you are an established practice and are looking to expand your offerings, you can get financing of up to S$500,000. No financial records are needed.</p>
+<p><em>^ Western Clinics, Dental, and Specialists clinics (up to S$500,000). If you are operating a chain of clinics, financial documentation will be required. Other terms and conditions apply.</em></p>
+<p>&nbsp;</p>
+<p><strong>Secure your premises with rental bonds, underwritten by Great Eastern General Insurance Limited (part of OCBC Group)</strong></p>
+<p>To reduce the impact to your cash flow, we support you with a rental bond so that you do not have to fork out a hefty security deposit to the landlords.</p></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="accordion__item">
+                  <div class="accordion__item__title">
+                     <div class="accordion__loan-row">
+                        <div class="icon"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/thumbnail-2.jpg" alt="Diagnose the vital signs of your healthcare practice with innovative digital solutions."></div>
+                        <div>
+                           <h4><strong>Run It</strong></h4>
+                           <p><p>Diagnose the vital signs of your healthcare practice with innovative digital solutions. Beyond operating more efficiently and profitably, our digital solutions help you deliver better patient care.</p></p>
+                        </div><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                  </div>
+                  <div class="accordion__item__content">
+                     <div class="accordion__loan-row">
+                        <div class="icon"></div>
+                        <div>
+                           <div class="mw--780"><p><strong>Get dedicated support from OCBC&rsquo;s Healthcare Specialist Team</strong></p>
+Our team of experts understand your unique industry challenges and are here to help you from your first clinic and as you expand both locally and in the region. They can offer you tailored solutions and advice to help your medical practice succeed via banking and beyond banking solutions.</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="accordion__item">
+                  <div class="accordion__item__title">
+                     <div class="accordion__loan-row">
+                        <div class="icon"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/thumbnail-3.jpg" alt="Ease of collecting payments for Medipreneurs "></div>
+                        <div>
+                           <h4><strong>Collect It</strong></h4>
+                           <p><p>Whether it&rsquo;s collecting payments or paying your medical practice&rsquo;s bills, give your staff, suppliers and patients a clean bill of health by adopting these innovative and secure digital finance and e-payments solutions.&nbsp;</p></p>
+                        </div><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                  </div>
+                  <div class="accordion__item__content">
+                     <div class="accordion__loan-row">
+                        <div class="icon"></div>
+                        <div>
+                           <div class="mw--780"><p><strong>Speed up payment collection with OCBC OneCollect</strong></p>
+<p>Your frontliners can skip the hassle of renting and setting-up point-of-sale equipment with this digital merchant solution that manages transactions easily and collects payments instantly to your business account. Our intuitive app is also integrated with PayNow QR for quick scan-and-pay transactions that saves you merchant commission.</p>
+<p><strong>Access a wide range of payment methods with OCBC card terminal</strong></p>
+<p>Enjoy preferential pricing when you collect payments from customers using an OCBC card terminal. OCBC card terminals accept the following international payment schemes: VISA, MasterCard, UnionPay, JCB, Alipay+ QR and WeChat Pay QR via physical cards and mobile payments, as well as PayNow QR &mdash; all on one terminal.<br /><br />Moreover, our dedicated support specialist will guide you with your setup.<br /><br />Subject to terms and conditions, and signing of a Merchant Agreement.</p>
+<p><a rel="noopener" href="https://internet.ocbc.com/internet-banking/PublicOnlineForm/Form?FormId=MerchantEnqr" target="_blank">Contact us via e-form</a></p>
+<p><strong>Digitise your payment collections anytime, anywhere</strong></p>
+<p>Collect payments from patients using PayNow QR and reconcile data seamlessly with our OCBC API solution. Furthermore, simplify administrative operations with our partner solution so that your staff can stay focused on other important tasks. Speak with our dedicated specialist to find out more.</p>
+<p><strong>Conveniently and securely bank cash with Business Deposit Card</strong></p>
+<p>No PIN required. No withdrawals and transfers. No balance enquiries allowed. Simply deposit your healthcare practice&rsquo;s cash takings anytime at an OCBC ATM, skipping the need to queue at branches for cash deposits. This means that your business also saves money with lower fees compared to counter transaction and cash deposit fees at branches.</p></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="accordion__item">
+                  <div class="accordion__item__title">
+                     <div class="accordion__loan-row">
+                        <div class="icon"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/thumbnail-4-v2.jpg" alt="Grow your medipreneur journey"></div>
+                        <div>
+                           <h4><strong>Grow It</strong></h4>
+                           <p><p>As your healthcare practice grows, we&rsquo;re here to support you throughout your medipreneur journey. Enjoy a healthy dose of unique opportunities, networking tie-ups, partner benefits and exclusive privileges as part of your relationship with us.</p></p>
+                        </div><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                  </div>
+                  <div class="accordion__item__content">
+                     <div class="accordion__loan-row">
+                        <div class="icon"></div>
+                        <div>
+                           <div class="mw--780"><p><strong>Get the all-in-one Medi Business Account</strong></p>
+<p>Get a Medi Business Account<em><sup>&dagger;</sup></em> with only a low initial deposit required, and unlimited free FAST &amp; GIRO transactions.<br /><br /><em><sup>&dagger; </sup>Subject to bank&rsquo;s approval.</em></p>
+<p><br /><strong>Gain pre-qualification as an OCBC Premier Banking customer</strong></p>
+<p>Get the exclusive Premier Voyage Card, access to premium lifestyle privileges, invites to private wealth seminars by our OCBC Wealth Panel team &ndash; our team of top wealth experts from OCBC Group &ndash; and your very own personal relationship manager for wealth advisory to help grow your fortune. Committed to your long-term interests and personal goals, our dedicated team will offer you and your wealth the premier treatment.</p></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111107903">
+      <style>#iw_comp1610111107903{}</style><div class="space-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="row flex-row align-items-center feature__image feature__image-beside-text mob-mt2 animate&#xA;&#x9;&#x9;&#x9;&#x9;">
+      <div class="col-md-8">
+         <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/block-1_image.jpg" alt="Medipreneurs in business"></div>
+      </div>
+      <div class="col-md-4">
+         <div class="feature__image--text">
+            <div class="feature__image--description">
+               <p class="mb0"><p><strong>Access to our dedicated Healthcare Specialist team</strong></p>
+<p>Whether you&rsquo;re a general practitioner, medical specialist, dentist, or allied health practitioner who&rsquo;s looking to start your own practice or thinking of expanding, our Healthcare Specialists are ready to help you navigate the challenges and address your needs in setting up, day to day operations and financing.</p></p>
+            </div>
+            <div class="feature__image--button d-flex flex-wrap align-items-center"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111107902">
+      <style>#iw_comp1610111107902{}</style><div class="advice-component"></div><div class="bp-rel bp-banner mob-mb1 animate featured__hero featured__hero-subhero" style="background-color: #A4C8DE;">
+   <div class="bp-banner bp-ab d-none d-lg-block" style="background-image: url('/iwov-resources/sg/ocbc/business/img/enterprises/block-2_image.jpg'); background-position: 80% 50%;"></div>
+   <div class="bp-banner-main container bp-width-med3">
+      <div class="row flex-row-reverse align-items-center feature__image">
+         <div class="col-lg-6">
+            <div class="bp-banner banner-wide d-none d-md-block d-lg-none tab-pull-left tab-pull-right" style="background-image: url('/iwov-resources/sg/ocbc/business/img/enterprises/block-2_image.jpg'); background-position: 100% 50%;"></div>
+            <div class="bp-img wide d-block d-sm-block d-md-none tab-pull-left tab-pull-right"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/block-2_image_mobile.jpg" alt=""></div>
+         </div>
+         <div class="col-lg-6 pt7 pb7 mob-pt3 mob-pb3">
+            <div class="feature__image--text feature__image--width-long">
+               <div class="com__par co-white">
+                  <div class="feature__image--description">
+                     <p><strong>Medipreneurs qualify for a starter loan or expansionary financing without any business track record or financial statements required. </strong></p>
+                  </div>
+                  <div class="feature__image--button"><a cta-id="Enterprises-Healthcare-Contact-Us" href="#section-cta" class="button button--secondary button--white" target="_self">Contact us now</a></div>
+               </div>
+            </div>
+            <div class="clr"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829032699">
+      <style>#iw_comp1632829032699{}</style><div class="video-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">HEAR FROM MEDIPRENEURS</div>
+   <div class="com_videos videos">
+      <div class="com__tab tab">
+         <div class="d-flex flex-column flex-md-row align-items-start">
+            <div class="com__tab-content tab__title com__tab-scroll">
+               <div class="com__tab-nav has-styled-nav">
+                  <ul class="d-flex d-md-none styled-nav clearfix align-items-center owl-nav1 flex-row flex-md-column">
+                     <div class="indicator"></div>
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="VwsHo1rePHE" href="#tab-video-VwsHo1rePHE" style="background-image: url(https://img.youtube.com/vi/VwsHo1rePHE/hqdefault.jpg)"><span>A Plus Physiotherapy</span></a></li>
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="bSPY0YLkX2Q" href="#tab-video-bSPY0YLkX2Q" style="background-image: url(https://img.youtube.com/vi/bSPY0YLkX2Q/hqdefault.jpg)"><span>Hip & Knee Orthopaedics</span></a></li>
+                  </ul>
+                  <div class="border-line-wrapper">
+                     <div class="border-line"></div>
+                  </div>
+                  <ul class="d-md-block d-none slick-slider">
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="VwsHo1rePHE" href="#tab-video-VwsHo1rePHE" style="background-image: url(https://img.youtube.com/vi/VwsHo1rePHE/hqdefault.jpg)"><span>A Plus Physiotherapy</span></a></li>
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="bSPY0YLkX2Q" href="#tab-video-bSPY0YLkX2Q" style="background-image: url(https://img.youtube.com/vi/bSPY0YLkX2Q/hqdefault.jpg)"><span>Hip & Knee Orthopaedics</span></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="tab__content">
+               <div class="com__tab-set" id="tab-video-VwsHo1rePHE">
+                  <div class="com_video video">
+                     <div class="video__wrapper d-flex flex-column flex-md-row ">
+                        <div class="video__content">
+                           <div class="video__background" style="background-image: url(https://img.youtube.com/vi/VwsHo1rePHE/hqdefault.jpg)"><button class="play-video-btn" type="button" data-video-id="VwsHo1rePHE"><i class="fa fa-play"></i></button><div class="com_yt-video" data-video-start="0:00" data-controls="1" data-video-id="VwsHo1rePHE" style="background-image: url(https://img.youtube.com/vi/VwsHo1rePHE/hqdefault.jpg)" id="list-1-VwsHo1rePHE">
+                                 <div class="yt-player" id="video-list-1-akrC3Zf2Dd4"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video__details d-flex flex-column justify-content-center">
+                           <p class="video__title">A Plus Physiotherapy</p>
+                           <p class="video__description">Starting a business during a pandemic wasn’t easy, but with the help of the Healthcare Specialists at OCBC, A Plus Physiotherapy, was ready to operate in two weeks. Find out how our Healthcare Specialists helped to address A Plus Physiotherapy's needs in setting up and running their day to day operations. </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="com__tab-set" id="tab-video-bSPY0YLkX2Q">
+                  <div class="com_video video">
+                     <div class="video__wrapper d-flex flex-column flex-md-row ">
+                        <div class="video__content">
+                           <div class="video__background" style="background-image: url(https://img.youtube.com/vi/bSPY0YLkX2Q/hqdefault.jpg)"><button class="play-video-btn" type="button" data-video-id="bSPY0YLkX2Q"><i class="fa fa-play"></i></button><div class="com_yt-video" data-video-start="0:00" data-controls="1" data-video-id="bSPY0YLkX2Q" style="background-image: url(https://img.youtube.com/vi/bSPY0YLkX2Q/hqdefault.jpg)" id="list-1-bSPY0YLkX2Q">
+                                 <div class="yt-player" id="video-list-1-akrC3Zf2Dd4"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video__details d-flex flex-column justify-content-center">
+                           <p class="video__title">Hip & Knee Orthopaedics</p>
+                           <p class="video__description">Dr Adrian Lau has always desired his own medical practice. Find out how we helped him.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111107905">
+      <style>#iw_comp1610111107905{}</style><div class="customersuccessstories-component"></div><div class="container bp-width-med3 module animate">
+   <div class="com_insurance-did-you-know ">
+      <div class="slides owl-carousel" nav="true" dots="true" margin="50" auto-height="true">
+         <div class="slide card card--no-border card--default ">
+            <div class="card__content d-flex align-items-center">
+               <div><img class="icon" src="/iwov-resources/sg/ocbc/business/img/enterprises/Dr_Matthew_Tan_180.png"></div>
+               <div>
+                  <p>"You guys know what you are doing. I'm very heartened to see that OCBC has such a holistic package that helps doctors like me start out smarter and more efficiently."
+</br></br>
+<strong>Dr Matthew Tan</br>Endocrinologist, Matt Diabetescare Pte. Ltd.</strong></p>
+               </div>
+            </div>
+         </div>
+         <div class="slide card card--no-border card--default ">
+            <div class="card__content d-flex align-items-center">
+               <div><img class="icon" src="/iwov-resources/sg/ocbc/business/img/enterprises/Dr_Lim_Yan_Lei_180.png"></div>
+               <div>
+                  <p>"As a first time entrepreneur, I am very pleased and grateful that OCBC has a healthcare team to assist me on various banking matters to help with my company set up while I can focus on handling my hectic treatment schedule"
+</br></br>
+<strong>Dr Lim Yan Lei</br>TCM Practitioner, Heartcore TCM Pte. Ltd.</strong></p>
+               </div>
+            </div>
+         </div>
+         <div class="slide card card--no-border card--default ">
+            <div class="card__content d-flex align-items-center">
+               <div><img class="icon" src="/iwov-resources/sg/ocbc/business/img/enterprises/Dr_David_Eu_180.png"></div>
+               <div>
+                  <p>"This is a really good package, especially the loans. My most pressing needs in setting up a clinic was finding the right location, followed by the costs required for rental, renovation, operations, and purchasing drugs and equipment. OCBC provided a holistic package for setting up a clinic. I will definitely introduce this package to my peers in the healthcare industry."
+</br></br>
+<strong>Dr David Eu Chin Yuan</br>General Practitioner, River Of Life Medical Pte. Ltd.</strong></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1665167404258">
+      <style>#iw_comp1665167404258{}</style><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">Our role in your journey</div>
+   <div class="com_investment-recommended-products">
+      <div class="row">
+         <div class="col-custom-10"><span>
+               <p class="intro mb-0">No matter the size or stage of your business, we can support you every step of the way.</p></span><div class="plan">
+               <div class="plan__products">
+                  <div class="row same-height-parent">
+                     <div class="col-md-6">
+                        <div class="plan__product product card card--no-border"><span>
+                              <h5 class="text--bold product__title">Starting a business?</h5></span><span class="same-height-single">
+                              <p>If you are starting your business for the first time, join us as an OCBC Business Banking customer by opening a business account. Or contact our healthcare specialist to help you get started on the right foot and to digitalise your business.<br/><br/>
+<a cta-id="Enterprises-Medipreneur-OpenABusinessAccount-OurRoleInYourJourney"href="https://www.ocbc.com/business-banking/smes/accounts/business-growth-account" class="link link link-arrow-right" target="_blank">Open a business  <span class="text-nowrap">account<i class="far fa-chevron-right"></i></span></a></p></span><div><a auto-scroll="true" cta-id="Enterprises-Medipreneur-ContactDigitalSpecialist-OurRoleInYourJourney" href="#section-cta" class="link link link-arrow-right" target="_self">Contact healthcare  <span class="text-nowrap">specialist<i class="far fa-chevron-right"></i></span></a></div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="plan__product product card card--no-border"><span>
+                              <h5 class="text--bold product__title">Growing your business?</h5></span><span class="same-height-single">
+                              <p>Whether you are expanding your range of services or your footprint, we offer industry insights and solutions to help you grow and scale. Contact us and our Relationship Manager will be in touch.</p></span><div><a auto-scroll="true" cta-id="Enterprises-Medipreneur-ContactUs-OurRoleInYourJourney" href="#section-cta" class="link link link-arrow-right" target="_self">Contact  <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1645637818531">
+      <!--ls:begin[component-1645637818531]--><style>#iw_comp1645637818531{}</style><div class="pulsecheck-component"></div><div class="" id="section-pulsecheck">
+   <div><div class="container bp-width-med3 module">
+                                            <div class="subcategory subcategory--black">Powering the healthcare industry</div>
+                                            <div class="row">
+                                                <div class="col-custom-8">
+                                                    <div class="subtitle">
+                                                        <p>The OCBC SME Index<sup>*</sup> is a high-frequency index measuring the business health and performance of SMEs across industry value chains, including healtcare.</p>
+                                                        <p>Whether you are a general practitioner, medical specialist, dentist, or allied health practitioner, you can count on our business solutions and Healthcare Specialist team to provide you with a healthy dose of business insights and support.</p>
+                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="com_sme-tab">
+                                                <div class="row mt6">
+                                                    <div class="col-custom-10">
+                                                        <div class="com_sme-tab">
+                                                            <div class="row mb5">
+                                                                <div class="col-md-4">
+                                                                    <h4 class="mb-md-0"><strong>Healthcare</strong></h4>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="com_sme-tab-nav text-md-right">
+                                                                    <ul class="etd-list-line">
+                                                                        <li><a href="#tab-healthcare-healthcare">Healthcare</a></li>
+                                                                        <li><a href="#tab-healthcare-distributor">Healthcare Distributor</a></li>
+                                                                        <li><a href="#tab-healthcare-provider">Healthcare Provider</a></li>
+                                                                        <li><a href="#tab-healthcare-other-healthcare">Other Healthcare</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            <div id="tab-healthcare-healthcare">
+                                                                <div class="row mb4">
+                                                                    <div class="col-custom-8">
+                                                                      
+                                                                    </div>
+                                                                </div>
+                                                                <div class="bp-img"><img src="/iwov-resources/sg/ocbc/business/img/smes/sme-index/healthcare.jpg" alt=""></div>
+                                                            </div>
+                                                            <div id="tab-healthcare-distributor">
+                                                                <div class="row mb4">
+                                                                    <div class="col-custom-8">
+              
+                                                                    </div>
+                                                                </div>
+                                                                <div class="bp-img"><img src="/iwov-resources/sg/ocbc/business/img/smes/sme-index/healthcare-distributor.jpg" alt=""></div>
+                                                            </div>
+                                                            <div id="tab-healthcare-provider">
+                                                                <div class="row mb4">
+                                                                    <div class="col-custom-8">
+                                                          
+                                                                    </div>
+                                                                </div>
+                                                                <div class="bp-img"><img src="/iwov-resources/sg/ocbc/business/img/smes/sme-index/healthcare-provider.jpg" alt=""></div>
+                                                            </div>
+                                                            <div id="tab-healthcare-other-healthcare">
+                                                                <div class="row mb4">
+                                                                    <div class="col-custom-8">
+                                                                 
+                                                                    </div>
+                                                                </div>
+<div class="bp-img"><img src="/iwov-resources/sg/ocbc/business/img/smes/sme-index/other-healthcare.jpg" alt=""></div>
+                                                                </div>
+
+    <div class="row mb4">
+                                                             
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div></div>
+</div><!--ls:end[component-1645637818531]-->
+     </div>
+     <div class="iw_component" id="iw_comp1764899496330">
+      <!--ls:begin[component-1764899496330]--><style>#iw_comp1764899496330{}</style><div class="" id="">
+   <div><div class="module container bp-width-med3">
+  <div class="row">
+    <div class="col-custom-10 mb2">
+      <p><a class="button button--secondary button--link 
+      " rel="noopener" href="/business-banking/smes/sme-index" cta-id="explore-data-read-report" target="_blank"><span>Find out more</span></a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-custom-10 mt2">
+      <p>*OCBC SME Index is centered on a score of 50, which represents zero change in the inputs from a year ago. A reading above 50 indicates improved activity, while a reading below 50 indicates a deterioration relative to the same period a year ago.</p>
+    </div>
+  </div>
+</div>
+<p></p></div>
+</div><!--ls:end[component-1764899496330]-->
+     </div>
+     <div class="iw_component" id="iw_comp1645637817176">
+      <style>#iw_comp1645637817176{}</style><div class="recommendation-component"></div><div class="com__lifegoals-articles-and-guides">
+   <div class="container bp-width-med3">
+      <div class="subcategory subcategory--black">Articles you may like</div>
+      <div class="row">
+         <div class="col-md-12">
+            <div class="row">
+               <div class=" col-custom-8 col-custom-enforced subtitle">
+                  <h4 class="mb-0"><br data-mce-bogus="1"></h4>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="com__articles-and-guides">
+      <div class="module container bp-width-med3">
+         <div class="row">
+            <div class="col-custom-9">
+               <div class="row com_slider owl-theme group-height" apply-for="mobile" dots="true" margin="10" padding="0">
+                  <div class="col-md-4 col-sm-12 com_slider__item"><a class="a-g-item border-0" href="/business-banking/articles/starting-medipreneur-journey-during-pandemic.page" target="_self" onClick="abdc">
+                        <div class="a-g-i-image mb-3"><img width="340" height="340" src="/iwov-resources/sg/ocbc/business/img/articles/starting-mediprenuer-journey-during-pandemic/APlusPhysio-340x340.png" alt="A Plus Physiotheraphy"></div>
+                        <div class="a-g-i-desc">
+                           <h4 class="gh3"><strong>How A Plus Physio’s Alphonse Tranne started his medipreneur journey during the pandemic</strong></h4><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div></a></div>
+                  <div class="col-md-4 col-sm-12 com_slider__item"><a class="a-g-item border-0" href="/business-banking/articles/6-things-to-consider-when-starting-a-medical-practice-in-singapore.page" target="_self" onClick="abdc">
+                        <div class="a-g-i-image mb-3"><img width="340" height="340" src="/iwov-resources/sg/ocbc/business/img/articles/medical-practice-in-sg/masthead-recommendation.png" alt=""></div>
+                        <div class="a-g-i-desc">
+                           <h4 class="gh3"><strong>6 things to consider when starting a medical practice in Singapore</strong></h4><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111107909">
+      <!--ls:begin[component-1610111107909]--><style>#iw_comp1610111107909{}</style><div class="cta-component"></div><div class=""><script src="/iwov-resources/sg/ocbc/eform/js/jquery.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/moment.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap-datetimepicker.min.js"></script><link href="/iwov-resources/sg/ocbc/eform/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+   <link href="/iwov-resources/sg/ocbc/eform/css/form.css?2020061201" rel="stylesheet"><script src="/iwov-resources/sg/ocbc/eform/js/webfont.js"></script><div id="generated_form_display"></div><script>
+	 (function (w) {
+		w.URLSearchParams = w.URLSearchParams || function (searchString) {
+		  var self = this;
+		  self.searchString = searchString;
+		  self.get = function (name) {
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+			if (results == null) {
+			  return null;
+			}
+			else {
+			  return decodeURI(results[1]) || 0;
+			}
+		  };
+		}
+
+	  })(window);
+	
+    //hardcoded data
+	var urlParams = new URLSearchParams(window.location.search);
+	var maxTotalfile = "Total files size has exceeded 10MB limit";
+	var refid = urlParams.get("refid");
+	var formid = urlParams.get("formid");
+	window.sessionStorage.setItem("reference_id", null);
+	window.sessionStorage.setItem("form_id", null);
+	if(refid !== null && formid !== null && refid !== undefined && formid !== undefined) { 
+		window.sessionStorage.setItem("reference_id", refid);
+		window.sessionStorage.setItem("form_id", formid);
+	}  
+    window.sessionStorage.setItem("form_builder_data", JSON.stringify([{"field_id":"RHytXP","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__bcbd0d00-091b-4b14-ac85-db31d9ef8fdd","type_name":"static-data__285b6c7c-7263-4b27-87f8-356ae6ec8c89","type_label":"<h4>Fill in your details and we will get in touch within 1 working day.</h4>","type_required":false,"section":null,"position":"single","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"sz4twM","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__a089b7fd-2282-466c-acf0-4f1849e57d69","type_name":"radio__9c0935a5-189d-483d-b7bc-a1ff92870f03","type_label":"Salutation","type_items":["Dr","Mr","Mrs","Ms"],"type_selected":"Option 1","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio-inline","type_required":false,"type_required_message":null,"type_help_text":"","section":null,"position":"single","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"pMcSib","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__85274dff-d4d4-4e42-8d7f-b7c09638bb27","type_name":"name__a81e982c-c062-4fb2-a64a-5e2e0b37036f","type_placeholder":"Enter your full name","type_label":"Full Name","type_required":true,"type_required_message":"Required","type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"2iGqQd","type":"email-field","isActive":false,"field_value":null,"options":{"type_id":"email-field__0c592a93-8467-4f54-a31f-1c8e06e62778","type_name":"email__dd9c96b8-63af-4cdc-9461-06349b106c33","type_placeholder":"Enter your email address","type_label":"Email Address","type_required":true,"type_required_message":"Required","type_help_text":"","section":null,"position":"single","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"Wjmdie","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__b599328b-ac5c-4e97-9667-6e1aef6b6976","type_name":"name__47399802-4adc-4c6a-90fe-840a50d8ecb9","type_placeholder":"Enter your contact no.","type_label":"Contact Number","type_required":true,"type_required_message":"Required","type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"7upTIg","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__9b197664-6aed-4104-b086-de2332bf40ae","type_name":"name__699e6a6e-667d-47a3-818b-eb8980cf5a20","type_placeholder":"Enter your company name","type_label":"Company Name","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"default","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"mRqGSG","type":"textbox-field","isActive":false,"field_value":null,"options":{"type_id":"textbox-field__2eafb840-bde0-49d3-b53f-abf5f469fd71","type_name":"name__28791cc2-b750-45d9-9ff5-2c4f3704be4e","type_placeholder":"Enter your enquiry","type_label":"Your Enquiry","type_required":false,"type_required_message":null,"type_help_text":"","type_no_rows":"5","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"xTRAyY","type":"terms-conditions-field","isActive":true,"field_value":"Yes","options":{"type_id":"terms-conditions-field__48207025-c3aa-4e05-bb3c-c471d4bf14d7","type_name":"terms-conditions__8535aba8-0316-41d6-aa48-50d1cfdd3ddc","type_label":"By checking this box, I confirm that I have given / have been given consent to provide the information in this form. \n<br><br>\n(Where applicable) I confirm that I have obtained consent from the person(s) whose personal data is provided in this form for the collection, use and disclosure of such person(s)’ personal data for the purposes of processing this request, and for other applicable purposes as set out in the OCBC Data Protection Policy available at: <a href=\"/business-banking/bank-policies\">www.ocbc.com/business-banking/bank-policies</a>. ","type_required":true,"type_required_message":"Required","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":null,"position":"single"}}]));
+    window.sessionStorage.setItem("form_builder_settings", JSON.stringify({"form_subtitle":"Chart your next milestone with us","form_heading":"Medipreneur Contact","form_id":"medipreneur-contact","form_expiry_date":"04/11/5021","form_expiry_message":"-","form_max_submissions":null,"form_max_submission_text":null,"save_exit_enable":false,"form_submit_type":"Show submission message","form_submit_redirecturl":"","form_submit_message":"Thank you for submitting the form. We will be in touch within 1 working day.","form_saveexit_message":"Thank you for saving the form.","branchName":"business","file-name":"/templatedata/personal/eform/data/business-Form-medipreneur-contact.xml","suite_id":"suitid","save-event":"saveEvent","saveExit-event":"saveExitEvent"}));
+    </script><script src="/iwov-resources/sg/ocbc/eform/js/business/form_generator.js?2020072801"></script></div><!--ls:end[component-1610111107909]-->
+     </div>
+     <div class="iw_component" id="iw_comp1652196009544">
+      <style>#iw_comp1652196009544{}</style><div class="module container bp-width-med3 animate test-class" id="test-id">
+   <div class="subcategory subcategory--black">Lending every industry a hand</div>
+   <div class="row feature__three-col-background-image same-height-parent">
+      <div class="col-md-4 mb2"><a target="_self" href="/business-banking/enterprises/education">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/education/education-mobile.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Education</p>
+                     <h4 class="feature__teaser-title">Solutions for nurturing your education centre</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Education</p>
+                     <h4 class="feature__teaser-title">Solutions for nurturing your education centre</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+      <div class="col-md-4 mb2"><a target="_self" href="/business-banking/enterprises/fnb">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/masthead-mobile.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Food and Beverage</p>
+                     <h4 class="feature__teaser-title">Solutions for fuelling your success in the F&B industry</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Food and Beverage</p>
+                     <h4 class="feature__teaser-title">Solutions for fuelling your success in the F&B industry</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+      <div class="col-md-4 mb2"><a target="_self" href="/business-banking/enterprises/logistics">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/logistics/masthead-mobile.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Logistics</p>
+                     <h4 class="feature__teaser-title">Solutions for delivering speed and performance</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Logistics</p>
+                     <h4 class="feature__teaser-title">Solutions for delivering speed and performance</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+   </div>
+   <div class="mb3"></div>
+</div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="container-fluid iw_section" id="sectionk1a5c4uy">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4uz">
+  <div class="iw_columns col-lg-12" id="colk1a5c4v0">
+   <div class="iw_component" id="iw_comp1570073690265">
+    <style>#iw_comp1570073690265{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.intro-component').parent().wrapAll('<div class="section section-bottom" id="section-intro"></div>');
+	  
+	  
+	
+	  $('.video-component').parent().wrapAll('<div class="section section-both" id="section-video"></div>');
+	  
+	  
+	
+	  $('.space-component').parent().wrapAll('<div class="section section-both" id="section-space"></div>');
+	  
+	  
+	
+	  $('.advice-component').parent().wrapAll('<div class="section section-both" id="section-advice"></div>');
+	  
+	  
+	
+	  $('.solutions-component').parent().wrapAll('<div class="section section-both" id="section-solutions"></div>');
+	  
+	  
+	
+	  $('.customersuccessstories-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-customersuccessstories"></div>');
+	  
+	  
+	
+	  $('.pulsecheck-component').parent().wrapAll('<div class="section section-both" id="section-pulsecheck"></div>');
+	  
+	  
+	
+	  $('.recommendation-component').parent().wrapAll('<div class="section section-both" id="section-recommendation"></div>');
+	  
+	  
+	
+	  $('.cta-component').parent().wrapAll('<div class="section section-both" id="section-cta"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1a5c4v8">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4v9">
+  <div class="iw_columns col-lg-12" id="colk1a5c4va">
+   <div class="iw_component" id="iw_comp1570073690275">
+    <style>#iw_comp1570073690275{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1574170872936">
+    <!--ls:begin[component-1574170872936]--><style>#iw_comp1574170872936{}</style><div></div><!--ls:end[component-1574170872936]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script type="text/javascript">
+$("head").append('<link async rel="stylesheet" href="/iwov-resources/sg/ocbc/business/custom/sme-index/style.css" media="all" />');
+</script>
+<script>
+        var sme = {
+            tab: function(opt) {
+                var _tab = this;
+                _tab.target = '';
+                _tab.nav = '';
+                _tab.anchors = '';
+                _tab.current = '';
+                _tab.select = '';
+                _tab.init = function() {
+                    _tab.target = $(opt.target).closest('.com_sme-tab')[0];
+                    _tab.nav = opt.target;
+                    _tab.anchors = _tab.nav.querySelectorAll('a');
+                    var _firstSelected = '';
+                    for (var i = 0; i < _tab.anchors.length; i++) {
+                        var _anchor = _tab.anchors[i];
+                        var _href = _anchor.getAttribute('href');
+                        if (_href != '#') {
+                            var _content = document.querySelector(_href);
+                            if (_content != 'null') {
+                                $(_content).hide();
+                                if (i == 0) _firstSelected = _anchor;
+                                if ($(_anchor).parent().hasClass('active')) _firstSelected = _anchor;
+                                $(_anchor).click(function(e) {
+                                    if (_content != 'null') {
+                                        e.preventDefault();
+                                        _tab.update(this);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                    if (_firstSelected) _tab.update(_firstSelected);
+                    _tab.select = _tab.target.querySelector('.com_sme-tab-select');
+                    if (_tab.select) {
+                        $(_tab.select).on('change', function() {
+                            _tab.update('select');
+                        });
+                        _tab.update('select');
+                    }
+                    // console.log('tab', _tab);
+                    _tab.init = null;
+                }
+                _tab.update = function(source) {
+                    if (source == 'select') {
+                        _tab.update(_tab.anchors[_tab.select.selectedIndex]);
+                    } else {
+                        var _href = source.getAttribute('href');
+                        if (_href != '#') {
+                            var _content = document.querySelector(_href);
+                            if (_content != 'null') {
+                                $(source).parent().addClass('active');
+                                $(_content).show();
+                                if (_tab.current) {
+                                    $(_tab.current).parent().removeClass('active');
+                                    var _prevTarget = document.querySelector(_tab.current.getAttribute('href'));
+                                    if (_tab.current != source) {
+                                        if (_prevTarget) $(_prevTarget).hide();
+                                    }
+                                    // if have sub-tab
+                                    var _subTab = _content.querySelector('.com_sme-tab-nav');
+                                    if (_subTab) {
+                                        var _anchor = _subTab.querySelectorAll('a')[0];
+                                        if (!$(_anchor).parent().hasClass('active')) $(_anchor).click();
+                                    }
+                                }
+                                _tab.current = source;
+                            }
+                        }
+                    }
+                }
+                if (opt.target) _tab.init();
+            }
+        }
+        $('.com_sme-tab-nav').each(function() {
+            new sme.tab({
+                target: this
+            });
+        });
+    </script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

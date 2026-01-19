@@ -1,0 +1,1189 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Corporate Banking Solutions for Companies | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/corporates/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/corporates/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="corporate banking,corporate finance,large companies,corporate banking services,corporate banking solutions,international corporate banking,large corporations,investment banking,treasury banking,treasury services">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Corporate Banking Services tailored for large companies. Explore our corporate banking solutions from transaction banking, investment banking to treasury services.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[stylesheet]-->
+      <link rel="stylesheet" href="/iwov-resources/sg/ocbc/business/css/style-bb.css" type="text/css" data-ocde-desktop_or_tablet_or_phone="show">
+      <!--ls:end[stylesheet]--><!--ls:begin[stylesheet]-->
+      <link rel="stylesheet" href="/iwov-resources/sg/ocbc/business/css/table-in-table.css" type="text/css" data-ocde-desktop_or_tablet_or_phone="show">
+      <!--ls:end[stylesheet]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/corporates">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:business:corporates",
+            language: "en",
+            pageCategory: "pre-login corporates page",
+            bannerName: "",
+            channel: "corporates",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+    </script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1a5c4u3">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4u4">
+  <div class="iw_columns col-lg-12" id="colk1a5c4u5">
+   <div class="iw_component" id="iw_comp1570073690234">
+    <style>#iw_comp1570073690234{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/corporates/industry-expertise" class="" target="_self">Industry Expertise</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/corporates/investment/capital-markets" class="" target="_self">Investment Banking</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/corporates/treasury-services/hedging" class="" target="_self">Treasury Services</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/corporates/transaction-banking" class="" target="_self">Transaction Banking</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/international" class="" target="_self">International</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in </p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="/Premier">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <div class="dropdown__bb dropdown__second__bb d-lg-inline">
+                           <div class="dropdown__theme  dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location-option-filter" class="selectize selectize--navigation" id="header-businessBanking">
+                                 <option value="/business-banking/corporates">Corporates</option>
+                                 <option value="/business-banking/enterprises">Enterprises</option>
+                                 <option value="/business-banking/smes">SMEs</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support" class="" target="_self">Help and support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view"></div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<section id="main-wrapper">
+ <div class="container-fluid iw_section" id="sectionk1a5c4um">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4un">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uo">
+    <div class="iw_component" id="iw_comp1570073690253">
+     <!--ls:begin[component-1570073690253]--><style>#iw_comp1570073690253{}</style><!--Breadcrumb Component--><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/business-banking/index.page">Business Banking</a></li>
+         <li>Corporates</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1570073690253]-->
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="container-fluid iw_section" id="sectionk1a5c4uu">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4uv">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uw">
+    <div class="iw_placeholder" id="iw_placeholder1570073690261">
+     <div class="iw_component" id="iw_comp1570528893752">
+      <style>#iw_comp1570528893752{}</style><div class="masthead-component"></div><div class="module container bp-width-med3 animate">
+   <div class="common__category-description box-med bp-curve3 bg-ash2 text-center ">
+      <h1 class="no-margin thesans"><span>Strategic banking solutions specially tailored for large corporations</span></h1>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1690767073711">
+      <!--ls:begin[component-1690767073711]--><style>#iw_comp1690767073711{}</style><div class="whyocbc-component"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">WHY OCBC?</div>
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title"><h3><strong>Supporting corporations across a wide range of industries</strong></h3></div>
+                  <div class="article__content"><p>Our reputation has been built through relationships and results, serving customers in 19 countries and regions. We are proud to be consistently ranked among the World&rsquo;s Top 50 Safest Banks by Global Finance and recognised as One of the World&rsquo;s Best Banks (Singapore) by Forbes.</p>
+<p>Leverage our local expertise, global capabilities and seamless connectivity across ASEAN and Greater China to help your corporation thrive across borders.</p>
+<p>Position your business to ride the megatrends. Our deep expertise and regional coverage extends across growth industries such as technology, digital infrastructure, power, energy and real estate.</p></div>
+               </div>
+            </div>
+         </div>
+         <div class="article__thumbnail large reverse"><img src="/iwov-resources/sg/ocbc/business/img/corporates/kv-whyocbc.png" alt-text="Supporting corporations across a wide range of industries"></div>
+      </div>
+   </div>
+</div><!--ls:end[component-1690767073711]-->
+     </div>
+     <div class="iw_component" id="iw_comp1690767073715">
+      <!--ls:begin[component-1690767073715]--><style>#iw_comp1690767073715{}</style><div class="highlights-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3 animate">
+                <div class="subcategory subcategory--black">Highlights</div>
+            </div></div>
+</div><!--ls:end[component-1690767073715]-->
+     </div>
+     <div class="iw_component" id="iw_comp1690767073716">
+      <style>#iw_comp1690767073716{}</style><div class="highlights-component"></div><div class="module container bp-width-med3 animate">
+   <div class="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;feature__full-width-background-image box-med2 bp-banner&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+      <div class="bp-banner bp-ab d-none d-md-block" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-position: center bottom;&#x9;background-image: url(' /iwov-resources/sg/ocbc/business/img/corporates/kv-highlights-01.png ');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"></div>
+      <div class="bp-banner bp-ab d-block d-md-none" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-position: left 75% bottom;&#x9;background-image: url(' /iwov-resources/sg/ocbc/business/img/corporates/kv-highlights-01-m.png ');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"></div>
+      <div class="container bp-width-med4 no-padding">
+         <div class="row row-large">
+            <div class="col-sm-5">
+               <h2><strong>Partnering businesses towards a Net Zero ASEAN & Greater China</strong></h2>
+            </div>
+            <div class="col-auto-m col-sm-5">
+               <p>Whether your business is taking its first green steps or accelerating its net zero transition, we are here to support you. Do well. Do good. Do now.</p>
+               <div class="mt4 mb5"><a cta-id="Corporates-ListingPage-LearnMore-HighlightsPartneringBusinessesTowardsANetZeroASEANAndGreaterChinaSection" href="https://www.ocbc.com/group/sustainability/banking-on-net-zero" class="button button--primary button--red2  &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_blank"><span>Learn more</span></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1576827596537">
+      <style>#iw_comp1576827596537{}</style><div class="highlights-component"></div><div class="module container bp-width-med3 animate">
+   <div class="feature__two-col-background-image-2 row animate mb2 mob-mb2" anim-control="parent">
+      <div class="common__category-description-item col-md-6 mob-mb2">
+         <div class="feature__full-width-background-image box-med2 box-mob-btm bp-banner h-100 ">
+            <div class="bp-banner bp-ab d-none d-md-block" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-position: center top;&#x9;background-image: url(' /iwov-resources/sg/ocbc/business/img/corporates/kv-highlights-02.jpg ');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"></div>
+            <div class="bp-banner bp-ab d-block d-md-none" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-position: right center;&#x9;background-image: url(' /iwov-resources/sg/ocbc/business/img/corporates/kv-highlights-02-m.jpg ');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"></div>
+            <div class="com_lb-main text-md-center">
+               <h3 class="mb1"><strong>OCBC Sustainability Innovation Challenge</strong></h3>
+               <p>Together with TotalEnergies, we are seeking innovative solutions to tackle renewable energy challenges and drive a sustainable transition.</p>
+               <div class="mt2"><a cta-id="Corporates-SustainabilityInnovationChallenge-LearnMore-Button" href="/business-banking/sustainability-innovation-challenge" class="button button--secondary button--link  &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Learn more</span></a></div>
+            </div>
+         </div>
+      </div>
+      <div class="common__category-description-item col-md-6 mob-mb2">
+         <div class="feature__full-width-background-image box-med2 box-mob-btm bp-banner h-100 ">
+            <div class="bp-banner bp-ab d-none d-md-block" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-position: center center;&#x9;background-image: url(' /iwov-resources/sg/ocbc/business/img/corporates/kv-highlights-03.png ');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"></div>
+            <div class="bp-banner bp-ab d-block d-md-none" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-position: right center;&#x9;background-image: url(' /iwov-resources/sg/ocbc/business/img/corporates/kv-highlights-03-m.png ');&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"></div>
+            <div class="com_lb-main text-md-center">
+               <h3 class="mb1"><strong>OCBC collaborates with Frasers Property for the future of sustainability</strong></h3>
+               <p>Committed to building a sustainable future, our partnership with Frasers Property is dedicated to achieving a shared vision of carbon neutrality by 2050.</p>
+               <div class="mt2"><a cta-id="Corporates-OCBCFraserCollab-LearnMore-Button" href="/business-banking/articles/ocbc-and-frasers-property-collaborate-for-a-sustainable-future" class="button button--secondary button--link  &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Learn more</span></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1690767073891">
+      <style>#iw_comp1690767073891{}</style><div class="tailoredsolutions-component"></div><div class="module container bp-width-med3">
+   <div class="subcategory subcategory--black">Tailored solutions</div>
+   <div class="com_f_a_services">
+      <div class="com_f_a_s_listing">
+         <div class="row">
+            <div class="col-xl-12">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/business/img/corporates/icon-transactionbanking.png" alt="Transaction banking"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Transaction banking</span></strong></h5>
+                              <p><a href="/business-banking/corporates/transaction-banking" class="link link link-arrow-right" target="_self">Discover cash management tools, international trade services, supply-chain financing solutions, online banking and  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/business/img/corporates/icon-treasuryservices.png" alt="Treasury services"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Treasury services</span></strong></h5>
+                              <p><a href="/business-banking/corporates/treasury-services/hedging" class="link link link-arrow-right" target="_self">Take advantage of our timely research and market news to make your treasury and investment  <span class="text-nowrap">decisions<i class="far fa-chevron-right"></i></span></a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/business/img/corporates/icon-investmentbanking.png" alt="Investment banking"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Investment banking</span></strong></h5>
+                              <p><a href="/business-banking/corporates/investment/capital-markets" class="link link link-arrow-right" target="_self">Access a wide spectrum of financing solutions ranging from brokerage services to syndicated loans and advisory  <span class="text-nowrap">services<i class="far fa-chevron-right"></i></span></a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1690767073745">
+      <style>#iw_comp1690767073745{}</style><div class="innovation-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Innovation</div>
+   <div class="row articles__recommended animate" anim-control="parent">
+      <div class="col-12 col-lg-6 articles__recommended-box">
+         <div class="row-align-middle row">
+            <div class="col-xl-6 col-md-4 col-sm-6 banner articles__recommended--image">
+               <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/business/img/corporates/kv-entrypoint-digitalinnovation.png" alt=""></div>
+            </div>
+            <div class="col-xl-6 col-md-8 col-sm-6 d-flex flex-column justify-content-center">
+               <h3 class="articles__recommended--title"><strong>Digital innovation</strong></h3>
+               <div class="articles__recommended--description">
+                  <p>Embark on your digital transformation by tapping on solutions such as digital signing.</p>
+               </div>
+               <p><a class="link articles__recommended--link link link-arrow-right" href="/business-banking/corporates/digital-signatures.page" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+            </div>
+         </div>
+      </div>
+      <div class="col-12 col-lg-6 articles__recommended-box">
+         <div class="row-align-middle row">
+            <div class="col-xl-6 col-md-4 col-sm-6 banner articles__recommended--image">
+               <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/business/img/corporates/kv-entrypoint-iso20022.png" alt=""></div>
+            </div>
+            <div class="col-xl-6 col-md-8 col-sm-6 d-flex flex-column justify-content-center">
+               <h3 class="articles__recommended--title"><strong>ISO 20022 CBPR+</strong></h3>
+               <div class="articles__recommended--description">
+                  <p>We are making the move towards ISO 20022 CBPR+. Discover what this new standard means for corporates like you.</p>
+               </div>
+               <p><a class="link articles__recommended--link link link-arrow-right" href="/business-banking/digital-business-banking/iso20022.page" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1690767073755">
+      <style>#iw_comp1690767073755{}</style><div class="industryexpertise-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Industry expertise</div>
+   <div class="row feature__three-col-background-image same-height-parent">
+      <div class="col-md-4 mb2">
+         <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/corporates/kv-expertise-energy.png)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+            <div class="feature__teaser-content feature__teaser-content--placeholder">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Energy</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content active">
+                     <div class="feature__teaser-description">Finance your next project in the energy sector through our programmes.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Energy</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                     <div class="feature__teaser-description">Finance your next project in the energy sector through our programmes.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4 mb2">
+         <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/corporates/kv-expertise-power.png)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+            <div class="feature__teaser-content feature__teaser-content--placeholder">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Power</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content active">
+                     <div class="feature__teaser-description">Tap into our specialised financing solutions to empower your energy initiatives.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Power</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                     <div class="feature__teaser-description">Tap into our specialised financing solutions to empower your energy initiatives.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4 mb2">
+         <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/corporates/kv-expertise-realestate.png)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+            <div class="feature__teaser-content feature__teaser-content--placeholder">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Real Estate</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content active">
+                     <div class="feature__teaser-description">Harness the power of our smart financing tools for your next real estate project.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Real Estate</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                     <div class="feature__teaser-description">Harness the power of our smart financing tools for your next real estate project.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4 mb2">
+         <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/corporates/kv-expertise-technology.png)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+            <div class="feature__teaser-content feature__teaser-content--placeholder">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Technology, Media and Telecommunications</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content active">
+                     <div class="feature__teaser-description">Discover innovative financial solutions designed to support the needs of technology-led firms.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Technology, Media and Telecommunications</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                     <div class="feature__teaser-description">Discover innovative financial solutions designed to support the needs of technology-led firms.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4 mb2">
+         <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/corporates/kv-expertise-transport.png)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+            <div class="feature__teaser-content feature__teaser-content--placeholder">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Transport</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content active">
+                     <div class="feature__teaser-description">Learn how we can support your innovation journey in the logistics sector.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Transport</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                     <div class="feature__teaser-description">Learn how we can support your innovation journey in the logistics sector.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4 mb2">
+         <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/corporates/kv-expertise-agriculture.png)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+            <div class="feature__teaser-content feature__teaser-content--placeholder">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Agriculture and F&B</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content active">
+                     <div class="feature__teaser-description">From agritech to hospitality, discover the financial tools you need to grow your business.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+            <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+               <div class="">
+                  <p class="feature__teaser-category text--bold">Agriculture and F&B</p>
+                  <h4 class="feature__teaser-title"></h4>
+                  <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                     <div class="feature__teaser-description">From agritech to hospitality, discover the financial tools you need to grow your business.</div>
+                     <p><a href="#" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="mb3"></div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1690767073852">
+      <style>#iw_comp1690767073852{}</style><div class="insights-component"></div><div class="module container bp-width-med3">
+   <div class="parent__account">
+      <div class="subcategory subcategory--black">Insights</div>
+      <div class="feature__list feature__full-block d-flex ">
+         <div class="d-flex align-items-center flex-column flex-md-row w-100">
+            <div class="flex flex-column feature__list-row w-100">
+               <div class="feature__list--image"><img src="/iwov-resources/sg/ocbc/business/img/corporates/kv-insights.png"></div>
+               <div class="feature__list--blocks d-flex">
+                  <div class="feature__list--header d-flex flex-column">
+                     <div class="feature__list--header__content flex-fill justify-content-center  d-flex flex-column">
+                        <div class="feature__teaser feature__teaser--no-background w-100">
+                           <div class="feature__teaser-content">
+                              <p class="feature__teaser-category text--bold"></p>
+                              <h2 class="mb2">Explore more for your industry</h2>
+                              <div class="feature__teaser-expanded-content">
+                                 <p>Find the latest insights and perspectives to propel your business towards success.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="feature__list--image--mobile"><img src="/iwov-resources/sg/ocbc/business/img/corporates/kv-insights.png"></div>
+                  <div class="feature__list--content">
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/business-banking/corporates/treasury-services/research" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Treasury Research</p><h4>Get firsthand research and market news</h4>
+<p>Stay informed with cutting-edge analytical research and updates on economic events.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/business-banking/sustainability" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Sustainability for Businesses</p><h4>Opportunities within the green space</h4>
+<p>No matter the size of your business, adopting sustainable practices makes a real impact.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/business-banking/international" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">International Business Banking</p><h4>Expand your business internationally</h4>
+<p>Discover how to leverage our global network to help your business venture overseas.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1693925910207">
+      <style>#iw_comp1693925910207{}</style><!--One Block--><div class="lnadtnc-component"></div><div class="module container bp-width-med3">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-1">
+         <div class="subcategory subcategory--black">Important information</div>
+         <div class="d-p-g-text">
+            <p>Download the <a rel="noopener" href="/iwov-resources/sg/ocbc/business/pdf/corporate/electronic-view-access-services-tncs.pdf" target="_blank">Electronic View Access Terms and Conditions</a>.<br />Submit <a rel="noopener" href="/business-banking/webform-noncasa-ev/" target="_blank">Electronic View Access (Loans) Form</a>.</p>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="container-fluid iw_section" id="sectionk1a5c4uy">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4uz">
+  <div class="iw_columns col-lg-12" id="colk1a5c4v0">
+   <div class="iw_component" id="iw_comp1570073690265">
+    <style>#iw_comp1570073690265{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.whyocbc-component').parent().wrapAll('<div class="section section-both" id="section-whyocbc"></div>');
+	  
+	  
+	
+	  $('.highlights-component').parent().wrapAll('<div class="section section-both" id="section-highlights"></div>');
+	  
+	  
+	
+	  $('.tailoredsolutions-component').parent().wrapAll('<div class="section section-both" id="section-tailoredsolutions"></div>');
+	  
+	  
+	
+	  $('.innovation-component').parent().wrapAll('<div class="section section-both" id="section-innovation"></div>');
+	  
+	  
+	
+	  $('.lnadtnc-component').parent().wrapAll('<div class="section section-both" id="section-lnadtnc"></div>');
+	  
+	  
+	
+	  $('.industryexpertise-component').parent().wrapAll('<div class="section section-both d-none" id="section-industryexpertise"></div>');
+	  
+	  
+	
+	  $('.insights-component').parent().wrapAll('<div class="section section-top" id="section-insights"></div>');
+	  
+	  
+	
+	  $('.cta-component').parent().wrapAll('<div class="section section" id="section-cta"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1a5c4v8">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4v9">
+  <div class="iw_columns col-lg-12" id="colk1a5c4va">
+   <div class="iw_component" id="iw_comp1570073690275">
+    <style>#iw_comp1570073690275{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1574170872914">
+    <!--ls:begin[component-1574170872914]--><style>#iw_comp1574170872914{}</style><div></div><!--ls:end[component-1574170872914]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

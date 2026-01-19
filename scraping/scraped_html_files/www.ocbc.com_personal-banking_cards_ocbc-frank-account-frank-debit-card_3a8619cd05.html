@@ -1,0 +1,2211 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- (START) Adobe Analytics - Header -->
+<script src="//assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async></script>
+<!-- (END) Adobe Analytics - Header -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+<!-- End Google Tag Manager -->
+<script>
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+<script type="application/ld+json">
+  { 
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OCBC Bank Singapore",
+    "alternateName": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/",
+    "logo": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "2199" 
+    },
+    "sameAs": [
+      "https://www.facebook.com/OCBCBank/",
+      "https://twitter.com/ocbcbank",
+      "https://www.youtube.com/user/channelocbc",
+      "https://www.linkedin.com/company/ocbc-bank/"
+    ] 
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1205034763867173');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1"
+src="https://www.facebook.com/tr?id=1205034763867173&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code --><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>OCBC FRANK Account and FRANK Debit Card | OCBC Singapore</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/personal-banking/page/cards/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/personal-banking/cards/ocbc-frank-account-frank-debit-card/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/personal-banking/cards/ocbc-frank-account-frank-debit-card">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css?20200729' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/qualtrics.css?2020062501' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]-->
+<script type="text/javascript">
+                var _gaq = _gaq || [];
+                var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+                _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+                _gaq.push(['_setAccount', 'UA-31687854-1']);
+                // _gaq.push(['_setDomainName', 'ocbc.com']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_9QPdWtioy9UtOWp","https://zn9qpdwtioy9utowp-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_9QPdWtioy9UtOWp")).start()}catch(i){}})();
+</script><div id='ZN_9QPdWtioy9UtOWp'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script type="text/javascript">
+var ocbcData = {
+      page: {
+        pageName: "SG:OCBC:Personal:Cards:OCBC FRANK Account FRANk Debit Card",
+        language: "en",
+        pageCategory: "pre-login personal banking pages",
+        bannerName: "Save or spend - you are always rewarded",
+        channel: "personal banking",
+        country: "sg",
+        lob: "ocbc personal banking",
+        platform: "web"
+      },
+      user: {
+        CIF: "", 
+        loginStatus: "pre-login"
+      },
+      event: {
+        pageView: "true"
+      }
+    };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1566904104289">
+    <style>#iw_comp1566904104289{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com" target="_self"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Singapore"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#accounts" class="header__navi">Accounts</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#cards" class="header__navi">Cards</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#loans" class="header__navi">Loans</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#insurance" class="header__navi">Insurance</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investments" class="header__navi">Investments</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#advisory" class="header__navi">Advisory</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#more" class="header__navi">More</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                        <div class="page__opt2">
+                           <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/personal-banking/home" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_blank">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/premier-private-client/index.page" data-target="_self">Premier Private Client</option>
+                                 <option value="https://www.ocbc.com/business-banking/index.html" data-target="_blank">Business Banking</option>
+                                 <option value="https://www.ocbc.com/group/about-us/group-business" data-target="_blank">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page" data-target="_blank">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_blank">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a cta-id="PersonalBanking-navbar-premierbanking" href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-digitalbanking" href="/personal-banking/digital-banking" class="" target="_self">Digital Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-security-overview" href="/personal-banking/security/overview" class="" target="_self">Security</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-locations-overview" href="/personal-banking/locations" class="" target="_self">Branches & ATMs</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-gethelp" href="/personal-banking/help-and-support" class="" target="_self">Get help</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                  <div class="page__opt2">
+                     <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                  </div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleoff: index-->
+   <div class="header__sub" data-nosnippet="">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="accounts" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Accounts</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Day-to-day Banking</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-360Account" href="/personal-banking/deposits/360-savings-account" class="link link link-arrow-right" target="_self">360  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Savings</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-BonusPlusSavingsAccount" href="/personal-banking/deposits/bonus-plus-savings-account" class="link link link-arrow-right" target="_self">Bonus+ Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Foreign Currency</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-GlobalSavingsAccount" href="/personal-banking/deposits/multi-currency-global-savings-account" class="link link link-arrow-right" target="_self">Global Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Children's Account</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-OCBCMyOwnAccount" href="/personal-banking/deposits/myown-account" class="link link link-arrow-right" target="_self">OCBC MyOwn  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-SeeAllAccounts" href="/personal-banking/deposits" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all accounts</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-cny_promo_2026.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Usher in good fortune when you grow your savings with us!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>This Lunar New Year, receive 1.80% a year or a Disney&rsquo;s Winnie the Pooh plushie when you top up an eligible OCBC savings account.</p>
+<p>T&amp;Cs apply. Insured up to S$100k by SDIC.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/deposits/statement-passbook-savings-account" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="cards" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Cards</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-infinity.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Unlimited cashback on your spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-INFINITYCC" href="https://www.ocbc.com/personal-banking/cards/infinity-unlimited-cashback-card" class="link link link-arrow-right" target="_self">OCBC INFINITY Cashback  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-365visacc.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For everyday spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-365CC" href="/personal-banking/cards/365-cashback-credit-card" class="link link link-arrow-right" target="_self">OCBC 365 Credit  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/rewards-card/rewardscard-noshadow.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Get rewarded for shopping</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-OCBCRewardsCard" href="/personal-banking/cards/rewards-card" class="link link link-arrow-right" target="_self">OCBC Rewards  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-90n.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Daily spend for future travels</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-90NCard" href="/personal-banking/cards/90-degrees-travel-credit-card.page" class="link link link-arrow-right" target="_self">OCBC 90&deg;N  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Cards-megamenu-SeeAllCards" href="/personal-banking/cards" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all cards</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/kv-navbar-poohluggage-r1.png" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get Disney’s Winnie the Pooh gifts and more this New Year!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p class="mb-3">Enjoy exclusive Disney rewards when you bank with us! T&amp;Cs apply.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/campaign/festive-deals.page" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="loans" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Loans</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Personal</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-EasiCredit" href="/personal-banking/loans/easicredit-flexible-repayment-cash-loan" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">EasiCredit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Home</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-HomeLoanNewPurchase" href="/personal-banking/loans/home-loans" class="link link link-arrow-right" target="_self">Home  <span class="text-nowrap">Loans<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-CarLoan" href="/personal-banking/loans/car-loans" class="link link link-arrow-right" target="_self">Car  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Student</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-FRANKTuitionFeeLoan" href="/personal-banking/loans/student-loans/tuition-fee-loan" class="link link link-arrow-right" target="_blank">Tuition Fee  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Loans-megamenu-SeeAllLoans" href="/personal-banking/loans" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all loans</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="insurance" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Insurance</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment-linked</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-InvestmentLinkedInsurancePlan2" href="/personal-banking/insurance/investment-linked-insurance-plan-2" class="link link link-arrow-right" target="_self">Investment-linked Insurance Plan  <span class="text-nowrap">2<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Accident &amp; Health</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-MyGreatPAPlan" href="/personal-banking/insurance/mygreatpaplan" class="link link link-arrow-right" target="_self">My GREAT PA  <span class="text-nowrap">Plan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Protection</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-GREATTermGuard" href="/personal-banking/insurance/great-term-guard" class="link link link-arrow-right" target="_self">GREAT Term  <span class="text-nowrap">Guard<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Travel, Home &amp; Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-Explorer" href="/personal-banking/insurance/great-travelcare-insurance" class="link link link-arrow-right" target="_self">GREAT  <span class="text-nowrap">TravelCare<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-SeeAllInsurances" href="/personal-banking/insurance" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all insurances</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-insurance-aug25.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag"><span class="co-black">Enjoy discounts of up to 50% when you apply for eligible insurance plans</span></div>
+                                       <div class="header__sub-menu-link">
+                                          <p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-CNYPromo2023" href="/personal-banking/insurance#section-promo" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investments" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investments</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Top fund ideas</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-UnitTrusts" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts" class="link link link-arrow-right" target="_self">Unit  <span class="text-nowrap">Trusts<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Trade across 15 global exchanges</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OnlineEquitiesAccount" href="/personal-banking/investments/online-equities-account" class="link link link-arrow-right" target="_self">Online Equities  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">38 portfolios from just 100 USD</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OCBCRoboInvest" href="/personal-banking/investments/roboinvest" class="link link link-arrow-right" target="_self">OCBC  <span class="text-nowrap">RoboInvest<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Diversify with gold & silver</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-PreciousMetalAccount" href="/personal-banking/investments/precious-metals-account" class="link link link-arrow-right" target="_self">Precious Metals  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SeeAllInvestments" href="/personal-banking/investments" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all investments</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Foreign Currency Exchange</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Conveniently and securely exchange AUD, CAD, CHF<strong><sup style="color: #e30613 !important;">NEW</sup></strong>, CNH, EUR, GBP, HKD, JPY, NZD and USD, 24/7 via OCBC Digital, for your overseas transfer, travel payments, online spends, investments and more.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-ForeignCurrencyExchange" href="/personal-banking/investments/forex-trading" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Supplementary Retirement Scheme (SRS)</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Reduce your taxable income by the same amount contributed to your SRS Account, with a maximum yearly contribution of S$15,300 for Singaporeans and Singapore PRs, and S$35,700 for foreigners.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SupplementaryRetirementScheme" href="/personal-banking/investments/supplementary-retirement-scheme-account" class="link link link-arrow-right" target="_blank">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="advisory" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Advisory</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>The OCBC SeniorCare Programme empowers you through four key pillars: Health, Wealth, Lifestyle and Literacy.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-SilverYears" href="/personal-banking/seniorcare-programme" class="link link link-arrow-right" target="_self">SeniorCare  <span class="text-nowrap">Programme<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Achieve your goals with proper financial planning.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-LifeGoals" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Life  <span class="text-nowrap">Goals<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get data and insights into the financial wellness of Singaporeans.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-FinancialWellnessIndex2023" href="/group/financial-wellness-index/understand-the-index.html" class="link link link-arrow-right" target="_blank">Financial Wellness Index  <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get rewarded for what matters: your salary, your lifestyle, and your smart savings habits.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-BeyondYour9To5" href="/personal-banking/campaign/beyondyour9to5" class="link link link-arrow-right" target="_blank">Beyond your 9-5 Starter  <span class="text-nowrap">Kit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_startplanning.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Start planning and get ahead with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>From financial planning tools, investment options and insurance, our comprehensive array of solutions have been built to get you ahead in your every goal and ambition.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-StartPlanning" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Start planning  <span class="text-nowrap">today<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="more" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">More</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Fancy shopping at a bank branch or even enjoying a sushi meal there? At OCBC Wisma Atria, you can do all these and more &ndash; visit us to experience it firsthand!</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-More-megamenu-OneAdvisor" href="/personal-banking/ocbc-wisma" class="link link link-arrow-right" target="_blank">Bank, dine and shop at the new OCBC Wisma  <span class="text-nowrap">Atria<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_travelready.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get travel-ready with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>With our suite of travel products and services, spend less effort managing your travel and more time enjoying life's journeys.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-TravelReady" href="/personal-banking/campaign/travelready" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleon: index-->
+   <div class="navigation__product-anchor container bp-width-med3 bp-sticky-content navigation__product-anchor--hidden">
+      <div class="he-bo-title"><span class="capt"></span><div class="arrow"><i class="far fa-chevron-down"></i></div>
+      </div>
+      <div class="he-bo-main">
+         <div class="he-bo-row">
+            <div class="hb-co-list">
+               <div class="long">
+                  <div class="hb-co-menu">
+                     <ul nav-scroller="">
+                        <li class="active hidden" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;1"><a href="#section-home" title="Home" target="_self">Home</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;2"><a href="#section-importantnotice" title="Important notice" target="_self">Important notice</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;3"><a href="#section-howitworks" title="How it works" target="_self">How it works</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;4"><a href="#section-merchant" title="Qualifying merchant categories" target="_self">Qualifying merchant categories</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;5"><a href="#section-calculator" title="Calculator" target="_self">Calculator</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;6"><a href="#section-carddesigns" title="Pick a card design you will love" target="_self">Pick a card design you will love</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;7"><a href="#section-morefeatures" title="More features you will love" target="_self">More features you will love</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;8"><a href="#section-beforeapply" title="Before you apply" target="_self">Before you apply</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;9"><a href="#section-cta" title="Get started" target="_self">Get started</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="short">
+                  <div class="action-button"><a class="button button--primary button--red2 undefined d-block" href="#" target="" onclick="document.getElementById('cardsApplyNowButtonSubmitData').submit(); return false;" cta-id="Cards-OcbcAccountFrankDebitCard-CTA-ApplyNow"><span>Apply now</span></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1758625411588">
+      <!--ls:begin[component-1758625411588]--><style>#iw_comp1758625411588{}</style><!--Breadcrumb Component--><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/personal-banking/">Personal Banking</a></li>
+         <li><a href="/personal-banking/cards.page">Cards</a></li>
+         <li>OCBC FRANK Account and OCBC FRANK Debit Card</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1758625411588]-->
+     </div>
+     <div class="iw_component" id="iw_comp1758625411589">
+      <style>#iw_comp1758625411589{}</style><div class="masthead-component"></div><div class="module d-md-flex flex-column parent__masthead parent__masthead--has-background parent__masthead--multi-columns parent__masthead--cta parent__masthead--has-background-mobile theme theme--blue parent__masthead--light ">
+   <div class="parent__masthead-background" style="background-color: #E1E8EE;background-image: url(/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/masthead-d.jpg);"></div>
+   <div class="container bp-width-med3 d-md-flex flex-fill flex-column">
+      <div class="parent__masthead-container d-md-flex flex-column justify-content-between">
+         <div>
+            <div class="subcategory subcategory--no-border  subcategory--black ">
+               <h1>OCBC FRANK ACCOUNT AND OCBC FRANK DEBIT CARD</h1>
+            </div>
+            <h2 class="light">Save or spend - you are always rewarded</h2>
+         </div>
+         <div class="d-md-none parent__masthead-background parent__masthead-background--mobile" style="background-image: url(/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/masthead-m.jpg);;background-position: 50% -35px;"></div>
+         <div class="card white-bg card--no-border ">
+            <div class="row row-large">
+               <div class="w-100">
+                  <div class="col-12 com__tab-content">
+                     <div class="com__tab-nav mb3 fz-20 d-md-none">
+                        <ul class="row">
+                           <li class="col-6 d-flex align-items-center justify-content-center selected"><a href="#tab1">Why you will love this</a></li>
+                           <li class="col-6 d-flex align-items-center justify-content-center"><a href="#tab2">Who can apply</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="com_slider row w-100" item="2" apply-for="mobile" smart-speed="350" margin="5" mouse-drag="false" touch-drag="false">
+                  <div class="col-md-6 border-right">
+                     <div class="mb-3  d-none d-md-block"><b class="fz-16">Why you will love this</b></div>
+                     <div class="com__tab-set mobile-only" id="#tab1">
+                        <p class="d-flex justify-content-start"><i class="fa fa-check"></i><span>Up to 1.60% a year in interest or 1.30% in cashback, depending on how much you save and spend each month</span></p>
+                        <p class="d-flex justify-content-start"><i class="fa fa-check"></i><span>No initial deposit or fall-below fee</span></p>
+                        <p class="d-flex justify-content-start"><i class="fa fa-check"></i><span>Variety of card designs to choose from</span></p>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="mb-3  d-none d-md-block"><b class="fz-16">Who can apply</b></div>
+                     <div class="com__tab-set mobile-only" id="#tab2">
+                        <p class="d-flex justify-content-start"><i class="fa fa-circle"></i><span>Anyone above 16 years old</span></p>
+                        <p class="d-flex justify-content-start"><i class="fa fa-circle"></i><span>Singaporean, Singapore PR or foreigner with a valid pass</span></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="pt-4 default-device-content"><a cta-id="Cards-OcbcAccountFrankDebitCard-CTA-ApplyNow" onclick="document.getElementById('cardsApplyNowButtonSubmitData').submit(); return false;" href="#" class="button button--primary button--red2 d-sm-inline-block d-block &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Apply now</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1761136194639">
+      <style>#iw_comp1761136194639{}</style><div class="d-none-soft">
+   <div id="masthead-blurb"><div class="parent__masthead-promotion-wrapper">
+<div class="theme theme--grey">
+<div class="promotion__container promotion__container-notification promotion__container-light fadeInUp animated animation"><i class="fal fa-times btn-close">&nbsp;</i>
+<div class="d-flex"><span><img src="/iwov-resources/sg/ocbc/personal/img/live/icon_giftbox-grey.png" alt=""></span>
+<p class="flex-fill caption"><strong class="promotion__container-title">Get your hands on new Disney and PIXAR card designs when you apply now!&nbsp;</strong><u><a class="promo--underline" href="#section-carddesigns">Find out more</a></u></p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1758625411599">
+      <style>#iw_comp1758625411599{}</style><div class="intro-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-custom-8">
+         <div class="theme theme--grey">
+            <h2 class="bold text-gradient common__intro-paragraph pt-1 pb-1 ">Grow your money your way with the OCBC FRANK Account and OCBC FRANK Debit Card.</h2>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1758625413550">
+      <style>#iw_comp1758625413550{}</style><!--One Block--><div class="notice-component"></div><div class="module container bp-width-med3">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-3">
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-2 col-custom-width dpgt3-first">
+                  <div>
+                     <div class="subcategory subcategory--black">Important notice</div>
+                  </div>
+               </div>
+               <div class="col-md-3 dpgt3-second">
+                  <div class="dpgt-item">
+                     <p class="dpg-smaller"><strong>For existing OCBC FRANK Account and OCBC FRANK Debit Card customers</strong></p>
+                  </div>
+               </div>
+               <div class="col-md-7 dpgt3-third">
+                  <div class="dpgt-item">
+                     <p><p>From 1 October 2025, when you charge at least S$100 to an OCBC FRANK Debit Card (linked to an OCBC FRANK Account) each month, you will earn either extra interest of 1.00% a year OR extra cashback of 1.00%, whichever is higher. This is on top of the base interest of 0.60% a year on your account balance and base cashback of 0.30% on your debit card spending. For details, refer to our <a rel="noopener" href="/iwov-resources/sg/ocbc/personal/pdf/cards/faqs-for-frank-account-and-frank-dc.pdf" target="_blank">FAQ</a>.</p></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1758625413551">
+      <!--ls:begin[component-1758625413551]--><style>#iw_comp1758625413551{}</style><div class="howitworks-component"></div><div class="" id="">
+   <div><div anim-control="parent" class="module container bp-width-med3 animate how-it-works-section">
+   <div class="subcategory subcategory--black">HOW IT WORKS</div>
+   <div class="row pl1">
+      <div class="col-md-8 bg-darkerblue d-flex border-r-top-left-right">
+         <div class="col-6 pb3 right-divider">
+             <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt3"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/accounts/360/icon-save-grey.png"></div>
+            <h4 class="text-white fw-700 pt28 text-center pl-3 pr-3">Average daily balance in account</h4>
+         </div>
+         <div class="col-6 pb3">
+            <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt3"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/hand-card-icon.png"></div>
+            <h4 class="text-white fw-700 pt28 text-center pl-3 pr-3">Debit card spending</h4>
+         </div>
+      </div>
+      <div class="col-md-8 bg-darkgrey d-flex">
+         <div class="col-6 pb3 right-divider pt2">
+            <h4 class="fw-700 pt32 text-center pl-3 pr-3 text-ash-100 mb-0">0.60% <span class="fw-600 pt18 text-ash-60 v-align-mid desktop-only">a year</span></h4>
+            <h4 class="fw-600 pt18 text-ash-60 text-center no-marbott-mobile mobile-only">a year</h4>
+            <h4 class="fw-700 text-ash-60 pt18 text-center pl-3 pr-3">base interest</h4>
+         </div>
+         <div class="col-6 pb3 pt2">
+             <h4 class="fw-700 pt32 text-center pl-3 pr-3 text-ash-100 mb-0">0.30%</h4>
+            <h4 class="fw-700 text-ash-60 pt18 text-center pl-3 pr-3">base cashback</h4>
+         </div>
+      </div>
+      <div class="col-md-8 bg-darkblue pt-4 pb-4">
+         <p class="pt18 text-center text-white">Unlock either extra interest or extra cashback, whichever is higher</p>
+      </div>
+       <div class="col-md-8 bg-darkgrey pt-4 pb-4">
+         <h4 class="fw-700 pt32 text-center pl-3 pr-3 text-ash-100 mb-0">+1.00% <a href="#popup-earn-extra" class="link-simple" data-fancybox=""><span><i class="fas fa-info-circle pt18 v-align-mid ml-0"></i></span></a></h4>
+         <h4 class="text-center"><span class="fw-400 pt18 text-ash-60"><em>when you charge at least S$100 to the OCBC FRANK Debit Card each month</em></span></h4>
+      </div>
+      <div class="col-md-8 pt-3 pb-5 pl-0">
+         <div class="com__al-ca-col"><a class="border-0 scroll-auto" style="scroll-behavior: auto;" href="#calculator-frank"><span class="link link link-arrow-right pt16 ">See if you will get extra interest <span class="text-nowrap">or cashback<i class="far fa-chevron-right"></i></span></span></a></div>
+         <p class="pt14 mb-0 mt-4">
+            This means:
+            <ul class="list-bullet ml-5 pt14">
+               <li class="pb-0">If you qualify for <strong>bonus interest</strong>: You will earn <strong>interest</strong> of 1.60% a year on the first S$10,000 in your OCBC FRANK Account*, plus cashback of 0.30% on transactions made using your OCBC FRANK Debit Card^.</li>
+               <li class="pb-0">If you qualify for <strong>bonus cashback</strong>: You will earn <strong>cashback</strong> of 1.30% on transactions made using your OCBC FRANK Debit Card^, plus interest of 0.60% a year on the first S$10,000 in your OCBC FRANK Account*.</li>
+               <li class="pb-0">*Interest rates shown apply to the first S$10,000 in the account. Anything above that earns 0.05% a year.</li>
+               <li class="pb-0">^Cashback is only given for transactions made at the qualifying merchants. For details, refer to the <a href="/iwov-resources/sg/ocbc/personal/pdf/cards/tncs-governing-ocbc-frank-dc.pdf" target="_blank">Terms and Conditions</a>.</li>
+            </ul>
+         </p>
+      </div>
+   </div>
+   <!-- POPUP -->
+   <div style="display: none;">
+      <div id="popup-earn-extra" class="popup-content popup-width-2">
+         <div class="row pl1">
+            <h4 class="pt24 fw-700 pb-3">
+               Take for example…
+            </h4>
+            <div class="row pl-3">
+               <div class="col-11 border-grey-curved d-flex border-r-top-left-right">
+         <div class="col-6 pb3 right-divider-popup">
+             <div class="bp-img text-center mb2 mr-sm-0 pt3"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/accounts/360/icon-save-grey.png"></div>
+            <h4 class="fw-700 pt20 text-center pl-3 pr-3 mb-0 mr-0">Average daily balance in account</h4>
+            <p class="text-center pt16">S$2,000</p>
+         </div>
+         <div class="col-6 pb3">
+            <div class="bp-img text-center mb2 mr-sm-0 pt3"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/hand-card-icon.png"></div>
+            <h4 class="fw-700 pt20 text-center pl-3 pr-3 mb-0 mr-0">Debit card spending</h4>
+            <p class="text-center pt16 mb-0">S$150</p>
+            <p class="pt12 text-center pl-3 pr-3">at qualifying merchants</h4>
+         </div>
+      </div>
+      <div class="col-11 bg-darkgrey pt-3 pb-3">
+         <p class="text-center pl-3 pr-3 pt16">We will calculate how much your bonus interest and cashback would be</p>
+      </div>
+      <div class="col-11 bg-darker-grey pt-4 pb-4 border-r-bot-left-right">
+         <div class="row row-0 mb-0 text-center pt1 pb1 mt-divider vert-center mb2">
+            <div class="col-4 col-md-5 paddtop-inherit ml12 bordered pt2 pb1" style="margin-right: 12px;">
+               <h3 class="pt18 fw-600 mb-0">S$1.69 in interest</h3>
+               <p class="pt16 mb-0">1.00% a year on S$2,000</p>
+               <p class="fz-10 fw-700 top-label">Higher!</p>
+            </div>
+            <div class="col-2 col-md-2 align-content-c"><img src="/iwov-resources/sg/ocbc/personal/img/arr-right.png" alt=""></div>
+            <div class="col-4 col-md-4 paddtop-inherit align-content-c">
+               <h3 class="pt18 fw-600 mb-0">S$1.50 in cashback</h3>
+               <p class="pt16">1.00% of S$150</p>
+            </div>
+         </div>
+      </div>
+      <div class="col-11 pt-3 pb-3 border-grey-l-r">
+         <p class="text-center pl-3 pr-3 pt14">Since the bonus interest is higher than the bonus cashback, we will give you 1.00% in bonus interest.</p>
+      </div>
+      <div class="col-11 bg-darkgrey pt-3 pb-3">
+         <p class="text-center pl-3 pr-3 pt18 fw-700">Your total earnings: S$3.15</p>
+      </div>
+      <div class="col-11 bg-darker-grey border-r-bot-left-right">
+         <div class="row row-0 mb-0 text-center pt2 pb1 mt-divider vert-center mb2">
+            <div class="col-5 col-md-5 paddtop-inherit">
+               <h3 class="pt18 fw-600 mb-0">S$2.70 in interest</h3>
+               <p class="pt16 mb-0">1.60% a year on S$2,000</p>
+            </div>
+            <div class="col-2 col-md-2 align-content-c"><img width="20" src="/iwov-resources/sg/ocbc/personal/img/plus-icon.png" alt=""></div>
+            <div class="col-5 col-md-4 paddtop-inherit align-content-c">
+               <h3 class="pt18 fw-600 mb-0">S$0.45 in cashback</h3>
+               <p class="pt16">0.30% of S$150</p>
+            </div>
+         </div>
+      </div>
+      <div class="col-11 pt-3 pb-5 pl-0">
+         <p class="pt14"><em>For illustration only. The amounts above are calculated on a 31-day basis.</em></p>
+      </div>
+            </div>
+      
+         </div>
+      </div>
+   </div>
+   <!-- POPUP -->
+</div></div>
+</div><!--ls:end[component-1758625413551]-->
+     </div>
+     <div class="iw_component" id="iw_comp1760444190775">
+      <style>#iw_comp1760444190775{}</style><div class="merchant-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Qualifying merchant categories</div>
+   <div class="row">
+      <div class="col-custom-8 col-custom-enforced subtitle subtitle-heading "><p>Get up to 1.3% cashback for transactions made using your OCBC FRANK Debit Card at the qualifying merchants. For the full list of qualifying merchants, refer to the <a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/cards/tncs-governing-ocbc-frank-dc.pdf" target="_blank" rel="noopener">Terms and Conditions</a>.</p></div>
+   </div>
+   <div class="list__four-col-with-icons list__col bp-par-height2 list__col-sticky-available">
+      <div class="row list__col-content animate" anim-control="parent">
+         <div class="col-custom-10">
+            <div class="row">
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-fastfood.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center d-md-block d-none"><b>Food and beverages merchants</b></h4><h4 class="text-left d-md-none d-block"><b>Food and beverages merchants</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-ecommerce.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center"><b>Online retailers</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-basket.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center"><b>Convenience stores</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-transport.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center"><b>Transport merchants</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-mask.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center"><b>Pharmacies</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-computer.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center"><b>Streaming services</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-trophy.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center"><b>Recreation</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="bp-img text-center mb2 mr-3 mr-sm-0 pt-sm-0"><img width="80" src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/icon-telco.png" alt=""></div><span>
+                           <h4><strong><h4 class="text-center"><b>Telcos</b></h4></strong></h4></span></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1758625413552">
+      <!--ls:begin[component-1758625413552]--><style>#iw_comp1758625413552{}</style><div class="calculator-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3 pt5">
+    <div class="subcategory subcategory--black">CALCULATOR</div>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="row">
+                <div class=" col-custom-8 col-custom-enforced subtitle ">
+                    <h4 class="mb-0">Get rewarded based on how much you save and spend each month – it is that simple!</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="calculator-frank" class="360__account-calculator custom__calculator custom__calculator-col fz-14 frank-debit-calculator">
+        <div class="row">
+            <div class="col-md-12 col-xl-10">
+                <div class="calculator-wrapper row group-height">
+                    <div class="mb3 col-lg-4">
+                        <div class="single-col d-gh1 center bg-white">
+                            <img src="/iwov-resources/sg/ocbc/personal/img/live/accounts/360/icon-wealth-grey.png" width="80px">
+                            <div class="form-group">
+                                <label class="w-100 mb-3">
+                                    <div class="material-form-control input-number has-unit mt5">
+                                        <input tabindex="1" name="current-balance" class="form-control no-control" type="tel" placeholder="Enter amount" value="2000" />
+                                        <input tabindex="-1" name="current-balance-display" class="form-control value" type="text" placeholder="Enter amount" readonly="readonly" value="2,000" />
+                                        <span class="label">Enter your monthly account balance</span>
+                                        <span class="unit">S$</span>
+                                    </div>
+                                    <div class="material-form-control input-number has-unit mt5">
+                                        <input tabindex="1" name="monthly-spending" class="form-control no-control" type="tel" placeholder="Enter amount" value="150" />
+                                        <input tabindex="-1" name="monthly-spending-display" class="form-control value" type="text" placeholder="Enter amount" readonly="readonly" value="150" />
+                                        <span class="label">Enter your monthly spending</span>
+                                        <span class="unit">S$</span>
+                                    </div>
+                                </label>
+                            </div>
+                           <div class="col-custom-6 col-custom-enforced text-center mt7 pl-0 pr-0">
+                              <p><a id="calc-btn" class="button button--secondary button--link pt18" target="_self">See how you will be rewarded</a></p>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="mb3 col-lg-3">
+                        <div class="single-col d-gh1 bg-darkblue center pt3 pb3 padd-m-top-bot">
+                            <div class="top mb3 mt3">
+                                <img src="/iwov-resources/sg/ocbc/personal/img/live/accounts/360/icon-totalinterest-grey.png" width="80px">
+                                <h4 class="mt3 text-white">
+                                    <strong>Your earnings for the month*</strong>
+                                </h4>
+                                <h3 class="text-white">
+                                    <strong>S$<span class="total-monthly-text">3.15</span></strong>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb3 col-lg-5">
+                        <div class="single-col d-gh1 bg-grey-custom center pt3 pb3">
+                            <div class="mb3">
+                                <h4 class="pt18">
+                                    <strong>The breakdown</strong>
+                                </h4>
+                            </div>
+                            <div class="mb3">
+                              <div class="d-flex flex-space-between">
+                                 <h4 class="pt18 text-left">
+                                    <span class="fw600">Base interest (0.60% a year)</span><br />
+                                    <span class="pt16">on your account balance</span>
+                                </h4>
+                                <h4 class="pt20 fw600">S$<span class="base-interest">1.01</span></h4>
+                              </div>
+                            </div>
+                            <div class="mb3">
+                              <div class="d-flex flex-space-between">
+                                 <h4 class="pt18 text-left">
+                                    <span class="fw600">Base cashback (0.30%)</span><br />
+                                    <span class="pt16">for your qualifying spending*</span>
+                                </h4>
+                                <h4 class="pt20 fw600">S$<span class="base-cashback">0.45</span></h4>
+                              </div>
+                            </div>
+                            <div class="mb3">
+                              <div class="d-flex flex-space-between">
+                                 <h4 class="pt18 text-left">
+                                    <span class="fw600">Bonus interest (1.00%)</span><br />
+                                    <span class="pt16">on your account balance</span>
+                                </h4>
+                                <h4 class="pt20 fw600">S$<span class="bonus-interest">1.69</span></h4>
+                              </div>
+                            </div>
+                            <div class="mb3">
+                              <div class="d-flex flex-space-between">
+                                 <h4 class="pt18 text-left pr50">
+                                    <span class="fw600">Bonus cashback (1.00%)</span><br />
+                                    <span class="pt16 bonus-cb-desc">for your qualifying spending*</span>
+                                </h4>
+                                <h4 class="pt20 fw600">S$<span class="bonus-cashback">1.50</span></h4>
+                              </div>
+                            </div>
+                           <div class="row row-0 d-none mb-0 text-center bg-darker-grey pt1 pb1 border-rad-top">
+                              <p class="mb0 fz-16 fw-400 label-header">We will give you the higher amount</p>
+                           </div>
+                           <!-- <div class="row row-0 d-block mb-0 text-center bg-darker-grey pt1 pb1 border-rad-top">
+                              <p class="mb0 fz-16 fw-400 label-header">We will give you the higher amount</p>
+                           </div> -->
+                           <div class="row row-0 mb-0 text-center bg-white pt3 pb1 mt-divider vert-center mb2">
+                              <div class="col-4 col-md-5 paddtop-inherit ml12 bordered pt2 pb1">
+                                 <h3 class=" fz-14">S$<span class="bonus-higher-ratio">1.69</span><br /> <span class="higher-ratio">bonus interest</span></h3>
+                                 <p class="fz-12 mb-0 higher-ratio-desc">1.00% a year on account balance</p>
+                              </div>
+                              <div class="col-3 col-md-2 align-content-c arr-comparison"><img src="/iwov-resources/sg/ocbc/personal/img/arr-right.png" alt=""></div>
+                              <div class="col-4 col-md-4 paddtop-inherit align-content-c">
+                                 <h3 class=" fz-14 fw-600">S$<span class="bonus-lower-ratio">1.50</span><br /> <span class="lower-ratio">bonus cashback</span></h3>
+                                 <p class="fz-12 lower-ratio-desc">1.00% of debit card spending</p>
+                              </div>
+                           </div>
+                           <hr class="divider mt2 mb3">
+                           <p class="fw-400 fz-14 text-left"><em>*Cashback is only given for transactions made at qualifying merchants. For details, refer to the <a href="/iwov-resources/sg/ocbc/personal/pdf/cards/tncs-governing-ocbc-frank-bonus-reward-programme.pdf" target="_blank">Terms and Conditions</a>.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="mt3 caption co-grey9">
+      *This amount is calculated on a 31-day basis and is for illustration only.<br />
+        <br />We have provided this calculator for your convenience only. By using it, you agree to rely on any results at your own risk. OCBC will not under any circumstances accept responsibility or liability for any losses that may arise from a decision that you may make as a result of using the calculator.
+    </p>
+</div></div>
+</div><!--ls:end[component-1758625413552]-->
+     </div>
+     <div class="iw_component" id="iw_comp1758625411604">
+      <!--ls:begin[component-1758625411604]--><style>#iw_comp1758625411604{}</style><div class="carddesign-component"></div><div class="" id="">
+   <div><!-- START Card Designs -->
+<div class="container bp-width-med3">
+      <div class="row">
+      <div class="col-lg-12 animate">
+         <div class="subcategory subcategory--black text-center">PICK A CARD DESIGN YOU WILL LOVE</div>
+         <div class="row ">
+            <div class="col-md-12">
+            <div class="row justify-content-center">
+               <div class="col-custom-7 col-custom-enforced subtitle text-center">
+                  <h4 class="mb-0">
+                  <p>Personalised your OCBC FRANK Debit Card with one of our stylish designs.</p>
+                  </h4>
+               </div>
+            </div>
+            </div>
+         </div>
+      </div>
+      </div>
+   </div>   
+<div class="bp-rel mb4 pb1">
+      <div class="text-center mb1">
+         <h4><b>Disney and PIXAR card designs</b></h4>
+      </div>
+      <div class="com_card-slider slider-active">
+         <ul>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-cars.png" alt=""></div></li>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-insideout.png" alt=""></div></li>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-up.png" alt=""></div></li>
+         </ul>
+         <div class="cards-drag-icon d-none d-lg-block"><i class="fa fa-regular fa-arrow-left"></i> <span>DRAG</span> <i class="fa fa-regular fa-arrow-right"></i></i></div>
+         <div class="cards-drag-icon d-lg-none d-block"><i class="fa fa-regular fa-arrow-left"></i> <span>SWIPE</span> <i class="fa fa-regular fa-arrow-right"></i></i></div>
+      </div>
+   </div>
+   <div class="bp-rel mb4">
+      <div class="text-center mb1">
+         <h4><b>OCBC FRANK Debit Card designs</b></h4>
+      <div class="com_card-slider slider-active" reverse="true" direction="left">
+<ul>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-koi.png" alt=""></div></li>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-okboomer.png" alt=""></div></li>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-winter.png" alt=""></div></li>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-sushi.png" alt=""></div></li>
+            <li><div class="bp-rel"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/carddesign-leaves.png" alt=""></div></li>
+         </ul>
+         <div class="cards-drag-icon d-none d-lg-block"><i class="fa fa-regular fa-arrow-left"></i> <span>DRAG</span> <i class="fa fa-regular fa-arrow-right"></i></i></div>
+         <div class="cards-drag-icon d-lg-none d-block"><i class="fa fa-regular fa-arrow-left"></i> <span>SWIPE</span> <i class="fa fa-regular fa-arrow-right"></i></i></div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-custom-6 col-custom-enforced text-center">
+            <p><a href="/personal-banking/cards/ocbc-frank-debit-card-designs" class="button button--secondary button--link">See all card designs</a></p>
+         </div>
+      </div>
+   </div>
+<!-- END Card Designs --></div>
+</div><!--ls:end[component-1758625411604]-->
+     </div>
+     <div class="iw_component" id="iw_comp1758625411620">
+      <style>#iw_comp1758625411620{}</style><div class="features-component"></div><div class="module container bp-width-med3 animate career-blog-carousel show-description-date">
+   <div class="subcategory subcategory--black">More features you will love</div>
+   <div class="row ">
+      <div class="col-md-12">
+         <div class="row">
+            <div class=" col-custom-8 col-custom-enforced subtitle">
+               <h4 class="mb-0"><br data-mce-bogus="1"></h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <ul class="com__article-list com__list-4 com__row-group-height">
+      <li class="com__row-group-col" data-category="Cards" data-publishdate="2025/09">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/kv-features-1.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Get an instant cash fix</h3>
+                  <p>Need extra ka-ching in a pinch? Simply hit up any OCBC ATM to withdraw cash conveniently using QR Cash Withdrawal on the OCBC app.</p>
+               </div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="Cards" data-publishdate="2025/09">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/kv-features-2.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Level up your cash game</h3>
+                  <p>Wanna make your money work as hard as you do? We’ve got the investment tools to turn your side hustle cash into potential higher gains!</p>
+               </div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="Cards" data-publishdate="2025/09">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/kv-features-3.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Set saving goals to stay on track</h3>
+                  <p>Develop healthy habits and set a personal saving goal to work towards your wishlist.</p>
+               </div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="Cards" data-publishdate="2025/09">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/ocbc-frank-account-frank-debit-card/kv-accesscardservices.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Access card services with ease</h3>
+                  <p>Lost your debit card? Need to lock or unlock it temporarily? Do it all in just a few taps with the OCBC app.</p>
+               </div>
+            </div>
+         </div>
+      </li>
+   </ul>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1758625411674">
+      <!--ls:begin[component-1758625411674]--><style>#iw_comp1758625411674{}</style><div class="beforeyouapply-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Before you apply</div>
+   <div class="table__three-col table__three-col-with-accordion">
+      <div class="row">
+         <div class="col-md-3 table__three-col--title">
+            <h4 class="bold mobile">Eligibility</h4>
+         </div>
+         <div class="col-md-9 table__three-col--content">
+            <div class="row mb-0">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Minimum age</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>16 years old</p></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3 table__three-col--title">
+            <h4 class="bold mobile">Fees for OCBC FRANK Account</h4>
+         </div>
+         <div class="col-md-9 table__three-col--content">
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Initial deposit</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>S$0</p></p>
+               </div>
+            </div>
+            <div class="row mb-0">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Fall-below fee</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>S$0</p></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3 table__three-col--title">
+            <h4 class="bold mobile">Fees for OCBC FRANK Debit Card</h4>
+         </div>
+         <div class="col-md-9 table__three-col--content">
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0"><p>Annual fees</p></p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>S$0</p></p>
+               </div>
+            </div>
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0"><p>Card design fees</p></p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>S$0</p></p>
+               </div>
+            </div>
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0"><p>Card replacement fees</p></p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>Waived for the first two cards (after that, a fee of S$32.70 will apply) <a class="link-simple" href="#popup-card_replacement" data-fancybox="none"><span><i class="fas fa-info-circle fz-14"></i></span></a></p></p>
+               </div>
+            </div>
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0"><p>Fees for foreign currency transactions</p></p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>3.25% <a class="link-simple" href="#popup-fee_foreign_currency" data-fancybox="none"><span><i class="fas fa-info-circle fz-14"></i></a></span></p></p>
+               </div>
+            </div>
+            <div class="row mb-0">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0"><p>Currency conversion fee</p></p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>2.80% <a class="link-simple" href="#popup-currency_conversion_fee" data-fancybox="none"><span><i class="fas fa-info-circle fz-14"></i></a></span></p></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3 table__three-col--title">
+            <h4 class="bold mobile">What to prepare</h4>
+         </div>
+         <div class="col-md-9 table__three-col--content">
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0"><p>Document required</p></p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>For Singaporeans and Singapore Permanent Residents (PRs): Your NRIC</p> <p>For foreigners: Your passport (with validity of at least 6 months) and pass (e.g. Employment Pass (EP), S-Pass or Student Pass)</p></p>
+               </div>
+            </div>
+            <div class="row mb-0">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Additional document</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0"><p>Any of the following documents that show your residential address:</p> <ul class="list-bullet list-nospace"> <li>Phone bill</li> <li>Half-yearly CPF statement</li> <li>Bank statement</li><li>For foreigners: Original copy of a faculty/hall residence letter issued by your school (must be submitted at any OCBC branch) <br><br>OR<br><br> Government-issued letter or notice dated within the last 3 months</li></ul></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+      <div class="accordion">
+         <div class="accordion__item">
+            <div class="accordion__item__title d-flex justify-content-between align-items-center">
+               <h4><strong>Terms and conditions</strong></h4><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+            <div class="accordion__item__content table__three-col--tnc" style="">
+               <div class="row">
+                  <div class="col-md-6">
+                     <p><a href="/iwov-resources/sg/ocbc/personal/pdf/cards/tncs-governing-ocbc-frank-bonus-reward-programme.pdf" class="link link link-arrow-right" target="_self">Terms and Conditions governing OCBC FRANK Bonus Reward  <span class="text-nowrap">Programme<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/iwov-resources/sg/ocbc/personal/pdf/accounts/tncs-governing-ocbc-frank-account.pdf" class="link link link-arrow-right" target="_self">Terms and Conditions governing OCBC FRANK  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a href="/iwov-resources/sg/ocbc/personal/pdf/cards/tncs-governing-ocbc-frank-dc.pdf" class="link link link-arrow-right" target="_self">Terms and Conditions governing OCBC FRANK Debit  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-deposit-accounts" class="link link link-arrow-right" target="_self">Terms and Conditions governing Deposit  <span class="text-nowrap">Accounts<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services" class="link link link-arrow-right" target="_self">Terms and Conditions governing Electronic Banking  <span class="text-nowrap">Services<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-estatements" class="link link link-arrow-right" target="_self">Terms and Conditions governing OCBC Electronic  <span class="text-nowrap">Statements<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/cards/ocbc-debit-cardmembers-agreement-crs-policy-update-nov16.pdf" class="link link link-arrow-right" target="_self">Terms and Conditions governing OCBC Debit Cardmembers  <span class="text-nowrap">Agreement<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+      <div class="accordion">
+         <div class="accordion__item">
+            <div class="accordion__item__title d-flex justify-content-between align-items-center">
+               <h4><strong>Important notices</strong></h4><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+            <div class="accordion__item__content table__three-col--tnc" style=""><div class="row">
+<div class="col-md-6">
+<p><a href="https://www.ocbc.com/personal-banking/help-and-support/general#content-useful-forms" class="link link link-arrow-right" target="_self">Fees and <span class="text-nowrap">charges<i class="far fa-chevron-right"></i></span></a></p>
+</div>
+<div class="col-md-5">
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/notices/deposit-insurance-scheme.pdf" class="link link link-arrow-right" target="_self">Deposit Insurance <span class="text-nowrap">Scheme<i class="far fa-chevron-right"></i></span></a></p>
+</div>
+<div class="col-md-6">
+<p><a href="https://www.ocbc.com/personal-banking/help-and-support/payments-and-transactions/giro" class="link link link-arrow-right" target="_self">GIRO <span class="text-nowrap"><i class="far fa-chevron-right"></i></span></a></p>
+</div>
+<div class="col-md-5">
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/accounts/sdic-register-of-insured-deposits.pdf" class="link link link-arrow-right" target="_self">Insured Deposits <span class="text-nowrap">Register<i class="far fa-chevron-right"></i></span></a></p>
+</div>
+<div class="col-md-6">
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/help-and-support/cards/debitcard-fee-charge.pdf" class="link link link-arrow-right" target="_self">Fees and charges for debit <span class="text-nowrap">card<i class="far fa-chevron-right"></i></span></a></p>
+</div>
+</div></div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1758625411674]-->
+     </div>
+     <div class="iw_component" id="iw_comp1758625413560">
+      <!--ls:begin[component-1758625413560]--><style>#iw_comp1758625413560{}</style><div class="d-none-soft" id="">
+   <div><div><form name="cardsApplyNowButtonSubmitData" id="cardsApplyNowButtonSubmitData" method="post" action="https://internet.ocbc.com/ipa/IPACommonV3/Agent">
+                <input type="hidden" name="cardType" id="cardType" value="DC">
+<input type="hidden" name="prodData" id="prodData" value="">
+<input type="hidden" name="tracker" id="tracker" value="">
+<input type="hidden" name="facData" id="facData" value="FRV">
+<input type="hidden" name="external_link" id="external_link" value="">
+<input type="hidden" name="FacType" id="FacType" value="DC">
+<input type="hidden" name="AgentSourceCode" id="AgentSourceCode" value="DCON02">
+<input type="hidden" name="AgentID" id="AgentID" value="">
+<input type="hidden" name="AgentIntroducerID" id="AgentIntroducerID" value="">
+            </form></div></div>
+</div><!--ls:end[component-1758625413560]-->
+     </div>
+     <div class="iw_component" id="iw_comp1758625411711">
+      <style>#iw_comp1758625411711{}</style><div class="cta-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="cta__basic">
+      <div style="" class="theme theme--blue">
+         <div class="theme__container theme__background">
+            <div class="cta__basic-details">
+               <div class="subcategory subcategory--black subcategory--no-margin">GET STARTED</div>
+               <div class="cta__basic-info">
+                  <h3 class="bold co-default">Kickstart your journey with the OCBC FRANK Account and OCBC FRANK Debit Card</h3>
+                  <div class="cta__basic-links">
+                     <div class="item item-apply default-device-content"><a href="#" cta-id="Cards-OCBCFrankAccountOCBCDebitCard-CTA-ApplyNow" onclick="document.getElementById('cardsApplyNowButtonSubmitData').submit(); return false;" class="button button--primary button--red2&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" target="_blank"><span>Apply now</span></a></div>
+                     <div class="item"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1758625416351">
+      <style>#iw_comp1758625416351{}</style><div class="d-none-soft">
+   <div id="popup-card_replacement" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Card replacement fee</span></h4><p>Lose a card? We get it. That is why we will waive the card replacement fee for the first two cards. After that, it will cost S$32.70 (including GST) to replace your card.</p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-fee_foreign_currency" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Fee for foreign currency transactions</span></h4><p>Non-USD foreign currency transactions are first converted to USD before being converted to SGD based on the rate determined by the respective card associations.<br><br>All foreign currency transactions will incur a currency conversion charge imposed by the respective card associations (1% of the transaction amount) and a bank administrative fee (2.25%).</p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-currency_conversion_fee" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Currency conversion fee</span></h4><p>An additional fee will be charged on all Visa and MasterCard transactions made in SGD and processed overseas (including online transactions). This includes but is not limited to: (i) Any Visa or MasterCard retail transaction presented in foreign currency that you choose to convert to and pay in SGD via dynamic currency conversion; and (ii) Any online retail card transaction charged to Visa or MasterCard cards in SGD on websites based overseas. The additional fee charged is 2.8% of the converted SGD amount for each Visa and MasterCard transaction.</p></div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.intro-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.notice-component').parent().wrapAll('<div class="section bg-grey" id="section-importantnotice"></div>');
+	  
+	  
+	
+	  $('.howitworks-component').parent().wrapAll('<div class="section section-both" id="section-howitworks"></div>');
+	  
+	  
+	
+	  $('.merchant-component').parent().wrapAll('<div class="section section-both" id="section-merchant"></div>');
+	  
+	  
+	
+	  $('.calculator-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-calculator"></div>');
+	  
+	  
+	
+	  $('.carddesign-component').parent().wrapAll('<div class="section section-both" id="section-carddesigns"></div>');
+	  
+	  
+	
+	  $('.features-component').parent().wrapAll('<div class="section section-both bg-grey pl-md-0 pl-2" id="section-morefeatures"></div>');
+	  
+	  
+	
+	  $('.coffeefix-component').parent().wrapAll('<div class="section section-both" id="section-coffeefix"></div>');
+	  
+	  
+	
+	  $('.carepack-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-carepack"></div>');
+	  
+	  
+	
+	  $('.support-component').parent().wrapAll('<div class="section section-both" id="section-support"></div>');
+	  
+	  
+	
+	  $('.beforeyouapply-component').parent().wrapAll('<div class="section section-both " id="section-beforeapply"></div>');
+	  
+	  
+	
+	  $('.cta-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-cta"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Bank logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Personal Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="#">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/">Malaysia</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking/index.html" class="" target="_blank">Business Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></span></p>
+                                 <p><span><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></p>
+                                          <p><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span><span class="text-nowrap">Get in touch with us</span></span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/personal-banking/contact-us" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Contact Us</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:+6563633333" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6363 3333</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/personal-banking/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/personal-banking/policies" class="" target="_self">Policies</a></span><span><a href="/personal-banking/notices" class="" target="_self">Notices</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year"></span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container"><p>You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/personal-banking/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/personal-banking/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</p></div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+   </div>
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js?2020072301'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/analytic-v1.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/copy.js?2020042401'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/card-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/insurance-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/chatbot-prod.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/article-langselector-v1.js'></script>
+<script src="/iwov-resources/sg/ocbc/personal/js/myown-account.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/personal/js/myown-account.js"></script><script src="/iwov-resources/sg/ocbc/personal/js/cards-redirection.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/personal/js/cards-redirection.js"></script><script src="/iwov-resources/sg/ocbc/personal/js/calculator-frank-debit.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/personal/js/calculator-frank-debit.js"></script><script src="/iwov-resources/sg/ocbc/personal/js/frank-referral/crypto.aes.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/personal/js/frank-referral/crypto.aes.js"></script><script src="/iwov-resources/sg/ocbc/personal/js/frank-referral/referral-content.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/personal/js/frank-referral/referral-content.js"></script><script type="text/javascript">
+const link = document.createElement('link');
+link.href = "/iwov-resources/sg/ocbc/personal/css/myown-account.css";
+link.rel = 'stylesheet';
+document.head.appendChild(link);
+</script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

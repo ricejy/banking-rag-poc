@@ -1,0 +1,1120 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Best SME Business Account | OCBC Business Banking Singapore</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/articles/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/articles/best-smes-accounts/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="Business bank account,bookkeeping,digital business solutions,business loan,OCBC Business Growth Account,OCBC Business Entrepreneur Account Plus,OCBC Multi-Currency Business Account">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Operate your business professionally and efficiently. Open a Business Bank Account with OCBC Business Banking today. Find out more.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/articles/best-smes-accounts.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="" class="page-theme--grey"><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:ocbc business banking:articles:best sme business account",
+            language: "en",
+            pageCategory: "pre-login articles page",
+            bannerName: "best business bank accounts for smes in singapore 2023",
+            channel: "articles",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1576827592555">
+    <style>#iw_comp1570073690234{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/smes" class="" target="_self">SMEs</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises" class="" target="_self">Enterprises</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/corporates" class="" target="_self">Corporates</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/financial-institutions" class="" target="_self">Financial Institutions</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/sustainability" class="" target="_self">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in </p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view"></div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1665167391699">
+      <!--ls:begin[component-1665167391699]--><style>#iw_comp1665167391699{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/business-banking/index.page">Business Banking</a></li>
+         <li><a href="/business-banking/articles/overview.page">Articles & Guides</a></li>
+         <li>Best Business Bank Accounts for SMEs in Singapore 2022</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1665167391699]-->
+     </div>
+     <div class="iw_component" id="iw_comp1665167391700">
+      <style>#iw_comp1665167391700{}</style><div class="masthead-component"></div><div class="module com__reading-parent">
+   <div class="com__reading-nav">
+      <div class="com__re-na-main">
+         <div class="container bp-width-med2">
+            <div class="d-flex fz-14">
+               <div class="nowrap mr-3">Now reading:</div>
+               <p><strong>Best Business Bank Accounts for SMEs in Singapore</strong></p>
+            </div>
+         </div>
+      </div>
+      <div class="com__reading-bar bar-bottom"></div>
+   </div>
+   <div class="bp-rel animate">
+      <div class="com__ar-title bp-ab bottom">
+         <div class="container bp-width-med3">
+            <div class="row">
+               <div class="col-sm-8 col-lg-6">
+                  <div class="com__ar-title-box">
+                     <h1><strong>Best Business Bank Accounts for SMEs in Singapore</strong></h1>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="com__ar-banner d-none d-sm-block" style="background-image: url('/iwov-resources/sg/ocbc/business/img/articles/best-smes-accounts/masthead.jpg');" alt=""></div>
+      <div class="com__ar-banner d-block d-sm-none" style="background-image: url('/iwov-resources/sg/ocbc/business/img/articles/best-smes-accounts/masthead-mobile.jpg');" alt=""></div>
+   </div>
+   <div class="container bp-width-med3 animate">
+      <div class="row">
+         <div class="col-lg-8">
+            <div class="com__ar-de-tags pt3 pb3 fz-14 d-block d-sm-flex align-items-center justify-content-between">
+               <ul>
+                  <li>01 January 2025</li>
+                  <li>By OCBC Business Banking</li>
+               </ul>
+               <ul>
+                  <li><i class="far fa-clock mr-1"></i>10 mins read</li>
+               </ul>
+            </div>
+            <div class="com__paragraph bp-img wide"><h4>Registering your business with ACRA is usually the first step to officially starting your business here in Singapore. A second essential step is to open a business bank account to receive and make payments as a business.</h4>
+<p>As a new startup or sole entrepreneur, you may decide to run your business operations using your personal bank account first. However, you will notice its limitations as you scale up.<br /><br /></p>
+<p><strong>Why is it important for SMEs to have a business bank account in Singapore?</strong></p>
+<p>Without a busines bank account, you would not be able to access payment solutions like <a href="/business-banking/smes/business-tools/paynowcorporate?pid=digital:PayNow:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">PayNow Corporate</a>, <a href="/business-banking/smes/business-tools/invoicenow?pid=digital:InvoiceNow:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">InvoiceNow</a>, or even apply for point-of-sale terminals to accept card payments. Given the growing preference of consumers for easier payment solutions, offering these cashless and seamless payment methods is essential for a business to thrive.</p>
+<p>Having a business bank account is not just advantageous; it lets you operate your business in a professional manner. Given the many different choices of business bank accounts, here are some tips on how to select the best Singapore business bank account based on your needs.</p>
+<p><strong>Why should you consider opening a business bank account for your SME?</strong></p>
+<ol class="list-decimal list-bold">
+<li>
+<p><strong>Easy to track for bookkeeping records</strong></p>
+<p>Due to convenience and habit, business owners, especially sole proprietors, often use their personal bank accounts for their business activities. However, this might become confusing and even cause a mix-up between your personal and business-incurred expenses.</p>
+<p>Having a business account would also come in handy when you need to file your taxes with IRAS, such as when <a rel="noopener" href="https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)/common-scenarios---do-i-charge-gst/expenses-incurred-by-employee-on-behalf-of-the-company" target="_blank">claiming input tax</a> because you are not allowed to claim for purchases if the tax invoice is not addressed to your company name.</p>
+</li>
+<li>
+<p><strong>Access to digital business solutions</strong></p>
+<p>One of the benefits of a business account is getting access to <a href="/business-banking/digital-business-banking?pid=digital:Velocity:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">digital banking solutions</a> that are meant for businesses to track and manage your finances. For example, with any OCBC business account, you gain access to our Internet banking platform, OCBC Velocity, where you can create e-invoices, monitor your cash flow closely, and take advantage of the Payroll Management feature to send batch salaries to your employees.</p>
+<p>These solutions, which are not typically available to personal bank accounts, allow your company to easily visualise its past and present cash flow and forecast its future cash flow requirements.</p>
+</li>
+<li>
+<p><strong>Easier to secure a business loan</strong></p>
+<p>A company that intends to grow and expand may need to borrow more funds (business loans) from financial institutions.</p>
+<p>Having a business account would help to build your credentials as a legitimate business, making it easier for a financial institution to carry out loan assessments based on your company&rsquo;s financials.</p>
+</li>
+</ol>
+<p><strong>What to look out for when opening a business bank account for SME?</strong></p>
+<p>You need to be familiar with additional fees that you may incur for maintaining an active business account. One of the things you should look out for is the <strong>minimum initial deposit</strong> that you need in order to open an account with the bank. For some business accounts, the initial deposit required could be as high as several thousand dollars or even tens of thousands of dollars. This can be prohibitive for new, small startups. Another factor is the minimum monthly balance. Should you fail to maintain your funds above this level, you may be charged a fee &ndash; also known as the fall below fee. You should also understand if there is a <strong>monthly maintenance or service fee</strong> that the bank charges to maintain your business account.</p>
+<p>For example, <a href="/business-banking/smes/accounts/business-growth-account?pid=accounts:BusinessGrowth:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">OCBC&rsquo;s Business Growth Account</a> ticks highly for some of these factors. With a low initial deposit and minimum monthly balance of $1,000, it would be easy for companies to maintain this small sum in their account, while enjoying features like e-invoicing tools and cash flow management tools to keep abreast with their monthly cash flow.</p>
+<p>The OCBC Business Growth Account also charges a low monthly service fee of $10 a month (waived for the first two months). In return, account holders enjoy 80 free FAST and 80 free GIRO transactions per month.</p>
+<p><strong>Comparing the different business bank accounts from OCBC</strong></p>
+<p>OCBC has a few different business accounts that cater to different businesses&rsquo; needs. Here&rsquo;s a closer look at the features of these different accounts.</p>
+<div class="com__insurance-comparison-table theme theme--grey mw-100 mb-5 box-shadow">
+<div class="com_graph-carousel com__gc-pull table__comparison bp-par-height2 fz-14" graph-carousel="type2">
+<ul class="table__comparison-nav" style="display: none;">
+<li><strong>Business Growth Account</strong></li>
+<li><strong>Business Entrepreneur Account Plus</strong></li>
+<li><strong>Multi-Currency Account</strong></li>
+</ul>
+<div class="table__comparison-content">
+<table class="table__general table__comparison-table graph-bordered text-left bg-white table__comparison-table--fixed" style="width: 1810px; height: 665px;" border="0"><colgroup> <col width="20%" /> <col width="20%" /> <col width="20%" /> <col width="20%" /> </colgroup>
+<tbody>
+<tr class="graph-row" style="height: 26px;">
+<th class="theme__bg3 co-white" style="border-top-left-radius: 8px; width: 354.045px; height: 26px;">&nbsp;</th>
+<th class="theme__bg3 text-center co-white border-left p-0" style="border-top-right-radius: 8px; width: 1442px; height: 26px;" colspan="3">
+<table style="width: 1442px;" border="0" height="27">
+<tbody>
+<tr>
+<th class="theme__bg3 co-white border-right" style="width: 896.649px;"><strong class="fz-14">SGD</strong></th>
+<th style="width: 531.389px;"><strong class="fz-14">Non-SGD</strong></th>
+</tr>
+</tbody>
+</table>
+</th>
+</tr>
+<tr class="graph-row text-center" style="height: 18px;">
+<td class="align-top co-white" style="background-color: #566b76 !important; width: 354.045px; height: 18px;">&nbsp;</td>
+<td class="align-top co-white border-left" style="background-color: #566b76 !important; width: 477.118px; height: 18px;"><strong class="fz-14">Business Growth Account</strong></td>
+<td class="align-top co-white border-left" style="background-color: #566b76 !important; width: 477.118px; height: 18px;"><strong class="fz-14">Business Entrepreneur Account Plus</strong></td>
+<td class="align-top co-white border-left" style="background-color: #566b76 !important; width: 477.135px; height: 18px;"><strong class="fz-14">Multi-Currency Account</strong></td>
+</tr>
+<tr class="graph-row" style="height: 46px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 46px;">
+<p class="pl-md-3 fz-14"><strong>Suitable for</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">Startups</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">Established businesses</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 46px;">
+<p class="fz-14">Overseas businesses</p>
+</td>
+</tr>
+<tr class="graph-row" style="height: 46px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 46px;">
+<p class="pl-md-3 fz-14"><strong>Minimum initial deposit</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$1,000</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$30,000</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 46px;">
+<p class="fz-14">$0</p>
+</td>
+</tr>
+<tr class="graph-row" style="height: 46px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 46px;">
+<p class="pl-md-3 fz-14"><strong>Minimum balance</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$1,000</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$30,000</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 46px;">
+<p class="fz-14">$0</p>
+</td>
+</tr>
+<tr class="graph-row" style="height: 46px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 46px;">
+<p class="pl-md-3 fz-14"><strong>Fall below fees</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$15</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$50</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 46px;">
+<p class="fz-14">N.A.</p>
+</td>
+</tr>
+<tr class="graph-row" style="height: 46px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 46px;">
+<p class="pl-md-3 fz-14"><strong>Monthly account fees</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$10</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 46px;">
+<p class="fz-14">$0</p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 46px;">
+<p class="fz-14">$10 (waived if you have an SGD Business Account)</p>
+</td>
+</tr>
+<tr class="graph-row" style="height: 82px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 82px;">
+<p class="pl-md-3 fz-14"><strong>Transactions</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 82px;">
+<ul class="list-disc">
+<li>80 free FAST and 80 free GIRO transactions per month</li>
+<li>Make overseas payments in over 60 currencies, at $30 per transaction*</li>
+</ul>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 82px;">
+<ul class="list-disc">
+<li>Make overseas payments in over 60 currencies, at $30 per transaction*</li>
+</ul>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 82px;">
+<ul class="list-disc">
+<li>Receive and hold your funds in&nbsp;up to 13 major currencies</li>
+<li>Make overseas payments in over 60 currencies, at $30 per transaction*</li>
+</ul>
+</td>
+</tr>
+<tr class="graph-row" style="height: 100px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 100px;">
+<p class="pl-md-3 fz-14"><strong>Online banking features/in-app digital tools</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 100px;">
+<ul class="list-disc">
+<li class="fz-14">Digital banking with OCBC Velocity and OCBC Business App</li>
+<li class="fz-14">E-invoicing tool</li>
+<li class="fz-14">Cash flow management tool</li>
+<li class="fz-14">Bulk payments</li>
+</ul>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 100px;">
+<ul class="list-disc">
+<li class="fz-14">Digital banking with OCBC Velocity and OCBC Business App</li>
+<li class="fz-14">E-invoicing tool</li>
+<li class="fz-14">Cash flow management tool</li>
+<li class="fz-14">Bulk payments</li>
+</ul>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 100px;">
+<ul class="list-disc">
+<li class="fz-14">Digital banking with OCBC Velocity and OCBC Business App</li>
+<li class="fz-14">E-invoicing tool</li>
+<li class="fz-14">Cash flow management tool</li>
+<li class="fz-14">Bulk payments</li>
+</ul>
+</td>
+</tr>
+<tr class="graph-row" style="height: 137px;">
+<td class="align-top graph-item align-top border-bottom text-left" style="width: 354.045px; height: 137px;">
+<p class="pl-md-3 fz-14"><strong>Others</strong></p>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 137px;">
+<ul class="list-disc">
+<li class="fz-14">Free Business Debit Card</li>
+<li class="fz-14">Unlimited cashback on all spends</li>
+<li class="fz-14">No minimum spend</li>
+<li class="fz-14">Easily add the digital card to mobile wallets like Apple Pay, Google Pay and Samsung Pay</li>
+<li class="fz-14">Free Multi-Currency Account</li>
+</ul>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.118px; height: 137px;">
+<ul class="list-disc">
+<li class="fz-14">Free Business Debit Card</li>
+<li class="fz-14">Unlimited cashback on all spends</li>
+<li class="fz-14">No minimum spend</li>
+<li class="fz-14">Easily add the digital card to mobile wallets like Apple Pay, Google Pay and Samsung Pay</li>
+<li class="fz-14">Free Multi-Currency Account</li>
+</ul>
+</td>
+<td class="align-top graph-item border-bottom border-left" style="width: 477.135px; height: 137px;">N.A.<br /><br /></td>
+</tr>
+<tr class="graph-row" style="height: 46px;">
+<td class="align-top graph-item align-top text-left" style="width: 354.045px; height: 46px;">
+<p class="pl-md-3 fz-14">&nbsp;</p>
+</td>
+<td class="align-top graph-item border-left" style="width: 477.118px; height: 46px;"><a class="button button--secondary button--link" rel="noopener" href="/business-banking/smes/accounts/business-growth-account?pid=accounts:BusinessGrowth:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_blank"><span>Apply here</span></a></td>
+<td class="align-top graph-item border-left" style="width: 477.118px; height: 46px;"><a class="button button--secondary button--link" rel="noopener" href="/business-banking/smes/accounts/business-entrepreneur-account-plus?pid=accounts:BusinessEntrepreneur:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_blank"><span>Apply here</span></a></td>
+<td class="align-top graph-item border-left" style="width: 477.135px; height: 46px;"><a class="button button--secondary button--link" rel="noopener" href="/business-banking/smes/accounts/multi-currency-business-account?pid=accounts:MultiCurrencyBusiness:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_blank"><span>Apply here</span></a></td>
+</tr>
+</tbody>
+</table>
+<br />*Agent fee may apply. Please refer to our <a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide">Business Banking Pricing Guide</a></div>
+</div>
+</div>
+<ol class="list-decimal list-bold">
+<li>
+<p><strong>OCBC Business Growth Account</strong></p>
+<p>The <a href="/business-banking/smes/accounts/business-growth-account?pid=accounts:BusinessGrowth:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">OCBC Business Growth Account</a> is meant to be an all-in-one business bank account for SMEs. Not only can you apply for an account online without any paperwork or queueing, but it also has less demanding conditions such as low minimum monthly balance and account fees to open and maintain the account.</p>
+<p>Through our award-winning digital banking platforms &ndash; OCBC Velocity and the OCBC Business app. SMEs have free access to a variety of digital tools. You can create and send e-invoices seamlessly, as well as keep track of whether the invoices are paid. This eases the load on your cash flow management. You can also manage your trade finance portfolio within a single dashboard.</p>
+<p>As part of the account&rsquo;s features, account holders enjoy 80 free FAST and 80 free GIRO transactions per month. Additionally, you will also receive a free personalised Business Debit Card, which entitles you to unlimited cashback without any minimum spend.</p>
+</li>
+<li>
+<p><strong>OCBC Business Entrepreneur Account Plus</strong></p>
+<p>The <a href="/business-banking/smes/accounts/business-entrepreneur-account-plus?pid=accounts:BusinessEntrepreneur:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">OCBC Business Entrepreneur Account Plus</a>, on the other hand, is targeted at more established businesses. By simply making an initial deposit of $30,000 and maintaining a monthly average balance above this amount, you would not incur any recurring account fees or the fall-below fees of $50.</p>
+</li>
+<li>
+<p><strong>OCBC Multi-Currency Business Account</strong></p>
+<p>Whether it is because of your expansion plans or having multiple suppliers and customers overseas, your business may need to deal with a multitude of international currencies other than the Singapore dollar. Instead of holding the different currencies in multiple bank accounts, you could apply for the <a href="/business-banking/smes/accounts/multi-currency-business-account?pid=accounts:MultiCurrencyBusiness:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">OCBC Multi-Currency Business Account</a>.</p>
+<p>The OCBC Multi-Currency Business Account allows account holders to transact in 13 major currencies: USD, EUR, AUD, JPY, GBP, CNH, HKD, CAD, NZD, CHF, SEK, DKK, NOK. This ensures that you get the most favourable exchange rate without having to lose money due to currency conversions.</p>
+<p>You could set up the account to complement your main business account (in SGD) without any initial deposit or the need to maintain a minimum monthly balance. While there is a monthly service fee of $10, this is waived if you are using the OCBC Business Growth Account.</p>
+</li>
+</ol>
+<p><strong>How to apply for a business bank account for your SME today?</strong></p>
+<p>Once you have decided on the type of business account that would best serve your company&rsquo;s needs, the next step is to apply for one.</p>
+<p>It is a simple process to apply for an OCBC business bank account. If you are a Singaporean or PR and are a registered owner, director, or partner in ACRA, you can apply online for the <a rel="noopener" href="https://www.ocbc.com/business-banking/smes/accounts/business-growth-account" target="_blank">OCBC Business Growth Account and OCBC Multi-Currency Business Account</a>. Have your login details for either your SingPass (MyInfo) or CorpPass (MyInfo Business) on hand.</p>
+<p>If you prefer opening the <a href="/business-banking/smes/accounts/business-entrepreneur-account-plus?pid=accounts:BusinessEntrepreneur:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:" target="_self">OCBC Business Entrepreneur Account Plus</a>, you can apply by submitting the <a href="/business-banking/smes/accounts/business-entrepreneur-account-plus?pid=accounts:BusinessEntrepreneur:AlwaysOn:Acquisition:Sep:2022:internal:article:OCBCBestSMEBusinessBankAccounts:#section-cta" target="_self">online application form</a>.</p></div>
+            <div class="com__paragraph paragraph-follow fz-14 co-grey3 mt-4"><p><strong>Disclaimer</strong></p>
+<p>You may be directed to third-party websites. OCBC Bank shall not be liable for any loss suffered or incurred by any party for accessing such third-party websites or in relation to any product and/or service provided by any provider under such third-party websites.</p>
+<p>Any opinions or views of third parties expressed in this article are those of the third parties identified, and not those of OCBC Bank. The information provided herein is intended for general circulation and/or discussion purposes only. Before making any decision, please seek independent advice from professional advisors.</p>
+<p>No representation or warranty whatsoever in respect of any information provided herein is given by OCBC Bank and it should not be relied upon as such. OCBC Bank does not undertake an obligation to update the information or to correct any inaccuracy that may become apparent at a later time. All information presented is subject to change without notice. OCBC Bank shall not be responsible or liable for any loss or damage whatsoever arising directly or indirectly howsoever in connection with or as a result of any person acting on any information provided herein. Any reference to any specific company, financial product or asset class in whatever way is used for illustrative purposes only and does not constitute a recommendation on the same.</p></div>
+            <hr class="mt-5 mb-4">
+            <p><b>Discover other articles about:</b></p>
+            <div class="com__ar-tags fz-16">
+               <ul class="styled-nav">
+                  <li><a href="/business-banking/articles/overview.page?cat=Entrepreneurship#com_articles-list">Entrepreneurship</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1665167391701">
+      <style>#iw_comp1665167391701{}</style><div class="getstarted-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="cta__basic">
+      <div style="" class="theme theme--blue">
+         <div class="theme__container theme__background">
+            <div class="cta__basic-details">
+               <div class="subcategory subcategory--white subcategory--no-margin">Get started with us</div>
+               <div class="cta__basic-info">
+                  <h3 class="bold co-white">Open a business account instantly</h3>
+                  <p class="description co-white">With only a low initial deposit required, take your business further with the account that comes with powerful tools.</p>
+                  <div class="cta__basic-links">
+                     <div class="item item-apply"><a cta-id="Articles-Accounts-OCBCBestSMEBusinessBankAccounts-Apply-Now-Bottom" href="https://www.ocbc.com/business-banking/smes/accounts/business-growth-account" class="button button--primary button--white &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Apply now</span></a></div>
+                     <div class="item"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1665167391702">
+      <style>#iw_comp1665167391702{}</style><div class="otherarticles-component"></div><div class="com__lifegoals-articles-and-guides">
+   <div class="container bp-width-med3">
+      <div class="subcategory subcategory--black">Articles you may like</div>
+   </div>
+   <div class="com__articles-and-guides">
+      <div class="module container bp-width-med3">
+         <div class="row">
+            <div class="col-custom-9">
+               <div class="row com_slider owl-theme group-height" apply-for="mobile" dots="true" margin="10" padding="0">
+                  <div class="col-md-4 col-sm-12 com_slider__item"><a class="a-g-item border-0" href="/business-banking/articles/things-never-knew-bizaccount-can-do.page" target="_self" cta-id="Articles-BestSMEsAccounts-ReadMore-ArticlesYouMayLikeThingsYourBizAccountCanDo">
+                        <div class="a-g-i-image mb-3"><img width="340" height="340" src="/iwov-resources/sg/ocbc/business/img/articles/things-never-knew-bizaccount-can-do/340x340_1.jpg" alt="Connect with digital business tools on your account"></div>
+                        <div class="a-g-i-desc">
+                           <h4 class="gh3"><strong>5 things you never knew your business account can do</strong></h4><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div></a></div>
+                  <div class="col-md-4 col-sm-12 com_slider__item"><a class="a-g-item border-0" href="/business-banking/articles/registering-your-business.page" target="_self" cta-id="Articles-BestSMEsAccounts-ReadMore-ArticlesYouMayLikeThingsYourBizAccountCanDo">
+                        <div class="a-g-i-image mb-3"><img width="340" height="340" src="/iwov-resources/sg/ocbc/business/img/articles/registering-your-business/recommendation-image.jpg" alt="Insights on registering a business in Singapore"></div>
+                        <div class="a-g-i-desc">
+                           <h4 class="gh3"><strong>Experts Insights on Company Registration in Singapore</strong></h4><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div></a></div>
+                  <div class="col-md-4 col-sm-12 com_slider__item"><a class="a-g-item border-0" href="/business-banking/articles/open-startup-business-account-guide.page" target="_self" cta-id="Articles-BestSMEsAccounts-ReadMore-ArticlesYouMayLikeOpenStartUpBizAccountGuide">
+                        <div class="a-g-i-image mb-3"><img width="340" height="340" src="/iwov-resources/sg/ocbc/business/img/articles/ocbc-startup-business-account-guide/recommended.jpg" alt="Opening a business account online"></div>
+                        <div class="a-g-i-desc">
+                           <h4 class="gh3"><strong>Guide to Opening a Startup Business Bank Account in Singapore</strong></h4><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  
+	
+	  $('.getstarted-component').parent().wrapAll('<div class="section" id="section-getstarted"> </div>');
+	  
+	  
+	
+	  $('.otherarticles-component').parent().wrapAll('<div class="section bg-grey" id="section-otherarticles"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1574170872815">
+    <!--ls:begin[component-1574170872815]--><style>#iw_comp1574170872815{}</style><div></div><!--ls:end[component-1574170872815]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

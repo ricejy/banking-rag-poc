@@ -1,0 +1,2105 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMNVMPK');</script>
+<!-- End Google Tag Manager -->
+<script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+
+<style>
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: none;
+}
+
+@media (min-width: 768px){
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: block;
+ min-width: 168px;
+}
+
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 span {
+ display: none;
+}
+}
+
+/* investors/contact-us.page */
+#section-investor-form .com__silveryear__form-background  {
+  background: #366492;
+  background: -webkit-gradient(linear, left top, right top, from(#366492), to(#61a7db));
+  background: -o-linear-gradient(left, #366492, #61a7db 100%);
+  background: linear-gradient(to right, #366492, #61a7db 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#366492', endColorstr='#61a7db', GradientType=0 );
+  /* IE6-9 */
+}
+</style><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Banking Security | OCBC Singapore</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/group/page/security/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/group/security/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/ospl/css/style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMNVMPK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:group:security",
+            language: "en", //Page Language
+            pageCategory: "pre-login security page",
+            bannerName: "",
+            channel: "security",
+            country: "sg",
+            lob: "ocbc group"
+        },
+        user: {
+            CIF: ""
+        }, //should be passed post login OCBC specific encrypted ID
+        event: {
+            pageView: "true",
+            bannerImpression: "false" //set true only when banner is visible on the page
+        }
+    };
+    </script>
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async=""></script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1601463609285">
+    <style>#iw_comp1571204552818{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Image"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#about-us" class="header__navi">About Us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/group/media/release/index" class="header__navi" target="_self">Media</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investors" class="header__navi">Investors</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#sustainability" class="header__navi">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="https://www.ocbc.com/group/careers/index.page" class="header__navi" target="_self">Careers</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#research" class="header__navi">Research</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in </p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="https://www.ocbc.com" data-target="_self">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/personal-banking" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.iocbc.com" data-target="_blank">OCBC Securities</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul></ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="about-us" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">About Us</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/group-business" class="link link link-arrow-right" target="_self">Group <span class="text-nowrap">Business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/corporate-strategy" class="link link link-arrow-right" target="_self">Corporate <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/our-leadership" class="link link link-arrow-right" target="_self">Our <span class="text-nowrap">Leadership<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/purpose-values-and-ambition" class="link link link-arrow-right" target="_self">Purpose and <span class="text-nowrap">Values<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/awards" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Awards<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/group/about-us/group-business" class="button button--secondary button--link" target="_self"><span>View all</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investors" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investors</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/financials" class="link link link-arrow-right" target="_self">Financial <span class="text-nowrap">results<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/annual-report-and-agm" class="link link link-arrow-right" target="_self">Annual Report and <span class="text-nowrap">AGM<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/investor-information" class="link link link-arrow-right" target="_self">Investor <span class="text-nowrap">information<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/regulatory-disclosure" class="link link link-arrow-right" target="_self">Regulatory <span class="text-nowrap">disclosures<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/contact-us" class="link link link-arrow-right" target="_self">Contact <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="#" class="" target="_self"><span></span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="sustainability" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Sustainability</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/index.page" class="link link link-arrow-right" target="_self">Sustainability <span class="text-nowrap">approach<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/net-zero-future.page" class="link link link-arrow-right" target="_self">Net-zero <span class="text-nowrap">future<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/community-impact.page" class="link link link-arrow-right" target="_self">Community <span class="text-nowrap">impact<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/one-group.page" class="link link link-arrow-right" target="_self">One <span class="text-nowrap">Group<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/responsible-business.page" class="link link link-arrow-right" target="_self">Responsible <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/disclosures-and-resources.page" class="link link link-arrow-right" target="_self">Disclosures and <span class="text-nowrap">resources<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="research" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Research</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"> Treasury reports</div>
+                                    <div class="name"><a href="/group/research/index" class="link link link-arrow-right" target="_self">Recent <span class="text-nowrap">updates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter" class="link link link-arrow-right" target="_self">Macro <span class="text-nowrap">outlook<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=fxandrates" class="link link link-arrow-right" target="_self">FX and <span class="text-nowrap">rates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=special" class="link link link-arrow-right" target="_self">Special <span class="text-nowrap">reports<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment reports</div>
+                                    <div class="name"><a href="/group/research/investment-reports" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Company<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#sectorial" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Sectorial<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#equity" class="link link link-arrow-right" target="_self">Equity <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1579584082400">
+      <!--ls:begin[component-1579584082400]--><style>#iw_comp1579584082400{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul></ul>
+   </div>
+</div><!--ls:end[component-1579584082400]-->
+     </div>
+     <div class="iw_component" id="iw_comp1575616338123">
+      <style>#iw_comp1575616338123{}</style><div class="masthead-component"></div><div class="module container bp-width-med3 animate">
+   <div class="common__category-description box-med bp-curve3 bg-ash2 text-center ">
+      <h3 class="no-margin thesans"><span>We take your security seriously</span></h3>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1575616338234">
+      <!--ls:begin[component-1575616338234]--><style>#iw_comp1575616338234{}</style><div class="intro-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3 visible">
+                <div class="row">
+                    <div class="col-custom-8 mx-auto">
+                        <div class="text-center">
+                            <p class="mb-0">Safeguarding your interests and money is a priority for us. We have security measures to keep your privacy and investments as secure as possible. We also strive to update you on ways you can protect yourself.</p>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+</div><!--ls:end[component-1575616338234]-->
+     </div>
+     <div class="iw_component" id="iw_comp1575616338124">
+      <style>#iw_comp1575616338124{}</style><div class="nav-component"></div><div anim-control="parent" class="module container bp-width-med3 animate pb4">
+   <div class="com__tab">
+      <div class="com__tab-content com__tab--center com__tab-scroll mb4">
+         <div class="row">
+            <div class=" col-custom-9">
+               <div class="com__tab-nav has-styled-nav">
+                  <ul class="d-flex styled-nav align-items-center">
+                     <div class="indicator"></div>
+                     <li class="col align-items-center justify-content-center selected"><a href="#how-we-protect-you">How we protect you</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#types-of-risks">Types of risks</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#securities-measures-for-pc-mac">Securities measures for PC/Mac</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#securities-measures-for-mobile">Securities measures for mobile</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#e-payments-user-protection-guidelines">E-payments User Protection Guidelines</a></li>
+                  </ul>
+                  <div class="border-line-wrapper">
+                     <div class="border-line"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1579584082045">
+      <style>#iw_comp1579584082045{}</style><div class="nav-component"></div><div class="com_security" id="how-we-protect-you">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">WAYS WE PROTECT YOU</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p class="mb2"><strong>Two-factor authentication</strong><span>&nbsp;<br /></span><span>On top of your log-in credentials, a security token will also be provided which allows you to authorise transactions.</span></p>
+<p class="mb2"><strong>Secure, encrypted pages</strong><span>&nbsp;<br /></span><span>The "closed lock" icon on our online banking site means that information transmitted from your computer to our systems are encrypted.</span></p>
+<p class="mb2"><strong>Every transaction is secure</strong><span>&nbsp;<br /></span><span>Transactions that you perform through OCBC online banking is secured with a one-time password generated from your security token or an SMS sent to your mobile phone.</span></p>
+<p class="mb2"><strong>Network Security</strong><span>&nbsp;<br /></span><span>All of our banking systems sit behind firewalls that prevent intruders from getting unauthorised access to the system.</span></p></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="how-we-protect-you">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">GENERAL SECURITY TIPS</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Steps to protect yourself from unwanted scammers</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><ul class="list-bullet">
+<li class="mb2">
+<p>Do not reveal the following information to anyone:</p>
+<ul class="list-dash">
+<li>
+<p>OTP generated by the 2FA token or sent to you via SMS</p>
+</li>
+<li>
+<p>Serial number of your 2FA token</p>
+</li>
+<li>
+<p>Your log-in credentials</p>
+</li>
+<li>
+<p>Your personal, financial, bank account of credit/debit card information to strangers or little known or suspicious websites</p>
+</li>
+</ul>
+</li>
+<li class="mb2">
+<p>Do not allow others to keep, use or tamper with your 2nd factor authentication (2FA) security token. Please keep your token secure at all times</p>
+</li>
+<li class="mb2">
+<p>Check your bank account information, balance and transactions frequently and report any discrepancies</p>
+</li>
+<li class="mb2">
+<p>Be on the alert for suspicious emails and websites (which may contain malicious software) or mobile messages, purporting to be from the Bank. You should report these immediately by contacting us</p>
+</li>
+<li class="mb2">
+<p>We will not make unsolicited requests for your personal, financial, bank account or credit/debit card information, or unsolicited requests that require you to log in and verify your account validity, through e-mail, mobile messages or on phone unless you have initiated the contact. Under no circumstances will the Bank ask you to reveal your PIN/Password</p>
+</li>
+<li class="mb2">
+<p>Update us immediately when there is a change in your contact details such as mobile phone number and e-mail address so that you continue to receive SMS alerts or e-mail notifications for online banking transactions and activities</p>
+</li>
+<li class="mb2">
+<p>Please inform us immediately if:</p>
+<ul class="list-dash">
+<li>
+<p>You are aware of any suspected fraud, including any compromise or loss of your security device or security details; or</p>
+</li>
+<li>
+<p>You receive SMS or e-mail alerts for transactions which you did not perform; or</p>
+</li>
+<li>
+<p>You are alerted on change of daily withdrawal limit or add beneficiary for transfer to an account which you do not know of or did not perform</p>
+</li>
+<li>
+<p>You notice any unusual/unauthorised transactions. You also have the right to do the following under such circumstances:</p>
+<ol class="list-alpha-lower">
+<li>
+<p>Suspend your access to OCBC online banking services</p>
+</li>
+<li>
+<p>Cancel the relevant services</p>
+</li>
+<li>
+<p>Request for a new set of OCBC online banking log-in credentials</p>
+</li>
+<li>
+<p>Obtain information from the Bank regarding your online transactions</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Online Banking PIN/Password</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><strong>Personal Banking</strong></p>
+<ul class="list-bullet">
+<li>
+<p>Your PIN should be:</p>
+<ul class="list-dash">
+<li>
+<p>Six-digits long. Do not repeat any digit more than once</p>
+</li>
+<li>
+<p>A unique number. It should not be drawn from your telephone number, birthday or other services you might have</p>
+</li>
+<li>
+<p>Kept confidential</p>
+</li>
+<li>
+<p>PINs must be changed regularly, or when you suspect it has been compromised or impaired</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="mt2"><strong>Business Banking</strong></p>
+<ul class="list-bullet">
+<li>
+<p>Password should be 8 to 12 characters:</p>
+<ul class="list-dash">
+<li>
+<p>It must contain at least 2 letters and 2 numerals</p>
+</li>
+<li>
+<p>Characters cannot be repeated more than twice</p>
+</li>
+<li>
+<p>First two characters must be different from your User ID</p>
+</li>
+<li>
+<p>Password and Organisation ID cannot be identical</p>
+</li>
+<li>
+<p>Password cannot be identical to the previous 10 passwords that you have used</p>
+</li>
+<li>
+<p>Example of a password: velocity01#</p>
+<p>Password is case sensitive, for example<span>&nbsp;</span><q>"Velocity01#"</q><span>&nbsp;</span>is a different password from<span>&nbsp;</span><q>"velocity01#"</q></p>
+</li>
+</ul>
+</li>
+</ul></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="how-we-protect-you">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">OUR GUARANTEE <br> (FOR PERSONAL BANKING)</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p><span>In the unlikely event that you do suffer from online fraud, we guarantee a full refund of any money that has been fraudulently transferred out of your account via our Internet and Mobile Banking service, subject to our <a href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services.page">Terms and conditions governing Electronic Banking Services</a>.<br /></span></p>
+<p>Our guarantee protects you if you have played your part in protecting yourself from fraud by adopting the following measures:</p>
+<ul class="list-bullet">
+<li class="mb2">
+<p>You have kept your hardware token secure at all times;</p>
+</li>
+<li class="mb2">
+<p>You have not shared your security details with anyone (these include your Access Code, PIN and security token);</p>
+</li>
+<li class="mb2">
+<p>You have equipped your computer or mobile device with the latest operating system security patches, anti-virus, anti-malware and firewall software. The installed software should be regularly updated to the latest version and run with latest signatures;</p>
+</li>
+<li class="mb2">
+<p>You have followed our recommendations on <a href="https://www.ocbc.com/personal-banking/security/safeguarding-your-internet-banking-access.page">Safeguarding Your Internet Banking Access</a> and complied with all your obligations under the <a href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services.page">Terms and conditions governing Electronic Banking Services</a> and the <a href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-deposit-accounts.page">Terms and conditions governing Deposit Accounts</a>;</p>
+</li>
+<li class="mb2">
+<p>You have updated us immediately when there is a change in your contact details, such as mobile number and e-mail address, for the purposes of receiving SMS alerts or e-mail notifications for online banking transactions and activities;</p>
+</li>
+<li class="mb2">
+<p>You have updated us immediately when you change your mobile number for receiving One-time Password (OTP) via SMS; and</p>
+</li>
+<li class="mb2">
+<p>You inform us immediately if:</p>
+<ul class="list-dash">
+<li>
+<p>You are aware of any suspected fraud, including any compromise or loss of your security device or security details; or</p>
+</li>
+<li>
+<p>You receive SMS or e-mail alerts for transactions which you did not perform; or</p>
+</li>
+<li>
+<p>You are alerted on change of daily withdrawal limit or add beneficiary for transfer to an account which you do not know of or did not perform, and you furnish us with all information requested by us and provide your full co-operation.</p>
+</li>
+</ul>
+</li>
+</ul></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="how-we-protect-you">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">HOW WE CAN HELP</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p><span>Should you become a victim of an unauthorised transaction, please inform us immediately. You can report to us by contacting one of our branches during their opening hours or call us at:</span></p>
+<p class="mt2"><strong>Personal Banking<br /></strong></p>
+<p><span>Call&nbsp;</span><a href="tel:63633333">6363 3333</a><span>&nbsp;(24-hour)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6563633333">+65 6363 3333</a></p>
+<p class="mt2"><strong>Premier Banking</strong></p>
+<p><span>Call 1800 Premier (</span><a href="tel:18007736437">1800 773 6437</a><span>)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a></p>
+<p class="mt2"><strong>Business Banking</strong></p>
+<p><span>Call&nbsp;</span><a href="tel:+6565381111">+65 6538 1111</a><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a></p>
+<div><small>Upon receiving your report, we will get back to you within 7 working days<br />Depending on the complexity of the claims, we will inform you if we require more time for investigations.</small></div></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1579584082092">
+      <style>#iw_comp1579584082092{}</style><div class="nav-component"></div><div class="com_security" id="types-of-risks">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Malware</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What is Malware?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Malware are malicious programs that targets customers' computers/mobile devices in order to steal their login credentials, for example your online banking access code, PIN and One-Time Password (OTP) or Organisation ID, User ID and Password. Once your computer is infected, a cybercriminal will be able to conduct fraudulent money transfers from your account.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How Malware is spread</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Cybercriminals send emails with attachments that may appear to originate from trusted companies. Malware could be hidden in the attachments in emails and in the disguise of invoices or accounting documents.</p>
+<p>A malware may also direct you to a fake webpage that looks like OCBC Bank's login page. It may prompt you to enter any of your log-in credentials or OTP from your security token.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How to avoid getting infected</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><span>By having an up-to-date anti-virus software on your computer or mobile device, you could greatly reduce your risk of getting infected. For more information on safeguarding measures, refer to&nbsp;</span><a class="smoothscroll tab-anchor" onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_TypesOfRisks_Malware_SecurityforPC_21122016']); dataLayer.push({'event': 'TypesOfRisks_Malware_SecurityforPC_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/TypesOfRisks_Malware_SecurityforPC_21122016']);" href="#securities-measures-for-pc-mac">Security for PC/Mac</a><span>&nbsp;and&nbsp;</span><a class="smoothscroll tab-anchor" onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_TypesOfRisks_Malware_SecurityforMobile_21122016']); dataLayer.push({'event': 'TypesOfRisks_Malware_SecurityforMobile_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/TypesOfRisks_Malware_SecurityforMobile_21122016']);" href="#securities-measures-for-mobile">Security for Mobile</a><span>.</span></p></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="types-of-risks">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Phishing Scams</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What is a phishing scam?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Phishing is a form of social engineering used by cybercriminals to convince you to install malicious software that leads to stealing your personal information.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How phishing works</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Phishing attacks typically use emails or malicious websites to solicit personal information by posing as legitimate companies or trustworthy organisations.</p>
+<p>For example, an attacker may send email seemingly from a reputable credit card company or financial institution that requests account information, often suggesting that there is a problem. When users respond with the requested information, attackers use it to gain access to the accounts.</p>
+<p>Phishing attacks tend to intensify on significant current and seasonal events such as:</p>
+<ul class="list-bullet">
+<li>Natural disasters</li>
+<li>Epidemics and health scares</li>
+<li>Economic concerns</li>
+<li>Major political elections</li>
+<li>Holidays</li>
+</ul></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How to avoid such scams</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><ul class="list-bullet">
+<li class="mb2">
+<p>Ensure that emails are authentic before acting on them:</p>
+<ul class="list-dash">
+<li>Do not download or open any attachments from emails you find suspicious, even if they came from someone you know</li>
+<li>Delete emails that come from unknown sources</li>
+<li>Do not respond to emails asking for confidential information, e.g. your financial or personal information. Phishers like to use scare tactics and may threaten to disable an account or delay services until you update certain information</li>
+<li>Do not use links in an email or instant message to connect to the Bank's website unless you are certain they are authentic. Instead, open your browser and type the URL directly into the address bar</li>
+</ul>
+</li>
+<li class="mb2">
+<p>Protect your computer with firewall, spam filters, anti-virus and anti-spyware software. Ensure you are getting the most up-to-date software and update them regularly to ensure that you are protected against new viruses and spyware</p>
+</li>
+<li class="mb2">
+<p>For specific safeguarding measures on phishing scams, refer to<span>&nbsp;</span><a class="smoothscroll tab-anchor" onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_TypesOfRisks_PhishingScams_SecurityforPC_21122016']); dataLayer.push({'event': 'TypesOfRisks_PhishingScams_SecurityforPC_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/TypesOfRisks_PhishingScams_SecurityforPC_21122016']);" href="#securities-measures-for-pc-mac">Security for PC/Mac</a><span>&nbsp;</span>and<span>&nbsp;</span><a class="smoothscroll tab-anchor" onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_TypesOfRisks_PhishingScams_SecurityforMobile_21122016']); dataLayer.push({'event': 'TypesOfRisks_PhishingScams_SecurityforMobile_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/TypesOfRisks_PhishingScams_SecurityforMobile_21122016']);" href="#securities-measures-for-mobile">Security for Mobile</a></p>
+</li>
+</ul></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1579584082099">
+      <style>#iw_comp1579584082099{}</style><div class="nav-component"></div><div class="com_security" id="securities-measures-for-pc-mac">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Safeguarding your online banking experience</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p>To ensure that your online security and account information are not compromised via your computer, please adopt the following OCBC Online Banking security measures:</p>
+<ul class="list-bullet">
+<li class="mb2">Personally enter the domain name of the bank in your browser to log onto OCBC Online Banking service</li>
+<li class="mb2">Before entering your log-in credentials, always ensure that the website you are visiting belongs to OCBC Bank:<br /><strong>Personal Banking: </strong><a rel="noopener" href="https://internet.ocbc.com/internet-banking" target="_blank">https://internet.ocbc.com/internet-banking</a> or <br /><strong>Business Banking: </strong><a rel="noopener" href="https://velocity.ocbc.com/login.html" target="_blank">https://velocity.ocbc.com/login.html</a></li>
+<li class="mb2">Do not display your account information in a manner that is visible to others</li>
+<li class="mb2">Log off the online session when the session is no longer required. Enable your computer's screen saver with password protection or lock your computer screen when it is not in use. Do not leave your computer unattended</li>
+<li class="mb2">Do not install software or run programs of unknown origin</li>
+<li class="mb2">Do not open, run or install any attachments or click on any links in suspicious or unsolicited emails</li>
+<li class="mb2">Do not use public computers or any devices which cannot be trusted or which you are unsure if safe to use</li>
+<li class="mb2">Do not connect to unsecured or publicly available Wifi, to access online banking or perform financial transactions</li>
+<li class="mb2">Do not allow your web browser to store or retain your log-in credentials Remove file and printer sharing in computers, especially when connected to the internet</li>
+</ul></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="securities-measures-for-pc-mac">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Usage of OCBC Internet Banking Services</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div>
+<p>Your usage of OCBC Internet Banking Services is subject at all times to:</p>
+<p class="mt3 mb0"><strong>Personal Banking</strong></p>
+<div class="pt3 pb3"><a class="link c-i-item-link link link-arrow-right" href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services.page"><i class="fas fa-file-alt ml-0 mr-1">&nbsp;</i> Terms and conditions governing Electronic Banking <span class="text-nowrap">Services<i class="far fa-chevron-right">&nbsp;</i></span></a></div>
+<hr />
+<div class="pt3 pb3"><a class="link c-i-item-link link link-arrow-right" href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-deposit-accounts.page"><i class="fas fa-file-alt ml-0 mr-1">&nbsp;</i> Terms and conditions governing Deposit <span class="text-nowrap">Accounts<i class="far fa-chevron-right">&nbsp;</i></span></a></div>
+<hr />
+<p class="mt3 mb0"><strong>Business Banking</strong></p>
+<div class="pt3 pb3"><a class="link c-i-item-link link link-arrow-right" rel="noopener" href="/iwov-resources/sg/ocbc/personal/pdf/terms-and-conditions/business_account_terms_and_conditions.pdf" target="_blank"><i class="fas fa-file-alt ml-0 mr-1">&nbsp;</i> Business Account terms and c<span class="text-nowrap">onditions<i class="far fa-chevron-right">&nbsp;</i></span></a></div>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="securities-measures-for-pc-mac">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Things to look out for</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Malware present on a PC/Mac</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Watch out for these warning signs:</p>
+<ul>
+<li class="mb2">
+<p>The URL showing on the login page is different from the official page:<br /><strong>Personal Banking</strong>:<span>&nbsp;</span><a onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_SecurityForPcMac_ThingsToLookOut_personalbankinglogin_21122016']); dataLayer.push({'event': 'SecurityForPcMac_ThingsToLookOut_personalbankinglogin_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/SecurityForPcMac_ThingsToLookOut_personalbankinglogin_21122016']);" rel="noopener" href="https://internet.ocbc.com/internet-banking/" target="_blank">https://internet.ocbc.com/internet-banking/</a><span>&nbsp;</span>or<br /><strong>Business Banking</strong>:<span>&nbsp;</span><a onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_SecurityForPcMac_ThingsToLookOut_velocitybankinglogin_21122016']); dataLayer.push({'event': 'SecurityForPcMac_ThingsToLookOut_velocitybankinglogin_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/SecurityForPcMac_ThingsToLookOut_velocitybankinglogin_21122016']);" rel="noopener" href="https://velocity.ocbc.com/login.html" target="_blank">https://velocity.ocbc.com/login.html</a></p>
+</li>
+<li class="mb2">
+<p>The login screen looks different. The legitimate OCBC login process consists of two steps:<br /><strong>Personal Banking</strong><br />First step: Access code and PIN<br />Second step: Enter one-time password (OTP)<br /><strong>Business Banking</strong><br />First step: Organisation ID, User ID and password<br />Second step: Enter one-time password (OTP)</p>
+</li>
+<li class="mb2">
+<p>You are prompted repeatedly for your log-in credentials even though you have entered the log-in credentials correctly</p>
+</li>
+<li class="mb2">
+<p>A delayed pop-up screen that says the system is not available and repeatedly asks you to enter OTP or use your security token to generate an OTP</p>
+</li>
+<li class="mb2">
+<p>You are prompted to authorise transactions which you have not initiated using OTP generated through your security token. For example: While trying to login, you are prompted to enter a 6-digit number shown on your computer screen into your security token. Then you are asked to press the 'Sign' button on the token and key in the OTP generated from the security token into the computer screen</p>
+</li>
+<li class="mb2">
+<p>Your PIN/Password should be masked when you type it in</p>
+</li>
+<li class="mb2">
+<p>You receive SMS messages on OTP or transactions which you did not initiate</p>
+</li>
+<li class="mb2">
+<p>A redirection to a third-party website, which may feature a hotline number or an unsolicited request</p>
+</li>
+<li class="mb2">
+<p>You receive a call purportedly from a staff in OCBC asking you to verbally reveal your Access Code/Organisation ID, PIN/Password, OTP or security token details</p>
+</li>
+</ul></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Symptoms of phishing scams on a PC/MAC</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><ul>
+<li class="mb2">
+<p>When you mouse over the embedded URLs in an email message, the hyperlinked address is different from the Bank's official URL</p>
+</li>
+<li class="mb2">
+<p>An email message that contains poor spelling and grammar</p>
+</li>
+<li class="mb2">
+<p>The message is making big promises and the offer seems too good to be true</p>
+</li>
+<li class="mb2">
+<p>The message is making unrealistic threats, e.g. the phisher use intimidation to scare victims into giving up confidential or personal information</p>
+</li>
+<li class="mb2">
+<p>You receive a message notifiying you of transactions that you did not perform</p>
+</li>
+<li class="mb2">
+<p>When a message asks for confidential or personal information. The Bank does not make unsolicited request for your information via email or phones</p>
+</li>
+</ul></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="securities-measures-for-pc-mac">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">What you can do</div>
+         </div>
+         <div class="col-md-7"><p>If your PC/MAC has been comprimised, take a screenshot or picture of the suspicious content and give us a call at:</p>
+<p class="mt2"><strong>Personal Banking</strong></p>
+<p><span>Call&nbsp;</span><a href="tel:63633333">6363 3333</a><span>&nbsp;(24-hour)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6563633333">+65 6363 3333</a></p>
+<p class="mt2"><strong>Premier Banking</strong></p>
+<p><span>Call 1800 Premier (</span><a href="tel:18007736437">1800 773 6437</a><span>)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a></p>
+<p class="mt2"><strong>Business Banking</strong></p>
+<p><span>Call&nbsp;</span><a href="tel:+6565381111">+65 6538 1111</a><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a></p></div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1579584082100">
+      <style>#iw_comp1579584082100{}</style><div class="nav-component"></div><div class="com_security" id="securities-measures-for-mobile">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Safeguarding your mobile banking experience</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p>To ensure that your online security and account information are not compromised via your mobile device, please adopt the following safeguarding measures:</p>
+<ul class="list-bullet">
+<li class="mb2">Only access and use our Mobile Banking Services on mobile phones/devices installed with the latest operating system and anti-virus software</li>
+<li class="mb2">Do not access OCBC Mobile Banking using 'jail-broken' or 'rooted' mobile phones (e.g. where the operating system has been tampered with) as it increases the risk of malicious software infectionSecure your mobile device with a password, pin or relevant mechanism to prevent unauthorised use</li>
+<li class="mb2">Take extra caution in safeguarding your mobile device, which may be more prone to being misplaced/lost/stolen than your computer</li>
+<li class="mb2">Only click on hyperlinks from messages and emails if they are from a trusted source</li>
+<li class="mb2">Only download mobile apps (including OCBC Mobile Banking app and OCBC Business Mobile Banking app) from official sources such as the Apple App Store, Google Play Store or Huawei AppGallery</li>
+<li class="mb2">Always install the latest updates for your device from legitimate sources (Apple App Store, Google Play Store or Huawei AppGallery). New updates are sometimes used to fix bugs and address security vulnerabilities</li>
+<li class="mb2">Be aware of what the mobile app does and what information it may access on your mobile phone/device</li>
+<li class="mb2">If you are using your mobile phone to access OCBC Mobile Banking OneTouch&trade; &amp; OCBC Business Mobile Banking OneTouch&trade; service or receive SMS One-Time Password as your 2FA to access online banking, please notify us immediately in the event of loss/theft of your mobile device, and/or if you suspect there is unauthorised access to your account</li>
+<li class="mb2">Do not allow your mobile device to store or retain your log-in credentials</li>
+</ul></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="securities-measures-for-mobile">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Things to look out for</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Signs of malware presence on mobile devices</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><ul>
+<li class="mb2">
+<p>Unfamiliar screen pop-ups. These may ask you to install unknown apps or to grant special permission to specific apps</p>
+</li>
+<li class="mb2">
+<p>Shown a fake overlay login page which asks for your banking log-in credentials or credit card information</p>
+</li>
+<li class="mb2">
+<p>Abnormal battery drainage due to malware uitilising the system resources</p>
+</li>
+<li class="mb2">
+<p>Experience serious performance problems as the malware is actively running in the background</p>
+</li>
+<li class="mb2">
+<p>Experience dropped calls or strange disruptions during a conversation due to interference of mobile malware</p>
+</li>
+<li class="mb2">
+<p>Unusual phone/data bills as a result of malware sending SMS text messages to premium-rated number</p>
+</li>
+<li class="mb2">
+<p>Unusual change in the look-and-feel of your smartphone (such as new icons or applications)</p>
+</li>
+<li class="mb2">
+<p>Your smartphone shuts down abruptly or gets locked up with the screen displaying the message 'System update in progress' even after it has force-restarted</p>
+</li>
+</ul></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Signs of phishing scams on mobile devices</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><ul class="list-bullet">
+<li class="mb2">
+<p>When any hyperlinks provided in the message do not match our official pages: <br /><strong>Personal Banking</strong>:&nbsp;<a onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_ThingsToLookOut_PBInternetBankingLogin_21122016']); dataLayer.push({'event': 'SecurityMeasuresMobile_ThingsToLookOut_PBInternetBankingLogin_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/SecurityMeasuresMobile_ThingsToLookOut_PBInternetBankingLogin_21122016']);" rel="noopener" href="https://internet.ocbc.com/internet-banking/" target="_blank">https://internet.ocbc.com/internet-banking/</a> <br /><strong>Business Banking</strong>:<span>&nbsp;</span><a onclick="_gaq.push(['_trackEvent','Group','Security','Online_BankingSecurity_ThingsToLookOut_VelocityInternetBankingLogin_21122016']); dataLayer.push({'event': 'SecurityMeasuresMobile_ThingsToLookOut_VelocityInternetBankingLogin_21122016'}); _gaq.push(['_trackPageview', '/group/security/online/index/SecurityMeasuresMobile_ThingsToLookOut_VelocityInternetBankingLogin_21122016']);" rel="noopener" href="https://velocity.ocbc.com/login.html" target="_blank">https://velocity.ocbc.com/login.html</a></p>
+</li>
+<li class="mb2">
+<p>The message in an email contains poor spelling and grammar</p>
+</li>
+<li class="mb2">
+<p>The message is making big promises and the offer seems too good to be true</p>
+</li>
+<li class="mb2">
+<p>The message is making unrealistic threats, e.g. the phisher use intimidation to scare victims into giving up confidential or personal information</p>
+</li>
+<li class="mb2">
+<p>You receive notifications of transactions that you did not perform</p>
+</li>
+<li class="mb2">
+<p>When a message asks for confidential or personal information. The Bank does not make unsolicited request for your information via email or phones</p>
+</li>
+</ul></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="securities-measures-for-mobile">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">What you can do</div>
+         </div>
+         <div class="col-md-7"><span>If your mobile device has been compromised, take a picture of the suspicious screen or remove the battery (where possible) or disable all data connectivity or give us a call at:</span><br /><br />
+<p><strong>Personal Banking<br /></strong></p>
+<span>Call&nbsp;</span><a href="tel:63633333">6363 3333</a><span>&nbsp;(24-hour)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6563633333">+65 6363 3333</a><br /><br />
+<p><strong>Premier Banking</strong></p>
+<span>Call 1800 Premier (</span><a href="tel:18007736437">1800 773 6437</a><span>)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a><br /><br />
+<p><strong>Business Banking</strong></p>
+<span>Call&nbsp;</span><a href="tel:+6565381111">+65 6538 1111</a><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a></div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1579584082101">
+      <style>#iw_comp1579584082101{}</style><div class="nav-component"></div><div class="com_security" id="e-payments-user-protection-guidelines">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">E-payments User Protection Guidelines</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p>As the banking industry constantly strives to make e-payments solutions simpler and more secure to use, The Monetary Authority of Singapore has issued the E-Payments User Protection Guidelines (&ldquo;Guidelines&rdquo;) which spells out the roles and responsibilities of banks and our customers when making e-payments.</p>
+<p>Please be aware of your responsibility as an account holder and adopt safe banking measures to protect your bank accounts from unauthorised or erroneous transactions.</p>
+<p>Please read the highlights of the guidelines below to understand the Bank&rsquo;s as well as your rights and obligations as an account holder under the guidelines which will take effect on <strong>30 June 2019</strong>.</p>
+<p class="mt2"><strong>What are my responsibilities in protecting my bank account?</strong></p>
+<ul class="list-bullet">
+<li class="mb2">
+<p>Practise good security hygiene by changing your online banking PIN/password periodically and do not share with anyone</p>
+</li>
+<li class="mb2">
+<p>Keep your* contact details (such as mobile number and email address) up to date with OCBC so that we can send you transaction alerts by SMS or email</p>
+</li>
+<li class="mb2">
+<p>Choose to receive transaction notifications for outgoing transactions</p>
+</li>
+<li class="mb2">
+<p>Monitor your* transaction alerts and account statements for any unauthorised and erroneous transactions</p>
+<p class="caption">*in the case of sole proprietors, the person appointed at the point of application/mainenance</p>
+</li>
+</ul>
+<p class="mt2"><strong>Do not:</strong></p>
+<ul class="list-bullet">
+<li class="mb2">
+<p>Disclose your banking credentials such as Online Banking Access code, PIN or One-Time Password (OTP), Organisation ID, User ID or Password, credit/debit/ATM card details to any third party, for any purpose including to initiate or execute any payment transaction involving your account</p>
+</li>
+<li class="mb2">
+<p>Disclose your access code/password in a recognisable way on any payment account, authentication device, or any container for the payment account</p>
+</li>
+<li class="mb2">
+<p>Store or keep a record of your access code, PIN/Password, card details in a way that allows any third party to easily misuse them</p>
+</li>
+<li class="mb2">
+<p>Do not click on the weblinks in SMSes or emails to access our websites as these may be phishing attempts. Please always type our URL : <a rel="noopener" href="https://internet.ocbc.com/internet-banking" target="_blank">https://www.ocbc.com/login</a> (Individuals) or <a rel="noopener" href="https://velocity.ocbc.com/login.html" target="_blank">https://velocity.ocbc.com</a> (Sole Proprietors) into the browser&rsquo;s address bar or use our Mobile Banking/Business Mobile Banking apps</p>
+</li>
+</ul>
+<p class="mt2"><strong>Do:</strong></p>
+<ul class="list-bullet">
+<li class="mb2">
+<p>Only download the OCBC Mobile Banking app or OCBC Business Mobile Banking app from the official app stores (Apple App store or Google Play Store)</p>
+</li>
+<li class="mb2">
+<p>Update your device&rsquo;s browser to the latest version available</p>
+</li>
+<li class="mb2">
+<p>Patch your device&rsquo;s operating systems with regular security updates provided by the operating system provider</p>
+</li>
+<li class="mb2">
+<p>Install and maintain the latest anti-virus software on your device</p>
+</li>
+<li class="mb2">
+<p>Change your PIN/password regularly</p>
+</li>
+<li class="mb2">
+<p>Use strong password (such as a mixture of letters, numbers and symbols)</p>
+</li>
+<li class="mb2">
+<p>Do not use a PIN/password which can be easily guessed</p>
+</li>
+<li class="mb2">
+<p>Check carefully the e-payment instruction and details of the recipient (such as name, account number, mobile number, email address or unique entity number) before executing or confirming any e-payment transaction</p>
+</li>
+<li class="mb2">
+<p>Read carefully any notifications sent by the Bank. If you are asked to perform or authorise transactions that you are not aware of, do not do so</p>
+</li>
+<li class="mb2">
+<p>Report to the Bank immediately if you notice any unauthorised/erroneous transaction</p>
+</li>
+</ul>
+<p class="mt2"><strong>What are my responsibilities in making e-payments?</strong></p>
+<ul class="list-bullet">
+<li class="mb2">
+<p>Provide accurate contact information for the Bank to send transaction notifications;</p>
+</li>
+<li class="mb2">
+<p>Protect your login credentials and access to your protected accounts; login credentials include Login ID, access code, PIN/password, OTP or other credentials that are used to authenticate your identity;</p>
+</li>
+<li class="mb2">
+<p>Enable and monitor transaction notifications and report unauthorised transactions as soon as possible;</p>
+</li>
+<li class="mb2">
+<p>Provide information on unauthorised transactions as requested by the Bank to support investigations; and</p>
+</li>
+<li class="mb2">
+<p>Make a police report if the Bank requests such a report to be made to facilitate claims investigation</p>
+</li>
+</ul>
+<p class="mt2"><strong>Transaction alert notifications</strong></p>
+<p class="pt2"><u>ATM, debit/credit card transactions</u></p>
+<p>The default alert threshold for local ATM or local/overseas debit/credit card transactions is S$1,000. For overseas ATM cash withdrawals, the default alert threshold limit is S$1.00. You may choose to <a rel="noopener" href="/personal-banking/help-and-support/digital-banking/mobilepush" target="_blank">change the threshold</a> to your preferred setting.</p>
+<p>However, we recommend that you do not increase your threshold limit from the default limit. If you set it at a higher threshold than the default threshold limit, it will mean that you will not be notified of any transaction below the threshold limit that you&rsquo;ve set. This may have an impact on your liability for losses arising from unauthorised transactions.</p>
+<p>Where you have set the thresholds for the notifications previously, those thresholds will continue to apply. Otherwise, the default threshold set by the Bank will apply.</p>
+<p class="pt2"><u>Online banking fund transfers and payments</u></p>
+<p>For outgoing online banking fund transfers and payments, the default notification threshold limit is S$0.01. This threshold limit cannot be adjusted. We strongly encourage that you keep the transaction notification turned on at all times to monitor your transactions.</p>
+<p class="pt2"><u>Channels for transaction notification</u></p>
+<p>You may log in to OCBC Internet Banking to <a href="/personal-banking/help-and-support/digital-banking/mobilepush#ocbcpushnotification-change-limit-notify-alert" target="-blank">select your preferred channel</a> for transaction notifications via SMS, email or push notification (in-app notification on your mobile device).</p>
+<p>For the types of notifications available based on the Guidelines, you may refer to the FAQ below.</p>
+<p>For more information on your liability for losses arising from unauthorised transactions, please refer to the <a rel="noopener" href="https://www.abs.org.sg/docs/library/e-payment-guidelines-faqs.pdf" target="_blank">FAQ on E-Payments User Protection Guidelines by ABS</a>.</p></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="e-payments-user-protection-guidelines">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Unauthorised Transactions</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p>Should you become a victim of an unauthorised transaction, please inform us immediately. You can report to us by contacting one of our branches during their opening hours or call us at:</p>
+<p class="mt2"><strong>Personal Banking<br /></strong></p>
+<p><span>Call&nbsp;</span><a href="tel:63633333">6363 3333</a><span>&nbsp;(24-hour)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6563633333">+65 6363 3333</a></p>
+<p class="mt2"><strong>Premier Banking</strong></p>
+<p><span>Call 1800 Premier (</span><a href="tel:18007736437">1800 773 6437</a><span>)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a></p>
+<p class="mt2"><strong>Business Banking</strong></p>
+<p><span>Call&nbsp;</span><a href="tel:+6565381111">+65 6538 1111</a></p>
+<p>Give full information of the unauthorised transaction such as payee details including bank name, payee name, account number, transaction date and time, amount, sender and your account details.</p>
+<p>Make a police report if you have encountered a fraud or scam. We may request that you file a police report to facilitate our investigation.</p>
+<p class="mt2"><strong>What will the Bank do after you report an unauthorised transaction?</strong></p>
+<p>After receiving the information required to facilitate the investigation, the Bank will complete an investigation of any relevant claim within 21 business days for straightforward cases or 45 business days for complex cases.</p>
+<p>Complex cases may include cases where any party to the unauthorised transaction is residing overseas or where the Bank has not received sufficient information from you (as the account holder and in the case of sole proprietors, the person appointed at point of application/maintenance) to complete the investigation. The Bank will update you of the outcome of our investigation. If it has been assessed that you are not liable for any loss from the unauthorised transaction, the Bank will credit your account as soon as our assessment is complete.</p>
+<p>Should you disagree with our assessment of liability, you may proceed with other forms of dispute resolution including mediation at FIDReC.</p>
+<p>Please note that transactions arising from frauds or scams are not in scope within the Guidelines. For erroneous/unauthorised transactions on credit cards, charge cards or debit cards, the dispute resolution process established under the respective card scheme will apply.</p></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="e-payments-user-protection-guidelines">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Erroneous Transactions</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><p>If you have sent an erroneous transaction, please inform us immediately. You can report to us by calling us at the following hotlines or visiting our branch during their opening hours.</p>
+<p class="mt2"><strong>Personal Banking<br /></strong></p>
+<p><span>Call&nbsp;</span><a href="tel:63633333">6363 3333</a><span>&nbsp;(24-hour)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6563633333">+65 6363 3333</a></p>
+<p class="mt2"><strong>Premier Banking</strong></p>
+<p><span>Call 1800 Premier (</span><a href="tel:18007736437">1800 773 6437</a><span>)</span><br /><span>Calling from overseas? Call&nbsp;</span><a href="tel:+6565305930">+65 6530 5930</a></p>
+<p class="mt2"><strong>Business Banking</strong></p>
+<p><span>Call&nbsp;</span><a href="tel:+6565381111">+65 6538 1111</a></p>
+<p>Complete a <a rel="noopener" href="/iwov-resources/sg/ocbc/personal/pdf/forms/giro-fast-paynow-recall-request-form.pdf" target="_blank">GIRO/FAST/PAYNOW funds recall form</a>&nbsp;or <a rel="noopener" href="/iwov-resources/sg/ocbc/personal/pdf/forms/funds_transfer_cancel_form.pdf" target="_blank">IFT/Telegraphic Transfer/MEPS funds recall form</a>. You may be advised to file a police report.</p>
+<p>Give full information of the erroneous transaction such as recipient&rsquo;s unique identifier, including account number, identification number, name or other credentials entered by you and the date, time, amount and purpose of the transaction.</p>
+<p class="mt2"><strong>What will the Bank do after you report an erroneous transaction?</strong></p>
+<p>The Bank will endeavour to assist to recall the funds from the recipient and update you of the outcome. Longer time may be taken for more complex cases.</p></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="e-payments-user-protection-guidelines">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Frequently asked questions on guidelines</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What are the E-payment User Protection Guidelines all about?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>The Guidelines are issued by MAS to protect users of electronic payments. They aim to encourage wider adoption of e-payments in Singapore.</p>
+<p>The Guidelines establish a common baseline protection that Financial Institutions will provide to individuals and sole proprietors from losses arising from unauthorised e-payment transactions from their protected accounts.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What is a protected account?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Protected accounts as defined in the Guidelines are those that:</p>
+<ul>
+<li class="mb2">are held by either individuals or sole proprietors, including those held jointly by multiple account holders; and</li>
+<li class="mb2">can hold a balance of more than S$500 or equivalent at any one time (Stored value facilities like EZ-Link card and NETS Cashcard are thus not covered by the Guidelines), or is a credit facility</li>
+</ul></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What e-payments do the Guidelines cover?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>The guidelines cover all payments initiated through electronic means, and where funds are received through electronic means. These include online payments and transfers.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How do the Guidelines protect me?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>The Guidelines set out your responsibilities as an e-payment user to adopt good security practices. These include how you should protect your device, login credentials, access codes and protected accounts.</p>
+<p>We will provide you with transaction notifications and a reporting channel so that you may be alerted of unauthorised transactions and report them should they happen.</p>
+<p>We will investigate claims of unauthorised transactions, with the aim of achieving a fair and reasonable resolution.</p>
+<p>Please note that the Guidelines do not apply to scams or frauds, which will be investigated by the police.</p></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Frequently asked questions on transaction notifications</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What are these transaction notifications for?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><span> The notifications safeguard you against unauthorised and erroneous transactions. They are to alert you of such transactions so that you may report them to us for quicker resolution.</span></p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What type of transactions will I be notified on?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Notifications will be sent by us for outgoing payments initiated through electronic means. These include online payments/transfers and debit/credit card transactions.</p>
+<p>Some electronic transactions may not trigger notifications if they were not initiated or received through electronic means. Transactions initiated by us, such as credit card cashbacks, will not trigger notifications under the Guidelines.</p>
+<p>The notifications you receive may also depend on your instructions to us. For instance, you may have instructed us that a notification be sent only for certain types of outgoing transactions or if a transaction is above a certain amount.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What type of transactions will I be notified on based on the guidelines</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><strong>For Individuals:</strong></p>
+<table class="table" style="height: 234px;" border="0">
+<tbody>
+<tr>
+<th style="padding: 20px; width: 33%; vertical-align: middle;">Types of SMS/Push Notification/Email Alerts</th>
+<th class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Default Enrolment Settings</th>
+<th class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Default Threshold</th>
+</tr>
+<tr>
+<td style="padding: 20px; width: 33%; vertical-align: middle;">Top-ups and NETS purchases initiated via ATM card</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Auto-enrolment</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">S$1,000.00 cumulative basis</td>
+</tr>
+<tr>
+<td style="padding: 20px; width: 33%; vertical-align: middle;">Bill Payment and funds transfers initiated via ATM card</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Auto-enrolment</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">S$1,000.00</td>
+</tr>
+<tr>
+<td style="padding: 20px; width: 33%; vertical-align: middle;">Online Banking payments and transfers</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Auto-enrolment</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">S$0.01</td>
+</tr>
+<tr>
+<td style="padding: 20px; width: 33%; vertical-align: middle;">Debit/credit card transactions*</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Auto-enrolment</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">S$1,000.00</td>
+</tr>
+</tbody>
+</table>
+<a href="https://www.ocbc.com/personal-banking/help-and-support/payments-and-transactions/general#payments-sms-notification-alerts-for-transactions">Click here for other transaction alerts available.</a>
+<p class="mt4"><strong>For Sole Proprietors:</strong></p>
+<table class="table" border="0">
+<tbody>
+<tr>
+<th style="padding: 20px; width: 33%; vertical-align: middle;">Types of SMS/Email Alerts</th>
+<th class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Default Enrolment Settings</th>
+<th class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Default Threshold</th>
+</tr>
+<tr>
+<td style="padding: 20px; width: 33%; vertical-align: middle;">Cashcard top-ups, funds transfer, Bill Payment and NETS purchases initiated via ATM card</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">As per indicated in the Corporate ATM SMS Alert setup/maintenance form</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">S$1,000.00 cumulative basis</td>
+</tr>
+<tr>
+<td style="padding: 20px; width: 33%; vertical-align: middle;">Online Banking payments and transfers</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Auto-enrolment for all online banking users based on contact details provided</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">S$0.01</td>
+</tr>
+<tr>
+<td style="padding: 20px; width: 33%; vertical-align: middle;">Card transaction*<br />- Debit card transactions</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">Auto-enrolment based on the contact details provided in the Business Debit Card application</td>
+<td class="text-center" style="padding: 20px; width: 33%; vertical-align: middle;">S$1,000.00</td>
+</tr>
+</tbody>
+</table>
+<p class="caption">*Transactions initiated by the bank, such as credit card cashbacks, will not trigger notifications under the Guidelines.</p>
+<p>Where you have set thresholds for transaction notifications previously, those thresholds will continue to apply. Otherwise, the default threshold set by us will apply.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How will these notifications be sent</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><span>Notifications may be sent via any of these channels:</span></p>
+<table class="table" border="0">
+<tbody>
+<tr>
+<th>Channels</th>
+<th>Individuals</th>
+<th>Sole Proprietors</th>
+</tr>
+<tr>
+<td>SMS</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>In-app<br />(funds transfer within own accounts; bill payment)</td>
+<td>Yes</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Do I need to enrol for these notifications?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>You are automatically enrolled for notifications of outgoing transactions initiated through electronic means. This is applicable for new and existing customers (please refer to the default threshold limit set out in Question 7).</p>
+<p>Please update us with your* latest mobile number or email address to ensure that you receive the notifications.</p>
+<p class="caption">* in the case of sole proprietors, the person appointed at point of application/maintenance</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">Will I be charged for this service?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>This service is currently free.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">I am receiving too many notifications. How do I stop these notifications?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>The notifications are a safeguard against unauthorised and erroneous transactions. There is a default threshold limit set for certain types of transactions (refer to Question 7 above). Based on your payment patterns, you may wish to adjust your notification thresholds so that you receive notifications that are most relevant to you. For instance, you may wish to be notified only if the transaction is above a certain amount.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What will happen to the existing notification thresholds that I have set previously?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Your existing notification thresholds will continue to apply and you may visit the notification settings to change it anytime.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How do I customise the alert settings?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><strong>For Individuals:</strong></p>
+<p>You may choose to customise the alert settings via&nbsp;<a rel="noopener" href="https://internet.ocbc.com/internet-banking/ealert/index?menuId=8627014e-08f9-4090-b017-c96be68d8290&amp;t=121725663&amp;redir=1&amp;rc=INB" target="_blank">OCBC Online Banking</a>. For those alerts with selection of threshold limit available (such as ATM/card transactions), you can change the alert threshold to your preferred setting.</p>
+<p>For more enquiries, please call 1800 363 3333 or visit any of our OCBC branches.</p>
+<p class="mt2"><strong>For Sole Proprietors:</strong></p>
+<ul>
+<li>For Corporate ATM Card, download<span>&nbsp;</span><a rel="noopener" href="/iwov-resources/sg/ocbc/personal/pdf/forms/Business-Account-Update-Form.pdf" target="_blank">Corporate ATM Services SMS Alert Update form</a></li>
+<li>For Business Debit Card, call 1800 363 3333</li>
+<li>For online banking settings call +65 6538 1111 or</li>
+<li>Visit any of our OCBC branches</li>
+</ul></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">How do I update my mobile phone number?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>To ensure you are kept informed of your account/transaction details, it is important for the bank to be updated with your current mobile phone number.</p>
+<p>You may update your mobile phone number via the following methods:</p>
+<p class="mt2"><strong>For Individuals:</strong></p>
+<p>You may choose to customise the alert settings via the following methods:</p>
+<ul>
+<li><a rel="noopener" href="https://internet.ocbc.com/internet-banking/ChangePersonalParticularsNew/Index?menuId=867cce3d-3e22-4921-89c8-8661e6909295&amp;t=121725663&amp;redir=1&amp;rc=INB" target="_blank">OCBC Online Banking</a><span>&nbsp;</span>or<span>&nbsp;</span><a rel="noopener" href="https://www.ocbc.com/download" target="_blank">OCBC Mobile Banking app</a></li>
+<li>Any OCBC ATM or Kiosk</li>
+<li>Call 1800 363 3333 using your telephone PIN</li>
+</ul>
+<p class="mt2"><strong>For Sole Proprietors:</strong></p>
+<ul>
+<li>For Corporate ATM Card, download<span>&nbsp;</span><a rel="noopener" href="/iwov-resources/sg/ocbc/personal/pdf/forms/Business-Account-Update-Form.pdf" target="_blank">Business Account Update form</a></li>
+<li>For Business Debit Card, download<span>&nbsp;</span><a rel="noopener" href="/iwov-resources/sg/ocbc/personal/pdf/forms/changeaddresscontactdetails.pdf" target="_blank">Change of Address/Contact Details form</a></li>
+<li>For online banking via<span>&nbsp;</span><a rel="noopener" href="https://velocity.ocbc.com/" target="_blank">https://velocity.ocbc.com</a></li>
+<li>Visit any of our OCBC branches</li>
+</ul></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What should I do if I receive a notification for a transaction that I do not recognise?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>This could be an unauthorised transaction and you should inform the Bank immediately. Please provide the following information to us:</p>
+<ol class="list-decimal">
+<li class="mb2">The bank account affected;</li>
+<li class="mb2">Your identification information;</li>
+<li class="mb2">The type of authentication device, access code/login credentials and device used to perform the payment transaction;</li>
+<li class="mb2">The name or identity of any account user;</li>
+<li class="mb2">
+<p>Whether the account number, authentication device, or access code/login credentials was lost, stolen or misused and if so,</p>
+<ul class="list-bullet">
+<li>the date and time of the loss or misuse,</li>
+<li>the date and time that the loss or misuse, was reported to you, and</li>
+<li>the date, time and method that the loss or misuse, was reported to the police;</li>
+<li>any access code/login credentials that is applicable to the account,</li>
+<li>how the account holder or any account user recorded the access code/login credentials, and</li>
+<li>whether the account holder or any account user had disclosed the access code/login credentials to anyone</li>
+</ul>
+</li>
+</ol></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">Frequently asked questions of liability and reporting of erroneous/unauthorised transactions</div>
+         </div>
+         <div class="col-md-7">
+            <div class="mb4 pb4">
+               <hr>
+               <div class="">
+                  <div class="accordion">
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">If I report an unauthorised or erroneous transaction to my bank, when can I expect a resolution?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>We should complete an investigation of any relevant claim within 21 business days for straight forward cases, and up to 45 business days for complex cases.</p>
+<p>For erroneous/unauthorised transactions on credit cards, charge cards or debit cards, the dispute resolution process established under the respective card scheme will apply.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">If I report an unauthorised transaction, am I still liable for the transaction?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><span>You will not be liable for any loss that arises from any action or omission by us, if you have complied with your duties as an account holder. For losses due to any other independent third party other than you and us, subject to the below, you will also not be liable if the outgoing transaction value is within S$1,000.</span></p>
+<p><span>You will, however, be liable if it is ascertained that the primary cause was recklessness on your part, such as failing to protect your access code/login credentials or access to your protected account. Your liability will be capped at the transaction limit or daily payment limit, where applicable.</span></p>
+<p><span>In all cases, we will conduct an assessment to determine the appropriate liabilities and work towards a fair and reasonable resolution.</span></p>
+<p><span>For transactions on credit cards, charge cards and debit cards issued in Singapore, the apportioning of liabilities is governed by the ABS Code of Consumer Banking Practice.</span></p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">What should I do if I receive erroneously sent funds?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p>Please inform us as soon as possible. You may be facilitating criminal activities, such as money laundering and unlicensed money lending, if you knowingly receive money from strangers, dubious sources or other unverified sources. It is a criminal offence if your bank account is used to receive money linked to criminal activities or keeping erroneously sent funds.</p></div>
+                     </div>
+                     <hr>
+                     <div class="accordion__item pt3 pb3">
+                        <div class="accordion__item__title d-flex justify-content-between align-items-start">
+                           <p class="mb-0"><strong class="mb-0">If I have sent funds erroneously to a wrong party, what should I do to get my money back?</strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                        <div class="accordion__item__content pt2"><p><span>Please contact us immediately to log your case. Reasonable efforts will be taken by us to recover the money sent, where possible. We and the receiving bank will facilitate communication between you and the recipient to help you recover the money that was sent wrongly.</span></p></div>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1579584082046">
+      <style>#iw_comp1579584082046{}</style><div class="com_security">
+   <div class="terms">
+      <div class="module container bp-width-med3">
+         <div class="row">
+            <div class="col-custom-8">
+               <div class="accordion">
+                  <div class="accordion__item">
+                     <div class="accordion__item__title d-flex align-items-center">
+                        <p class="mb-0 mr"><strong class="mb-0"><span>Terms and conditions</span></strong></p><i class="fz-18 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                     <div class="accordion__item__content pt3">
+                        <p><span><span>We hope that the information we provide will be useful to you. However, you are expected to be responsible for the security of your devices. We regret that we will not be able to bear any financial losses resulting from unauthorised use of your account.</span></span></p>
+                        <p><strong class="mb1 d-block">Personal and Premier Banking customers</strong><span><span>Your usage of our OCBC Online Banking Service is subject at all times to our&nbsp;</span><a href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services.page">Terms and conditions governing Electronic Banking Services</a><span>&nbsp;and the&nbsp;</span><a href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-deposit-accounts.page">Terms and conditions governing Deposit Accounts</a><span>.</span></span></p>
+                        <p><strong class="mb1 d-block">Business Banking customers</strong><span><span>Your usage of our OCBC Internet Banking Service known as OCBC Velocity is subject at all times to the&nbsp;</span><a rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/business_account_terms_and_conditions.pdf" target="_blank">Business Account terms and conditions</a><span>.</span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.intro-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.nav-component').parent().wrapAll('<div class="section iw_off"> </div>');
+	  
+	  
+	
+	  $('.termsandconditions-component').parent().wrapAll('<div class=""> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+   <div class="iw_component" id="iw_comp1601463609293">
+    <style>#iw_comp1583140136110{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-6 col-xl-6">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>OCBC Group</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/group-home.html">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbcnisp.com/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label><hr>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-6">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="w-100">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                 <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                 <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                          <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                          <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Contact Us</span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                 <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Contact Us</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                          <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-none d-sm-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/OCBCBank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/group/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/group/policies" class="" target="_self">Policies</a></span><span><a href="/group/notices" class="" target="_self">Notices</a></span><span><a href="/group/fair-dealing" class="" target="_self">Fair Dealing</a></span><span><a href="/group/security" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – 2023 – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container">You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/group/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/group/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none"></div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/gbc/js/management-team.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/ospl/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/gbc/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/analytic.js'></script>
+<script>
+window.location.replace("https://www.ocbc.com/personal-banking/security/overview.page");
+</script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

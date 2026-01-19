@@ -1,0 +1,2456 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Business Banking Pricing Guide | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/help-and-support/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/help-and-support/accounts-and-services/business-pricing-guide/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="Business banking,OCBC banking fees,OCBC business accounts,Transaction fees,OCBC pricing guide,OCBC service charge">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="The latest fees and charges for our business banking products and services - from time deposits to account services and transaction and exchange services.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="" class="page-theme--grey table-theme--grey"><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:ocbc business banking:help and support:accounts and services:business pricing guide",
+            language: "en",
+            pageCategory: "pre-login help and support page",
+            bannerName: "",
+            channel: "help and support",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+    </script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1576827592555">
+    <style>#iw_comp1570528883679{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#accounts" class="header__navi">Accounts</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#loans" class="header__navi">Loans</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#trades" class="header__navi">Trade</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#transactions" class="header__navi">Collections and Payments</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#runningbiz" class="header__navi">Running a business</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/international" class="" target="_self">International</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in</p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="/Premier">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <div class="dropdown__bb dropdown__second__bb d-lg-inline">
+                           <div class="dropdown__theme  dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location-option-filter" class="selectize selectize--navigation" id="header-businessBanking">
+                                 <option value="/business-banking/smes">SMEs</option>
+                                 <option value="/business-banking/enterprises">Enterprises</option>
+                                 <option value="/business-banking/corporates">Corporates</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support" class="" target="_self">Help and support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="accounts" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Accounts</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Open a Business account</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For startups or new businesses</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/business-growth-account" class="link link link-arrow-right" target="_self">Business Growth <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">No account fee</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/business-entrepreneur-account-plus" class="link link link-arrow-right" target="_self">Business Entrepreneur Plus <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Transact internationally</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/multi-currency-business-account" class="link link link-arrow-right" target="_self">Multi-Currency Business <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">100% online</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/account-opening-for-foreign-owned-companies" class="link link link-arrow-right" target="_self">Business account for foreign-owned <span class="text-nowrap">companies<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/accounts" class="button button--secondary button--link" target="_self"><span>See all Accounts</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/best-smes-accounts" class="link link link-arrow-right" target="_self">Best Business Bank Accounts for SMEs in Singapore <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/registering-your-business" class="link link link-arrow-right" target="_self">Guide to registering your <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="loans" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Loans</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Finance your business</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Fund day-to-day expenses and expansion plans</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-loans" class="link link link-arrow-right" target="_self">Business <span class="text-nowrap">Loans<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For young startups 6 months into operations</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-first-loan" class="link link link-arrow-right" target="_self">Business First <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Helping SMEs do well and do good</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/sustainable-financing" class="link link link-arrow-right" target="_self">SME Sustainable <span class="text-nowrap">Financing<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Own or refinance a property</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/commercial-property-loan" class="link link link-arrow-right" target="_self">Commercial Property <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Have ready cash on standby and pay only for what you use</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-revolving-short-term-loan" class="link link link-arrow-right" target="_self">Revolving Term <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/loans" class="button button--secondary button--link" target="_self"><span>See all Loans</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sme-loans-singapore-guide" class="link link link-arrow-right" target="_self">A guide to the best SME loans in Singapore <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sme-lending-options-2021" class="link link link-arrow-right" target="_self">SME financing in 2023 - What are the lending options for small <span class="text-nowrap">businesses?<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="trades" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Trade</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Expand international trade</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Manage my purchases</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-importsolutions" class="link link link-arrow-right" target="_self">Import <span class="text-nowrap">finance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Finance my working capital</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/loans/working-capital.page" class="link link link-arrow-right" target="_self">Open account <span class="text-nowrap">financing<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Grow my sales</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-exportsolutions" class="link link link-arrow-right" target="_self">Export <span class="text-nowrap">finance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Secure my obligations</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-otherservices" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Guarantees<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Facilitate purchases/sales as Middleman</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-otherservices" class="link link link-arrow-right" target="_self">Back-to-Back & Transferable Letter of <span class="text-nowrap">Credit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/trade" class="button button--secondary button--link" target="_self"><span>See all Trade Finance Products</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/purchase-invoice-financing-for-smes" class="link link link-arrow-right" target="_self">Understanding invoice financing (purchase) for <span class="text-nowrap">SMEs<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sales-invoice-financing-for-smes" class="link link link-arrow-right" target="_self">What SMEs must know about invoice financing <span class="text-nowrap">(sales)<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="transactions" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Collections and Payments</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Manage your payments</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Make payments</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/making-payments" class="link link link-arrow-right" target="_self">Making <span class="text-nowrap">payments<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Receive payments</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/receiving-payments" class="link link link-arrow-right" target="_self">Receiving <span class="text-nowrap">payments<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Commercial cards</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/commercial-cards" class="link link link-arrow-right" target="_self">For everyday business <span class="text-nowrap">needs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/transactions" class="button button--secondary button--link" target="_self"><span>See all transfer methods</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">&nbsp;</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>The OCBC Business Debit Card now comes in a new design!
+<p class="pt2">Earn unlimited cashback on your everyday business spend!</p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/smes/transactions/business-debit-card" class="link link link-arrow-right" target="_self">Find out <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="runningbiz" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Running a business</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Running a business</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Starting your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#starting-first-business" class="link link link-arrow-right" target="_self">Uncover blind spots and start your business <span class="text-nowrap">right<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Growing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#growing-your-business" class="link link link-arrow-right" target="_self">Grow local, go <span class="text-nowrap">international<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Managing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#managing-your-business" class="link link link-arrow-right" target="_self">Optimise your everyday <span class="text-nowrap">operations<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Scaling your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#scaling-your-business" class="link link link-arrow-right" target="_self">Take your business further, <span class="text-nowrap">faster<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/business-tools" class="button button--secondary button--link" target="_self"><span>See all resources</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Industry Expertise</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/enterprises/healthcare" class="link link link-arrow-right" target="_self">Are you an aspiring medical <span class="text-nowrap">entrepreneur?<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/enterprises/fnb" class="link link link-arrow-right" target="_self">Business solutions for F&B <span class="text-nowrap">entrepreneurs<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/enterprises" class="link link link-arrow-right" target="_blank">Find solutions for your industry-specific <span class="text-nowrap">needs<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1610111106733">
+      <style>#iw_comp1610111106733{}</style><div class="nav-component"></div><div class="module container animate bp-width-med3">
+   <div class="row">
+      <div class="col-lg-4 col-md-4">
+         <h3 class="mb-4 mb-sm-5"><strong>Business Banking Pricing Guide<br>商业银行收费指南</strong></h3>
+      </div>
+      <div class="col-lg-8 col-md-8"></div>
+   </div>
+   <div class="com__condition-of-access">
+      <div class="row">
+         <div class="col-lg-4 col-md-4 d-none d-md-block">
+            <div sticky-content="">
+               <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                  <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                     <li class="side-nav-item col-4 col-md-12 selected"><a href="#accountcharges" class="" target="_self">Account Charges 账户收费</a></li>
+                     <li class="side-nav-item col-4 col-md-12 "><a href="#timedeposits" class="" target="_self">Time Deposits 定期存款</a></li>
+                     <li class="side-nav-item col-4 col-md-12 "><a href="#transactioncharges" class="" target="_self">Transaction Charges 交易收费</a></li>
+                     <li class="side-nav-item col-4 col-md-12 "><a href="#otherservicecharges" class="" target="_self">Other Service Charges 其他服务收费</a></li>
+                     <li class="side-nav-item col-4 col-md-12 "><a href="#accountandstatementservicecharges" class="" target="_self">Account and Statement Service Charges 账户和结单服务收费</a></li>
+                     <li class="side-nav-item col-4 col-md-12 "><a href="#cashdepositwithdrawalandexchange" class="" target="_self">Cash Deposit/Withdrawal and Exchange Services Charges 现金存款/提款和兑换服务收费</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8 col-md-8">
+            <div class="accordion-mobile-nav-items d-none">
+               <div class="accordion-mobile-nav">
+                  <div class="accordion-mobile-nav-label"><span></span></div>
+                  <div class="accordion-mobile-nav-list">
+                     <div class="a-mobile-nav-item selected" data-href="#accountcharges" target="_self">Account Charges 账户收费</div>
+                     <div class="a-mobile-nav-item " data-href="#timedeposits" target="_self">Time Deposits 定期存款</div>
+                     <div class="a-mobile-nav-item " data-href="#transactioncharges" target="_self">Transaction Charges 交易收费</div>
+                     <div class="a-mobile-nav-item " data-href="#otherservicecharges" target="_self">Other Service Charges 其他服务收费</div>
+                     <div class="a-mobile-nav-item " data-href="#accountandstatementservicecharges" target="_self">Account and Statement Service Charges 账户和结单服务收费</div>
+                     <div class="a-mobile-nav-item " data-href="#cashdepositwithdrawalandexchange" target="_self">Cash Deposit/Withdrawal and Exchange Services Charges 现金存款/提款和兑换服务收费</div>
+                  </div>
+               </div>
+            </div>
+            <div id="left-nav-identifier"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111106734">
+      <style>#iw_comp1610111106734{}</style><div class="faq-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="both" close-others="false">
+            <div class="clearfix"><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="accountcharges" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Account Charges 账户收费</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p><strong>Singapore Dollar Business Accounts 新元商业账户</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 551px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 482.526px;">Fees<br>费用</td>
+<td style="height: 18px; width: 486.081px;">Business Growth Account<br>商业增长账户</td>
+<td style="height: 18px; width: 486.133px;">Business Entrepreneur Account Plus<br>商业企业Plus账户</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 482.526px;"><strong>Minimum Initial Deposit<br>最低初始存款</strong></td>
+<td style="height: 18px; width: 486.081px;">S$1,000</td>
+<td style="height: 18px; width: 486.133px;">S$30,000</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 482.526px;"><strong>Account Fee<br>账户费用</strong></td>
+<td style="height: 36px; width: 486.081px;">S$10 per month<br>Waived for first 2 months.<br>每月S$10<br>首两个月豁免付费。</td>
+<td style="height: 36px; width: 486.133px;">N.A.<br>不适用</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 482.526px;"><strong>Service Charge<br>服务费</strong></td>
+<td style="height: 36px; width: 486.081px;">
+<p>S$15 per month if monthly average balance falls below S$1,000 (w.e.f. 1 November 2022).<br>如果每月平均结余低于S$1,000，须支付每月S$15 (从2022年11月1日起生效)。</p>
+</td>
+<td style="height: 36px; width: 486.133px;">S$50 per month if monthly average balance falls below S$30,000<br>如果每月平均结存低于S$30,000，须每月支付S$50。</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 482.526px;"><strong>Early Account Closure Fee<br>提前关闭账户费</strong></td>
+<td style="height: 18px; width: 486.081px;">S$50 for accounts closed within 12 months of opening.<br>在开立账户12个月内关闭账户，须支付S$50。</td>
+<td style="height: 18px; width: 486.133px;">S$50 for accounts closed within 6 months of opening.<br>在开立账户6个月内关闭账户，须支付S$50。</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 482.526px;"><strong>Excess Fee<br>超支费用</strong><br>(Incidental overdraft charge for accounts without limits)<br>(无限制账户的偶发透支收费)</td>
+<td style="height: 36px; width: 977.526px;" colspan="2">Minimum S$30 or Prime + 4.75% per annum (whichever is higher) on the excess amount.<br>最少30新元或对透支金额收取优惠利率+4.75%的年利率 (以较高者为准)。</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 482.526px;"><strong>OCBC Velocity</strong><br>(Business Internet Banking) <strong>Token</strong><br>OCBC Velocity (企业网上银行服务)<strong>编码器</strong></td>
+<td style="height: 36px; width: 486.081px;">Please refer to section "Other Service Charges" for details.<br>Transaction fees apply.<br>有关收费详情，请参阅&ldquo;其他服务收费&rdquo;部分。<br>须支付交易费。</td>
+<td style="height: 36px; width: 486.133px;">Please refer to section "Other Service Charges" for details.<br>Transaction fees apply.<br>有关收费详情，请参阅&ldquo;其他服务收费&rdquo;部分。<br>须支付交易费。</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 482.526px;"><strong>eAlerts@ocbc<br>eAlerts@ocbc通知服务</strong></td>
+<td style="height: 36px; width: 486.081px;">Standard charges apply. First 3 months waived.<br>Please refer to section "Other Service Charges" for detailed charges.<br>须支付标准收费。首3个月豁免付费。<br>有关收费详情，请参阅&ldquo;其他服务收费&rdquo;部分。</td>
+<td style="height: 36px; width: 486.133px;">Standard charges apply. First 3 months waived.<br>Please refer to section "Other Service Charges" for detailed charges.<br>须支付标准收费。首3个月豁免付费。<br>有关收费详情，请参阅&ldquo;其他服务收费&rdquo;部分。</td>
+</tr>
+<tr style="height: 137px;">
+<td style="height: 137px; width: 482.526px;"><strong>Transaction Fees<br>交易费</strong></td>
+<td style="height: 137px; width: 486.081px;"><strong>Free bundled package via OCBC Velocity<br>OCBC Velocity提供免费套餐</strong><br>
+<ul>
+<li>First 80 FAST payments per month: Free</li>
+<li>The 81st FAST payment onwards: Standard charges apply as per section "Transaction Charges"</li>
+<li>First 80 outward GIRO (Payment and Collection) per month: Free</li>
+<li>The 81st outward GIRO (Payment and Collection) onwards: Standard charges apply as per section "Transaction Charges"</li>
+</ul>
+<p>* The calculation of transaction volume will be based on the transaction date.</p>
+<ul>
+<li>每个月首80笔FAST付款: 免费</li>
+<li>第81笔及以上FAST付款: 将根据&ldquo;交易收费&rdquo;部分收取标准费用。</li>
+<li>每个月首80笔财路转出(付款和收款): 免费</li>
+<li>第81笔及以上财路转出(付款和收款): 将根据&ldquo;交易收费&rdquo;部分收取标准费用。</li>
+</ul>
+<p>For any other type of transaction that exceeds the free monthly bundled package listed above, standard charges apply to any other transaction(s) as per sections "Transaction Charges" &amp; "Other Service Charges", unless otherwise mentioned.</p>
+对于超出上述每月免费套餐的任何其他类型交易，除非另行说明，否则将根据&ldquo;交易收费&rdquo;和&ldquo;其他服务收费&rdquo;部分对任何其他交易收取标准费用。</td>
+<td style="height: 137px; width: 486.133px;">
+<p>Standard charges apply. Please refer to <a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide#transactioncharges">Transaction Charges</a>.</p>
+<p>&nbsp;</p>
+<p>征收标准收费。详细收费请参看<a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide#transactioncharges">交易收费</a>。</p>
+</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 482.526px;"><strong>Cheque book Issuance Fee<br>支票簿发出费</strong></td>
+<td style="height: 36px; width: 486.081px;">S$25 per cheque book<br>每本支票簿S$25</td>
+<td style="height: 36px; width: 486.133px;">S$25 per cheque book<br>每本支票簿S$25</td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 482.526px; height: 36px;"><strong>Cheques<br>支票</strong></td>
+<td style="width: 486.081px; height: 36px;">
+<p>Standard charges apply. Please refer to<span>&nbsp;</span><a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide#transactioncharges">Transaction Charges.</a></p>
+<p>征收标准收费。详细收费请参看<a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide#transactioncharges">交易收费</a>。</p>
+</td>
+<td style="width: 486.133px; height: 36px;">
+<p>Standard charges apply. Please refer to<span>&nbsp;</span><a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide#transactioncharges">Transaction Charges.</a></p>
+<p>征收标准收费。详细收费请参看<a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide#transactioncharges">交易收费</a>。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="caption">* Cheque Clearing Fee refers to fee charged on a cheque that has been issued and presented to the bank for clearing.<br>* 支票结算费是指已经签发并提交给银行进行结算的支票费用。</p>
+<p><strong>Foreign Currency Business Accounts 外币商业账户</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 761px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 36px;">
+<th style="height: 36px; width: 395.516px;">Fees<br>费用</th>
+<th style="height: 36px; width: 389.234px;">Multi-Currency Business Account<br>多币种商业账户</th>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 395.516px;"><strong>Minimum Initial Deposit <br>最低初始存款</strong></td>
+<td style="height: 36px; width: 389.234px;">N.A. <br>不适用</td>
+</tr>
+<tr>
+<td style="width: 395.516px;"><strong>Service Charge<br>服务费</strong></td>
+<td style="width: 389.234px;">N.A. <br>不适用</td>
+</tr>
+<tr style="height: 72px;">
+<td style="height: 72px; width: 395.516px;"><strong>Account Fee<br>账户费用</strong></td>
+<td style="height: 72px; width: 389.234px;">S$10 per month.<br>Waived if your company has an OCBC SGD account<br>每月S$10<br>若贵公司拥有华侨银行新元账户，此费用可豁免</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 395.516px;"><strong>Early Account Closure Fee <br>提前关闭账户费</strong></td>
+<td style="height: 36px; width: 389.234px;">N.A.<br>不适用</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 395.516px;"><strong>Account Set-up Fee <br>账户开立费</strong></td>
+<td style="height: 36px; width: 389.234px;">N.A.<br>不适用</td>
+</tr>
+<tr style="height: 491px;">
+<td style="height: 491px; width: 395.516px;"><strong>Excess Fee</strong><br>(Incidental overdraft charge for accounts without limits)<br><strong>超支费用</strong> (无限制账户的偶发透支收费)</td>
+<td style="height: 491px; width: 389.234px;">AUD : Minimum AUD10 or AUD Prime Rate + 4% p.a.<br>CAD : Minimum CAD8 + CAD Prime Rate + 4% p.a.<br>CHF : Minimum CHF8 or CHF Prime Rate + 4% p.a.<br>DKK : Minimum DKK42 or DKK Prime Rate + 4% p.a.<br>EUR : Minimum EUR6 or EUR Prime Rate + 4% p.a.<br>GBP : Minimum GBP4 + GBP Prime Rate + 4% p.a.<br>HKD : Minimum HKD40 or HKD Prime Rate + 4% p.a.<br>JPY : Minimum JPY750 + JPY Prime Rate + 4% p.a.<br>NZD : Minimum NZD12 or NZD Prime Rate + 4% p.a.<br>NOK : Minimum NOK45 or NOK Prime Rate + 4% p.a.<br>SEK : Minimum SEK53 or SEK Prime Rate + 4% p.a.<br>USD : Minimum USD10 or USD Prime Rate + 4% p.a.<br>澳元：最少10澳元或澳元优惠利率+4%的年利率<br>加元：最少8加元或加元优惠利率+4%的年利率<br>瑞士法郎：最少8瑞士法郎或瑞士法郎优惠利率+4%的年利率<br>丹麦克朗：最少42丹麦克朗或丹麦克朗优惠利率+4%的年利率<br>欧元：最少6欧元或欧元优惠利率+4%的年利率<br>英镑：最少4英镑或英镑优惠利率+4%的年利率<br>港元：最少40港元或港元优惠利率+4%的年利率<br>日元：最少750日元或日元优惠利率+4%的年利率<br>新西兰元：最少12新西兰元或新西兰元优惠利率+4%的年利率<br>挪威克朗：最少45挪威克朗或挪威克朗优惠利率+4%的年利率<br>瑞典克朗：最少33瑞典克朗或瑞典克朗优惠利率+4%的年利率<br>美元：最少10美元或美元优惠利率+4%的年利率<br><br>(whichever is higher) on the excess amount.<br>对透支金额收取上述年利率（以较高者为准）。</td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 395.516px;"><strong>Minimum Day End Balance to Earn Interest <br>能赚取利息的最低当日结余</strong></td>
+<td style="height: 36px; width: 389.234px;">N.A.<br>不适用</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<th>Fees<br>费用</th>
+<th>USD Business Smart Account<br>美元商业Smart账户</th>
+</tr>
+<tr>
+<td><strong>Minimum Initial Deposit<br>最低初始存款</strong></td>
+<td>US$500<br>500美元</td>
+</tr>
+<tr>
+<td><strong>Service Charge<br>服务费</strong></td>
+<td>Waived for 1st 6 months.<br>Thereafter, US$15 per month if monthly average balance falls below US$1,000.<br>首六个月豁免付费。<br>随后如果每月平均结余低于1,000美元，须支付每月15美元。</td>
+</tr>
+<tr>
+<td><strong>Early Account Closure Fee<br>提前关闭账户费</strong></td>
+<td>US$50 for accounts closed within 1 year of opening.<br>在开立账户1年内关闭账户，须支付50美元。</td>
+</tr>
+<tr>
+<td><strong>Account Set-up Fee</strong><br>(One time for new accounts opened from <strong>1 April 2015</strong>)<br><strong>账户开立费</strong><br>(对从<strong>2015年4月1日</strong>起开立的新账户收取一次性费用)</td>
+<td>N.A.<br>不适用</td>
+</tr>
+<tr>
+<td><strong>Excess Fee</strong><br>(Incidental overdraft charge for accounts without limits)<br><strong>超支费用</strong><br>(无限制账户的偶发透支收费)</td>
+<td>Minimum US$10 or USD Prime Rate + 4% p.a. (whichever is higher) on the excess amount.<br>美元：最少10美元或对透支金额收取美元优惠利率+4%的年利率。</td>
+</tr>
+<tr>
+<td><strong>Minimum Day End Balance to Earn Interest<br>能赚取利息的最低当日结余</strong></td>
+<td>N.A.<br>不适用</td>
+</tr>
+</tbody>
+</table></div>
+               </li>
+               <li id="timedeposits" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Time Deposits 定期存款</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p><strong>Singapore Dollar Time Deposit 新元定期存款</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Minimum Initial Deposit<br />最低初始存款</td>
+<td>Available Tenures<br />提供期限</td>
+<td>Premature Termination<br />提前终止</td>
+</tr>
+<tr>
+<td>S$5,000</td>
+<td>1-12, 18, 24 and 36 months<br />(shorter tenures available for higher amounts)<br />1-12, 18, 24和36个月<br />(对更高金额亦提供较短期限)</td>
+<td>Premature withdrawal fees applicable for withdrawal made prior to maturity.<br />在到期前取出款项，须支付提前取出的费用。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Foreign Currency Time Deposit 外币定期存款</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td width="40%"><span style="font-family: arial;">Minimum Initial Deposit<br />最低初始存款</span></td>
+<td width="30%"><span style="font-family: arial;">Available Tenures<br />提供期限</span></td>
+<td width="30%"><span style="font-family: arial;">Premature Termination<br />提前终止</span></td>
+</tr>
+<tr>
+<td>
+<div class="row">
+<div class="col-md-6">
+<ul class="list-bullet">
+<li><span style="font-family: arial;">AUD10,000</span></li>
+<li><span style="font-family: arial;">CAD25,000</span></li>
+<li><span style="font-family: arial;">CHF25,000</span></li>
+<li><span style="font-family: arial;">CNH250,000</span></li>
+<li><span style="font-family: arial;">EUR5,000</span></li>
+<li><span style="font-family: arial;">GBP5,000</span></li>
+<li><span style="font-family: arial;">HKD200,000</span></li>
+<li><span style="font-family: arial;">JPY1,000,000</span></li>
+<li><span style="font-family: arial;">NZD10,000</span></li>
+<li><span style="font-family: arial;">USD5,000</span></li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul class="list-bullet">
+<li><span style="font-family: arial;">1万澳元</span></li>
+<li><span style="font-family: arial;">2万5000加币</span></li>
+<li><span style="font-family: arial;">2万5000瑞郎</span></li>
+<li><span style="font-family: arial;">25万境外人民币</span></li>
+<li><span style="font-family: arial;">5000欧元</span></li>
+<li><span style="font-family: arial;">5000英镑</span></li>
+<li><span style="font-family: arial;">20万港币</span></li>
+<li><span style="font-family: arial;">100万日元</span></li>
+<li><span style="font-family: arial;">1万新西兰元</span></li>
+<li><span style="font-family: arial;">5000美元</span></li>
+</ul>
+</div>
+</div>
+</td>
+<td><span style="font-family: arial;">1, 2, 3, 6, 9 and 12 months<br />(shorter tenures available for higher amounts)<br />1, 2, 3, 6, 9和12 个月<br />(对更高金额亦提供较短期限)</span></td>
+<td><span style="font-family: arial;">Premature withdrawal fees applicable for withdrawal made prior to maturity.<br />在到期前取出款项，须支付提前取出的费用。</span></td>
+</tr>
+</tbody>
+</table></div>
+               </li>
+               <li id="transactioncharges" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Transaction Charges 交易收费</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>All charges, if converted into another currency, are performed at the Bank&rsquo;s published foreign exchange rates.<br>若需转换为另一货币，所有收费将根据银行当天公布的汇率结算。<br><br><strong>SGD Business Accounts<br></strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="width: 721px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 468.247px;">Over the counter branch transaction<br>分行柜台交易</td>
+<td style="height: 18px; width: 238.785px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 468.247px;">SGD Business Accounts<br>[Chargeable transactions are cash deposits (including bulk cash deposits), cash withdrawal and cash cheque encashment.]<br><br>新元商业账户<br>收费交易是现金存款（包括大额现金存款）、现金提款和现金支票兑现。</td>
+<td style="height: 18px; width: 238.785px;">S$20 per transaction<br><br>每笔交易S$20<br><br></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cheques 支票<br></strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 214.572px;">Cheques Deposit<br>支票托收</td>
+<td style="height: 18px; width: 858.021px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 214.572px;">Standard SGD Cheque Deposit Fee<br>支票托收费</td>
+<td style="height: 18px; width: 858.021px;">S$0.75 per cheque<br>每张已结算支票收费S$0.75</td>
+</tr>
+<tr>
+<td style="width: 214.572px;">Standard USD Cheque Deposit Fee<br>支票托收费</td>
+<td style="width: 858.021px;">US$1.00 per cheque<br>每张已结算支票收费US$1.00</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 72px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 163.234px;">Cheques Clearing<br>支票签发</td>
+<td style="height: 18px; width: 601.766px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 163.234px;">Standard SGD Cheque Clearing Fee*<br>新币支票签发*</td>
+<td style="height: 18px; width: 601.766px;">S$0.75 per <strong><u>cleared cheque</u></strong><br>每张已结算支票收费S$0.75</td>
+</tr>
+<tr>
+<td style="width: 163.234px;">Standard USD Cheque Clearing Fee*<br>美元支票签发*</td>
+<td style="width: 601.766px;">US$1.00 per <strong><u>cleared cheque</u></strong><br>每张已结算支票收费US$1.00</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 163.234px;">Returned Cheques (SGD)<br>新币支票退票</td>
+<td style="height: 18px; width: 601.766px;">S$50 per returned cheque due to insufficient funds<br>S$40 per returned cheque due to technical reasons<br>因余额不足被退回的支票，每张收费S$50。<br>因技术原因被退回的支票，每张收费S$40。</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 163.234px;">Returned Cheques (USD)<br>美元支票退票</td>
+<td style="height: 18px; width: 601.766px;">US$40 per cheque (due to insufficient funds/technical reasons)<br>每张收费US$40 (因余额不足/技术原因而被退回的支票)</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 72px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 217.801px;">Cheques Retrieval<br>支票调阅</td>
+<td style="height: 18px; width: 841.794px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 217.801px;">Cheque Image Retrieval**<br>支票影像调阅**</td>
+<td style="height: 18px; width: 841.794px;">
+<p>S$21.80 (inclusive of GST) for retrievals of cheques cleared less than 1 year ago.</p>
+<p>S$32.70 (inclusive of GST) for retrievals of cheques cleared between 1 to 3 years ago.</p>
+<p>S$54.50 (inclusive of GST) for retrievals of cheques cleared more than 3 years ago.</p>
+<p>调阅1年内结算的支票影像，收费S$21.80 (包含消费税)。</p>
+<p>调阅在1至3年内结算的支票影像，收费S$32.70 (包含消费税)。</p>
+<p>调阅结算超过3年的支票影像，收费S$54.50 (包含消费税)。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 46px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 211.053px;">Stop Payment<br>停止付款</td>
+<td style="height: 18px; width: 794.537px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 10px; width: 211.053px;">Stop Payment (SGD)<br>停止付款（新元)</td>
+<td style="height: 10px; width: 794.537px;">
+<ul class="list-bullet">
+<li>S$30 per cheque via Branch/Business Service Centre</li>
+<li>S$15 per cheque via Business PhoneBanking/Business Internet Banking</li>
+<li>经由分行/企业银行商业服务中心处理，每张支票S$30</li>
+<li>经由企业电话银行/企业网上银行处理，每张支票S$15</li>
+</ul>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 211.053px;">Stop Payment (USD)<br>停止付款（美元）</td>
+<td style="height: 18px; width: 794.537px;">
+<ul class="list-bullet">
+<li class="tgh-f-3">US$30 per cheque via Branch/Business Service Centre</li>
+<li class="tgh-f-4">US$10 per cheque via Business PhoneBanking/Business Internet Banking</li>
+<li class="tgh-f-4">经由分行/企业银行商业服务中心处理，每张支票US$30</li>
+<li class="tgh-f-4">经由企业电话银行/企业网上银行处理，每张支票US$10</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 72px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 230.255px;">Loss of Cheque Book<br>遗失支票簿</td>
+<td style="height: 18px; width: 855.336px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 230.255px;">Loss of Cheque Book (SGD)<br>遗失支票簿（新元)</td>
+<td style="height: 18px; width: 855.336px;">
+<ul class="list-bullet">
+<li class="tgh-f-5">S$60 (Report via Branch/Business Service Centre)</li>
+<li class="tgh-f-6">S$30 (Report via Business PhoneBanking/Business Internet Banking)</li>
+<li class="tgh-f-6">S$60 (经由分行/企业银行商业服务中心通报)</li>
+<li class="tgh-f-6">S$30 (经由分行/企业银行商业服务中心通报)</li>
+</ul>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 230.255px;">Loss of Cheque Book (USD)<br>遗失支票簿（美元）</td>
+<td style="height: 18px; width: 855.336px;">
+<ul class="list-bullet">
+<li class="tgh-f-3">US$30</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 72px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 230.023px;">Marked Cheques<br>保付支票</td>
+<td style="height: 18px; width: 855.567px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 230.023px;">Direct Marked Cheque<sup>1</sup><br>直接保付支票<sup>1</sup></td>
+<td style="height: 18px; width: 855.567px;">
+<ul class="list-bullet">
+<li class="tgh-f-5">S$100 per cheque + Courier Charges (if applicable)</li>
+<li class="tgh-f-5">每张支票S$100+快递费（如适用)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 72px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 236.609px;">Foreign Currency Cheques<br>外币支票</td>
+<td style="height: 18px; width: 170.428px;">Charges<br>收费</td>
+<td style="width: 161.412px;">Commission<br>佣金</td>
+<td style="width: 166.424px;">Agent Fees<br>代理费</td>
+<td style="width: 163.414px;">Commission-in-lieu of exchange<sup>2</sup><br>无兑换佣金<sup>2</sup></td>
+<td style="width: 165.451px;">Courier/Postage<br>快递/邮费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 236.609px;">Cleared Locally:<br>本地结算:
+<ul class="list-bullet">
+<li>USD Cheques Drawn on Local Clearing Participating Banks</li>
+<li>从本地参与结算银行提取的美元支票</li>
+</ul>
+</td>
+<td style="height: 18px; width: 170.428px;">Free<br>免费</td>
+<td style="width: 161.412px;">N.A.<br>不适用</td>
+<td style="width: 166.424px;">N.A.<br>不适用</td>
+<td style="width: 163.414px;">N.A.<br>不适用</td>
+<td style="width: 165.451px;">N.A.<br>不适用</td>
+</tr>
+<tr>
+<td style="width: 236.609px;">
+<ul>
+<li>Other Currency Cheques and USD Drawn on Non-Participating Banks</li>
+<li>从本地不参与结算银行提取的其他货币支票和美元</li>
+</ul>
+</td>
+<td style="width: 170.428px;">N.A.<br>不适用</td>
+<td style="width: 161.412px;">1/8% commission (min S$30,<br>max S$100)<br>1/8%佣金 (最少S$30，最多S$100)</td>
+<td style="width: 166.424px;">if applicable<br>如适用</td>
+<td style="width: 163.414px;">N.A.<br>不适用</td>
+<td style="width: 165.451px;">if applicable<br>如适用</td>
+</tr>
+<tr>
+<td style="width: 236.609px;">Sent for Overseas Clearing:<br>送往海外结算：
+<ul class="list-bullet">
+<li>In All Currencies</li>
+<li>所有货币</li>
+</ul>
+</td>
+<td style="width: 170.428px;">N.A.<br>不适用</td>
+<td style="width: 161.412px;">1/8% commission (min S$30, max S$100)<br>1/8%佣金 (最少S$30，最多S$100)</td>
+<td style="width: 166.424px;">if applicable<br>如适用</td>
+<td style="width: 163.414px;">N.A.<br>不适用</td>
+<td style="width: 165.451px;">if applicable<br>如适用</td>
+</tr>
+</tbody>
+</table>
+<p class="caption">*Cheque Clearing fee refers to fee charged on a cheque that has been issued and presented to the bank for clearing.<br>**For each urgent cheque image retrieval (within 7 business days), an additional charge of S$21.80 (inclusive of GST) will be levied. <br>*支票结算费是指已经签发并提交给银行进行结算的支票费用。<br>**每张紧急调阅的支票影像 (7个工作天内), 将收取额外S$21.80 (包含消费税) 费用。</p>
+<p><strong><br><br>Electronic Deferred Payment</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 72px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 175.822px;">Description<br>说明</td>
+<td style="height: 18px; width: 57.3495px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 175.822px;"><strong>EDP and EDP+ creation<br>EDP和 EDP+ 创建 </strong></td>
+<td style="height: 18px; width: 57.3495px;">
+<p>Waived</p>
+免費</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 175.822px;"><strong>EDP and EDP+ cancellation<br>EDP和 EDP+取消 </strong></td>
+<td style="height: 18px; width: 57.3495px;">
+<p>Waived</p>
+免費</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br><br>Inward Remittances 汇入汇款</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 72px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 175.822px;">Telegraphic Transfer<br>电汇</td>
+<td style="height: 18px; width: 57.3495px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 175.822px;"><strong>Credit to SGD Account<br>汇入新元账户</strong></td>
+<td style="height: 18px; width: 57.3495px;">S$10</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 175.822px;"><strong>Credit to FCY Account<br>汇入外币账户</strong></td>
+<td style="height: 18px; width: 57.3495px;">S$10</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 175.822px;"><strong>Credit to Time Deposit<br>汇入定期账户</strong></td>
+<td style="height: 18px; width: 57.3495px;">Free<br>免费</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>MEPS (MAS Electronic Payment System)<br>MEPS (金管局电子转账系统)</td>
+<td>Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Credit to Account<br>汇入账户</strong></td>
+<td>Free<br>免费</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td style="width: 228.692px;">Demand Draft<br>即期汇票</td>
+<td style="width: 154.155px;">Drawn on OCBC Bank<br>从华侨银行提取</td>
+<td style="width: 572.28px;">Drawn on other Banks<br>从其他银行提取</td>
+</tr>
+<tr>
+<td style="width: 228.692px;"><strong>Credit to SGD or FCY Account<br>汇入新元或外币账户</strong></td>
+<td style="width: 154.155px;">Free<br>免费</td>
+<td style="width: 572.28px;">1/8% commission (min S$30 + Agent fees (if applicable) + postage (if applicable)<br>1/8%佣金(最少S$30+代理费(如适用)+邮费(如适用))</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br>Outward Remittances 汇出汇款</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="width: 1164px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 1155.35px;" colspan="5">Telegraphic Transfer - OCBC Velocity (Business Internet Banking), OCBC Business app, Host-to-Host, or API<br>电汇 - 企业网上银行服务, 商业手机银行应用程序</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="height: 18px; background-color: #b3d4fc;">
+<td style="height: 109px; width: 256.823px; color: #484848;">Account Holder<br>账户持有人</td>
+<td style="height: 109px; width: 227.361px; color: #484848;">Commission<br>佣金</td>
+<td style="height: 109px; width: 198.125px; color: #484848;">Agent Fees<sup>3</sup><br>代理费<sup>3</sup></td>
+<td style="height: 109px; width: 229.531px; color: #484848;">Commission-in-lieu of exchange<sup>2</sup><br>无兑换佣金<sup>2</sup></td>
+<td style="height: 109px; width: 222.257px; color: #484848;">Cable Charge<br>电缆收费</td>
+</tr>
+<tr style="height: 54px;">
+<td style="height: 10px; width: 256.823px;"><strong>Debit from SGD Accounts<br>从新元账户中扣除</strong></td>
+<td style="height: 10px; width: 227.361px;" rowspan="3">S$30</td>
+<td style="height: 10px; width: 198.125px;" rowspan="3">If applicable, fixed fee based on remitting currency<sup>3</sup><br><br>如适用，则按所汇货币<sup>3</sup>收取固定费用</td>
+<td style="height: 10px; width: 229.531px;" rowspan="3">Waived<br>免費</td>
+<td style="height: 10px; width: 222.257px;" rowspan="3">Waived<br>免費</td>
+</tr>
+<tr style="height: 54px;">
+<td style="height: 54px; width: 256.823px;"><strong>Debit from Foreign Currency Account <u>without</u> Foreign Exchange<br>从外币账户中扣除(未附带兑换)</strong></td>
+</tr>
+<tr style="height: 54px;">
+<td style="height: 10px; width: 256.823px;"><strong>Debit from Foreign Currency Account <u>with</u> Foreign Exchange<br>从外币账户中扣除(附带兑换)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><br><br><br></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 361px; width: 1208px;" border="0" width="1306">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 1198px;" colspan="5">Telegraphic Transfer - Branch/Manual Instruction<br>电汇 - 分行/ 人工指示</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="height: 18px; background-color: #b3d4fc;">
+<td style="height: 109px; width: 267.297px; color: #484848;">Account Holder<br>账户持有人</td>
+<td style="height: 109px; width: 236.391px; color: #484848;">Commission<br>佣金</td>
+<td style="height: 109px; width: 200.516px; color: #484848;">Agent Fees<sup>3</sup><br>代理费<sup>3</sup></td>
+<td style="height: 109px; width: 243.375px; color: #484848;">Commission-in-lieu of exchange<sup>2</sup><br>无兑换佣金<sup>2</sup></td>
+<td style="height: 109px; width: 226.422px; color: #484848;">Cable Charge<br>电缆收费</td>
+</tr>
+<tr style="height: 54px;">
+<td style="height: 54px; width: 267.297px;"><strong>Debit from SGD Accounts<br>从新元账户中扣除</strong></td>
+<td style="height: 54px; width: 236.391px;">Same/Third Party: 1/8% commission (min S$10, max S$100)<br>同一方/第三方：1/8%佣金 (最少S$10，最多S$100)</td>
+<td style="height: 216px; width: 200.516px;" rowspan="4">If applicable, fixed fee based on remitting currency<sup>3</sup><br><br>如适用，则按所汇货币<sup>3</sup>收取固定费用</td>
+<td style="height: 54px; width: 243.375px;">N.A.<br>不适用</td>
+<td style="height: 216px; width: 226.422px;" rowspan="3">Flat fee of S$40<br>固定收费 S$40</td>
+</tr>
+<tr style="height: 54px;">
+<td style="height: 54px; width: 267.297px;"><strong>Debit from Foreign Currency Account <u>without</u> Foreign Exchange<br>从外币账户中扣除(未附带兑换)</strong></td>
+<td style="height: 54px; width: 236.391px;">Same/Third Party: 1/8% commission (min S$10, max S$120)<br>同一方/第三方：1/8%佣金 (最少S$10，最多S$120)</td>
+<td style="height: 54px; width: 243.375px;">1/8% commission-inlieu of exchange<sup>2</sup> (min S$25, max S$120)<br>1/8%无兑换佣金<sup>&nbsp;2</sup>(最少S$25，最多S$120)</td>
+</tr>
+<tr style="height: 54px;">
+<td style="height: 54px; width: 267.297px;"><strong>Debit from Foreign Currency Account <u>with</u> Foreign Exchange<br>从外币账户中扣除(附带兑换)</strong></td>
+<td style="height: 54px; width: 236.391px;">Same/Third Party: 1/8% commission (min S$10, max S$100)<br>同一方/第三方：1/8%佣金 (最少S$10，最多S$100)</td>
+<td style="height: 54px; width: 243.375px;">N.A.<br>不适用</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 267.297px; height: 18px;"><strong>Withdrawal from Foreign Currency Time Deposits<br>从外币定期存款账户提款</strong></td>
+<td style="width: 236.391px; height: 18px;">Same/Third Party: 1/8% commission (min S$10, max S$100)<br>同一方/第三方：1/8%佣金 (最少S$10，最多S$100)</td>
+<td style="width: 243.375px; height: 18px;">1/8% commission-inlieu of exchange<sup>2</sup> (min S$25, max S$120)<br>1/8%无兑换佣金<sup>&nbsp;2</sup>(最少S$25，最多S$120)</td>
+<td style="width: 226.422px; height: 18px;">Flat fee of S$35<br>固定收费 S$35</td>
+</tr>
+</tbody>
+</table>
+<p><br><br><br></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td colspan="2">IACH (International Automated Clearing House)<br>IACH (国际自动结算所)</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848;">Account Holder<br>账户持有人</td>
+<td style="color: #484848;">Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Out-going Payments<br>对外付款</strong></td>
+<td>S$30 per transaction<br>每笔交易S$30</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="width: 667px;" border="0">
+<tbody>
+<tr class="tr-theme">
+<td style="width: 657px;" colspan="2">OCBC Network Transfer - OCBC Velocity (Business Internet Banking), OCBC Business app, Host-to-Host, or API <br>(华侨<span style="font-family: 'MS Gothic';">集</span><span style="font-family: 'Microsoft JhengHei';">团汇</span><span style="font-family: 'MS Gothic';">款)</span></td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848; width: 164.188px;">
+<p style="margin: 0in; font-size: 11.0pt;"><span style="font-family: Calibri;">Description <br></span><span style="font-family: 'Microsoft JhengHei';">说</span><span style="font-family: 'MS Gothic';">明</span></p>
+</td>
+<td style="color: #484848; width: 486.812px;">Charges<br>收费</td>
+</tr>
+<tr>
+<td style="width: 164.188px;"><strong>Out-going Payments<br>对外付款</strong></td>
+<td style="width: 486.812px;">S$15 per transaction<br>每笔交易S$15</td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="width: 340px;" border="0">
+<tbody>
+<tr class="tr-theme">
+<td style="width: 331.354px;" colspan="2">MEPS (MAS Electronic Payment System)<br>MEPS (金管局电子转账系统)</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848; width: 177.569px;">Account Holder<br>账户持有人</td>
+<td style="color: #484848; width: 148.472px;">Charges<br>收费</td>
+</tr>
+<tr>
+<td style="width: 177.569px;"><strong>Out-going Payments<br>对外付款</strong></td>
+<td style="width: 148.472px;">S$20</td>
+</tr>
+</tbody>
+</table>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td colspan="2">Cashier&rsquo;s Order<br>银行本票</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848;">Account Holder<br>账户持有人</td>
+<td style="color: #484848;">Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Payable to Own Name/ Third Party<br>支付给本人姓名/第三方</strong></td>
+<td>S$15 per Cashier&rsquo;s Order<br>每张银行本票S$15</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Outward Remittances 汇出汇款</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td colspan="4">Demand Draft<br>即期汇票</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848;">Account Holder<br>账户持有人</td>
+<td style="color: #484848;">Commission<br>佣金</td>
+<td style="color: #484848;">Commission-in-lieu of exchange<sup>2</sup><br>无兑换佣金<sup>2</sup></td>
+<td style="color: #484848;">Postage<br>邮费</td>
+</tr>
+<tr>
+<td><strong>Debit from SGD Accounts<br>从新元账户中扣除</strong></td>
+<td>1/8% commission<br>(min S$15, max S$100)<br>1/8%佣金 (最少S$15，最多S$100)</td>
+<td>N.A.<br>不适用</td>
+<td>If applicable<br>如适用</td>
+</tr>
+<tr>
+<td><strong>Debit from Foreign Currency<br>Accounts <u>with</u> Foreign Exchange<br>从外币账户中扣除(附带兑换)</strong></td>
+<td>1/8% commission<br>(min S$10, max S$120)<br>1/8%佣金 (最少S$10，最多S$120)</td>
+<td>N.A.<br>不适用</td>
+<td>If applicable<br>如适用</td>
+</tr>
+<tr>
+<td><strong>Debit from Foreign Currency<br>Account <u>without</u> Foreign Exchange<br>从外币账户中扣除(未附带兑换)</strong></td>
+<td>1/8% commission<br>(min S$10, max S$120)<br>1/8%佣金 (最少S$10，最多S$120)</td>
+<td>1/8% commission-in-lieu of<br>exchange (min S$25, max S$120)<br>1/8%无兑换佣金 (最少S$25，最多S$120)</td>
+<td>If applicable<br>如适用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>GIRO (Payment and Collection) and Standing Instructions<br>财路(付款和收款)和常设指示)</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Description<br>说明</td>
+<td>Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Outward GIRO<br>财路转出</strong></td>
+<td>S$0.20 per item<br>每项S$0.20</td>
+</tr>
+<tr>
+<td><strong>Outward GIRO Return<br>财路转出退回</strong></td>
+<td>S$10 per item<br>每项S$10</td>
+</tr>
+<tr>
+<td><strong>Inward GIRO Return<br>财路转入退回</strong></td>
+<td>Up to 50 items: S$0.50 per item<br>51 to 200 items: S$0.70 per item<br>201 to 500 items: S$1 per item<br>Above 500 items: S$1.50 per item<br>最多50项：每项S$0.50<br>51至200项：每项S$0.70<br>201至500项：每项S$1<br>超过500项：每项S$1.50</td>
+</tr>
+<tr>
+<td><strong>GIRO Standing Instruction<br>财路常设指示</strong></td>
+<td>S$10 per transaction<br>每笔交易S$10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FAST<br>FAST转账系统</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td colspan="2">FAST (Fast And Secure Transfers) - Transfer in S$, available via OCBC Velocity (business internet banking) and Business Mobile Banking app<br>FAST 转账系统 - 以新元转账，通过OCBC Velocity (企业网上银行服务)和商业手机银行应用程序提供服务</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848;">Description<br>说明</td>
+<td style="color: #484848;">Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>FAST (Payment and Collection)<br>FAST转账系统</strong></td>
+<td>S$0.50 per transaction<br>每笔交易S$0.50</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PayNow<br>PayNow转账系统</strong></p>
+<p>PayNow is a new service that &ndash; via OCBC Velocity (business internet banking) or our Business Mobile Banking app &ndash; lets you:</p>
+<ul class="list-bullet">
+<li>Receive money from a sender who uses just your Unique Entity Number (UEN) or QR code. Your bank account number need not be used;</li>
+<li>Make a secure payment using the recipient&rsquo;s UEN (for businesses) or NRIC/ mobile number (for individuals).</li>
+</ul>
+<p>PayNow是一项新电子转账服务 - 您可通过OCBC Velocity (企业网上银行服务)和商业手机银行应用程序使用本服务，功能包括：</p>
+<ul class="list-bullet">
+<li>付款人只需使用您的UEN号码或QR码付款给您，无需用到您的银行账号。</li>
+<li>使用收款人的UEN(对于企业)或NRIC/手机号码(对于个人)进行安全付款。</li>
+</ul>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Description<br>说明</td>
+<td>Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>To receive money through PayNow<br>使用 PayNow 收款</strong></td>
+<td>Per transaction: S$0.20<br>(Promotion extended: Free till 31 December 2028)<br><em>The Bank reserves the right to impose charges of S$0.20 for certain use cases and industries.</em><br>每笔交易: S$0.20<br>促销期延长：免费直到2028年12月31日）<br><em>对于某些用途和行业，银行有权收取S$0.20的费用。</em></td>
+</tr>
+<tr>
+<td><strong>To make payment through PayNow<br>使用 PayNow 付款</strong></td>
+<td>Per transaction:
+<ul class="list-bullet">
+<li>Applicable GIRO or FAST transaction fee</li>
+<li>S$0.20 lookup fee* (Promotion extended: Free till 31 December 2028)</li>
+</ul>
+*To check if recipient has registered for PayNow <br><br>每笔交易:
+<ul class="list-bullet">
+<li>如同财路或FAST转账收费</li>
+<li>S$0.20查询费* (促销期延长：免费直到2028年12月31日）</li>
+</ul>
+*查询收款人是否已注册PayNow</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Internal Funds Transfer<br>银行内部转账</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td rowspan="2">Description<br>说明</td>
+<td colspan="2">Charges<br>收费</td>
+</tr>
+<tr class="tr-theme" style="background-color: #b3d4fc;">
+<td style="color: #484848;"><strong>Branch / Manual Instruction<br>分行/ 人工指示</strong></td>
+<td style="color: #484848;"><strong>OCBC Velocity<br>(Business Internet Banking)<br>OCBC Velocity (企业网上银行服务)</strong></td>
+</tr>
+<tr>
+<td><strong>For funds transfer within OCBC Singapore accounts<br>在华侨银行的新加坡账户之间转账</strong></td>
+<td>S$15 per transaction<br>每笔交易S$15</td>
+<td>Free<br>免费</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standing Instructions (Telegraphic Transfer/MEPS)<br>常设指示 (电汇/MEPS)</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Description<br>说明</td>
+<td>Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Set-up Charge</strong><br>Note: Standard charges apply as per section "Outward Remittances" in this Business Banking Pricing Guide<br><strong>账户开立费用</strong><br>注：根据本商业银行收费指南中的&ldquo;汇出汇款&rdquo;部分收取标准费用</td>
+<td>S$10</td>
+</tr>
+<tr>
+<td><strong>Amendment/Cancellation<br>更改/取消</strong></td>
+<td>S$10</td>
+</tr>
+<tr>
+<td><strong>Rejected items due to insufficient funds<br>因资金不足而被拒的项目</strong></td>
+<td>S$30</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cancellations/Stop Payments/Amendments/Investigations<br>取消/停止付款/更改/调查</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="width: 830px;" border="0">
+<tbody>
+<tr class="tr-theme">
+<td style="width: 830px;" colspan="5">Cancellation<br>取消</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848; width: 187px;">Description<br>说明</td>
+<td style="color: #484848; width: 182px;">Charge (SGD Account)<br>收费（新元账户）</td>
+<td style="color: #484848; width: 253px;">Charge (Foreign Currency Account)<br>收费（外币账户）</td>
+<td style="color: #484848; width: 91px;">Agent Fee<br>代理费</td>
+<td style="color: #484848; width: 117px;">Cable Charge<br>电缆收费</td>
+</tr>
+<tr>
+<td style="width: 187px;"><strong>Cashier&rsquo;s Order<br>银行本票</strong></td>
+<td style="width: 182px;">S$5 per Cashier&rsquo;s Order<br>每张银行本票S$5</td>
+<td style="width: 253px;">N.A.<br>不适用</td>
+<td style="width: 91px;">N.A.<br>不适用</td>
+<td style="width: 117px;">N.A.<br>不适用</td>
+</tr>
+<tr>
+<td style="width: 187px;"><strong>Demand Draft<br>即期汇票</strong></td>
+<td style="width: 182px;">S$10 per draft<br>每张即期汇票S$10</td>
+<td style="width: 253px;">US$5 per draft<br>每张即期汇票US$5</td>
+<td style="width: 91px;">If applicable<br>如适用</td>
+<td style="width: 117px;">If applicable<br>如适用</td>
+</tr>
+<tr class="tr-theme">
+<td style="width: 830px;" colspan="5">Stop Payments<br>停止付款</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848; width: 187px;">Description<br>说明</td>
+<td style="color: #484848; width: 182px;">Charge (SGD Account)<br>收费（新元账户）</td>
+<td style="color: #484848; width: 253px;">Charge (Foreign Currency Account)<br>收费（外币账户）</td>
+<td style="color: #484848; width: 91px;">Agent Fee<br>代理费</td>
+<td style="color: #484848; width: 117px;">Cable Charge<br>电缆收费</td>
+</tr>
+<tr>
+<td style="width: 187px;"><strong>Cashier&rsquo;s Order<br>银行本票</strong></td>
+<td style="width: 182px;">S$20 per Cashier&rsquo;s Order<br>每张银行本票S$20</td>
+<td style="width: 253px;">N.A.<br>不适用</td>
+<td style="width: 91px;">N.A.<br>不适用</td>
+<td style="width: 117px;">N.A.<br>不适用</td>
+</tr>
+<tr>
+<td style="width: 187px;"><strong>Demand Draft<br>即期汇票</strong></td>
+<td style="width: 182px;">S$20 per draft<br>每张即期汇票S$20</td>
+<td style="width: 253px;">US$10 per draft<br>每张即期汇票US$10</td>
+<td style="width: 91px;">If applicable<br>如适用</td>
+<td style="width: 117px;">If applicable<br>如适用</td>
+</tr>
+<tr class="tr-theme">
+<td style="width: 830px;" colspan="5">Amendments/Cancellations/Investigations<br>更改/取消/调查</td>
+</tr>
+<tr class="tr-theme tr-theme--lighter" style="background-color: #b3d4fc;">
+<td style="color: #484848; width: 187px;">Description<br>说明</td>
+<td style="color: #484848; width: 182px;">Charge (SGD Account)<br>收费（新元账户）</td>
+<td style="color: #484848; width: 253px;">Charge (Foreign Currency Account)<br>收费（外币账户）</td>
+<td style="color: #484848; width: 91px;">Agent Fee<br>代理费</td>
+<td style="color: #484848; width: 117px;">Cable Charge<br>电缆收费</td>
+</tr>
+<tr>
+<td style="width: 187px;"><strong>Telegraphic Transfer<br>电汇</strong></td>
+<td style="width: 182px;">N.A.<br>不适用</td>
+<td style="width: 253px;">N.A.<br>不适用</td>
+<td style="width: 91px;">If applicable<br>如适用</td>
+<td style="width: 117px;">Flat fee of S$20<br>固定收费S$20</td>
+</tr>
+<tr>
+<td style="width: 187px;"><strong>IACH</strong></td>
+<td style="width: 182px;">N.A.<br>不适用</td>
+<td style="width: 253px;">N.A.<br>不适用</td>
+<td style="width: 91px;">N.A.<br>不适用</td>
+<td style="width: 117px;">Flat fee of S$20<br>固定收费S$20</td>
+</tr>
+<tr>
+<td style="width: 187px;"><strong>Tracers/Investigations<br><span data-teams="true">追踪器/调查</span><br></strong></td>
+<td style="width: 182px;">N.A.<br>不适用</td>
+<td style="width: 253px;">N.A.<br>不适用</td>
+<td style="width: 91px;">N.A.<br>不适用</td>
+<td style="width: 117px;">Flat fee of S$20<br>固定收费S$20</td>
+</tr>
+</tbody>
+</table></div>
+               </li>
+               <li id="otherservicecharges" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Other Service Charges 其他服务收费</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p><strong>ATM/OCBC Business Debit Card 自动提款机/华侨银行商务借记卡</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td width="50%">Description<br>说明</td>
+<td width="50%">Card Replacement Fee/Charges<br>更换卡费用/收费</td>
+</tr>
+<tr>
+<td><strong>Lost/Stolen Card<br>卡遗失/失窃</strong></td>
+<td>ATM: S$5 per card<br>OCBC Business Debit Card: S$20 per card<br>提款卡：每张卡S$5<br>华侨银行商务借记卡：每张卡S$20</td>
+</tr>
+<tr>
+<td><strong>Damaged Card<br>卡损坏</strong></td>
+<td>Free<br>免费</td>
+</tr>
+<tr>
+<td><strong>ATM Charges&nbsp;</strong>(Coin Deposit Fee)<br><strong>自动提款机收费&nbsp;</strong>(硬币存款费)</td>
+<td>S$0.012 per coin<br>(total fee rounded to the nearest 1 cent)<br>每枚硬币 S$0.012<br>(总费用四舍五入至分位数)</td>
+</tr>
+<tr>
+<td><strong>Sales Draft Retrieval Fee (1st copy)</strong><br>(Applicable for OCBC Business Debit Card)<br><strong>调阅签账单手续费（第一张）</strong><br>(适用于华侨银行商务借记卡)</td>
+<td>S$5</td>
+</tr>
+<tr>
+<td><strong>Sales Draft Retrieval Fee (Subsequent copy)</strong><br>(Applicable for OCBC Business Debit Card)<br><strong>调阅签账单手续费（第二张及以上）</strong><br>(适用于华侨银行商务借记卡)</td>
+<td>S$15</td>
+</tr>
+<tr>
+<td><strong>Shared ATM<br>使用共享自动提款机</strong></td>
+<td>S$0.30 charge from third withdrawal onwards per calendar month<br>3% is levied on the S$ equivalent of the amount withdrawn<br>(min S$5 and max S$20 per transaction)<br>每个月第三笔提款开始收取S$0.30<br>按所提取款项的等值新元金额收取3%费用*手续费<br>(每次交易最少S$5，最多S$20)</td>
+</tr>
+<tr>
+<td><strong>OCBC Malaysia &amp; Bank NISP Indonesia ATMs<br>马来西亚华侨银行和印尼Bank NISP Indonesia的自动提款机</strong></td>
+<td>S$2 per transaction<br>每笔交易S$2</td>
+</tr>
+<tr>
+<td><strong>Transactions (including refunds) in foreign currencies<br>以外币进行的交易（包括退款）</strong></td>
+<td>2% administrative fee + costs of conversion applies<br>须支付2%行政费+兑换成本 *兑换手续费</td>
+</tr>
+<tr>
+<td><strong>Dynamic Currency Conversion Fee<br>动态货币转换费 *动态货币手续费</strong></td>
+<td>All MasterCard transactions effected in Singapore dollars in a foreign country or on a foreign website will have an additional fee of 1% levied on the converted Singapore dollar amount.<br>所有在外国或海外网站购物，使用万事达卡并以新元进行的交易，将按兑换后的新元金额额外收取1%费用。*&nbsp;手续费。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Business Deposit Card 商务存款卡</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" style="height: 54px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 18px;">
+<td style="height: 18px; width: 429.045px;">Description<br>说明</td>
+<td style="height: 18px; width: 652.101px;">Card Issuance/Replacement Charges<br>发卡/更换卡收费</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 429.045px;"><strong>Card Issuance<br>发卡</strong></td>
+<td style="height: 18px; width: 652.101px;">S$5 per card (Promotion extended: Free for applications before 31 December 2026)<br>每张卡S$5 (促销期延长：2026年12月31日之前可免费申请）</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 429.045px;"><strong>Replacement of card due to lost/stolen/damaged card<br>因卡遗失/失窃/损坏而更换卡</strong></td>
+<td style="height: 18px; width: 652.101px;">S$5 per card (Promotion extended: Free for applications before 31 December 2026)<br>每张卡S$5 (促销期延长：2026年12月31日之前可免费申请）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>eAlerts@ocbc<br>eAlerts@ocbc通知服务</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Service Type<br>服务种类</td>
+<td>Service Fee<br>服务费</td>
+</tr>
+<tr>
+<td><strong>Cash Alerts<br>现金通知</strong></td>
+<td>
+<p>S$25 per month. 1st 3 months waived.</p>
+<p>A monthly fee of S$25 will be payable for any one of the following combinations:</p>
+<ul class="list-bullet">
+<li>Two different accounts with one Authorised User or</li>
+<li>One account with two different Authorised Users or</li>
+<li>Account 1 for Authorised User 1 and Account 2 for Authorised User 2</li>
+</ul>
+<p>A monthly fee of S$10 will be payable for each additional account or Authorised User to be alerted</p>
+<p>每月S$25，首三个月豁免付费。</p>
+<p>对于以下任何一项组合，须支付S$25月费：</p>
+<ul class="list-bullet">
+<li>一个授权用户使用两个不同账户，或</li>
+<li>一个账户设有两名授权用户，或</li>
+<li>授权用户1使用账户1，授权账户2使用账户2</li>
+</ul>
+<p>每个额外的账户或每名需要通知授权的用户，须支付S$10月费。</p>
+</td>
+</tr>
+<tr>
+<td><strong>Trade Finance Alerts<br>贸易融资通知</strong></td>
+<td>S$25 per month. 1st 3 months waived.<br>A monthly fee of S$25 will be payable for Trade Finance eAlerts for 2 different email user addresses<br>A monthly fee of S$10 will be payable for each additional Authorised User to be alerted<br>每月S$25，首三个月豁免付费。<br>向两个不同的电邮用户地址发出贸易融资通知，须支付S$25月费。<br>每名额外需要通知授权的用户，须支付S$10月费。</td>
+</tr>
+<tr>
+<td><strong>Cash and Trade Finance Alerts<br>现金和贸易融资通知</strong></td>
+<td>S$35 per month. 1st 3 months waived.<br>A monthly fee of S$15 will be payable for each additional account or Authorised User to be alerted.<br>每月S$35，首三个月豁免付费。<br>每个额外的账户或每名需要通知授权的用户，须支付S$15月费。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>OCBC Velocity (Business Internet Banking) <br>OCBC Velocity (企业网上银行服务)</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td width="50%">Service Package Type<br>服务配套种类</td>
+<td width="50%">Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Basic Service Package</strong><br>(Account Inquiry only)<br><strong>基本服务配套</strong><br>(只限账户查询)</td>
+<td>
+<ul class="list-bullet">
+<li>Digital token: free</li>
+<li>Hardware token: S$50 each</li>
+<li>数码编码器：免费</li>
+<li>实体编码器：每个S$50</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Standard Service Package</strong><br>(Account Inquiry and any 1 Maker/Authoriser for transaction approvals)<br><strong>标准服务配套</strong><br>(账户查询和允许任何1名开立账户者/授权者批准交易)</td>
+<td>
+<ul class="list-bullet">
+<li>Digital token: free</li>
+<li>Hardware token: S$50 each</li>
+<li>Transaction fees apply</li>
+<li>数码编码器：免费</li>
+<li>实体编码器：每个S$50</li>
+<li>须支付交易费</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Classic Service Package</strong><br>(Account Inquiry and up to 2 Authorisers for transaction approvals)<br><strong>经典服务配套</strong><br>(账户查询和允许最多2名授权者批准交易)</td>
+<td>
+<ul class="list-bullet">
+<li>Digital token: free</li>
+<li>Hardware token: S$50 each</li>
+<li>Transaction fees apply</li>
+<li>数码编码器：免费</li>
+<li>实体编码器：每个S$50</li>
+<li>须支付交易费</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Flex Service Package</strong><br>(Account Inquiry and Complex Authorisation Controls for transaction approvals)<br><strong>增值服务配套</strong><br>(账户查询和加密授权者管制批准交易)</td>
+<td>
+<ul class="list-bullet">
+<li>Digital token: free</li>
+<li>Hardware token: S$50 each</li>
+<li>Transaction fees apply</li>
+<li>数码编码器：免费</li>
+<li>实体编码器：每个S$50</li>
+<li>须支付交易费</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>OCBC OneCollect<br>OCBC OneCollect手机应用程序</strong></p>
+<p>OCBC OneCollect is an app that helps merchants to collect payments through QR code, receive real time transaction notifications and live transaction listings, along with end-of-day reports for easy reconciliation. <br>OCBC OneCollect是一个手机应用程序，协助商家通过QR码收取款项、接收实时交易通知和即时交易清单，并提供每日结余报告以方便对账。</p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td width="30%">Description<br>说明</td>
+<td width="70%">Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>OCBC OneCollect<br>OCBC OneCollect手机应用程序</strong></td>
+<td>
+<p>1) PayNow &ndash; 0.25% of the total funds collected, deducted on a monthly basis. First 3 months of fees are waived.<br>2) UnionPay &ndash; 1.50% of the total funds collected per day, deducted on a daily basis.<br>3) ShopeePay &ndash; 1.50% of the total funds collected per day, deducted on a daily basis.<br>4) WeChat Pay &ndash; 1.50% of the total funds collected per day, deducted on a daily basis.<br>5) Alipay+ &ndash; 1.50% of the total funds collected per day, deducted on a daily basis.<br>6) DuitNow QR &ndash; 1.50% of the total funds collected per day, deducted on a daily basis.<br><br>1) PayNow - 所收取总金额的0.25%，每月扣除。豁免首三个月费用。<br>2) UnionPay - 每日所收取总金额的1.50%，每日扣除。<br>3) ShopeePay - 每日所收取总金额的1.50%，每日扣除。<br>4) WeChat Pay -&nbsp;每日所收取总金额的1.50%，每日扣除。<br><span>5) Alipay+ &ndash; 每日所收取总金额的1.50%，每日扣除。<br></span><span>6) DuitNow QR &ndash; 每日所收取总金额的1.50%，每日扣除</span></p>
+</td>
+</tr>
+</tbody>
+</table></div>
+               </li>
+               <li id="accountandstatementservicecharges" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Account and Statement Service Charges<br>账户和结单服务收费</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><table class="table table-bordered table-responsive-md table-theme table-theme--grey table-group-height" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Description/Services<br>说明/服务</td>
+<td>Charges<br>收费</td>
+</tr>
+<tr>
+<td>Document/Statement Retrieval Charges<sup>4</sup><br>(for each monthly statement)<br>文件/结单调阅收费4<br>(每一份月结单)</td>
+<td>
+<p><strong>Non-Borrowing Customer</strong><br>Free for the current and previous month (statement only)<br>S$20 for retrieval of less than 1 year ago<br>S$30 for retrieval between 1 to 3 years ago<br>S$50 for retrieval of more than 3 years ago<br>S$150 per month + S$150 restoration charges for statements beyond 6<br>years - subject to availability</p>
+<p><strong>非银行借贷客户</strong><br>本月和前一个月免费（只限结单）<br>调阅1年内的文件/结单，收费S$20<br>调阅1至3年內的文件/结单，收费S$30。<br>调阅超过3年的文件/结单，收费S$50<br>调阅超过6年的的文件/结单，收费每月S$150+ S$150修复费，视能否给予提供。</p>
+<br>
+<p><strong>Borrowing Customer</strong><br>Free for the current and previous month (statement only)<br>S$21.80 (inclusive of GST) for retrievals of less than 1 year ago<br>S$32.70 (inclusive of GST) for retrievals between 1 to 3 years ago<br>S$54.50 (inclusive of GST) for retrievals of more than 3 years ago<br><br><strong>银行借贷客户</strong>本月和前一个月免费（只限结单）</p>
+调阅1年内的文件/结单，收费S$21.80 (包含消费税)。<br>调阅1至3年內的文件/结单，收费S$32.70（包含消费税）<br>调阅超过3年的文件/结单，收费S$54.50 (包含消费税)</td>
+</tr>
+<tr>
+<td><strong>Audit Confirmation<br>审计确认</strong></td>
+<td>S$55 per financial year confirmation<br>每个财政年度确认S$55</td>
+</tr>
+<tr>
+<td><strong>Letter of Reference/Foreign Endorsement</strong><br>(non-loan-related)<br><strong>资信证明/海外背书</strong><br>（非贷款相关）</td>
+<td>S$30 per letter<br>每份证明S$30</td>
+</tr>
+<tr>
+<td><strong>Letter of Reference/Foreign Endorsement</strong><br>(loan-related)<br><strong>资信证明/海外背书</strong><br>（贷款相关）</td>
+<td>S$32.70 per letter (inclusive of GST)<br><br>每份证明S$32.70（包含消费税）</td>
+</tr>
+<tr>
+<td><strong>Retrieval of MT103<br>调阅MT103</strong></td>
+<td>S$5 (not subject to GST)<br>S$5 (不包含消费税)</td>
+</tr>
+</tbody>
+</table></div>
+               </li>
+               <li id="cashdepositwithdrawalandexchange" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Cash Deposit/Withdrawal and Exchange Services Charges<br>现金存款/提款和兑换服务收费</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p><strong>Cash Deposit/Withdrawal and Exchange Services at Teller Counter<br>在银行柜台提供的现金存款/提款和兑换服务</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Description<br>说明</td>
+<td>Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Coin Deposit<br>存放硬币</strong></td>
+<td>S$2.00 for every 100 coins deposited or part thereof<br>每100枚(不足者按100枚结算)存入的硬币收费S$2.00</td>
+</tr>
+<tr>
+<td><strong>Coin Withdrawal<br>提取硬币</strong></td>
+<td>S$2.00 for every S$50 coins withdrawn or part thereof<br>每提取S$50(不足者按S$50结算)硬币，收费S$2.00</td>
+</tr>
+<tr>
+<td><strong>Coin Exchange<br>兑换硬币</strong></td>
+<td>S$2.00 for every S$50 changed or part thereof<br>每换取S$50(不足者按S$50结算)零钱，收费S$2.00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note: Our coin deposit and exchange services are available every Tuesday and Thursday during the following hours:</strong></p>
+<ul class="list-bullet list-nospace">
+<li>9.30am to 11.30am (Bukit Batok, Bukit Panjang, North, OCBC Centre, Sixth Avenue, Thomson)</li>
+<li>3.00pm to 5.00pm (All other branches)</li>
+</ul>
+<p>*Please refer to <a href="https://www.ocbc.com/business-banking/contact-us#section-findabranch">www.ocbc.com</a> to view the list of branches.</p>
+<p><strong>注：我们每逢星期二和星期四提供硬币存款和兑换服务，时间如下：</strong></p>
+<ul class="list-bullet list-nospace">
+<li>早上9点半到11点半 (Bukit Batok, Bukit Panjang, North, OCBC Centre, Sixth Avenue和 Thomson分行)</li>
+<li>下午3点到5点（其他所有分行）</li>
+</ul>
+<p><span>*请上网</span><a href="https://www.ocbc.com/business-banking/contact-us#section-findabranch">www.ocbc.com</a><span>查阅分行列表。</span></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Description<br>说明</td>
+<td>Charges<br>收费</td>
+</tr>
+<tr>
+<td><strong>Cash Deposit<br>现金存款</strong></td>
+<td>
+<p>First S$20,000 per day - free; every subsequent S$10,000 (or less) - S$20.</p>
+<p>For faster processing of notes deposited, please follow the guidelines below. Otherwise, an additional S$50 fee will be levied.</p>
+<ol class="list-decimal">
+<li>Sort the notes by denomination and arrange them with the front side facing up, unfolded;</li>
+<li>Separate the notes into paper and polymer types, then pack them using rubber bands in 100-piece bundles of the same denomination;</li>
+<li>Bundle loose notes (ie. fewer than 100 pieces per denomination) together, sorted by denomination, and stack them upwards from the largest-sized notes (at the bottom) to the smallest (at the top).</li>
+</ol>
+<p>每天存入的首S$20,000 - 免费；随后每S$10,000（或以下）存款 - S$20。</p>
+<p>为了更快处理存入的纸钞，请遵循以下准则。否则银行将额外收取S$50费用。</p>
+<ol class="list-decimal">
+<li>根据纸钞面值排列，纸钞正面朝上，不要折叠；</li>
+<li>将钞票按纸类和塑料类区分，同面值钞票每叠100张，用橡皮筋捆起；</li>
+<li>将剩余钞票（即每种面值少于100张）放在一起，按面值整理好； 根据钞票大小排列，最大张钞票在最底下，最小张钞票在上面）。</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Express Bulk Cash Deposit Service (Free 30 disposable security bags* upon sign up) <br>快速存入大量现金服务（在开立账户后，可免费获得30个即用即弃保安袋*）</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey table-group-height" style="height: 881px; width: 1024px;" border="0">
+<tbody>
+<tr class="tr-theme" style="height: 36px;">
+<td style="width: 309.694px; height: 36px;">Description<br>说明</td>
+<td style="width: 699.639px; height: 36px;">Charges<br>收费</td>
+</tr>
+<tr style="height: 489px;">
+<td style="width: 309.694px; height: 489px;"><strong>Cash Deposit<br>现金存款</strong></td>
+<td style="width: 699.639px; height: 489px;">
+<p>First S$30,000 per day - free; every subsequent S$10,000 (or less) - S$5.</p>
+<p>For faster processing of notes deposited, please follow the guidelines below. Otherwise, an additional S$50 fee will be levied.</p>
+<ol class="list-decimal">
+<li>Sort the notes by denomination and arrange them with the front side facing up, unfolded;</li>
+<li>Separate the notes into paper and polymer types, then pack them using rubber bands in 100-piece bundles of the same denomination;</li>
+<li>Bundle loose notes (ie. fewer than 100 pieces per denomination) together, sorted by denomination, and stack them upwards from the largest-sized notes (at the bottom) to the smallest (at the top).</li>
+</ol>
+<p>每天存入的首S$30,000 - 免费； 随后每笔S$10,000（或以下）存款 - S$5。</p>
+<p>为了更快处理存入的纸钞，请遵循以下准则。否则银行将额外收取S$50费用。</p>
+<ol class="list-decimal">
+<li>根据纸钞面值排列，纸钞正面朝上，不要折叠；</li>
+<li>将钞票按纸类和塑料类区分，同面值钞票每叠100张，用橡皮筋捆起；</li>
+<li>将剩余钞票（即每种面值少于100张）放在一起，按面值整理好； 根据钞票大小排列，最大张钞票在最底下，最小张钞票在上面）。</li>
+</ol>
+<br>
+<p><strong>Note: Ensure coins are packed not more than a total of S$5 worth of coins per bag.</strong><br><strong>注：请确保每包硬币的总值不超过S$5。</strong></p>
+</td>
+</tr>
+<tr style="height: 356px;">
+<td style="width: 309.694px; height: 356px;">
+<p class="tgh-f-1"><strong>OCBC Security Bag/Tag<br>华侨银行保安袋/标签</strong></p>
+<p class="caption">* Small size: 257mm (W) x 305mm (L)<br>* 小尺寸： 257mm (宽) x 305mm (长)</p>
+</td>
+<td style="width: 699.639px; height: 356px;">
+<p><strong>Disposable bag (small)</strong><br>S$0.40/bag (inclusive of GST) (min. 500 bags, in multiples of 500)</p>
+<p><strong>Disposable bag (big)</strong><br>S$0.60/bag (inclusive of GST) (min. 500 bags, in multiples of 500)</p>
+<p><strong>Reusable bag</strong><br>S$70/bag (inclusive of GST<br><br><strong>Security Tag</strong><br>S$0.14/tag (inclusive of GST) (min. 1,000 tags, in multiples of 1,000)<br><br><strong>即用即弃袋（小</strong>）<br>每包S$0.40 (包含消费税) (最少500包，按500包的倍数结算）<br><br><strong>即用即弃袋（大）<br></strong>每包S$0.60 (包含消费税) (最少500包，按500包的倍数结算）</p>
+<p><strong>可重用袋</strong><br>每包S$70 (包含消费税）<br><br><strong>保安标签</strong><br>每个标签S$0.14 (包含消费税)(最少1000个标签，按1000个的倍数结算）<br><br></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Express Bulk Cheque Deposit Service<br>快速存入大量支票服务</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey table-group-height" style="width: 824px;" border="0">
+<tbody>
+<tr class="tr-theme">
+<td style="width: 254.014px;">Description<br>说明</td>
+<td style="width: 555.319px;">Charges<br>收费</td>
+</tr>
+<tr>
+<td style="width: 254.014px;">
+<p class="tgh-f-1"><strong>OCBC Security Bag/Tag<br>华侨银行保安袋/标签</strong></p>
+</td>
+<td style="width: 555.319px;">
+<p class="tgh-f-1"><strong>Disposable bag</strong><br>S$0.40/bag (inclusive of GST) (min. 500 bags, in multiples of 500)<br><br><strong>Reusable bag</strong><br>S$70/bag (inclusive of GST)<br><br><strong>Security Tag</strong><br>S$0.14/tag (inclusive of GST) (min. 1,000 tags, in multiples of 1,000)<br><br><strong>即用即弃袋</strong><br>每包S$0.40 (包含消费税) (最少500包，按500包的倍数结算）<br><br><strong>可重用袋</strong><br>每包S$70 (包含消费税）<br><br><strong>保安标签</strong><br>每个标签S$0.14 (包含消费税)(最少1000个标签，按1000个的倍数结算）</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Deposit/Withdrawal in Foreign Currency Notes<br>外币纸钞存款/提款</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td>Description<br>说明</td>
+<td>Cash Deposit Charges<br>现金存款收费</td>
+</tr>
+<tr>
+<td><strong>Deposit/Withdrawal in Foreign Currency Notes<br>以外币纸钞存款/提款</strong></td>
+<td>Minimum 1% commission-in-lieu of exchange<sup>2</sup> (subject to availability of currency types and currency notes)<br>最少1%的无兑换佣金<sup>2</sup>（视能否提供有关货币种类和纸钞）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cash Deposit via ATMs<br>通过自动提款机存入现金</strong></p>
+<table class="table table-bordered table-responsive-md table-theme table-theme--grey" border="0">
+<tbody>
+<tr class="tr-theme">
+<td><span style="font-family: arial;">Description<br>说明</span></td>
+<td><span style="font-family: arial;">Cash Deposit Charges<br>现金存款收费</span></td>
+</tr>
+<tr>
+<td><span style="font-family: arial;">Cash Deposit (Card-less)<br>现金存款（无需存款卡）</span></td>
+<td><span style="font-family: arial;">Free. Maximum 10 deposits per account per day<br>免费。 每个账户每天最多10笔存款</span></td>
+</tr>
+<tr>
+<td><span style="font-family: arial;">Cash Deposit (with Card)<br>现金存款（使用存款卡）</span></td>
+<td><span style="font-family: arial;">Free. Maximum S$100,000 per account per day<br>免费。 每个账户每天最多S$100,000存款</span></td>
+</tr>
+</tbody>
+</table></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1610111107307">
+      <!--ls:begin[component-1610111107307]--><style>#iw_comp1610111107307{}</style><div class="faq-component"></div><div class="" id="">
+   <div><p class="caption"><sup>1</sup> For OCBC Bank Cheques, service is not available on Sundays and Public Holidays.</p>
+<p class="caption"><sup>2</sup> Commission-in-lieu of exchange is applicable when there is no foreign exchange involved.
+<p class="caption"><sup>3</sup> For Telegraphic Transfer in JPY, the fixed agent fee is applicable only for amounts up to JPY100million.<br/>For amounts more than JPY100 million, both fixed agent fee and 3rd party bank charges are applicable.</p>
+<p class="caption"><sup>4</sup> Includes monthly SGD/FCY statement of account, SGD/FCY time deposit interest statements and advices, deposit/withdrawal/debit/credit vouchers.<br/>(Retrieval charges debited from FCY accounts will be based on the prevailing buying TT rate applicable.)</p>
+<p class="caption"><strong>Information updated as of 1 April 2025. The fees and charges are subject to change from time to time.</strong></p>
+<p class="caption"><sup>1</sup>只限华侨银行支票，星期天与公共假期不提供服务。</p>
+<p class="caption"><sup>2</sup>无兑换佣金适用于未涉及外汇兑换的情况。</p>
+<p class="caption"><sup>3</sup>以日元电汇，固定代理费只适用于不超过1亿日元的金额。对于超过1亿日元的金额，将收取固定代理费和第三方银行手续费。</p>
+<p class="caption"><sup>4</sup>包括每月新元/外币账户结单、新元/外币定期存款利息结单和通知单、存款/提款/扣款/进款证。<br>(从外币账户扣除的调阅费将按现有电汇买价计算。)</p></div>
+</div><!--ls:end[component-1610111107307]-->
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.nav-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.faq-component').parent().wrapAll('<div id="left-nav-content"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1574170872815">
+    <!--ls:begin[component-1574170872815]--><style>#iw_comp1574170872815{}</style><div></div><!--ls:end[component-1574170872815]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

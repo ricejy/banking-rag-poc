@@ -1,0 +1,1071 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async=""></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}(window,document,'script','dataLayer','GTM-PMNVMPK');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<style>
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: none;
+}
+
+@media (min-width: 768px){
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: block;
+ min-width: 168px;
+}
+
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 span {
+ display: none;
+}
+}
+
+/* investors/contact-us.page */
+
+</style><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>OCBC Shareholders - Contact Us | OCBC</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/group/page/investors/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/group/investors/contact-us/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Get the latest Annual & AGM Reports, financial performance, capital instruments, and more with OCBC Investor Centre. Stay informed on banking news.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/group/investors/contact-us.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/ospl/css/style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><script type="text/javascript">
+var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+<!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+            var ocbcData = {
+                page: {
+                    pageName: "sg:ocbc:group:investors:contact us",
+                    language: "en",
+                    pageCategory: "pre-login investors category page",
+                    bannerName: "get in touch with us",
+                    channel: "investors",
+                    country: "sg",
+                    lob: "ocbc group",
+                    platform: "web"
+                },
+                form: {
+                    formName: "investors:contact us form",
+                    formId: "",
+                    formType: "contact us form",
+                    formStepName: "form loaded"
+                },
+                user: {
+                    CIF: "",
+                    loginStatus: "pre-login"
+                },
+                event: {
+                    pageView: "true",
+                    bannerImpression: "true"
+                }
+            };
+        </script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1sumfzn">
+ <div class="row iw_row iw_stretch" id="rowk1sumfzo">
+  <div class="iw_columns col-lg-12" id="colk1sumfzp">
+   <div class="iw_component" id="iw_comp1571204552818">
+    <!--ls:begin[component-1571204552818]--><style>#iw_comp1571204552818{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="/group/gateway" target=""><img src="/Images/logo_ocbc.png" alt="Image"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#about-us" class="header__navi">About Us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/group/media/release/index" class="header__navi" target="_self">Media</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investors" class="header__navi">Investors</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#sustainability" class="header__navi">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="https://www.ocbc.com/group/careers/" class="header__navi" target="_self">Careers</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#research" class="header__navi">Research</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="#" data-target="_self">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/personal-banking" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/premier/en" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/business-banking/index.html" data-target="_self">Business Banking</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul></ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="about-us" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">About Us</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/group-business" class="link link link-arrow-right" target="_self">Group <span class="text-nowrap">Business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/corporate-strategy" class="link link link-arrow-right" target="_self">Corporate <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/our-leadership" class="link link link-arrow-right" target="_self">Our <span class="text-nowrap">Leadership<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/purpose-and-values" class="link link link-arrow-right" target="_self">Purpose and <span class="text-nowrap">Values<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/awards" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Awards<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/group/about-us/group-business" class="button button--secondary button--link" target="_self"><span>View all</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investors" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investors</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/financials" class="link link link-arrow-right" target="_self">Financial <span class="text-nowrap">results<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/annual-report-and-agm" class="link link link-arrow-right" target="_self">Annual Report and <span class="text-nowrap">AGM<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/investor-information" class="link link link-arrow-right" target="_self">Investor <span class="text-nowrap">information<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/regulatory-disclosure" class="link link link-arrow-right" target="_self">Regulatory <span class="text-nowrap">disclosures<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/contact-us" class="link link link-arrow-right" target="_self">Contact <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="#" class="" target="_self"><span></span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="sustainability" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Sustainability</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/sustainability-framework" class="link link link-arrow-right" target="_self">Sustainability <span class="text-nowrap">framework<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/supporting-sdgs" class="link link link-arrow-right" target="_self">Supporting <span class="text-nowrap">SDGs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/sustainability-governance" class="link link link-arrow-right" target="_self">Sustainability <span class="text-nowrap">governance<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/materiality-assessment" class="link link link-arrow-right" target="_self">Materiality <span class="text-nowrap">assessment<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/stakeholder-engagement" class="link link link-arrow-right" target="_self">Stakeholder <span class="text-nowrap">engagement<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="research" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Research</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Treasury reports</div>
+                                    <div class="name"><a href="/group/research/index" class="link link link-arrow-right" target="_self">Recent <span class="text-nowrap">updates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter" class="link link link-arrow-right" target="_self">Macro <span class="text-nowrap">outlook<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=fxandrates" class="link link link-arrow-right" target="_self">FX and <span class="text-nowrap">rates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=special" class="link link link-arrow-right" target="_self">Special <span class="text-nowrap">reports<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header><!--ls:end[component-1571204552818]-->
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmz4">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmz5">
+  <div class="iw_columns col-lg-12" id="colk1q5mmz6"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1571041639119">
+     <div class="iw_component" id="iw_comp1598620659533">
+      <!--ls:begin[component-1598620659533]--><style>#iw_comp1598620659533{}</style><!--Breadcrumb Component--><div class="masthead"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul></ul>
+   </div>
+</div><!--ls:end[component-1598620659533]-->
+     </div>
+     <div class="iw_component" id="iw_comp1598620659534">
+      <style>#iw_comp1598620659534{}</style><div class="masthead"></div><div class="module com__lifegoals-masthead bp-rel animate " style="background-color: #cde3f2;">
+   <div class="l-m-wrapper" style="background-image:url(/iwov-resources/sg/ocbc/gbc/img/investors/contact-us/contact-us-desktop.jpg); ">
+      <div class="container bp-width-med3">
+         <div class="l-m-content row align-items-center">
+            <div class="col-6 l-m-text   text-md-left">
+               <h1>Get in touch with us</h1>
+            </div>
+            <div class="l-m-mobile-image " style="background-image:url(/iwov-resources/sg/ocbc/gbc/img/investors/contact-us/financials-mobile-image.jpg); "></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1598620659535">
+      <style>#iw_comp1598620659535{}</style><!--Common Category Description With Sub Navigation--><div class="masthead"></div><div class="module container bp-width-med4">
+   <div class="common__category-list box-shadow3 bp-curve3 no-padding box-pull bg-white mobile-carousel-nav">
+      <div class="auto com__lo-nav fz-16 text-center mw--1060">
+         <div class="mc-na-main">
+            <div class="owl-carousel owl-nav1 group-height">
+               <div class="item"><a href="/group/investors/index.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/investors/gbc-icons-overview%403x.png"></div>
+                        <p class="mh1-f">Overview</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/investors/financials.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/investors/gbc-icons-financials%403x.png"></div>
+                        <p class="mh1-f">Financial results</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/investors/annual-report-and-agm.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/investors/gbc-icons-reportsand-notices%403x.png"></div>
+                        <p class="mh1-f">Annual report and AGM</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/investors/investor-information.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/investors/gbc-icons-investor-information%403x.png"></div>
+                        <p class="mh1-f">Investor information</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/investors/regulatory-disclosure.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/investors/gbc-icons-major-regulatory%403x.png"></div>
+                        <p class="mh1-f">
+                     
+                        
+                        Regulatory disclosures
+                     </p>
+                     </div></a></div>
+               <div class="item selected"><a href="/group/investors/contact-us.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/investors/gbc-icons-communities%403x.png"></div>
+                        <p class="mh1-f">Contact us</p>
+                     </div></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1598620659536">
+      <style>#iw_comp1598620659536{}</style><!--Two Block--><div class="sectionbottom"></div><div class="module container bp-width-med3">
+   <div class="com_digital-payments-generic-text-wrapper ">
+      <div class="com_digital-payments-generic-text d-p-g-type-4">
+         <div class="subcategory subcategory--black">Contact Us</div>
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-5 mb-m-3 dpgt4-first">
+                  <div>
+                     <h4></h4>
+                     <p><p><strong>Oversea-Chinese Banking Corporation Limited</strong><br /><strong>Investor Relations</strong><br /><br />65 Chulia Street #29-08 OCBC Centre, Singapore 049513 <br />Fax: +65 6530 4438</p></p>
+                  </div>
+               </div>
+               <div class="col-md-5 dpgt4-second">
+                  <div>
+                     <h4></h4>
+                     <p>For analysts, institutional investors and OCBC shareholders, please <a href="#investor-form">submit the form below</a> for us to contact you. <br /><br />For customer-related enquiries, please contact <a href="https://www.ocbc.com/personal-banking/contact-us">Personal Banking</a> or <a href="https://www.ocbc.com/eforms/corporatebankingcustomerfeedback/">Business Banking</a>.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1591241393219">
+      <!--ls:begin[component-1591241393219]--><style>#iw_comp1591241393219{}</style><div class="sectioninvestor"></div><div class="" id="investor-form"><script src="/iwov-resources/sg/ocbc/eform/js/jquery.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/moment.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap-datetimepicker.min.js"></script><link href="/iwov-resources/sg/ocbc/eform/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+   <link href="/iwov-resources/sg/ocbc/eform/css/form.css?2020061201" rel="stylesheet"><script src="/iwov-resources/sg/ocbc/eform/js/webfont.js"></script><div id="generated_form_display"></div><script>
+	 (function (w) {
+		w.URLSearchParams = w.URLSearchParams || function (searchString) {
+		  var self = this;
+		  self.searchString = searchString;
+		  self.get = function (name) {
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+			if (results == null) {
+			  return null;
+			}
+			else {
+			  return decodeURI(results[1]) || 0;
+			}
+		  };
+		}
+
+	  })(window);
+	
+    //hardcoded data
+	var urlParams = new URLSearchParams(window.location.search);
+	var maxTotalfile = "Total files size has exceeded 10MB limit";
+	var refid = urlParams.get("refid");
+	var formid = urlParams.get("formid");
+	window.sessionStorage.setItem("reference_id", null);
+	window.sessionStorage.setItem("form_id", null);
+	if(refid !== null && formid !== null && refid !== undefined && formid !== undefined) { 
+		window.sessionStorage.setItem("reference_id", refid);
+		window.sessionStorage.setItem("form_id", formid);
+	}  
+    window.sessionStorage.setItem("form_builder_data", JSON.stringify([{"field_id":"3EBk0B","type":"section-break-field","isActive":false,"options":{"type_id":"section-field__2d0ab9d6-c5c0-4b58-a8c5-18f61add589e","type_label":"Section Field","type_name":"section__d25b7637-7495-4edc-8880-2a235d74876c","type_title":"For analysts, institutional investors & OCBC shareholders","type_column_alignment":"top-down","type_displayed":["1","2"],"type_column_section":"2","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":null}},{"field_id":"p0Di9A","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__194b658c-c55e-4c1c-85a8-aecb17836923","type_name":"static-data__047b6298-2559-4499-8952-0c99d4ee7e40","type_label":"Please do not send account-related information through this form as we will not be able to take instructions or respond accordingly.<br><br>\nAll fields are required.\n\n\n","type_required":false,"section":"3EBk0B","position":"single","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"UjvQWQ","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__f6bf342d-e1ba-497f-8cec-b30c4a24aaa6","type_name":"radio__a32be674-3b9a-4c5b-96fc-ee318c2f95a0","type_label":"Salutation","type_items":["Mr","Mrs","Ms","Dr","Prof"],"type_selected":null,"type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio-inline","type_required":true,"type_required_message":"Select your salutation","type_help_text":"","section":"3EBk0B","position":"single","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"3JfSLV","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__5921a7b3-583a-4399-b173-7f16691a22c2","type_name":"name__04c15ff5-6e3b-44dd-a0f8-89bf3894a1f8","type_placeholder":"","type_label":"Name","type_required":true,"type_required_message":"Fill in your full name","type_help_text":"","type_is_number":false,"type_number_range":"","section":"3EBk0B","position":"left","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"Jc9Yib","type":"dummy-field","isActive":false,"options":{"type_id":"dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0","type_label":"Dummy Field","type_name":"dummy__1c8317ec-6d21-4daf-adf1-2e86e5516159","section":"3EBk0B","position":"right"}},{"field_id":"qliQI7","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__187c6019-53d5-4c08-a2ed-03d4a1d9401f","type_name":"name__7bacf1ea-4cf9-4cab-89da-ee532410f4c5","type_placeholder":"","type_label":"Phone / Mobile no.","type_required":true,"type_required_message":"Fill in your contact number","type_help_text":"","type_is_number":true,"type_number_range":"","section":"3EBk0B","position":"left","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"qL8XvV","type":"email-field","isActive":false,"field_value":null,"options":{"type_id":"email-field__11edfe6b-5e1f-402c-9d5a-0b1aa63b4a55","type_name":"email__3bfacf14-d74d-49a6-8651-30c717e8c1da","type_placeholder":"","type_label":"Email address","type_required":true,"type_required_message":"Fill in your email","type_help_text":"","section":"3EBk0B","position":"right","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"zmVQyu","type":"dropdown-field","isActive":false,"field_value":null,"options":{"type_id":"dropdown-field__0fb9a234-5d64-4399-9f07-f18645eabf5f","type_name":"dropdown__d48f34e5-8f22-44e3-942c-48c236268e15","type_placeholder":"Please select","type_label":"What is it regarding?","type_items":["Financial Results","Annual General Meeting","Shareholder Matters","Other enquiries"],"type_selected":null,"type_required":true,"type_required_message":"Select query type","type_help_text":"","section":"3EBk0B","position":"single","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"BPOTT4","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__1ffceaf9-a122-402d-ad61-178a867d9132","type_name":"static-data__9e4f3c0f-c45a-40ab-93d0-9990e2adcc77","type_label":"Our quarterly results are released within 45 days from the close of the quarter and audited results within 2 months from the financial year ended 31 December. Past financial results can be found in the <a href=\"financials.page\" target=\"_blank\">Financial results</a> section.","type_required":false,"section":"3EBk0B","position":"single","conditional_logic":true,"precondition_field":"dropdown-field__0fb9a234-5d64-4399-9f07-f18645eabf5f","expression":"starts_with","condition_value":"Financial","action":"show"}},{"field_id":"Bm6PJb","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__a97c6bfb-9aa5-4522-bf4a-f7c1ff43e334","type_name":"static-data__296164d2-0a2c-4d8e-b62d-94277707e165","type_label":"For enquiries relating to Annual General Meeting, you may wish to refer to the <a href=\"annual-report-and-agm.page\" target=\"_blank\">Annual report and AGM</a> section.\n\n","type_required":false,"section":"3EBk0B","position":"single","conditional_logic":true,"precondition_field":"dropdown-field__0fb9a234-5d64-4399-9f07-f18645eabf5f","expression":"starts_with","condition_value":"Annual","action":"show"}},{"field_id":"YuH4sD","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__1aa4884d-aa9a-49c3-aa2a-08bb68a61c52","type_name":"static-data__8de0d203-4b5b-462a-b689-f176934ad4a2","type_label":"<strong>We are unable to update your personal particulars or provide information on your shareholdings / scrip election.\n</strong><br><br>\nIf your shares are registered in your name with The Central Depository (Pte) Limited, please contact The Central Depository (Pte) Limited at: <br><br><p>\nCentral Depository<br>\n9 North Buona Vista Drive<br>\n#01-19/20 The Metropolis<br>\nSingapore 138588<br>\nTel: +65 6535 7511<br>\nFax: +65 6535 0775<br>\nEmail: <a href=\"mailto:asksgx@sgx.com\">asksgx@sgx.com</a>\n</p><br>\n\nIf your shares are registered in your name in the Register of Members (physical share certificates), please contact our Share Registrar at:<br><br>\n<p>\nM & C Services Private Limited<br>\n112 Robinson Road<br>\n#05-01<br>\nSingapore 068902<br>\nTel: +65 6228 0505<br>\nFax: +65 6225 1452<br>\nEmail: <a href=\"mailto:shareregistry@mncsingapore.com\">shareregistry@mncsingapore.com</a>\n</p><br>\nFor other enquiries relating to shareholder matters, you may wish to refer to the <a href=\"investor-information.page\" target=\"_blank\">Investor information</a> section.","type_required":false,"section":"3EBk0B","position":"single","conditional_logic":true,"precondition_field":"dropdown-field__0fb9a234-5d64-4399-9f07-f18645eabf5f","expression":"starts_with","condition_value":"Shareholder","action":"show"}},{"field_id":"LJD5OL","type":"static-data-field","isActive":true,"field_value":null,"options":{"type_id":"static-data-field__33e6e945-0ac7-4304-a708-497ce98c0e1b","type_name":"static-data__56e67f83-99c1-4889-b627-93f2550aba3d","type_label":"For customer-related enquiries, please contact us at <a href=\"https://www.ocbc.com/personal-banking/contact-us\" target=\"_blank\">Personal Banking</a> / <a href=\"https://www.ocbc.com/eforms/corporatebankingcustomerfeedback/\" target=\"_blank\">Business Banking</a>.\n","type_required":false,"section":"3EBk0B","position":"single","conditional_logic":true,"precondition_field":"dropdown-field__0fb9a234-5d64-4399-9f07-f18645eabf5f","expression":"starts_with","condition_value":"Other","action":"show"}},{"field_id":"udEdJ3","type":"textbox-field","isActive":false,"field_value":null,"options":{"type_id":"textbox-field__99cf9ab5-a044-47a5-a7e2-d42fd06182bf","type_name":"name__cec2eefc-db2e-423d-911f-7d0b4b6c81ee","type_placeholder":"","type_label":"Please enter details of your enquiry","type_required":false,"type_required_message":"Please DO NOT submit account details, confidential information, URLs or special characters (<>;[]).","type_help_text":"Please DO NOT submit account details, confidential information, URLs or special characters (<>;[]).","type_no_rows":"4","section":"3EBk0B","position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":true,"precondition_field":"dropdown-field__0fb9a234-5d64-4399-9f07-f18645eabf5f","expression":"not_equal","condition_value":"1","action":"show"}},{"field_id":"QlV46Z","type":"file-upload-field","isActive":false,"field_value":null,"options":{"type_id":"file-upload-field__a95d1619-7034-4e3a-947a-bf10a4d96e01","type_name":"file-upload__6a41e3ca-ab36-45fc-8753-136dd4644943","type_label":"Attach file (optional)","type_size_limit":"2","type_multiple":1,"type_required":false,"type_file_types":"image/*,application/pdf","type_help_text":"Acceptable file types: PDF (max 2MB), JPG, PNG. You may upload more than 1 document","thumbnails":true,"thumbnail_width":150,"thumbnail_height":100,"section":"3EBk0B","position":"single","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"KShC4o","type":"terms-conditions-field","isActive":false,"field_value":"Yes","options":{"type_id":"terms-conditions-field__e50f09ac-e210-4dac-8f3b-cd56628e4368","type_name":"terms-conditions__94190c2e-91ed-48ce-8c55-584093c3a949","type_label":"<p>OCBC is committed to protecting the personal data of our customers in line with the Personal Data Protection Act. Please take a moment to read our <a href=\"https://www.ocbc.com/personal-banking/policies\" target=\"_blank\">Privacy Policy</a> so that you know and understand the purposes for which we collect, use and disclose your Personal Data.</p>","type_required":true,"type_required_message":"Please acknowledge by checking the box","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":"3EBk0B","position":"single"}}]));
+    window.sessionStorage.setItem("form_builder_settings", JSON.stringify({"form_subtitle":"Get us to contact you","form_heading":"Investor Contact Form","form_id":"investor-contact","form_expiry_date":"31/12/2100","form_expiry_message":"Expired","form_max_submissions":null,"form_max_submission_text":null,"save_exit_enable":false,"form_submit_type":"Show submission message","form_submit_redirecturl":"","form_submit_message":"<h4>Thank you for your enquiry. We will respond as soon as we can.</h4>","form_saveexit_message":"Thank you for saving the form.","file-name":"/templatedata/personal/eform/data/group-Form-investor-contact.xml","branchName":"group","suite_id":"suitid","save-event":"saveEvent","saveExit-event":"saveExitEvent"}));
+    </script><script src="/iwov-resources/sg/ocbc/eform/js/group/form_generator.js?2020072801"></script></div><!--ls:end[component-1591241393219]-->
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmz8">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmz9">
+  <div class="iw_columns col-lg-12" id="colk1q5mmza">
+   <div class="iw_component" id="iw_comp1571041639123">
+    <style>#iw_comp1571041639123{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  
+	
+	  $('.sectionbottom').parent().wrapAll('<div class="section section-bottom"></div>');
+	  
+	  
+	
+	  $('.sectioninvestor').parent().wrapAll('<div class="section section-both" id="section-investor-form"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmzc">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmzd">
+  <div class="iw_columns col-lg-12" id="colk1q5mmze">
+   <div class="iw_component" id="iw_comp1583140136076">
+    <style>#iw_comp1583140136076{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-6 col-xl-6">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/Images/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>OCBC Group</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/group-home.html">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbcnisp.com/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label><hr>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-6">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="w-100">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                 <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                 <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                          <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                          <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Contact Us</span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/premier/en" class="" target="_blank">Premier Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/business-banking/index.html" class="" target="_blank">Business Banking</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Contact Us</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/premier/en" class="" target="_blank">Premier Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/business-banking/index.html" class="" target="_blank">Business Banking</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-none d-sm-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/OCBCBank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/group/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/group/policies" class="" target="_self">Policies</a></span><span><a href="/group/notices" class="" target="_self">Notices</a></span><span><a href="/group/fair-dealing" class="" target="_self">Fair Dealing</a></span><span><a href="/group/security" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – 2025 – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W</div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><div style="display: none"></div>
+   </div>
+   <div class="iw_component" id="iw_comp1574136653555">
+    <!--ls:begin[component-1574136653555]--><style>#iw_comp1574136653555{}</style><div></div><!--ls:end[component-1574136653555]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/investor/js/analytic-v1.js'></script>
+<script src='/iwov-resources/sg/ocbc/ospl/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/gbc/js/script.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

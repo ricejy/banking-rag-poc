@@ -1,0 +1,1706 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>dataLayer = [];</script>
+<!-- load Google Analytics -->
+<script>
+      window['GoogleAnalyticsObject'] = 'ga';
+      window['ga'] = window['ga'] || function() {
+                (window['ga'].q = window['ga'].q || []).push(arguments)
+              };
+</script>
+
+<!-- (START) Adobe Analytics - Header -->
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js"
+async></script>
+<!-- (END) Adobe Analytics - Header -->
+    <!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>International Banking Solutions | OCBC Premier Banking</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/premier-banking/page/international-banking-solutions/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/premier-banking/international-banking-solutions/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="OCBC Premier Banking,OCBC Wealth Account,OCBC wealth management solutions,OCBC Premier Banking welcome offer,OCBC Premier Banking exclusive features,OCBC International Banking Account,OCBC International Banking features,OCBC International Banking Solutions">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Bank with ease wherever you are. Start your International Banking journey with us today & access trusted solutions to support your banking needs in Singapore.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/premier-banking/international-banking-solutions">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/color-style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/component-style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><script type="text/javascript"> var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);</script><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script type="text/javascript">
+    var ocbcData = {
+         page: {
+            pageName: "sg:ocbc:premier:international banking",
+            language: "en",
+            pageCategory: "pre-login premier banking pages",
+            bannerName: "expand your wealth and explore opportunities wherever you are",
+            channel: "premier banking",
+            country: "sg",
+            lob: "ocbc premier banking",
+            platform: "web"
+         },
+         product: {
+            productid: "International Banking",
+            productCategory: "Premier Banking",
+            productSubCategory: "Premier Banking International Banking",
+            productType: "Segment",
+            productName: "International Banking"
+         },
+         application: {
+            applicationId: "",
+            flowStep: "",
+            flowType: "",
+            journeyName: "",
+            subJourneyName: "",
+            applicationStatus: ""
+         },
+         user: {
+            CIF: "",
+            loginStatus: "not logged in"
+         },
+         event: {
+            pageView: "true",
+            bannerImpression: "true"
+         }
+      };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1754330502798">
+    <style>#iw_comp1754330502798{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="/premier-banking/home" target=""><img src="/iwov-resources/sg/ocbc/premier/img/LOGO.jpg" alt="OCBC Premier Banking Logo"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/why-join-us" class="header__navi" target="_self">Why join us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/our-solutions" class="header__navi" target="_self">Our solutions</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/market-insights" class="header__navi" target="_self">Market insights</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/our-solutions/regional-benefits" class="header__navi" target="_self">Regional benefits</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/international-banking-solutions" class="header__navi" target="_self">International banking solutions</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://internet.ocbc.com/internet-banking/" class="link" target="_self">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/premier-banking/home" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/loans/home-loans.page" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/premier-private-client/index.page" data-target="_self">Premier Private Client</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.ocbc.com/group/about-us/group-business" data-target="_self">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page" data-target="_self">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_self">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul></ul>
+                        <div class="header__main--web-location header__main--web-language">
+                           <hr>
+                           <div>
+                              <div class="globe-icon"></div>
+                              <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_language">
+                                    <option value="https://www.ocbc.com/premier-banking/international-banking-solutions">EN</option>
+                                    <option value="https://www.ocbc.com/premier-banking/id/international-banking-solutions">ID</option>
+                                    <option value="https://www.ocbc.com/premier-banking/zh/international-banking-solutions">ZH</option></select></div>
+                           </div>
+                           <hr>
+                        </div>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://internet.ocbc.com/internet-banking/" class="link" target="_self">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view"></div>
+         </div>
+      </div>
+   </div>
+   <div class="navigation__product-anchor container bp-width-med3 bp-sticky-content navigation__product-anchor--hidden">
+      <div class="he-bo-title"><span class="capt"></span><div class="arrow"><i class="far fa-chevron-down"></i></div>
+      </div>
+      <div class="he-bo-main">
+         <div class="he-bo-row">
+            <div class="hb-co-list">
+               <div class="long">
+                  <div class="hb-co-menu">
+                     <ul nav-scroller="">
+                        <li class="active hidden" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-1"><a href="#section-home" title="Home" target="_self">Home</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-2"><a href="#offer" title="Welcome Offer" target="_self">Welcome Offer</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-3"><a href="#apply" title="Before You Apply" target="_self">Before You Apply</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-4"><a href="#information" title="Additional Information" target="_self">Additional Information</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="short">
+                  <div class="action-button"><a class="button button--primary button--red2 undefined d-block" href="#apply-now-popup" target="" data-fancybox="none"><span>Apply now</span></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8">
+   <!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1754330502802">
+      <!--ls:begin[component-1754330502802]--><style>#iw_comp1754330502802{}</style><!--Breadcrumb Component--><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/premier-banking/home.page">Premier Banking</a></li>
+         <li>International banking solutions</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1754330502802]-->
+     </div>
+     <div class="iw_component" id="iw_comp1754444639285">
+      <style>#iw_comp1754444639285{}</style><div class="masthead-component"></div><div class="module d-md-flex flex-column parent__masthead parent__masthead--has-background parent__masthead--multi-columns parent__masthead--cta parent__masthead--has-background-mobile  parent__masthead--light ">
+   <div class="parent__masthead-background" style="background-image: url(/iwov-resources/sg/ocbc/premier/img/international-banking/d-masthead.jpg);"></div>
+   <div class="container bp-width-med3 d-md-flex flex-fill flex-column">
+      <div class="parent__masthead-container d-md-flex flex-column justify-content-between">
+         <div>
+            <div class="subcategory subcategory--no-border  subcategory--black ">
+               <h1>INTERNATIONAL BANKING SOLUTIONS</h1>
+            </div>
+            <h2 class="light">Expand your wealth and explore opportunities, wherever you are</h2>
+         </div>
+         <div class="d-md-none parent__masthead-background parent__masthead-background--mobile" style="background-image: url(/iwov-resources/sg/ocbc/premier/img/offshore-banking/m-masthead-off.jpg)"></div>
+         <div class="card white-bg card--no-border ">
+            <div class="row row-large">
+               <div class="w-100">
+                  <div class="col-12 com__tab-content">
+                     <div class="com__tab-nav mb3 fz-20 d-md-none">
+                        <ul class="row">
+                           <li class="col-6 d-flex align-items-center justify-content-center selected"><a href="#tab1">Why you will love this</a></li>
+                           <li class="col-6 d-flex align-items-center justify-content-center"><a href="#tab2">Who can apply</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="com_slider row w-100" item="2" apply-for="mobile" smart-speed="350" margin="5" mouse-drag="false" touch-drag="false">
+                  <div class="col-md-6 border-right">
+                     <div class="mb-3  d-none d-md-block"><b class="fz-16">Why you will love this</b></div>
+                     <div class="com__tab-set mobile-only" id="#tab1">
+                        <p class="d-flex justify-content-start"><i class="fa fa-check"></i><span>Open a Premier Banking account remotely via Singapore OCBC app</span></p>
+                        <p class="d-flex justify-content-start"><i class="fa fa-check"></i><span>Be supported by a dedicated Relationship Manager who speaks your native language</span></p>
+                        <p class="d-flex justify-content-start"><i class="fa fa-check"></i><span>Make overseas transfers in 19 currencies – no cable or commission fees will be charged</span></p>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="mb-3  d-none d-md-block"><b class="fz-16">Who can apply</b></div>
+                     <div class="com__tab-set mobile-only" id="#tab2">
+                        <p class="d-flex justify-content-start"><i class="fa fa-circle"></i><span>Individuals aged 21 years old and above with a minimum deposit or investment amount of S$350,000</span></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="pt-4"><a data-fancybox="none" href="#apply-now-popup" class="button button--primary button--red2 d-sm-inline-block d-block &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Apply now</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639752">
+      <style>#iw_comp1754444639752{}</style><div class="d-none-soft">
+   <div id="masthead-blurb"><div class="parent__masthead-promotion-wrapper">
+<div class="theme theme--blue">
+<div class="promotion__container promotion__container-notification promotion__container-dark fadeInUp animated animation"><i class="fal fa-times btn-close">&nbsp;</i>
+<div class="d-flex"><span><img src="/iwov-resources/sg/ocbc/premier/img/icon_giftbox-grey.png" alt="" /></span>
+<p class="flex-fill caption"><strong class="promotion__container-title"></strong><strong>Be rewarded when you start a Premier Banking relationship with us</strong><br /><u><a class="promo--underline" href="#offer" cta-id="Campaign-PreRegistration-FindOutMore-PromoBlurb">Learn more</a></u></p>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754330502804">
+      <style>#iw_comp1754330502804{}</style><div class="intro-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-custom-8">
+         <div class="theme theme--blue">
+            <h2 class="bold text-gradient common__intro-paragraph pt-1 pb-1 ">We provide seamless and trusted solutions for your banking needs in Singapore.</h2>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639299">
+      <style>#iw_comp1754444639299{}</style><div class="ocbc-component"></div><div anim-control="parent" class="module animate container bp-width-med3 com__onlinebanking_whatsnewfeature-tab">
+   <div class="subcategory subcategory--black text-center"></div>
+   <div class="com__onlinebanking_whatsnewfeature com__onlinebanking_whatsnewfeature-extended ">
+      <div class="text-center justify-content-center com__onlinebanking_whatsnewfeature-carousel-nav">
+         <div class="owl-carousel owl-nav1">
+            <div class="item">
+               <div class="com__onlinebanking_whatsnewfeature-nav active"><a id="whyocbc" href=""><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-bank.png"><div><small><strong>Why OCBC</strong></small></div></a></div>
+            </div>
+            <div class="item">
+               <div class="com__onlinebanking_whatsnewfeature-nav active"><a id="whysingapore" href=""><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-globe-hand.png"><div><small><strong>Why Singapore</strong></small></div></a></div>
+            </div>
+            <div class="item">
+               <div class="com__onlinebanking_whatsnewfeature-nav active"><a id="wealthsolutions" href=""><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-coins.png"><div><small><strong>Wealth solutions</strong></small></div></a></div>
+            </div>
+            <div class="item">
+               <div class="com__onlinebanking_whatsnewfeature-nav active"><a id="digitalcapabilities" href=""><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-phone-deposit.png"><div><small><strong>Digital capabilities</strong></small></div></a></div>
+            </div>
+            <div class="item">
+               <div class="com__onlinebanking_whatsnewfeature-nav active"><a id="premierexclusive" href=""><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-puzzle.png"><div><small><strong>Premier Banking exclusive</strong></small></div></a></div>
+            </div>
+         </div>
+      </div>
+      <div class="row position-relative">
+         <div class="col">
+            <div class="row">
+               <div class="com__onlinebanking_whatsnewfeature-slider owl-carousel owl-theme group-height" items="3" margin="5" smart-speed="350">
+                  <div class="col-md-12 com__onlinebanking_whatsnewfeature-item list__col-single">
+                     <div class="com__onlinebanking_whatsnewfeature-wrapper">
+                        <div class="com__onlinebanking_whatsnewfeature-text mh1-f">
+                           <div class="">
+                              <div class="com__onlinebanking_whatsnewfeature-item-title mh2-f"><span>abc</span></div>
+                              <div class="com__onlinebanking_whatsnewfeature-item-content mh3-f"><p>&nbsp;&nbsp;</p></div>
+                           </div>
+                        </div>
+                        <div class="com__onlinebanking_whatsnewfeature-images"><span><img class="img-fluid img-desktop" src=""></span><img class="img-fluid img-mobile" src=""></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639295">
+      <!--ls:begin[component-1754444639295]--><style>#iw_comp1754444639295{}</style><div class="1932-component"></div><div class="container bp-width-med3 module animate">
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__thumbnail large"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-ocbc-bank.png" alt-text="Singapore’s longest-standing bank with a trusted international presence"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">A trusted name in banking since 1932</div>
+                  <div class="article__content"><p>Established in Singapore in 1932, OCBC is the country&rsquo;s longest-standing bank and the second largest financial services group in Southeast Asia by <span style="font-weight: 400;">assets. We have a strong presence across key markets like Singapore, Malaysia, Indonesia and China.</span></p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1754444639295]-->
+     </div>
+     <div class="iw_component" id="iw_comp1754444639303">
+      <style>#iw_comp1754444639303{}</style><div class="1932-component"></div><div class="module container bp-width-med3">
+   <div class="list__col">
+      <div class="row">
+         <div class="col-custom-10">
+            <div class="row animate com__row-group-height" anim-control="parent">
+               <div class="col-md-6 com__row-group-col">
+                  <div class="list__col-single list__col-count-2">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-money-bag.png" alt="Expansive suite of wealth management services"></div>
+                        <div class="list__col-content flex-fill">
+                           <h4 class="mb1"><strong>Comprehensive wealth management solutions</strong></h4>
+                           <div class="list__col-text">
+                              <p>We offer a comprehensive suite of wealth management services – including banking, insurance and asset management – as One Group (comprising OCBC, OCBC Securities, Great Eastern and Lion Global Investors).</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>We offer a comprehensive suite of wealth management services – including banking, insurance and asset management – as One Group (comprising OCBC, OCBC Securities, Great Eastern and Lion Global Investors).</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6 com__row-group-col">
+                  <div class="list__col-single list__col-count-2">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-grow-money.png" alt="Received one of the world’s highest credit ratings"></div>
+                        <div class="list__col-content flex-fill">
+                           <h4 class="mb1"><strong>A brand built on innovation, care and a long-term vision</strong></h4>
+                           <div class="list__col-text">
+                              <p>We are among the world’s most highly-rated banks, with an Aa1 by Moody’s and an AA- by both Fitch and S&P.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>We are among the world’s most highly-rated banks, with an Aa1 by Moody’s and an AA- by both Fitch and S&P.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1764899484691">
+      <xmp id='exceptionStackTrace' style='display:none;'>There was an error - check the logs for details</xmp>
+     </div>
+     <div class="iw_component" id="iw_comp1756085574922">
+      <!--ls:begin[component-1756085574922]--><style>#iw_comp1756085574922{}</style><div class="landscape-component"></div><div class="container bp-width-med3 module animate">
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">A hub where strategy meets stability</div>
+                  <div class="article__content"><ul class="list-tick">
+<li><strong>Political and economic stability</strong>: With its flexible risk control measures and stable leadership, Singapore is an ideal hub for investment, growth and networking.</li>
+<li><strong>Well-regulated market</strong>: Singapore adheres to international standards in banking, insurance, securities, and financial market infrastructures.</li>
+<li><strong>Strategic location</strong>: Its UTC+8 time zone bridges London and New York trading hours.</li>
+<li><strong>Taxation framework</strong>: Low progressive income tax rates, plus no capital gains and inheritance tax, are among features of the tax system that appeal to expatriates and investors. Additionally, investors do not pay stamp duties on electronic share transfers on the Singapore Stock Exchange.</li>
+</ul></div>
+               </div>
+            </div>
+         </div>
+         <div class="article__thumbnail large reverse"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-financial-landscape.jpg" alt-text="What makes Singapore an ideal banking and investment hub"></div>
+      </div>
+   </div>
+</div><!--ls:end[component-1756085574922]-->
+     </div>
+     <div class="iw_component" id="iw_comp1754444639407">
+      <style>#iw_comp1754444639407{}</style><div class="goals-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-custom-8 col-custom-enforced subtitle subtitle-heading "><p class="fz-18"><strong>Extensive wealth services to support your financial goals</strong></p>
+<p>Explore a range of financial services designed to help you grow, protect and manage your wealth, including:</p></div>
+   </div>
+   <div class="list__four-col-with-icons list__col bp-par-height2 list__col-sticky-available">
+      <div class="row list__col-content animate" anim-control="parent">
+         <div class="col-custom-10">
+            <div class="row">
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="list__col-image bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-users.png" alt="Be served by a dedicated RM"></div><span class="flex align-items-center">
+                           <h4><strong>Get personalised support from your Relationship Manager</strong></h4></span></div>
+                     <div><p>He/she is easily accessible, wherever you are, and speaks your preferred language.</p></div>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="list__col-image bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-light-bulb.png" alt="Explore investment solutions curated for you "></div><span class="flex align-items-center">
+                           <h4><strong>Choose from diverse investment options</strong></h4></span></div>
+                     <div><p>Elevate your wealth with investment solutions curated to support your investment goals.</p></div>
+                     <p class="mt2"><a href="https://www.ocbc.com/premier-banking/our-solutions/investments" class=" link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="list__col-image bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-money-bag.png" alt="Retirement and legacy planning for your next generation"></div><span class="flex align-items-center">
+                           <h4><strong>Plan for your loved ones</strong></h4></span></div>
+                     <div><p>Plan early to retire comfortably and leave a legacy for your children and future generations to come.</p></div>
+                     <p class="mt2"><a href="/premier-banking/our-solutions/insurance.page" class=" link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-3">
+                  <div class="list__col-single list__col-imagetext co-is-set">
+                     <div class="d-flex flex-flow flex-sm-column">
+                        <div class="list__col-image bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-globe.png" alt="Seamless account management across the region"></div><span class="flex align-items-center">
+                           <h4><strong>Manage accounts across Asia with ease</strong></h4></span></div>
+                     <div><p>Get exclusive banking privileges, benefits and rewards in your home country and beyond.</p></div>
+                     <p class="mt2"><a href="/premier-banking/our-solutions/regional-benefits/regional-premier" class=" link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639753">
+      <style>#iw_comp1754444639753{}</style><div class="banking-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="com__tab">
+      <div class="com__tab-content com__tab--center com__tab-scroll mb4">
+         <div class="row">
+            <div class=" col-custom-9">
+               <div class="com__tab-nav has-styled-nav">
+                  <ul class="d-flex styled-nav align-items-center">
+                     <div class="indicator"></div>
+                     <li class="col align-items-center justify-content-center selected"><a href="#get">What you will get</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#access">What you will have access to</a></li>
+                  </ul>
+                  <div class="border-line-wrapper">
+                     <div class="border-line"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639737">
+      <!--ls:begin[component-1754444639737]--><style>#iw_comp1754444639737{}</style><div class="banking-component get-component"></div><div class="module container bp-width-med3 module animate">
+   <div class="row ">
+      <div class="col-md-12">
+         <div class="row">
+            <div class=" col-custom-8 col-custom-enforced subtitle ">
+               <h4 class="mb-0"><p class="fz-18"><b>Access exclusive features with OCBC Premier Banking</b></h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="com_digital-payments-articles has-2-items">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-wealth-account.jpg" alt-text="Open a Wealth Account with OCBC Premier Banking"></div>
+                  <div class="article__details">
+                     <div class="article__title">OCBC Wealth Account​</div>
+                     <div class="article__content"><p>Monitor your portfolio(s) easily with real-time alerts on market movements. Gain access to an expanded suite of wealth products through the account.​</p>
+<p><a class="link link-arrow-right" rel="noopener" href="https://www.ocbc.com/personal-banking/premier-banking/solutions/ocbc-wealth-account.page" target="_blank">Learn more <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-global-savings.jpg" alt-text="Open a Premier Global Savings Account with OCBC Premier Banking"></div>
+                  <div class="article__details">
+                     <div class="article__title">OCBC Premier Global Savings Account​</div>
+                     <div class="article__content"><p>Save and transact in 10 major currencies with preferential interest rates for four selected currencies.</p>
+<p><a class="link link-arrow-right" rel="noopener" href="/premier-banking/our-solutions/deposits/global-savings-account" target="_blank">Learn more <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1754444639737]-->
+     </div>
+     <div class="iw_component" id="iw_comp1754444639738">
+      <!--ls:begin[component-1754444639738]--><style>#iw_comp1754444639738{}</style><div class="banking-component get-component"></div><div class="module container bp-width-med3 module animate">
+   <div class="com_digital-payments-articles has-2-items">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-statement-savings.jpg" alt-text="Open a Premier Statement Savings Account​ with OCBC Premier Banking"></div>
+                  <div class="article__details">
+                     <div class="article__title">OCBC Premier Statement Savings Account​</div>
+                     <div class="article__content"><p><span style="font-weight: 400;">Save, spend and keep track of transactions with monthly statements.</span></p></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-debit-card.jpg" alt-text="Apply for a Premier World Elite™ Debit Card​ with OCBC Premier Banking"></div>
+                  <div class="article__details">
+                     <div class="article__title">OCBC Premier World Elite™ Debit Card​</div>
+                     <div class="article__content"><p><span style="font-weight: 400;">Enjoy an unlimited 1% rebate when you make transactions in selected spending categories.</span></p>
+<p><a class="link link-arrow-right" rel="noopener" href="/premier-banking/our-solutions/cards/premier-world-elite" target="_blank">Learn more <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1754444639738]-->
+     </div>
+     <div class="iw_component" id="iw_comp1754444639739">
+      <!--ls:begin[component-1754444639739]--><style>#iw_comp1754444639739{}</style><div class="banking-component access-component"></div><div class="module container bp-width-med3 module animate">
+   <div class="row ">
+      <div class="col-md-12">
+         <div class="row">
+            <div class=" col-custom-8 col-custom-enforced subtitle ">
+               <h4 class="mb-0"><p class="fz-18"><b>Access exclusive features with OCBC Premier Banking</b></h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="com_digital-payments-articles has-2-items">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-banking-centres.jpg" alt-text="Locate us at our OCBC Premier Banking Centres in Singapore"></div>
+                  <div class="article__details">
+                     <div class="article__title">Premier Banking Centres</div>
+                     <div class="article__content"><p><span style="font-weight: 400;">Get expert wealth advice in the comfort of welcoming, relaxing spaces catered to you &ndash; our Premier Banking Centres in Singapore.</span></p>
+<p><a class="link link-arrow-right" href="https://www.ocbc.com/personal-banking/premier-banking/locations.page">Learn more <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/premier/img/international-banking/kv-concierge-services.jpg" alt-text="Access concierge services as an OCBC Premier Banking customer"></div>
+                  <div class="article__details">
+                     <div class="article__title">Tailored concierge services</div>
+                     <div class="article__content"><p>Get personalised wellness, education and relocation support through our Regional Premier Concierge.</p>
+<p><a href="#section-wellness" data-fancybox="none"><span class="link-arrow-right link-simple">Learn <span class="text-nowrap"> more<i class="far fa-chevron-right">&nbsp;</i></span></span></a></p></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1754444639739]-->
+     </div>
+     <div class="iw_component" id="iw_comp1754330502805">
+      <style>#iw_comp1754330502805{}</style><div class="solutions-component"></div><div class="module container bp-width-med3">
+   <div class="list__col">
+      <div class="row ">
+         <div class="col-md-12">
+            <div class="row">
+               <div class="col-custom-8 col-custom-enforced subtitle"><p class="fz-18"><strong>Seamless digital solutions to help you manage your wealth </strong></p>
+<p>From making investments to overseas payments, managing your finances with confidence is easier with our digital tools.</p></div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-custom-10">
+            <div class="row animate com__row-group-height" anim-control="parent">
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-computer-graph.png" alt="Get an overview of your investment portfolio"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Stay on top of your investments</strong></h4></span><div class="list__col-text">
+                              <p>Manage your portfolio(s) through a single account. Plus, expand your investment opportunities with our suite of wealth products.</p>
+                              <div class="list__col-link">
+                                 <p><a href="/premier-banking/our-solutions/investments/ocbc-wealth-account.page" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Manage your portfolio(s) through a single account. Plus, expand your investment opportunities with our suite of wealth products.</p>
+                        <div class="list__col-link">
+                           <p><a href="/premier-banking/our-solutions/investments/ocbc-wealth-account.page" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-foreign-currency-exchange.png" alt="Enjoy the flexibility to transact with Premier Global Savings Account"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Transact and save in 10 major currencies</strong></h4></span><div class="list__col-text">
+                              <p>Access up to 10 major currencies and enjoy preferential rates on selected currencies with the Premier Global Savings Account.</p>
+                              <div class="list__col-link">
+                                 <p><a href="/premier-banking/our-solutions/deposits/global-savings-account" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Access up to 10 major currencies and enjoy preferential rates on selected currencies with the Premier Global Savings Account.</p>
+                        <div class="list__col-link">
+                           <p><a href="/premier-banking/our-solutions/deposits/global-savings-account" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-money-out.png" alt="Make fee-free overseas transfers in up to 19 currencies"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Send money overseas with zero fees</strong></h4></span><div class="list__col-text">
+                              <p>Make transfers in 19 currencies – no cable or commission fees needed.</p>
+                              <div class="list__col-link">
+                                 <p><a href="https://www.ocbc.com/personal-banking/digital-banking/overseas-funds-transfer.page" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Make transfers in 19 currencies – no cable or commission fees needed.</p>
+                        <div class="list__col-link">
+                           <p><a href="https://www.ocbc.com/personal-banking/digital-banking/overseas-funds-transfer.page" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-phone-deposit.png" alt="Transfer money from Singapore to Mainland China at zero fees"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Send money to Weixin Pay and Alipay wallets</strong></h4></span><div class="list__col-text">
+                              <p>Enjoy instant peer-to-peer transfers at zero transfer fees via the OCBC app. </p>
+                              <div class="list__col-link">
+                                 <p><a href="https://www.ocbc.com/personal-banking/digital-banking/pay-to-wallet" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Enjoy instant peer-to-peer transfers at zero transfer fees via the OCBC app. </p>
+                        <div class="list__col-link">
+                           <p><a href="https://www.ocbc.com/personal-banking/digital-banking/pay-to-wallet" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/premier/img/international-banking/icon-qr-code.png" alt="Make overseas payments via Scan and Pay"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Make seamless cross-border payments</strong></h4></span><div class="list__col-text">
+                              <p>Scan and pay with the OCBC app at over 40 destinations worldwide through our cross-border payment partners - Alipay+ QR, UnionPay QR, DuitNow QR, PromptPay QR and QRIS.</p>
+                              <div class="list__col-link">
+                                 <p><a href="https://www.ocbc.com/personal-banking/digital-banking/digital-solutions-and-services.page#section-payment" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Scan and pay with the OCBC app at over 40 destinations worldwide through our cross-border payment partners - Alipay+ QR, UnionPay QR, DuitNow QR, PromptPay QR and QRIS.</p>
+                        <div class="list__col-link">
+                           <p><a href="https://www.ocbc.com/personal-banking/digital-banking/digital-solutions-and-services.page#section-payment" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639304">
+      <style>#iw_comp1754444639304{}</style><div class="offer-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black ">WELCOME OFFER</div>
+   <div class="row flex-row align-items-center feature__image feature__image-beside-text mob-mt2 animate&#xA;&#x9;&#x9;&#x9;&#x9;">
+      <div class="col-md-8">
+         <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/premier/img/homepage/kv-promo-ribbon.jpg" alt="#"></div>
+      </div>
+      <div class="col-md-4">
+         <div class="feature__image--text">
+            <h3 class=" feature__image--title"><strong>Be rewarded when you start a Premier Banking relationship with us</strong></h3>
+            <div class="feature__image--description">
+               <p class="mb0"><p>Earn up to 6,400 SGD<sup>*</sup> when you deposit 350,000 SGD in fresh funds. <sup>*</sup><a href="/iwov-resources/sg/ocbc/premier/pdf/tncs-governing-ocbc-pba-welcome-reward-programme.pdf" target="_blank" rel="noopener">T&amp;Cs apply</a>.</p>
+<p>SGD deposits are insured up to S$100k by SDIC.</p></p>
+            </div>
+            <div class="feature__image--button d-flex flex-wrap align-items-center"><a data-fancybox="none" href="#popup-reward" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Find out more</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639331">
+      <!--ls:begin[component-1754444639331]--><style>#iw_comp1754444639331{}</style><div class="apply-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Before you apply</div>
+   <div class="table__three-col table__three-col-with-accordion">
+      <div class="row">
+         <div class="col-md-3 table__three-col--title">
+            <h4 class="bold mobile">Eligibility requirements</h4>
+         </div>
+         <div class="col-md-9 table__three-col--content">
+            <div class="row mb-0">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Minimum age</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0">21 years old</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3 table__three-col--title">
+            <h4 class="bold mobile">Deposit requirements</h4>
+         </div>
+         <div class="col-md-9 table__three-col--content">
+            <div class="row mb-0">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Minimum deposit or investment required to start and maintain a Premier Banking relationship with us</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0">S$350,000</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-3 table__three-col--title">
+            <h4 class="bold mobile">Supporting documents required<sup>*</sup></h4>
+         </div>
+         <div class="col-md-9 table__three-col--content">
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Passport</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0">If your passport contains a microchip, we will be able to retrieve your details once you scan it using the OCBC app. If not, you will be asked to enter the details in the app.</p>
+               </div>
+            </div>
+            <div class="row mb-3">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">ID Card</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0">You will be asked to scan both the front and back of your ID card using the OCBC app.</p>
+               </div>
+            </div>
+            <div class="row mb-0">
+               <div class="col-lg-4 col-md-5">
+                  <p class="mb-0">Proof of address</p>
+               </div>
+               <div class="col-lg-5 col-md-7">
+                  <p class="mb-0">In the final stages of application, we will ask for proof of residential address.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="small"><p class="caption pt2"><sup>*</sup> Additional documents or information may be required depending on the situation to complete the application process.</p></p>
+   </div>
+</div><!--ls:end[component-1754444639331]-->
+     </div>
+     <div class="iw_component" id="iw_comp1754444639335">
+      <style>#iw_comp1754444639335{}</style><div class="cta-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="cta__basic">
+      <div style="" class="theme theme--blue">
+         <div class="theme__container theme__background">
+            <div class="cta__basic-details">
+               <div class="subcategory subcategory--black subcategory--no-margin">Start your Premier Banking journey with us</div>
+               <div class="cta__basic-info">
+                  <h3 class="bold co-default">Banking made easy – no matter where you are</h3>
+                  <div class="cta__basic-links">
+                     <div class="item item-apply "><a href="#apply-now-popup" data-fancybox="none" class="button button--primary button--red2&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" target="_blank"><span>Apply now</span></a></div>
+                     <div class="item"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754330502811">
+      <style>#iw_comp1754330502811{}</style><div class="information-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">ADDITIONAL INFORMATION</div>
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="first" close-others="false">
+            <div class="clearfix"></div>
+            <ul class="accordion__list">
+               <li id="terms-and-conditions" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Terms and Conditions</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p><strong>Policy Owners&rsquo; Protection Scheme</strong><br /><br />This policy is protected under the Policy Owners&rsquo; Protection Scheme which is administered by the Singapore Deposit Insurance Corporation (SDIC). Coverage for your policy is automatic and no further action is required from you. For more information on the types of benefits that are covered under the scheme as well as the limits of coverage, where applicable, please contact us or visit the Life Insurance Association (LIA) or SDIC websites (<a rel="noopener" href="https://www.lia.org.sg" target="_blank">www.lia.org.sg</a> or <a rel="noopener" href="https://www.sdic.org.sg" target="_blank">www.sdic.org.sg</a>).</p>
+<p><a rel="noopener" href="/iwov-resources/sg/ocbc/premier/pdf/tncs-governing-ocbc-pba-client-referral-programme-zh.pdf" target="_blank">Terms and Conditions of OCBC Premier Banking Asia Client Referral Programme <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p>
+<p><a rel="noopener" href="/iwov-resources/sg/ocbc/premier/pdf/tncs-governing-ocbc-pba-welcome-reward-programme.pdf" target="_blank">Terms and Conditions Governing OCBC Premier Banking Asia Welcome Reward Programme <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p>
+<p><a href="/iwov-resources/sg/ocbc/premier/pdf/cross_border_marketing_disclaimers.pdf">Cross-Border Marketing Disclaimers relevant for your country of residence <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p>
+<p><a href="/iwov-resources/sg/ocbc/personal/pdf/notices/deposit-insurance-scheme.pdf">Deposit Insurance Scheme <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p>
+<p><a href="/iwov-resources/sg/ocbc/premier/pdf/aio-ocbc-premier-your-declaration-and-agreement.pdf">Your declaration and agreement <span class="text-nowrap"><i class="far fa-chevron-right">&nbsp;</i></span></a></p></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1754444639769">
+      <style>#iw_comp1754444639769{}</style><div class="d-none-soft">
+   <div id="popup-reward" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span class="icon"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/Giftbox.png" width="55" alt=""></span><span>Welcome rewards</span></h4><div class="row group-height mb5">
+<div class="col-md-6 mb-5 mb-md-0"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/en_popup-Nov25.png" class="d-none d-md-block" width="100%" height="auto"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/EN-m-popup-Nov25.png" class="d-block d-md-none m-auto"></div>
+<div class="col-md-6">
+<h4 class="bold">*Cash reward</h4>
+<p>Earn a cash reward of 800 SGD when you deposit 350,000 SGD in your <a href="/premier-banking/our-solutions/deposits/premier-dividend-plus-savings">Premier Dividend+ Savings Account</a>.</p>
+<h4 class="bold">^Interest earnings</h4>
+<p>Earn 1.60% interest a year when you deposit 3,000 SGD in your account a month &ndash; for 12 months &ndash; and make no withdrawals at all.</p>
+</div>
+</div>
+<p class="caption"><sup>*</sup> Credited into OCBC Premier VOYAGE Card or OCBC Premier Visa Infinite Card.<br><sup>^</sup> Based on existing prevailing Premier Dividend+ Savings Account interest rate and account mechanism, which may be subject to change.<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/premier/pdf/tncs-governing-ocbc-pba-welcome-reward-programme.pdf">Terms and conditions apply</a></p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="section-wellness" class="popup-content po-co-med">
+      <div class="in-co-par fz-16"><p><b>Tailored concierge services</b></p>
+<p>Our Regional Premier Concierge<sup>1</sup> is available 24/7 to assist you with a variety of matters &ndash; from finding suitable health and wellbeing programmes to providing guidance for your children&rsquo;s education overseas and relocation logistics.</p>
+<p><span style="text-decoration: underline;"><b>Wellness</b></span><br>Tap into an extensive network of healthcare practitioners and hospital facilities.</p>
+<p><strong>Seamless access to specialist care</strong><br>Easily connect with suitable medical specialists through our trusted network of regional healthcare partners.</p>
+<p><b>Comprehensive wellness solutions</b><br>Access a broad range of healthcare services in the region, including dental care, Traditional Chinese Medicine (TCM) and health screenings.</p>
+<p><b>Support for international patients</b><br>Get peace of mind when you travel for medical appointments (at selected hospitals) with services like medical escort arrangements, interpreters and visa application.</p>
+<p>Additionally, get exclusive benefits across the region &ndash; including preferential rates for specialist consultations and wards<sup>2</sup>.</p>
+<p><span style="text-decoration: underline;"><b>Education for your children</b></span><br>Receive tailored support from a distinguished education consultant, who can share more about your children's overseas education options in popular study destinations.</p>
+<p><b>Complimentary consultation with an education specialist<sup>3</sup></b><br>Enjoy a complimentary one-hour consultation session that covers study destinations, school selection and admission requirements. Settling-in arrangements can also be made at an additional cost.</p>
+<p><b>Preferential rates for global youth programmes</b><br>Access preferential rates on premium study tours and holiday programmes offered by selected top-tier universities around the world.</p>
+<p><span style="text-decoration: underline;"><b>Relocation matters</b></span><br>Make moving to a new country easier with relocation support for you and your family.</p>
+<p><b>Complimentary consultation with an immigration specialist<sup>4</sup></b><br>Get guidance on the necessary steps for relocation and ensure a smooth relocation process.</p>
+<p><b>Relocation assistance</b><br>Gain access to a relocation partner that provides tailored services like shipping and accommodation.</p>
+<p class="caption"><sup>1</sup>&nbsp;The Regional Premier Concierge services are provided by a third-party service provider (Aspire Lifestyles Singapore and China) as the Bank may designate from time to time, on an "as is", "as available" basis. The Bank shall have no liability whatsoever in connection with the Regional Premier Concierge services. The Regional Premier Concierge services are available in English, Malay and Mandarin.<br>For verification purposes, you may be asked to provide the first 6 digits of your OCBC Singapore or OCBC Hong Kong Premier ATM/credit/debit card number.<br><sup>2</sup>&nbsp;The exclusive benefits may vary depending on the healthcare providers in participating countries. Contact the Regional Premier Concierge to learn more about the participating healthcare providers.<br><sup>3</sup>&nbsp;Education consultancy services are provided by AUG Singapore or Crimson Education Singapore.<br><sup>4</sup>&nbsp;Relocation consultancy services are provided by OCSC Global Singapore or AIMS Singapore.</p></div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1758071188666">
+      <!--ls:begin[component-1758071188666]--><style>#iw_comp1758071188666{}</style><div class="" id="">
+   <div><!-- POPUP CONTENT -->
+<div class="d-none-soft">
+    <div id="apply-now-popup">
+        <div class="cta__basic-option popup-content deep-link-popup mw-100">
+            <div id="ways-to-apply-tabs" class="ways-to-apply-tabs container-fluid">
+                <div class="mobile-item-title com__tab-nav">
+                    <ul class="row align-items-center">
+                        <li class="col-sm-6 col-6 align-items-center justify-content-center text-center"><a
+                                href="#m-item-2" class="deep-link-click"> <strong>Start your journey with us</strong> </a></li>
+                        <li class="col-sm-6 col-6 align-items-center justify-content-center text-center"><a
+                                href="#m-item-1"> <strong>Get in touch</strong> </a></li>
+                    </ul>
+                </div>
+                <!-- For New Customers -->
+                <div id="m-item-2" class="row align-items-start m-item m-item-2 com__tab-set">
+                    <div class="col-md-4 col-xl-3 col-sm-12 item-title">
+                        <h3><strong>Start your journey with us</strong></h3>
+                        <p>Deposit or invest at least S$350,000 in fresh funds to enjoy Premier Banking privileges.</p>
+                    </div>
+                    <div class="col-md-4 col-xl-6 col-sm-12 item-copy"><!-- Desktop View copy -->
+                        <div class="d-none d-md-block">
+                            <p class="mb-2">Begin your application via the OCBC app (for a smoother process, have your passport and ID card on hand). This will take about 20 minutes.</p>
+                            <p>A Relationship Manager will be in touch to take you through the final steps of the application.</p>
+                        </div>
+                        <!-- Mobile View copy -->
+                        <div class="d-block d-md-none">
+                            <p class="mb-2">Begin your application via the OCBC app (for a smoother process, have your passport and ID card on hand). This will take about 20 minutes.</p>
+                            <p>A Relationship Manager will be in touch to take you through the final steps of the application.</p>
+                            <a id="m-qr-deeplink" href="https://ocbc.go.link/promote/offshore_premier?adj_t=1s9l3a46&adj_campaign=PremierWebpage&adj_adgroup=PremierWebpage"
+                                    class="button button--primary button--red2" target="_blank" rel="noopener">
+                                    <span>Apply now</span> </a>
+                            <!-- <p class="mb-4">Download the OCBC app to open your account instantly.</p>
+                <div class="item item-apply">
+                  <a href="https://onelink.to/tkrs86" class="button button--primary button--red2" target="_blank" rel="noopener">
+                    <span>Download now</span>
+                  </a>
+                </div> -->
+                        </div>
+                    </div>
+                    <!-- Desktop for Apply via OCBC DigitalCTA button -->
+                    <div class="col-md-4 col-xl-3 col-sm-12 text-right">
+                        <div class="desktop-content">
+                            <div class="d-none d-md-block text-left">
+                                <!-- <a class="button button--primary button--red2" rel="noopener" href="#popup-mobileapp" data-fancybox=""><span>Apply via<br />OCBC Digital</span></a> --><a
+                                    data-fancybox="none" href="#popup-downloadocbcdigital-fov"
+                                    class="button button--primary button--red2" target="_blank" rel="noopener">
+                                    <span>Apply now</span> </a></div>
+                        </div>
+                        <!-- End -->
+                    </div>
+                    <!-- Mobile for Apply via OCBC DigitalCTA button -->
+                    <div class="col-md-auto col-sm-12 text-right">
+                        <div class="mobile-content d-none-soft"><!-- <div class="d-block d-md-none col-md-auto col-sm-8 text-right">
+                  <a class="button button--primary button--red2" rel="noopener" href="https://internet.ocbc.com.my/internet-banking/PublicPushNotification/Redirect?code=yfo-new-user">
+                    <span>Download now</span>
+                  </a>
+                </div> --></div>
+                        <!-- End -->
+                    </div>
+                </div>
+                <!-- Text Divider -->
+                <div class="text-divider"><span class="td-text fw-700">or</span></div>
+                <!-- For Existing Customers -->
+                <div id="m-item-1" class="m-item m-item-1 com__tab-set">
+                    <div class="desktop-content row align-items-center">
+                        <div class="col-md-4 col-xl-3 col-sm-12 item-title">
+                            <p><strong>Get in touch</strong></p>
+                        </div>
+                        <div class="col-md-4 col-xl-6 col-sm-12 item-copy">
+                            <p class="pt4"><a href="https://www.ocbc.com/premier-banking/forms/international-banking-contact-me" class="link" target="_blank">Indicate your interest</a> in starting an OCBC Premier Banking relationship. A Relationship Manager will be in touch to assist you.</p>
+                            <p class="d-none"><a class="link link-arrow-right" href="#" target="_blank" rel="noopener"> <span>Download the app <span class="text-nowrap">
+                                            <i class="far fa-chevron-right">&nbsp;</i> </span> </span> </a></p>
+                        </div>
+                        <div class="col-md-4 col-xl-3 col-sm-12 item-title d-none">
+                            <p><a class="link link-arrow-right" href="#popup-banca_qrcode" data-fancybox="none"
+                                    rel="noopener"> <span>Download the app <span class="text-nowrap"> <i
+                                                class="far fa-chevron-right">&nbsp;</i> </span> </span> </a></p>
+                        </div>
+                        <div class="mobile-content d-none-soft">
+                            <div class="in-co-par">
+                                <div class="col-md-auto col-sm-12 text-left">
+                                    <div class="mb2">
+                                        <div class="col-md-auto col-sm-12 item-copy">
+                                            <p>Please apply via OCBC Internet Banking (Login &gt; Open an account &gt;
+                                                Savings) or visit any OCBC Bank branches.</p>
+                                            <a class="link link-arrow-right"
+                                                href="https://internet.ocbc.com.my/internet-banking" target="_blank"
+                                                rel="noopener"> <span>Download the app <span class="text-nowrap"> <i
+                                                            class="far fa-chevron-right">&nbsp;</i> </span> </span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-content">
+                        <p class="pt4"><a href="https://www.ocbc.com/premier-banking/forms/international-banking-contact-me" class="link"
+                              target="_blank">Indicate your interest</a> in starting an OCBC Premier Banking relationship. A Relationship
+                           Manager will be in touch to assist you.</p>
+                        <p class="d-none"><a class="link link-arrow-right" href="#" target="_blank" rel="noopener"> <span>Download
+                                 the app <span class="text-nowrap">
+                                    <i class="far fa-chevron-right">&nbsp;</i> </span> </span> </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup-downloadocbcdigital-fov">
+        <h4 class="bp-title fw-700 bp-img align-middle mb2 text-center"><span>Apply now via the OCBC app</span></h4>
+        <!-- <p class="text-center">Scan the respective QR code to download the app on the App Store, Google Play or Huawei App Gallery.</p> -->
+        <div class="d-flex justify-content-center">
+         <span id="qr-canvas"></span>
+         <img id="qr-image" src="/iwov-resources/sg/ocbc/premier/img/intl-banking-qr.png" alt=""
+                style="width: 200px; height: 200px;" /></div>
+    </div>
+    <div id="popup-banca_qrcode"><h4 class="bp-title fw-700 bp-img align-middle mb2 text-center"><span>Appy for an OCBC 360 Account</span></h4>
+<!-- <p class="text-center">Scan the respective QR code to download the app on the App Store, Google Play or Huawei App Gallery.</p> -->
+<div class="d-flex justify-content-center"><img src="/iwov-resources/sg/ocbc/personal/img/live/insurance/qr-download_now.png" alt="" style="width: 200px; height: 200px;" /></div></div>
+</div>
+<!-- POPUP CONTENT --></div>
+</div><!--ls:end[component-1758071188666]-->
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1754330502799">
+    <style>#iw_comp1754330502799{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.intro-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.ocbc-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.1932-component').parent().wrapAll('<div class="section section-bottom whyocbc"></div>');
+	  
+	  
+	
+	  $('.landscape-component').parent().wrapAll('<div class="section section-bottom whysingapore"></div>');
+	  
+	  
+	
+	  $('.goals-component').parent().wrapAll('<div class="section section-bottom wealthsolutions"></div>');
+	  
+	  
+	
+	  $('.solutions-component').parent().wrapAll('<div class="section section-bottom digitalcapabilities"></div>');
+	  
+	  
+	
+	  $('.banking-component').parent().wrapAll('<div class="section section-bottom premierexclusive"></div>');
+	  
+	  
+	
+	  $('.offer-component').parent().wrapAll('<div class="section section-both bg-grey" id="offer"></div>');
+	  
+	  
+	
+	  $('.apply-component').parent().wrapAll('<div class="section section-top" id="apply"></div>');
+	  
+	  
+	
+	  $('.cta-component').parent().wrapAll('<div class="section section-bottom" id="cta"></div>');
+	  
+	  
+	
+	  $('.information-component').parent().wrapAll('<div class="section section-both bg-grey" id="information"></div>');
+	  
+	  
+	
+	  $('.nav-component').parent().wrapAll('<div class="section section-both" id=""></div>');
+	  
+	  
+	
+	  $('.get-component').parent().wrapAll('<div id="get"></div>');
+	  
+	  
+	
+	  $('.access-component').parent().wrapAll('<div id="access"></div>');
+	  
+	  
+	
+	  $('.video-component').parent().wrapAll('<div class="section section-both bg-grey whyocbc d-none soft"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1754330502800">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/img/LOGOs.jpg" alt="OCBC Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Premier banking</span></p><label class="mb-0 countryselect" for="country">You are in  <span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/gateway.page">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/gateway.page">Malaysia</option>
+                                    <option value="https://www.ocbc.id/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_self">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking" class="" target="_self">Business Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/about-us/group-business" class="" target="_self">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://internet.ocbc.com/internet-banking/" class="" target="_self">Internet banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/premier-banking/locations" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_self">Help and support</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="https://internet.ocbc.com/internet-banking/" class="" target="_self">Internet banking</a></p>
+                                          <p><a href="https://www.ocbc.com/premier-banking/locations" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_self">Help and support</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/premier-banking/locations" class="" target="_self"><i class="fal fa-file-alt"></i> Find a Premier Banking Centre​</a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:+6565305930%E2%80%8B" class="" target="_self"> <p><i class="fal fa-phone"></i>&nbsp;<a href="tel:18007736437">1800 773 6437</a></p>
+ <p><i class="fal fa-file-alt"></i>&nbsp;<a href="https://www.ocbc.com/personal-banking/contact-us">Contact Us</a></p></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_self"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_self"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_self"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_self"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/personal-banking/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="https://www.ocbc.com/personal-banking/policies" class="" target="_self">Policies</a></span><span><a href="https://www.ocbc.com/personal-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/personal-banking/security/overview.page" class="" target="_self">Security</a></span></div>
+            <div id="copyright">© Copyright 2004 – <span id="year">2020</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W</div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1754330502801">
+    <!--ls:begin[component-1754330502801]--><style>#iw_comp1754330502801{}</style><div></div><!--ls:end[component-1754330502801]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/analytic-v1.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/card-maintenance.js'></script>
+<script src="/iwov-resources/sg/ocbc/premier/js/smart-script-base-code.js"></script>
+<script src="/iwov-resources/sg/ocbc/premier/js/qrcode.min.js"></script>
+<script src="/iwov-resources/sg/ocbc/premier/js/dynamic-qr-code.js"></script>
+<script src="/iwov-resources/sg/ocbc/premier/js/apply-now-qr.js"></script>
+<script type="text/javascript">
+    $('head').append('<link rel="stylesheet" href="/iwov-resources/sg/ocbc/premier/custom/international-banking/custom.css" media="all" />')
+
+    function tabCheck() {
+            if ($(window).width() < 768) {
+                if ($('.com__tab-nav ul.row li:nth-child(1)').hasClass('selected')) {
+                    $('.card.white-bg .com_slider div.col-md-6:nth-child(2)').css('display', 'none');
+                } else {
+                    $('.card.white-bg .com_slider div.col-md-6:nth-child(2)').css('display', 'block');
+                }
+            } else {
+                $('.card.white-bg .com_slider div.col-md-6:nth-child(2)').css('display', 'block');
+            }
+        }
+
+        $('.com__tab-nav ul.row li:nth-child(2)').on('click', function () {
+                $('.card.white-bg .com_slider .owl-stage .owl-item:nth-child(2) div.col-md-6').css('display', 'block');
+            });
+
+    $(document).ready(function (){
+        tabCheck();
+        // $(window).on('resize', tabCheck);
+    });
+
+       $(function () {
+         // running business support hash change
+         var hash = window.location.hash;
+         setTimeout(function () {
+           var selectChange = function (tab) {
+             $(tab).click();
+             // ocbc.scrollTo("section-discover");
+           }
+           switch (hash) {
+             case "#whyocbc":
+               selectChange("#whyocbc");
+               break;
+             case "#whysingapore":
+               selectChange("#whysingapore");
+               break;
+             case "#wealthsolutions":
+               selectChange("#wealthsolutions");
+               break;
+             case "#digitalcapabilities":
+               selectChange("#digitalcapabilities");
+               break;
+             case "#premierexclusive":
+               selectChange("#premierexclusive");
+               break;
+             default:
+               selectChange('#whyocbc');
+           }
+         }, 300);
+
+       })
+    </script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

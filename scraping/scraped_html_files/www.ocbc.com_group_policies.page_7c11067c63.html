@@ -1,0 +1,1751 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMNVMPK');</script>
+<!-- End Google Tag Manager -->
+<script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+
+<style>
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: none;
+}
+
+@media (min-width: 768px){
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: block;
+ min-width: 168px;
+}
+
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 span {
+ display: none;
+}
+}
+
+/* investors/contact-us.page */
+#section-investor-form .com__silveryear__form-background  {
+  background: #366492;
+  background: -webkit-gradient(linear, left top, right top, from(#366492), to(#61a7db));
+  background: -o-linear-gradient(left, #366492, #61a7db 100%);
+  background: linear-gradient(to right, #366492, #61a7db 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#366492', endColorstr='#61a7db', GradientType=0 );
+  /* IE6-9 */
+}
+</style><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Policies | OCBC Singapore</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/group/page/policies/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/group/policies/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/group/policies.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/ospl/css/style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMNVMPK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:group:policies",
+            language: "en", //Page Language
+            pageCategory: "pre-login policies page",
+            bannerName: "",
+            channel: "policies",
+            country: "sg",
+            lob: "ocbc group"
+        },
+        user: {
+            CIF: ""
+        }, //should be passed post login OCBC specific encrypted ID
+        event: {
+            pageView: "true",
+            bannerImpression: "false" //set true only when banner is visible on the page
+        }
+    };
+    </script>
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async=""></script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1601463609285">
+    <style>#iw_comp1571204552818{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Image"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#about-us" class="header__navi">About Us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/group/media/release/index" class="header__navi" target="_self">Media</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investors" class="header__navi">Investors</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#sustainability" class="header__navi">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="https://www.ocbc.com/group/careers/index.page" class="header__navi" target="_self">Careers</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#research" class="header__navi">Research</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in </p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="https://www.ocbc.com" data-target="_self">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/personal-banking" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.iocbc.com" data-target="_blank">OCBC Securities</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul></ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="about-us" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">About Us</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/group-business" class="link link link-arrow-right" target="_self">Group <span class="text-nowrap">Business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/corporate-strategy" class="link link link-arrow-right" target="_self">Corporate <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/our-leadership" class="link link link-arrow-right" target="_self">Our <span class="text-nowrap">Leadership<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/purpose-values-and-ambition" class="link link link-arrow-right" target="_self">Purpose and <span class="text-nowrap">Values<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/awards" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Awards<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/group/about-us/group-business" class="button button--secondary button--link" target="_self"><span>View all</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investors" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investors</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/financials" class="link link link-arrow-right" target="_self">Financial <span class="text-nowrap">results<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/annual-report-and-agm" class="link link link-arrow-right" target="_self">Annual Report and <span class="text-nowrap">AGM<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/investor-information" class="link link link-arrow-right" target="_self">Investor <span class="text-nowrap">information<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/regulatory-disclosure" class="link link link-arrow-right" target="_self">Regulatory <span class="text-nowrap">disclosures<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/contact-us" class="link link link-arrow-right" target="_self">Contact <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="#" class="" target="_self"><span></span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="sustainability" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Sustainability</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/index.page" class="link link link-arrow-right" target="_self">Sustainability <span class="text-nowrap">approach<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/net-zero-future.page" class="link link link-arrow-right" target="_self">Net-zero <span class="text-nowrap">future<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/community-impact.page" class="link link link-arrow-right" target="_self">Community <span class="text-nowrap">impact<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/one-group.page" class="link link link-arrow-right" target="_self">One <span class="text-nowrap">Group<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/responsible-business.page" class="link link link-arrow-right" target="_self">Responsible <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/disclosures-and-resources.page" class="link link link-arrow-right" target="_self">Disclosures and <span class="text-nowrap">resources<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="research" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Research</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"> Treasury reports</div>
+                                    <div class="name"><a href="/group/research/index" class="link link link-arrow-right" target="_self">Recent <span class="text-nowrap">updates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter" class="link link link-arrow-right" target="_self">Macro <span class="text-nowrap">outlook<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=fxandrates" class="link link link-arrow-right" target="_self">FX and <span class="text-nowrap">rates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=special" class="link link link-arrow-right" target="_self">Special <span class="text-nowrap">reports<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment reports</div>
+                                    <div class="name"><a href="/group/research/investment-reports" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Company<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#sectorial" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Sectorial<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#equity" class="link link link-arrow-right" target="_self">Equity <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1571375815801">
+      <!--ls:begin[component-1571375815801]--><style>#iw_comp1571375815801{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul></ul>
+   </div>
+</div><!--ls:end[component-1571375815801]-->
+     </div>
+     <div class="iw_component" id="iw_comp1653998657824">
+      <!--ls:begin[component-1653998657824]--><style>#iw_comp1653998657824{}</style><div class="masthead-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3 animate" anim-control="parent">
+	<div class="links d-flex flex-column flex-sm-row fz-13">
+		<span>EN | <a href="/group/policies-zh" class="" target="_self">中文</a></span>
+	</div>
+</div></div>
+</div><!--ls:end[component-1653998657824]-->
+     </div>
+     <div class="iw_component" id="iw_comp1572865941776">
+      <style>#iw_comp1572865941776{}</style><div class="leftnav-component"></div><div class="module container animate bp-width-med3">
+   <div class="com__bank-policies">
+      <div class="row">
+         <div class="b-p-side-nav col-lg-4 col-md-4 d-none d-md-block">
+            <div sticky-content="">
+               <div class="side-nav-with-sub">
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Data Protection Policies</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 selected"><a href="#introduction" class="" target="_self">Introduction</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#pdpa" class="" target="_self">Data Protection Policy</a></li>
+                     </ul>
+                  </div>
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Other Policies</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#best-execution-policy" class="" target="_self">Best Execution Policy</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#branch-analytics" class="" target="_self">Branch Analytics</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#policies-online-banking-security" class="" target="_self">Online Banking Security</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#policies-malware-notification" class="" target="_self">Malware Notification</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#Artificial-Intelligence-Policy" class="" target="_self">Artificial Intelligence Policy</a></li>
+                     </ul>
+                  </div>
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Foreign Account Tax Compliance Act (FATCA) Policy</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#policies-singapore" class="" target="_self">Singapore</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#policies-thailand" class="" target="_self">Thailand</a></li>
+                     </ul>
+                  </div>
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Common Reporting Standard (CRS) Policy</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#crs-singapore" class="" target="_self">Singapore</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8 col-md-8">
+            <div class="accordion-mobile-nav-items d-none">
+               <div class="accordion-mobile-nav">
+                  <div class="accordion-mobile-nav-label"><span></span></div>
+                  <div class="accordion-mobile-nav-list"><label class="a-mobile-nav-title">Data Protection Policies</label><div class="a-mobile-nav-item selected" data-href="#introduction" target="_self">Introduction</div>
+                     <div class="a-mobile-nav-item " data-href="#pdpa" target="_self">Data Protection Policy</div><label class="a-mobile-nav-title">Other Policies</label><div class="a-mobile-nav-item " data-href="#best-execution-policy" target="_self">Best Execution Policy</div>
+                     <div class="a-mobile-nav-item " data-href="#branch-analytics" target="_self">Branch Analytics</div>
+                     <div class="a-mobile-nav-item " data-href="#policies-online-banking-security" target="_self">Online Banking Security</div>
+                     <div class="a-mobile-nav-item " data-href="#policies-malware-notification" target="_self">Malware Notification</div>
+                     <div class="a-mobile-nav-item " data-href="#Artificial-Intelligence-Policy" target="_self">Artificial Intelligence Policy</div><label class="a-mobile-nav-title">Foreign Account Tax Compliance Act (FATCA) Policy</label><div class="a-mobile-nav-item " data-href="#policies-singapore" target="_self">Singapore</div>
+                     <div class="a-mobile-nav-item " data-href="#policies-thailand" target="_self">Thailand</div><label class="a-mobile-nav-title">Common Reporting Standard (CRS) Policy</label><div class="a-mobile-nav-item " data-href="#crs-singapore" target="_self">Singapore</div>
+                  </div>
+               </div>
+            </div>
+            <div id="left-nav-identifier"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829056761">
+      <style>#iw_comp1632829056761{}</style><div class="policies-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="first" close-others="false">
+            <div class="clearfix">
+               <div class="float-left mb2">
+                  <h4 class="mb0"><strong>Data Protection Policies</strong></h4>
+               </div><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="introduction" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Introduction</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>We take protecting your Personal Data seriously. OCBC Singapore is proud to have earned the <strong>Singapore Data Protection Trustmark</strong> and the <strong>APEC Cross Border Privacy Rules</strong> certifications. These certifications show our commitment to high standards for data protection. OCBC Singapore has also been awarded the Cyber Security Agency of Singapore's <strong>Cyber Trust Mark</strong> to recognise our strong security measures.<br /><br /></p>
+<p><img src="https://www.ocbc.com/iwov-resources/sg/ocbc/business/img/DPO/DATA PROTECTION MARK.png" alt="" width="200" /> <img src="https://www.ocbc.com/iwov-resources/sg/ocbc/business/img/DPO/APEC Cross Border Privacy Rules.png" alt="" width="200" /><img src="https://www.ocbc.com/iwov-resources/sg/ocbc/business/img/DPO/CYBER SAFE ESSENTIALS.png" alt="" width="200" /></p>
+<p>It's important to us that you know how we manage your Personal Data. This includes being clear about how we collect, use, and share your Personal Data. Sharing your Personal Data with us is your choice. However, if you choose not to, we may not be able to offer you some products or services. We do not sell your Personal Data.<br /><br />To keep your Personal Data safe, we have a strong data protection program. It includes:</p>
+<ul class="list-nospace">
+<li>Using strong security</li>
+<li>Reviewing how our activities affect Personal Data</li>
+<li>Training our staff</li>
+<li>Checking on our vendors to make sure they protect your Data</li>
+<li>Helping you understand your data protection rights</li>
+<li>Answering your questions about how we use your Personal Data</li>
+<li>Giving you control over marketing messages</li>
+</ul>
+<p class="pt2"><strong>What is Personal Data?</strong></p>
+<p>Personal Data is any information about you that identifies you, or that could identify you when combined with other details. Examples include:</p>
+<ul class="list-nospace">
+<li>Your name</li>
+<li>Your contact details</li>
+<li>Your financial information</li>
+</ul>
+<p class="pt2"><strong>Collecting Your Personal Data</strong></p>
+<p>We only collect your Personal Data when we have a valid reason to do so. This includes when you:</p>
+<ul class="list-nospace">
+<li>Use our services</li>
+<li>Speak with our staff</li>
+<li>Attend our events</li>
+</ul>
+<p class="pt2"><strong>Using Your Personal Data</strong></p>
+<p>We use your Personal Data for reasons such as:</p>
+<ul class="list-nospace">
+<li>Confirming who you are</li>
+<li>Developing and improving our products and services</li>
+<li>Contacting you about our products or services</li>
+<li>Protecting you and ourselves</li>
+</ul>
+<p class="pt2"><strong>Sharing Your Personal Data</strong></p>
+<p>We only share your Personal Data with trusted people or organisations. If needed, we may share your Personal Data overseas. When we do, we make sure it stays safe and secure.</p>
+<p>For example, we may share your Personal Data with:</p>
+<ul class="list-nospace">
+<li>OCBC Group companies</li>
+<li>Partners and vendors of OCBC Group companies</li>
+<li>Government agencies</li>
+</ul>
+<p class="pt2"><strong>Our Commitment to You</strong></p>
+<p>Protecting your Personal Data is our responsibility. We will update this policy when needed to reflect how we manage Personal Data. We will let you know if there are updates.</p>
+<p>Depending on your relationship with us, one or more of our data protection policies may apply. For more details, please refer to the full Data Protection Policy below. If you have questions, you can contact our Data Protection Office at <a href="mailto:dpo@ocbc.com"><strong>dpo@ocbc.com</strong></a>.</p>
+<p><!-- <p>Depending on your relationship with us, one of these policies will apply:</p>
+                                                                <p>&nbsp;</p>
+                                                                <p>Depending on your relationship with us, the following Data Protection Policies may apply:</p>
+                                                                <ol class="list-alpha-lower">
+                                                                    <li><a href="https://www.ocbc.com/personal-banking/policies">Personal Banking Data Protection Policy</a>; and</li>
+                                                                    <li><a href="https://www.ocbc.com/business-banking/bank-policies">Business Banking Data Protection Policy</a>.</li>
+                                                                </ol> --></p>
+<p><strong>Contacting Us</strong></p>
+<p>To contact OCBC Singapore Data Protection Office regarding your Personal Data, our Data Protection Policies, withdrawal of your consent, or obtaining access and making corrections to your Personal Data, please contact us at:</p>
+<ul class="list-bullet list-nospace">
+<li><a href="mailto:dpo@ocbc.com">Email: dpo@ocbc.com</a></li>
+<li><a href="tel:18003633333">Phone: 1800 363 3333</a></li>
+</ul>
+<p class="pt2">You may withdraw your consent for collecting, using and disclosing your Personal Data. If you withdraw your consent, we may not be able to continue to provide its products or services to you, administer any contractual relationship already in place, or perform or conclude an existing or prospective agreement. This may result in the termination of any agreements you have, and your breach of contractual obligations or undertakings. In such an event, we reserve our legal rights and remedies.<br /><br />Please note that if a third party provided your Personal Data to us, you should contact such third party directly to make any queries, feedback, and access and correction requests to us on your behalf.</p></div>
+               </li>
+               <li id="pdpa" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Data Protection Policy</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>You may have relationships with one or more entities with the OCBC Group. Depending on your relationship with the OCBC Group, the following data protection policies may apply to the collection, use and disclosure of your Personal Data:</p>
+<ul class="list-bullet list-nospace">
+<li><a rel="noopener" href="https://www.ocbc.com/personal-banking/policies.page" target="_blank">OCBC Singapore &ndash; Personal Banking Data Protection Policy</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com/business-banking/bank-policies" target="_blank">OCBC Singapore &ndash; Business Banking Data Protection Policy</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com.cn/CN/inc/inc_footer/statement/" target="_blank">OCBC China &ndash; Privacy Policy (Retail Banking)</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com.cn/CN/inc/inc_footer/statement/" target="_blank">OCBC China &ndash; Privacy Policy (Corporate Banking)</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com.hk/webpages/en-us/html/disclaimer/privacy.html" target="_blank">OCBC Hong Kong &ndash; Privacy Policy and Personal Information Collection Statement</a></li>
+<li><a rel="noopener" href="https://www.ocbc.id/en/kebijakan-privasi" target="_blank">OCBC Indonesia &ndash; Privacy Policy</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com.my/group/security-privacy" target="_blank">OCBC Malaysia &ndash; Security and Privacy</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com/business-banking/international/thailand-financial-information" target="_blank">OCBC Thailand &ndash; Personal Data Protection Notification</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com/business-banking/international/london" target="_blank">OCBC United Kingdom &ndash; Privacy Notice</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com/business-banking/international/usa" target="_blank">OCBC US Agencies &ndash; CCPA/CPRA Compliance Privacy Policies</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com/business-banking/international/vietnam" target="_blank">OCBC Vietnam &ndash; Data Protection Annex</a></li>
+<li><a rel="noopener" href="https://www.ocbc.com/group/careers/recruitmentpolicies.page" target="_blank">OCBC Group &ndash; Recruitment Privacy Policy</a></li>
+<li><a rel="noopener" href="https://www.bankofsingapore.com/data-protection-policy.html" target="_blank">Bank of Singapore &ndash; Data Protection Policy</a></li>
+<li><a rel="noopener" href="https://www.greateasternlife.com/sg/en/privacy-and-security-policy.html" target="_blank">Great Eastern Life &ndash; Privacy and Security Policy</a></li>
+<li><a rel="noopener" href="https://www.lionglobalinvestors.com/en/data-protection-policy-statement.html" target="_blank">Lion Global Investors &ndash; Data Protection Policy Statement</a></li>
+<li><a rel="noopener" href="https://www.iocbc.com/security-privacy" target="_blank">OCBC Securities &ndash; Data Protection Policy</a></li>
+</ul>
+<p class="pt2"><u>Please ensure that you have read and understood the policies relevant to you.</u></p>
+<p><u>Please note that this list is not exhaustive and other data protection policies may also apply depending on your relationship with the OCBC Group.</u></p></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1572415894268">
+      <style>#iw_comp1572415894268{}</style><div class="policies-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="first" close-others="false">
+            <div class="clearfix">
+               <div class="float-left mb2">
+                  <h4 class="mb0"><strong>Other Policies</strong></h4>
+               </div><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="best-execution-policy" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Best Execution Policy</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><ol class="list-decimal">
+<li>
+<p><strong>Introduction</strong></p>
+<p>The purpose of this document is to detail the Best Execution policy (&ldquo;BE Policy&rdquo;) of Oversea-Chinese Banking Corporation Limited (&ldquo;OCBC Bank&rdquo;) when executing orders in respect of certain financial instruments within the scope of requirements imposed by applicable laws and regulations in the locations we operate in.</p>
+</li>
+<li>
+<p><strong>Scope</strong></p>
+<p>The BE Policy applies to all OCBC Bank offices where they conduct regulated activities under the Securities and Futures Act (&ldquo;SFA&rdquo;) or their staff are appointed representatives under the SFA, and excludes subsidiaries of OCBC Bank.</p>
+<p>The BE Policy will set the guiding principles for OCBC Bank&rsquo;s best execution processes. In case of conflicts or inconsistencies, local regulatory requirements would prevail.</p>
+</li>
+<li>
+<p><strong>Governance &amp; Management Supervision</strong></p>
+<p>We will monitor best execution arrangements on an on-going basis (at least annually) to identify and implement any appropriate enhancements.</p>
+<p>OCBC Bank reserves the right to amend this document from time to time as it deems necessary. Any material changes to the BE Policy shall be updated here.</p>
+</li>
+<li>
+<p><strong>Applicability of best execution</strong></p>
+<p>This document applies with respect to all financial instruments within the scope of &ldquo;best execution&rdquo; as prescribed by the regulators in the locations we operate.</p>
+<p>We have in place a policy and framework which are designed for OCBC Bank to try deliver the best possible execution for our clients, subject to the financial instrument and taking into account the nature of the client&rsquo;s orders, the execution venues available for such financial instruments and the priorities the client places upon us to execute those orders. While OCBC Bank will take all reasonable steps to achieve best execution, OCBC Bank does not guarantee that it will be able to achieve best execution for every transaction or confirm that every transaction will be executed in full.</p>
+</li>
+<li>
+<p><strong>Policy requirements</strong></p>
+<p>OCBC Bank shall take into account the following factors when executing your order:</p>
+<ol class="list-roman-lower">
+<li>Price;</li>
+<li>Costs;</li>
+<li>Speed;</li>
+<li>Likelihood of execution;</li>
+<li>Likelihood of settlement;</li>
+<li>Size of the order(s);</li>
+<li>Nature of the order(s);</li>
+<li>Other aspects of the order(s).</li>
+</ol>
+<p>Notwithstanding this, there are certain situations in which these factors will change. These may include, but are not limited to, the following:</p>
+<ol class="list-roman-lower">
+<li>Type of order;</li>
+<li>Type of product;</li>
+<li>Specific instructions that the customer provides;</li>
+<li>General prevailing conditions in the market at the time of the order.</li>
+</ol>
+</li>
+<li>
+<p><strong>Specific instructions</strong></p>
+<p>Where specific instructions are given by you regarding the execution of an order or a part of the order, OCBC Bank will ensure to execute your order in accordance with those instructions. In this circumstance, OCBC Bank will consider itself as having satisfied its best execution obligations with respect to the part of your order to which the instruction relates, when those instructions have been carried out as specifically requested.</p>
+<p>In circumstances where specific instructions are given, these instructions may result in an execution that is less satisfactory than what may have been achieved in the absence of the instruction.</p>
+<p>Where you provide specific instructions covering only part of an order, OCBC Bank will not consider itself released from its best execution obligations for the parts of the order which are not covered by the instructions. In this case, OCBC Bank will comply with our BE policy in respect of that part of the trade not covered by the instructions.</p>
+<p>Where specific instructions given by you cannot be followed, OCBC Bank will inform you of the reasons before executing your order(s).</p>
+</li>
+<li>
+<p><strong>Order handling</strong></p>
+<p>We have further procedures in place to ensure we execute and allocate your orders promptly and fairly, taking into account the need to manage any potential conflicts of interest that may exist between you, ourselves and our other clients.</p>
+<p>We will execute your order in line with other comparable client orders sequentially and promptly, unless (i) the characteristics of your order or prevailing market conditions make this impracticable; or (ii) your interests require otherwise.</p>
+<p>Where you do not provide specific instructions, we will execute and allocate the order as soon as reasonably practicable.</p>
+<p>When executing your order, we may decide to aggregate the order with a transaction for our own account or that of another client. Such aggregation will be taken, for example, to provide a better price to you or to reduce transaction costs by allowing us to execute in a larger size. We will only aggregate your order if it is unlikely that the aggregation will work overall to your disadvantage. Where we are unable to fill an aggregated order in full, we will allocate the executed notional on a fair and equitable basis.</p>
+<p>We will endeavour to communicate the order execution and allocation status of the order to you as soon as reasonably practicable.</p>
+</li>
+<li>
+<p><strong>Matters outside of the Bank's control</strong></p>
+<p>In some cases, whether as a result of system failures, disrupted markets or otherwise, it may be necessary to execute client orders in a different manner as documented for the financial instrument in question. In such circumstances, the transacting unit will still seek to achieve the best possible result available in the prevailing circumstances.</p>
+</li>
+<li>
+<p><strong>Contact details for your questions</strong></p>
+<p>For queries, please contact your Relationship Manager.</p>
+</li>
+</ol></div>
+               </li>
+               <li id="branch-analytics" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Branch Analytics</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Our branch and technology team have been hard at work to enhance your experience when you visit our branches. One way in which we are doing so is through Branch Analytics, technology that provides data-driven insights to help us improve your banking experience.</p>
+<p>Such insights tell us about the performance of events, products, promotions and ad campaigns in branches equipped with this technology. From these insights, we are better able to curate and improve your experience through promotions and advertisements.</p>
+<p>Because we know that you care about how your information is collected, used and disclosed, we put a lot of thought into how we can protect your privacy. We assure you that Branch Analytics will only provide aggregated and anonymised data. This means that the data will be presented by category and will not contain any specific information about individual visitors. The data derived cannot be linked to any one visitor; rather, it will only show a total, average and percentage score about the performance of a branch, product, promotion, event and ad campaign. We will know, for example, the average time a visitor stays in a branch. However, we will not be able to map this to any personal data that the Bank has about the visitor, such as his/her name or identification number.</p>
+<ol class="list-decimal">
+<li>
+<p><strong>What data is Branch Analytics collecting?</strong></p>
+<p>Branch Analytics seeks to understand branch visitation patterns and the demographics of our visitors. This data is reported in an aggregated and anonymised manner &ndash; no information is mapped to any individual visitor. We do not share or disclose anything that can be linked to a visitor. The data will only show a total, average and percentage score about age groups, gender and visitation patterns &ndash; for example, the most common age group to visit a branch or the average time a visitor stays in a branch.</p>
+</li>
+<li>
+<p><strong>How does Branch Analytics benefit branch visitors?</strong></p>
+<p>This technology allows us to continuously improve the experience for branch visitors. With data on branch visitation patterns, we can improve and tweak our branch offerings, such as enhancing branch layouts, changing the placements of our products and services, improving the selection and availability of products, and bringing better value through promotions and advertisements.</p>
+</li>
+<li>
+<p><strong>Will my personal data be shared?</strong></p>
+<p>No. Your personal data will never be shared with any third party as part of the service.</p>
+</li>
+<li>
+<p><strong> How is OCBC storing and protecting my personal data?</strong></p>
+<p>The personal data collected by Branch Analytics will be stored and protected in accordance with OCBC&rsquo;s Data Protection Policies. These are available at <a rel="noopener" href="https://www.ocbc.com/group/policies" target="_blank">www.ocbc.com/group/policies</a>.</p>
+</li>
+<li>
+<p><strong>How will Branch Analytics protect my privacy?</strong></p>
+<p>We are committed to protecting your privacy and strive to put in place robust security measures to protect your personal data. We have in place a comprehensive data protection management programme to ensure that we have satisfied our legal obligations to protect your personal data. For more information, please refer to OCBC&rsquo;s Data Protection Policies at <a rel="noopener" href="https://www.ocbc.com/group/policies" target="_blank">www.ocbc.com/group/policies</a>.</p>
+</li>
+<li>
+<p><strong>Where have you rolled out Branch Analytics?</strong></p>
+<p>Branch Analytics has been rolled out at Wisma Atria Branch.</p>
+</li>
+<li>
+<p><strong>Are you able to map these analytics to video recordings or images of visitors, or to specific individuals?</strong></p>
+<p>No. We will only have access to aggregated and anonymised insights into the performance of our products, promotions and ad campaigns. Video recordings captured under Branch Analytics will be retained for security and analytics purposes.</p>
+</li>
+<li>
+<p><strong>Will I receive targeted ads based on Branch Analytics data?</strong></p>
+<p>As we are unable to identify any individual visitors, we will not be able to send targeted ads.</p>
+</li>
+<li>
+<p><strong>Am I able to opt out of this?</strong></p>
+<p>As we are unable to identify any individual visitors, we will not be able to provide an opt-out service for Branch Analytics. Please be aware that video recordings captured under Branch Analytics will be retained for security and analytics purposes.</p>
+</li>
+</ol></div>
+               </li>
+               <li id="policies-online-banking-security" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Online Banking Security</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Protecting your information and money has always been our priority mission. This section provides you with our privacy policies and shares with you useful information about online security. It also gives you tips on protecting yourself from fraud.</p>
+<p><strong>Benefits &amp; Risks of Internet Banking</strong></p>
+<ol class="list-decimal">
+<li>OCBC Internet Banking offers you an alternate electronic channel where you can manage your bank accounts and perform banking transactions over the Internet. Internet Banking is available to all OCBC Bank customers. <br /><br />With OCBC Internet Banking you will be able to enquire on your account balances, transfer funds, pay your bills and shares application, view your transaction history and even obtain an instant online approval for home loan, prestige credit and renovation loan. You can view our range of Internet Banking services <a title="" name="http://ocbc.com/personal-banking/online-banking/online-banking-overview.html" href="http://ocbc.com/personal-banking/online-banking/online-banking-overview.html">here</a>. <br /><br />OCBC Internet Banking offers you 24-hour access to your accounts every day. It is fast and convenient, allowing you to perform your transactions anywhere, anytime and from any computer with access to the Internet. You can also customise your financial portfolios according to your preference. <br /><br /></li>
+<li>The Internet is a wide area network of computers connected around the world to facilitate data transmission and exchange. Due to the open nature of the Internet, all web-based services such as OCBC Internet Banking are inherently subjected to risks such as online theft of your Access Code/User ID/Username, PIN/Password, virus attacks, hacking, unauthorised access and fraudulent transactions. <br /><br />While the Bank has put in place the necessary security practices and measures to safeguard against these risks, the Bank is still unable to guarantee the complete security of your transactions against any attacks from malicious programmes. <br /><br />As an Internet Banking customer, you play an important role in safeguarding your account information.</li>
+</ol>
+<p><strong>Customer Service</strong></p>
+<p>If you have any queries, problems, grievances, disputes or claims relating to or arising out of the use of OCBC Internet Banking service, you may call any of our Customer Service Officers on 1800 363 3333. They are available to attend to you 24/7 daily and will advise on the immediate steps to be taken by you and/or actions that we will take. Alternatively, you may send us an email by completing the feedback form at www.ocbc.com and we will try to respond to you within 24 hours provided we receive your notification during business hours and the following day is not Sunday or a public holiday, in which case we will reply on the next business day.</p>
+<p><strong>DISPUTE RESOLUTION</strong> <br />We are committed to providing you with quality service. We will promptly attend to any claim or dispute which you may have in respect of or arising out of OCBC Internet Banking Service. Without prejudice in any way to either party's right to take immediate steps to seek urgent relief before a Singapore court or the right to seek legal redress, we will immediately investigate any claim/dispute brought to our attention and will attempt to revert to you within seven (7) working days from the date of receipt of notification. Soon thereafter, we will consult you in good faith with a view to reaching a quick and amicable resolution of the matter, satisfactory to both parties.</p>
+<p><strong>UNAVAILABILITY OF INTERNET BANKING</strong> <br />In the event that OCBC Internet Banking Service is unavailable, you are encouraged to perform your transactions via OCBC eLobbies, OCBC Phone Banking and/or visit any of our branches.</p>
+<p><strong>Safeguarding Your Internet Banking Access</strong></p>
+<p>At OCBC Bank, we have implemented measures to safeguard your account information. However, to ensure that your online security and account information are not compromised, we recommend that you adopt the following OCBC Bank Internet Banking security guidelines:</p>
+<ol class="list-decimal">
+<li>Before entering your User ID and PIN, you should always ensure that the website you are visiting belongs to OCBC Bank. This can be verified by the URL displayed in your browser as well as the Bank's name in its digital certificate. This precaution will ensure that you are not revealing your OCBC Bank Internet Banking Access Code and PIN to a website other than OCBC Bank.</li>
+<li>To ensure that you enjoy the highest level of security possible, all browsers and application software should be upgraded to support SSL 256-bit encryption or a higher encryption standard with the most updated security features available.</li>
+<li>It is important to protect yourself against any forms of online theft of your Access Code/User ID/Username and PIN/Password. Each valid Access Code/User ID/Username and PIN/Password identifies you uniquely as one of our valued customers. Only authorised users are allowed to log in to our secured Internet Banking website(s). <br /><br />Important tips on how you can safeguard and protect your account information.
+<ol class="list-alpha-lower">
+<li>PINs should be 6 digits; you are advised not to repeat any digit more than once.</li>
+<li>PINs should not be based on user-id, personal telephone number, birthday or any other personal information.</li>
+<li>PINs must be kept confidential and not be divulged to anyone.</li>
+<li>PINs must be memorised and not be recorded anywhere.</li>
+<li>PINs must be changed regularly.</li>
+<li>The same PIN should not be used for different websites, applications or services, particularly when they relate to different entities.</li>
+<li>Please do not keep your Card and Card PIN together.</li>
+<li>Please do not select the browser option for storing or retaining user name and password.</li>
+<li>Please check the authenticity of the bank's website by comparing the URL and observing the bank's name in its digital certificate or by observing the indicators provided by an extended validation certificate.</li>
+<li>Please check that the bank's website address changes from http:// to https:// and a security icon that looks like a lock or key appears when authentication and encryption is expected.</li>
+<li>Please do not allow anyone to keep, use or tamper with your 2FA security token.</li>
+<li>Please do not reveal the OTP (One Time Password) generated by the 2FA security token to anyone.</li>
+<li>Please do not divulge the serial number of your 2FA security token to anyone.</li>
+<li>Please check your bank account balance and transactions frequently and report any discrepancy.</li>
+</ol>
+</li>
+<li>Please install anti-virus, anti-spyware and firewall software in your personal computers, particularly when you are linked via broadband connections, digital subscriber lines or cable modems.</li>
+<li>Please update the anti-virus and firewall products with security patches or newer versions on a regular basis.</li>
+<li>Please remove file and printer sharing in your computers, especially when you have internet access via cable modems, broadband connections or similar set-ups.</li>
+<li>Make regular backup of critical data.</li>
+<li>Consider the use of encryption technology to protect highly sensitive data.</li>
+<li>Log off the online session and turn off the computer when not in use.</li>
+<li>Do not install software or run programs of unknown origin.</li>
+<li>Delete junk or chain emails.</li>
+<li>Do not open email attachments from strangers.</li>
+<li>Do not disclose personal, financial or credit card information to little known or suspect websites.</li>
+<li>Do not use a computer or device which cannot be trusted.</li>
+<li>Do not use public or internet cafe computers to access online banking or perform financial transactions.</li>
+<li>You are advised not to access Online Banking using 'jailbroken' or 'rooted' mobile devices (ie the phone Operating System has been tampered with) , as it poses potential risk of malicious software infection.</li>
+<li>You are advised to only download the Mobile Banking application from authorized sources such as Apple App Store or Google Play.</li>
+<li>Do not act on any instructions provided in unfamiliar pop-up screens, mobile messages (e.g. SMS, WhatsApp), or emails from suspicious sources which prompt you to provide your banking login credentials or credit/debit card details.</li>
+<li>Be wary when you are asked to grant excessive / unusual permissions to a mobile app.</li>
+<li>If you notice any unusual/unauthorised transactions, please change your PIN and notify us immediately. It is important that you inform us immediately by calling our Customer Service Hotlines at 1-800-363-3333.</li>
+<li>Your usage of OCBC Internet Banking is subject at all times to the Terms and Conditions governing Electronic Banking Services. You should therefore read carefully and adhere to the recommended security practices. The Bank is not responsible for any loss or damage in connection to the use of OCBC Internet Banking services unless such loss is attributable to our negligence or wilful default.</li>
+<li>As a user of OCBC Internet Banking, you have the right to (1) suspend your Internet Banking Access immediately should you suspect any unusual activity and/or unauthorised access, (2) terminate this service, (3) request for a new set of OCBC Internet Banking PIN and (4) obtain information from the Bank regarding your online transactions.</li>
+</ol>
+<p><strong>Security Policy</strong></p>
+<p>At OCBC Bank, we are committed to protecting the security and confidentiality of your personal information so as to provide you with a safe and secure online environment. Our website uses commercially proven security hardware and software products. These security products include routers, firewalls, intrusion detection systems and secure operating system to safeguard your interest.</p>
+<p>Industry standard Secure Socket Layer (SSL) communication protocol is the de facto cryptographic standard that we use for securing data communication between the browser and our website. Digital certificate technology is used to ensure transaction privacy, message integrity and server-side authentication. This also serves as an assurance that the website runs legitimately under the care of OCBC Bank.</p>
+<p>All connections must pass through at least one router and one firewall to gain access to the server. The firewall checks for the appropriate source address and restricts unauthorised access to the appropriate server.</p>
+<p>Additional technical security features include DigiCert digital certificates, 256-bit encryption, one-way hashing of all user passwords and automatic logoff after 10 minutes of inactivity.</p>
+<p>OCBC Bank's Internet Banking is regularly reviewed and audited by external and internal auditors to ensure that your interest is safeguarded.</p>
+<p>Apart from the security measures put in place by the Bank, you play an equally important role in ensuring your online security and account information is not compromised.</p>
+<p>You should adopt the following recommended practices in protecting the security of your system:</p>
+<ol class="list-alpha-lower">
+<li>Do not share your User ID or password with anyone.</li>
+<li>Do not display your account information in a manner that is visible to others and your PC should never be left unattended. For your protection, OCBC Internet Banking will automatically terminate your session if there is no activity for a period of time.</li>
+<li>Always use the recommended browser. All browsers and application software should be upgraded to support SSL 128-bit encryption.</li>
+<li>Always check that our website address changes from http:// to https:// and a security icon, usually in the form of a lock or key, appears when authentication and encryption is expected.</li>
+</ol>
+<p><strong>Understanding Your Obligations and Responsibilities</strong></p>
+<p>Your use of OCBC Internet Banking is governed by the <a rel="noopener" name="http://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services.page" href="http://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services.page" target="_blank">'Terms and Conditions For Electronic Banking Services - Personal'</a> found in our home page. It is important that you clearly understand your obligations and responsibilities before using OCBC's web-site.</p>
+<p>As a user of OCBC Internet Banking service, you are to 1) comply with the standards and procedures established by OCBC Bank at all time 2) take all reasonable precautions and 3) observe with extreme care all security measures when accessing your online accounts or carrying out online transactions.</p>
+<p>You will note that that under the said terms and conditions, you will remain liable for all instructions made through the use of your ICode and IPIN, whether or not authorised by you. OCBC Bank will not be liable for acting upon such instructions in good faith nor shall OCBC Bank be obliged to investigate the authenticity of such instructions.</p>
+<p>You will also note that OCBC Bank shall not be liable to you in the following circumstances:</p>
+<ol class="list-alpha-lower">
+<li>Failure on the part of the customer to adhere to the said terms and conditions</li>
+<li>Failure to follow recommended security measures prescribed in 'Safeguarding your Internet Banking Access', found in our home page</li>
+<li>Failure on the part of OCBC Bank to act on instructions of the Customer as a result of anything beyond OCBC Bank's control. This includes, amongst other things, any machine, equipment, system or software failing to work, failure to act by any third party and any act, omission or delay of any agent or third party. If any loss or damage results directly from OCBC Bank's security breach, gross negligence, wilful default or fraud then, OCBC Bank will be liable to the customer, and not to any third party, for the amount of any such loss or damage. However, OCBC Bank will not be liable to the customer for any loss of business, loss of reputation, loss of opportunity, loss of profits any type of special, consequential or indirect loss whatsoever.</li>
+</ol></div>
+               </li>
+               <li id="policies-malware-notification" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Malware Notification</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p><strong>Learn more about Phishing, Malware and other Online Card Transaction Security Risks</strong></p>
+<p>Due to the open nature of the Internet, the use of your OCBC credit or debit cards ("OCBC cards") over the Internet are inherently subjected to risks such as online theft of your OCBC card numbers, login credentials and PIN/passwords, virus attacks, phishing, malware, hacking, unauthorised access and fraudulent transactions.</p>
+<p>This includes using your OCBC cards to make payments for products, services or subscriptions online via third party websites or apps, any digital payment system (e.g. Apple Pay, Android Pay, Samsung Pay etc), or whenever you save or use your OCBC cards as cards on file on any third party payment services (e.g. PayPal).</p>
+<p>While OCBC Bank has put in place security practices and measures to safeguard against these risks, the Bank is still unable to guarantee the complete security of your transactions against any attacks from malicious programmes.</p>
+<p>As an OCBC Bank customer, you play an important role in safeguarding your use of OCBC cards online.</p>
+<p><strong> What is a phishing scam? How does it affect my use of my OCBC cards online?</strong></p>
+<p>Phishing is a form of social engineering that may lead to identity theft. Phishing attacks typically use emails or malicious websites to solicit personal information by posing as legitimate companies or trustworthy organisations.</p>
+<p>Phony websites, suspicious emails, or mobile messages (e.g. from SMS, WhatsApp), purporting to be from OCBC Bank, may contain malware, URLs, shortened URLs, or fraudulent requests for sensitive information or action to enter OTP into websites that look legitimate.</p>
+<p>Phishing emails may contain malicious attachments that have malware embedded. The attachments may purport to be invoices, business accounting documents, user account information or other seemingly work-related attachments. When the attachments are opened, the malware infects your computers or devices to steal personal information, as well as login credentials.</p>
+<p><strong>What is a malware? How does it affect my use of my OCBC cards online?</strong></p>
+<p>Malware targets customers' computers/mobile devices to steal their login credentials and other important information. For example: your user IDs, passwords or PINs, and One-Time Passwords (OTP), biometric or other authentication credentials for logging into third party payment systems or digital payment systems, OCBC card details or other personal information.</p>
+<p>Typically, these malware are embedded as attachments or hyperlinks in emails or mobile messages (e.g. from SMS, WhatsApp) received by customers. Once the customer clicks on the attachment/hyperlink or download/update the mobile apps or software, the malware installs itself onto the computer/mobile device.</p>
+<p>This may enable the malware to steal the customer's login credentials, OCBC card details or other personal information.</p>
+<p>SMS OTP and biometric or other authentication credentials (eg. fingerprint or other biometric verification) may be intercepted through compromised or infected mobile devices and used for fraudulent banking transactions.</p>
+<p>The malware also works by redirecting customers to a fake webpage, pop up window or overlay that looks similar to the website you are trying to visit. It may request for your login credentials, including your user IDs, passwords or PINs, One-Time Passwords (OTP), biometric or other authentication details, which may or may not be masked. It then tries to access your account to create fraudulent transactions.</p>
+<p><strong>How do I know if my computer/mobile device is compromised by malware?</strong></p>
+<p>Watch out for these warning signs, for example:</p>
+<ul class="list-bullet">
+<li>If your mobile phone remains locked with screen showing "System update in progress. Please wait." This screen keeps appearing within seconds after your mobile phone is switched on or even after doing a force restart of your phone.</li>
+<li>If you are prompted to install mobile apps from untrusted sources or to grant special permission to specific mobile apps.</li>
+<li>The URL showing on the login page of any website you are accessing is different from the website you are trying to access.</li>
+<li>Repeated prompts for password, PIN, OTP or other authentication even though you have entered the login credentials correctly.</li>
+<li>A delayed pop-up screen that says the system is not available and repeatedly asks you to enter OTP or use your hardware token to generate an OTP.</li>
+<li>Prompts to authorise transactions which you have not initiated, using OTPs generated through your hardware token. For example: While trying to login, you are prompted to enter a 6-digit number shown on your computer screen into your hardware token. Then you are asked to press the "Sign" button on the token and key in the OTP generated from the hardware token into the computer screen.</li>
+<li>Your password or PIN is visible when you type them into the password or PIN field it should be masked.</li>
+<li>You receive SMS messages on OTP or transactions which you did not initiate</li>
+<li>A redirection to a third-party website, which may feature a hotline number or an unsolicited request.</li>
+<li>You receive a call purportedly from a staff in OCBC asking you to verbally reveal your OCBC card numbers, user ID, password or PIN, OTP or hardware token details (Note: OCBC Bank will never ask a customer to reveal such details).</li>
+</ul>
+<p><strong>Safeguarding the Use of Your OCBC Cards Online</strong></p>
+<p>At OCBC Bank, we have implemented measures to safeguard your use of your OCBC cards online. However, to ensure that your online security and OCBC card information are not compromised, we recommend that you adopt the following OCBC Bank security guidelines:</p>
+<p><strong>What should I do if I think my mobile device/phone/computer has been compromised?</strong></p>
+<ul class="list-bullet">
+<li>Switch off your mobile phone immediately by removing the battery (if applicable) or do a force shutdown.</li>
+<li>Remove your SIM card from your infected mobile phone and use it on a spare or a different mobile phone.</li>
+<li>Do not use the infected mobile phone or computer to transact with your OCBC cards or use/access any digital payment systems.</li>
+<li>Take a screenshot or picture of the suspicious screen.</li>
+<li>Cancel any suspicious-looking transaction, log out of your relevant accounts, close the browser or exit or delete the mobile app.</li>
+<li>Do not enter your OCBC card numbers password, PIN or One-Time-Password (OTP) and do not attempt to transact again.</li>
+<li>Inform OCBC Bank immediately by calling us at 1800 363 3333.</li>
+</ul>
+<p><strong>Can my digital wallet be used for payment transactions even when I am not at a point of sales (POS) terminal?</strong></p>
+<p>Many digital payment systems allow payment transactions to be made even when you are not at a point of sales terminal. Such functionality may also evolve from time to time. Please regularly check with the digital payment services provider to understand the types of transactions that the digital payment system permits.</p>
+<p><strong>What can I do to keep my mobile device/computer and my online card transactions safe from malware or other security risks?</strong></p>
+<ul class="list-bullet">
+<li>Do not click on hyperlinks provided in mobile messages (e.g. from SMS, WhatsApp), email attachments or hyperlinks from suspicious sources.</li>
+<li>Do not act on any instructions provided in mobile messages (e.g. from SMS, WhatsApp), unfamiliar pop-up screens, or emails from suspicious sources which require you to provide any login credentials or OCBC card details.</li>
+<li>Do not install mobile apps from unknown sources (other than Google Play store or Apple App store).</li>
+<li>Verify the URL of the website you are visiting and do not key in your user ID, password or PIN, One-Time-Password (OTP), OCBC card details or mobile number or perform authentication procedures with suspicious websites or mobile apps.</li>
+<li>Update us immediately when you change your mobile number for receiving One-time Password (OTP) via SMS.</li>
+<li>Update us immediately when there is a change in your contact details such as mobile number and e-mail address, for the purposes of receiving SMS alerts or e-mail notifications in relation to your banking transactions and activities.</li>
+<li>Do not reveal your user ID, password or PIN, One-Time-Password (OTP), OCBC card details or hardware token details to anyone.</li>
+<li>Equip your mobile device or computer with the latest anti-virus, anti-malware and firewall software, and ensure that the installed software is regularly updated and run with latest anti-virus signatures.</li>
+<li>Please remove file and printer sharing in your mobile devices or computers, especially when you have internet access via cable modems, broadband connections or similar set-ups.</li>
+<li>Consider the use of encryption technology to protect highly sensitive data.</li>
+<li>Log off the online session and turn off the mobile device or computer when not in use.</li>
+<li>Do not display your account or OCBC card information in a manner that is visible to others and your your mobile devices or computers should never be left unattended.</li>
+<li>Always use the recommended browser. All browsers and application software should be upgraded to support at least SSL 128-bit encryption.</li>
+<li>Do not jailbreak, root or modify your mobile devices or computers, or install or run illegitimate software and applications of unknown origin as this may render such mobile devices or computers more prone to viruses and malware.</li>
+<li>Delete junk or chain emails and do not open email attachments from strangers.</li>
+<li>Do not use a computer or mobile device which cannot be trusted and do not use public or internet cafe computers and shared mobile devices to perform financial transactions including online card transactions.</li>
+<li>Do not allow any third party to use, operate or control your mobile device, computer or your OCBC cards</li>
+<li>Monitor your record of transactions regularly, and report discrepancies to us immediately upon discovery, and in any event, not later than 7 days after any statement of account has been provided to you.</li>
+<li>If you receive any suspicious emails, messages or websites purporting to be from OCBC Bank, do not proceed further. Please call us at 1800 363 3333 to validate the authenticity of the email, message or website.</li>
+<li>If you notice any unusual online banking activities or OCBC card transactions, please log off immediately and call us at 1800 363 3333 at any time or by contacting one of our branches during its opening hours.</li>
+</ul>
+<p>We advise you to stay vigilant and take the necessary precautions. You play a part to protect yourself from online fraud by adopting the recommended security practices.</p>
+<p><strong>Understanding your Obligations and Responsibilities</strong></p>
+<p>Your usage of OCBC cards online is subject at all times to the Electronic Banking Terms &amp; Conditions, the OCBC Credit/Debit Cardmembers Agreement(s) and/or Plus! Credit/Debit Cardmembers Agreement(s) (as may be applicable), the Terms &amp; Conditions Governing Deposit Accounts, the relevant OCBC Digital Payment Service Agreements governing your use of any digital payment system, and any other terms and conditions that may be relevant and notified to you at any time.</p>
+<p>As a user of OCBC cards, you are to 1) comply with the standards and procedures established by OCBC Bank at all times 2) take all reasonable precautions and 3) observe with extreme care all security measures when accessing your online accounts or carrying out online transactions.</p>
+<p>You will note that under the abovementioned terms and conditions, you will remain liable for all instructions and transactions made through the use of your OCBC cards, whether or not authorised by you. OCBC Bank will not be liable for acting upon such instructions and transactions in good faith nor shall OCBC Bank be obliged to investigate the authenticity of such instructions and transactions.</p>
+<p>OCBC Bank shall not be liable to you in the following circumstances:</p>
+<ol class="list-decimal">
+<li>Failure on your part to adhere to the abovementioned terms and conditions;</li>
+<li>Failure to follow recommended security measures prescribed in the 'Safeguarding your Internet Banking Access' and 'Safeguarding the Use of Your OCBC Cards Online' policies, found in our home page</li>
+<li>Failure on the part of OCBC Bank to act on your instructions as a result of anything beyond OCBC Bank's control. This includes, amongst other things, any machine, equipment, system or software failing to work, failure to act by any third party and any act, omission or delay of any agent or third party. Without prejudice to the foregoing, OCBC Bank shall not be liable to the customer for any loss of business, loss of reputation, loss of opportunity, loss of profits or any type of special, consequential or indirect loss whatsoever.</li>
+</ol></div>
+               </li>
+               <li id="Artificial-Intelligence-Policy" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Artificial Intelligence Policy</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>OCBC is committed to harnessing advanced technology to deliver efficient and innovative services to our customers and to enhance our processes. As part of this commitment, OCBC uses Artificial Intelligence (&ldquo;AI&rdquo;) across our business.</p>
+<p>AI represents a significant advancement in computer systems, enabling them to perform tasks that traditionally required human intelligence. By leveraging AI, we aim to enhance our customers&rsquo; experience and make work more meaningful for our employees.</p>
+<p>Here are some key ways in which we use AI to serve you better:</p>
+<ol>
+<li><strong>Protecting our customers<br /></strong><span>Our AI algorithms are constantly monitoring your account activities to detect any suspicious transactions or patterns that may indicate scams or fraudulent activity. By taking this proactive approach, we aim to ensure the safety of your financial well-being and protect your accounts from unauthorized access.</span></li>
+<li><strong>Protecting the bank and society<br /></strong>We apply AI algorithms to proactively monitor for financial crime, such as money laundering. By proactively identifying financial crime, we aim to protect OCBC and society, and the wellbeing of our financial system.</li>
+<li><strong>Personalisation &amp; marketing</strong><br />Our AI algorithms analyse banking transactions, interactions and customer profiles to provide you with tailored insights and recommendations. This empowers our customers to make better financial decisions and receive more relevant marketing communications from OCBC.</li>
+<li><strong>Enhance customer service<br /></strong>Our AI-powered chatbots are available 24/7 to assist you with basic servicing enquiries such as managing your accounts and providing general banking information. These chatbots deliver prompt and accurate responses, ensuring seamless assistance whenever you need it.</li>
+<li><strong>Efficient loan approvals</strong><br />We apply AI algorithms as part of our loan application assessment process to facilitate more precise and faster decision-making. This improves the efficiency of our loan processing, ensuring you receive a timely decision for your loan application</li>
+<li><strong></strong><strong>Improving quality of work for our employees<br /></strong>We also use AI to improve our productivity. This streamlines our internal processes, allowing us to serve you efficiently.</li>
+<li><strong>Improving our employee engagement<br /></strong>As our employees are a critical part of our organisation, we use AI to improve our employee engagement by providing our employees with recommendations for their careers, learning and development needs based on their skills. We also use AI to take proactive measures to retain talent. This helps our employee to realise their aspirations and provides us with a stable workforce to better serve our customers.</li>
+</ol>
+<p>We understand that data privacy and security and unintentional biases of AI-driven decisions are important concerns for you. Please be assured that we strictly adhere to data protection regulations and employ robust security measures to safeguard your personal data. Our<span>&nbsp;</span><a href="https://www.ocbc.com/personal-banking/policies#pdpa">Data Protection Policy</a><span>&nbsp;</span>sets out how we collect, use and disclose your personal data. We also regularly review and test the AI deployed by us for errors or unintentional biases.</p>
+<p>As technology continues to evolve, we remain committed to remaining at the forefront of innovation to serve you better. Our dedicated team of experts continuously explores new ways to leverage AI and other emerging technologies to meet your evolving banking needs.</p>
+<p>Please&nbsp;<a href="mailto:AIQueries@ocbc.com">Contact Us</a><span>&nbsp;</span>if you have questions about our usage of AI.</p></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1572415894458">
+      <style>#iw_comp1572415894458{}</style><div class="policies-component"></div><div class="module container bp-width-med3 animate mt5">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="first" close-others="false">
+            <div class="clearfix">
+               <div class="float-left mb2">
+                  <h4 class="mb0"><strong>Foreign Account Tax Compliance Act (FATCA) Policy</strong></h4>
+               </div><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="policies-singapore" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Singapore</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Effective 1 July 2014</p>
+<p><strong>1. Definitions and Interpretation</strong></p>
+<p>In this FATCA Policy, the following capitalised terms have the following meaning:</p>
+<p>"<strong>Account Information</strong>" means any information relating to any account of a Customer with OCBC Bank including without limitation the account number, account balance or value, and gross receipts, withdrawals and payments to or from the account.</p>
+<p>"<strong>Applicable Laws and Regulations</strong>" means obligations of OCBC Bank to comply with: (i) applicable local or foreign laws, ordinances, regulations, demands, guidance, orders, guidelines, rules, codes of practice, whether or not relating to an intergovernmental agreement between the governments or regulatory authorities of two or more jurisdictions; and (ii) any agreement between OCBC Bank and any government or taxation authority in any jurisdiction; and including but not limited to FATCA.</p>
+<p>"<strong>Authority</strong>" means any national, state, or local government, any political subdivision thereof, any agency, authority, instrumentality, whether judicial or administrative, regulatory or self-regulatory organisation, law enforcement body, court, central bank or tax or revenue authority in any jurisdiction whether within or outside of Singapore.</p>
+<p>"<strong>Consenting Person</strong>" means any Person or entity whose information (including Tax Information) is received by OCBC Bank in connection with the provision of Services. For the avoidance of doubt, "Consenting Person" may include Customers, substantial owners and controlling persons of Customers, any Person who is beneficially interested or financially interested in the payments made or to be made by OCBC Bank.</p>
+<p>"<strong>Controlling Person</strong>" means any individual who exercises ultimate effective control over an entity or trust.</p>
+<p>"<strong>Customer</strong>" means the Person who has a relationship with OCBC Bank in connection with the Services, whether alone or jointly with any other Person and, in the case of a corporation, shall include its successors and in the case of a partnership or other unincorporated entity consisting of two or more Persons, its successors, executors and personal representatives.</p>
+<p>"<strong>FATCA</strong>" means Section 1471 to 1474 of the United States Internal Revenue Code of 1986, as amended and any associated similar or analogous legislation, treaty, intergovernmental agreement, foreign financial institution agreement, regulation, instruction, or other official guidance of any Authority in any jurisdiction whether within or outside of Singapore.</p>
+<p>"<strong>OCBC Bank</strong>" means Oversea-Chinese Banking Corporation Limited and shall include its successors and assigns.</p>
+<p>"<strong>Person</strong>" means an individual, corporation, company, partnership, joint venture, trust, estate, limited liability company, unincorporated organisation or other entity.</p>
+<p>"<strong>Personal Information</strong>" in respect of a Customer and any Consenting Person, means: (i) where the Customer and any Consenting Person is an individual, his/her full name, date and place of birth, residential address, mailing address, contact information (including telephone number), and any taxpayer identification number, social security number, citizenship(s), residency(ies) and tax residency(ies) or (if applicable) such information as OCBC Bank may reasonably require regarding Customer and any Consenting Person; (ii) where the Customer and any Consenting Person is a corporate/entity, its date and place of incorporation or formation, registered address, address of place of business, tax identification number, tax status, tax residency, registered address, address of place of business or (if applicable) such information as OCBC Bank may reasonably require regarding each of its substantial shareholders and controlling persons.</p>
+<p>"<strong>Services</strong>", in relation to a Customer, means, without limitation, (i) the opening, maintaining and closing of bank accounts; (ii) the issuing, maintaining, administering and terminating of insurance policies; (iii) the provision of any banking or financial services and products (including without limitation, private banking services, credit facilities, credit card services, loans, brokerage, investment banking services, corporate finance services, provision of mezzanine capital, capital market services, services in respect of treasury products and financial derivatives transactions); (iv) relationship maintenance between OCBC Bank and the Customer (including without limitation marketing and promoting banking or financial services or products); and (v) any other acts or materials of OCBC Bank ancillary to, in furtherance of or in connection with any of the (i) to (iv) above (including without limitation research and analysis).</p>
+<p>"<strong>Substantial owner</strong>" includes (1) with respect to a corporate or entity, certain persons that directly or indirectly own 25% or more of the corporation's stock (by vote or value), (2) with respect to a partnership, certain persons that directly or indirectly own 25% or more of the profits or capital interests in the partnership, and (3) with respect to a trust, certain persons treated as the owner of the trust or treated as holding directly or indirectly 25% or more of the beneficial interests of the trust.</p>
+<p>"<strong>Tax Information</strong>" in respect of a Customer and any Consenting Person, means: (i) any documentation or information (and accompanying statements, waivers and consents as OCBC Bank may from time to time require or as the Customer and any Consenting Person from time to time give) relating, directly or indirectly, to the tax status of the Customer and any Consenting Person; (ii) Personal Information of the Customer and any Consenting Person; and (iii) Account Information.</p>
+<p><strong>2. Tax Withholding and Compliance Provisions</strong></p>
+<p><strong>2.1 Provision of Information</strong></p>
+<ol class="list-alpha-lower">
+<li>The Customer must provide OCBC Bank with the Customer's Personal Information, and where reasonably required by OCBC Bank, the Personal Information of any Consenting Person, in such form and within such time, as OCBC Bank may from time to time require.</li>
+<li>When there is a change or addition to the Personal Information of the Customer and (where applicable) any Consenting Person, the Customer must update OCBC Bank promptly (and in any event no later than 30 days from the date of the change or addition) of the change or addition.</li>
+<li>The Customer must, and, where applicable, procure such other Consenting Person to, complete and sign such documents and do such things as OCBC Bank may reasonably require from time to time for purposes of OCBC Bank's compliance with Applicable Laws and Regulations.</li>
+<li>The Customer agrees that OCBC Bank may directly require any Consenting Person to provide or confirm accuracy of their Personal Information without involving Customer if OCBC Bank reasonably considers it appropriate.</li>
+</ol>
+<p><strong>2.2 Disclosure of Information</strong></p>
+<ol class="list-alpha-lower">
+<li>The Customer agrees that OCBC Bank may disclose the Customer's Tax Information and the Tax Information of any other Consenting Person to any Authority in any jurisdiction for ensuring OCBC Bank's compliance with Applicable Laws and Regulations.</li>
+<li>The Customer waives, and, where reasonably required by OCBC Bank, agrees to procure any other Consenting Person to waive, any applicable restrictions that would otherwise hinder OCBC Bank's ability to disclose Tax Information to comply with Applicable Laws and Regulations, and in particular, to disclose Tax Information in the manner described in 2.2a.</li>
+<li>The Customer agrees that OCBC Bank may directly require any other Consenting Person to agree to the disclosure described in 2.2a and/or waive any otherwise applicable restrictions on such disclosure, if OCBC Bank reasonably considers it appropriate.</li>
+</ol>
+<p><strong>2.3 Failure to Provide Information</strong></p>
+<p>The Customer agrees that:</p>
+<ol class="list-alpha-lower">
+<li>where the Customer fails to comply with its obligations under 2.1 above; or</li>
+<li>where any of the other Consenting Persons fails to comply with OCBC Bank's requirements in 2.1 or 2.2; or</li>
+<li>where the Personal Information (regardless of whether such Personal Information is in relation to Customer or any other Consenting Person) is inaccurate, incomplete, or not promptly updated; or</li>
+<li>for whatever reason OCBC Bank is prevented (under Singapore law or otherwise) from making disclosure of the Tax Information of Customer and/or any other Consenting Person(s) to the relevant Authority as may be required by Applicable Laws and Regulations,</li>
+</ol>
+<p>OCBC Bank may take one or more of the following actions at any time as may be required by OCBC Bank to ensure its compliance with Applicable Laws and Regulations:</p>
+<ol class="list-decimal">
+<li>deduct from or withhold part of any amounts payable by OCBC Bank to the Customer and/or any other Consenting Person;</li>
+<li>refuse to provide new Services to the Customer;</li>
+<li>terminate the Customer's account(s) with OCBC Bank;</li>
+<li>discontinue entirely or in part OCBC Bank's relationship with Customer;</li>
+<li>provide (whether before or after taking actions as described in items 3 and 4 of this section) the Tax Information relating to Customer and/or any of the Consenting Persons to such Authority in any jurisdiction.</li>
+</ol>
+<p><strong>3. Customer Confirmations</strong></p>
+<p>By using or accepting the Services, the Customer confirms and agrees that:</p>
+<ol class="list-alpha-lower">
+<li>without prejudice to the applicable Terms and Conditions governing the relationship between OCBC Bank and the Customer, the Customer confirms that the Customer has read this FATCA policy, has received adequate explanation, and understands the implications of this FATCA policy by which Customer irrevocably agrees to be bound;</li>
+<li>any agreement, waiver, confirmations given in, or to be given pursuant to, this FATCA policy is irrevocable;</li>
+<li>OCBC Bank is not liable for any costs or loss that the Customer (or any other Consenting Persons) may incur because of OCBC Bank taking any actions permitted by or exercising any powers under this FATCA Policy;</li>
+<li>any withdrawal or payment amount made by OCBC Bank pursuant to any Services shall be subject to this FATCA Policy;</li>
+<li>the Customer must obtain or, as the case may be, have obtained the requisite consent from each Consenting Person for the provision of his/her/its Tax Information to OCBC Bank and the disclosure of any of such Tax Information by OCBC Bank under this FATCA Policy; the Customer must inform each Consenting Person of OCBC Bank's powers under this FATCA Policy;</li>
+<li>this FATCA Policy is without prejudice, and in addition, to OCBC Bank's rights or powers under the Terms and Conditions governing the relationship between Customer and OCBC Bank.</li>
+</ol>
+<p><strong>4. General</strong></p>
+<ol class="list-alpha-lower">
+<li>In the event of any conflict or inconsistency between any of the contents of this FATCA Policy and other Terms and Conditions that govern the Customer's relationship with OCBC Bank, this FATCA Policy shall prevail.</li>
+<li>Notwithstanding any other Terms and Conditions that govern the Customer's relationship with OCBC Bank (including but not limited to amendments or modification provisions of such Terms and Conditions), OCBC Bank may amend, update, and revise this FATCA Policy unilaterally at any time as may be required by OCBC Bank to ensure its compliance with Applicable Laws and Regulations.</li>
+<li>If all or any part of this FATCA Policy is illegal, invalid or unenforceable in any respect under the law of any jurisdiction, that shall not affect or impair the legality, validity or enforceability of such provision in any other jurisdictions or the remainder of this FATCA Policy in that jurisdiction.</li>
+<li>It is the Customer's responsibility to obtain independent professional advice from adequately qualified legal or tax advisors on its obligations under and the consequences of this FATCA Policy. OCBC Bank do not provide tax or legal advice and are unable to advise Customers regarding the US federal income tax or other tax consequences to them under the Customer's particular circumstances.</li>
+</ol></div>
+               </li>
+               <li id="policies-thailand" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Thailand</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Effective 1 July 2014</p>
+<p><strong>1. Definitions and Interpretation</strong></p>
+<p>In this FATCA Policy, the following capitalised terms have the following meaning:</p>
+<p>"<strong>Account Information</strong>" means any information relating to any account of a Customer with OCBC Bank including without limitation the account number, account balance or value, and gross receipts, withdrawals and payments to or from the account.</p>
+<p>"<strong>Applicable Laws and Regulations</strong>" means obligations of OCBC Bank to comply with: (i) applicable local or foreign laws, ordinances, regulations, demands, guidance, orders, guidelines, rules, codes of practice, whether or not relating to an intergovernmental agreement between the governments or regulatory authorities of two or more jurisdictions; and (ii) any agreement between OCBC Bank and any government or taxation authority in any jurisdiction; and including but not limited to FATCA.</p>
+<p>"<strong>Authority</strong>" means any national, state, or local government, any political subdivision thereof, any agency, authority, instrumentality, whether judicial or administrative, regulatory or self-regulatory organisation, law enforcement body, court, central bank or tax or revenue authority in any jurisdiction whether within or outside of Singapore.</p>
+<p>"<strong>Consenting Person</strong>" means any Person or entity whose information (including Tax Information) is received by OCBC Bank in connection with the provision of Services. For the avoidance of doubt, "Consenting Person" may include Customers, Substantial Owners and controlling persons of Customers, any Person who is beneficially interested or financially interested in the payments made or to be made by OCBC Bank.</p>
+<p>"<strong>Controlling Person</strong>" means any individual who exercises ultimate effective control over an entity or trust.</p>
+<p>"<strong>Customer</strong>" means the Person who has a relationship with OCBC Bank in connection with the Services, whether alone or jointly with any other Person and, in the case of a corporation, shall include its successors and in the case of a partnership or other unincorporated entity consisting of two or more Persons, its successors, executors and personal representatives.</p>
+<p>"<strong>FATCA</strong>" means Section 1471 to 1474 of the United States Internal Revenue Code of 1986, as amended and any associated similar or analogous legislation, treaty, intergovernmental agreement, foreign financial institution agreement, regulation, instruction, or other official guidance of any Authority in any jurisdiction whether within or outside of Singapore.</p>
+<p>"<strong>OCBC Bank</strong>" means Oversea-Chinese Banking Corporation Limited, including any of its branches in any jurisdiction and shall include its successors and assigns.</p>
+<p>"<strong>Person</strong>" means an individual, corporation, company, partnership, joint venture, trust, estate, limited liability company, unincorporated organisation or other entity.</p>
+<p>"<strong>Personal Information</strong>" in respect of a Customer and any Consenting Person, means: (i) where the Customer and any Consenting Person is an individual, his/her full name, date and place of birth, residential address, mailing address, contact information (including telephone number), and any taxpayer identification number, social security number, citizenship(s), residency(ies) and tax residency(ies) or (if applicable) such information as OCBC Bank may reasonably require regarding Customer and any Consenting Person; (ii) where the Customer and any Consenting Person is a corporate/entity, its date and place of incorporation or formation, registered address, address of place of business, tax identification number, tax status, tax residency, registered address, address of place of business or (if applicable) such information as OCBC Bank may reasonably require regarding each of its substantial shareholders and controlling persons.</p>
+<p>"<strong>Services</strong>", in relation to a Customer, means, without limitation, (i) the opening, maintaining and closing of bank accounts; (ii) the issuing, maintaining, administering and terminating of insurance policies; (iii) the provision of any banking or financial services and products (including without limitation, private banking services, credit facilities, credit card services, loans, brokerage, investment banking services, corporate finance services, provision of mezzanine capital, capital market services, services in respect of treasury products and financial derivatives transactions); (iv) relationship maintenance between OCBC Bank and the Customer (including without limitation marketing and promoting banking or financial services or products); and (v) any other acts or materials of OCBC Bank ancillary to, in furtherance of or in connection with any of the (i) to (iv) above (including without limitation research and analysis).</p>
+<p>"<strong>Substantial Owner</strong>" includes (1) with respect to a corporate or entity, certain persons that directly or indirectly own more than 25% of the corporation's stock (by vote or value), (2) with respect to a partnership, certain persons that directly or indirectly own more than 25% of the profits or capital interests in the partnership, and (3) with respect to a trust, certain persons treated as the owner of the trust or treated as holding directly or indirectly more than 25% of the beneficial interests of the trust.</p>
+<p>"<strong>Tax Information</strong>" in respect of a Customer and any Consenting Person, means: (i) any documentation or information (and accompanying statements, waivers and consents as OCBC Bank may from time to time require or as the Customer and any Consenting Person from time to time give) relating, directly or indirectly, to the tax status of the Customer and any Consenting Person; (ii) Personal Information of the Customer and any Consenting Person; and (iii) Account Information.</p>
+<p><strong>2. Tax Withholding and Compliance Provisions</strong></p>
+<p><strong>2.1. Provision of Information</strong></p>
+<ol class="list-alpha-lower">
+<li>The Customer must provide OCBC Bank with the Customer's Personal Information, and where reasonably required by OCBC Bank, the Personal Information of any Consenting Person, in such form and within such time, as OCBC Bank may from time to time require.</li>
+<li>When there is a change or addition to the Personal Information of the Customer and (where applicable) any Consenting Person, the Customer must update OCBC Bank promptly (and in any event no later than 30 days from the date of the change or addition) of the change or addition.</li>
+<li>The Customer must, and, where applicable, procure such other Consenting Person to, complete and sign such documents and do such things as OCBC Bank may reasonably require from time to time for purposes of OCBC Bank's compliance with Applicable Laws and Regulations.</li>
+<li>The Customer agrees that OCBC Bank may directly require any Consenting Person to provide or confirm accuracy of their Personal Information without involving Customer if OCBC Bank reasonably considers it appropriate.</li>
+</ol>
+<p><strong>2.2. Disclosure of Information</strong></p>
+<ol class="list-alpha-lower">
+<li>The Customer agrees that OCBC Bank may disclose the Customer's Tax Information and the Tax Information of any other Consenting Person to any Authority in any jurisdiction for ensuring OCBC Bank's compliance with Applicable Laws and Regulations.</li>
+<li>The Customer waives, and, where reasonably required by OCBC Bank, agrees to procure any other Consenting Person to waive, any applicable restrictions that would otherwise hinder OCBC Bank's ability to disclose Tax Information to comply with Applicable Laws and Regulations, and in particular, to disclose Tax Information in the manner described in 2.2a.</li>
+<li>The Customer agrees that OCBC Bank may directly require any other Consenting Person to agree to the disclosure described in 2.2a and/or waive any otherwise applicable restrictions on such disclosure, if OCBC Bank reasonably considers it appropriate.</li>
+</ol>
+<p><strong>2.3. Failure to Provide Information</strong></p>
+<p>The Customer agrees that:</p>
+<ol class="list-alpha-lower">
+<li>where the Customer fails to comply with its obligations under 2.1 above; or</li>
+<li>where any of the other Consenting Persons fails to comply with OCBC Bank's requirements in 2.1 or 2.2; or</li>
+<li>where the Personal Information (regardless of whether such Personal Information is in relation to Customer or any other Consenting Person) is inaccurate, incomplete, or not promptly updated; or</li>
+<li>for whatever reason OCBC Bank is prevented (under Singapore law or otherwise) from making disclosure of the Tax Information of Customer and/or any other Consenting Person(s) to the relevant Authority as may be required by Applicable Laws and Regulations,</li>
+</ol>
+<p>OCBC Bank may take one or more of the following actions at any time as may be required by OCBC Bank to ensure its compliance with Applicable Laws and Regulations:</p>
+<ol class="list-decimal">
+<li>deduct from or withhold part of any amounts payable by OCBC Bank to the Customer and/or any other Consenting Person;</li>
+<li>refuse to provide new Services to the Customer;</li>
+<li>terminate the Customer's account(s) with OCBC Bank;</li>
+<li>discontinue entirely or in part OCBC Bank's relationship with Customer;</li>
+<li>provide (whether before or after taking actions as described in items 3 and 4 of this section) the Tax Information relating to Customer and/or any of the Consenting Persons to such Authority in any jurisdiction.</li>
+</ol>
+<p><strong>3. Customer Confirmations</strong></p>
+<p>By using or accepting the Services, the Customer confirms and agrees that:</p>
+<ol class="list-alpha-lower">
+<li>without prejudice to the applicable terms and conditions governing the relationship between OCBC Bank and the Customer, the Customer confirms that the Customer has read this FATCA Policy, has received adequate explanation, and understands the implications of this FATCA Policy by which Customer irrevocably agrees to be bound;</li>
+<li>any agreement, waiver, confirmations given in, or to be given pursuant to, this FATCA Policy is irrevocable;</li>
+<li>OCBC Bank is not liable for any costs or loss that the Customer (or any other Consenting Persons) may incur because of OCBC Bank taking any actions permitted by or exercising any powers under this FATCA Policy;</li>
+<li>any withdrawal or payment amount made by OCBC Bank pursuant to any Services shall be subject to this FATCA Policy;</li>
+<li>the Customer must obtain or, as the case may be, have obtained the requisite consent from each Consenting Person for the provision of his/her/its Tax Information to OCBC Bank and the disclosure of any of such Tax Information by OCBC Bank under this FATCA Policy; <br />the Customer must inform each Consenting Person of OCBC Bank's powers under this FATCA Policy;</li>
+<li>this FATCA Policy is without prejudice, and in addition, to OCBC Bank's rights or powers under the terms and conditions governing the relationship between Customer and OCBC Bank.</li>
+<li>The Customer shall fully indemnify and hold OCBC Bank harmless in respect of any liabilities, losses, damages, claims, costs and/or expenses (other than loss of profit, loss of revenue or loss of business) which may be suffered or reasonably incurred by OCBC Bank directly or indirectly arising out of or in connection with:</li>
+<ol class="list-roman-lower">
+<li>(x) any material misrepresentation, or incomplete or inaccurate or false information you provided to us; (y) any withdrawal of consent, agreement or waiver referred to in this FATCA Policy; or (z) any breach of any terms of this FATCA Policy on the part of the Customer or the Consenting Person.</li>
+<li>any claims, proceedings or actions against OCBC Bank by the Consenting Person.</li>
+</ol>
+</ol>
+<p><strong>4. General</strong></p>
+<ol class="list-alpha-lower">
+<li>In the event of any conflict or inconsistency between any of the contents of this FATCA Policy and other terms and conditions that govern the Customer's relationship with OCBC Bank, this FATCA Policy shall prevail.</li>
+<li>Notwithstanding any other terms and conditions that govern the Customer's relationship with OCBC Bank (including but not limited to amendments or modification provisions of such terms and conditions), OCBC Bank may amend, update, and revise this FATCA Policy unilaterally at any time as may be required by OCBC Bank to ensure compliance with Applicable Laws and Regulations.</li>
+<li>If all or any part of this FATCA Policy is illegal, invalid or unenforceable in any respect under the law of any jurisdiction, that shall not affect or impair the legality, validity or enforceability of such provision in any other jurisdictions or the remainder of this FATCA Policy in that jurisdiction.</li>
+<li>It is the Customer's responsibility to obtain independent professional advice from adequately qualified legal or tax advisors on its obligations under and the consequences of this FATCA Policy. OCBC Bank do not provide tax or legal advice and are unable to advise Customers regarding the US federal income tax or other tax consequences to them under the Customer's particular circumstances.</li>
+<li>Where the Customer is opening and/or maintaining account(s) with OCBC Bank and/or obtaining Services from us as an agent or a nominee for any Consenting Person, the consents, agreements and waivers in this FATCA Policy shall be deemed to be given by the Customer in its own capacity and on behalf of each such Consenting Person.</li>
+</ol></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1574136654401">
+      <style>#iw_comp1574136654401{}</style><div class="policies-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="first" close-others="false">
+            <div class="clearfix">
+               <div class="float-left mb2">
+                  <h4 class="mb0"><strong>Common Reporting Standard (CRS) Policy</strong></h4>
+               </div><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="crs-singapore" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Singapore</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Effective 1 January 2017</p>
+<p>1. Definitions and Interpretation</p>
+<p>In this CRS Policy, the following capitalised terms have the following meaning:</p>
+<p>"<strong>Account Information</strong>" means any information relating to any account of a Customer with OCBC Bank including without limitation (and if applicable):</p>
+<ol class="list-alpha-lower">
+<li>the account number;</li>
+<li>account balance or value;</li>
+<li>currency denomination;</li>
+<li>gross receipts;</li>
+<li>withdrawals and payments to or from the account;</li>
+<li>the total gross amount of interest paid or credited to the account;</li>
+<li>the total gross amount of interest, dividends and other income generated with respect to the assets held in the account, in each case paid or credited to the account or with respect to the account;</li>
+<li>the total gross proceeds from the sale or redemption of property paid or credited to the account; and</li>
+<li>the total gross amount paid or credited to the Customer with respect to the account, including the aggregate amount of any redemption payments made to the Customer.</li>
+</ol>
+<p>"<strong>Applicable Laws and Regulations</strong>" mean any of the following that currently or in the future apply to OCBC Bank (i) local or foreign laws, ordinances, regulations, demands, guidance, orders, guidelines, rules and codes of practice, including whether or not relating to an intergovernmental agreement between the governments or regulatory authorities of two or more jurisdictions; and (ii) any agreement between OCBC Bank and any government or taxation authority in any jurisdiction; and including but not limited to the CRS.</p>
+<p>"<strong>Authority</strong>" means any national, state, or local government, any political subdivision thereof, any agency, authority, instrumentality, whether judicial or administrative, regulatory or self-regulatory organisation, law enforcement body, court, central bank or tax or revenue authority in any jurisdiction whether within or outside of Singapore.</p>
+<p>"<strong>Controlling Person</strong>" means any natural person who exercises control over a legal person or a legal arrangement, such as a corporation, partnership, trust or foundation. In the case of a trust, such term means the settlor, the trustees, the protector (if any), the beneficiaries or class of beneficiaries, and any other natural person exercising ultimate effective control over the trust, and in the case of a legal arrangement other than a trust, such term means persons in equivalent or similar positions. The term "Controlling Person" must be interpreted in a manner consistent with the Financial Action Task Force Recommendations. Where no natural person or persons is or are identified as exercising control of the entity through ownership interests, the controlling person of the entity is deemed to be the natural person who holds the position of senior managing official.</p>
+<p>"<strong>CRS</strong>" means the Standard for Automatic Exchange of Financial Account Information in Tax Matters, developed by the Organisation for Economic Co-operation and Development and any associated similar or analogous legislation, treaty, regulation, instruction or other official guidance of any Authority in any jurisdiction.</p>
+<p>"<strong>Customer</strong>"&nbsp;means the Person who has a relationship with OCBC Bank in connection with the Services, whether alone or jointly with any other Person and, in the case of a corporation, shall include its successors and in the case of a partnership or other unincorporated entity consisting of two or more Persons, its successors, executors and personal representatives.</p>
+<p>"<strong>OCBC Bank</strong>" means Oversea-Chinese Banking Corporation Limited and shall include its successors and assigns.</p>
+<p>"<strong>Person</strong>" means an individual, corporation, company, partnership, joint venture, trust, estate, limited liability company, unincorporated organisation or other entity.</p>
+<p>"<strong>Personal Information</strong>" in respect of a Customer and any Controlling Person, means: (i) where the Customer and any Controlling Person is an individual, his/her full name, date and place of birth, residential address, mailing address, hold mail instruction or in-care-of address, contact information (including telephone number), and any taxpayer identification number (or functional equivalent), (if applicable) social security number, citizenship(s), standing instructions to transfer funds to an account, power of attorney or signatory authority granted to any person, residency(ies) and tax residency(ies) or (if applicable) such other information as OCBC Bank may reasonably require regarding such Customer and any Controlling Person; (ii) where the Customer and any Controlling Person is a corporate/entity, its full name, date and place of incorporation or formation, address, registered address, address of place of business, tax identification number (or functional equivalent), , tax status, tax residency, financial statements, registered address, address of place of business, certification of its CRS status/classification, whether it is a passive NFE (as that term is defined by Applicable Laws and Regulations) with one or more Controlling Persons, or (if applicable) such other information as OCBC Bank may reasonably require regarding each of its substantial shareholders and controlling persons.</p>
+<p>"<strong>Services</strong>", in relation to a Customer, means, without limitation, (i) the opening, maintaining and closing of bank accounts; (ii) the issuing, maintaining, administering and terminating of insurance policies; (iii) the provision of any banking or financial services and products (including without limitation, private banking services, credit facilities, credit card services, loans, brokerage, investment banking services, corporate finance services, provision of mezzanine capital, capital market services, services in respect of treasury products and financial derivatives transactions); (iv) relationship maintenance between OCBC Bank and the Customer (including without limitation marketing and promoting banking or financial services or products); and (v) any other acts or materials of OCBC Bank ancillary to, in furtherance of or in connection with any of the (i) to (iv) above (including without limitation research and analysis).</p>
+<p>"<strong>Tax Information</strong>" in respect of a Customer and any Controlling Person, means: (i) any documentation or information (and accompanying statements, forms, representations, waivers and consents as OCBC Bank may from time to time require or as the Customer and any Controlling Person from time to time give) relating, directly or indirectly, to the tax status of the Customer and any Controlling Person; (ii) Personal Information of the Customer and any Controlling Person; (iii) Account Information; and (iv) any other information received by OCBC Bank in relation to the Customer, including (but not limited to) information collected and maintained pursuant to AML/KYC procedures.</p>
+<p><strong>2. Tax Compliance Provisions</strong></p>
+<p><strong>2.1 Provision of Information</strong></p>
+<ol class="list-alpha-lower">
+<li>The Customer must provide OCBC Bank with the Customer's Personal Information, and where reasonably required by OCBC Bank, the Personal Information of any Controlling Person, in such form and within such time, as OCBC Bank may from time to time require.</li>
+<li>When there is a change or addition to the Personal Information of the Customer and (where applicable) any Controlling Person, the Customer must update OCBC Bank promptly (and in any event no later than 30 days from the date of the change or addition) of the change or addition if the Customer has not done so already.</li>
+<li>The Customer must, and, where applicable, procure such Controlling Person to, complete and sign such documents and do such things as OCBC Bank may reasonably require from time to time for purposes of OCBC Bank's compliance with Applicable Laws and Regulations.</li>
+<li>The Customer agrees that OCBC Bank may directly require any Controlling Person to provide or confirm the accuracy of their Personal Information without involving the Customer if OCBC Bank reasonably considers it appropriate.</li>
+</ol>
+<p><strong>2.2 Disclosure of Information</strong></p>
+<ol class="list-alpha-lower">
+<li>The Customer agrees that OCBC Bank may disclose the Customer's Tax Information and the Tax Information of any Controlling Person to any Authority in any jurisdiction for the purpose of ensuring OCBC Bank's compliance with Applicable Laws and Regulations.</li>
+<li>The Customer waives, and, where reasonably required by OCBC Bank, agrees to procure any Controlling Person to waive, any applicable restrictions that would otherwise hinder OCBC Bank's ability to disclose Tax Information to comply with Applicable Laws and Regulations, and in particular, to disclose Tax Information in the manner described in 2.2a.</li>
+<li>The Customer agrees that OCBC Bank may directly require any Controlling Person to agree to the disclosure described in 2.2a and/or waive any otherwise applicable restrictions on such disclosure, if OCBC Bank reasonably considers it appropriate.</li>
+</ol>
+<p><strong>2.3 Failure to Provide Information</strong></p>
+<p>The Customer agrees that:</p>
+<ol class="list-alpha-lower">
+<li>where the Customer fails to comply with its obligations under 2.1 or 2.2 above; or</li>
+<li>where any Controlling Person fails to comply with OCBC Bank's requirements set out in 2.1 or 2.2 above; or</li>
+<li>where the Personal Information (regardless of whether such Personal Information is in relation to the Customer or any Controlling Person) is inaccurate, incomplete, misleading or is not promptly updated; or</li>
+<li>for whatever reason OCBC Bank is prevented (under Singapore law or otherwise) from disclosing the Tax Information of the Customer and/or any Controlling Person(s) to the relevant Authority as may be required by Applicable Laws and Regulations,</li>
+</ol>
+<p>OCBC Bank may take one or more of the following actions at any time as may be required by OCBC Bank to ensure its compliance with Applicable Laws and Regulations:</p>
+<ol class="list-decimal">
+<li>refuse to provide new Services to the Customer;</li>
+<li>terminate the Customer's account(s) with OCBC Bank;</li>
+<li>discontinue entirely or in part OCBC Bank's relationship with the Customer;</li>
+<li>provide (whether before or after taking actions as described in items 2 and 3 of this section) the Tax Information relating to the Customer and/or any Controlling Person to an Authority in any jurisdiction.</li>
+</ol>
+<p><strong>3. Customer Confirmations</strong></p>
+<p>By using or accepting the Services, the Customer confirms and agrees that:</p>
+<ol class="list-alpha-lower">
+<li>without prejudice to the applicable terms and conditions governing the relationship between OCBC Bank and the Customer, the Customer confirms that the Customer has read this CRS Policy, has received adequate explanation, and understands the implications of this CRS Policy by which the Customer irrevocably agrees to be bound;</li>
+<li>any agreement, waiver, representation and/or confirmation given in, or to be given pursuant to, this CRS Policy is irrevocable;</li>
+<li>OCBC Bank is not liable for any costs or loss that the Customer (or any Controlling Person) may incur because of OCBC Bank taking any actions permitted by or exercising any powers under this CRS Policy;</li>
+<li>any withdrawal or payment amount made by OCBC Bank pursuant to any Services shall be subject to this CRS Policy;</li>
+<li>the Customer must obtain or, as the case may be, have obtained the requisite consent from each Controlling Person for the provision of his or her Tax Information to OCBC Bank and the disclosure of any of such Tax Information by OCBC Bank under this CRS Policy and the Customer must inform each Controlling Person of OCBC Bank's powers under this CRS Policy;</li>
+<li>this CRS Policy is without prejudice, and in addition, to OCBC Bank's rights or powers under the terms and conditions governing the relationship between the Customer and OCBC Bank.</li>
+</ol>
+<p><strong>4. General</strong></p>
+<ol class="list-alpha-lower">
+<li>In the event of any conflict or inconsistency between any of the contents of this CRS Policy and other terms and conditions that govern the Customer relationship with OCBC Bank, this CRS Policy shall prevail.</li>
+<li>Notwithstanding any other terms and conditions that govern the Customer's relationship with OCBC Bank (including but not limited to amendments or modification provisions of such terms and conditions), OCBC Bank may amend, update, and revise this CRS Policy unilaterally at any time as may be required by OCBC Bank to ensure its compliance with Applicable Laws and Regulations.</li>
+<li>If all or any part of this CRS Policy is illegal, invalid or unenforceable in any respect under the law of any jurisdiction, that shall not affect or impair the legality, validity or enforceability of such provision in any other jurisdictions or the remainder of this CRS Policy in that jurisdiction.</li>
+<li>It is the Customer's and each Controlling Person's responsibility to obtain independent professional advice from adequately qualified legal or tax advisors on its obligations under and the consequences of this CRS Policy. OCBC Bank do not provide tax or legal advice and are unable to advise Customers and/or Controlling Persons regarding the US federal income tax or other tax consequences that may be applicable to them in the Customer's (or the relevant Controlling Person's) particular circumstances.</li>
+</ol></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  
+	
+	  $('.leftnav-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.policies-component').parent().wrapAll('<div id="left-nav-content"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+   <div class="iw_component" id="iw_comp1601463609293">
+    <style>#iw_comp1583140136110{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-6 col-xl-6">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>OCBC Group</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/group-home.html">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbcnisp.com/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label><hr>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-6">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="w-100">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                 <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                 <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                          <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                          <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Contact Us</span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                 <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Contact Us</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                          <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-none d-sm-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/OCBCBank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/group/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/group/policies" class="" target="_self">Policies</a></span><span><a href="/group/notices" class="" target="_self">Notices</a></span><span><a href="/group/fair-dealing" class="" target="_self">Fair Dealing</a></span><span><a href="/group/security" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – 2023 – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container">You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/group/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/group/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none"></div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/gbc/js/management-team.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/ospl/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/gbc/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/analytic.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

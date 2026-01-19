@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><script>
+      dataLayer = [];
+    </script>
+    <!-- load Google Analytics -->
+    <script>
+      window['GoogleAnalyticsObject'] = 'ga';
+      window['ga'] = window['ga'] || function() {
+                (window['ga'].q = window['ga'].q || []).push(arguments)
+              };
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- (START) Adobe Analytics - Header -->
+    <script src="//assets.adobedtm.com/f8f9776f70c5/929d6c7fc7b8/launch-4fb16aaa7062.min.js" async></script>
+    <!-- (END) Adobe Analytics - Header --><!--ls:end[analytics-head]-->
+      <title>OCBC Premier Private Client Insights | OCBC Bank</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/premier-private-client/page/insights/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/premier-private-client/insights/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/jquery-3.3.1.min.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/appendLS.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/eform/jquery-3.3.1.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/appendLS.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/fonts.css?v=2019022810' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/styles_ppc.css?v=2020041002' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/global-account.css?v=2019072403' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/jquery.tosrus.all.css?v=2019022810' media='all' />
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery-1.7.1.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/hammer.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.tosrus.all.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.inview.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.fancybox.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/main_latest.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/custom.js?v=2019101101'></script>
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/styles-all-sites.css?v=2020020403' media='all' />
+<script src='/iwov-resources/sg/ocbc/premier/js/secondary.js?v=20190506'></script>
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pbinsights.css?v=2019120801' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/insights-custom.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pb/pb-popup.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/insights-podcast.css' media='all' />
+<link rel='canonical' href='https://www.ocbc.com/personal-banking/premier-private-client/insights.page'/>
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZTQ6GN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_8G2XCgS5PomuGYC","https://zn8g2xcgs5pomugyc-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_8G2XCgS5PomuGYC")).start()}catch(i){}})();
+</script><div id='ZN_8G2XCgS5PomuGYC'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjmqva6zc">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zd">
+  <div class="iw_columns col-lg-12" id="coljmqva6ze">
+   <div class="iw_component" id="iw_comp1538432993495">
+    <!--ls:begin[component-1538432993495]--><style>#iw_comp1538432993495{}</style><div class="header-top">
+   <div class="contain"><a href="https://www.ocbc.com/group/group-home.html" target="_blank"><img class="logo align-left" src="/iwov-resources/sg/ocbc/premier/images/logo.png"></a><div class="navi-top align-right desktop-only">
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://internet.ocbc.com/internet-banking">Online Banking</a></div>
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/home.page">Personal Banking</a></div>
+         <div class="ocbc-navi-item">
+            <div class="languages"><a class="langUrl" href="/premier-private-client/insights.page">EN</a><a class="langUrl" href="/premier-private-client/id/insights.page">ID</a><a class="langUrl" href="/premier-private-client/zh/insights.page">中文</a></div>
+         </div>
+      </div>
+      <div class="icon-menu mobile-only"><img src="/iwov-resources/sg/ocbc/premier/images/icon-menu.png"></div>
+      <div class="clear"></div>
+   </div>
+</div><input class="bodyClass" type="hidden" value="container page-ppc page-insights page-ppc-en page-hidecategory"><!--ls:end[component-1538432993495]-->
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zg">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zh">
+  <div class="iw_columns col-lg-12" id="coljmqva6zi">
+   <div class="iw_component" id="iw_comp1538432993499">
+    <style>#iw_comp1538432993499{}</style><div class="header-navi">
+   <div class="contain">
+      <div class="header-navi-left align-left"><a class="ppc-navi" href="./"><img width="250" src="/iwov-resources/sg/ocbc/premier/images/private/ppc-logo.png"></a></div>
+      <div class="header-navi-right align-right">
+         <div class="navi-navi">
+            <div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/index.page" class="navi-home">Home</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/privileges.page" class="navi-privileges">Privileges</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/solutions.page" class="navi-solutions">Solutions</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/services.page" class="navi-services">Services</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/insights.page" class="navi-insights">Insights</a></div>
+            </div>
+            <div class="mobile-only menu-divider"></div>
+            <div class="navi-ocbc-navi mobile-only"></div>
+         </div>
+      </div>
+      <div class="clear"></div>
+   </div>
+</div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zk">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zl">
+  <div class="iw_columns col-lg-12" id="coljmqva6zm">
+   <div class="iw_placeholder" id="iw_placeholder1538432993503">
+    <div class="iw_component" id="iw_comp1539315070852">
+     <style>#iw_comp1539315070852{}</style><div>
+   <div style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/PPC-insights-desktop.jpg');" class="section section-1 bg-img" desktop-image="/iwov-resources/sg/ocbc/premier/images/private/PPC-insights-desktop.jpg" mobile-image="/iwov-resources/sg/ocbc/premier/images/private/PPC-insights-mobile.jpg">
+      <div class="mobile-only panel-mobile" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/PPC-insights-desktop.jpg');">
+         <h1 class="main-title">Latest insights and investment opportunities</h1>
+      </div>
+      <div class="contain">
+         <div class="restrict-355 inview fadeIn">
+            <h1 class="main-title desktop-only">Latest insights and investment opportunities</h1>
+            <div class="boxes-container"></div>
+         </div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionkee9gzy2">
+ <div class="row iw_row iw_stretch" id="rowkee9gzy3">
+  <div class="iw_columns col-lg-12" id="colkee9gzy4">
+   <div class="iw_placeholder" id="iw_placeholder1598620670713"></div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zo">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zp">
+  <div class="iw_columns col-lg-12" id="coljmqva6zq">
+   <div class="iw_placeholder" id="iw_placeholder1538432993507">
+    <div class="iw_component" id="iw_comp1542183100010">
+     <style>#iw_comp1542183100010{}</style><div>
+   <div class="section section-2">
+      <div class="contain">
+         <h1 class="main-title desktop-only">About OCBC Wealth Panel</h1>
+         <h2 class="main-title mobile-only">About OCBC Wealth Panel</h2>
+         <h5><h5>OCBC Wealth Panel draws on the collective expertise and experience of wealth management experts from OCBC Group, namely OCBC Bank, OCBC Investment Research, Lion Global Investors, and Bank of Singapore. With over 200 years of investment experience, the panel provides timely advisory services to grow, manage, and protect your wealth.</h5>
+<p><a class="underline-link" href="/sites/premier-private-client/services.page">Meet the panel</a></p>
+<h4 class="pt1">Important Notice</h4>
+<p>Our last Weekly Investment Ideas of the year would be on 22nd December. We will be taking a break for the holidays, and we will be back with the next edition of our Weekly Investment Ideas on 12 January 2026. At the close of another year, we remain grateful for your continued support. A Merry Christmas and Happy New Year to you and your loved ones.</p></h5>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionkee9gzxy">
+ <div class="row iw_row iw_stretch" id="rowkee9gzxz">
+  <div class="iw_columns col-lg-12" id="colkee9gzy0">
+   <div class="iw_placeholder" id="iw_placeholder1598620670709">
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zs">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zt">
+  <div class="iw_columns col-lg-12" id="coljmqva6zu">
+   <div class="iw_placeholder" id="iw_placeholder1538432993511">
+    <div class="iw_component" id="iw_comp1539315070854">
+     <style>#iw_comp1539315070854{}</style><div class="section section-3">
+   <div class="contain">
+      <h2>Latest market insights</h2>
+      <div class="l-market">
+         <div class="l-market-part inview no-padding fadeIn">
+            <div class="l-market-header">
+               <div class="l-market-left">
+                  <h4 class="bold italic">This Month’s Outlook</h4>
+                  <h5 class="regular italic" id="__date_month">December 2025</h5>
+               </div>
+               <div class="l-market-right">
+                  <div class="l-market-divider"></div>
+               </div>
+               <div class="clear"></div>
+            </div>
+            <div class="l-market-content">
+               <div class="l-market-item">
+                  <div class="l-market-left">
+                     <h4 class="bold italic">Wealth Insights</h4>
+                  </div>
+                  <div class="l-market-right">
+                     <div class="l-market-expandable"><input type="hidden" value="/premier-private-client/insights-detail.pagelanguage=en&amp;site=premier-private-client&amp;fUrl=wealth-insights"><a target="_blank" href="insights/wealth-insights">
+                           <div class="l-market-expandable-header">
+                              <h3 id="__content_wealth_insights">Positive on Singapore equities for 2026</h3>
+                              <div class="l-market-expandable-arrow"><img class="arrow-right-dark" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-dark.png"><img class="arrow-right-gold" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-ppc-gold.png"></div>
+                           </div></a></div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+               <div class="l-market-item">
+                  <div class="l-market-left">
+                     <h4 class="bold italic">Global Outlook</h4>
+                  </div>
+                  <div class="l-market-right">
+                     <div class="l-market-expandable"><a href="insights/global-outlook" target="_blank">
+                           <div class="l-market-expandable-header">
+                              <h3 id="__content_global_outlook">Stable economic outlook for 2026</h3>
+                              <div class="l-market-expandable-arrow"><img class="arrow-right-dark" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-dark.png"><img class="arrow-right-gold" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-ppc-gold.png"></div>
+                           </div></a></div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+               <div class="l-market-item">
+                  <div class="l-market-left">
+                     <h4 class="bold italic">Equities</h4>
+                  </div>
+                  <div class="l-market-right">
+                     <div class="l-market-expandable"><a href="insights/equities" target="_blank">
+                           <div class="l-market-expandable-header">
+                              <h3 id="__content_equities">Positive on equities in 2026</h3>
+                              <div class="l-market-expandable-arrow"><img class="arrow-right-dark" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-dark.png"><img class="arrow-right-gold" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-ppc-gold.png"></div>
+                           </div></a></div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+               <div class="l-market-item">
+                  <div class="l-market-left">
+                     <h4 class="bold italic">Bonds</h4>
+                  </div>
+                  <div class="l-market-right">
+                     <div class="l-market-expandable"><a href="insights/bonds" target="_blank">
+                           <div class="l-market-expandable-header">
+                              <h3 id="__content_bonds">Favour a quality bias in 2026</h3>
+                              <div class="l-market-expandable-arrow"><img class="arrow-right-dark" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-dark.png"><img class="arrow-right-gold" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-ppc-gold.png"></div>
+                           </div></a></div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+               <div class="l-market-item">
+                  <div class="l-market-left">
+                     <h4 class="bold italic">FX &amp; Commodities</h4>
+                  </div>
+                  <div class="l-market-right">
+                     <div class="l-market-expandable"><a href="insights/fx" target="_blank">
+                           <div class="l-market-expandable-header">
+                              <h3 id="__content_fx">Still medium-term positive on gold</h3>
+                              <div class="l-market-expandable-arrow"><img class="arrow-right-dark" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-dark.png"><img class="arrow-right-gold" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-ppc-gold.png"></div>
+                           </div></a></div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <h2>Investment opportunities</h2>
+      <div class="l-market">
+         <div class="l-market-part no-padding inview fadeIn">
+            <div class="l-market-header">
+               <div class="l-market-left">
+                  <h4 class="bold italic">Top Investment Ideas</h4>
+                  <h5 class="regular italic" id="__date_idea">December 2025</h5>
+               </div>
+               <div class="l-market-right">
+                  <div class="l-market-divider"></div>
+               </div>
+               <div class="clear"></div>
+            </div>
+            <div class="l-market-content">
+               <div class="l-market-item">
+                  <div class="l-market-left">
+                     <h4 class="bold italic">Monthly</h4>
+                  </div>
+                  <div class="l-market-right">
+                     <div class="l-market-expandable"><a href="insights/investment-idea" target="_blank">
+                           <div class="l-market-expandable-header">
+                              <h3 id="__content_monthly_idea">Constructive on risk assets in 2026</h3>
+                              <div class="l-market-expandable-arrow"><img class="arrow-right-dark" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-dark.png"><img class="arrow-right-gold" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-ppc-gold.png"></div>
+                           </div></a></div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+               <div class="l-market-item">
+                  <div class="l-market-left">
+                     <h4 class="bold italic">Quarterly</h4>
+                  </div>
+                  <div class="l-market-right">
+                     <div class="l-market-expandable"><a href="insights/top-fund" target="_blank">
+                           <div class="l-market-expandable-header">
+                              <h3>Top Fund Ideas For 2Q2025</h3>
+                              <div class="l-market-expandable-arrow"><img class="arrow-right-dark" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-dark.png"><img class="arrow-right-gold" src="/iwov-resources/sg/ocbc/premier/images/arrow-right-ppc-gold.png"></div>
+                           </div></a></div>
+                  </div>
+                  <div class="clear"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zw">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zx">
+  <div class="iw_columns col-lg-12" id="coljmqva6zy">
+   <div class="iw_placeholder" id="iw_placeholder1538432993515">
+    <div class="iw_component" id="iw_comp1589847527589">
+     <style>#iw_comp1589847527589{}</style><div><!-- Start PPC Video List -->
+<div class="contain" id="video-section" style="margin-bottom: -50px;">
+<h2>OCBC Insights videos</h2>
+<div class="l-market vid-wrap" style="margin: 0px -15px;">
+<div class="vid-list"><a data-fancybox="popup-video31jan25" data-src="#popup-video31jan25" href="javascript:;">
+<div class="vid-thumb"><img class="card-img-top img-fluid" src="/iwov-resources/sg/ocbc/premier/images/new-beginnings.jpg" /> <img src="/iwov-resources/sg/ocbc/premier/images/play-btn.png" class="play-btn" /></div>
+</a>
+<h3>New beginnings from a new vantage</h3>
+<a data-fancybox="popup-video31jan25" data-src="#popup-video31jan25" href="javascript:;"> <br /><span style="font-size: 14px; color: #36322a;">15 January 2025</span> </a>
+<p>2024 was a year of transition, with central banks and policymakers charting new directions amid significant political changes worldwide, culminating in the U.S. elections in November. Looking ahead to 2025 and beyond, pivotal shifts are expected to reshape the global economic, political, and financial landscape over the next four years, unleashing several Supertrends that will present both challenges and opportunities.</p>
+<a data-fancybox="popup-video31jan25" data-src="#popup-video31jan25" href="javascript:;">
+<div id="popup-video31jan25" class="vid-pop"><iframe width="100%" height="315" src="https://www.youtube.com/embed/J1n7WaIvsus?si=_NhCwEWqxe2VuYA8" frameborder="0"></iframe><br />
+<h3>New beginnings from a new vantage</h3>
+<p>2024 was a year of transition, with central banks and policymakers charting new directions amid significant political changes worldwide, culminating in the U.S. elections in November. Looking ahead to 2025 and beyond, pivotal shifts are expected to reshape the global economic, political, and financial landscape over the next four years, unleashing several Supertrends that will present both challenges and opportunities.</p>
+</div>
+</a></div>
+<div class="vid-list"><a data-fancybox="popup-video12aug24" data-src="#popup-video12aug24" href="javascript:;">
+<div class="vid-thumb"><img class="card-img-top img-fluid" src="/iwov-resources/sg/ocbc/premier/images/steering-thru.jpg" /> <img src="/iwov-resources/sg/ocbc/premier/images/play-btn.png" class="play-btn" /></div>
+</a>
+<h3>Steering through Global Complexities</h3>
+<a data-fancybox="popup-video12aug24" data-src="#popup-video12aug24" href="javascript:;"> <br /><span style="font-size: 14px; color: #36322a;">16 July 2024</span> </a>
+<p>Investors are facing several economic and geopolitical complexities that are posing challenges as they seek opportunities to growth their wealth. These include divergent economic performances and policies among the major economies, and geopolitical challenges posed by conflicts in many parts of the world, brought on by significant changes in the global political landscape over the past few years. How can investors navigate an increasingly complex world, filled with new and fast changing realities? What are some strategies and opportunities to keep in mind to grow and protect portfolios.</p>
+<a data-fancybox="popup-video12aug24" data-src="#popup-video12aug24" href="javascript:;">
+<div id="popup-video12aug24" class="vid-pop"><iframe width="100%" height="315" src="https://www.youtube.com/embed/NSRhIgmGv0c" frameborder="0"></iframe><br />
+<h3>Steering through Global Complexities</h3>
+<p>Investors are facing several economic and geopolitical complexities that are posing challenges as they seek opportunities to growth their wealth. These include divergent economic performances and policies among the major economies, and geopolitical challenges posed by conflicts in many parts of the world, brought on by significant changes in the global political landscape over the past few years. How can investors navigate an increasingly complex world, filled with new and fast changing realities? What are some strategies and opportunities to keep in mind to grow and protect portfolios.</p>
+</div>
+</a></div>
+<div class="vid-list"><a data-fancybox="popup-video30jan24" data-src="#popup-video30jan24" href="javascript:;" onclick="s_objectID='javascript-';">
+<div class="vid-thumb"><img class="card-img-top img-fluid" src="/iwov-resources/sg/ocbc/premier/images/16jan24_webinar_thumbnail.jpg" /> <img src="/iwov-resources/sg/ocbc/premier/images/play-btn.png" class="play-btn" /></div>
+</a>
+<h3>2024: Is it time to be optimistic?</h3>
+<a data-fancybox="popup-video30jan24" data-src="#popup-video30jan24" href="javascript:;" onclick="s_objectID='javascript-';"><br /><span style="font-size: 14px; color: #36322a;">16 January 2024</span></a>
+<p>Several global economic and geopolitical uncertainties have caused a great deal of market volatility in 2023, but will the outlook improve in 2024? And are there good reasons for investors to be optimistic about the next 12 to 18 months? If so, what are some investment opportunities to keep in mind and the strategies to adopt?</p>
+<a data-fancybox="popup-video30jan24" data-src="#popup-video30jan24" href="javascript:;" onclick="s_objectID='javascript-';">
+<div id="popup-video30jan24" class="vid-pop"><iframe width="100%" height="315" src="https://www.youtube.com/embed/WDe5EerfZy4?si=SSUHhxh44rk4qtp5" frameborder="0" data-gtm-yt-inspected-4="true"></iframe><br />
+<h3>2024: Is it time to be optimistic?</h3>
+<p>Several global economic and geopolitical uncertainties have caused a great deal of market volatility in 2023, but will the outlook improve in 2024? And are there good reasons for investors to be optimistic about the next 12 to 18 months? If so, what are some investment opportunities to keep in mind and the strategies to adopt?</p>
+</div>
+</a></div>
+<div class="vid-list"><a data-fancybox="popup-video31jul23" data-src="#popup-video31jul23" href="javascript:;">
+<div class="vid-thumb"><img class="card-img-top img-fluid" src="/iwov-resources/sg/ocbc/premier/images/19jul23_pb_webinar_replay_thumbnail.jpg" /> <img src="/iwov-resources/sg/ocbc/premier/images/play-btn.png" class="play-btn" /></div>
+</a>
+<h3>Seek opportunities amid turbulent markets</h3>
+<a data-fancybox="popup-video31jul23" data-src="#popup-video31jul23" href="javascript:;"><br /><span style="font-size: 14px; color: #36322a;">19 July 2023</span></a>
+<p>The markets are expected to remain volatile for the next six months. While volatility can mean risk for some, it can also offer opportunities for investors who are prepared to look past short-term headwinds. So what is the best investment strategy to adopt? What are some opportunities to keep in mind?</p>
+<a data-fancybox="popup-video31jul23" data-src="#popup-video31jul23" href="javascript:;">
+<div id="popup-video31jul23" class="vid-pop"><iframe width="100%" height="315" src="https://www.youtube.com/embed/TY2qi0FEZkI" frameborder="0"></iframe><br />
+<h3>Seek opportunities amid turbulent markets</h3>
+<p>The markets are expected to remain volatile for the next six months. While volatility can mean risk for some, it can also offer opportunities for investors who are prepared to look past short-term headwinds. So what is the best investment strategy to adopt? What are some opportunities to keep in mind?</p>
+</div>
+</a></div>
+</div>
+</div>
+<!-- End PPC Video List --></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionkee9gzy6">
+ <div class="row iw_row iw_stretch" id="rowkee9gzy7">
+  <div class="iw_columns col-lg-12" id="colkee9gzy8">
+   <div class="iw_placeholder" id="iw_placeholder1598620670717"></div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva700">
+ <div class="row iw_row iw_stretch" id="rowjmqva701">
+  <div class="iw_columns col-lg-12" id="coljmqva702">
+   <div class="iw_placeholder" id="iw_placeholder1538432993519">
+    <div class="iw_component" id="iw_comp1550045429947">
+     <style>#iw_comp1550045429947{}</style><div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva704">
+ <div class="row iw_row iw_stretch" id="rowjmqva705">
+  <div class="iw_columns col-lg-12" id="coljmqva706">
+   <div class="iw_placeholder" id="iw_placeholder1538432993523">
+    <div class="iw_component" id="iw_comp1542183100017">
+     <style>#iw_comp1542183100017{}</style><div class="section section-5">
+   <div class="contain">
+      <h1 class="main-title desktop-only">Get in touch</h1>
+      <h2 class="main-title mobile-only">Get in touch</h2>
+      <div class="items">
+         <div class="item-33">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/user-icon.png"></div><a target="_blank" href="https://www.ocbc.com/personal-banking/premier-private-client/index.page#get-us-to-contact-you"><button class="btn btn-dark">Have us contact you</button></a></div>
+         <div class="item-33">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/call-icon.png"></div>
+            <div class="ctas-text">
+               <div class="item-text-small regular item-text"><div class="ctas-text">
+<div class="item-text regular"><!-- <a href="tel:18007736437">1800 773 6437<br> (1800 PREMIER) </a> --> <a href="tel:18004248888">1800 424 8888</a></div>
+<div class="item-text-small regular">or <a href="tel:6564248888">(65) 6424 8888 (overseas)</a></div>
+</div></div>
+            </div>
+         </div>
+         <div class="item-33">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/centre-icon.png"></div><a target="_blank" href="/sites/premier-banking/locations.page"><button class="btn btn-dark">Find a Premier Banking Centre</button></a></div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva708">
+ <div class="row iw_row iw_stretch" id="rowjmqva709">
+  <div class="iw_columns col-lg-12" id="coljmqva70a">
+   <div class="iw_component" id="iw_comp1538432993527">
+    <style>#iw_comp1538432993527{}</style><div>
+   <div style="display: none;"></div>
+   <div class="footer" id="footer">
+      <div class="footer-bottom" style="background-image: url('/iwov-resources/images/footer_bg.jpg')">
+         <div class="contain">
+            <div class="footer-bottom-item footer-links"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/conditions-of-access.page">Conditions of Access</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/policies.page">Policies</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/notices.page">Notices</a></div>
+            <div class="footer-bottom-item footer-icons"><a class="footer-icon" href="https://www.facebook.com/OCBC.Singapore/?brand_redir=294095104090945"><img src="/iwov-resources/sg/ocbc/premier/images/icon-facebook.png"></a><a class="footer-icon" href="https://twitter.com/ocbcbank"><img src="/iwov-resources/sg/ocbc/premier/images/icon-twitter.png"></a><a class="footer-icon" href="https://www.youtube.com/user/channelocbc"><img src="/iwov-resources/sg/ocbc/premier/images/icon-youtube.png"></a><a class="footer-icon" href="https://www.linkedin.com/company-beta/165277/"><img src="/iwov-resources/sg/ocbc/premier/images/linkedin.jpg"></a><a class="footer-icon fancybox-modal" href="#popup-wechat-qrcode"><img alt="WeChat" border="0" height="15" src="/iwov-resources/sg/ocbc/premier/images/icon-wechat.png" width="15"></a></div>
+            <div class="footer-bottom-item copyright"><span>©️ Copyright 2004 – <span id="copyright-year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W</span></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none;">
+   <div id="popup-wechat-qrcode" class="popup-content popup-small">
+      <div><img src="/iwov-resources/sg/ocbc/premier/images/qr_code_wechat.jpg" width="250" alt="250" style="width:100%; max-width:360px; height:auto;"></div>
+      <h4 class="main-title">WeChat ID: ocbcpremierbanking</h4>
+   </div>
+</div><script>
+$('.section.section-2').attr('style','height:auto;');
+</script>
+<script>
+$(window).on('load', function(){
+$('#latest-insights-and-investment-opportunities .mobile-only.panel-mobile').css('background-image','none');
+});
+</script>
+<!-- Google Tag Manager (noscript) --><noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ" height="0" width="0" style="display:none;visibility:hidden"></iframe> 
+</noscript><!-- End Google Tag Manager (noscript) --> <!-- (START) Data Layer - Adobe Analytics -->
+<script type="text/javascript">// <![CDATA[
+var digitalData = {
+    page:
+    {
+    pageName:"SG:OCBC:Premier:PremierPrivateClient:Insights",
+    channel: "Premier",
+    }
+    }
+// ]]></script>
+<!-- (END) Data Layer - Adobe Analytics --> <!-- (START) Adobe Analytics - Footer -->
+<script type="text/javascript">// <![CDATA[
+_satellite.pageBottom();
+// ]]></script>
+<!-- (END) Adobe Analytics - Footer -->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/premier/js/insight_date.js?v=20200312'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/trackingtag.js?v=2019061701'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/ppc-popupfix.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/ppc-insights.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/forcepopup.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/notification.js?v=2020050401'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/anchorlink.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/insights-custom.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>
