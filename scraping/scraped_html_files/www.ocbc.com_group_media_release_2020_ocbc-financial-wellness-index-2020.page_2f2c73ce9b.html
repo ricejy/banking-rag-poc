@@ -1,0 +1,1119 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMNVMPK');</script>
+<!-- End Google Tag Manager -->
+<script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+
+<style>
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: none;
+}
+
+@media (min-width: 768px){
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: block;
+ min-width: 168px;
+}
+
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 span {
+ display: none;
+}
+}
+
+/* investors/contact-us.page */
+#section-investor-form .com__silveryear__form-background  {
+  background: #366492;
+  background: -webkit-gradient(linear, left top, right top, from(#366492), to(#61a7db));
+  background: -o-linear-gradient(left, #366492, #61a7db 100%);
+  background: linear-gradient(to right, #366492, #61a7db 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#366492', endColorstr='#61a7db', GradientType=0 );
+  /* IE6-9 */
+}
+</style><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>ocbc-financial-wellness-index-2020</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/group/page/media/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/group/media/release/2020/ocbc-financial-wellness-index-2020/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/ospl/css/style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMNVMPK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDKWB3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:ocbc group:media:release:2020:ocbc financial wellness index 2020",
+            language: "en",
+            pageCategory: "pre-login media page",
+            bannerName: "",
+            channel: "media",
+            country: "sg",
+            lob: "ocbc group"
+        },
+        user: {
+            CIF: ""
+        },
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+    </script>
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async=""></script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1sumfzn">
+ <div class="row iw_row iw_stretch" id="rowk1sumfzo">
+  <div class="iw_columns col-lg-12" id="colk1sumfzp">
+   <div class="iw_component" id="iw_comp1571204552818">
+    <style>#iw_comp1571204552818{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Image"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#about-us" class="header__navi">About Us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/group/media/release/index" class="header__navi" target="_self">Media</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investors" class="header__navi">Investors</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#sustainability" class="header__navi">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="https://www.ocbc.com/group/careers/index.page" class="header__navi" target="_self">Careers</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#research" class="header__navi">Research</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in </p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="https://www.ocbc.com" data-target="_self">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/personal-banking" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.iocbc.com" data-target="_blank">OCBC Securities</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul></ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="about-us" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">About Us</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/group-business" class="link link link-arrow-right" target="_self">Group <span class="text-nowrap">Business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/corporate-strategy" class="link link link-arrow-right" target="_self">Corporate <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/our-leadership" class="link link link-arrow-right" target="_self">Our <span class="text-nowrap">Leadership<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/purpose-values-and-ambition" class="link link link-arrow-right" target="_self">Purpose and <span class="text-nowrap">Values<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/awards" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Awards<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/group/about-us/group-business" class="button button--secondary button--link" target="_self"><span>View all</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investors" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investors</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/financials" class="link link link-arrow-right" target="_self">Financial <span class="text-nowrap">results<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/annual-report-and-agm" class="link link link-arrow-right" target="_self">Annual Report and <span class="text-nowrap">AGM<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/investor-information" class="link link link-arrow-right" target="_self">Investor <span class="text-nowrap">information<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/regulatory-disclosure" class="link link link-arrow-right" target="_self">Regulatory <span class="text-nowrap">disclosures<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/contact-us" class="link link link-arrow-right" target="_self">Contact <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="#" class="" target="_self"><span></span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="sustainability" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Sustainability</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/index.page" class="link link link-arrow-right" target="_self">Sustainability <span class="text-nowrap">approach<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/net-zero-future.page" class="link link link-arrow-right" target="_self">Net-zero <span class="text-nowrap">future<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/community-impact.page" class="link link link-arrow-right" target="_self">Community <span class="text-nowrap">impact<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/one-group.page" class="link link link-arrow-right" target="_self">One <span class="text-nowrap">Group<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/responsible-business.page" class="link link link-arrow-right" target="_self">Responsible <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/disclosures-and-resources.page" class="link link link-arrow-right" target="_self">Disclosures and <span class="text-nowrap">resources<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="research" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Research</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"> Treasury reports</div>
+                                    <div class="name"><a href="/group/research/index" class="link link link-arrow-right" target="_self">Recent <span class="text-nowrap">updates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter" class="link link link-arrow-right" target="_self">Macro <span class="text-nowrap">outlook<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=fxandrates" class="link link link-arrow-right" target="_self">FX and <span class="text-nowrap">rates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=special" class="link link link-arrow-right" target="_self">Special <span class="text-nowrap">reports<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment reports</div>
+                                    <div class="name"><a href="/group/research/investment-reports" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Company<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#sectorial" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Sectorial<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#equity" class="link link link-arrow-right" target="_self">Equity <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk72yzwhe">
+ <div class="row iw_row iw_stretch" id="rowk72yzwhf">
+  <div class="iw_columns col-lg-12" id="colk72yzwhg">
+   <div class="iw_component" id="iw_comp1582700472625">
+    <style>#iw_comp1582700472625{}</style><div class="module com__reading-parent">
+   <div class="com__reading-nav">
+      <div class="com__re-na-main">
+         <div class="container bp-width-med3">
+            <div class="d-flex fz-14">
+               <div class="nowrap mr-3">Now reading:</div>
+               <p><strong>OCBC Financial Wellness Index dips 2 points amidst Covid-19 pandemic; better savings
+                     habits buoy Index from a harder fall</strong></p>
+            </div>
+         </div>
+         <div class="com__reading-bar bar-bottom"></div>
+      </div>
+   </div>
+   <div class="bp-rel animate">
+      <div class="com__ar-title bp-ab bottom">
+         <div class="container bp-width-med3">
+            <div class="row">
+               <div class="col-sm-8 col-lg-6">
+                  <div class="com__ar-title-box">
+                     <h3><strong>OCBC Financial Wellness Index dips 2 points amidst Covid-19 pandemic; better savings
+                           habits buoy Index from a harder fall</strong></h3>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="com__ar-banner com__ar-without-banner d-none d-sm-block" style="background-color: #EBEFF1"></div>
+      <div class="com__ar-banner com__ar-without-banner d-block d-sm-none" style="background-color: #EBEFF1"></div>
+   </div>
+   <div class="container bp-width-med3 animate">
+      <div class="row">
+         <div class="col-lg-8">
+            <div class="com__ar-de-tags pt3 pb3 fz-14 d-block d-sm-flex align-items-center justify-content-between">
+               <ul>
+                  <li>23 Nov 2020</li>
+               </ul>
+            </div>
+            <div class="com__paragraph bp-img wide"><p>The OCBC Financial Wellness Index (&ldquo;the Index&rdquo;), which launched in 2019, has dipped to 61 this year, down from 63, with the unprecedented Covid-19 pandemic and resulting global economic slump causing a drag on Singaporeans&rsquo; financial wellness.</p>
+<p>Designed and formulated by OCBC Bank, the Index is based on 10 pillars of financial wellness<a href="#_ftn1" name="_ftnref1"><span>[1]</span></a> as defined by the Bank&rsquo;s wealth management experts. A total of 2,000 working adults in Singapore between the ages of 21 and 65 were surveyed online between 2 September and 3 October this year. To assess how each respondent fares on these 10 pillars, 24 indicators &ndash; standards and guidelines that are widely-accepted best practices in financial planning &ndash; are used to derive an individual score of a maximum of 100.</p>
+<p>The resulting scores from all 2,000 respondents are then averaged out to derive the Index.</p>
+<p><img src="/iwov-resources/sg/ocbc/gbc/img/media/Releases/2020/FWI1.JPG" alt="" width="935" height="416" /></p>
+<p><strong>Covid-19 dragged down financial wellness, but also emphasised the importance of savings and medical coverage</strong></p>
+<p>The financial strains caused by the pandemic were reflected in several of the Index&rsquo;s indicators. The loss of jobs and cut in salaries have hit Singaporeans hard, hampering their ability to pay off housing loans and monthly credit card bills. &nbsp;Regular passive income was adversely affected too with the weakening economy putting stress on Singaporeans&rsquo; top sources of passive income &ndash; share dividends, interest income and rental income. &nbsp;Unsurprisingly, fewer Singaporeans said that they can spend comfortably.</p>
+<p>With more pressing immediate financial worries at hand, Singaporeans had to put the longer-term financial goal of retirement on the backburner.</p>
+<p>It is against this backdrop that a larger proportion of respondents admitted to often borrowing money from friends and family to get by. And with the volatile stock market this year, more people entered the market and have been excessively speculating for quick gains. &nbsp;</p>
+<p>Yet, the tough economic conditions did little to deter Singaporeans from trying to keep up with the Joneses. More admitted to spending beyond their means to keep up with their peers when the pandemic has widened the gap between those who can and those who cannot.</p>
+<p>With the fear of further strain on personal finances and the uncertain future from the effects of Covid-19, &nbsp;Singaporeans are saving more; ensuring that they have enough emergency funds to weather any job loss; strengthening their ability to defray medical expenses; and ensuring that loved ones are well taken care of should they pass on. Improvements on these indicators buoyed the Index from slipping further.</p>
+<p><img src="/iwov-resources/sg/ocbc/gbc/img/media/Releases/2020/FWI2.JPG" alt="" /></p>
+<p><em>Click <a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/simplyspoton/fwi2020-report.pdf"> here </a> for more findings on the OCBC Financial Wellness Index 2020.</em></p>
+<p>OCBC Bank&rsquo;s Head of Group Brand and Communications, Ms Koh Ching Ching, said: &ldquo;Increasing affluence and the availability of more financial planning tools and products to investors do not necessarily translate to financial wellness. As a financial institution with a strong wealth management franchise, we hope that by creating a comprehensive Index, we can better understand where Singaporeans stand.</p>
+<p>&ldquo;We had hoped that the Index would improve from 2019 or remain the same, but the financial impact of Covid-19 on Singaporeans was undoubtedly reflected in the drop in the Index. In the face of the pandemic, Singaporeans are however also being prudent and saving regularly, while also putting aside adequate emergency funds that they can fall back on should they lose their jobs. If these habits stick and lessons are learned from the crisis, as Singapore and the region recovers from the pandemic, we expect to see a rise in the Index next year &ndash; perhaps even surpassing 2019&rsquo;s result.&rdquo;</p>
+<p><strong>Millennials are driven to start investing earlier because of their desire to achieve more faster</strong></p>
+<p>The younger generation of Singaporeans are the most worried about their finances. Compared to generations before them, Millennials have already started investing because of their strong desire to grow their wealth fast, even though many may not have proper expert knowledge on investing.</p>
+<p>Millennials&rsquo; top priority is to grow their wealth, yet 42% of them don&rsquo;t know the best way to do so. Instead, many turn to online sources to research about investments and also rely on friends and relatives for information. About 4 in 10 Millennials who invest admitted that they speculated excessively in the hope of making a quick buck. Interestingly, Millennials were also the group which were most reluctant to seek professional advice on investments &ndash; only 26% of them do so compared to 33% of Gen X and 37% of Baby Boomers.</p>
+<p>With their current situation still not stable, many Millennials are also not able to plan for their financial future. Only 57% of them have retirement plans compared to the national average of 63% and only 55% of them have planned for their loved ones&rsquo; finances to be taken care of after their death, compared to 67% of Singaporeans.</p>
+<p><em>Click <a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/simplyspoton/millennials-insights.pdf">here </a> for more details on Millennials.</em></p>
+<p></p>
+<p>&nbsp;<strong>Women see investing as gambling but those with confidence and knowledge invest better than men</strong></p>
+<p>Women are less likely than men to invest &ndash; 40% of women do not have any investments, compared to only 25% of men.</p>
+<p>This could be down to the fact that 38% of women think that investing is gambling, compared to 30% of men. Women also lack confidence in their financial knowledge and investing. But when women have the confidence, do proper research and seek advice from experts, their investments actually earn a slightly higher rate of return than men (4.5% a year compared to 4.3% for men).</p>
+<p>With more women entering the workforce and still continuing to shoulder the bulk of household and caregiving responsibilities, it is not surprising to find more husbands (52% of married couples with investments) taking the sole active role in investments versus wives (31% of married couples with investments). Only 17% of couples have both parties making investment decisions together. When this happens though, the investment returns were almost double that of couples with a single decision maker.</p>
+<p><em>Click <a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/simplyspoton/women-insights.pdf"> here </a> for more details on Women's financial habits.</em></p>
+<p>&nbsp;</p>
+<p><strong>Singaporeans underestimate the real amount needed for retirement by at least 30%</strong></p>
+<p>When asked how much they would need for retirement, based on their desired retirement age and lifestyle, the amount Singaporeans had in mind was insufficient &ndash; 4 in 5 underestimated how much they need by an average of 32% of the actual amount they needed.</p>
+<p>They did not know that a more basic retirement lifestyle would still require about $2,300 a month for an individual while the higher-end of lifestyle choices requires $5,200 a month in today&rsquo;s value.</p>
+<p>That is why, as many as 3 in 4 Singaporeans are falling behind in their retirement plans.</p>
+<p><img src="/iwov-resources/sg/ocbc/gbc/img/media/Releases/2020/FWI3.JPG" alt="" width="887" height="565" /></p>
+<p>Knowing how much is needed is crucial for retirement planning. Of those who underestimated this amount, 78% are falling behind in their retirement plans.</p>
+<p><em>Click <a href="https://www.ocbc.com/iwov-resources/sg/ocbc/gbc/pdf/simplyspoton/retirement-insights.pdf"> here </a>for more details on retirement planning.</em></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Helping Singaporeans plan better </strong></p>
+<p>Recognising that many Singaporeans lack clarity and knowledge in how to plan for the future, OCBC Bank enhanced <a href="https://www.ocbc.com/personal-banking/start-planning.page"> OCBC Life Goals </a>. The portal is a step-by-step guide which helps Singaporeans project what they will need for longer-terms goals like retirement&nbsp;and sending their children to university by factoring in their current income and expenses.</p>
+<p>OCBC Bank&rsquo;s Head of Wealth Management Singapore, Ms Tan Siew Lee, said: &ldquo;From the OCBC Financial Wellness Index 2019 and 2020, the message was clear &ndash; Singaporeans don&rsquo;t have a good understanding of their overall financial situation and of their projected financial needs when they retire. This is especially difficult when there are multiple goals in life, competing for one&rsquo;s financial attention. We thus decided to enhance OCBC Life goals to provide a more comprehensive and holistic take on financial planning. This resulted in a five-step process to plan for their long-term financial goals. We hope customers gain from the simple tips and short take-aways we provide in each of these steps.</p>
+<p>&ldquo;Another key insight of this year&rsquo;s Index is that women are not confident about investing because they think investing is gambling. One&rsquo;s first investment experience is typically the most important. A good experience is a form of validation and encouragement to do more. I&nbsp; hope that through&nbsp; the OCBC MasterClass for women conducted by me, Singapore women can learn important yet simple tips to get started. This is an important first step towards building women&rsquo;s confidence in investing.&rdquo;</p>
+<p><a href="#_ftnref1" name="_ftn1"><span>[1]</span></a> These 10 pillars are &ndash; Saving Habits, Protection from Financial Emergencies, Regular Investing, Retirement Planning, Regular Reviews, Gambling Habits, Excessive Speculation, Borrowing Money, Spending Beyond Means and Manageable Debt.</p></div>
+            <hr class="mt-5 mb-4">
+            <div class="com__ar-tags fz-16">
+               <ul>
+                  <li><a href="/group/media/release/index.page??category=ConsumerBanking">Consumer Banking</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="module mt5">
+      <section class="section bg-grey">
+         <div class="container bp-width-med3 animate suggested-content">
+            <div class="row suggested-content__title">
+               <div class="col-md-12 mb-2">
+                  <div class="subcategory subcategory--black mb-0">FOR THE PRESS</div>
+               </div>
+            </div>
+            <div class="row suggested-content__content-below suggested-content__content-media">
+               <div class="col-md-3">
+                  <h4><strong>Media Queries</strong></h4>
+               </div>
+               <div class="col-md-9">
+                  <div class="row">
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-5th suggested-content__media-item">
+                        <div class="suggested-content__media-queries">
+                           <p class="suggested-content__media-queries-text">Please contact:</p>
+                           <p class="suggested-content__media-queries-name"><strong>Liew Aiqing</strong></p>
+                           <p class="suggested-content__media-queries-email"><a href="mailto:corpcomms@ocbc.com">corpcomms@ocbc.com</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+</div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmz4">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmz5">
+  <div class="iw_columns col-lg-12" id="colk1q5mmz6"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1571041639119"></div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmz8">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmz9">
+  <div class="iw_columns col-lg-12" id="colk1q5mmza">
+   <div class="iw_component" id="iw_comp1571041639123">
+    <style>#iw_comp1571041639123{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.group-1-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.group-2-component').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmzc">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmzd">
+  <div class="iw_columns col-lg-12" id="colk1q5mmze">
+   <div class="iw_component" id="iw_comp1583140136110">
+    <style>#iw_comp1583140136110{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-6 col-xl-6">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>OCBC Group</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/group-home.html">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbcnisp.com/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label><hr>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-6">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="w-100">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                 <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                 <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                          <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                          <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Contact Us</span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                 <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Contact Us</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                          <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-none d-sm-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/OCBCBank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/group/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/group/policies" class="" target="_self">Policies</a></span><span><a href="/group/notices" class="" target="_self">Notices</a></span><span><a href="/group/fair-dealing" class="" target="_self">Fair Dealing</a></span><span><a href="/group/security" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – 2023 – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container">You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/group/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/group/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none"></div>
+   </div>
+   <div class="iw_component" id="iw_comp1574136653555">
+    <!--ls:begin[component-1574136653555]--><style>#iw_comp1574136653555{}</style><div></div><!--ls:end[component-1574136653555]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/gbc/js/management-team.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/ospl/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/gbc/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/analytic.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

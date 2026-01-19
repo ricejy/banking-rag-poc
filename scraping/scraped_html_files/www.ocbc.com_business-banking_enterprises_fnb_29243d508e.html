@@ -1,0 +1,1614 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Business Solutions for F&amp;B Entrepreneurs | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/enterprises/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/enterprises/fnb/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="F&B,producer,manufacturer,distributor,restauranteur,F&B business expansion,F&B chain,aspiring F&B entrepreneur,wholesaler,F&B services,F&B business,digital solutions for F&B business,agri-tech,sustainable food production,F&B procurement solutions,F&B business loan,F&B business financing,F&B business expansion,F&B cashless payment,F&B digital payment,F&B cash management solutions">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Are you a producer, manufacturer, distributor or restauranteur? Our solutions can help you manage your day-to-day operations, cash management, or expand your businesses.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[stylesheet]-->
+      <link rel="stylesheet" href="/iwov-resources/sg/ocbc/business/css/style-bb.css" type="text/css" data-ocde-desktop_or_tablet_or_phone="show">
+      <!--ls:end[stylesheet]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/enterprises/fnb">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="Please insert the text here" class="Please insert the text here"><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:business:enterprises:fnb",
+            language: "en",
+            pageCategory: "pre-login enterprises page",
+            bannerName: "from farm to fork bringing the aspirations of fb entrepreneurs to life",
+            channel: "enterprises",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        },
+form: {
+                formName: "contact us:running a business",
+                formId: "", //dynamic random id to be created and passed on the thank you page
+                formType: "contact us",
+                formStepName: "form loaded"
+            }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "true"
+        }
+    };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1a5c4u3">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4u4">
+  <div class="iw_columns col-lg-12" id="colk1a5c4u5">
+   <div class="iw_component" id="iw_comp1583231801389">
+    <style>#iw_comp1583231801389{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/education" class="" target="_self">Education</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/fnb" class="" target="_self">F&B</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/healthcare" class="" target="_self">Healthcare</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises/logistics" class="" target="_self">Logistics</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#runningbiz" class="header__navi">Running a business</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/international" class="" target="_self">International</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in </p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="/Premier">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <div class="dropdown__bb dropdown__second__bb d-lg-inline">
+                           <div class="dropdown__theme  dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location-option-filter" class="selectize selectize--navigation" id="header-businessBanking">
+                                 <option value="/business-banking/enterprises">Enterprises</option>
+                                 <option value="/business-banking/smes">SMEs</option>
+                                 <option value="/business-banking/corporates">Corporates</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support#" class="" target="_self">Help and support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="runningbiz" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Running a business</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2"><h2>Running a business</h2></div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Starting your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#starting-first-business" class="link link link-arrow-right" target="_blank">Uncover blind spots and start your business <span class="text-nowrap">right<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Growing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#growing-your-business" class="link link link-arrow-right" target="_blank">Grow local, go <span class="text-nowrap">international<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Managing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#managing-your-business" class="link link link-arrow-right" target="_blank">Optimise your everyday <span class="text-nowrap">operations<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Scaling your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#scaling-your-business" class="link link link-arrow-right" target="_blank">Take your business further, <span class="text-nowrap">faster<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/business-tools" class="button button--secondary button--link" target="_blank"><span>See all tools</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Other tools</div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_blank">Must-read articles for <span class="text-nowrap">SMEs<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="navigation__product-anchor container bp-width-med3 bp-sticky-content navigation__product-anchor--hidden">
+      <div class="he-bo-title"><span class="capt"></span><div class="arrow"><i class="far fa-chevron-down"></i></div>
+      </div>
+      <div class="he-bo-main">
+         <div class="he-bo-row">
+            <div class="hb-co-list">
+               <div class="long">
+                  <div class="hb-co-menu">
+                     <ul nav-scroller="">
+                        <li class="active hidden" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-1"><a href="#section-home" title="Home" target="external">Home</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-2"><a href="#section-fuellingsuccess" title="Fuelling the success of F&amp;B business" target="external">Fuelling the success of F&B business</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-3"><a href="#section-solutions" title="Solutions we bring to the table" target="external">Solutions we bring to the table</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-4"><a href="#section-recipessuccess" title="Recipes for success" target="external">Recipes for success</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-5"><a href="#section-customerssay" title="Hear what our customers have to say" target="external">Hear what our customers have to say</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-6"><a href="#section-articlesyoulike" title="Articles you may like" target="external">Articles you may like</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="short">
+                  <div class="action-button"><a class="button button--primary button--red2 undefined d-block" href="#section-contactus" target="external"><span>Contact us</span></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+<section id="main-wrapper">
+ <div class="container-fluid iw_section" id="sectionk1a5c4um">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4un">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uo">
+    <div class="iw_component" id="iw_comp1583231801390">
+     <!--ls:begin[component-1583231801390]--><style>#iw_comp1583231801390{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/business-banking/index.page">Business Banking</a></li>
+         <li><a href="/business-banking/enterprises.page">Enterprises</a></li>
+         <li>F&B</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1583231801390]-->
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="container-fluid iw_section" id="sectionk1a5c4uu">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4uv">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uw">
+    <div class="iw_placeholder" id="iw_placeholder1570073690261">
+     <div class="iw_component" id="iw_comp1632829052987">
+      <style>#iw_comp1632829052987{}</style><div class="masthead-component"></div><div class="module com__lifegoals-masthead bp-rel animate ">
+   <div class="l-m-wrapper" style="background-image:url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/masthead.jpg); ">
+      <div class="container bp-width-med3">
+         <div class="l-m-content row align-items-center">
+            <div class="col-6 l-m-text   text-md-left">
+               <h1>From Farm to Fork: Bringing the aspirations of F&B entrepreneurs to life</h1>
+            </div>
+            <div class="l-m-mobile-image " style="background-image:url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/masthead-mobile.jpg); "></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829053010">
+      <!--ls:begin[component-1632829053010]--><style>#iw_comp1632829053010{}</style><div class="fuellingsuccess-component"></div><div class="module container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">Fuelling the success of F&B business</div>
+   <div class="row ">
+      <div class="col-md-12">
+         <div class="row">
+            <div class=" col-custom-8 col-custom-enforced subtitle ">
+               <h4 class="mb-0">At OCBC, we bring the aspirations of entrepreneurs in the Food and Beverage (F&B) industry to life. Beyond restaurants, we support entrepreneurs across the whole value chain in the F&B industry.
+<br/><br/>
+An F&B value chain consists of all the stakeholders, from producers to wholesalers, distributors, and F&B service providers, who participate in the coordinated production and value-adding activities needed to make and deliver delicious F&B products.
+<br/><br/>
+No matter which part of the F&B value chain you are operating in, our business solutions can help you capture untapped customer segments, establish an omnichannel strategy, explore vertical integration and unlock the opportunities in your supply chain, so you can focus on cooking up new money-making recipes.</h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="com_digital-payments-articles has-4-items">
+      <div class="row">
+         <div class="col-md-3">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/kv_producers.jpg" alt-text="Producers and food farmers"></div>
+                  <div class="article__details">
+                     <div class="article__title">Producers and food farmers</div>
+                     <div class="article__content">Producers and food farmers are involved in growing food and produce such as the production of eggs, fish and vegetables. Optimise your daily processes to increase the production of top-quality local produce by gaining access to technology or innovating ways to grow more with less.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/kv_distributors.jpg" alt-text="F&amp;B Distributors"></div>
+                  <div class="article__details">
+                     <div class="article__title">Distributors</div>
+                     <div class="article__content">Wholesalers that sell meat, fish, fruits and vegetables. Manage your wholesale or distribution business by streamlining processes, gain better insights into financials, enhance your business&rsquo; food supply resilience and the ability to switch to alternative sources when the need arises.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/kv_manufacturers.jpg" alt-text="F&amp;B Processors and manufacturers"></div>
+                  <div class="article__details">
+                     <div class="article__title">Processors and manufacturers</div>
+                     <div class="article__content">Manufacturers and processors transform inputs into value-added products, which are then prepared or packed for the purpose of distribution to food retailers, food service establishments and consumers. These include bakery and flour confectionery manufacturers and meat and fish processing establishments.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
+            <div class="com_digital-payments-article">
+               <div class="article__wrapper">
+                  <div class="article__thumbnail"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/kv_restaurantservices.jpg" alt-text="Restaurants and F&amp;B services"></div>
+                  <div class="article__details">
+                     <div class="article__title">Restaurants and F&B services</div>
+                     <div class="article__content">Restaurants and F&amp;B services refer to food businesses like restaurants, caf&eacute;s, bakeries, and food caterers. Capture new opportunities by testing new concepts to diversify your restaurant portfolio, gain insights to your patrons&rsquo; profiles and advertise your brand to profitably scale your F&amp;B enterprise.</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1632829053010]-->
+     </div>
+     <div class="iw_component" id="iw_comp1632829053011">
+      <style>#iw_comp1632829053011{}</style><div class="solutions-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Solutions we bring to the table</div>
+   <div class="com__tab">
+      <div class="com__tab-content  com__tab-scroll mb4">
+         <div class="row">
+            <div class=" col-custom-9">
+               <div class="com__tab-nav has-styled-nav find-id-nav">
+                  <ul class="d-flex styled-nav align-items-center">
+                     <div class="indicator"></div>
+                     <li class="col align-items-center justify-content-center selected"><a href="#tab-bizexpansion">Business expansion</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#tab-cashmgmt">Cash management</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#tab-daytodayoperations">Day-to-day operations</a></li>
+                  </ul>
+                  <div class="border-line-wrapper">
+                     <div class="border-line"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829053015">
+      <style>#iw_comp1632829053015{}</style><div class="solutions-component"></div><div class="module container bp-width-med3" id="tab-bizexpansion">
+   <div class="list__col">
+      <div class="row">
+         <div class="col-custom-10">
+            <div class="row animate com__row-group-height" anim-control="parent">
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_cashflow-grey.png" alt="Financing for business expansion"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Adapting to seasonality with adequate cash flow</strong></h4></span><div class="list__col-text">
+                              <p>Get financing even before the launch of your next outlet. Use it to fund your day-to-day operations or buy your next business property to expand your manufacturing or distribution business.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Get financing even before the launch of your next outlet. Use it to fund your day-to-day operations or buy your next business property to expand your manufacturing or distribution business.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_protection-grey.png" alt="F&amp;B business insurance"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Serving up protection for your business</strong></h4></span><div class="list__col-text">
+                              <p>Whether you run a café, restaurant, home-based food business, distributorship or food manufacturing company, safeguard your F&B business and employees against unforeseen incidents.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Whether you run a café, restaurant, home-based food business, distributorship or food manufacturing company, safeguard your F&B business and employees against unforeseen incidents.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_digitalprocess-grey.png" alt="Financing to procure ingredients and supplies for F&amp;B businesses"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Manage procurement with ease using trade facilities</strong></h4></span><div class="list__col-text">
+                              <p>Take advantage of discounts from bulk purchases and fund the procurement of ingredients and supplies needed to run your F&B business.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Take advantage of discounts from bulk purchases and fund the procurement of ingredients and supplies needed to run your F&B business.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_advertise-grey.png" alt="Leverage OCBC's marketing channels to advertise your F&amp;B brand to more customers"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Advertise your F&B brand to a larger audience</strong></h4></span><div class="list__col-text">
+                              <p>Reach out to more customers and increase patronage to your chain of restaurants by leveraging OCBC’s marketing channels to advertise your business for free.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Reach out to more customers and increase patronage to your chain of restaurants by leveraging OCBC’s marketing channels to advertise your business for free.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_leverage-grey.png" alt="Digital tools to run F&amp;B business more efficiently"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Infuse digital tools into your operations</strong></h4></span><div class="list__col-text">
+                              <p>Leverage data intelligence to monitor the performance of your F&B business by product lines, customer segments and more. Gain an in-depth understanding of each outlet’s performance to help you make better informed decisions.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Leverage data intelligence to monitor the performance of your F&B business by product lines, customer segments and more. Gain an in-depth understanding of each outlet’s performance to help you make better informed decisions.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829053017">
+      <style>#iw_comp1632829053017{}</style><div class="solutions-component"></div><div class="module container bp-width-med3" id="tab-cashmgmt">
+   <div class="list__col">
+      <div class="row">
+         <div class="col-custom-10">
+            <div class="row animate com__row-group-height" anim-control="parent">
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/icon-onecollect.png" alt="ONECOLLECT"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Get notified when QR payments are received at point of sale with OneCollect</strong></h4></span><div class="list__col-text">
+                              <p>Collect digitally from your customers via local and international QR payment modes from PayNow, ShopeePay, UnionPay and WeChat Pay. Simply register and download the OneCollect app to start collecting payments. You can also save on merchant commission and avoid the hassle of setting up or renting a point-of-sale equipment.</p>
+                              <div class="list__col-link">
+                                 <p><a href="/business-banking/smes/business-tools/onecollect" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Collect digitally from your customers via local and international QR payment modes from PayNow, ShopeePay, UnionPay and WeChat Pay. Simply register and download the OneCollect app to start collecting payments. You can also save on merchant commission and avoid the hassle of setting up or renting a point-of-sale equipment.</p>
+                        <div class="list__col-link">
+                           <p><a href="/business-banking/smes/business-tools/onecollect" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/icon-ocbc-card-terminal.png" alt="OCBC CARD TERMINAL"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Access a wide range of payment methods with OCBC card terminal</strong></h4></span><div class="list__col-text">
+                              <p>Enjoy preferential pricing when you collect payments from customers using an OCBC card terminal. OCBC card terminals accept the following international payment schemes: VISA, MasterCard, UnionPay, JCB, Alipay+ QR and WeChat Pay QR via physical cards and mobile payments, as well as PayNow QR &ndash; all on one terminal. <br/><br/> Moreover, our dedicated support specialist will guide you with your setup. <br/><br/> Subject to terms and conditions, and signing of a Merchant Agreement.</p>
+                              <div class="list__col-link">
+                                 <p><a href="https://internet.ocbc.com/internet-banking/PublicOnlineForm/Form?FormId=MerchantEnqr" class="link link link-arrow-right" target="_self">Contact us via  <span class="text-nowrap">e-form<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Enjoy preferential pricing when you collect payments from customers using an OCBC card terminal. OCBC card terminals accept the following international payment schemes: VISA, MasterCard, UnionPay, JCB, Alipay+ QR and WeChat Pay QR via physical cards and mobile payments, as well as PayNow QR &ndash; all on one terminal. <br/><br/> Moreover, our dedicated support specialist will guide you with your setup. <br/><br/> Subject to terms and conditions, and signing of a Merchant Agreement.</p>
+                        <div class="list__col-link">
+                           <p><a href="https://internet.ocbc.com/internet-banking/PublicOnlineForm/Form?FormId=MerchantEnqr" class="link link link-arrow-right" target="_self">Contact us via  <span class="text-nowrap">e-form<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/icon-business-deposit-card.png" alt="BUSINESS DEPOSIT CARD"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Still collecting cash? Your cash deposit is an easy ATM visit away</strong></h4></span><div class="list__col-text">
+                              <p>With the OCBC Business Deposit Card, you can deposit your cash collections conveniently at ATMs and avoid long branch queues.</p>
+                              <div class="list__col-link">
+                                 <p><a href="/business-banking/smes/transactions/business-deposit-card" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>With the OCBC Business Deposit Card, you can deposit your cash collections conveniently at ATMs and avoid long branch queues.</p>
+                        <div class="list__col-link">
+                           <p><a href="/business-banking/smes/transactions/business-deposit-card" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/icon-pcard.png" alt="PCARD"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Empowering you to procure with ease</strong></h4></span><div class="list__col-text">
+                              <p>Have greater control and visibility over your procurement expenses to your suppliers. The OCBC Virtual Purchasing Card makes it happen all on one platform &ndash; issue multiple virtual cards, manage how they can be used and track transactions made.</p>
+                              <div class="list__col-link">
+                                 <p><a href="/business-banking/corporates/virtual-purchasing-card" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Have greater control and visibility over your procurement expenses to your suppliers. The OCBC Virtual Purchasing Card makes it happen all on one platform &ndash; issue multiple virtual cards, manage how they can be used and track transactions made.</p>
+                        <div class="list__col-link">
+                           <p><a href="/business-banking/corporates/virtual-purchasing-card" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/icon-making-payments.png" alt="MAKING PAYMENTS"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Digital tools to make payments a piece of cake</strong></h4></span><div class="list__col-text">
+                              <p>Make instant payments to your suppliers with FAST and PayNow Corporate. Credit your employees’ salaries promptly online via GIRO payroll to save time.</p>
+                              <div class="list__col-link">
+                                 <p><a href="/business-banking/smes/transactions/making-payments" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Make instant payments to your suppliers with FAST and PayNow Corporate. Credit your employees’ salaries promptly online via GIRO payroll to save time.</p>
+                        <div class="list__col-link">
+                           <p><a href="/business-banking/smes/transactions/making-payments" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829053018">
+      <style>#iw_comp1632829053018{}</style><div class="solutions-component"></div><div class="module container bp-width-med3" id="tab-daytodayoperations">
+   <div class="list__col">
+      <div class="row">
+         <div class="col-custom-10">
+            <div class="row animate com__row-group-height" anim-control="parent">
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_consolidatedfinance-grey.png" alt="Get a consolidated view of your finances across all entities"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>See all your earnings across your entities on the fly</strong></h4></span><div class="list__col-text">
+                              <p>Plan ahead and make better-informed decisions with a consolidated view of your finances across all your entities.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Plan ahead and make better-informed decisions with a consolidated view of your finances across all your entities.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 com__row-group-col">
+                  <div class="list__col-single list__col-count-normal">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_onlinesystems-grey.png" alt="Leverage our partnerships with third-party delivery systems"></div>
+                        <div class="list__col-content"><span>
+                              <h4 class="mb1"><strong>Serving up food with efficient operating and workflow systems</strong></h4></span><div class="list__col-text">
+                              <p>Optimise your business operations and workflow with digital solutions to help your business automate manual processes and facilitate online delivery and ordering of supplies. </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Optimise your business operations and workflow with digital solutions to help your business automate manual processes and facilitate online delivery and ordering of supplies. </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1645637832229">
+      <style>#iw_comp1645637832229{}</style><div class="sustainability-component"></div><div class="bp-rel bp-banner mob-mb1 animate featured__hero featured__hero-subhero">
+   <div class="bp-banner bp-ab d-none d-lg-block" style="background-image: url('/iwov-resources/sg/ocbc/business/img/enterprises/fnb/sustainability-desktop.jpg'); background-position: 80% 50%;"></div>
+   <div class="bp-banner-main container bp-width-med3">
+      <div class="row flex-row-reverse align-items-center feature__image">
+         <div class="col-lg-6">
+            <div class="bp-banner banner-wide d-none d-md-block d-lg-none tab-pull-left tab-pull-right" style="background-image: url('/iwov-resources/sg/ocbc/business/img/enterprises/fnb/sustainability-desktop.jpg'); background-position: 100% 50%;"></div>
+            <div class="bp-img wide d-block d-sm-block d-md-none tab-pull-left tab-pull-right"><img src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/sustainability-mobile.jpg" alt="Supporting you on your sustainability journey in the F&amp;B industry"></div>
+         </div>
+         <div class="col-lg-6 pt7 pb7 mob-pt3 mob-pb3">
+            <div class="feature__image--text feature__image--width-long">
+               <h3 class="feature__image--title co-black"><strong>Supporting you in creating a sustainable food future</strong></h3>
+               <div class="com__par co-black">
+                  <div class="feature__image--description">
+                     <p>Every stage of the F&B value chain, plays a role in shaping safety, quality and the ability to enhance the resilience of Singapore’s food supply to achieve our 30 by 30 food security goal. Beyond energy and emissions, sourcing of ingredients, packaging and sustainable logistics, learn more about our solutions to help your business meet its sustainability goals. </p>
+                  </div>
+                  <div class="feature__image--button"><a cta-id="Enterprises-FnB-Contact-Us-Sustainability" href="#section-contactus" class="button button--secondary button--grey" target="_self">Contact us</a></div>
+               </div>
+            </div>
+            <div class="clr"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829053022">
+      <style>#iw_comp1632829053022{}</style><div class="recipessuccess-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Recipes for success</div>
+   <div class="row">
+      <div class="col-md-12">
+         <div class="row">
+            <div class=" col-custom-8 col-custom-enforced subtitle">
+               <h4 class="mb-0">From farm to fork, we support F&B businesses like yours at every step of the way. Watch how they harvest success in growing their businesses and get recognised though our <a href="/business-banking/emerging-enterprise-award">Emerging Enterprise Award</a>.</h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="com_videos videos">
+      <div class="com__tab tab">
+         <div class="d-flex flex-column flex-md-row align-items-start">
+            <div class="com__tab-content tab__title com__tab-scroll">
+               <div class="com__tab-nav has-styled-nav">
+                  <ul class="d-flex d-md-none styled-nav clearfix align-items-center owl-nav1 flex-row flex-md-column">
+                     <div class="indicator"></div>
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="ralex_mqy_U" href="#tab-video-ralex_mqy_U" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-netatech.jpg)"><span>Netatech</span></a></li>
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="AIb_mawwS_8" href="#tab-video-AIb_mawwS_8" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-treedot.jpg)"><span>TreeDots Enterprise</span></a></li>
+                  </ul>
+                  <div class="border-line-wrapper">
+                     <div class="border-line"></div>
+                  </div>
+                  <ul class="d-md-block d-none slick-slider">
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="ralex_mqy_U" href="#tab-video-ralex_mqy_U" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-netatech.jpg)"><span>Netatech</span></a></li>
+                     <li class="col-4 align-items-center justify-content-center"><a class="d-flex align-items-center justify-content-center yt-video-thumbnail" size="hq" data-video-id="AIb_mawwS_8" href="#tab-video-AIb_mawwS_8" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-treedot.jpg)"><span>TreeDots Enterprise</span></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="tab__content">
+               <div class="com__tab-set" id="tab-video-ralex_mqy_U">
+                  <div class="com_video video">
+                     <div class="video__wrapper d-flex flex-column flex-md-row ">
+                        <div class="video__content">
+                           <div class="video__background" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-netatech.jpg)"><button class="play-video-btn" type="button" data-video-id="ralex_mqy_U"><i class="fa fa-play"></i></button><div class="com_yt-video" data-controls="1" data-video-id="ralex_mqy_U" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-netatech.jpg)" id="list-1-ralex_mqy_U">
+                                 <div class="yt-player" id="video-list-1-akrC3Zf2Dd4"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video__details d-flex flex-column justify-content-center">
+                           <p class="video__title">Pushing the frontiers of high-tech food production</p>
+                           <p class="video__description">See how Netatech captures sustainable development opportunities to contribute to more high-tech food production in Singapore.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="com__tab-set" id="tab-video-AIb_mawwS_8">
+                  <div class="com_video video">
+                     <div class="video__wrapper d-flex flex-column flex-md-row ">
+                        <div class="video__content">
+                           <div class="video__background" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-treedot.jpg)"><button class="play-video-btn" type="button" data-video-id="AIb_mawwS_8"><i class="fa fa-play"></i></button><div class="com_yt-video" data-controls="1" data-video-id="AIb_mawwS_8" style="background-image: url(/iwov-resources/sg/ocbc/business/img/enterprises/fnb/thumbnail_video-treedot.jpg)" id="list-1-AIb_mawwS_8">
+                                 <div class="yt-player" id="video-list-1-akrC3Zf2Dd4"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video__details d-flex flex-column justify-content-center">
+                           <p class="video__title">Tackling the colossal issue of food loss</p>
+                           <p class="video__description">Watch how TreeDots Enterprise enables businesses and individuals to purchase discounted food items and groceries from suppliers who would have otherwise discard them.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829053045">
+      <style>#iw_comp1632829053045{}</style><div class="customerssay-component"></div><div class="container bp-width-med3 module animate">
+   <div class="com_insurance-did-you-know ">
+      <div class="slides owl-carousel" nav="true" dots="true" margin="50" auto-height="true">
+         <div class="slide card card--no-border card--default ">
+            <div class="card__content d-flex align-items-center">
+               <div><img class="icon" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_profile-endining.png"></div>
+               <div>
+                  <p>“As an F&B chain, we are gratified that OCBC has supported us through the COVID-19 period, where we were the most affected. OCBC understood our requirements and has since seamlessly assisted us with working capital requirements to grow holistically as a group as we expand to more brands and outlets.”
+<br/><br/>
+<strong>Raymond Ng</strong><br/>
+Founder, En Dining Group</p>
+               </div>
+            </div>
+         </div>
+         <div class="slide card card--no-border card--default ">
+            <div class="card__content d-flex align-items-center">
+               <div><img class="icon" src="/iwov-resources/sg/ocbc/business/img/enterprises/fnb/icon_profile-iltm.png"></div>
+               <div>
+                  <p>"We are glad to have OCBC as our main banker that supported us throughout the ups and downs in the 10 years of business, especially during the pandemic.
+
+OCBC has a dedicated team of professionals supporting our everyday banking needs and have definitely helped us in reconciliation and payment modes to our suppliers, creating a value chain in delivering the end product to our customers."
+<br/><br/>
+<strong>Phoebe Wang</strong><br/>
+Founder, ILTM Pte Ltd</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1665167404251">
+      <style>#iw_comp1665167404251{}</style><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">Our role in your journey</div>
+   <div class="com_investment-recommended-products">
+      <div class="row">
+         <div class="col-custom-10"><span>
+               <p class="intro mb-0">No matter the size or stage of your business, we can support you every step of the way.</p></span><div class="plan">
+               <div class="plan__products">
+                  <div class="row same-height-parent">
+                     <div class="col-md-6">
+                        <div class="plan__product product card card--no-border"><span>
+                              <h5 class="text--bold product__title">Starting a business?</h5></span><span class="same-height-single">
+                              <p>If you are starting your business for the first time, join us as an OCBC Business Banking customer by opening a business account. Or contact our digital specialist to help you get started on the right foot and to digitalise your business.<br/><br/>
+<a cta-id="Enterprises-FnB-OpenABusinessAccount-OurRoleInYourJourney"href="https://www.ocbc.com/business-banking/smes/accounts/business-growth-account" class="link link link-arrow-right" target="_blank" cta-id="Enterprises-FnB-StartBiz-OpenAcc">Open a business  <span class="text-nowrap">account<i class="far fa-chevron-right"></i></span></a></p></span><div><a cta-id="Enterprises-FnB-ContactDigitalSpecialist-OurRoleInYourJourney" href="/business-banking/smes/startups?pid=segments:Startup:AlwaysOn:Acquisition:Oct:2022:internal:FnB:#contact-form" class="link link link-arrow-right" target="_self">Contact digital  <span class="text-nowrap">specialist<i class="far fa-chevron-right"></i></span></a></div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="plan__product product card card--no-border"><span>
+                              <h5 class="text--bold product__title">Growing your business?</h5></span><span class="same-height-single">
+                              <p>Whether you are expanding your range of services or your footprint, we offer industry insights and solutions to help you grow and scale. Contact us and our Relationship Manager will be in touch.</p></span><div><a auto-scroll="true" cta-id="Enterprises-FnB-ContactUs-OurRoleInYourJourney" href="#section-contactus" class="link link link-arrow-right" target="_self">Contact  <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1764899496719">
+      <!--ls:begin[component-1764899496719]--><style>#iw_comp1764899496719{}</style><div class="" id="">
+   <div><div class="container bp-width-med3 module">
+  <div class="subcategory subcategory--black">Powering the F&amp;B industry</div>
+  <div class="row">
+    <div class="col-custom-8">
+      <div class="subtitle">
+        <p>The OCBC SME Index<sup>*</sup> is a high-frequency index measuring the business health and performance of SMEs across industry value chains, including food and beverage.</p>
+      </div>
+    </div>
+  </div>
+
+      <div class="bp-img"><img src="/iwov-resources/sg/ocbc/business/img/smes/sme-index/recreation-classes.jpg" alt=""></div>
+                                                            </div>
+          </div>
+
+        
+      </div>
+</div><!--ls:end[component-1764899496719]-->
+     </div>
+     <div class="iw_component" id="iw_comp1764899496733">
+      <!--ls:begin[component-1764899496733]--><style>#iw_comp1764899496733{}</style><div class="" id="">
+   <div><div class="module container bp-width-med3">
+  <div class="row">
+    <div class="col-custom-10 mb2">
+      <p><a class="button button--secondary button--link 
+      " rel="noopener" href="/business-banking/smes/sme-index" cta-id="explore-data-read-report" target="_blank"><span>Find out more</span></a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-custom-10 mt2">
+      <p>*OCBC SME Index is centered on a score of 50, which represents zero change in the inputs from a year ago. A reading above 50 indicates improved activity, while a reading below 50 indicates a deterioration relative to the same period a year ago.</p>
+    </div>
+  </div>
+</div>
+<p></p></div>
+</div><!--ls:end[component-1764899496733]-->
+     </div>
+     <div class="iw_component" id="iw_comp1598620674387">
+      <style>#iw_comp1598620674387{}</style><div class="articlesyoulike-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Articles you may like</div>
+   <ul class="com__article-list com__list-4 com__row-group-height">
+      <li class="com__row-group-col">
+         <div class="com__ar-li-set"><a class="border-0" target="_self" href="/business-banking/articles/4-ways-providing-longer-credit-terms-can-improve-your-business">
+               <div class="bp-img wide"><img alt="" src="/iwov-resources/sg/ocbc/business/img/articles/4-ways-providing-longer-credit-terms-can-improve-your-business/kv_listing.jpg"></div>
+               <div class="com__ar-li-capt">
+                  <div class="com__al-ca-col rgh1">
+                     <p><strong>4 ways providing longer credit terms can improve your business</strong></p>
+                  </div>
+                  <div class="com__al-ca-col"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div>
+               </div></a></div>
+      </li>
+      <li class="com__row-group-col">
+         <div class="com__ar-li-set"><a class="border-0" target="_self" href="/business-banking/articles/i-love-taimei-bought-storage-facility-optimise-supply-chain">
+               <div class="bp-img wide"><img alt="I Love Taimei bought storage facility to keep ingredients fresh and optimise supply chain" src="/iwov-resources/sg/ocbc/business/img/articles/i-love-taimei-storage-facility/i-love-taimei-listing-image.jpg"></div>
+               <div class="com__ar-li-capt">
+                  <div class="com__al-ca-col rgh1">
+                     <p><strong>Taiwanese street food chain I Love Taimei bought their storage facility to keep ingredients fresh and optimise their supply chain</strong></p>
+                  </div>
+                  <div class="com__al-ca-col"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div>
+               </div></a></div>
+      </li>
+      <li class="com__row-group-col">
+         <div class="com__ar-li-set"><a class="border-0" target="_self" href="/business-banking/articles/getting-a-handle-on-contactless-customer-experiences">
+               <div class="bp-img wide"><img alt="Leverage contactless payments for your business" src="/iwov-resources/sg/ocbc/business/img/articles/getting-a-handle-on-contactless-customer-experiences/listing-image.jpg"></div>
+               <div class="com__ar-li-capt">
+                  <div class="com__al-ca-col rgh1">
+                     <p><strong>Getting A Handle On Contactless Customer Experiences</strong></p>
+                  </div>
+                  <div class="com__al-ca-col"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></div>
+               </div></a></div>
+      </li>
+   </ul>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1632829053046">
+      <!--ls:begin[component-1632829053046]--><style>#iw_comp1632829053046{}</style><div class="contactus-component"></div><div class=""><script src="/iwov-resources/sg/ocbc/eform/js/jquery.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/moment.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap-datetimepicker.min.js"></script><link href="/iwov-resources/sg/ocbc/eform/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+   <link href="/iwov-resources/sg/ocbc/eform/css/form.css?2020061201" rel="stylesheet"><script src="/iwov-resources/sg/ocbc/eform/js/webfont.js"></script><div id="generated_form_display"></div><script>
+	 (function (w) {
+		w.URLSearchParams = w.URLSearchParams || function (searchString) {
+		  var self = this;
+		  self.searchString = searchString;
+		  self.get = function (name) {
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+			if (results == null) {
+			  return null;
+			}
+			else {
+			  return decodeURI(results[1]) || 0;
+			}
+		  };
+		}
+
+	  })(window);
+	
+    //hardcoded data
+	var urlParams = new URLSearchParams(window.location.search);
+	var maxTotalfile = "Total files size has exceeded 10MB limit";
+	var refid = urlParams.get("refid");
+	var formid = urlParams.get("formid");
+	window.sessionStorage.setItem("reference_id", null);
+	window.sessionStorage.setItem("form_id", null);
+	if(refid !== null && formid !== null && refid !== undefined && formid !== undefined) { 
+		window.sessionStorage.setItem("reference_id", refid);
+		window.sessionStorage.setItem("form_id", formid);
+	}  
+    window.sessionStorage.setItem("form_builder_data", JSON.stringify([{"field_id":"NWL4aq","type":"section-break-field","isActive":false,"options":{"type_id":"section-field__ed714579-837a-4fc9-93f2-1a2f264eae54","type_label":"Section Field","type_name":"section__37d8a5c8-9c3d-4431-be94-46d9d0a20c81","type_title":"Fill in your details and we will get in touch within 1 working day.","type_column_alignment":"top-down","type_displayed":["1","2"],"type_column_section":"2","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":null}},{"field_id":"Pebusj","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__b53cfca5-559a-41d9-87ec-6e24861cd13d","type_name":"radio__e4a1ca65-1a33-449c-8ab8-6e514a7af073","type_label":"Salutation","type_items":["Dr","Mr","Mrs","Ms"],"type_selected":null,"type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio-inline","type_required":false,"type_required_message":null,"type_help_text":"","section":"NWL4aq","position":"left","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"jJ9UjY","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__9917c3eb-a41d-499e-8b16-6f5e4dc2e140","type_name":"name__f8e630fc-561e-43fe-bbfe-694b4c79c90b","type_placeholder":"","type_label":"Full name","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":false,"type_number_range":"","section":"NWL4aq","position":"right","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"Cu6vFm","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__b94ba071-9872-46b3-8a8a-2659cb99535f","type_name":"name__570a5cfe-9dd0-48fc-a8a6-31a97266fcc6","type_placeholder":"","type_label":"Email address","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":false,"type_number_range":"","section":"NWL4aq","position":"left","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"04oKuI","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__a5ccb252-d55a-4e17-98c9-196fb6fd1fb7","type_name":"name__bdb03473-a812-444e-a417-6c5437ec6bd6","type_placeholder":"","type_label":"Contact number","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":true,"type_number_range":"","section":"NWL4aq","position":"right","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"kuD28T","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__0282f822-4fbf-44f6-a90c-150c955d2414","type_name":"name__f0429fb3-76cf-4805-b2d4-49ef18309e39","type_placeholder":"","type_label":"Company name","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":false,"type_number_range":"","section":"NWL4aq","position":"left","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"q48ILo","type":"checkbox-field","isActive":false,"field_value":[],"options":{"type_id":"checkbox-field__44cb0f83-31d2-46be-a0f7-cbc5ff76ef8b","type_name":"checkbox__a0e3ac12-455a-4062-9986-42bc7f4fd169","type_label":"I am interested in","type_items":["Business expansion","Cash management","Day-to-day operations"],"type_selected":["Wastewater treatment","Others"],"type_displayed":["checkbox","checkbox-inline"],"type_displayed_selected":"checkbox-inline","type_required":false,"type_required_message":null,"type_help_text":"","default_value":null,"section":"NWL4aq","position":"single","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"bdpgx1","type":"terms-conditions-field","isActive":true,"field_value":"Yes","options":{"type_id":"terms-conditions-field__21a9ee15-14bf-4561-acc5-7e8e363ebf53","type_name":"terms-conditions__273dde66-9440-40b3-846e-82be340242ab","type_label":"By checking this box, I confirm that I have given / have been given consent to provide the information in this form. \n<br><br>\n(Where applicable) I confirm that I have obtained consent from the person(s) whose personal data is provided in this form for the collection, use and disclosure of such person(s)’ personal data for the purposes of processing this request, and for other applicable purposes as set out in the OCBC Data Protection Policy available at: <a href=\"/business-banking/bank-policies\">www.ocbc.com/business-banking/bank-policies</a>. ","type_required":true,"type_required_message":"Agreement","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":"NWL4aq","position":"single"}}]));
+    window.sessionStorage.setItem("form_builder_settings", JSON.stringify({"form_subtitle":"Contact us","form_heading":"Contact us","form_id":"enterprises-fnb","form_expiry_date":"31/12/3022","form_expiry_message":"This form has expired.","form_max_submissions":null,"form_max_submission_text":null,"save_exit_enable":false,"form_submit_type":"Show submission message","form_submit_redirecturl":"","form_submit_message":"Thank you for submitting the form.","form_saveexit_message":"Thank you for saving the form.","branchName":"business","file-name":"/templatedata/personal/eform/data/business-Form-enterprises-fnb.xml","suite_id":"suitid","save-event":"saveEvent","saveExit-event":"saveExitEvent"}));
+    </script><script src="/iwov-resources/sg/ocbc/eform/js/business/form_generator.js?2020072801"></script></div><!--ls:end[component-1632829053046]-->
+     </div>
+     <div class="iw_component" id="iw_comp1663633862092">
+      <style>#iw_comp1663633862092{}</style><div class="module container bp-width-med3 animate test-class" id="test-id">
+   <div class="subcategory subcategory--black">Lending every industry a hand</div>
+   <div class="row feature__three-col-background-image same-height-parent">
+      <div class="col-md-4 mb2"><a target="_blank" href="/business-banking/enterprises/healthcare" cta-id="Enterprises-FnB-LendingHand-Healthcare">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/logistics/kv_lendinghand-healthcare.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Healthcare</p>
+                     <h4 class="feature__teaser-title">Solutions for keeping your medical practice in the pink of health</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Healthcare</p>
+                     <h4 class="feature__teaser-title">Solutions for keeping your medical practice in the pink of health</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+      <div class="col-md-4 mb2"><a target="_blank" href="/business-banking/enterprises/education" cta-id="Enterprises-FnB-LendingHand-Education">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/logistics/kv_lendinghand-education.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Education</p>
+                     <h4 class="feature__teaser-title">Solutions for nurturing your education centre</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Education</p>
+                     <h4 class="feature__teaser-title">Solutions for nurturing your education centre</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+      <div class="col-md-4 mb2"><a target="_blank" href="/business-banking/enterprises/logistics" cta-id="Enterprises-FnB-LendingHand-Logistics">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/business/img/logistics/masthead-mobile.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Logistics</p>
+                     <h4 class="feature__teaser-title">Solutions for delivering speed and performance</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Logistics</p>
+                     <h4 class="feature__teaser-title">Solutions for delivering speed and performance</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+   </div>
+   <div class="mb3"></div>
+</div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="container-fluid iw_section" id="sectionk1a5c4uy">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4uz">
+  <div class="iw_columns col-lg-12" id="colk1a5c4v0">
+   <div class="iw_component" id="iw_comp1583231801391">
+    <style>#iw_comp1583231801391{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.fuellingsuccess-component').parent().wrapAll('<div class="section section-both" id="section-fuellingsuccess"></div>');
+	  
+	  
+	
+	  $('.solutions-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-solutions"></div>');
+	  
+	  
+	
+	  $('.bizexpansion').parent().wrapAll('<div id="tab-bizexpansion"></div>');
+	  
+	  
+	
+	  $('.sustainability-component').parent().wrapAll('<div class="section section-both" id="section-sustainability"></div>');
+	  
+	  
+	
+	  $('.pulsecheck-component').parent().wrapAll('<div class="section section-both" id="section-pulsecheck"></div>');
+	  
+	  
+	
+	  $('.recipessuccess-component').parent().wrapAll('<div class="section section-both" id="section-recipessuccess"></div>');
+	  
+	  
+	
+	  $('.customerssay-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-customerssay"></div>');
+	  
+	  
+	
+	  $('.articlesyoulike-component').parent().wrapAll('<div class="section section-both" id="section-articlesyoulike"></div>');
+	  
+	  
+	
+	  $('.contactus-component').parent().wrapAll('<div class="" id="section-contactus"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1a5c4v8">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4v9">
+  <div class="iw_columns col-lg-12" id="colk1a5c4va">
+   <div class="iw_component" id="iw_comp1583231801392">
+    <style>#iw_comp1570073690275{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1583231801393">
+    <!--ls:begin[component-1583231801393]--><style>#iw_comp1583231801393{}</style><div></div><!--ls:end[component-1583231801393]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

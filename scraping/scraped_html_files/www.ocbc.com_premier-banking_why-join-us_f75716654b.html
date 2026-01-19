@@ -1,0 +1,1267 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>dataLayer = [];</script>
+<!-- load Google Analytics -->
+<script>
+      window['GoogleAnalyticsObject'] = 'ga';
+      window['ga'] = window['ga'] || function() {
+                (window['ga'].q = window['ga'].q || []).push(arguments)
+              };
+</script>
+
+<!-- (START) Adobe Analytics - Header -->
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js"
+async></script>
+<!-- (END) Adobe Analytics - Header -->
+    <!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Learn more about the top-notch banking privileges when you sign up for a OCBC Premier Banking. Best of Banking and lifestyle privileges.</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/premier-banking/page/why-join-us/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/premier-banking/why-join-us/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="OCBC Premier Banking,OCBC Premier Banking Privileges,OCBC Wealth Panel,Wealth Insights,Premier Banking Privileges">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Learn more about the top-notch banking privileges when you sign up for a OCBC Premier Banking. Best of Banking and lifestyle privileges.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/color-style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/component-style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><script type="text/javascript"> var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);</script><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script type="text/javascript">
+    var ocbcData = {
+      page: {
+        pageName: "sg:ocbc:premier:why join us",
+        language: "en",
+        pageCategory: "pre-login premier banking pages",
+        bannerName: "elevate your wealth the premier way",
+        channel: "premier banking",
+        country: "sg",
+        lob: "ocbc premier banking",
+        platform: "web"
+      },
+      user: {
+        CIF: "",
+        loginStatus: "not logged in"
+      },
+      application: {
+        applicationId: "",
+        flowStep: "",
+        flowType: "",
+        journeyName: "",
+        subJourneyName: "",
+        applicationStatus: "",
+        myInfoStatus: "",
+        applicationRetrieveStatus: ""
+      },
+      form: {
+        formName: "why join us:get in touch",
+        formId: "",
+        formType: "get in touch",
+        formStepName: "form loaded",
+        formSource: "",
+        formAbandonmentField: ""
+      },
+      event: {
+        pageView: "true",
+        bannerImpression: "true"
+      }
+    };
+  </script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1566904104289">
+    <style>#iw_comp1566904104289{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="/premier-banking/home" target=""><img src="/iwov-resources/sg/ocbc/premier/img/LOGO.jpg" alt="OCBC Premier Banking Logo"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/why-join-us" class="header__navi" target="_self">Why join us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/our-solutions" class="header__navi" target="_self">Our solutions</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/market-insights" class="header__navi" target="_self">Market insights</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/our-solutions/regional-benefits" class="header__navi" target="_self">Regional benefits</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/premier-banking/international-banking-solutions" class="header__navi" target="_self">International banking solutions</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://internet.ocbc.com/internet-banking/" class="link" target="_self">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/premier-banking/home" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/loans/home-loans.page" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/premier-private-client/index.page" data-target="_self">Premier Private Client</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.ocbc.com/group/about-us/group-business" data-target="_self">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page" data-target="_self">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_self">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul></ul>
+                        <div class="header__main--web-location header__main--web-language">
+                           <hr>
+                           <div>
+                              <div class="globe-icon"></div>
+                              <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_language">
+                                    <option value="/premier-banking/why-join-us.page">EN</option>
+                                    <option value="https://www.ocbc.com/personal-banking/premier-banking/id/privileges.page">ID</option>
+                                    <option value="https://www.ocbc.com/personal-banking/premier-banking/zh/privileges.page">ZH</option></select></div>
+                           </div>
+                           <hr>
+                        </div>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://internet.ocbc.com/internet-banking/" class="link" target="_self">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view"></div>
+         </div>
+      </div>
+   </div>
+   <div class="navigation__product-anchor container bp-width-med3 bp-sticky-content navigation__product-anchor--hidden">
+      <div class="he-bo-title"><span class="capt"></span><div class="arrow"><i class="far fa-chevron-down"></i></div>
+      </div>
+      <div class="he-bo-main">
+         <div class="he-bo-row">
+            <div class="hb-co-list">
+               <div class="long">
+                  <div class="hb-co-menu">
+                     <ul nav-scroller="">
+                        <li class="active hidden" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-1"><a href="#section-home" title="Home" target="_self">Home</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-2"><a href="#section-exclusive" title="Exclusive cards for you" target="_self">Exclusive cards for you</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-3"><a href="#section-panel" title="OCBC wealth panel" target="_self">OCBC wealth panel</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-4"><a href="#section-team" title="Connect with a relationship manager" target="_self">Connect with a relationship manager</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-5"><a href="#section-privileges" title="Premier privileges" target="_self">Premier privileges</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-6"><a href="#section-centres" title="Premier banking centres" target="_self">Premier banking centres</a></li>
+                        <li class="" id="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;subnav-7"><a href="#section-promotions" title="Promotions" target="_self">Promotions</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="short">
+                  <div class="action-button"><a class="button button--primary button--red2 undefined d-block" href="#section-cta" target=""><span>Have us contact you</span></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1725848269809">
+      <!--ls:begin[component-1725848269809]--><style>#iw_comp1725848269809{}</style><!--Breadcrumb Component--><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/premier-banking/home.page">Premier Banking</a></li>
+         <li>Why join us</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1725848269809]-->
+     </div>
+     <div class="iw_component" id="iw_comp1681704911640">
+      <style>#iw_comp1681704911640{}</style><div class="masthead-component"></div><div class="bp-rel bp-banner mob-mb1 animate featured__hero featured__hero-feathero" style="background-color: #DFE6E8;">
+   <div class="bp-banner bp-ab d-none d-lg-block" style="background-image: url('/iwov-resources/sg/ocbc/premier/img/why-join-us/masthead.jpg'); background-position: 80% 50%;"></div>
+   <div class="bp-banner-main container bp-width-med3">
+      <div class="row flex-row-reverse align-items-center feature__image">
+         <div class="col-lg-6">
+            <div class="bp-banner banner-wide d-none d-md-block d-lg-none tab-pull-left tab-pull-right" style="background-image: url('/iwov-resources/sg/ocbc/premier/img/why-join-us/masthead.jpg'); background-position: 100% 50%;"></div>
+            <div class="bp-img wide d-block d-sm-block d-md-none tab-pull-left tab-pull-right"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/mobile-why.png" alt=""></div>
+         </div>
+         <div class="col-lg-6 pt8 pb8 mob-pt3 mob-pb3">
+            <div class="feature__image--text feature__image--width-longer">
+               <div class="com__par co-black">
+                  <h1 class="feature__image--title co-black">Elevate your wealth the premier way&nbsp;</h1>
+                  <div class="feature__image--button"><a href="#section-cta" class="button button--secondary button--link" target="_self">Have us contact you</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1677744174821">
+      <style>#iw_comp1677744174821{}</style><div class="intro-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-custom-8">
+         <div class="theme theme--blue">
+            <h2 class="bold text-gradient common__intro-paragraph pt-1 pb-1 ">
+            
+            Enjoy top-notch banking privileges with our suite of products.
+         
+         </h2>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1723712970803">
+      <style>#iw_comp1723712970803{}</style><!--List Three Col Merchants--><div class="exclusive-component"></div><div card-popup-parent="active">
+   <div class="container bp-width-med3">
+      <div class="row">
+         <div class="col-custom-8">
+            <div class="subcategory subcategory--black">Exclusive cards for you</div>
+         </div>
+      </div>
+   </div>
+   <div class="module container bp-width-med3">
+      <div class="feature__column com__merchant_promotions mt3 mt-md-0 group-height animate">
+         <div class="d-flex flex-wrap car1 com_card-promotions row select2-filter-parent select2-filter-alphabet">
+            <div class="merchant-item ca-li-set single-card-promotion fadeInUp animated animation filter-item key">
+               <div class="feature__column__content">
+                  <div class="feature__column--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/voyage.jpg" alt="OCBC Premier VOYAGE Card"></div>
+                  <div class="feature__column--text"><a href="https://www.ocbc.com/personal-banking/cards/voyage-credit-card.page" target="_self">
+                        <div class="feature__column--title">
+                           <p><strong>OCBC Premier VOYAGE Card</strong></p>
+                        </div>
+                        <div class="feature__column--link">
+                           <p>Enjoy the finer things in life wherever you go. Earn Miles as you shop, exchange them for rewards and access luxurious  <span class="text-nowrap">lounges<i class="far fa-chevron-right"></i></span></p>
+                        </div></a></div>
+               </div>
+               <div style="display: none;">
+                  <div id="OCBC Premier VOYAGE Card">
+                     <div class="">
+                        <div class="module container bp-width-med3">
+                           <div class="row">
+                              <div class="col-custom-10 mx-auto">
+                                 <div class="mb3"><a card-popup-close="" href="#"><i class="far fa-chevron-left mr-1 ml-0"></i>back to promoton list</a></div>
+                                 <h3><strong>OCBC Premier VOYAGE Card</strong></h3>
+                                 <div class="row row-medium group-height">
+                                    <div class="col-sm-5 mt2">
+                                       <div class="bp-img wide gh3"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/voyage.jpg" alt="OCBC Premier VOYAGE Card"></div>
+                                    </div>
+                                    <div class="col-sm-7 mt2">
+                                       <div class="bp-rel gh3">
+                                          <div class="cl-po-col col-top bp-rel"></div>
+                                          <div class="cl-po-col col-bottom bp-ab">
+                                             <div class="flex justify-content-between">
+                                                <div class="cl-po-sns d-flex flex-center justify-content-between pt2 pt-sm-0"></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr class="mt3 mb3">
+                                 <div class="in-co-par fz-16">TnC</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="merchant-item ca-li-set single-card-promotion fadeInUp animated animation filter-item key">
+               <div class="feature__column__content">
+                  <div class="feature__column--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/visa-infinite.jpg" alt="OCBC Premier Visa Infinite Credit Card"></div>
+                  <div class="feature__column--text"><a href="/premier-banking/our-solutions/cards/premier-visa-infinite" target="_self">
+                        <div class="feature__column--title">
+                           <p><strong>OCBC Premier Visa Infinite Credit Card</strong></p>
+                        </div>
+                        <div class="feature__column--link">
+                           <p>Earn OCBC$ and exchange them for cash or miles at no  <span class="text-nowrap">cost<i class="far fa-chevron-right"></i></span></p>
+                        </div></a></div>
+               </div>
+               <div style="display: none;">
+                  <div id="OCBC Premier VOYAGE Card">
+                     <div class="">
+                        <div class="module container bp-width-med3">
+                           <div class="row">
+                              <div class="col-custom-10 mx-auto">
+                                 <div class="mb3"><a card-popup-close="" href="#"><i class="far fa-chevron-left mr-1 ml-0"></i>back to promoton list</a></div>
+                                 <h3><strong>OCBC Premier Visa Infinite Credit Card</strong></h3>
+                                 <div class="row row-medium group-height">
+                                    <div class="col-sm-5 mt2">
+                                       <div class="bp-img wide gh3"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/visa-infinite.jpg" alt="OCBC Premier Visa Infinite Credit Card"></div>
+                                    </div>
+                                    <div class="col-sm-7 mt2">
+                                       <div class="bp-rel gh3">
+                                          <div class="cl-po-col col-top bp-rel"></div>
+                                          <div class="cl-po-col col-bottom bp-ab">
+                                             <div class="flex justify-content-between">
+                                                <div class="cl-po-sns d-flex flex-center justify-content-between pt2 pt-sm-0"></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr class="mt3 mb3">
+                                 <div class="in-co-par fz-16">TnC</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="merchant-item ca-li-set single-card-promotion fadeInUp animated animation filter-item key">
+               <div class="feature__column__content">
+                  <div class="feature__column--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/world-elite.jpg" alt="OCBC Premier World Elite™️ Debit Card"></div>
+                  <div class="feature__column--text"><a href="/premier-banking/our-solutions/cards/premier-world-elite" target="_self">
+                        <div class="feature__column--title">
+                           <p><strong>OCBC Premier World Elite™️ Debit Card</strong></p>
+                        </div>
+                        <div class="feature__column--link">
+                           <p>Elevate your lifestyle with exclusive Mastercard discounts and a 1% rebate on your overseas spending and local duty-free  <span class="text-nowrap">purchases<i class="far fa-chevron-right"></i></span></p>
+                        </div></a></div>
+               </div>
+               <div style="display: none;">
+                  <div id="OCBC Premier VOYAGE Card">
+                     <div class="">
+                        <div class="module container bp-width-med3">
+                           <div class="row">
+                              <div class="col-custom-10 mx-auto">
+                                 <div class="mb3"><a card-popup-close="" href="#"><i class="far fa-chevron-left mr-1 ml-0"></i>back to promoton list</a></div>
+                                 <h3><strong>OCBC Premier World Elite™️ Debit Card</strong></h3>
+                                 <div class="row row-medium group-height">
+                                    <div class="col-sm-5 mt2">
+                                       <div class="bp-img wide gh3"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/world-elite.jpg" alt="OCBC Premier World Elite™️ Debit Card"></div>
+                                    </div>
+                                    <div class="col-sm-7 mt2">
+                                       <div class="bp-rel gh3">
+                                          <div class="cl-po-col col-top bp-rel"></div>
+                                          <div class="cl-po-col col-bottom bp-ab">
+                                             <div class="flex justify-content-between">
+                                                <div class="cl-po-sns d-flex flex-center justify-content-between pt2 pt-sm-0"></div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr class="mt3 mb3">
+                                 <div class="in-co-par fz-16">TnC</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1723712969297">
+      <style>#iw_comp1723712969297{}</style><div class="panel-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">OCBC Wealth Panel</div>
+   <div class="lifegoals__two-col">
+      <div class="row flex-row-reverse">
+         <div class="col-md-6">
+            <div class="lifegoals__two-col--text">
+               <h3 class="bold">Get expert insights</h3>
+               <div class="lifegoals__two-col--description"><p>Stay updated with market insights and investment ideas from the OCBC Wealth Panel, our team of top wealth management experts from OCBC Group.</p></div>
+               <p class="lifegoals__two-col--link"><a href="/premier-banking/market-insights" class="link " target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="lifegoals__two-col--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/wealth-panel.jpg" alt=""></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1677744179930">
+      <style>#iw_comp1677744179930{}</style><!--Generic text background 1--><div class="team-component"></div><div class="module">
+   <div class="com_digital-payments-full-background-article article--text-left" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;background-color: #7A726A;&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;background-image:url(&#34;/iwov-resources/sg/ocbc/premier/img/why-join-us/kv-team.jpg&#34;)">
+      <div class="container bp-width-med3 module article__row">
+         <div class="row">
+            <div class="article__col">
+               <div class="article__wrapper">
+                  <div class="subcategory subcategory--white">BE SERVED BY A DEDICATED TEAM</div>
+                  <div class="article__details co-white">
+                     <h4 class="co-white">Navigate your financial journey with an elite team by your side</h4>
+                     <p><ul class="list-bullet">
+<li>Get supported at every stage of your financial journey</li>
+<li>Get tailored solutions and services that put your wealth needs first</li>
+<li>Gain access to a dedicated team of experienced wealth specialists and advisors</li>
+</ul></p>
+                  </div>
+               </div>
+               <div class="background-mobile d-block d-md-none" style="background-image:url(&#34;/iwov-resources/sg/ocbc/premier/img/why-join-us/m-teamm.jpg&#34;)"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1677744179883">
+      <style>#iw_comp1677744179883{}</style><div class="privileges-component"></div><div class="module container bp-width-med3">
+   <div class="subcategory subcategory--black">Premier Privileges</div>
+   <div class="com_f_a_services">
+      <div class="com_f_a_s_listing">
+         <div class="row">
+            <div class="col-xl-12">
+               <div class="row">
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/premier/img/why-join-us/icon1.png" alt="#"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Get priority service</span></strong></h5>
+                              <p>Join priority queues at selected OCBC Bank branches.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/premier/img/why-join-us/icon2.png" alt="#"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Grow your savings with rewards</span></strong></h5>
+                              <p>Enjoy exclusive high-yield interest rates when you save with our <span class="link" onclick="window.open('/premier-banking/our-solutions/deposits/premier-dividend-plus-savings')">Premier Dividend+ Savings Account</span>.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/premier/img/why-join-us/icon3.png" alt="#"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Get the latest market insights at your fingertips</span></strong></h5>
+                              <p>Stay up to date with the <span class="link" onclick="window.open('/premier-banking/market-insights')">latest financial news and analysis</span> from our experts.
+
+</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/premier/img/why-join-us/icon4.png" alt="#"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Stay in control with a holistic view of your wealth</span></strong></h5>
+                              <p>Get a full picture of how your portfolio’s assets are allocated with the <span class="link" onclick="window.open('/premier-banking/our-solutions/investments/ocbc-wealth-account')">OCBC Wealth Account</span>.
+
+</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb2">
+                     <div class="f-a-s-l-item">
+                        <div class="d-flex lg-1-row md-1-row">
+                           <div class="f-a-l-img float-left"><img width="65" src="/iwov-resources/sg/ocbc/premier/img/why-join-us/icon5.png" alt="#"></div>
+                           <div class="f-a-l-info float-left">
+                              <h5><strong><span>Send money overseas – no fees charged!</span></strong></h5>
+                              <p>Make <span class="link" onclick="window.open('https://www.ocbc.com/personal-banking/digital-banking/overseas-funds-transfer.page')">overseas transfers</span> in 19 currencies – no cable and commission fees will be charged.
+
+</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1682057811398">
+      <!--ls:begin[component-1682057811398]--><style>#iw_comp1682057811398{}</style><div class="centres-component"></div><div class="" id="">
+   <div>            <div class=""></div>
+            <div anim-control="parent" class="module container bp-width-med3 animate">
+                <div class="subcategory subcategory--black">Premier Banking Centres</div>
+                <div class="row flex-row-reverse align-items-center feature__image feature__image--withcarousel feature__image-beside-text mob-mt2">
+                    <div class="col-md-8">
+                        <div class="com_premier com_slider group-height" dots="true">
+                            <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/image-1.jpg"></div>
+                            <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/image-2.jpg"></div>
+                            <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/image-3.jpg"></div>
+                            <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/image-4.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature__image--text">
+                            <h3 class=" feature__image--title"><strong>Use your privileges at our Premier Banking Centres in Singapore and beyond</strong></h3>
+                            <div class="feature__image--description">
+                               
+                            </div>
+                            <div class="feature__image--button d-flex flex-wrap align-items-center">
+                                <a class="button button--secondary button--link" href="/premier-banking/locations"><span>Find out more</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+</div><!--ls:end[component-1682057811398]-->
+     </div>
+     <div class="iw_component" id="iw_comp1723712969159">
+      <style>#iw_comp1723712969159{}</style><div class="promotions-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black ">WELCOME OFFER</div>
+   <div class="row flex-row align-items-center feature__image feature__image-beside-text mob-mt2 animate&#xA;&#x9;&#x9;&#x9;&#x9;">
+      <div class="col-md-8">
+         <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/premier/img/homepage/kv-promo-ribbon.jpg" alt="Promo"></div>
+      </div>
+      <div class="col-md-4">
+         <div class="feature__image--text">
+            <h3 class=" feature__image--title"><strong>Be rewarded when you start a Premier Banking relationship with us</strong></h3>
+            <div class="feature__image--description">
+               <p class="mb0"><p>Earn up to 6,400 SGD<sup>*</sup> when you deposit 350,000 SGD in fresh funds. <sup>*</sup><a href="/iwov-resources/sg/ocbc/premier/pdf/tncs-governing-ocbc-pb-welcome-reward-programme.pdf" target="_blank" rel="noopener">T&amp;Cs apply</a>.</p>
+<p>SGD deposits are insured up to S$100k by SDIC.</p></p>
+            </div>
+            <div class="feature__image--button d-flex flex-wrap align-items-center"><a data-fancybox="none" href="#popup-reward" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Find out more</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1677744182223">
+      <!--ls:begin[component-1677744182223]--><style>#iw_comp1677744182223{}</style><div class="eform-component"></div><div class=""><script src="/iwov-resources/sg/ocbc/eform/js/jquery.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/moment.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap-datetimepicker.min.js"></script><link href="/iwov-resources/sg/ocbc/eform/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+   <link href="/iwov-resources/sg/ocbc/eform/css/form.css?2020061201" rel="stylesheet"><script src="/iwov-resources/sg/ocbc/eform/js/webfont.js"></script><div id="generated_form_display"></div>
+   <div id="form_hotline"><p><strong>Already an OCBC Premier Banking customer?</strong></p>
+<p class="caption">Reach out to your Relationship Manager or call us<br>at 1800 773 6437 (local) / (65) 6530 5930 (overseas)</p></div><script>
+	 (function (w) {
+		w.URLSearchParams = w.URLSearchParams || function (searchString) {
+		  var self = this;
+		  self.searchString = searchString;
+		  self.get = function (name) {
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+			if (results == null) {
+			  return null;
+			}
+			else {
+			  return decodeURI(results[1]) || 0;
+			}
+		  };
+		}
+
+	  })(window);
+	
+    //hardcoded data
+	var urlParams = new URLSearchParams(window.location.search);
+	var maxTotalfile = "Total files size has exceeded 10MB limit";
+	var refid = urlParams.get("refid");
+	var formid = urlParams.get("formid");
+	window.sessionStorage.setItem("reference_id", null);
+	window.sessionStorage.setItem("form_id", null);
+	if(refid !== null && formid !== null && refid !== undefined && formid !== undefined) { 
+		window.sessionStorage.setItem("reference_id", refid);
+		window.sessionStorage.setItem("form_id", formid);
+	}  
+    window.sessionStorage.setItem("form_builder_data", JSON.stringify([{"field_id":"LqlXfU","type":"section-break-field","isActive":false,"options":{"type_id":"section-field__715451f8-b4e9-47c3-808b-07cb82cb7fa4","type_label":"Section Field","type_name":"section__ca1ae331-3851-42ec-be06-dc4799973c14","type_title":"Start a Premier Banking relationship with us today. Deposit or invest at least 350,000 SGD in fresh funds to enjoy Premier privileges.","type_column_alignment":"top-down","type_displayed":["1","2"],"type_column_section":"2","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":null}},{"field_id":"0vWtMj","type":"radio-field","isActive":true,"field_value":null,"options":{"type_id":"radio-field__082b920b-4335-4c93-98b8-8f0b173c01c8","type_name":"radio__a5bf7210-d07d-4cfb-8bce-e218e11ea6d1","type_label":"Salutation","type_items":["Dr","Mr","Mrs","Ms"],"type_selected":"Option 1","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio-inline","type_required":false,"type_required_message":null,"type_help_text":"","section":"LqlXfU","position":"single","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"CNY4uc","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__32501e42-9a48-4446-9701-7528810a27dc","type_name":"name__8e47407c-fcfa-4f96-897e-f818710aa2d2","type_placeholder":"","type_label":"Name","type_required":true,"type_required_message":"Please include your name.","type_help_text":"","type_is_number":false,"type_number_range":"","section":"LqlXfU","position":"left","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"TlmH3R","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__2677a12d-069c-4a1d-bca6-524707f04281","type_name":"name__8c061d8f-a742-401d-bfad-91eb532b054f","type_placeholder":"","type_label":"Contact Number","type_required":true,"type_required_message":"Please include your contact number.","type_help_text":"","type_is_number":false,"type_number_range":"","section":"LqlXfU","position":"right","type_tooltip":"","min_length":"","max_length":"","regex":"^[0-9]{8,10}$","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"wMfV7U","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__ce399cc8-deea-4612-a21a-f78153304d9b","type_name":"name__e5456444-a4b4-4747-8fe6-456229a1d29c","type_placeholder":"","type_label":"Last 4 characters of NRIC or passport no. (e.g. 567A)","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":false,"type_number_range":"","section":"LqlXfU","position":"left","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"sgrNFE","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__01b6a100-03cf-4914-be28-e36ab5fffd28","type_name":"name__f605659f-9169-4f1f-88ed-6d78b218aa3b","type_placeholder":"","type_label":"Remarks","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":false,"type_number_range":"","section":"LqlXfU","position":"right","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"5Hv2zX","type":"terms-conditions-field","isActive":false,"field_value":"Yes","options":{"type_id":"terms-conditions-field__cfdc83a8-20e5-4b88-9209-43ef7c6fa986","type_name":"terms-conditions__e1cb06c2-d20e-4a3d-b2f2-acc32540ac10","type_label":"By submitting this form, I hereby consent to Oversea-Chinese Banking Corporation Limited and its related corporations (collectively, the \"OCBC Group\") to collect, use and disclose the personal data I submit via this form for the purposes of contacting me about the establishment of an OCBC Premier Banking relationship (including sharing information about any related products or services offered by OCBC Group, when requested) and addressing any questions I have specified above, in accordance with <a href=\"https://www.ocbc.com/personal-banking/policies\">OCBC's Data Protection Policy</a>.","type_required":false,"type_required_message":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":"LqlXfU","position":"single"}}]));
+    window.sessionStorage.setItem("form_builder_settings", JSON.stringify({"form_subtitle":"Get in touch","form_heading":"general contact form","form_id":"general-contact-form","form_expiry_date":"03/08/2091","form_expiry_message":"expired","form_max_submissions":null,"form_max_submission_text":null,"save_exit_enable":false,"form_submit_type":"Show submission message","form_submit_redirecturl":"","form_submit_message":"Thank you for submitting the form.","form_saveexit_message":"Thank you for saving the form.","branchName":"premier","file-name":"/templatedata/personal/eform/data/premier-Form-general-contact-form.xml","suite_id":"suitid","save-event":"saveEvent","saveExit-event":"saveExitEvent"}));
+    </script><script src="/iwov-resources/sg/ocbc/eform/js/form_generator.js?2020072801"></script></div><!--ls:end[component-1677744182223]-->
+     </div>
+     <div class="iw_component" id="iw_comp1723712969163">
+      <style>#iw_comp1681704912446{}</style><div class="d-none-soft">
+   <div id="popup-reward" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span class="icon"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/Giftbox.png" width="55" alt=""></span><span>Welcome rewards</span></h4><div class="row group-height mb5">
+<div class="col-md-6 mb-5 mb-md-0"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/en_popup-Nov25.png" class="d-none d-md-block" width="100%" height="auto"><img src="/iwov-resources/sg/ocbc/premier/img/why-join-us/EN-m-popup-Nov25.png" class="d-block d-md-none m-auto"></div>
+<div class="col-md-6">
+<h4 class="bold">*Cash reward</h4>
+<p>Earn a cash reward of 800 SGD when you deposit 350,000 SGD in your <a href="/premier-banking/our-solutions/deposits/premier-dividend-plus-savings">Premier Dividend+ Savings Account</a>.</p>
+<h4 class="bold"><sup>^</sup>Interest earnings</h4>
+<p>Earn 1.60% interest a year when you deposit S$3,000 in your account a month &ndash; for 12 months &ndash; and make no withdrawals at all.</p>
+</div>
+</div>
+<p class="caption"><sup>*</sup> Credited into OCBC Premier VOYAGE Card or OCBC Premier Visa Infinite Card.<br><sup>^</sup> Based on existing prevailing Premier Dividend+ Savings Account interest rate and account mechanism, which may be subject to change.<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/premier/pdf/tncs-governing-ocbc-pb-welcome-reward-programme.pdf">Terms and conditions apply</a></p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="faqs" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Online Call: Frequently Asked Questions</span></h4><ol class="list-decimal">
+<li><strong>What is Online Call?</strong>
+<p class="mb-0">Online Call, available 24/7 via the OCBC app, is a feature that allows you to call us from outside Singapore at no cost. You will not incur any roaming charges &ndash; just connect to the Internet using mobile data or Wi-Fi.</p>
+</li>
+<li><strong>How do I access Online Call?</strong>
+<p class="mb-0">Online Call is available via the OCBC app. You may access it using one of the following methods:</p>
+<p class="mb-0"><span style="text-decoration: underline;">Method 1: Before logging in</span></p>
+<ol class="list-decimal">
+<li>Open the OCBC app</li>
+<li>Tap &lsquo;More&rsquo;</li>
+<li>Tap &lsquo;Online Call&rsquo;</li>
+<li>Log in using your Online Banking Access Code and PIN, or using biometrics</li>
+<li>Tap &lsquo;Online Call&rsquo;</li>
+</ol>
+<p class="mb-0 pt0"><span style="text-decoration: underline;">Method 2: After logging in</span></p>
+<ol class="list-decimal">
+<li>Log in to the OCBC app</li>
+<li>Tap &lsquo;More&rsquo; at the bottom navigation bar</li>
+<li>Tap the chat bubble icon at the top right of the page &ndash; or scroll to the bottom of the page and tap &lsquo;Online Call&rsquo;</li>
+<li>Tap &lsquo;Online Call&rsquo;</li>
+</ol>
+<p class="pt2">Note: For the best experience, please make sure your device has been updated to the latest version of its operating system and is connected to a stable Wi-Fi or mobile data network.</p>
+</li>
+<li><strong>What type of enquiries can be handled through Online Call?</strong>
+<p class="mb-0">If you are overseas and need urgent assistance with matters related to your card, you may reach us via Online Call. For example, you might call to ask why a card payment at an overseas retail store could not be made.</p>
+</li>
+<li><strong>What should I do if my call gets disconnected or the call quality is poor?</strong>
+<p class="mb-0">Please check your Internet connection to ensure that you are connected to a stable Wi-Fi or mobile data network. Then, try calling us again.</p>
+</li>
+<li><strong>I do not see any way to access Online Call via the OCBC app on my device. Why?</strong>
+<p class="mb-0">To seamlessly integrate the Online Call feature into the OCBC app, we will be progressively making it available to users from November 2025.</p>
+<p class="mb-0">In the meantime, please check that:</p>
+<ol class="list-decimal">
+<li>You have downloaded the latest version of the OCBC app from App Store, Google Play Store or Huawei App Gallery; and</li>
+<li>Your device has been updated to the latest version of its operating system.</li>
+</ol>
+</li>
+</ol></div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.intro-component').parent().wrapAll('<div class="section section-bottom"> </div>');
+	  
+	  
+	
+	  $('.exclusive-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-exclusive"> </div>');
+	  
+	  
+	
+	  $('.panel-component').parent().wrapAll('<div class="section section-top" id="section-panel"> </div>');
+	  
+	  
+	
+	  $('.team-component').parent().wrapAll('<div class="section section-bottom" id="section-team"> </div>');
+	  
+	  
+	
+	  $('.centres-component').parent().wrapAll('<div class="section section-both" id="section-centres"> </div>');
+	  
+	  
+	
+	  $('.privileges-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-privileges"> </div>');
+	  
+	  
+	
+	  $('.promotions-component').parent().wrapAll('<div class="section section-both" id="section-promotions"> </div>');
+	  
+	  
+	
+	  $('.eform-component').parent().wrapAll('<div class="section" id="section-cta"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/img/LOGOs.jpg" alt="OCBC Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Premier banking</span></p><label class="mb-0 countryselect" for="country">You are in  <span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/gateway.page">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/gateway.page">Malaysia</option>
+                                    <option value="https://www.ocbc.id/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_self">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking" class="" target="_self">Business Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/about-us/group-business" class="" target="_self">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://internet.ocbc.com/internet-banking/" class="" target="_self">Internet banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/premier-banking/locations" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_self">Help and support</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="https://internet.ocbc.com/internet-banking/" class="" target="_self">Internet banking</a></p>
+                                          <p><a href="https://www.ocbc.com/premier-banking/locations" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_self">Help and support</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/premier-banking/locations" class="" target="_self"><i class="fal fa-file-alt"></i> Find a Premier Banking Centre​</a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:+6565305930%E2%80%8B" class="" target="_self"> <p><i class="fal fa-phone"></i>&nbsp;<a href="tel:18007736437">1800 773 6437</a></p>
+ <p><i class="fal fa-file-alt"></i>&nbsp;<a href="https://www.ocbc.com/personal-banking/contact-us">Contact Us</a></p></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_self"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_self"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_self"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_self"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/personal-banking/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="https://www.ocbc.com/personal-banking/policies" class="" target="_self">Policies</a></span><span><a href="https://www.ocbc.com/personal-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/personal-banking/security/overview.page" class="" target="_self">Security</a></span></div>
+            <div id="copyright">© Copyright 2004 – <span id="year">2020</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W</div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/analytic-v1.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/card-maintenance.js'></script>
+<script type="text/javascript">$('head').append("<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pb_popup.css' media='all' /> <link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pb-popup.css' media='all' />")</script>
+<script type="text/javascript"></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

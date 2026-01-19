@@ -1,0 +1,2201 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- (START) Adobe Analytics - Header -->
+<script src="//assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async></script>
+<!-- (END) Adobe Analytics - Header -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+<!-- End Google Tag Manager -->
+<script>
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+<script type="application/ld+json">
+  { 
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OCBC Bank Singapore",
+    "alternateName": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/",
+    "logo": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "2199" 
+    },
+    "sameAs": [
+      "https://www.facebook.com/OCBCBank/",
+      "https://twitter.com/ocbcbank",
+      "https://www.youtube.com/user/channelocbc",
+      "https://www.linkedin.com/company/ocbc-bank/"
+    ] 
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1205034763867173');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1"
+src="https://www.facebook.com/tr?id=1205034763867173&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code --><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>OCBC Investments | Unit Trusts, Equities, Forex, Precious Metals &amp; More</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/personal-banking/page/investments/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/personal-banking/investments/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Grow your money with OCBC investment plans & wealth management solutions - Unit Trusts, Equities, Forex & more. Browse investment options & invest online.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/personal-banking/investments.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css?20200729' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/qualtrics.css?2020062501' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]-->
+<script type="text/javascript">
+                var _gaq = _gaq || [];
+                var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+                _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+                _gaq.push(['_setAccount', 'UA-31687854-1']);
+                // _gaq.push(['_setDomainName', 'ocbc.com']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_9QPdWtioy9UtOWp","https://zn9qpdwtioy9utowp-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_9QPdWtioy9UtOWp")).start()}catch(i){}})();
+</script><div id='ZN_9QPdWtioy9UtOWp'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class="page-emma page-theme--grey"><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+            var ocbcData = {
+                page:{
+                    pageName: "sg:ocbc:personal:investments",
+                    language: "en",
+                    pageCategory: "pre-login personal banking pages",
+                    bannerName: "limitless investment opportunities with ocbc wealth management",
+                    channel: "personal banking",
+                    country: "sg",
+                    lob: "ocbc personal banking",
+                    platform: "web"
+                },
+                user:{
+                    CIF: "",
+                    loginStatus: "pre-login"
+                },
+                application: {
+                    applicationId: "",
+                    flowStep: "",
+                    flowType: "personal banking flow",
+                    journeyName: "",
+                    subJourneyName:"",
+                    applicationStatus: "",
+                    myInfoStatus: "",
+                    applicationRetrieveStatus: ""
+                },
+                event:{
+                    pageView: "true",
+                    bannerImpression: "true"
+                }
+            };
+        </script>
+<script type="application/ld+json"> {"@context":"https://schema.org/","@type":"CreativeWorkSeries","name":"Investments","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","ratingCount":"2199"}}</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1566904104289">
+    <style>#iw_comp1566904104289{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com" target="_self"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Singapore"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#accounts" class="header__navi">Accounts</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#cards" class="header__navi">Cards</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#loans" class="header__navi">Loans</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#insurance" class="header__navi">Insurance</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investments" class="header__navi">Investments</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#advisory" class="header__navi">Advisory</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#more" class="header__navi">More</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                        <div class="page__opt2">
+                           <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/personal-banking/home" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_blank">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/premier-private-client/index.page" data-target="_self">Premier Private Client</option>
+                                 <option value="https://www.ocbc.com/business-banking/index.html" data-target="_blank">Business Banking</option>
+                                 <option value="https://www.ocbc.com/group/about-us/group-business" data-target="_blank">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page" data-target="_blank">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_blank">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a cta-id="PersonalBanking-navbar-premierbanking" href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-digitalbanking" href="/personal-banking/digital-banking" class="" target="_self">Digital Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-security-overview" href="/personal-banking/security/overview" class="" target="_self">Security</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-locations-overview" href="/personal-banking/locations" class="" target="_self">Branches & ATMs</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-gethelp" href="/personal-banking/help-and-support" class="" target="_self">Get help</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                  <div class="page__opt2">
+                     <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                  </div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleoff: index-->
+   <div class="header__sub" data-nosnippet="">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="accounts" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Accounts</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Day-to-day Banking</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-360Account" href="/personal-banking/deposits/360-savings-account" class="link link link-arrow-right" target="_self">360  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Savings</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-BonusPlusSavingsAccount" href="/personal-banking/deposits/bonus-plus-savings-account" class="link link link-arrow-right" target="_self">Bonus+ Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Foreign Currency</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-GlobalSavingsAccount" href="/personal-banking/deposits/multi-currency-global-savings-account" class="link link link-arrow-right" target="_self">Global Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Children's Account</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-OCBCMyOwnAccount" href="/personal-banking/deposits/myown-account" class="link link link-arrow-right" target="_self">OCBC MyOwn  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-SeeAllAccounts" href="/personal-banking/deposits" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all accounts</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-cny_promo_2026.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Usher in good fortune when you grow your savings with us!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>This Lunar New Year, receive 1.80% a year or a Disney&rsquo;s Winnie the Pooh plushie when you top up an eligible OCBC savings account.</p>
+<p>T&amp;Cs apply. Insured up to S$100k by SDIC.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/deposits/statement-passbook-savings-account" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="cards" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Cards</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-infinity.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Unlimited cashback on your spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-INFINITYCC" href="https://www.ocbc.com/personal-banking/cards/infinity-unlimited-cashback-card" class="link link link-arrow-right" target="_self">OCBC INFINITY Cashback  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-365visacc.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For everyday spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-365CC" href="/personal-banking/cards/365-cashback-credit-card" class="link link link-arrow-right" target="_self">OCBC 365 Credit  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/rewards-card/rewardscard-noshadow.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Get rewarded for shopping</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-OCBCRewardsCard" href="/personal-banking/cards/rewards-card" class="link link link-arrow-right" target="_self">OCBC Rewards  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-90n.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Daily spend for future travels</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-90NCard" href="/personal-banking/cards/90-degrees-travel-credit-card.page" class="link link link-arrow-right" target="_self">OCBC 90&deg;N  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Cards-megamenu-SeeAllCards" href="/personal-banking/cards" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all cards</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/kv-navbar-poohluggage-r1.png" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get Disney’s Winnie the Pooh gifts and more this New Year!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p class="mb-3">Enjoy exclusive Disney rewards when you bank with us! T&amp;Cs apply.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/campaign/festive-deals.page" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="loans" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Loans</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Personal</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-EasiCredit" href="/personal-banking/loans/easicredit-flexible-repayment-cash-loan" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">EasiCredit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Home</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-HomeLoanNewPurchase" href="/personal-banking/loans/home-loans" class="link link link-arrow-right" target="_self">Home  <span class="text-nowrap">Loans<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-CarLoan" href="/personal-banking/loans/car-loans" class="link link link-arrow-right" target="_self">Car  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Student</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-FRANKTuitionFeeLoan" href="/personal-banking/loans/student-loans/tuition-fee-loan" class="link link link-arrow-right" target="_blank">Tuition Fee  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Loans-megamenu-SeeAllLoans" href="/personal-banking/loans" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all loans</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="insurance" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Insurance</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment-linked</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-InvestmentLinkedInsurancePlan2" href="/personal-banking/insurance/investment-linked-insurance-plan-2" class="link link link-arrow-right" target="_self">Investment-linked Insurance Plan  <span class="text-nowrap">2<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Accident &amp; Health</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-MyGreatPAPlan" href="/personal-banking/insurance/mygreatpaplan" class="link link link-arrow-right" target="_self">My GREAT PA  <span class="text-nowrap">Plan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Protection</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-GREATTermGuard" href="/personal-banking/insurance/great-term-guard" class="link link link-arrow-right" target="_self">GREAT Term  <span class="text-nowrap">Guard<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Travel, Home &amp; Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-Explorer" href="/personal-banking/insurance/great-travelcare-insurance" class="link link link-arrow-right" target="_self">GREAT  <span class="text-nowrap">TravelCare<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-SeeAllInsurances" href="/personal-banking/insurance" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all insurances</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-insurance-aug25.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag"><span class="co-black">Enjoy discounts of up to 50% when you apply for eligible insurance plans</span></div>
+                                       <div class="header__sub-menu-link">
+                                          <p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-CNYPromo2023" href="/personal-banking/insurance#section-promo" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investments" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investments</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Top fund ideas</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-UnitTrusts" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts" class="link link link-arrow-right" target="_self">Unit  <span class="text-nowrap">Trusts<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Trade across 15 global exchanges</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OnlineEquitiesAccount" href="/personal-banking/investments/online-equities-account" class="link link link-arrow-right" target="_self">Online Equities  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">38 portfolios from just 100 USD</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OCBCRoboInvest" href="/personal-banking/investments/roboinvest" class="link link link-arrow-right" target="_self">OCBC  <span class="text-nowrap">RoboInvest<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Diversify with gold & silver</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-PreciousMetalAccount" href="/personal-banking/investments/precious-metals-account" class="link link link-arrow-right" target="_self">Precious Metals  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SeeAllInvestments" href="/personal-banking/investments" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all investments</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Foreign Currency Exchange</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Conveniently and securely exchange AUD, CAD, CHF<strong><sup style="color: #e30613 !important;">NEW</sup></strong>, CNH, EUR, GBP, HKD, JPY, NZD and USD, 24/7 via OCBC Digital, for your overseas transfer, travel payments, online spends, investments and more.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-ForeignCurrencyExchange" href="/personal-banking/investments/forex-trading" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Supplementary Retirement Scheme (SRS)</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Reduce your taxable income by the same amount contributed to your SRS Account, with a maximum yearly contribution of S$15,300 for Singaporeans and Singapore PRs, and S$35,700 for foreigners.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SupplementaryRetirementScheme" href="/personal-banking/investments/supplementary-retirement-scheme-account" class="link link link-arrow-right" target="_blank">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="advisory" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Advisory</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>The OCBC SeniorCare Programme empowers you through four key pillars: Health, Wealth, Lifestyle and Literacy.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-SilverYears" href="/personal-banking/seniorcare-programme" class="link link link-arrow-right" target="_self">SeniorCare  <span class="text-nowrap">Programme<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Achieve your goals with proper financial planning.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-LifeGoals" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Life  <span class="text-nowrap">Goals<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get data and insights into the financial wellness of Singaporeans.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-FinancialWellnessIndex2023" href="/group/financial-wellness-index/understand-the-index.html" class="link link link-arrow-right" target="_blank">Financial Wellness Index  <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get rewarded for what matters: your salary, your lifestyle, and your smart savings habits.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-BeyondYour9To5" href="/personal-banking/campaign/beyondyour9to5" class="link link link-arrow-right" target="_blank">Beyond your 9-5 Starter  <span class="text-nowrap">Kit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_startplanning.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Start planning and get ahead with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>From financial planning tools, investment options and insurance, our comprehensive array of solutions have been built to get you ahead in your every goal and ambition.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-StartPlanning" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Start planning  <span class="text-nowrap">today<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="more" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">More</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Fancy shopping at a bank branch or even enjoying a sushi meal there? At OCBC Wisma Atria, you can do all these and more &ndash; visit us to experience it firsthand!</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-More-megamenu-OneAdvisor" href="/personal-banking/ocbc-wisma" class="link link link-arrow-right" target="_blank">Bank, dine and shop at the new OCBC Wisma  <span class="text-nowrap">Atria<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_travelready.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get travel-ready with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>With our suite of travel products and services, spend less effort managing your travel and more time enjoying life's journeys.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-TravelReady" href="/personal-banking/campaign/travelready" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleon: index--></header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1574740694929">
+      <!--ls:begin[component-1574740694929]--><style>#iw_comp1574740694929{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/personal-banking/">Personal Banking</a></li>
+         <li>Investments</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1574740694929]-->
+     </div>
+     <div class="iw_component" id="iw_comp1574740694930">
+      <style>#iw_comp1574740694930{}</style><div class="masthead-component"></div><div class="module container bp-width-med3 animate">
+   <div class="common__category-description box-med bp-curve3 bg-ash2 text-center ">
+      <h3 class="no-margin thesans"><span> Limitless investment opportunities with OCBC Wealth Management</span></h3>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1574740694931">
+      <style>#iw_comp1574740694931{}</style><!--Common Category Description With Sub Navigation--><div class="masthead-component"></div><div class="module container bp-width-med4">
+   <div class="common__category-list box-shadow3 bp-curve3 no-padding box-pull bg-white mobile-carousel-nav">
+      <div class="auto com__lo-nav fz-16 text-center mw--1060">
+         <div class="mc-na-main">
+            <div class="owl-carousel owl-nav1 group-height">
+               <div class="item selected"><a href="/personal-banking/investments.page" target="_self" cta-id="Investments-Overview-Overview-SubNavigationBar">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/investments/overview.png" alt="Overview"></div>
+                        <p class="mh1-f">Overview</p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/investments/unit-trusts/what-are-unit-trusts.page" target="_self" cta-id="Investments-Overview-UnitTrusts-SubNavigationBar">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/investments/unit-trusts.png" alt="Unit Trusts"></div>
+                        <p class="mh1-f">Unit Trusts                     </p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/investments/roboinvest.page" target="_self" cta-id="Investments-Overview-RoboInvest-SubNavigationBar">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/investments/icon_roboinvest.png" alt="RoboInvest"></div>
+                        <p class="mh1-f">RoboInvest</p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/investments/treasury-products.page" target="_self" cta-id="Investments-Overview-EquitiesAndTreasury-SubNavigationBar">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/investments/etf-equity-forex.png" alt="Equities &amp; Treasury"></div>
+                        <p class="mh1-f">Equities & Treasury</p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/investments/forex-trading.page" target="_self" cta-id="Investments-Overview-ForeignExchange-SubNavigationBar">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/investments/icon_foreign-exchange.png" alt="Foreign Exchange"></div>
+                        <p class="mh1-f">Foreign Exchange</p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/investments/precious-metals-account.page" target="_self" cta-id="Investments-Overview-PreciousMetals-SubNavigationBar">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/investments/icon_gold-silver.png" alt="Precious Metals"></div>
+                        <p class="mh1-f">
+                     
+                        
+                        Precious Metals
+                     </p>
+                     </div></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1691180517426">
+      <style>#iw_comp1691180517426{}</style><div class="featured-component"></div><div class="module container bp-width-med3">
+   <div class="parent__account">
+      <div class="subcategory subcategory--black">Investment Highlights</div>
+      <div class="feature__list feature__full-block d-flex feature__list--right-thumbnail">
+         <div class="d-flex align-items-center flex-column flex-md-row w-100">
+            <div class="flex flex-column feature__list-row w-100">
+               <div class="feature__list--image"><img src="/iwov-resources/sg/ocbc/personal/img/live/investments/kv-highlights_passiveincome.png" alt="#"></div>
+               <div class="feature__list--blocks d-flex">
+                  <div class="feature__list--header d-flex flex-column">
+                     <div class="feature__list--header__content flex-fill justify-content-center  d-flex flex-column">
+                        <div class="feature__teaser feature__teaser--no-background w-100">
+                           <div class="feature__teaser-content">
+                              <p class="feature__teaser-category text--bold"></p>
+                              <h2 class="mb2">Building passive income through investing</h2>
+                              <div class="feature__teaser-expanded-content">
+                                 <p><p>Generate passive income through these investment options designed to provide investors with frequent dividend payouts.</p></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="feature__list--image--mobile"><img src="/iwov-resources/sg/ocbc/personal/img/live/investments/kv-highlights_passiveincome.png" alt="#"></div>
+                  <div class="feature__list--content">
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="https://go.ocbc.com/IncomeTableFranklin" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Franklin Diversified Income Fund</p><p>The fund aims to provide a high level of current income, with long-term capital appreciation as a secondary goal. It primarily invests in debt securities issued by governments, agencies, and corporations worldwide.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="https://go.ocbc.com/IncomeTableEastspring" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Eastspring Asia Select Bond Fund</p><p>The fund invests at least 70% in USD, EUR, and Asian currency-denominated debt securities issued or guaranteed by Asian governments, quasi-governments, corporates, or supranationals, aligned with Eastspring&rsquo;s ESG principles, including Green, Social, and Sustainability bonds.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="https://go.ocbc.com/IncomeTablePIMCO" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">PIMCO GIS Income Fund E</p><p>The fund is designed for investors who seek steady income with a secondary goal of capital appreciation. It aims to achieve this by employing PIMCO&rsquo;s best income-generating ideas across global fixed income sectors.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1684716508730">
+      <style>#iw_comp1684716508730{}</style><div class="discover-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black ">Discover</div>
+   <div class="row flex-row-reverse align-items-center feature__image feature__image-beside-text mob-mt2 animate&#xA;&#x9;&#x9;&#x9;&#x9;">
+      <div class="col-md-8">
+         <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/personal/img/live/investments/kv-discover.png" alt="Unlock the possibilities your wealth can bring"></div>
+      </div>
+      <div class="col-md-4">
+         <div class="feature__image--text">
+            <h3 class=" feature__image--title"><strong>Unlock the possibilities your wealth can bring</strong></h3>
+            <div class="feature__image--description">
+               <p class="mb0"><p>Explore our wide range of investment options and expert wealth insights in one place so you can build a portfolio that works just for you.</p>
+<p>Let your investments power your aspirations with OCBC Wealth Management today.</p></p>
+            </div>
+            <div class="feature__image--button d-flex flex-wrap align-items-center"><a cta-id="Home-Investments-Discover-FindOutMore" href="/personal-banking/investments/invest-way-you-like?pid=Mass:investment::AlwaysOn:Engagement:May:2023:vanity::::::DigitalWealth:MainInvestmentsPage" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Find out more</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1738023088949">
+      <!--ls:begin[component-1738023088949]--><style>#iw_comp1738023088949{}</style><div class="featuredfund-component"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">FEATURED FUND</div>
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__thumbnail large"><img src="/iwov-resources/sg/ocbc/personal/img/live/investments/unit-trusts/what-are-unit-trusts/kv-featured-fund.png" alt-text="Welcome prosperity to your child’s savings journey with a Disney gift"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">Tap into investment expertise of Bank of Singapore, Asia’s Global Private Bank</div>
+                  <div class="article__content"><p>The new Lion-BOS Supertrends Multi-Asset Fund leverages on the research and insights of Bank of Singapore's award-winning Chief Investment Office (CIO) to offer investors potential monthly distributions and long-term capital appreciation. <br /><br />This actively managed fund that is exclusive to OCBC and BOS customer, invests across bonds, equities, and various other asset classes while capitalising on long-term structural global trends that are set to shape economies and societies over the next decade.</p>
+<p class="caption">This advertisement has not been reviewed by the Monetary Authority of Singapore. Investments are subject to investment risks, including the possible loss of the principal amount invested.​</p>
+<a class="button button--secondary button--link" href="/personal-banking/campaign/bank-of-singapore-bos-cio-chief-investment-office-supertrends-fund" target="_self"><span>Find out more</span></a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1738023088949]-->
+     </div>
+     <div class="iw_component" id="iw_comp1645637824479">
+      <style>#iw_comp1645637824479{}</style><div class="getstarted-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Get started</div>
+   <div class="row feature__three-col-background-image same-height-parent">
+      <div class="col-md-4 mb2"><a target="_self" href="/personal-banking/investments/learn-to-invest" cta-id="Investments-Overview-FindOutMore-LearnHowToInvest">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/personal/img/live/investments/overview/kv_tile-learnhowtoinvest.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Learn how to invest</p>
+                     <h4 class="feature__teaser-title">Kickstart your investment journey with our library of resources</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Learn how to invest</p>
+                     <h4 class="feature__teaser-title">Kickstart your investment journey with our library of resources</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+      <div class="col-md-4 mb2"><a target="_self" href="/personal-banking/investments/invest-way-you-like" cta-id="Investments-Overview-FindOutMore-InvestWayYouLike">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/personal/img/live/investments/overview/kv_tile-investthewayyoulike.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Start investing with OCBC</p>
+                     <h4 class="feature__teaser-title">Build a diversified portfolio the way you like</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Start investing with OCBC</p>
+                     <h4 class="feature__teaser-title">Build a diversified portfolio the way you like</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+      <div class="col-md-4 mb2"><a target="_self" href="/personal-banking/investments/investment-schemes" cta-id="Investments-Overview-FindOutMore-InvestInYourFuture">
+            <div class="feature__teaser  feature__teaser--collapsed  feature__teaser--landscape  same-height-single co-white" style="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;background-image: url(/iwov-resources/sg/ocbc/personal/img/live/investments/overview/kv_tile-investmentschemes.jpg)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;">
+               <div class="feature__teaser-content feature__teaser-content--placeholder">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Invest in your future</p>
+                     <h4 class="feature__teaser-title">Get more out of your CPF and SRS savings</h4>
+                     <div class="feature__teaser-expanded-content active">
+                        <p><span class="link link link-arrow-right">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="feature__teaser-content d-flex align-items-end align-items-md-start">
+                  <div class="">
+                     <p class="feature__teaser-category text--bold">Invest in your future</p>
+                     <h4 class="feature__teaser-title">Get more out of your CPF and SRS savings</h4>
+                     <div class="feature__teaser-expanded-content feature__teaser-expanded-control">
+                        <p><span class="link link link-arrow-right">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></p>
+                     </div>
+                  </div>
+               </div>
+            </div></a></div>
+   </div>
+   <div class="mb3"></div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1665167407979">
+      <!--ls:begin[component-1665167407979]--><style>#iw_comp1665167407979{}</style><div class="savelessinvestmore-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3 animate">
+                                            <link rel="stylesheet" href="/iwov-resources/sg/ocbc/personal/campaign/assetmanagement/assetmanagement.css" media="all">
+                                            <div class="subcategory subcategory--black">Invest more today</div>
+                                            <div class="mb-4 pb-2">
+                                                <h4><strong>Find out how much you can grow your wealth by investing</strong></h4>
+                                                <p>Idle cash loses value over time due to inflation. Put your money to work and see your wealth grow when you invest.</p>
+                                                <p>Calculate your potential returns over time when you invest. You can choose between lump sum and/or monthly investments.</p>
+                                            </div>
+                                            <div class="com_investment-calculator">
+                                                <div class="card card--no-shadow mb-4">
+                                                    <div class="card__content">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-3 mb-3 mb-md-0">
+                                                                <p><strong>How much do you want to <span class="no-wrap">invest? <a class="link-simple" data-fancybox href="#popup-how-much-to-invest"><i class="fas fa-info-circle ml-1 fz-18"></i></a></span></strong></p>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <div class="row">
+                                                                    <div class="col-12 col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label class="w-100 mt-4">
+                                                                                <div class="material-form-control input-number has-unit has-value">
+                                                                                    <input tabindex="1" name="" class="form-control input-lumpsum" type="tel" min="1000" value="" placeholder="Enter amount" />
+                                                                                    <input tabindex="-1" name="" class="form-control value" type="text" value="" placeholder="Enter amount" readonly />
+                                                                                    <span class="label">Lump sum investment</span>
+                                                                                    <span class="unit">$</span>
+                                                                                    <span class="message d-block">The minimum amount is $1,000. If you are not investing any amount, please enter 0.</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12 col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label class="w-100 mt-4">
+                                                                                <div class="material-form-control input-number has-unit has-value">
+                                                                                    <input tabindex="1" name="" class="form-control input-monthly-investment" type="tel" min="100" value="" placeholder="Enter amount" />
+                                                                                    <input tabindex="-1" name="" class="form-control value" type="text" value="" placeholder="Enter amount" readonly />
+                                                                                    <span class="label">Monthly investment</span>
+                                                                                    <span class="unit">S$</span>
+                                                                                    <span class="message d-block">The minimum amount is $100. If you are not investing any amount, please enter 0.</span>
+                                                                                </div>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12 col-md-6 com_field mt3">
+                                                                        <div class="form-group">
+                                                                            <div class="material-form-control select-dropdown mb-4">
+                                                                                <span class="label">Your risk preference</span>
+                                                                                <div class="dropdown__theme input-select default-select black-select fw-400 pt-1">
+                                                                                    <select class="select2 form-control input-risk-preference" name="" id="">
+                                                                                        <option value="0.02">Low risk</option>
+                                                                                        <option value="0.05" selected>Medium risk</option>
+                                                                                        <option value="0.08">High risk</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12 mt2">
+                                                                        <div class="form-group">
+                                                                            <button class="button button--secondary button--link button-calculate" cta-id="Investments-Overview-Calculate-InvestMoreToday">Calculate</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caption mt2">
+                                                            <p>All figures and projections shown are for illustration purposes only, and calculated based on projected rates and assumptions which are subject to change at any time.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card bg-grey card--no-shadow com_investment-calculator-result">
+                                                    <div class="card__content">
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-3 mb-3 mb-md-0">
+                                                                <p><strong>Projected returns in 40 years</strong></p>
+                                                            </div>
+                                                            <div class="col-md-8 col-lg-6 mb-3 mb-md-0">
+                                                                <div class="bp-rel">
+                                                                    <canvas class="com_yearly-returns"></canvas>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 col-lg-3">
+                                                                <div class="balance-total">
+                                                                    <div class="bt-item mb-3">
+                                                                        <p class="mb-0"><span class="circle-legend green"></span>Total balance</p>
+                                                                        <h4><b>$ <span class="label-total-balance">0</span></b></h4>
+                                                                    </div>
+                                                                    <div class="bt-item mb-3">
+                                                                        <p class="mb-0"><span class="circle-legend skyblue"></span>Your potential investment returns</p>
+                                                                        <h4><b>$ <span class="label-potential-investment">0</span></b></h4>
+                                                                    </div>
+                                                                    <div class="bt-item mb-3">
+                                                                        <p class="mb-0"><span class="circle-legend blue"></span>Total amount invested</p>
+                                                                        <h4><b>$ <span class="label-total-invested">0</span></b></h4>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div></div>
+</div><!--ls:end[component-1665167407979]-->
+     </div>
+     <div class="iw_component" id="iw_comp1720915150297">
+      <!--ls:begin[component-1720915150297]--><style>#iw_comp1720915150297{}</style><div class="wealth-component"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">Wealth Insights</div>
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__thumbnail large"><img src="/iwov-resources/sg/ocbc/personal/img/live/campaign/startplanning/kv-wealth-insights.png" alt-text="Plan your next move with confidence"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">Plan your next move with confidence</div>
+                  <div class="article__content"><p>In this environment of uncertainty, we know how important it is to stay on top of the latest market news. With Wealth Insights, receive timely updates and tips on how you can manage, protect and grow your pot of gold.</p>
+<div class="d-none-soft">
+<div id="popup-downloadocbcdigital">
+<h4 class="bp-title fw-700 bp-img align-middle mb2 text-center"><span>Plan with OCBC Digital</span></h4>
+<p class="text-center">Scan the QR code to open the app.</p>
+<div class="d-flex justify-content-center"><img style="width: 200px; height: 200px;" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/qrcode_ocbc-digital.jpg" alt="" /></div>
+</div>
+</div></div>
+                  <p class="mt-3"><a data-fancybox="none" href="#popup-downloadocbcdigital" class="link link-arrow-right" target="_self">Plan with the OCBC  <span class="text-nowrap">app<i class="far fa-chevron-right"></i></span></a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1720915150297]-->
+     </div>
+     <div class="iw_component" id="iw_comp1645637824485">
+      <style>#iw_comp1645637824485{}</style><div class="transparentfees-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black ">Transparent fees</div>
+   <div class="row flex-row-reverse align-items-center feature__image feature__image-beside-text mob-mt2 animate&#xA;&#x9;&#x9;&#x9;&#x9;">
+      <div class="col-md-8">
+         <div class="bp-img wide feature__image--image"><img src="/iwov-resources/sg/ocbc/personal/img/live/investments/overview/kv_feesupfront.png" alt=""></div>
+      </div>
+      <div class="col-md-4">
+         <div class="feature__image--text">
+            <h3 class=" feature__image--title"><strong>Get to know the fees upfront</strong></h3>
+            <div class="feature__image--description">
+               <p class="mb0">Take a look at our fees and see how OCBC remains one of the most affordable and best investment platforms in Singapore for you.</p>
+            </div>
+            <div class="feature__image--button d-flex flex-wrap align-items-center">
+               <p><a cta-id="Investments-Overview-SeeAllOurFeesAndCharges-TransparentFees" href="/personal-banking/investments/fees-and-charges" class="link link-arrow-right" target="_self">See all our fees &  <span class="text-nowrap">charges<i class="far fa-chevron-right"></i></span></a></p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1645637824827">
+      <!--ls:begin[component-1645637824827]--><style>#iw_comp1645637824827{}</style><div class="discoversuitable-component"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">Discover suitable investments</div>
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__thumbnail large"><img src="/iwov-resources/sg/ocbc/personal/img/live/investments/overview/kv_suitableinvestments.jpg" alt-text="Suitable investments"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title"><strong>Not sure which investment is suitable for you?</strong></div>
+                  <div class="article__content"><p>How much effort are you willing to put in to manage and grow your wealth?</p></div>
+                  <p class="mt-3"><a cta-id="Investments-Overview-FindOutMore-DiscoverSuitableInvestments" href="/personal-banking/investments/discover-suitable-investments" class="link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1645637824827]-->
+     </div>
+     <div class="iw_component" id="iw_comp1645637824489">
+      <style>#iw_comp1645637824489{}</style><div class="faqs-component"></div><script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					
+						{
+						 "@type": "Question",
+					      "name": "I am new to investing. Where do I start?",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>For new investors, we recommend you complete our <a class="ctaid-selfguidedjourney" href="/personal-banking/investments/discover-suitable-investments">self-guided investment journey</a> to see which products are suitable for you based on your risk appetite.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Can I still invest with OCBC if I am not an OCBC customer?",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>You must be an OCBC deposit account holder to invest with us. <a class="smoothscroll ctaid-openaccinstantly" href="#section-waystoinvest">Open your account instantly</a>.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "How do I open an investment account with OCBC?",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>You will be guided to open an investment account when you start your first investment with us. <a class="ctaid-browseavailableproducts" href="/personal-banking/investments/invest-way-you-like.page#section-ourproducts">Browse our available products</a>.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Can I invest with CPF and SRS?",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>Yes, you can invest in the following products using your CPF and/or SRS:</p> <ul class="list-bullet"> <li><a class="ctaid-unittrusts" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts">Unit Trusts</a></li> <li><a class="ctaid-bcip" href="/personal-banking/investments/blue-chip-investment-plan">Blue Chip Investment Plan</a></li> <li><a class="ctaid-sgs" href="/personal-banking/investments/singapore-government-securities">Singapore Government Securities</a></li> <li><a class="ctaid-sd" href="/personal-banking/investments/structured-deposits">Structured Deposits</a></li> <li><a class="ctaid-td" href="/personal-banking/deposits/fixed-deposit-account">Time Deposits</a></li> </ul> <p class="pt2">For more information, please visit our <a class="ctaid-retirementschemes" href="/personal-banking/investments/investment-schemes">Investment Schemes page</a>.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Can I transfer other investments over from another platform?",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>Yes, you can transfer the following products over from another platform:</p> <ul class="list-bullet"> <li><a class="ctaid-ut" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts">Unit Trusts</a></li> <li><a class="ctaid-bluechip" href="/personal-banking/investments/blue-chip-investment-plan">Blue Chip Investment Plan</a></li> <li><a class="ctaid-singaporegovtsecurities" href="/personal-banking/investments/singapore-government-securities">Singapore Government Securities</a></li> </ul> <p class="pt2">Our financial advisors will be able to assist you further. Please visit your closest OCBC branch or call our hotline to arrange an appointment to find out more.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "What are the benefits of investing with OCBC?",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>At OCBC, we make it a point to truly understand your needs and offer a range of investment products that we believe are solutions to help you meet your financial goals and achieve a well-diversified portfolio.</p> <p>With the OCBC app, you can kickstart your investment journey seamlessly, anytime and anywhere. Start small with as little as S$100 via our monthly investment plans that can help you accumulate financial assets gradually over time.</p>"
+					      }			
+						},
+					
+				]
+			}
+		</script><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">FAQs about investments</div>
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="none" close-others="false">
+            <div class="clearfix"></div>
+            <ul class="accordion__list">
+               <li id="newinvestors-wheretostart" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>I am new to investing. Where do I start?</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>For new investors, we recommend you complete our <a class="ctaid-selfguidedjourney" href="/personal-banking/investments/discover-suitable-investments">self-guided investment journey</a> to see which products are suitable for you based on your risk appetite.</p></div>
+               </li>
+               <li id="investing-as-nonocbccustomer" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Can I still invest with OCBC if I am not an OCBC customer?</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>You must be an OCBC deposit account holder to invest with us. <a class="smoothscroll ctaid-openaccinstantly" href="#section-waystoinvest">Open your account instantly</a>.</p></div>
+               </li>
+               <li id="how-to-open-investmentsacc" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>How do I open an investment account with OCBC?</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>You will be guided to open an investment account when you start your first investment with us. <a class="ctaid-browseavailableproducts" href="/personal-banking/investments/invest-way-you-like.page#section-ourproducts">Browse our available products</a>.</p></div>
+               </li>
+               <li id="invest-cpf-srs" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Can I invest with CPF and SRS?</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Yes, you can invest in the following products using your CPF and/or SRS:</p>
+<ul class="list-bullet">
+<li><a class="ctaid-unittrusts" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts">Unit Trusts</a></li>
+<li><a class="ctaid-bcip" href="/personal-banking/investments/blue-chip-investment-plan">Blue Chip Investment Plan</a></li>
+<li><a class="ctaid-sgs" href="/personal-banking/investments/singapore-government-securities">Singapore Government Securities</a></li>
+<li><a class="ctaid-sd" href="/personal-banking/investments/structured-deposits">Structured Deposits</a></li>
+<li><a class="ctaid-td" href="/personal-banking/deposits/fixed-deposit-account">Time Deposits</a></li>
+</ul>
+<p class="pt2">For more information, please visit our <a class="ctaid-retirementschemes" href="/personal-banking/investments/investment-schemes">Investment Schemes page</a>.</p></div>
+               </li>
+               <li id="transfer-anotherplatform-investments" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Can I transfer other investments over from another platform?</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Yes, you can transfer the following products over from another platform:</p>
+<ul class="list-bullet">
+<li><a class="ctaid-ut" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts">Unit Trusts</a></li>
+<li><a class="ctaid-bluechip" href="/personal-banking/investments/blue-chip-investment-plan">Blue Chip Investment Plan</a></li>
+<li><a class="ctaid-singaporegovtsecurities" href="/personal-banking/investments/singapore-government-securities">Singapore Government Securities</a></li>
+</ul>
+<p class="pt2">Our financial advisors will be able to assist you further. Please visit your closest OCBC branch or call our hotline to arrange an appointment to find out more.</p></div>
+               </li>
+               <li id="benefits-investingwocbc" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>What are the benefits of investing with OCBC?</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>At OCBC, we make it a point to truly understand your needs and offer a range of investment products that we believe are solutions to help you meet your financial goals and achieve a well-diversified portfolio.</p>
+<p>With the OCBC app, you can kickstart your investment journey seamlessly, anytime and anywhere. Start small with as little as S$100 via our monthly investment plans that can help you accumulate financial assets gradually over time.</p></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1684716508749">
+      <!--ls:begin[component-1684716508749]--><style>#iw_comp1684716508749{}</style><div class="faqs-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3">
+   <div class="row">
+      <div class="col-custom-12">
+         <p class="pt2 caption">This advertisement has not been reviewed by the Monetary Authority of Singapore.</p>
+       </div>
+    </div>
+</div></div>
+</div><!--ls:end[component-1684716508749]-->
+     </div>
+     <div class="iw_component" id="iw_comp1645637825919">
+      <!--ls:begin[component-1645637825919]--><style>#iw_comp1645637825919{}</style><div class="beforeyouinvest-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Before you invest</div>
+   <div class="table__three-col table__three-col-with-accordion">
+      <div class="accordion">
+         <div class="accordion__item">
+            <div class="accordion__item__title d-flex justify-content-between align-items-center">
+               <h4><strong>Important notices</strong></h4><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+            <div class="accordion__item__content table__three-col--tnc" style="">
+               <div class="row">
+                  <div class="col-md-6">
+                     <p><a data-fancybox="none" href="#popup-generaldisclaimer" class="link link link-arrow-right" target="_self">General  <span class="text-nowrap">disclaimer<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a data-fancybox="none" href="#popup-depositinsurancescheme" class="link link link-arrow-right" target="_self">Deposit Insurance  <span class="text-nowrap">Scheme<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a data-fancybox="none" href="#popup-collectiveinvestmentschemes" class="link link link-arrow-right" target="_self">Collective Investment  <span class="text-nowrap">Schemes<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a data-fancybox="none" href="#popup-globalequitiesdisclaimer" class="link link link-arrow-right" target="_self">Global Equities  <span class="text-nowrap">Disclaimers<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a data-fancybox="none" href="#popup-foreigncurrencydisclaimer" class="link link link-arrow-right" target="_self">Foreign Currency  <span class="text-nowrap">Disclaimers<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1645637825919]-->
+     </div>
+     <div class="iw_component" id="iw_comp1645637824493">
+      <style>#iw_comp1645637824493{}</style><div class="waystoinvest-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="cta__basic">
+      <div style="" class="theme theme--blue">
+         <div class="theme__container theme__background">
+            <div class="cta__basic-details">
+               <div class="subcategory subcategory--black subcategory--no-margin">Ways to invest</div>
+               <div class="cta__basic-info">
+                  <h3 class="bold co-default">Start your investment journey with OCBC today</h3>
+                  <div class="cta__basic-links">
+                     <div class="item item-apply default-device-content"><a href="https://internet.ocbc.com/internet-banking/" cta-id="Investments-Overview-InvestOnline-CTABanner" class="button button--primary button--red2&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" target="_self"><span>Invest online</span></a></div>
+                     <div class="item">
+                        <div class="item item-paragraph">
+                           <p class="no-margin co-default">through OCBC Online Banking or visit us at a<br class="d-none d-md-block" />branch to open an account immediately.</p>
+                        </div>
+                        <div class="item locate-branch default-device-content"><a cta-id="Investments-Overview-ContactUs-WaysToInvestCTABanner" href="/personal-banking/contact-us?type=locator-branches#section-findabranch" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Locate a branch</span></a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1737595469561">
+      <!--ls:begin[component-1737595469561]--><style>#iw_comp1737595469561{}</style><div class="group-1-component"></div><div class="pt2" id="cfs-awards-footer">
+   <div><div class="module container bp-width-med3">
+               <div class="subcategory subcategory--black">Awards</div>
+               <div class="row com__row-group-height">
+
+                  <div class="col-md-4 com__row-group-col mt3 mob-mt2">
+                     <div class="d-flex rgh1">
+                        <div>
+                           <p class="mb1"><strong>Best Retail Bank Singapore & SEA</strong></p>
+                           <div class="com__co-us-par fz-14">
+                              The Digital Banker
+                              <br/>
+                              2024
+                           </div>
+                        </div>
+                     </div>
+                     <hr class="mb0 mt3 mob-mt2"> </div>
+                  <div class="col-md-4 com__row-group-col mt3 mob-mt2">
+                     <div class="d-flex rgh1">
+                        <div>
+                           <p class="mb1"><strong>Best & Most Innovative Retail Bank Singapore</strong></p>
+                           <div class="com__co-us-par fz-14">
+                              Global Banking & Finance Review
+                              <br/>
+                              2024
+                           </div>
+                        </div>
+                     </div>
+                     <hr class="mb0 mt3 mob-mt2"> </div>
+                  <div class="col-md-4 com__row-group-col mt3 mob-mt2">
+                     <div class="d-flex rgh1">
+                        <div>
+                           <p class="mb1"><strong>Wealth Hub of the Year</strong></p>
+                           <div class="com__co-us-par fz-14">
+                              The Digital Banker
+                              <br/>
+                              2024
+                           </div>
+                        </div>
+                     </div>
+                     <hr class="mb0 mt3 mob-mt2"> </div>
+               </div>
+            </div>
+         </div>
+</div>
+</div><!--ls:end[component-1737595469561]-->
+     </div>
+     <div class="iw_component" id="iw_comp1645637824555">
+      <style>#iw_comp1645637824555{}</style><div class="d-none-soft">
+   <div id="popup-investperc" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span class="icon"><img src="/iwov-resources/sg/ocbc/personal/img/icon_light_bulb_grey.png" width="55" alt=""></span><span>Percentage to be invested</span></h4><p>Key in the percentage of your total cash savings that you would like to invest. E.g. If you have SGD 100,000 in cash savings and would like to invest half, key in 50%.</p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-howwecalc" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span class="icon"><img src="/iwov-resources/sg/ocbc/personal/img/icon_investmentgraph-grey.png" width="55" alt=""></span><span>How we calculate these values</span></h4><p>We use these projected rates to calculate your returns over 40 years:</p>
+<ul class="list-dot list-mg mb-4">
+<li>Cash deposits: 0.05% p.a.</li>
+<li>Endowment: 2.50% p.a.</li>
+<li>Investments (Moderate Risk): 4.00% p.a.</li>
+<li>Investments (Higher Risk): 5.00% p.a.</li>
+</ul>
+<p class="caption">Important note: Investments are subject to investment risks, including the possible loss of the principal amount invested. Past performance figures, predictions or projections are not necessarily indicative of future or likely performance. Actual performance may differ from the projections in this document.</p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-investonline"><div class="cta__basic-option">
+<div id="ways-to-apply-tabs" class="ways-to-apply-tabs container-fluid">
+<div class="mobile-item-title com__tab-nav">
+<ul class="row align-items-center">
+<li class="col-sm-6 col-6 align-items-center justify-content-center text-center"><a href="#m-item-2"><strong>For new customers</strong></a></li>
+<li class="col-sm-6 col-6 align-items-center justify-content-center text-center"><a href="#m-item-1"><strong>For OCBC customers</strong></a></li>
+</ul>
+</div>
+<div id="m-item-2" class="row align-items-start m-item m-item-2 com__tab-set">
+<div class="col-md-auto col-sm-12 item-title">
+<h3><strong>For new customers</strong></h3>
+</div>
+<div class="col-md-auto col-sm-12 item-copy">
+<p class="mb-2">Open your account instantly when you apply with Myinfo via Singpass login.</p>
+<p>If you do not have Singpass, you can apply online with <a class="cta__basic-toggle" href="#document-toggle">these documents </a><i class="far fa-angle-down">&nbsp;</i></p>
+<div id="document-toggle" class="cta__basic-toggle-content">
+<p><strong>For Singaporeans and Permanent Residents:</strong></p>
+<p>NRIC</p>
+<hr />
+<p><strong>Additional documents <br />Include any one of the following documents:</strong></p>
+<ul class="list-bullet list-nospace">
+<li>Phone bill</li>
+<li>Half-yearly CPF statement</li>
+<li>Any bank statement</li>
+</ul>
+<!-- <ol>
+<li>
+<p><strong>For Singaporeans and Permanent Residents:</strong></p>
+<ul>
+<li>NRIC</li>
+</ul>
+</li>
+<li>
+<p><strong>Additional documents <br />Include any one of the following documents:</strong></p>
+<ul>
+<li>Phone bill</li>
+<li>Half-yearly CPF statement</li>
+<li>Any bank statement</li>
+</ul>
+</li>
+</ol> --> <a class="link link link-arrow-right" cta-id="Investments-Overview-FillApplicationForm-CTAPopup" rel="noopener" href="https://openaccount.ocbc.com/SJ/toformmanual.do" target="_blank">Fill application <span class="text-nowrap">form<i class="far fa-chevron-right">&nbsp;</i></span></a></div>
+</div>
+<div class="col-md-auto col-sm-12 text-right"><a class="button button--primary button--red2 " cta-id="Investments-Overview-ApplyWithMyinfo-CTAPopup" rel="noopener" href="https://openaccount.ocbc.com/SJ/redirect.do" target="_blank"><span>Apply with Myinfo</span></a></div>
+</div>
+<div class="text-divider"><span class="td-text fw-700">or</span></div>
+<div id="m-item-1" class="row align-items-center m-item m-item-1 com__tab-set">
+<div class="col-md-auto col-sm-12 item-title">
+<p><strong>For OCBC customers</strong></p>
+</div>
+<div class="col-md-auto col-sm-12 item-copy">
+<p>If you have a current or savings account with us, you can apply instantly via Internet Banking with only a few clicks.</p>
+</div>
+<div class="col-md-auto col-sm-12 text-right"><a class="link link link-arrow-right" rel="noopener" href="https://internet.ocbc.com/internet-banking/AccountOpening/Index?id=DP&amp;type=LCY&amp;menuId=38bcc66c-a09b-4cba-a7bd-a11ea0597de5&amp;redir=1&amp;rc=INB" cta-id="Investments-Overview-LogInToInternetBanking-CTAPopup" target="_blank"><span>Log in to Internet <span class="text-nowrap">Banking<i class="far fa-chevron-right">&nbsp;</i></span></span></a></div>
+</div>
+</div>
+</div></div>
+</div><div class="d-none-soft">
+   <div id="popup-generaldisclaimer" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>General disclaimer</span></h4><p>This advertisement has not been reviewed by the Monetary Authority of Singapore.</p>
+<ol class="list-decimal">
+<li>Any opinions or views of third parties expressed in this document are those of the third parties identified, and do not represent views of Oversea-Chinese Banking Corporation Limited (&ldquo;OCBC Bank&rdquo;, &ldquo;us&rdquo;, &ldquo;we&rdquo; or &ldquo;our&rdquo;).</li>
+<li>This information is intended for general circulation and / or discussion purposes only. It does not consider the specific investment objectives, financial situation or needs of any particular person.</li>
+<li>Before you make an investment, please seek advice from your Relationship Manager regarding the suitability of any investment product taking into account your specific investment objectives, financial situation or particular needs.</li>
+<li>If you choose not to do so, you should consider if the investment product is suitable for you, and conduct your own assessments and due diligence on the investment product.</li>
+<li>We are not making an offer, solicit to buy or sell or subscribe for any security or financial instrument, enter into any transaction or participate in any trading or investment strategy with you through this document. Nothing in this document shall be deemed as an offer or solicitation to buy or sell or subscribe for any security or financial instrument or to enter into any transaction or to participate in any particular trading or investment strategy.</li>
+<li>No representation or warranty whatsoever in respect of any information provided herein is given by OCBC Bank and it should not be relied upon as such. OCBC Bank does not undertake an obligation to update the information or to correct any inaccuracy that may become apparent at a later time. All information presented is subject to change without notice.</li>
+<li>OCBC Bank shall not be responsible or liable for any loss or damage whatsoever arising directly or indirectly howsoever in connection with or as a result of any person acting on any information provided herein.</li>
+<li>Investments are subject to investment risks, including the possible loss of the principal amount invested. The information provided herein may contain projections or other forward-looking statements regarding future events or future performance of countries, assets, markets or companies. Actual events or results may differ materially. Past performance figures, predictions or projections are not necessarily indicative of future or likely performance.</li>
+<li>Any reference to a company, financial product or asset class is used for illustrative purposes and does not represent our recommendation in any way.</li>
+<li>The information in and contents of this document may not be reproduced or disseminated in whole or in part without the Bank&rsquo;s written consent.</li>
+<li>OCBC Bank, its related companies, and their respective directors and/or employees (collectively &ldquo;Related Persons&rdquo;) may, or might have in the future, interests in the investment products or the issuers mentioned herein. Such interests include effecting transactions in such investment products, and providing broking, investment banking and other financial services to such issuers. OCBC Bank and its Related Persons may also be related to, and receive fees from, providers of such investment products.</li>
+<li>You must read the Offer Document/Indicative Term Sheet/Product Highlight Sheet before deciding whether or not to purchase the investment product, copies of which may be obtained from your relationship manager.</li>
+<li>Any hyperlink to any third party article, or other website or webpage (including any websites or webpages owned, operated and maintained by third parties) is for informational purposes only and for your convenience only and is not an endorsement or verification of any such article, website or webpage by OCBC Bank and should only be accessed at your own risk. OCBC Bank does not review the contents of any such articles, website or webpage, and shall not be liable to any person for the same.</li>
+<li>There are links or hyperlinks which link you to websites of other third parties (the &ldquo;Third Parties&rdquo;). OCBC Bank hereby disclaims liability for any information, materials, products or services posted or offered on the website of the Third Parties.</li>
+</ol></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-depositinsurancescheme" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Deposit Insurance Scheme</span></h4><p>Singapore dollar deposits of non-bank depositors and monies and deposits denominated in Singapore dollars under the Supplementary Retirement Scheme are insured by the Singapore Deposit Insurance Corporation, for up to S$100,000 in aggregate per depositor per Scheme member by law. Monies and deposits denominated in Singapore dollars under the CPF Investment Scheme and CPF Retirement Sum Scheme are aggregated and separately insured up to S$100,000 for each depositor per Scheme member. Foreign currency deposits, dual currency investments, structured deposits and other investment products are not insured.</p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-collectiveinvestmentschemes" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Collective Investment Schemes</span></h4><ol class="list-decimal">
+<li>A copy of the prospectus of each fund is available and may be obtained from the fund manager or any of its approved distributors. Potential investors should read the prospectus for details on the relevant fund before deciding whether to subscribe for, or purchase units in the fund.</li>
+<li>The value of the units in the funds and the income accruing to the units, if any, may fall or rise. Please refer to the prospectus of the relevant fund for the name of the fund manager and the investment objectives of the fund.</li>
+<li>Investment involves risks. Past performance figures do not reflect future performance.</li>
+<li>Any reference to a company, financial product or asset class is used for illustrative purposes and does not represent our recommendation in any way.</li>
+</ol>
+<p>For funds that are listed on an approved exchange, investors cannot redeem their units of those funds with the manager, or may only redeem units with the manager under certain specified conditions. The listing of the units of those funds on any approved exchange does not guarantee a liquid market for the units.</p>
+<p>The indicative distribution rate may not be achieved and is not an indication, forecast, or projection of the future performance of the Fund.</p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-how-much-to-invest" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span class="icon"><img src="/iwov-resources/sg/ocbc/personal/img/icon_light_bulb_grey.png" width="55" alt=""></span><span>Important note</span></h4><p>We use these projected rates to calculate your returns over 40 years:</p>
+<ul class="list-bullet">
+<li>Investments (Low Risk): 2.00% p.a.</li>
+<li>Investments (Moderate Risk): 5.00% p.a.</li>
+<li>Investments (High Risk): 8.00% p.a.</li>
+</ul>
+<p>Investments are subject to investment risks, including the possible loss of the principal amount invested. Past performance figures, predictions or projections are not necessarily indicative of future or likely performance. Actual performance may differ from the projections shown here.</p></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-globalequitiesdisclaimer" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Global Equities Disclaimers</span></h4><ol class="list-decimal">
+<li>Dividend growth is not guaranteed, nor are companies in which you invest obliged to pay dividends;</li>
+<li>Companies may go bankrupt rendering the original investment valueless;</li>
+<li>Equity markets may decline in value;</li>
+<li>Corporate earnings and financial markets may be volatile;</li>
+<li>If there is no recognised market for equities, then these may be difficult to sell and accurate information about their value may be hard to obtain;</li>
+<li>Smaller company investments may be difficult to sell if there is little liquidity in the market for such equities and there may be substantial differences between the buying price and the selling price;</li>
+<li>Equities on overseas markets may involve different risks to equities issued in Singapore;</li>
+<li>With regards to investments in overseas companies, foreign exchange rates may move in an unfavourable direction affecting adversely the valuation of investments in base currency terms.</li>
+</ol></div>
+   </div>
+</div><div class="d-none-soft">
+   <div id="popup-foreigncurrencydisclaimer" class="popup-content po-co-med">
+      <div class="in-co-par fz-16">
+         <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Foreign Currency Disclaimers</span></h4><ol class="list-decimal">
+<li>Foreign currency deposits are subject to inherent exchange rate fluctuation that may provide opportunities and risks. Consequently, exchange rate fluctuations may affect the value of your foreign currency investments or deposits.</li>
+<li>Earning on foreign currency investments or deposits may change depending on the exchange rates prevalent at the time of their maturity if you choose to convert.</li>
+<li>Exchange controls may apply to certain foreign currencies from time to time.</li>
+<li>Any pre-termination costs will be taken and deducted from your deposit directly and without notice.</li>
+<li>This is for general information and does not take into account your particular investment aims, financial situation or needs. You should seek advice from a financial adviser before committing to a purchase. Otherwise, you should consider the suitability of the product.</li>
+<li>We are not making an offer, solicit to buy or sell or subscribe for any security or financial instrument, enter into any transaction or participate in any trading or investment strategy with you through this document. Nothing in this document shall be deemed as an offer or solicitation to buy or sell or subscribe for any security or financial instrument or to enter into any transaction or to participate in any particular trading or investment strategy.</li>
+<li>OCBC Bank, its related companies, and their respective directors and/or employees (collectively &ldquo;Related Persons&rdquo;) may, or might have in the future, interests in the products or the issuers mentioned herein. Such interests include effecting transactions in such products, and providing broking, investment banking and other financial services to such issuers. OCBC Bank and its Related Persons may also be related to, and receive fees from, providers of such products.</li>
+</ol></div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.promotion-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-promotion"></div>');
+	  
+	  
+	
+	  $('.discover-component').parent().wrapAll('<div class="section section-top" id="section-discover"></div>');
+	  
+	  
+	
+	  $('.featuredfund-component').parent().wrapAll('<div class="section section-both" id="section-featuredfund"></div>');
+	  
+	  
+	
+	  $('.featured-component').parent().wrapAll('<div class="section section-bottom bg-grey" id="section-featured"></div>');
+	  
+	  
+	
+	  $('.getstarted-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-getstarted"></div>');
+	  
+	  
+	
+	  $('.savelessinvestmore-component').parent().wrapAll('<div class="section section-both" id="section-savelessinvestmore"></div>');
+	  
+	  
+	
+	  $('.wealth-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-wealth"></div>');
+	  
+	  
+	
+	  $('.transparentfees-component').parent().wrapAll('<div class="section section-both" id="section-transparentfees"></div>');
+	  
+	  
+	
+	  $('.discoversuitable-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-discoversuitable"></div>');
+	  
+	  
+	
+	  $('.faqs-component').parent().wrapAll('<div class="section section-both" id="section-faqs"></div>');
+	  
+	  
+	
+	  $('.beforeyouinvest-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-beforeyouinvest"></div>');
+	  
+	  
+	
+	  $('.waystoinvest-component').parent().wrapAll('<div class="section section-both" id="section-waystoinvest"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Bank logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Personal Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="#">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/">Malaysia</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking/index.html" class="" target="_blank">Business Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></span></p>
+                                 <p><span><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></p>
+                                          <p><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span><span class="text-nowrap">Get in touch with us</span></span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/personal-banking/contact-us" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Contact Us</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:+6563633333" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6363 3333</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/personal-banking/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/personal-banking/policies" class="" target="_self">Policies</a></span><span><a href="/personal-banking/notices" class="" target="_self">Notices</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year"></span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container"><p>You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/personal-banking/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/personal-banking/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</p></div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+   </div>
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js?2020072301'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/analytic-v1.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/copy.js?2020042401'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/card-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/insurance-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/chatbot-prod.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/article-langselector-v1.js'></script>
+<script>
+$('a[href="#popup-generaldisclaimer"]').attr('cta-id', 'Investments-Overview-GeneralDisclaimer-BeforeYouInvestImportantNoticesAccordion');
+$('a[href="#popup-depositinsurancescheme"]').attr('cta-id', 'Investments-Overview-DepositInsuranceScheme-BeforeYouInvestImportantNoticesAccordion');
+$('a[href="#popup-collectiveinvestmentschemes"]').attr('cta-id', 'Investments-Overview-CollectiveInvestmentSchemes-BeforeYouInvestImportantNoticesAccordion');
+$(".ctaid-selfguidedjourney").attr('cta-id', 'Investments-Overview-SelfGuidedInvestmentJourney-FAQs');
+$(".ctaid-openaccinstantly").attr('cta-id', 'Investments-Overview-OpenYourAccountInstantly-FAQs');
+$(".ctaid-browseavailableproducts").attr('cta-id', 'Investments-Overview-BrowseOurAvailableProducts-FAQs');
+$(".ctaid-unittrusts").attr('cta-id', 'Investments-Overview-UnitTrusts-FAQsInvestCPFSRS');
+$(".ctaid-bcip").attr('cta-id', 'Investments-Overview-BlueChipInvestmentPlan-FAQsInvestCPFSRS');
+$(".ctaid-sgs").attr('cta-id', 'Investments-Overview-SingaporeGovernmentSecurities-FAQsInvestCPFSRS');
+$(".ctaid-sd").attr('cta-id', 'Investments-Overview-StructuredDeposits-FAQsInvestCPFSRS');
+$(".ctaid-td").attr('cta-id', 'Investments-Overview-TimeDeposits-FAQsInvestCPFSRS');
+$(".ctaid-retirementschemes").attr('cta-id', 'Investments-Overview-InvestmentSchemesPage-FAQs');
+$(".ctaid-ut").attr('cta-id', 'Investments-Overview-UnitTrusts-FAQsXferAnotherPlatform');
+$(".ctaid-bluechip").attr('cta-id', 'Investments-Overview-BlueChipInvestmentPlan-FAQsXferAnotherPlatform');
+$(".ctaid-singaporegovtsecurities").attr('cta-id', 'Investments-Overview-SingaporeGovernmentSecurities-FAQsXferAnotherPlatform');
+$(".ctaid-360investpromotncs").attr('cta-id', 'Investments-Overview-TermsAndConditionsApply-OCBC360AccountxDigitalWealthBonusInterestPromotion');
+</script>
+<script src="/iwov-resources/sg/ocbc/personal/js/plugin/chart.min.js"></script>
+<script src="/iwov-resources/sg/ocbc/personal/campaign/assetmanagement/assetmanagement.js"></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

@@ -1,0 +1,1782 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- (START) Adobe Analytics - Header -->
+<script src="//assets.adobedtm.com/f8f9776f70c5/929d6c7fc7b8/launch-4fb16aaa7062.min.js" async></script>
+<!-- (END) Adobe Analytics - Header -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+<!-- End Google Tag Manager -->
+<script type="application/ld+json">
+  { 
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OCBC Bank Singapore",
+    "alternateName": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/",
+    "logo": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "2199" 
+    },
+    "sameAs": [
+      "https://www.facebook.com/OCBCBank/",
+      "https://twitter.com/ocbcbank",
+      "https://www.youtube.com/user/channelocbc",
+      "https://www.linkedin.com/company/ocbc-bank/"
+    ] 
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1205034763867173');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1205034763867173&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Conditions of Access | OCBC Singapore</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/personal-banking/page/conditions-of-access/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/personal-banking/conditions-of-access/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/personal-banking/conditions-of-access.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css?20200729' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/qualtrics.css?2020062501' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]-->
+<script type="text/javascript">
+                var _gaq = _gaq || [];
+                var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+                _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+                _gaq.push(['_setAccount', 'UA-31687854-1']);
+                // _gaq.push(['_setDomainName', 'ocbc.com']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_9QPdWtioy9UtOWp","https://zn9qpdwtioy9utowp-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_9QPdWtioy9UtOWp")).start()}catch(i){}})();
+</script><div id='ZN_9QPdWtioy9UtOWp'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script type="text/javascript">
+var digitalData = {
+page: {
+pageName: "SG:OCBC:Personal:ConditionsOfAccess",
+channel: "Personal",
+subSection2: "ConditionsOfAccess"
+}
+}
+</script>
+<script type="application/ld+json"> {"@context":"https://schema.org/","@type":"CreativeWorkSeries","name":"Conditions of Access","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","ratingCount":"2199"}}</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1566904104289">
+    <style>#iw_comp1566904104289{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com" target="_self"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Singapore"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#accounts" class="header__navi">Accounts</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#cards" class="header__navi">Cards</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#loans" class="header__navi">Loans</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#insurance" class="header__navi">Insurance</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investments" class="header__navi">Investments</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#advisory" class="header__navi">Advisory</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#more" class="header__navi">More</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                        <div class="page__opt2">
+                           <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/personal-banking/home" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_blank">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/premier-private-client/index.page" data-target="_self">Premier Private Client</option>
+                                 <option value="https://www.ocbc.com/business-banking/index.html" data-target="_blank">Business Banking</option>
+                                 <option value="https://www.ocbc.com/group/about-us/group-business" data-target="_blank">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page" data-target="_blank">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_blank">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a cta-id="PersonalBanking-navbar-premierbanking" href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-digitalbanking" href="/personal-banking/digital-banking" class="" target="_self">Digital Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-security-overview" href="/personal-banking/security/overview" class="" target="_self">Security</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-locations-overview" href="/personal-banking/locations" class="" target="_self">Branches & ATMs</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-gethelp" href="/personal-banking/help-and-support" class="" target="_self">Get help</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                  <div class="page__opt2">
+                     <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                  </div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleoff: index-->
+   <div class="header__sub" data-nosnippet="">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="accounts" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Accounts</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Day-to-day Banking</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-360Account" href="/personal-banking/deposits/360-savings-account" class="link link link-arrow-right" target="_self">360  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Savings</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-BonusPlusSavingsAccount" href="/personal-banking/deposits/bonus-plus-savings-account" class="link link link-arrow-right" target="_self">Bonus+ Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Foreign Currency</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-GlobalSavingsAccount" href="/personal-banking/deposits/multi-currency-global-savings-account" class="link link link-arrow-right" target="_self">Global Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Children's Account</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-OCBCMyOwnAccount" href="/personal-banking/deposits/myown-account" class="link link link-arrow-right" target="_self">OCBC MyOwn  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-SeeAllAccounts" href="/personal-banking/deposits" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all accounts</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-cny_promo_2026.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Usher in good fortune when you grow your savings with us!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>This Lunar New Year, receive 1.80% a year or a Disney&rsquo;s Winnie the Pooh plushie when you top up an eligible OCBC savings account.</p>
+<p>T&amp;Cs apply. Insured up to S$100k by SDIC.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/deposits/statement-passbook-savings-account" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="cards" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Cards</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-infinity.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Unlimited cashback on your spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-INFINITYCC" href="https://www.ocbc.com/personal-banking/cards/infinity-unlimited-cashback-card" class="link link link-arrow-right" target="_self">OCBC INFINITY Cashback  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-365visacc.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For everyday spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-365CC" href="/personal-banking/cards/365-cashback-credit-card" class="link link link-arrow-right" target="_self">OCBC 365 Credit  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/rewards-card/rewardscard-noshadow.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Get rewarded for shopping</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-OCBCRewardsCard" href="/personal-banking/cards/rewards-card" class="link link link-arrow-right" target="_self">OCBC Rewards  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-90n.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Daily spend for future travels</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-90NCard" href="/personal-banking/cards/90-degrees-travel-credit-card.page" class="link link link-arrow-right" target="_self">OCBC 90&deg;N  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Cards-megamenu-SeeAllCards" href="/personal-banking/cards" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all cards</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/kv-navbar-poohluggage-r1.png" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get Disney’s Winnie the Pooh gifts and more this New Year!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p class="mb-3">Enjoy exclusive Disney rewards when you bank with us! T&amp;Cs apply.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/campaign/festive-deals.page" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="loans" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Loans</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Personal</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-EasiCredit" href="/personal-banking/loans/easicredit-flexible-repayment-cash-loan" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">EasiCredit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Home</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-HomeLoanNewPurchase" href="/personal-banking/loans/home-loans" class="link link link-arrow-right" target="_self">Home  <span class="text-nowrap">Loans<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-CarLoan" href="/personal-banking/loans/car-loans" class="link link link-arrow-right" target="_self">Car  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Student</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-FRANKTuitionFeeLoan" href="/personal-banking/loans/student-loans/tuition-fee-loan" class="link link link-arrow-right" target="_blank">Tuition Fee  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Loans-megamenu-SeeAllLoans" href="/personal-banking/loans" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all loans</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="insurance" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Insurance</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment-linked</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-InvestmentLinkedInsurancePlan2" href="/personal-banking/insurance/investment-linked-insurance-plan-2" class="link link link-arrow-right" target="_self">Investment-linked Insurance Plan  <span class="text-nowrap">2<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Accident &amp; Health</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-MyGreatPAPlan" href="/personal-banking/insurance/mygreatpaplan" class="link link link-arrow-right" target="_self">My GREAT PA  <span class="text-nowrap">Plan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Protection</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-GREATTermGuard" href="/personal-banking/insurance/great-term-guard" class="link link link-arrow-right" target="_self">GREAT Term  <span class="text-nowrap">Guard<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Travel, Home &amp; Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-Explorer" href="/personal-banking/insurance/great-travelcare-insurance" class="link link link-arrow-right" target="_self">GREAT  <span class="text-nowrap">TravelCare<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-SeeAllInsurances" href="/personal-banking/insurance" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all insurances</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-insurance-aug25.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag"><span class="co-black">Enjoy discounts of up to 50% when you apply for eligible insurance plans</span></div>
+                                       <div class="header__sub-menu-link">
+                                          <p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-CNYPromo2023" href="/personal-banking/insurance#section-promo" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investments" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investments</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Top fund ideas</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-UnitTrusts" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts" class="link link link-arrow-right" target="_self">Unit  <span class="text-nowrap">Trusts<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Trade across 15 global exchanges</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OnlineEquitiesAccount" href="/personal-banking/investments/online-equities-account" class="link link link-arrow-right" target="_self">Online Equities  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">38 portfolios from just 100 USD</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OCBCRoboInvest" href="/personal-banking/investments/roboinvest" class="link link link-arrow-right" target="_self">OCBC  <span class="text-nowrap">RoboInvest<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Diversify with gold & silver</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-PreciousMetalAccount" href="/personal-banking/investments/precious-metals-account" class="link link link-arrow-right" target="_self">Precious Metals  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SeeAllInvestments" href="/personal-banking/investments" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all investments</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Foreign Currency Exchange</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Conveniently and securely exchange AUD, CAD, CHF<strong><sup style="color: #e30613 !important;">NEW</sup></strong>, CNH, EUR, GBP, HKD, JPY, NZD and USD, 24/7 via OCBC Digital, for your overseas transfer, travel payments, online spends, investments and more.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-ForeignCurrencyExchange" href="/personal-banking/investments/forex-trading" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Supplementary Retirement Scheme (SRS)</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Reduce your taxable income by the same amount contributed to your SRS Account, with a maximum yearly contribution of S$15,300 for Singaporeans and Singapore PRs, and S$35,700 for foreigners.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SupplementaryRetirementScheme" href="/personal-banking/investments/supplementary-retirement-scheme-account" class="link link link-arrow-right" target="_blank">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="advisory" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Advisory</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>The OCBC SeniorCare Programme empowers you through four key pillars: Health, Wealth, Lifestyle and Literacy.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-SilverYears" href="/personal-banking/seniorcare-programme" class="link link link-arrow-right" target="_self">SeniorCare  <span class="text-nowrap">Programme<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Achieve your goals with proper financial planning.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-LifeGoals" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Life  <span class="text-nowrap">Goals<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get data and insights into the financial wellness of Singaporeans.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-FinancialWellnessIndex2023" href="/group/financial-wellness-index/understand-the-index.html" class="link link link-arrow-right" target="_blank">Financial Wellness Index  <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get rewarded for what matters: your salary, your lifestyle, and your smart savings habits.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-BeyondYour9To5" href="/personal-banking/campaign/beyondyour9to5" class="link link link-arrow-right" target="_blank">Beyond your 9-5 Starter  <span class="text-nowrap">Kit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_startplanning.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Start planning and get ahead with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>From financial planning tools, investment options and insurance, our comprehensive array of solutions have been built to get you ahead in your every goal and ambition.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-StartPlanning" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Start planning  <span class="text-nowrap">today<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="more" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">More</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Fancy shopping at a bank branch or even enjoying a sushi meal there? At OCBC Wisma Atria, you can do all these and more &ndash; visit us to experience it firsthand!</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-More-megamenu-OneAdvisor" href="/personal-banking/ocbc-wisma" class="link link link-arrow-right" target="_blank">Bank, dine and shop at the new OCBC Wisma  <span class="text-nowrap">Atria<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_travelready.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get travel-ready with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>With our suite of travel products and services, spend less effort managing your travel and more time enjoying life's journeys.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-TravelReady" href="/personal-banking/campaign/travelready" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleon: index--></header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1572865943472">
+      <!--ls:begin[component-1572865943472]--><style>#iw_comp1572865943472{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/personal-banking/">Personal Banking</a></li>
+         <li>Conditions of Access</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1572865943472]-->
+     </div>
+     <div class="iw_component" id="iw_comp1653998655585">
+      <!--ls:begin[component-1653998655585]--><style>#iw_comp1653998655585{}</style><div class="masthead-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3 animate" anim-control="parent">
+               <div class="links d-flex flex-column flex-sm-row fz-13">
+                  <span>EN | <a href="/personal-banking/conditions-of-access-zh" class="" target="_self">中文</a></span>
+               </div>
+            </div></div>
+</div><!--ls:end[component-1653998655585]-->
+     </div>
+     <div class="iw_component" id="iw_comp1572865943477">
+      <style>#iw_comp1572865943477{}</style><div class="leftnav-component"></div><div class="module container animate bp-width-med3">
+   <div class="row">
+      <div class="col-lg-4 col-md-4">
+         <h3 class="mb-4 mb-sm-5"><strong>Conditions of Access</strong></h3>
+      </div>
+      <div class="col-lg-8 col-md-8"><p>Please take a moment to read these terms and conditions carefully.</p>
+<p>Access to this website or any page of the same (the “Website”) is granted by Oversea-Chinese Banking Corporation Limited (hereinafter known as "OCBC Bank") and its subsidiaries (including Bank of Singapore Limited (hereinafter known as “BOS”)) (hereinafter individually & collectively with OCBC Bank and BOS known as the "OCBC Group") subject to the following conditions.</p></div>
+   </div>
+   <div class="com__bank-policies">
+      <div class="row">
+         <div class="b-p-side-nav col-lg-4 col-md-4 d-none d-md-block">
+            <div sticky-content="">
+               <div class="side-nav-with-sub">
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 selected"><a href="#general" class="" target="_self">General</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#definitions" class="" target="_self">Definitions</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#scope-of-products-and-services" class="" target="_self">Scope of products and services</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#no-offer-or-solicitation" class="" target="_self">No offer or solicitation</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#materials-for-general-circulation-only" class="" target="_self">Materials for general circulation only</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#transmission-of-your-content" class="" target="_self">Transmission of your content</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#ocbc-cognitive-agent" class="" target="_self">OCBC Cognitive Agent</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#no-illegal-or-harmful-uses" class="" target="_self">No illegal or harmful uses</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#risks" class="" target="_self">Risks</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#disclaimers-and-exclusions" class="" target="_self">Disclaimers and exclusions</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#hyperlinks" class="" target="_self">Hyperlinks</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#third-party-services" class="" target="_self">Third party services</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#indemnity" class="" target="_self">Indemnity</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#no-waiver" class="" target="_self">No waiver</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#termination" class="" target="_self">Termination</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#modification" class="" target="_self">Modification</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#intellectual-property-rights" class="" target="_self">Intellectual property rights</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#applicable-law-and-jurisdiction" class="" target="_self">Applicable law and jurisdiction</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#third-party-rights" class="" target="_self">Third party rights</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8 col-md-8">
+            <div class="accordion-mobile-nav-items d-none">
+               <div class="accordion-mobile-nav">
+                  <div class="accordion-mobile-nav-label"><span></span></div>
+                  <div class="accordion-mobile-nav-list">
+                     <div class="a-mobile-nav-item selected" data-href="#general" target="_self">General</div>
+                     <div class="a-mobile-nav-item " data-href="#definitions" target="_self">Definitions</div>
+                     <div class="a-mobile-nav-item " data-href="#scope-of-products-and-services" target="_self">Scope of products and services</div>
+                     <div class="a-mobile-nav-item " data-href="#no-offer-or-solicitation" target="_self">No offer or solicitation</div>
+                     <div class="a-mobile-nav-item " data-href="#materials-for-general-circulation-only" target="_self">Materials for general circulation only</div>
+                     <div class="a-mobile-nav-item " data-href="#transmission-of-your-content" target="_self">Transmission of your content</div>
+                     <div class="a-mobile-nav-item " data-href="#ocbc-cognitive-agent" target="_self">OCBC Cognitive Agent</div>
+                     <div class="a-mobile-nav-item " data-href="#no-illegal-or-harmful-uses" target="_self">No illegal or harmful uses</div>
+                     <div class="a-mobile-nav-item " data-href="#risks" target="_self">Risks</div>
+                     <div class="a-mobile-nav-item " data-href="#disclaimers-and-exclusions" target="_self">Disclaimers and exclusions</div>
+                     <div class="a-mobile-nav-item " data-href="#hyperlinks" target="_self">Hyperlinks</div>
+                     <div class="a-mobile-nav-item " data-href="#third-party-services" target="_self">Third party services</div>
+                     <div class="a-mobile-nav-item " data-href="#indemnity" target="_self">Indemnity</div>
+                     <div class="a-mobile-nav-item " data-href="#no-waiver" target="_self">No waiver</div>
+                     <div class="a-mobile-nav-item " data-href="#termination" target="_self">Termination</div>
+                     <div class="a-mobile-nav-item " data-href="#modification" target="_self">Modification</div>
+                     <div class="a-mobile-nav-item " data-href="#intellectual-property-rights" target="_self">Intellectual property rights</div>
+                     <div class="a-mobile-nav-item " data-href="#applicable-law-and-jurisdiction" target="_self">Applicable law and jurisdiction</div>
+                     <div class="a-mobile-nav-item " data-href="#third-party-rights" target="_self">Third party rights</div>
+                  </div>
+               </div>
+            </div>
+            <div id="left-nav-identifier"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1572865943478">
+      <style>#iw_comp1572865943478{}</style><div class="accordion-component"></div><script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					
+						{
+						 "@type": "Question",
+					      "name": "General",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>By accessing the Website and continuing to do the same, you agree to be unconditionally bound by these conditions of access below (&ldquo;Conditions&rdquo;) which may be updated by us in our sole discretion from time to time without notice to you. If you do not agree to any of the Conditions, please discontinue your access immediately. You agree that your continued access of the Website after such update will constitute your acceptance of and agreement to be bound by the updated Conditions.</p> <p>Use of the products or services described at the Website or the distribution of the Website's materials may be restricted or prohibited by law in certain jurisdictions. It is your responsibility to find out what those restrictions or prohibitions are and observe them. If in doubt, you should check with your local regulator or authority before requesting further information. The Website does not constitute an offer on our part to provide products or services described therein to persons or entities resident in countries where local law or regulation does not permit their use.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Definitions",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<span>"we', "us", "our" and "ours" means OCBC Bank, BOS and/or OCBC Group (as the case may be); and "you" means the user(s) of the Website.&nbsp;</span>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Scope of products and services",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>The information and materials contained in the Website, including any services, products, information, data, text, graphics, audio, video, links or other items - are provided "as is", and "as available". We do not warrant the accuracy, adequacy or completeness of such information and materials and expressly disclaims liability for errors or omissions in such information and materials.</p> <p>Products and services (including those of any third party providers) are available only at our discretion and/or the discretion of the relevant OCBC Group entity and/or third party provider (as the case may be), subject to the products and services individual terms and conditions and any relevant disclaimers on which they are offered and such products and services may be withdrawn or amended at any time without notice. The full range of products or services may not be available in all locations in which the OCBC Group has a place of business. Fees, commissions or other charges may apply to certain products and services. Please contact the entity, office or branch providing the products and services for details.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "No offer or solicitation",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>Nothing in the Website shall be considered or construed as an offer, invitation or solicitation to sell, buy, give, take, issue, allot or transfer, or as the giving of any advice or recommendation in respect of, shares, stocks, bonds, notes, interests, collective investment schemes, or other securities, investments, loans, advances, credits, deposits or any other instrument or banking product whether of any entity of the OCBC Group or any other issuer in any jurisdiction.</p> <p>WE DO NOT OFFER OR SELL SECURITIES TO U.S. PERSONS UNLESS EITHER (a) THOSE SECURITIES ARE REGISTERED FOR SALE WITH THE U.S. SECURITIES AND EXCHANGE COMMISSION AND WITH ALL APPROPRIATE U.S. STATE AUTHORITIES; OR (b) THE SECURITIES OR THE SPECIFIC TRANSACTION QUALIFY FOR AN EXEMPTION UNDER THE U.S. FEDERAL AND STATE SECURITIES LAWS NOR DO WE OFFER OR SELL SECURITIES TO U.S. PERSONS UNLESS (i) WE, OUR AFFILIATED ENTITY AND THE APPROPRIATE PERSONNEL ARE PROPERLY REGISTERED OR LICENSED TO CONDUCT BUSINESS; OR (ii) WE, OUR ENTITY AND THE APPROPRIATE PERSONNEL QUALIFY FOR EXEMPTIONS UNDER APPLICABLE U.S. FEDERAL AND STATE LAWS.</p> <p>NOTHING ON THE WEBSITE OR THE WEBSITES OF ANY AFFILIATED ENTITY SHOULD BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO PURCHASE ANY SECURITIES WHERE IT WOULD BE ILLEGAL TO DO SO.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Materials for general circulation only",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>The information, opinions and statements contained in the materials on the Website are intended for general circulation only and should not be used as a basis for making any business or financial decisions. They do not take into account the specific investment objectives, financial situation or particular needs of any particular person who may be in receipt of the materials. The materials may cover a wide range of topics and are not intended to be a comprehensive study or to provide any recommendation or advice on personal investing or financial planning.</p> <p>Accordingly, they should not be relied on or treated as a substitute for specific advice concerning individual situations. Please seek advice from a financial adviser regarding the suitability of any investment product taking into account your specific investment objectives, financial situation or particular needs before you make a commitment to purchase the investment product. You are also recommended to obtain such other professional advice where appropriate.</p> <p>The materials speak as of their date and do not reflect any changes in law, events or practice since that date. We do not undertake an obligation to update the materials or to correct any inaccuracy that may become apparent at a later time. All information, opinions and statements expressed are subject to change without notice.</p> <p>The materials may be taken or compiled from sources that we believe to be reliable. While all reasonable care has been taken in preparing the materials, we do not represent or warrant that the materials are accurate, useful, adequate, timely or complete and they should not be relied upon as such. You should always consult primary or more accurate or more up-to-date sources of information.</p> <p>Some of the information in the materials may contain projections or other forward looking statements regarding future events or future financial performance of countries, assets, markets or companies. These statements are only predictions and actual events or results may differ materially. Similarly, any past performance figures are not necessarily indicative of future or likely performance.</p> <p>Any geographic, political, economic, statistical, financial and exchange rate data may in certain cases be presented in approximate or summary or simplified form and may change over time. Reliance has been placed by our editors on certain external statistical data which, though believed to be correct, may not in fact be accurate. Any reference to any specific company, financial product or asset class in whatever way is used for illustrative purposes only and does not constitute a recommendation on the same. While all reasonable care has been taken in preparing the materials, no warranty whatsoever is given and no responsibility or liability is accepted for any loss arising directly or indirectly in connection with or as a result of any person acting on any information, opinion or statement expressed in the materials contained on the Website. In particular, no warranty is given that economic reporting information material or data is accurate reliable or up to date.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Transmission of your content",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>All information, data, text, messages or other materials ("Content") transmitted via the Website are your sole responsibility. You, and not us, are solely and entirely responsible for the form, content and accuracy of all Content that you upload, post, email or otherwise transmit (including by Short Message Service (SMS) text messages) (collectively, &ldquo;transmit&rdquo; and each act a &ldquo;transmission&rdquo;) via the Website. We do not assume the obligation to remove, validate, screen, verify or edit the Content.</p> <p>In relation to any Content which you transmit to us using the Website, you hereby grant to any member of the OCBC Group a worldwide royalty-free perpetual licence of the copyright and intellectual property rights in such Content for any purpose it deems necessary, desirable or expedient including, without limitation, the copying, transmission, distribution and publication thereof, unless restricted by applicable law.</p> <p>You agree that we shall not be under any obligation of confidentiality to you regarding any such Content transmitted to us using the Website unless agreed otherwise in a separate direct contract between you and us or required by law.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "OCBC Cognitive Agent",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>Your use of the OCBC Chatbot or Enquiry Assistant are subject to the <a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/terms-and-conditions/cognitive-agent-tcs.pdf">terms and conditions</a>.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "No illegal or harmful uses",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>You may not use the Website or transmit, distribute, link, market, publish, display or sell any Content which are harmful in nature or in violation of any laws or regulations (foreign or domestic) or to commit, engage in, perpetuate or abet any breach of security, fraud, criminal act, offence.</p> <p>The kinds of illegal or harmful conduct which are prohibited include but are not limited to the following:</p> <ol class="list-alpha-lower"> <li>impersonating or falsely stating or otherwise misrepresenting your affiliation with any person or entity;</li> <li>forging headers or otherwise manipulating any identifying information in order to disguise and/or with the effect of disguising the origin of any Content transmitted through the Website;</li> <li>transmitting Content that are unlawful, libellous, defamatory, indecent, harassing, threatening, harmful, invasive of privacy or publicity rights, abusive, inflammatory or otherwise objectionable;</li> <li>infringement of intellectual property rights or other proprietary rights including, but not limited to, material protected by copyright, trademark, patent, trade secret or other intellectual property right used without proper authorization;</li> <li>offering or disseminating fraudulent goods, services, schemes, or promotions;</li> <li>fraudulent submission or use of personal or financial information or engaging in any practice that constitutes an unfair or deceptive trade practice;</li> <li>transmitting any unsolicited or unauthorized advertising, promotional materials, "junk mail," "spam," "chain letters," "pyramid schemes," or any other form of solicitation;</li> <li>transmitting any Content that you do not have a right to transmit under any law or under any contractual or fiduciary relationships (such as inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure agreements); or</li> <li>"stalking" or otherwise harassing another person; or</li> <li>transmitting Content with recommendations to buy or refrain from buying a particular security or which otherwise have the purpose of affecting the price or value of any security.</li> </ol> <p>We reserve the right to restrict or prohibit any and all activities, conduct or Content (or delete, move or edit the same) that we determine in our sole discretion may be harmful to our systems, network, reputation, good will, our other customers, or any third party.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Risks",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>You acknowledge that your use of the Website may, at any time, be adversely affected by problems with your computer (or such other access or electronic device including but not limited to cellular telephones, smart phones and PDAs ), the internet and the cellular phone network, including, without limitation, interference to the network coverage, undeliverable messages or delay in transmission due to any reason such as excessive network traffic, service interruption or incorrect data transmission.</p> <p>We may contract with one or more third parties to provide, maintain and host the products or services on the Website. Therefore, any information you submitany Content which you transmit may be placed and stored on a computer server maintained by a third party. You acknowledge that such information or content could pass through and may be stored in servers outside our control. You agree that we have no liability or responsibility for any such pass through or storage of the same.</p> <p>You consent to the collection, storage, communication and processing of any of your information by any means necessary for us to maintain appropriate transaction and account records and to the release and transmission to and the retention by the relevant third party service providers and hosts of your information to enable your use of the Website.</p> <p>You acknowledge that all transmissions (whether by email or otherwise) to and from this Website cannot be guaranteed to be completely secure or error-free and the same could arrive late, be intercepted, corrupted, lost, destroyed, or incomplete, or contain viruses and may not be received by the intended recipient. Consequently, you understand that you should not post transmit any private or confidential Content&nbsp;(whether yours or the recipient&rsquo;s) unless you want it to be available publicly. You are aware that the Content transmitted by you may be subsequently forwarded to a third party by the recipient. You further understand that as we cannot control or prevent the transmission of your private or confidential Content by a third party, we cannot be responsible or held liable for the same. Accordingly, we do not warrant the privacy and/or security of any transmissions (whether by email or otherwise) to and from the Website.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Disclaimers and exclusions",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>We make no representation or warranty of any kind whether express, implied or statutory (including but not limited to any warranties of title, non-infringement of third party rights, merchantability, satisfactory quality, fitness for a particular purpose and freedom from viruses, worms, trojan horses, software bombs and malicious, destructive or corrupting codes, agents, programs or macros and spyware or similar items or processes) is given in conjunction with the Website, or any information and materials contained or referred to on each page associated with the Website. No warranty is given that access to the same on the Website, or the Website as a whole will be provided uninterrupted or free from errors or that any identified defect will be corrected.</p> <p>You understand and agree that your use of the Website is at your own risks and we shall not be responsible or liable to you for any expenses, losses, costs damages, liabilities or other consequences of whatsoever nature (collectively &ldquo;Losses&rdquo;) suffered or incurred directly or indirectly by you, including without limitation, any Losses suffered or incurred directly or indirectly by you arising from or in connection with or caused by:</p> <ol class="list-alpha-lower"> <li>any maintenance, breakdown, fault or non-availability of any part of the Website or any inability to access or use any part of the same;</li> <li>any telecommunication problems, power supply problems, Internet or network related problems, problems with the services rendered by third party vendors or service providers;</li> <li>any system, server or connection failure, error, omission, interruption, delay in transmission, or viruses (including but not limited to any difficulties experienced by your internet service provider(s), network provider(s) or telecommunications provider(s) or operator(s));</li> <li>any access or use of any part of the Website, or reliance on the contents of the same;</li> <li>any defect, error, imperfection, fault, mistake or inaccuracy with the Website, its contents or associated services;</li> <li>problems caused by any remedial or preventative measure which may be taken by us in the event of any occurrence of the foregoing;</li> <li>any use of or access to any other website linked to the Website;</li> <li>any services, products, information, data, software or other material obtained from the Website or from any other website linked to the Website; or</li> <li>any software downloaded from the Website;</li> </ol> <p>even if we or our agents or employees are advised of the possibility of such Losses.</p> <p>We shall not be liable for any indirect, special, economic or consequential damage or loss under these Conditions, whether or not we have been informed of such possibilities. The exclusions herein shall take effect to the fullest extent permitted by law.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Hyperlinks",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>Any hyperlinks from the Website exist for information purposes and are for your convenience only. We accept no liability for any Losses arising directly or indirectly (including consequential loss) from the accuracy or otherwise of materials or information contained on the pages of such websites or loss arising directly or indirectly from defects with such websites. Our inclusion of hyperlinks does not imply any warranty, endorsement or verification of the material on such websites and such websites should only be accessed at your own risks.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Third party services",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>We cannot be responsible for any services through which you access the Website or for any loss you may suffer as a result of you using such a service. You must comply with all the terms and conditions of such a service and pay all the charges connected with it.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Indemnity",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>You shall indemnify and hold harmless and keep us indemnified in full against all and any claims, actions, proceedings, loss, damage, costs (including legal costs on a full indemnity basis), expenses and liabilities of whatsoever nature and howsoever arising which may be brought against or suffered or incurred by us arising from or which is directly or indirectly related to:-</p> <ol class="list-alpha-lower"> <li>your access to and/or use of the Website and/or any other person or entity's use of the Website where such person or entity was able to access and/or use the Website by using your user id and password (where applicable); or</li> <li>any breach or non-observance of any of these Conditions by you or by any other person or entity where such person or entity was able to access and/or use the Website by using your user id and password (where applicable).</li> </ol>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "No waiver",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>No failure or delay by us in exercising or enforcing any right or option under these Conditions shall operate as a waiver thereof or limit, prejudice or impair our right to take any action or to exercise any right as against you or render us responsible for any loss or damage arising therefrom.</p> <p>If any one or more of the provisions in these Conditions are deemed invalid, unlawful or unenforceable in any respect under any applicable law, the validity, legality and enforceability of the remaining provisions hereof shall not in any way be affected or impaired.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Termination",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>We may terminate this agreement governed by these Conditions, your access to the Website and use of any products or services described at the Website at any time, with or without cause or notice.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Modification",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>We will from time to time determine or specify the scope and features of the products and services you may use on the Website, any information or materials contained on the Website and the terms and conditions under which the Website is used and are entitled to change, modify, expand, suspend, reduce, terminate or withdraw the same without prior warning or notice to you and without giving any reason thereof. We shall not be responsible or liable to you for any expense, loss, damage, liability or other consequence suffered by you or incurred by you in connection with any of the foregoing action.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Intellectual property rights",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>The copyright in the contents of the Website (including, but not limited to the text, graphics, links and sounds) is owned by the OCBC Group and/or its professional advisors. No part or parts hereof may be reproduced, distributed, republished, displayed, broadcast, hyperlinked or transmitted in any manner or by any means or stored in an information retrieval system without the prior written permission of OCBC Bank. You also may not, without OCBC Bank's permission, insert a hyperlink to the Website on any other website or "mirror" any material contained on the Website on any other server.</p> <p>All trade marks and service marks displayed in the Website are the property of the respective members of the OCBC Group and where applicable, third party proprietors identified in the Website. No right or licence is given to any party accessing the Website to download, reproduce or use any of such trade marks or services marks. No such trade mark or service mark may be used as a link to any OCBC Group member's site or any other site unless establishment of such a link and use of such trade mark or service mark is approved in advance by the applicable OCBC Group member in writing.</p> <p>You acknowledge that the contents of the foregoing provisions shall not limit any specific provisions set out in the individual terms and conditions of particular products and services offered on or through the Website.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Applicable law and jurisdiction",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<p>We make no representation that the products, services, materials and information contained herein are appropriate or available for use in other locations/jurisdictions other than Singapore. Unless specified otherwise, any such products, services, materials and information are strictly for our customers' access and/or use in Singapore and shall not be construed as the provision of banking services and facilities outside of Singapore. In the event that the laws of the jurisdiction you are in do not permit or impose restrictions on the access to the contents of the Website, you shall forthwith discontinue access or comply with such restrictions (as the case may be).</p> <p>These Conditions shall be governed and construed in all respects in accordance with the laws of the Singapore but in enforcing these Conditions we are at liberty to initiate and take actions or proceedings or otherwise against you in Singapore or elsewhere as we may deem fit, and you hereby agree that where any actions or proceedings are initiated and taken in Singapore, you shall submit to the jurisdiction of the courts of Singapore in all matters connected with your obligations and liabilities under or arising out of these Conditions.</p>"
+					      }			
+						},
+					
+						{
+						 "@type": "Question",
+					      "name": "Third party rights",
+					      "acceptedAnswer": {
+					      	"@type": "Answer",
+					      	"text": "<div class="spc-respo"> <div class="intro-container"> <div class="intro-wrap"> <div class="intro-content-wrap"> <p>A person who is not a party to any agreement governed by these Conditions has no right under the Contracts (Rights of Third Parties) Act (53B) to enforce any terms herein.</p> </div> </div> </div> </div>"
+					      }			
+						},
+					
+				]
+			}
+		</script><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="first" close-others="false">
+            <div class="clearfix"><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="general" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>General</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>By accessing the Website and continuing to do the same, you agree to be unconditionally bound by these conditions of access below (&ldquo;Conditions&rdquo;) which may be updated by us in our sole discretion from time to time without notice to you. If you do not agree to any of the Conditions, please discontinue your access immediately. You agree that your continued access of the Website after such update will constitute your acceptance of and agreement to be bound by the updated Conditions.</p>
+<p>Use of the products or services described at the Website or the distribution of the Website's materials may be restricted or prohibited by law in certain jurisdictions. It is your responsibility to find out what those restrictions or prohibitions are and observe them. If in doubt, you should check with your local regulator or authority before requesting further information. The Website does not constitute an offer on our part to provide products or services described therein to persons or entities resident in countries where local law or regulation does not permit their use.</p></div>
+               </li>
+               <li id="definitions" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Definitions</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><span>"we', "us", "our" and "ours" means OCBC Bank, BOS and/or OCBC Group (as the case may be); and "you" means the user(s) of the Website.&nbsp;</span></div>
+               </li>
+               <li id="scope-of-products-and-services" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Scope of products and services</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>The information and materials contained in the Website, including any services, products, information, data, text, graphics, audio, video, links or other items - are provided "as is", and "as available". We do not warrant the accuracy, adequacy or completeness of such information and materials and expressly disclaims liability for errors or omissions in such information and materials.</p>
+<p>Products and services (including those of any third party providers) are available only at our discretion and/or the discretion of the relevant OCBC Group entity and/or third party provider (as the case may be), subject to the products and services individual terms and conditions and any relevant disclaimers on which they are offered and such products and services may be withdrawn or amended at any time without notice. The full range of products or services may not be available in all locations in which the OCBC Group has a place of business. Fees, commissions or other charges may apply to certain products and services. Please contact the entity, office or branch providing the products and services for details.</p></div>
+               </li>
+               <li id="no-offer-or-solicitation" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>No offer or solicitation</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Nothing in the Website shall be considered or construed as an offer, invitation or solicitation to sell, buy, give, take, issue, allot or transfer, or as the giving of any advice or recommendation in respect of, shares, stocks, bonds, notes, interests, collective investment schemes, or other securities, investments, loans, advances, credits, deposits or any other instrument or banking product whether of any entity of the OCBC Group or any other issuer in any jurisdiction.</p>
+<p>WE DO NOT OFFER OR SELL SECURITIES TO U.S. PERSONS UNLESS EITHER (a) THOSE SECURITIES ARE REGISTERED FOR SALE WITH THE U.S. SECURITIES AND EXCHANGE COMMISSION AND WITH ALL APPROPRIATE U.S. STATE AUTHORITIES; OR (b) THE SECURITIES OR THE SPECIFIC TRANSACTION QUALIFY FOR AN EXEMPTION UNDER THE U.S. FEDERAL AND STATE SECURITIES LAWS NOR DO WE OFFER OR SELL SECURITIES TO U.S. PERSONS UNLESS (i) WE, OUR AFFILIATED ENTITY AND THE APPROPRIATE PERSONNEL ARE PROPERLY REGISTERED OR LICENSED TO CONDUCT BUSINESS; OR (ii) WE, OUR ENTITY AND THE APPROPRIATE PERSONNEL QUALIFY FOR EXEMPTIONS UNDER APPLICABLE U.S. FEDERAL AND STATE LAWS.</p>
+<p>NOTHING ON THE WEBSITE OR THE WEBSITES OF ANY AFFILIATED ENTITY SHOULD BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO PURCHASE ANY SECURITIES WHERE IT WOULD BE ILLEGAL TO DO SO.</p></div>
+               </li>
+               <li id="materials-for-general-circulation-only" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Materials for general circulation only</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>The information, opinions and statements contained in the materials on the Website are intended for general circulation only and should not be used as a basis for making any business or financial decisions. They do not take into account the specific investment objectives, financial situation or particular needs of any particular person who may be in receipt of the materials. The materials may cover a wide range of topics and are not intended to be a comprehensive study or to provide any recommendation or advice on personal investing or financial planning.</p>
+<p>Accordingly, they should not be relied on or treated as a substitute for specific advice concerning individual situations. Please seek advice from a financial adviser regarding the suitability of any investment product taking into account your specific investment objectives, financial situation or particular needs before you make a commitment to purchase the investment product. You are also recommended to obtain such other professional advice where appropriate.</p>
+<p>The materials speak as of their date and do not reflect any changes in law, events or practice since that date. We do not undertake an obligation to update the materials or to correct any inaccuracy that may become apparent at a later time. All information, opinions and statements expressed are subject to change without notice.</p>
+<p>The materials may be taken or compiled from sources that we believe to be reliable. While all reasonable care has been taken in preparing the materials, we do not represent or warrant that the materials are accurate, useful, adequate, timely or complete and they should not be relied upon as such. You should always consult primary or more accurate or more up-to-date sources of information.</p>
+<p>Some of the information in the materials may contain projections or other forward looking statements regarding future events or future financial performance of countries, assets, markets or companies. These statements are only predictions and actual events or results may differ materially. Similarly, any past performance figures are not necessarily indicative of future or likely performance.</p>
+<p>Any geographic, political, economic, statistical, financial and exchange rate data may in certain cases be presented in approximate or summary or simplified form and may change over time. Reliance has been placed by our editors on certain external statistical data which, though believed to be correct, may not in fact be accurate. Any reference to any specific company, financial product or asset class in whatever way is used for illustrative purposes only and does not constitute a recommendation on the same. While all reasonable care has been taken in preparing the materials, no warranty whatsoever is given and no responsibility or liability is accepted for any loss arising directly or indirectly in connection with or as a result of any person acting on any information, opinion or statement expressed in the materials contained on the Website. In particular, no warranty is given that economic reporting information material or data is accurate reliable or up to date.</p></div>
+               </li>
+               <li id="transmission-of-your-content" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Transmission of your content</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>All information, data, text, messages or other materials ("Content") transmitted via the Website are your sole responsibility. You, and not us, are solely and entirely responsible for the form, content and accuracy of all Content that you upload, post, email or otherwise transmit (including by Short Message Service (SMS) text messages) (collectively, &ldquo;transmit&rdquo; and each act a &ldquo;transmission&rdquo;) via the Website. We do not assume the obligation to remove, validate, screen, verify or edit the Content.</p>
+<p>In relation to any Content which you transmit to us using the Website, you hereby grant to any member of the OCBC Group a worldwide royalty-free perpetual licence of the copyright and intellectual property rights in such Content for any purpose it deems necessary, desirable or expedient including, without limitation, the copying, transmission, distribution and publication thereof, unless restricted by applicable law.</p>
+<p>You agree that we shall not be under any obligation of confidentiality to you regarding any such Content transmitted to us using the Website unless agreed otherwise in a separate direct contract between you and us or required by law.</p></div>
+               </li>
+               <li id="ocbc-cognitive-agent" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>OCBC Cognitive Agent</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Your use of the OCBC Chatbot or Enquiry Assistant are subject to the <a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/terms-and-conditions/cognitive-agent-tcs.pdf">terms and conditions</a>.</p></div>
+               </li>
+               <li id="no-illegal-or-harmful-uses" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>No illegal or harmful uses</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>You may not use the Website or transmit, distribute, link, market, publish, display or sell any Content which are harmful in nature or in violation of any laws or regulations (foreign or domestic) or to commit, engage in, perpetuate or abet any breach of security, fraud, criminal act, offence.</p>
+<p>The kinds of illegal or harmful conduct which are prohibited include but are not limited to the following:</p>
+<ol class="list-alpha-lower">
+<li>impersonating or falsely stating or otherwise misrepresenting your affiliation with any person or entity;</li>
+<li>forging headers or otherwise manipulating any identifying information in order to disguise and/or with the effect of disguising the origin of any Content transmitted through the Website;</li>
+<li>transmitting Content that are unlawful, libellous, defamatory, indecent, harassing, threatening, harmful, invasive of privacy or publicity rights, abusive, inflammatory or otherwise objectionable;</li>
+<li>infringement of intellectual property rights or other proprietary rights including, but not limited to, material protected by copyright, trademark, patent, trade secret or other intellectual property right used without proper authorization;</li>
+<li>offering or disseminating fraudulent goods, services, schemes, or promotions;</li>
+<li>fraudulent submission or use of personal or financial information or engaging in any practice that constitutes an unfair or deceptive trade practice;</li>
+<li>transmitting any unsolicited or unauthorized advertising, promotional materials, "junk mail," "spam," "chain letters," "pyramid schemes," or any other form of solicitation;</li>
+<li>transmitting any Content that you do not have a right to transmit under any law or under any contractual or fiduciary relationships (such as inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure agreements); or</li>
+<li>"stalking" or otherwise harassing another person; or</li>
+<li>transmitting Content with recommendations to buy or refrain from buying a particular security or which otherwise have the purpose of affecting the price or value of any security.</li>
+</ol>
+<p>We reserve the right to restrict or prohibit any and all activities, conduct or Content (or delete, move or edit the same) that we determine in our sole discretion may be harmful to our systems, network, reputation, good will, our other customers, or any third party.</p></div>
+               </li>
+               <li id="risks" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Risks</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>You acknowledge that your use of the Website may, at any time, be adversely affected by problems with your computer (or such other access or electronic device including but not limited to cellular telephones, smart phones and PDAs ), the internet and the cellular phone network, including, without limitation, interference to the network coverage, undeliverable messages or delay in transmission due to any reason such as excessive network traffic, service interruption or incorrect data transmission.</p>
+<p>We may contract with one or more third parties to provide, maintain and host the products or services on the Website. Therefore, any information you submitany Content which you transmit may be placed and stored on a computer server maintained by a third party. You acknowledge that such information or content could pass through and may be stored in servers outside our control. You agree that we have no liability or responsibility for any such pass through or storage of the same.</p>
+<p>You consent to the collection, storage, communication and processing of any of your information by any means necessary for us to maintain appropriate transaction and account records and to the release and transmission to and the retention by the relevant third party service providers and hosts of your information to enable your use of the Website.</p>
+<p>You acknowledge that all transmissions (whether by email or otherwise) to and from this Website cannot be guaranteed to be completely secure or error-free and the same could arrive late, be intercepted, corrupted, lost, destroyed, or incomplete, or contain viruses and may not be received by the intended recipient. Consequently, you understand that you should not post transmit any private or confidential Content&nbsp;(whether yours or the recipient&rsquo;s) unless you want it to be available publicly. You are aware that the Content transmitted by you may be subsequently forwarded to a third party by the recipient. You further understand that as we cannot control or prevent the transmission of your private or confidential Content by a third party, we cannot be responsible or held liable for the same. Accordingly, we do not warrant the privacy and/or security of any transmissions (whether by email or otherwise) to and from the Website.</p></div>
+               </li>
+               <li id="disclaimers-and-exclusions" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Disclaimers and exclusions</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>We make no representation or warranty of any kind whether express, implied or statutory (including but not limited to any warranties of title, non-infringement of third party rights, merchantability, satisfactory quality, fitness for a particular purpose and freedom from viruses, worms, trojan horses, software bombs and malicious, destructive or corrupting codes, agents, programs or macros and spyware or similar items or processes) is given in conjunction with the Website, or any information and materials contained or referred to on each page associated with the Website. No warranty is given that access to the same on the Website, or the Website as a whole will be provided uninterrupted or free from errors or that any identified defect will be corrected.</p>
+<p>You understand and agree that your use of the Website is at your own risks and we shall not be responsible or liable to you for any expenses, losses, costs damages, liabilities or other consequences of whatsoever nature (collectively &ldquo;Losses&rdquo;) suffered or incurred directly or indirectly by you, including without limitation, any Losses suffered or incurred directly or indirectly by you arising from or in connection with or caused by:</p>
+<ol class="list-alpha-lower">
+<li>any maintenance, breakdown, fault or non-availability of any part of the Website or any inability to access or use any part of the same;</li>
+<li>any telecommunication problems, power supply problems, Internet or network related problems, problems with the services rendered by third party vendors or service providers;</li>
+<li>any system, server or connection failure, error, omission, interruption, delay in transmission, or viruses (including but not limited to any difficulties experienced by your internet service provider(s), network provider(s) or telecommunications provider(s) or operator(s));</li>
+<li>any access or use of any part of the Website, or reliance on the contents of the same;</li>
+<li>any defect, error, imperfection, fault, mistake or inaccuracy with the Website, its contents or associated services;</li>
+<li>problems caused by any remedial or preventative measure which may be taken by us in the event of any occurrence of the foregoing;</li>
+<li>any use of or access to any other website linked to the Website;</li>
+<li>any services, products, information, data, software or other material obtained from the Website or from any other website linked to the Website; or</li>
+<li>any software downloaded from the Website;</li>
+</ol>
+<p>even if we or our agents or employees are advised of the possibility of such Losses.</p>
+<p>We shall not be liable for any indirect, special, economic or consequential damage or loss under these Conditions, whether or not we have been informed of such possibilities. The exclusions herein shall take effect to the fullest extent permitted by law.</p></div>
+               </li>
+               <li id="hyperlinks" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Hyperlinks</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Any hyperlinks from the Website exist for information purposes and are for your convenience only. We accept no liability for any Losses arising directly or indirectly (including consequential loss) from the accuracy or otherwise of materials or information contained on the pages of such websites or loss arising directly or indirectly from defects with such websites. Our inclusion of hyperlinks does not imply any warranty, endorsement or verification of the material on such websites and such websites should only be accessed at your own risks.</p></div>
+               </li>
+               <li id="third-party-services" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Third party services</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>We cannot be responsible for any services through which you access the Website or for any loss you may suffer as a result of you using such a service. You must comply with all the terms and conditions of such a service and pay all the charges connected with it.</p></div>
+               </li>
+               <li id="indemnity" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Indemnity</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>You shall indemnify and hold harmless and keep us indemnified in full against all and any claims, actions, proceedings, loss, damage, costs (including legal costs on a full indemnity basis), expenses and liabilities of whatsoever nature and howsoever arising which may be brought against or suffered or incurred by us arising from or which is directly or indirectly related to:-</p>
+<ol class="list-alpha-lower">
+<li>your access to and/or use of the Website and/or any other person or entity's use of the Website where such person or entity was able to access and/or use the Website by using your user id and password (where applicable); or</li>
+<li>any breach or non-observance of any of these Conditions by you or by any other person or entity where such person or entity was able to access and/or use the Website by using your user id and password (where applicable).</li>
+</ol></div>
+               </li>
+               <li id="no-waiver" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>No waiver</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>No failure or delay by us in exercising or enforcing any right or option under these Conditions shall operate as a waiver thereof or limit, prejudice or impair our right to take any action or to exercise any right as against you or render us responsible for any loss or damage arising therefrom.</p>
+<p>If any one or more of the provisions in these Conditions are deemed invalid, unlawful or unenforceable in any respect under any applicable law, the validity, legality and enforceability of the remaining provisions hereof shall not in any way be affected or impaired.</p></div>
+               </li>
+               <li id="termination" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Termination</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>We may terminate this agreement governed by these Conditions, your access to the Website and use of any products or services described at the Website at any time, with or without cause or notice.</p></div>
+               </li>
+               <li id="modification" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Modification</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>We will from time to time determine or specify the scope and features of the products and services you may use on the Website, any information or materials contained on the Website and the terms and conditions under which the Website is used and are entitled to change, modify, expand, suspend, reduce, terminate or withdraw the same without prior warning or notice to you and without giving any reason thereof. We shall not be responsible or liable to you for any expense, loss, damage, liability or other consequence suffered by you or incurred by you in connection with any of the foregoing action.</p></div>
+               </li>
+               <li id="intellectual-property-rights" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Intellectual property rights</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>The copyright in the contents of the Website (including, but not limited to the text, graphics, links and sounds) is owned by the OCBC Group and/or its professional advisors. No part or parts hereof may be reproduced, distributed, republished, displayed, broadcast, hyperlinked or transmitted in any manner or by any means or stored in an information retrieval system without the prior written permission of OCBC Bank. You also may not, without OCBC Bank's permission, insert a hyperlink to the Website on any other website or "mirror" any material contained on the Website on any other server.</p>
+<p>All trade marks and service marks displayed in the Website are the property of the respective members of the OCBC Group and where applicable, third party proprietors identified in the Website. No right or licence is given to any party accessing the Website to download, reproduce or use any of such trade marks or services marks. No such trade mark or service mark may be used as a link to any OCBC Group member's site or any other site unless establishment of such a link and use of such trade mark or service mark is approved in advance by the applicable OCBC Group member in writing.</p>
+<p>You acknowledge that the contents of the foregoing provisions shall not limit any specific provisions set out in the individual terms and conditions of particular products and services offered on or through the Website.</p></div>
+               </li>
+               <li id="applicable-law-and-jurisdiction" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Applicable law and jurisdiction</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>We make no representation that the products, services, materials and information contained herein are appropriate or available for use in other locations/jurisdictions other than Singapore. Unless specified otherwise, any such products, services, materials and information are strictly for our customers' access and/or use in Singapore and shall not be construed as the provision of banking services and facilities outside of Singapore. In the event that the laws of the jurisdiction you are in do not permit or impose restrictions on the access to the contents of the Website, you shall forthwith discontinue access or comply with such restrictions (as the case may be).</p>
+<p>These Conditions shall be governed and construed in all respects in accordance with the laws of the Singapore but in enforcing these Conditions we are at liberty to initiate and take actions or proceedings or otherwise against you in Singapore or elsewhere as we may deem fit, and you hereby agree that where any actions or proceedings are initiated and taken in Singapore, you shall submit to the jurisdiction of the courts of Singapore in all matters connected with your obligations and liabilities under or arising out of these Conditions.</p></div>
+               </li>
+               <li id="third-party-rights" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Third party rights</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><div class="spc-respo">
+<div class="intro-container">
+<div class="intro-wrap">
+<div class="intro-content-wrap">
+<p>A person who is not a party to any agreement governed by these Conditions has no right under the Contracts (Rights of Third Parties) Act (53B) to enforce any terms herein.</p>
+</div>
+</div>
+</div>
+</div></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead pb-md-4 pb-0"> </div>');
+	  
+	  
+	
+	  $('.generictext-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.leftnav-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.accordion-component').parent().wrapAll('<div class="" id="left-nav-content"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Bank logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Personal Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="#">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/">Malaysia</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking/index.html" class="" target="_blank">Business Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></span></p>
+                                 <p><span><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></p>
+                                          <p><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span><span class="text-nowrap">Get in touch with us</span></span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/personal-banking/contact-us" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Contact Us</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:+6563633333" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6363 3333</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/personal-banking/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/personal-banking/policies" class="" target="_self">Policies</a></span><span><a href="/personal-banking/notices" class="" target="_self">Notices</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year"></span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container"><p>You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/personal-banking/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/personal-banking/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</p></div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+   </div>
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js?2020072301'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/copy.js?2020042401'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/card-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/insurance-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/chatbot-prod.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/article-langselector-v1.js'></script>
+<script type="text/javascript">_satellite.pageBottom();</script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

@@ -1,0 +1,782 @@
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Cache-Control" content="no-cache,no-store" /><meta http-equiv="X-Frame-Options" content="SAMEORIGIN" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- CSS -->
+	<link href="/PDPA/Content/css/reset.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<link href="/PDPA/Content/css/framework.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<link href="/PDPA/Content/css/typeface.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<link href="/PDPA/Content/css/forms.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+		<link href="/PDPA/Content/css/custom.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<link href="/PDPA/Content/misc/plugins/jModal/css/jqModal.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<link href="/PDPA/Content/misc/plugins/jModal/css/modal.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<link href="/PDPA/Content/misc/plugins/form-validate/css/form-validation-engine.jquery.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<link href="/PDPA/Content/misc/plugins/form-validate/css/form-validation-template.css?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		rel="stylesheet" type="text/css" />
+	<!-- Javascript -->
+	<!-- jQuery -->
+	<script type="text/javascript" src="/PDPA/Content/js/jquery-1.7.1.min.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"></script>
+	<script type="text/javascript" src="/PDPA/Content/js/jquery-ui-1.8.17.custom.min.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"></script>
+	<script type="text/javascript" src="/PDPA/Content/js/jquery.selectbox-0.5.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"></script>
+	<script type="text/javascript" src="/PDPA/Content/js/jquery.hoverIntent.minified.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"></script>
+	<script type="text/javascript" src="/PDPA/Content/js/sections.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"></script>
+	<script type="text/javascript" src="/PDPA/Content/js/common.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"></script>
+	<script type="text/javascript" src="/PDPA/Content/misc/plugins/jModal/js/jqModal.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"></script>
+	<script src="/PDPA/Content/js/jquery.json-2.2.min.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/uniform/js/jquery.uniform.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/form-validate/js/jquery.validation-engine-en.jquery.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/form-validate/js/jquery.validation-engine.jquery.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/jModal/js/jqModal.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/datepicker/js/datepicker.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/accordion/jquery.accordion.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/jqlimit/jquery.limit-1.2.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/misc/plugins/css_browser_selector/js/css_browser_selector.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/js/functions.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script src="/PDPA/Content/js/common.js?v=5E52458F-EG47-4E86-BB79-F9B9FF178243"
+		type="text/javascript"></script>
+	<script type="text/javascript">
+	    var isSubmitted = false;
+         try {
+            if (top.location.hostname == "") {
+                document.documentElement.style.display = 'none';
+                top.location = self.location;
+                } else {
+                    document.documentElement.style.display = 'block' ;
+                }}
+        catch (err) {
+            document.documentElement.style.display = 'none'; 
+            top.location = self.location;
+        }
+	</script>
+	<style>
+		@font-face
+		{
+			font-family: 'TheSansCdThin';
+			src: url('/PDPA/Content/type/thscof4s-webfont.eot');
+			src: url('/PDPA/Content/type/thscof4s-webfont.eot?#iefix') format('embedded-opentype'),
+			     url('/PDPA/Content/type/thscof4s-webfont.woff') format('woff'),
+			     url('/PDPA/Content/type/thscof4s-webfont.ttf') format('truetype'),
+			     url('/PDPA/Content/type/thscof4s-webfont.svg#TheSansCdThin') format('svg');
+			font-weight: 200;
+			font-style: normal;
+		}
+		body
+		{
+			font-family: Calibri,TheSansCdThin, Arial, sans-serif;
+		}
+		input[type="checkbox"]
+		{
+			-webkit-appearance: none;
+			padding: 5px !important;
+		}
+		input[type="checkbox"]:focus, input[type="checkbox"]:checked
+		{
+			-webkit-appearance: checkbox;
+			padding: 5px !important;
+		}
+	/* additional 19/09/2017 and modified */	
+	#modal-dialog .two-third .row .col.first {
+	    width: 25%;
+	    float:left;
+	}
+	#modal-dialog .two-third .row .col.last {
+	    width: 70%;
+	    float:left;
+	}
+	.modal-content label{
+		clear: both;
+    	display: block;
+    	float:none !important;
+	}
+	.modal-content .row {
+	    clear: both;
+	    margin-bottom: 6px !important;
+	    overflow: hidden;
+	}
+
+	.otp-sign-steps {
+	    background-color: #f3f3f3;
+	    border-radius: 10px;
+	    padding: 10px 20px;
+	}
+	.step-row {
+    padding-bottom: 10px;
+	}
+	.otp-sign-steps .step-no {
+	    color: #666666;
+	    font-size: 26px;
+	    font-style: normal;
+	    font-weight: bold;
+	    position: relative;
+	    top: -5px;
+	}
+	.otp-sign-steps .step-content {
+	    display: inline-block;
+	    left: 20px;
+	    position: relative;
+	    top: -10px;
+	    width: 85%;
+	}
+	.mbs {
+	    margin-bottom: 5px !important;
+	}
+	#modal-dialog a.modal-footer-link {
+	    color: #0277C6 !important;
+	    cursor: pointer;
+	    padding: 0 0 0 5px;
+	    text-shadow: none;
+	}
+	#modal-dialog a.modal-footer-link:hover {
+		text-decoration: none !important;
+	}
+	.modal-content p {
+	    line-height: 16px;
+	    margin: 0 0 8px 0;
+	}
+	.otp-note {
+	    font-size: 11px;
+	}
+	.fieldgroup {
+	    display: block;
+	    padding: 2px 0;
+	}
+	.modal-content .fieldgroup {
+	    margin-bottom: 10px;
+	}
+	.transaction-sign-modal-btn, .modal-btn {
+	    border-top: 1px solid #D3D3D3;
+	    padding-top: 14px;
+	}
+	.transaction-sign-modal-btn .button-group {
+	    width: 100% !important;
+	}
+	.button-group .small.primary {
+	    float: right;
+	}
+	.modal-content .resend-otp {
+	    font-size: 13px;
+	    line-height: 28px;
+	    margin: 0 0 0 5px;
+	}
+	
+	.transaction-sign-modal-btn{
+		overflow: hidden;
+	}
+	.transaction-sign-modal-btn a#submit-otp{
+		margin:0px !important;
+	}
+	
+	.modal-content .row .col {
+		width:100%;
+		text-align: center;
+	}
+	.modal-content .row .col img{
+		display: inline;
+		margin-left: -5px;
+	}
+	.step-row{
+		margin-top: 10px;
+	}
+	.step-row img{
+		display: inline;
+	}
+	.hide{
+		display: none;
+	}
+	/* self hack */
+	.img-otp-sign { position: inherit !important; }
+	
+	input[id='OTP'] {
+	    font:14px Arial, Helvetica, sans-serif;
+	    color:#727272;
+	    border:1px solid #c4c4c4;
+	    border-radius:2px; 
+	    -webkit-border-radius:2px; 
+	    -moz-border-radius:2px;
+	    margin:0;
+	    padding:5px 4px 5px 4px;
+	    float:left;
+	    display:inline-block;
+	    background-color:#f6f6f6;
+        -moz-box-shadow:inset 0 1px 3px #c1c1c1;
+        -webkit-box-shadow:inset 0 1px 3px #c1c1c1;
+	    box-shadow:inset 0 1px 3px #c1c1c1;
+	}
+	
+	a#submit-otp {
+        background : #E02B2A url(../images/button_redbg.jpg) repeat-x bottom left;
+        float: right;
+        /*margin: 20px 30px 0px;*/
+        color: #fff;
+        padding:8px 32px;
+	    border-bottom: none;
+	    clear: both;
+	    color: #fff;
+	    display: block;
+	    font-family: 'TheSansSemiBoldPlain';
+	    font-weight: normal;
+	    font-style: normal;
+	    text-align: center;
+	    text-decoration: none;
+	    width: auto;
+	    font-size: 14px;
+	    height: 17px;
+	    line-height: 14px; 	
+	    border-radius:3px; 
+	    -webkit-border-radius:3px; 
+	    -moz-border-radius:3px;  
+    }
+    
+    
+    
+    #modal-dialog .jqmdTL  { background:#414347; border-radius:3px 3px 0 0; padding:4px 5px 10px 25px; color:#fff; font-size:15px; font-weight:bold; }
+    #modal-dialog .jqmdTR { background:#414347; padding: 0 }
+    #modal-dialog .jqmdTC { background:#414347; padding: 0 }
+    div.jqmdBL { background:#fff; border-radius:0 0 3px 3px; padding-bottom: 5px }
+
+    div.jqmDialog 
+    {
+        font-family: Calibri,TheSansCdThin, Arial, sans-serif; 
+        font-size: 14px;
+    }
+    .modal-content #otp-content .col {
+		width:100%;
+		text-align: inherit;
+		}
+	</style>
+
+	
+	
+	<script type="text/javascript">		
+		 
+		function RefreshCaptcha() {
+
+			$.ajax({
+				type: "GET",
+				cache: false,
+				url: '/PDPA/PDPAUnsecuredConsent/RegenCaptcha',
+				success: function (data) {
+					if (data == "OK") {
+						d = new Date();
+						var tempCaptcha = $('#PCA-captcha').attr('src');
+						if (tempCaptcha == "" || tempCaptcha === undefined)
+							tempCaptcha = '/PDPA/PDPAUnsecuredConsent/GenCaptcha';
+						var qIdx = tempCaptcha.indexOf("?");
+						if (qIdx > 0)
+							tempCaptcha = tempCaptcha.substring(0, qIdx);
+						tempCaptcha += "?" + d.getTime();
+						$('#PCA-captcha').attr('src', tempCaptcha);
+						$('#Captcha').val('');
+					}
+				},
+				error: function (request) {
+				}
+			});
+		}
+
+		function RefreshCaptchaClick() {
+			RefreshCaptcha()
+		}
+	</script>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-d277289d-043b-4e4b-80a7-731cd15c1a93","rua.cook":"true","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="A85U3-9Q4P2-A3S7F-WZYTG-ZY4VB",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"A85U3-9Q4P2-A3S7F-WZYTG-ZY4VB",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e="false"=="true"?1:0,t="cookiepresent",n="pt3fasyxfwyow2lk5cwq-f-33bc456ca-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"828826","ak.ai":parseInt("522175",10),"ak.ol":"0","ak.cr":129,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"4037b013","ak.r":47325,"ak.a2":e,"ak.m":"a","ak.n":"essl","ak.bpcip":"124.246.80.0","ak.cport":50004,"ak.gh":"23.211.252.165","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1768614061","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==XqvG7SiXNkJ6Mt/3MvjmmglMdMYsMOGmUgPt1vPe7I/tJwYa/bWttYzUaVzWq38Eem1D9bcg7a5RJpB2uVp2cCGs4YfRyp3ldHjyHyugEXHKGKrRSrqldCBJK4zm7neZjI9jMk5/fbYLzJdBJZr4EvFjHPMPZTFWudVH0EyjXD42UV/6Cxnqu9Jn8nU/ChrmAClIwDq13AAU9dANZxKgdyAlHxSUG1LiLzk6S/Rl8kECxXrnQ3H6s2VuoEo9P1m68XqKBvzu61HrvdHjm4NLlicEm2LDpyX1flQGLkkABPw4L/N/T2GSzkrsTm2Rr+LgXmucOwMTvPQN067M11R0Jgfb0OOOOjXQXKyr0dzk2r8Xh/ZsOoJc1RtqzVcWtE3/x9CQBnKVdWUnyz92ayGR3rr8SAKVY1nzjhUqqMJlBMw=","ak.pv":"112","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+	<div id="element1">
+		<div id="header-inside">
+			<div class="header-wrapper">
+				<div class="header-logo-container">
+					<img width="76" height="76" alt="OCBC Bank" src="/PDPA/Content/images/main_logo.png"></div>
+				<div class="header-right-section">
+					<div class="top-navigation">
+						<div class="bank-name">
+							OCBC Personal Banking</div>
+					</div>
+				</div>
+				<br class="clear">
+			</div>
+		</div>
+		<div class="sub_title_wrapper">
+			<div class="sub_title_bgimg">
+				<div class="sub_title">
+					<h1>
+						Marketing Consent Update</h1>
+				</div>
+			</div>
+		</div>
+		<div id="loading" class="loader-container" style="display: none">
+			<img src="/PDPA/Content/images/loading22.gif" width="32"
+				height="32">
+			<h4>
+				Submitting...</h4>
+			<p>
+				please wait</p>
+		</div>
+		<div class="headerbg1">
+			<div class="headerbg2">
+				<div class="content-container">
+					
+	
+	<div class="online-form-wrapper" id="main-content">
+		
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#main-content').show();
+		$('#loading').hide();
+		isSubmitted = false;
+        //BindUniformScript();
+		RefreshCaptcha();
+
+		
+
+		
+
+		
+		$('.dropdown_ib').selectbox();
+
+		$("li.mega").click(function () {
+			$(this).toggleClass("hovering");
+		});
+
+		$("#generic-tab").tabs();
+
+		$(function () {
+			$('.droplist').jqTransform();
+			$('#regardingOption').find('div ul li').each(function(){
+				if ($(this).find('a').html().indexOf('.....') != -1){
+					$(this).html($(this).find('a').html())
+				}
+			});
+		});
+
+		$(function () {
+			$('.first').click(function () {
+				var hander = $(this);
+				$(this).children('.jqTransformSelectWrapper').css('z-index', 12);
+			});
+		});
+		$(function () {
+			$('.second').click(function () {
+				var hander = $(this);
+				$(this).children('.jqTransformSelectWrapper').css('z-index', 11);
+			});
+		});
+
+		$(function () {
+			$('.jqTransformSelectOpen').click(function () {
+				var hander = $(this);
+				$(this).parents().parents().children('.first .jqTransformSelectWrapper').css('z-index', 12);
+				$(this).parents().parents().children('.second .jqTransformSelectWrapper').css('z-index', 11);
+			});
+		});
+		
+		 
+		//Field Validation [S]
+		
+
+        $('#Day').change(function () {
+			
+		});
+
+        
+
+        $('#Month').change(function () {
+			
+		});
+
+        
+
+        $('#Year').blur(function () {
+			
+		});
+
+        
+
+        $('#Prefix').blur(function () {
+			
+		});
+
+        
+
+        $('#MobileNumber').blur(function () {
+			
+		});
+
+        
+
+        $('#Email').blur(function () {
+			
+		});
+        
+
+        
+
+		$('#CustomerName').blur(function () {
+			
+		});
+
+		
+
+		$('#Captcha').blur(function () {
+			
+		});
+
+		$('input[type=checkbox]').click(function () {
+			
+		});
+		//Field Validation [E]
+
+		//Placeholder handling [S]
+		$('#CustomerName').click(function(){
+			$('#CustomerName').removeAttr("placeholder");
+		});
+
+		$('#CustomerName').blur(function(){
+			if ($('#CustomerName').val() === '')
+				$('#CustomerName').attr("placeholder", "Your name");
+		});
+
+		
+
+		$("#MobileNumber").blur(function() {
+			if ($("#Prefix").val() === "" && $("#MobileNumber").val() !== "") {
+				$("#Prefix").val("+65");
+			}
+		});
+	});
+
+	function Submit() {
+		$('#main-content').hide();
+		$('#footer-content').hide();
+		$('#loading').show();
+		if (!isClickedTwice()) {
+			var formId = 'ApplicationForm';
+			if ($('#' + formId).length > 0) {
+				AJAXPost('/PDPA/PDPAUnsecuredConsent/EntryPreview', formId, 'main-content');
+			}
+		}
+	}
+
+	
+
+    function SetNameToUpperCase() {
+        $("#CustomerName").val($("#CustomerName").val().toUpperCase()); 
+    }
+
+    function ValidateNumericOnly(evt) {
+      var theEvent = evt || window.event;
+
+      // Handle paste
+      if (theEvent.type === 'paste') {
+          key = event.clipboardData.getData('text/plain');
+      } else {
+      // Handle key press
+          var key = theEvent.keyCode || theEvent.which;
+          key = String.fromCharCode(key);
+      }
+      var regex = /[0-9]/;
+      if( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+    }
+
+    function ValidateInternationalCode(evt) {
+      var theEvent = evt || window.event;
+
+      // Handle paste
+      if (theEvent.type === 'paste') {
+          key = event.clipboardData.getData('text/plain');
+      } else {
+      // Handle key press
+          var key = theEvent.keyCode || theEvent.which;
+          key = String.fromCharCode(key);
+      }
+      var regex = /\+|[0-9]/;
+      if( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+    }
+</script>
+<div class="error clearfix">
+    <div class="error-title clearfix">
+        <div class="ico-error">
+        </div>
+        <p class="app-stat">
+            
+        </p>
+    </div>
+</div>
+
+<div class="outer-container">
+    <div class="online-inner-container">
+        <!--TITLE [S]-->
+        <h2>
+            OCBC Group - Marketing Opt Out
+        </h2>
+        <h5>
+            To process your request, we will require the following details to ensure that the correct customer profile in our database is updated.
+        </h5>
+        <!--TITLE [E]-->
+        <form action="/PDPA/PDPAUnsecuredConsent/Preview" autocomplete="off" class="clearfix" id="ApplicationForm" method="post"><div><input name="__RequestVerificationToken" type="hidden" value="W2yT1disif7pZoMY8ETpYqsqt+NEmmltVRjt4kZ44Hudp0j5DCUi/VIOFsejFH0BfPeXKTO4jjbLq2+ETkviJlesVpmZARMKmpuqx+RvTVGmtHRkhOr9lFyRgeoA7h/Ufwdt0T3BX8BChn+JonPqdfln5JU=" /><script type="text/javascript">resetAntiForgeryPageValues('__RequestVerificationToken', 'W2yT1disif7pZoMY8ETpYqsqt+NEmmltVRjt4kZ44Hudp0j5DCUi/VIOFsejFH0BfPeXKTO4jjbLq2+ETkviJlesVpmZARMKmpuqx+RvTVGmtHRkhOr9lFyRgeoA7h/Ufwdt0T3BX8BChn+JonPqdfln5JU=');</script></div>
+        <!--MAIN CONTENT [S]-->
+        <div class="feedback-outer-container">
+            <div class="feedback-inner-container">
+                <!-- UnSUB Container Start -->
+                <div id="online-feedback-form-wrapper">
+                    <h5>
+                        Full name as per NRIC or passport <strong><sup style="color:red">*</sup></strong></h5>
+                    <div style="float: left;">
+                        <div class="online-app-form-box-grp-middle">
+                            <input id="CustomerName" maxlength="50" name="CustomerName" onchange="SetNameToUpperCase(this);" placeholder="Your name" size="50" type="text" value="" />
+                        </div>
+                        
+                    </div>
+                    <br class="clear" />
+                    <br />
+                    
+                    
+                    <h5>
+                        Date of birth <strong><sup style="color:red">*</sup></strong></h5>
+                    <div style="float: left;">
+                        <div class="online-app-form-box-grp-middle">
+                            <div class="droplist dropdown-style2">
+                                <select id="Day" name="Day"><option value="">Day</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+                            </div>
+                            <div class="droplist dropdown-style2">
+                                <select id="Month" name="Month"><option value="">Month</option>
+<option value="1">Jan</option>
+<option value="2">Feb</option>
+<option value="3">Mar</option>
+<option value="4">Apr</option>
+<option value="5">May</option>
+<option value="6">Jun</option>
+<option value="7">Jul</option>
+<option value="8">Aug</option>
+<option value="9">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+                            </div>
+                            <div class="droplist dropdown-style2">
+                                <input id="Year" maxlength="4" name="Year" onkeypress="ValidateNumericOnly(event)" placeholder="Year" size="4" type="text" value="" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br class="clear" />
+                    <br />
+                    
+                    
+                    <h5>
+                        Mobile number registered with the bank</h5>
+                    <div style="float: left;">
+                        <div class="online-app-form-box-grp-middle">
+                            <div style="float: left; margin-right: 20px;">
+                                <input id="Prefix" maxlength="7" name="Prefix" onkeypress="ValidateInternationalCode(event)" placeholder="+65" size="7" type="text" value="" />
+                            </div>
+                            <div style="float: right;">
+                                <input id="MobileNumber" maxlength="29" name="MobileNumber" onkeypress="ValidateNumericOnly(event)" placeholder="12345678" size="29" type="text" value="" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br class="clear" />
+                    <br />
+                    <h5>
+                        Email address registered with the bank</h5>
+                    <div style="float: left;">
+                        <div class="online-app-form-box-grp-middle">
+                            <input id="Email" maxlength="50" name="Email" placeholder="Your email address" size="50" type="text" value="" />
+                        </div>
+                        
+                    </div>
+                    
+                    <br class="clear" />
+                    <br />
+                    
+                    <h5>
+                        How would you prefer not to be contacted ?</h5>
+                    <p>
+                        I do not wish to receive marketing communications, advertisements, and promotions, about OCBC Group&#39;s and its business partners&#39; goods and services via:</p>
+                    <div class="">
+                        <input id="PDPASettingCallType" name="PDPASettingCallType" type="checkbox" value="true" /><input name="PDPASettingCallType" type="hidden" value="false" />
+                        &nbsp;
+                        Phone calls
+                    </div>
+                    <br />
+                    <div class="">
+                        <input id="PDPASettingSmsType" name="PDPASettingSmsType" type="checkbox" value="true" /><input name="PDPASettingSmsType" type="hidden" value="false" />
+                        &nbsp;
+                        Phone number-based messages
+                    </div>
+                    <br />
+                    <div class="">
+                        <input id="PDPASettingPostType" name="PDPASettingPostType" type="checkbox" value="true" /><input name="PDPASettingPostType" type="hidden" value="false" />
+                        &nbsp;
+                        Post
+                    </div>
+                    <br />
+                    <div class="">
+                        <input id="PDPASettingEmailType" name="PDPASettingEmailType" type="checkbox" value="true" /><input name="PDPASettingEmailType" type="hidden" value="false" />
+                        &nbsp;
+                        Emails and other electronic channels
+                    </div>
+                    <br />
+                        
+                    <!--CAPTCHA [S]-->
+                    <br />
+                    <h5>
+                        Captcha Verification</h5>
+                    <div class="online-app-form-box-grp-middle">
+                        <div style="float: left; margin-right: 20px;">
+                            <img id="PCA-captcha" />
+                            <br />
+                            <a href="javascript:RefreshCaptchaClick();">
+                                Resend Captcha
+                            </a>
+                        </div>
+                        <div style="float: left;">
+                            <input class="" id="Captcha" maxlength="6" name="Captcha" size="15" type="text" value="" />
+                        </div>
+                    </div>
+                    <!--CAPTCHA [E]-->
+                    <br class="clear" />
+                    <br class="clear" />
+                    
+                </div>
+                <!-- Unsub Container END -->
+                <!-- Content Managed NOTE -->
+                <div class="content-head" style="width: 737px;">
+                    <p>Declaration & Agreement<br><br>
+I wish to amend my marketing preferences and withdraw my consent to receive marketing communications, advertisements, and promotions about OCBC Group's and its business partners' goods and services, via the channels of communication as selected above.</p>
+                </div>
+                <!-- Content Managed NOTE -->
+
+                <!-- Content Managed INFO -->
+                <p>
+                    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0103)https://internet.ocbc.com/PDPA/content/include/SG/en/PDPA/PDPAUnsecured/Entry_Info_Unsubscribe_All.html -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<META name="GENERATOR" content="MSHTML 11.00.9600.18792">
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-d277289d-043b-4e4b-80a7-731cd15c1a93","rua.cook":"true","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="A85U3-9Q4P2-A3S7F-WZYTG-ZY4VB",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"A85U3-9Q4P2-A3S7F-WZYTG-ZY4VB",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e="false"=="true"?1:0,t="cookiepresent",n="pt3fasyxfwyow2lk5cwq-f-33bc456ca-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"39","ak.cp":"828826","ak.ai":parseInt("522175",10),"ak.ol":"0","ak.cr":129,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"4037b013","ak.r":47325,"ak.a2":e,"ak.m":"a","ak.n":"essl","ak.bpcip":"124.246.80.0","ak.cport":50004,"ak.gh":"23.211.252.165","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1768614061","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==XqvG7SiXNkJ6Mt/3MvjmmglMdMYsMOGmUgPt1vPe7I/tJwYa/bWttYzUaVzWq38Eem1D9bcg7a5RJpB2uVp2cCGs4YfRyp3ldHjyHyugEXHKGKrRSrqldCBJK4zm7neZjI9jMk5/fbYLzJdBJZr4EvFjHPMPZTFWudVH0EyjXD42UV/6Cxnqu9Jn8nU/ChrmAClIwDq13AAU9dANZxKgdyAlHxSUG1LiLzk6S/Rl8kECxXrnQ3H6s2VuoEo9P1m68XqKBvzu61HrvdHjm4NLlicEm2LDpyX1flQGLkkABPw4L/N/T2GSzkrsTm2Rr+LgXmucOwMTvPQN067M11R0Jgfb0OOOOjXQXKyr0dzk2r8Xh/ZsOoJc1RtqzVcWtE3/x9CQBnKVdWUnyz92ayGR3rr8SAKVY1nzjhUqqMJlBMw=","ak.pv":"112","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></HEAD>
+<BODY>
+<P>While we process your instructions, you may still receive marketing messages from us in the next 21 days. <b>Please call 6363 3333 if you have any questions</b>. </P></BODY></HTML>
+
+                </p>
+                
+                <br class="clear" />
+                <!-- Content Managed INFO -->
+            </div>
+        </div>
+        </form>
+        <!--MAIN CONTENT [E]-->
+        <!--BUTTON [S]-->
+        <p class="link-content">
+            <a href="javascript:Submit();" id="submitButton" onclick="" class="button-red">
+                Next
+            </a>
+            <br class="clear" />
+        </p>
+        <br class="clear" />
+        <hr size="1px" />
+        <!--BUTTON [E]-->
+    </div>
+</div>
+
+	</div>
+	
+				</div>
+			</div>
+		</div>
+		<!-- Page Bottom Design -->
+		<div class="bottom-design">
+		</div>
+		<!-- FOOTER -->
+		<br clear="all">
+		<div id="footer">
+			<div class="footer_container">
+				<div class="misc_container">
+					<ul class="misc_links">
+						<li><a href="https://www.ocbc.com/personal-banking/conditions-of-access.html">Conditions
+							of Access</a></li>
+						<li><a href="https://www.ocbc.com/personal-banking/security-privacy.html">Security
+							and Privacy </a></li>
+					</ul>
+					<ul class="misc_icons">
+						<li><a href="https://www.ocbc.com/personal-banking/social-media.html#facebook" target="_blank">
+							<img src="/PDPA/Content/images/icon-facebook.png"
+								alt="Facebook" width="15" height="15" border="0" /></a></li>
+						<li><a href="https://www.ocbc.com/personal-banking/social-media.html#twitter" target="_blank">
+							<img src="/PDPA/Content/images/icon-twitter.png" alt="Twitter"
+								width="15" height="15" border="0" /></a></li>
+						<li><a href="https://www.ocbc.com/personal-banking/social-media.html#youtube" target="_blank">
+							<img src="/PDPA/Content/images/icon-youtube.png" alt="Youtube"
+								width="40" height="15" border="0" /></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					© Copyright 2004 – 2012 – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

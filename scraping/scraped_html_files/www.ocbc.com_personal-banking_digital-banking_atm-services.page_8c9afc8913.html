@@ -1,0 +1,2189 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- (START) Adobe Analytics - Header -->
+<script src="//assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async></script>
+<!-- (END) Adobe Analytics - Header -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+<!-- End Google Tag Manager -->
+<script>
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+<script type="application/ld+json">
+  { 
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OCBC Bank Singapore",
+    "alternateName": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/",
+    "logo": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "2199" 
+    },
+    "sameAs": [
+      "https://www.facebook.com/OCBCBank/",
+      "https://twitter.com/ocbcbank",
+      "https://www.youtube.com/user/channelocbc",
+      "https://www.linkedin.com/company/ocbc-bank/"
+    ] 
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "OCBC Bank Singapore",
+    "url": "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1205034763867173');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1"
+src="https://www.facebook.com/tr?id=1205034763867173&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code --><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>ATM Services | OCBC Singapore</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/personal-banking/page/digital-banking/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/personal-banking/digital-banking/atm-services/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Check out the latest features and offerings available at all our ATMs! Find one near you now.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/personal-banking/digital-banking/atm-services.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css?20200729' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/qualtrics.css?2020062501' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]-->
+<script type="text/javascript">
+                var _gaq = _gaq || [];
+                var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+                _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+                _gaq.push(['_setAccount', 'UA-31687854-1']);
+                // _gaq.push(['_setDomainName', 'ocbc.com']);
+                _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_9QPdWtioy9UtOWp","https://zn9qpdwtioy9utowp-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_9QPdWtioy9UtOWp")).start()}catch(i){}})();
+</script><div id='ZN_9QPdWtioy9UtOWp'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class="page-unstoppable page-theme--grey"><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script type="text/javascript">
+            var ocbcData = {
+                page:{
+                    pageName: "sg:ocbc:personal:digital banking:atm services",
+                    language: "en",
+                    pageCategory: "pre-login digital banking pages",
+                    bannerName: "do it all with ocbc digital",
+                    channel: "digital banking",
+                    country: "sg",
+                    lob: "ocbc personal banking",
+                    platform: "web"
+                },
+                user:{
+                    CIF: "",
+                    loginStatus: "pre-login"
+                },
+                application: {
+                    applicationId: "",
+                    flowStep: "",
+                    flowType: "digital banking flow",
+                    journeyName: "",
+                    subJourneyName:"",
+                    applicationStatus: "",
+                    myInfoStatus: "",
+                    applicationRetrieveStatus: ""
+                },
+                event:{
+                    pageView: "true",
+                    bannerImpression: "true"
+                }
+            };
+        </script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1566904104289">
+    <style>#iw_comp1566904104289{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com" target="_self"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Singapore"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#accounts" class="header__navi">Accounts</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#cards" class="header__navi">Cards</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#loans" class="header__navi">Loans</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#insurance" class="header__navi">Insurance</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investments" class="header__navi">Investments</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#advisory" class="header__navi">Advisory</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#more" class="header__navi">More</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                        <div class="page__opt2">
+                           <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/personal-banking/home" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_blank">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/personal-banking/premier-private-client/index.page" data-target="_self">Premier Private Client</option>
+                                 <option value="https://www.ocbc.com/business-banking/index.html" data-target="_blank">Business Banking</option>
+                                 <option value="https://www.ocbc.com/group/about-us/group-business" data-target="_blank">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page" data-target="_blank">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_blank">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a cta-id="PersonalBanking-navbar-premierbanking" href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-digitalbanking" href="/personal-banking/digital-banking" class="" target="_self">Digital Banking</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-security-overview" href="/personal-banking/security/overview" class="" target="_self">Security</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-locations-overview" href="/personal-banking/locations" class="" target="_self">Branches & ATMs</a></li>
+                           <li><a cta-id="PersonalBanking-navbar-gethelp" href="/personal-banking/help-and-support" class="" target="_self">Get help</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a cta-id="PersonalBanking-navbar-login" href="https://internet.ocbc.com/internet-banking/" class="link" target="_blank">Login</a></div>
+                  <div class="page__opt2">
+                     <div class="d-none d-md-inline-block"><a cta-id="Deposits-Header-LoginOnlineBanking-Button" href="https://internet.ocbc.com/internet-banking/" class="button button--secondary button--red" target="_blank">Login to online banking</a></div>
+                  </div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleoff: index-->
+   <div class="header__sub" data-nosnippet="">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="accounts" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Accounts</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Day-to-day Banking</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-360Account" href="/personal-banking/deposits/360-savings-account" class="link link link-arrow-right" target="_self">360  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Savings</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-BonusPlusSavingsAccount" href="/personal-banking/deposits/bonus-plus-savings-account" class="link link link-arrow-right" target="_self">Bonus+ Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Foreign Currency</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-GlobalSavingsAccount" href="/personal-banking/deposits/multi-currency-global-savings-account" class="link link link-arrow-right" target="_self">Global Savings  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Children's Account</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-OCBCMyOwnAccount" href="/personal-banking/deposits/myown-account" class="link link link-arrow-right" target="_self">OCBC MyOwn  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Accounts-megamenu-SeeAllAccounts" href="/personal-banking/deposits" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all accounts</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-cny_promo_2026.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Usher in good fortune when you grow your savings with us!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>This Lunar New Year, receive 1.80% a year or a Disney&rsquo;s Winnie the Pooh plushie when you top up an eligible OCBC savings account.</p>
+<p>T&amp;Cs apply. Insured up to S$100k by SDIC.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/deposits/statement-passbook-savings-account" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="cards" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Cards</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-infinity.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Unlimited cashback on your spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-INFINITYCC" href="https://www.ocbc.com/personal-banking/cards/infinity-unlimited-cashback-card" class="link link link-arrow-right" target="_self">OCBC INFINITY Cashback  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-365visacc.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For everyday spending</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-365CC" href="/personal-banking/cards/365-cashback-credit-card" class="link link link-arrow-right" target="_self">OCBC 365 Credit  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/cards/rewards-card/rewardscard-noshadow.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Get rewarded for shopping</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-OCBCRewardsCard" href="/personal-banking/cards/rewards-card" class="link link link-arrow-right" target="_self">OCBC Rewards  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-with-image">
+                                 <div class="header__sub-menu-item-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_cardface-90n.png" alt="" class=""></div>
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Daily spend for future travels</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Cards-megamenu-90NCard" href="/personal-banking/cards/90-degrees-travel-credit-card.page" class="link link link-arrow-right" target="_self">OCBC 90&deg;N  <span class="text-nowrap">Card<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Cards-megamenu-SeeAllCards" href="/personal-banking/cards" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all cards</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/kv-navbar-poohluggage-r1.png" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get Disney’s Winnie the Pooh gifts and more this New Year!</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p class="mb-3">Enjoy exclusive Disney rewards when you bank with us! T&amp;Cs apply.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/personal-banking/campaign/festive-deals.page" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="loans" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Loans</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Personal</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-EasiCredit" href="/personal-banking/loans/easicredit-flexible-repayment-cash-loan" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">EasiCredit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Home</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-HomeLoanNewPurchase" href="/personal-banking/loans/home-loans" class="link link link-arrow-right" target="_self">Home  <span class="text-nowrap">Loans<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-CarLoan" href="/personal-banking/loans/car-loans" class="link link link-arrow-right" target="_self">Car  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Student</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Loans-megamenu-FRANKTuitionFeeLoan" href="/personal-banking/loans/student-loans/tuition-fee-loan" class="link link link-arrow-right" target="_blank">Tuition Fee  <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Loans-megamenu-SeeAllLoans" href="/personal-banking/loans" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all loans</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="insurance" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Insurance</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment-linked</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-InvestmentLinkedInsurancePlan2" href="/personal-banking/insurance/investment-linked-insurance-plan-2" class="link link link-arrow-right" target="_self">Investment-linked Insurance Plan  <span class="text-nowrap">2<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Accident &amp; Health</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-MyGreatPAPlan" href="/personal-banking/insurance/mygreatpaplan" class="link link link-arrow-right" target="_self">My GREAT PA  <span class="text-nowrap">Plan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Protection</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-GREATTermGuard" href="/personal-banking/insurance/great-term-guard" class="link link link-arrow-right" target="_self">GREAT Term  <span class="text-nowrap">Guard<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Travel, Home &amp; Car</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-Explorer" href="/personal-banking/insurance/great-travelcare-insurance" class="link link link-arrow-right" target="_self">GREAT  <span class="text-nowrap">TravelCare<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-SeeAllInsurances" href="/personal-banking/insurance" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all insurances</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/home/navbar-insurance-aug25.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag"><span class="co-black">Enjoy discounts of up to 50% when you apply for eligible insurance plans</span></div>
+                                       <div class="header__sub-menu-link">
+                                          <p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Insurance-megamenu-CNYPromo2023" href="/personal-banking/insurance#section-promo" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investments" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investments</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Top fund ideas</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-UnitTrusts" href="/personal-banking/investments/unit-trusts/what-are-unit-trusts" class="link link link-arrow-right" target="_self">Unit  <span class="text-nowrap">Trusts<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Trade across 15 global exchanges</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OnlineEquitiesAccount" href="/personal-banking/investments/online-equities-account" class="link link link-arrow-right" target="_self">Online Equities  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">38 portfolios from just 100 USD</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-OCBCRoboInvest" href="/personal-banking/investments/roboinvest" class="link link link-arrow-right" target="_self">OCBC  <span class="text-nowrap">RoboInvest<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Diversify with gold & silver</div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Investments-megamenu-PreciousMetalAccount" href="/personal-banking/investments/precious-metals-account" class="link link link-arrow-right" target="_self">Precious Metals  <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SeeAllInvestments" href="/personal-banking/investments" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>See all investments</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Foreign Currency Exchange</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Conveniently and securely exchange AUD, CAD, CHF<strong><sup style="color: #e30613 !important;">NEW</sup></strong>, CNH, EUR, GBP, HKD, JPY, NZD and USD, 24/7 via OCBC Digital, for your overseas transfer, travel payments, online spends, investments and more.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-ForeignCurrencyExchange" href="/personal-banking/investments/forex-trading" class="link link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Supplementary Retirement Scheme (SRS)</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>Reduce your taxable income by the same amount contributed to your SRS Account, with a maximum yearly contribution of S$15,300 for Singaporeans and Singapore PRs, and S$35,700 for foreigners.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Investments-megamenu-SupplementaryRetirementScheme" href="/personal-banking/investments/supplementary-retirement-scheme-account" class="link link link-arrow-right" target="_blank">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="advisory" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Advisory</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>The OCBC SeniorCare Programme empowers you through four key pillars: Health, Wealth, Lifestyle and Literacy.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-SilverYears" href="/personal-banking/seniorcare-programme" class="link link link-arrow-right" target="_self">SeniorCare  <span class="text-nowrap">Programme<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Achieve your goals with proper financial planning.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-LifeGoals" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Life  <span class="text-nowrap">Goals<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get data and insights into the financial wellness of Singaporeans.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-FinancialWellnessIndex2023" href="/group/financial-wellness-index/understand-the-index.html" class="link link link-arrow-right" target="_blank">Financial Wellness Index  <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Get rewarded for what matters: your salary, your lifestyle, and your smart savings habits.</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-Advisory-megamenu-BeyondYour9To5" href="/personal-banking/campaign/beyondyour9to5" class="link link link-arrow-right" target="_blank">Beyond your 9-5 Starter  <span class="text-nowrap">Kit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_startplanning.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Start planning and get ahead with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>From financial planning tools, investment options and insurance, our comprehensive array of solutions have been built to get you ahead in your every goal and ambition.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-StartPlanning" href="/personal-banking/start-planning" class="link link link-arrow-right" target="_self">Start planning  <span class="text-nowrap">today<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="more" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">More</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"><p>Fancy shopping at a bank branch or even enjoying a sushi meal there? At OCBC Wisma Atria, you can do all these and more &ndash; visit us to experience it firsthand!</p></div>
+                                    <div class="name"><a cta-id="PersonalBanking-navbar-More-megamenu-OneAdvisor" href="/personal-banking/ocbc-wisma" class="link link link-arrow-right" target="_blank">Bank, dine and shop at the new OCBC Wisma  <span class="text-nowrap">Atria<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/personal/img/live/navbar_travelready.jpg" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Get travel-ready with OCBC</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>With our suite of travel products and services, spend less effort managing your travel and more time enjoying life's journeys.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a cta-id="PersonalBanking-navbar-Campaign-megamenu-TravelReady" href="/personal-banking/campaign/travelready" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleon: index--></header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1568456416090">
+      <!--ls:begin[component-1568456416090]--><style>#iw_comp1568456416090{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/personal-banking/">Personal Banking</a></li>
+         <li><a href="/personal-banking/digital-banking.page">Digital Banking</a></li>
+         <li>ATM Services</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1568456416090]-->
+     </div>
+     <div class="iw_component" id="iw_comp1568456416109">
+      <style>#iw_comp1568456416109{}</style><div class="masthead-component"></div><div class=" com__lifegoals-masthead bp-rel animate " style="background-color: #d4e2ec;">
+   <div class="l-m-wrapper" style="background-image:url(/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/oneapp/masthead-d.jpg); background-position:60% 50%;">
+      <div class="container bp-width-med3">
+         <div class="l-m-content row align-items-center">
+            <div class="col-6 l-m-text   text-md-left">
+               <h1>The all-new  <span class="text-nowrap">OCBC app</span>.
+Inspired by you.</h1>
+               <div class="pt-4"><a auto-scroll="true" cta-id="DigitalBanking-OCBCDigital-Masthead-DownloadApp" href="#section-getstarted" class="button button--primary button--red2 d-sm-inline-block d-block &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>Download app</span></a></div>
+            </div>
+            <div class="l-m-mobile-image " style="background-image:url(/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/oneapp/masthead-m.jpg); background-position:50% 50%;"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1574389563140">
+      <style>#iw_comp1574389563140{}</style><!--Common Category Description With Sub Navigation--><div class="masthead-component"></div><div class="module container bp-width-med4">
+   <div class="common__category-list box-shadow3 bp-curve3 no-padding box-pull bg-white mobile-carousel-nav">
+      <div class="auto com__lo-nav fz-16 text-center mw--1060">
+         <div class="mc-na-main">
+            <div class="owl-carousel owl-nav1 group-height">
+               <div class="item"><a href="/personal-banking/digital-banking.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digitalbanking-unstoppable_icon1_active.png"></div>
+                        <p class="mh1-f">Overview<br>&nbsp;</p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/digital-banking/digital-solutions-and-services.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digitalbanking-unstoppable_icon2_active.png"></div>
+                        <p class="mh1-f">
+                     
+                        
+                        OCBC app 
+                     </p>
+                     </div></a></div>
+               <div class="item selected"><a href="/personal-banking/digital-banking/atm-services.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digitalbanking-unstoppable_icon3_active.png"></div>
+                        <p class="mh1-f">ATM Services<br>&nbsp;</p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/digital-banking/day-to-day-services.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digitalbanking-unstoppable_icon4_active.png"></div>
+                        <p class="mh1-f">More Services<br>&nbsp;</p>
+                     </div></a></div>
+               <div class="item"><a href="/personal-banking/digital-banking/sg-bank-account.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/icon-sgbankaccount.png"></div>
+                        <p class="mh1-f"><span class="text-nowrap">Singapore Bank</span> Account</p>
+                     </div></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1739922734901">
+      <!--ls:begin[component-1739922734901]--><style>#iw_comp1739922734901{}</style><div class="qrcashwithdrawal-component"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">QR Cash Withdrawal</div>
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__thumbnail large"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/qr-cash.jpg" alt-text="No card? No problem."></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">No card? No problem.</div>
+                  <div class="article__content">Withdraw cash with peace of mind using QR Cash Withdrawal via the OCBC app at any OCBC ATM island-wide!<br /><br />Follow the steps below to make <a href="#cashless-withdrawal-steps">cardless cash withdrawals</a> with the OCBC app.</div>
+                  <p class="mt-3"><a href="https://www.ocbc.com/personal-banking/help-and-support/atms/cardless-withdrawal" class="link link-arrow-right" target="_self">View more frequently asked  <span class="text-nowrap">questions<i class="far fa-chevron-right"></i></span></a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1739922734901]-->
+     </div>
+     <div class="iw_component" id="iw_comp1739922734914">
+      <style>#iw_comp1739922734914{}</style><div class="qrcashwithdrawal-component"></div><div class="module container bp-width-med3" id="cardless-withdrawal-steps">
+   <div class="row">
+      <div class="col-custom-10">
+         <div class="com__onlinebanking-step-by-step accordion com__tab" close-others="true" init-mode="first" apply-for="mobile">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="com__tab-nav">
+                     <div class="accordion__item com__onlinebanking-step-by-step__col"><a class="d-flex align-items-center" href="#scanandpay-cardless-steps-1">
+                           <div class="com__onlinebanking-step-by-step__number"><span class="d-flex align-items-center justify-content-center">
+                                 <h4 class="mb-0"><strong>1</strong></h4></span></div>
+                           <div class="com__onlinebanking-step-by-step__body">
+                              <div class="com__onlinebanking-step-by-step__title accordion__item__title d-flex justify-content-between align-items-center">
+                                 <p>From the home screen, tap on the ‘Scan & Pay’ icon and log in</p><i class="far fa-chevron-down accordion__item__collapse-icon"></i></div>
+                              <div class="com__onlinebanking-step-by-step__content accordion__item__content"><img class="img-fluid d-md-none img-shadow" style="border-radius: 34px" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/oneapp/payments-transactions/scan-and-pay/payments_tab2_step1@2x.gif"></div>
+                           </div></a></div>
+                     <div class="accordion__item com__onlinebanking-step-by-step__col"><a class="d-flex align-items-center" href="#scanandpay-cardless-steps-2">
+                           <div class="com__onlinebanking-step-by-step__number"><span class="d-flex align-items-center justify-content-center">
+                                 <h4 class="mb-0"><strong>2</strong></h4></span></div>
+                           <div class="com__onlinebanking-step-by-step__body">
+                              <div class="com__onlinebanking-step-by-step__title accordion__item__title d-flex justify-content-between align-items-center">
+                                 <p>Scan the QR code on any OCBC ATM</p><i class="far fa-chevron-down accordion__item__collapse-icon"></i></div>
+                              <div class="com__onlinebanking-step-by-step__content accordion__item__content"><img class="img-fluid d-md-none img-shadow" style="border-radius: 34px" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/kv-cardelss-step2.png"></div>
+                           </div></a></div>
+                     <div class="accordion__item com__onlinebanking-step-by-step__col"><a class="d-flex align-items-center" href="#scanandpay-cardless-steps-3">
+                           <div class="com__onlinebanking-step-by-step__number"><span class="d-flex align-items-center justify-content-center">
+                                 <h4 class="mb-0"><strong>3</strong></h4></span></div>
+                           <div class="com__onlinebanking-step-by-step__body">
+                              <div class="com__onlinebanking-step-by-step__title accordion__item__title d-flex justify-content-between align-items-center">
+                                 <p>Select your withdrawal amount and proceed accordingly</p><i class="far fa-chevron-down accordion__item__collapse-icon"></i></div>
+                              <div class="com__onlinebanking-step-by-step__content accordion__item__content"><img class="img-fluid d-md-none img-shadow" style="border-radius: 34px" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/payanyone/september23/kv-cardelss-step3.png"></div>
+                           </div></a></div>
+                  </div>
+               </div>
+               <div class="col-md-6 d-none d-md-block">
+                  <div class="com__tab-set com__onlinebanking-step-by-step-tab-wrapper" id="scanandpay-cardless-steps-1"><img class="img-fluid" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/oneapp/payments-transactions/scan-and-pay/payments_tab2_step1@2x.gif"></div>
+                  <div class="com__tab-set com__onlinebanking-step-by-step-tab-wrapper" id="scanandpay-cardless-steps-2"><img class="img-fluid" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/kv-cardelss-step2.png"></div>
+                  <div class="com__tab-set com__onlinebanking-step-by-step-tab-wrapper" id="scanandpay-cardless-steps-3"><img class="img-fluid" src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/payanyone/september23/kv-cardelss-step3.png"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1739922734927">
+      <!--ls:begin[component-1739922734927]--><style>#iw_comp1739922734927{}</style><div class="atmservices-component"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">ATM Services</div>
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--large">
+      <div class="article__wrapper d-flex align-items-center">
+         <div class="article__thumbnail large"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/atm-withdraw.jpg" alt-text="Enjoy a fresh ATM banking experience"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">New look. New style.<br>Enjoy a fresh ATM banking experience.</div>
+                  <div class="article__content">With sleeker screens and menus that are intuitive and easy to navigate, a hassle-free experience at our ATMs awaits.</div>
+                  <p class="mt-3"><a href="https://www.ocbc.com/personal-banking/help-and-support/atms/general" class="link link-arrow-right" target="_self">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1739922734927]-->
+     </div>
+     <div class="iw_component" id="iw_comp1578910991101">
+      <style>#iw_comp1578910991101{}</style><div class="otherservices-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">OTHER SERVICES</div>
+   <div class="com__tab">
+      <div class="com__tab-content  com__tab-scroll mb4">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="com__tab-nav has-styled-nav">
+                  <ul class="d-flex styled-nav align-items-center">
+                     <div class="indicator"></div>
+                     <li class="col align-items-center justify-content-center selected"><a href="#atm">ATM</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#new-atm">New ATM</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#self-service-kiosk">Self Service Kiosk</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#other-services">ATM Card Services</a></li>
+                  </ul>
+                  <div class="border-line-wrapper">
+                     <div class="border-line"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1607438012758">
+      <style>#iw_comp1607438012758{}</style><div class="otherservices-component atm-component"></div><div class="module container bp-width-med3" id="">
+   <div class="subcategory subcategory--black">New screen design</div>
+   <div class="row">
+      <div class="col-md-12">
+         <div class="row">
+            <div class=" col-custom-8 col-custom-enforced subtitle"><strong>Say hello to our new screen design</strong><br /><span>These are what you will be able to look forward to:</span></div>
+         </div>
+      </div>
+   </div>
+   <div class="row flex-row-reverse align-items-center feature__image mob-mt3 animate accordion accordion--rotate" anim-control="parent" init-mode="first" close-others="true" close-self="true" apply-for="desktop">
+      <div class=" col-md-6 ">
+         <div class="feature__image--text owl-carousel car1">
+            <div class="accordion__item item">
+               <div class="accordion__item__image"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/newatm_screen_1.jpg" alt="newatm_screen_1"></div>
+               <div class="accordion__item__container">
+                  <div class="accordion__item__bar">
+                     <div class="accordion__item__bar--1"></div>
+                     <div class="accordion__item__bar--2"></div>
+                  </div>
+                  <div class="accordion__item__title">
+                     <h4><strong>Intuitive Menu Options</strong></h4>
+                  </div>
+                  <div class="accordion__item__content">
+                     <p><p>Withdraw cash swiftly or select from the top non-cash services at the main page.
+</p></p>
+                     <div class="accordion__item__buttons"></div>
+                     <div></div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion__item item">
+               <div class="accordion__item__image"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/newatm_screen_2.jpg" alt="newatm_screen_2"></div>
+               <div class="accordion__item__container">
+                  <div class="accordion__item__bar">
+                     <div class="accordion__item__bar--1"></div>
+                     <div class="accordion__item__bar--2"></div>
+                  </div>
+                  <div class="accordion__item__title">
+                     <h4><strong>Quick Language Toggle</strong></h4>
+                  </div>
+                  <div class="accordion__item__content">
+                     <p><p>Toggle between your preferred language using the top right-hand button during transactions.</p></p>
+                     <div class="accordion__item__buttons"></div>
+                     <div></div>
+                  </div>
+               </div>
+            </div>
+            <div class="accordion__item item">
+               <div class="accordion__item__image"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/newatm_screen_3.jpg" alt="newatm_screen_3"></div>
+               <div class="accordion__item__container">
+                  <div class="accordion__item__bar">
+                     <div class="accordion__item__bar--1"></div>
+                     <div class="accordion__item__bar--2"></div>
+                  </div>
+                  <div class="accordion__item__title">
+                     <h4><strong>Sleek and Easy Configurations</strong></h4>
+                  </div>
+                  <div class="accordion__item__content">
+                     <p><p>No more entering numbers to perform selection, simply tap on the screens!
+</p></p>
+                     <div class="accordion__item__buttons"></div>
+                     <div></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class=" col-md-6  accordion__gallery">
+         <div class="bp-img wide feature__image--image accordion__image"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/newatm_screen_1.jpg" alt="newatm_screen_1"></div>
+         <div class="bp-img wide feature__image--image accordion__image"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/newatm_screen_2.jpg" alt="newatm_screen_2"></div>
+         <div class="bp-img wide feature__image--image accordion__image"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/atm-services/newatm_screen_3.jpg" alt="newatm_screen_3"></div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1578910991111">
+      <style>#iw_comp1578910991111{}</style><div class="otherservices-component atm-component"></div><div class="com_security">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">DEPOSIT</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="pb4 mb4">
+<p class="no-margin"><strong>Deposit notes into your OCBC current and savings account</strong></p>
+<p>Skip the queue and deposit coins into your OCBC currency and savings account anytime, anywhere.</p>
+<p class="no-margin"><a class="link link-arrow-right" onclick="s_objectID='cta_dbsatm_depositmachine';" href="/personal-banking/contact-us.page">Locate a deposit <span class="text-nowrap">ATM<i class="far fa-chevron-right">&nbsp;</i></span></a></p>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">MANAGE YOUR PERSONAL DETAILS</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="pb4 mb4">
+<p class="no-margin bold"><span>Change contact numbers</span></p>
+<p class="no-margin bold"><span>Change address</span></p>
+<p class="no-margin bold"><span>Change email</span></p>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1578910991112">
+      <style>#iw_comp1578910991112{}</style><div class="otherservices-component"></div><div class="com_security" id="new-atm">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">WITHDRAWAL SERVICES</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="pb4 mb4">
+<p class="bold">Withdraw with a card</p>
+<p>You can withdraw cash with a denomination mix of S$10 and S$50<br /><br /><strong>Withdraw without a card via QR Cash Withdrawal</strong><br /><br />Now you can minimise contact with the ATM and scan to withdraw cash with QR Cash Withdrawal using the OCBC app, up to S$1,000 per day.&nbsp;</p>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="new-atm">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">DEPOSIT</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="">
+<p class="bold">Deposit services</p>
+<p>Deposit notes and coins into your OCBC current and savings account <br /><br />From 1 April 2021, the service charge of S$0.012 per coin at the new ATM will be <strong>waived</strong> so you can enjoy $0 service charge whenever you deposit your cash anytime!</p>
+<p>&nbsp;</p>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="new-atm">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">CASH OCBC CHEQUE</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="">
+<p class="bold"><a name="cash-cheque"></a>Cash OCBC Cheque services</p>
+<p>Encash OCBC Personal or Corporate cash cheques* during branch hours</p>
+<p><small>*assistance from our Digital Ambassadors is required</small></p>
+<br />
+<p>Withdraw up to S$10,000 in a single transaction in your preferred denomination</p>
+<p>Service fee waived. <br /><br />Please bring along your OCBC ATM/Debit/Credit Card.</p>
+<br /><a class="link link-arrow-right" onclick="s_objectID='cta_dbsatm_depositnew_machine';" href="/personal-banking/contact-us.page">Locate a new <span class="text-nowrap">ATM<i class="far fa-chevron-right">&nbsp;</i></span></a></div></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1578910991113">
+      <style>#iw_comp1578910991113{}</style><div class="otherservices-component"></div><div class="com_security" id="self-service-kiosk">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">MANAGE YOUR PERSONAL DETAILS</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="pb4 mb4">
+<p class="no-margin bold"><span>Change contact numbers</span></p>
+<p class="no-margin bold"><span>Change address</span></p>
+<p class="no-margin bold"><span>Change email</span></p>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="self-service-kiosk">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">MANAGE YOUR OCBC CARDS</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="pb4 mb4">
+<p class="no-margin bold"><span>Activate or deactivate overseas card use</span></p>
+<p class="no-margin bold"><span>Update ATM withdrawal and debit card spending limits</span></p>
+<p class="no-margin bold"><span>Link or unlink accounts for ATM use</span></p>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="self-service-kiosk">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">MANAGE YOUR ACCOUNTS</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="">
+<p class="no-margin bold"><span>View account balance and transactions</span></p>
+<p class="no-margin bold"><span>Reactivate account</span></p>
+<p class="bold"><span>Link or unlink accounts for ATM use</span></p>
+<br /><a class="link link-arrow-right" onclick="s_objectID='cta_dbsatm_kioskmachine';" href="/personal-banking/contact-us.page">Locate a Self Service <span class="text-nowrap">Kiosk<i class="far fa-chevron-right">&nbsp;</i></span></a></div></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1578910991114">
+      <style>#iw_comp1578910991114{}</style><div class="otherservices-component"></div><div class="com_security" id="other-services">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">CASH & GO</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="pb4 mb4">
+<p class="mb2 bold"><span>Withdraw cash with your OCBC ATM/ Debit card at all 7-Eleven and Sheng Siong stores islandwide.</span></p>
+<!-- table here -->
+<div id="graphtype20" class="table__comparison table__comparison-with-first-col-subject bp-par-height2 fz-18 theme theme--green" style="width: auto;" graph-carousel="type2">
+<ul class="table__comparison-nav d-none-soft">
+<li>Priority Rates</li>
+<li>Title 4</li>
+</ul>
+<div class="table__comparison-content">
+<table class="table__comparison-table graph-bordered text-center bg-white" style="transform: matrix(1, 0, 0, 1, 0, 0);" border="0">
+<tbody>
+<tr class="graph-row fz-16">
+<td class="graph-item col5 theme__color3" style="min-width: auto;"><strong>Stores</strong></td>
+<td class="graph-item col5" style="min-width: auto;"><strong>7-Eleven</strong></td>
+<td class="graph-item col5" style="min-width: auto;"><strong>Sheng Siong</strong></td>
+</tr>
+<tr class="graph-row">
+<td class="graph-item theme__color3 fz-16" style="min-width: auto;"><strong>Withdrawal Limit</strong></td>
+<td class="graph-item" style="min-width: auto;">S$200 per transaction <span>Subjected to store's cash availability and customer's daily withdrawal limit</span></td>
+<td class="graph-item" style="min-width: auto;">S$1,000 per transaction <span>Subjected to store's cash availability and customer's daily withdrawal limit</span></td>
+</tr>
+<tr class="graph-row">
+<td class="graph-item theme__color3 fz-16" style="min-width: auto;"><strong>Denominations</strong></td>
+<td class="graph-item" style="min-width: auto;">S$10</td>
+<td class="graph-item" style="min-width: auto;">S$10</td>
+</tr>
+<tr class="graph-row">
+<td class="graph-item theme__color3 fz-16" style="min-width: auto;"><strong>Requirements and other info</strong></td>
+<td class="graph-item" style="min-width: auto;">Any purchase of any value <span>Not applicable to 7-Eleven stores at Shell petrol stations and Changi Airport</span></td>
+<td class="graph-item" style="min-width: auto;">Any purchase of any value <span>Available at all Sheng Siong Stores</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- end of table --></div></div>
+         </div>
+      </div>
+   </div>
+</div><div class="com_security" id="other-services">
+   <div class="module container bp-width-med3">
+      <div class="row">
+         <div class="col-md-4">
+            <div class="subcategory subcategory--black">OVERSEAS CASH WITHDRAWAL</div>
+         </div>
+         <div class="col-md-7">
+            <div class="pb4 mb4"><div class="pb4 mb4">
+<p class="no-margin"><strong>Need to withdraw money overseas?</strong></p>
+<p>Please ensure that the overseas ATM cash withdrawal feature on your OCBC ATM, credit or debit card (linked to your savings or current account) is activated.</p>
+<p class="no-margin"><a class="link link-arrow-right" onclick="s_objectID='cta_dbsatm_withdraw_overseas';" href="/personal-banking/help-and-support/overseas-card-comparison-table.page">Learn <span class="text-nowrap">more<i class="far fa-chevron-right">&nbsp;</i></span></a></p>
+</div></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1568456416145">
+      <style>#iw_comp1568456416145{}</style><div class="ourdigital-component"></div><div class="module container bp-width-med3">
+   <div class="com__onlinebanking_download  theme com__onlinebanking_download-fullwidth 1">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="com__onlinebanking_download-outer">
+               <div class="subcategory subcategory--black">GET STARTED WITH OCBC DIGITAL BANKING</div>
+               <div class="com__onlinebanking_download-inner">
+                  <div class="com__onlinebanking_download-wrapper">
+                     <div class="com__onlinebanking_download-image"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/icon_app-ocbcdigital.png" alt=""></div>
+                     <div class="com__onlinebanking_download-content">
+                        <h4 class="mb-0"><strong>OCBC app</strong></h4>
+                        <div class="desktop-content"><p class="co-default">Available on Apple App Store, Google Play and Huawei App Gallery</p>
+<p class="co-default"><a href="#popup-downloadocbcdigital" data-fancybox="">Download now</a></p></div>
+                        <div class="mobile-content"><span class="only-ios"><p class="co-default">Available on Apple App Store, Google Play and Huawei App Gallery</p>
+<p class="co-default"><a href="https://onelink.to/dhtpts" target="_blank" rel="noopener">Download now</a></p></span></div>
+                        <div class="mobile-content"><span class="only-android"><p class="co-default">Available on Apple App Store, Google Play and Huawei App Gallery</p>
+<p class="co-default"><a href="https://onelink.to/dhtpts" target="_blank" rel="noopener">Download now</a></p></span></div>
+                        <div class="mobile-content"><span class="only-huawei"><p class="co-white">Available on Apple App Store, Google Play and Huawei App Gallery</p>
+<p class="co-default"><a href="https://onelink.to/dhtpts" target="_blank" rel="noopener">Download now</a></p></span></div>
+                     </div>
+                  </div>
+                  <div class="cta__basic-links w-100 mt3"><div class="cta__basic-links ">
+<div class="item item-apply d-none d-md-inline-block"><a class="button button--primary button--red2 " href="https://internet.ocbc.com/internet-banking/" target="_blank" rel="noopener" cta-id="PersonalBanking-DigitalBanking-CTA-LogIn"><span>Log in</span></a></div>
+<div class="item d-none d-md-inline-block">
+<div class="item item-paragraph">
+<p class="no-margin co-default">to OCBC Online Banking or <a class="text-nowrap" href="https://internet.ocbc.com/internet-banking/inbregistration/index" target="_blank" rel="noopener">retrieve your Access Code / PIN</a>.</p>
+</div>
+</div>
+<div class="d-none d-md-block">&nbsp;</div>
+<div class="item item-paragraph d-none d-md-block">
+<p class="no-margin co-default">Don't have an online banking account? <a class="text-nowrap" href="https://internet.ocbc.com/internet-banking/inbregistration/index" target="_blank" rel="noopener">Register here</a>.</p>
+</div>
+<div class="item mt2 item-apply d-inline-block d-md-none"><a class="cta-mobile-btn button button--primary button--red2 pl-3 pr-3" href="https://internet.ocbc.com/internet-banking/inbregistration/index" target="_blank" rel="noopener">Register for Digital Banking</a></div>
+<div class="item mt2 item-apply d-inline-block d-md-none">
+<p class="co-default"><a class="link--inherit" href="https://internet.ocbc.com/internet-banking/inbregistration/index" target="_blank" rel="noopener">Forgot your access code and PIN?</a></p>
+</div>
+</div></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1578910992115">
+      <!--ls:begin[component-1578910992115]--><style>#iw_comp1578910992115{}</style><div class="faqs-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">FAQs</div>
+   <div class="row "></div>
+   <div class="accordion__grey">
+      <div class="row">
+         <div class="common-questions m-item col-md-12">
+            <div class="item-list-title clearfix">
+               <h5 class="float-left"><strong><span>Common questions</span></strong></h5><span style="float:right"><a href="/personal-banking/help-and-support/digital-banking/general" class="see-all float-right link link link-arrow-right" target="_self">More questions and  <span class="text-nowrap">answers<i class="far fa-chevron-right"></i></span></a></span></div>
+            <div class="item-list accordion" init-mode="none" close-others="false">
+               <div class="item accordion__item">
+                  <div class="label accordion__item__title">What are the key features in the OCBC app?<i class="far fa-angle-down accordion__item__collapse-icon"></i></div>
+                  <div class="content-wrapper accordion__item__content">
+                     <div class="content"><p>We are constantly enhancing the OCBC app experience and cannot wait to get the cool new stuff out for you to enjoy! This is why we are progressively building and releasing these updates. We hope that you enjoy the new experience, and encourage you share your feedback with us.&nbsp;<br /><strong><br /></strong><strong>Your Activity</strong></p>
+<ol class="list-decimal list-bold">
+<li>
+<p><strong>What is &ldquo;Your activity&rdquo; on the Account Summary dashboard?</strong></p>
+<ul class="list-bullet">
+<li>You can view all your latest transactions across all your Current, Savings and card accounts at one glance in &ldquo;<strong>Your activity</strong>&rdquo;. This includes your last 7 transactions from the past 7 days (including today).</li>
+<li>Tap on &ldquo;<strong>See more</strong>&rdquo; to view all transactions from the past 7 days. You may also tap on a transaction to view more details, as well as links to actions such as viewing overall spending activity on&nbsp;<strong>Money In$ights</strong>&nbsp;or to&nbsp;<strong>Raise a dispute&nbsp;</strong>(applicable for credit cards).</li>
+<li>Please note that only posted transactions will appear in &ldquo;Your activity&rdquo;, as well as in account transaction history (see point 5 below). There may be a lead time between when the transaction is performed and shown on the dashboard.</li>
+</ul>
+</li>
+<li>
+<p><strong>How do I view my transaction history for individual accounts from the Account Summary dashboard?</strong></p>
+<p>You can view details and transaction history (past 6 months) of individual accounts through either of these:</p>
+<ul>
+<li>Tap on&nbsp;<strong>What you have / What you owe</strong>&nbsp;&gt; Select a Current/Savings account or card</li>
+<li>Tap on &ldquo;<strong>See more</strong>&rdquo; beside &ldquo;<strong>Your activity</strong>&rdquo; &gt; Tap on the&nbsp;<strong>filter button&nbsp;</strong>beside &ldquo;<strong>View all transactions</strong>&rdquo; &gt; Select a Current/Savings account or card</li>
+</ul>
+</li>
+<li>
+<p><strong>How can I view more details for a transaction?</strong></p>
+<p>Tapping on the individual transactions, will launch a pop-up with details such as merchant and transaction date, and links to &ldquo;<strong>Money Insights</strong>&rdquo; and &ldquo;<strong>Raise a dispute</strong>&rdquo; (applicable for credit cards).</p>
+</li>
+<li>
+<p><strong>Why are transaction details shown partially in my account transaction history, whereas I can view all transaction details in &ldquo;Your activity&rdquo; on the Account Summary dashboard? (for 1-factor authentication customers)</strong></p>
+<p>Your transaction details are shown &nbsp;fully in &ldquo;Your activity&rdquo; on the Account Summary dashboard to provide you with quick access to your most recent transactions. We are working towards rolling this out for the account transaction history interface.</p>
+</li>
+</ol>
+<p class="mt4"><strong>Insights</strong></p>
+<ol class="list-decimal list-bold">
+<li>
+<p><strong>Why am I not getting these personalised insights that others are seeing? Is it exclusive to some customers only?</strong></p>
+<p>These personalised insights are not exclusive, customers may receive them when certain criteria are met.</p>
+</li>
+<li>
+<p><strong>What is SRS contribution insight about? Does it include details such as balance to contribute?</strong></p>
+<p>The insight is a reminder that you have contributed to your SRS last year, but have yet to do so this year. Therefore, the insight serves as a reminder to you.</p>
+</li>
+<li>
+<p><strong>I have already acted upon the personalised insight, why do I still see it?</strong></p>
+<p>Your personalised insights will only be refreshed by the first week of each month.</p>
+</li>
+<li>
+<p><strong>I want to stop receiving these personalised insights, can I turn them off?</strong></p>
+<p>Currently there is no available function to turn off the insights, but this option will be made available in the future.</p>
+</li>
+<li>
+<p><strong>For the Food and Drink report, are food delivery services such as GrabFood included?</strong></p>
+<p>Yes, the transactions listed within the Food and Drink report will include such merchants.</p>
+</li>
+</ol>
+<p class="mt4"><strong>FRANK</strong></p>
+<ol class="list-decimal list-bold">
+<li>
+<p><strong>I have a FRANK product, why can&rsquo;t I see the FRANK skin?</strong></p>
+<p>The FRANK skin is currently available to our Personal Banking customers between the age of 16 to 29 years old, holding an eligible FRANK product, i.e. FRANK account, FRANK debit or credit card. This excludes Premier and PPC customers.</p>
+</li>
+<li>
+<p><strong>Will I still see the FRANK skin after I close my FRANK account?</strong></p>
+<p>The FRANK skin will be made available as long as you have an eligible FRANK product linked to your access code, which includes FRANK credit or debit card.</p>
+</li>
+<li>
+<p><strong>I wish to revert to the original OCBC app without the FRANK skin, how do I do it?</strong></p>
+<ul class="list-bullet">
+<li>Tap on the top left menu</li>
+<li>Tap on &ldquo;Online Banking settings&rdquo; &gt; Tap on the toggle button beside &ldquo;Frank theme&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Why do some screens on the OCBC app look slightly different from the rest?</strong></p>
+<p>We are progressively updating the app with the redesigned interface and new look, starting with the Welcome screen, Notification inbox, Account Summary dashboard, All transactions page, Main menu, Current and Savings account, and card details. Other sections will be updated with the new designs over time.</p>
+</li>
+<li>
+<p><strong>Can I customise the buttons on the quick access bar on Welcome screen and Account Summary dashboard?</strong></p>
+<p>No, these buttons are not customisable. The buttons are selected by the bank to give customers access to commonly-performed and important transactions and services on the app.</p>
+</li>
+<li>
+<p><strong>Do I need to upgrade my mobile device to download and use the latest app?</strong></p>
+<p>The app is supported on devices running on iOS 11 and Android 5, or later.&nbsp;If your app is not running on these versions, please upgrade your operating systems on your mobile device.</p>
+</li>
+<li>
+<p><strong>I do not like the new version of the app. How do I switch to the previous version?</strong></p>
+<p>Once you update to the latest version, you cannot revert to previous versions of the app. However, we are happy to take your feedback and improve the app further.</p>
+</li>
+<li>
+<p><strong>Must I upgrade to the latest version in order to continue using OCBC app? Can I continue with the current version?</strong></p>
+<p>You can continue using the current version on your mobile device &nbsp;with no disruption to your experience. However, we may require you to update to the latest version in the future for your security &ndash;&nbsp; you will be informed via a pop-up on the app then.</p>
+</li>
+</ol>
+<p><strong>&nbsp;</strong></p></div>
+                  </div>
+               </div>
+               <div class="item accordion__item">
+                  <div class="label accordion__item__title">Guide to OCBC Digital Banking<i class="far fa-angle-down accordion__item__collapse-icon"></i></div>
+                  <div class="content-wrapper accordion__item__content">
+                     <div class="content"><p><strong>How to transfer funds</strong></p>
+<ul>
+<li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/help-and-support/digital-banking/ocbc_transfer_funds.pdf">By account number</a></li>
+<li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/help-and-support/digital-banking/OCBC_Transfer_UEN.pdf">By UEN</a></li>
+<li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/help-and-support/digital-banking/OCBC_Transfer_NRICFIN.pdf">By NRIC</a></li>
+<li><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/help-and-support/digital-banking/OCBC_Transfer_mobile%20number.pdf">By mobile number</a></li>
+</ul></div>
+                  </div>
+               </div>
+               <div class="item accordion__item">
+                  <div class="label accordion__item__title">Apply for Online Banking<i class="far fa-angle-down accordion__item__collapse-icon"></i></div>
+                  <div class="content-wrapper accordion__item__content">
+                     <div class="content"><p><strong>Via online / OCBC app</strong></p>
+<ol class="mb-4">
+<li>
+<p>Go to <a class="co-white link-inherit" href="https://internet.ocbc.com/internet-banking/inbregistration/index" target="_blank" rel="noopener" name="https://internet.ocbc.com/internet-banking/inbregistration/index">https://www.ocbc.com/getonline</a></p>
+</li>
+<li>Fill in the details and submit the online form</li>
+<li>You will get instant access to Online Banking.</li>
+</ol>
+<p><strong>By mail</strong></p>
+<p>Collect and complete an <a class="co-white link-inherit" href="/iwov-resources/sg/ocbc/personal/pdf/digitalbanking/apply_for_online_banking20180924.pdf" target="_blank" rel="noopener">online banking application form</a> from any of our branches.</p>
+<p class="mb-4">Mail it to: <br />Oversea-Chinese Banking Corporation Ltd<br />Account Services<br />Bras Basah Post Office<br />Locked Bag Service No. 8<br />Singapore 911886</p>
+<p><strong>At any of our branches</strong><br />1. Visit any of our branches<br />2. Select your Internet Banking PIN on the spot<br />3. Start accessing&nbsp;Online Banking immediately</p></div>
+                  </div>
+               </div>
+               <div class="item accordion__item">
+                  <div class="label accordion__item__title">Internet Banking in Simplified Chinese <i class="far fa-angle-down accordion__item__collapse-icon"></i></div>
+                  <div class="content-wrapper accordion__item__content">
+                     <div class="content"><ol class="list-decimal list-bold">
+<li>
+<p><strong>Is Simplified Chinese language available on Internet Banking and OCBC app?</strong></p>
+<p>Yes, it is available on Internet Banking and OCBC app.</p>
+</li>
+<li>
+<p><strong>How do I select my language preference?</strong></p>
+<p>Internet Banking:<br />You may click on the language bar located at the top menu and select your preferred language.</p>
+<p>OCBC app:<br />Tap on top left menu &gt; Settings &gt; Online Banking settings &gt; tap on slider to turn on Chinese language</p>
+</li>
+<li>
+<p><strong>Will I be able to type Chinese characters into form fields on OCBC app?</strong></p>
+<p>No, all forms fields will only accept input in English as the language enhancement is not applicable to our back-end systems.</p>
+</li>
+<li>
+<p><strong>Will language selection made in Internet Banking be reflected in OCBC app and vice-versa?</strong></p>
+<p>Currently this is not possible. We are working on syncing the language selection between Internet Banking and OCBC app and making it available in the future.</p>
+</li>
+<li>
+<p><strong>Will I be able to see content in Chinese language across all services and features in the OCBC app?</strong></p>
+<p>No, we are progressively translating the app. Most services, including viewing of account information, invest, application of products, e-statements, cheque services, settings, secured mailbox are available in Chinese language in this phase (April 2020).</p>
+</li>
+</ol></div>
+                  </div>
+               </div>
+            </div><a href="/personal-banking/help-and-support/digital-banking/general" class="see-all-mobile see-all link link link-arrow-right" target="_self">More questions and  <span class="text-nowrap">answers<i class="far fa-chevron-right"></i></span></a></div>
+      </div>
+   </div>
+</div><!--ls:end[component-1578910992115]-->
+     </div>
+     <div class="iw_component" id="iw_comp1568456416181">
+      <!--ls:begin[component-1568456416181]--><style>#iw_comp1568456416181{}</style><div class="importantnotes-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Additional information</div>
+   <div class="table__three-col table__three-col-with-accordion">
+      <div class="accordion">
+         <div class="accordion__item">
+            <div class="accordion__item__title d-flex justify-content-between align-items-center">
+               <h4><strong>Terms and conditions</strong></h4><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+            <div class="accordion__item__content table__three-col--tnc" style="">
+               <div class="row">
+                  <div class="col-md-6">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services" class="link link link-arrow-right" target="_self">Terms and conditions governing Electronic Banking  <span class="text-nowrap">services<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-estatements" class="link link link-arrow-right" target="_self">Terms and conditions governing OCBC Electronic  <span class="text-nowrap">Statements<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-of-service-internet-banking-service" class="link link link-arrow-right" target="_self">Terms of service governing Online Banking notify-beneficiary  <span class="text-nowrap">services<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-onetouch" class="link link link-arrow-right" target="_self">Terms and conditions governing OneTouch&trade;  <span class="text-nowrap">service<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-paynow" class="link link link-arrow-right" target="_self">Terms and conditions governing Funds Transfers through the PayNow  <span class="text-nowrap">Service<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/iwov-resources/sg/ocbc/personal/pdf/digitalbanking/tnc-governing-giro-arrangements.pdf" class="link link link-arrow-right" target="_blank">Terms and conditions governing GIRO  <span class="text-nowrap">Arrangements<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a href="/iwov-resources/sg/ocbc/personal/pdf/digitalbanking/tnc-governing-giro-arrangements-via-the-ocbc-egiro-service.pdf" class="link link link-arrow-right" target="_blank">Terms and conditions governing GIRO arrangements via the OCBC eGIRO  <span class="text-nowrap">Service<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/iwov-resources/sg/ocbc/personal/pdf/digitalbanking/tnc-governing-egiro-arrangements.pdf" class="link link link-arrow-right" target="_blank">Terms and conditions governing eGIRO  <span class="text-nowrap">Arrangements<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-6">
+                     <p><a href="/personal-banking/terms-and-conditions/terms-and-conditions-governing-ocbc-edp-edp-plus-scheme" class="link link link-arrow-right" target="_self">Terms and Conditions governing OCBC EDP/EDP+  <span class="text-nowrap">Scheme<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+                  <div class="col-md-5">
+                     <p><a href="/iwov-resources/sg/ocbc/personal/pdf/digitalbanking/tnc-governing-ocbc-dollars-rewards-programme.pdf" class="link link link-arrow-right" target="_blank">Terms and conditions governing OCBC Rewards  <span class="text-nowrap">Programme<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+      <div class="accordion">
+         <div class="accordion__item">
+            <div class="accordion__item__title d-flex justify-content-between align-items-center">
+               <h4><strong>Important notices</strong></h4><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+            <div class="accordion__item__content table__three-col--tnc" style="">
+               <div class="row">
+                  <div class="col-md-6">
+                     <p><a href="/personal-banking/security" class="link link link-arrow-right" target="_self">Learn more about Phishing, Malware and Online Banking  <span class="text-nowrap">Security<i class="far fa-chevron-right"></i></span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+      <div class="accordion">
+         <div class="accordion__item">
+            <div class="accordion__item__title d-flex justify-content-between align-items-center">
+               <h4><strong>Trademarks usage</strong></h4><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+            <div class="accordion__item__content table__three-col--tnc" style=""><p>Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries.<br>App Store is a service mark of Apple Inc., registered in the U.S. and other countries. <br><br>Android, Google Pay and Google Play are trademarks of Google LLC.<br><br>HUAWEI, the Huawei logo and the AppGallery logo are trademarks of Huawei Technologies Co., Ltd.</p></div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <hr class="table__three-col--hr">
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1568456416181]-->
+     </div>
+     <div class="iw_component" id="iw_comp1737483434479">
+      <!--ls:begin[component-1737483434479]--><style>#iw_comp1737483434479{}</style><div class="group-1-component"></div><div class="pt2" id="cfs-awards-footer-digital">
+   <div><div class="module container bp-width-med3">
+               <div class="subcategory subcategory--black">Awards</div>
+               <div class="row com__row-group-height">
+
+                 <div class="col-md-4 com__row-group-col mt3 mob-mt2">
+                     <div class="d-flex rgh1">
+                        <div>
+                           <p class="mb1"><strong>Best Digital Bank Singapore<br></strong></p>
+                           <div class="com__co-us-par fz-14">
+                              Euromoney
+                              <br/>
+                              2024
+                           </div>
+                        </div>
+                     </div>
+                     <hr class="mb0 mt3 mob-mt2"> </div>
+
+                  <div class="col-md-4 com__row-group-col mt3 mob-mt2">
+                     <div class="d-flex rgh1">
+                        <div>
+                           <p class="mb1"><strong>Best Retail Bank Singapore & SEA<br></strong></p>
+                           <div class="com__co-us-par fz-14">
+                              The Digital Banker
+                              <br/>
+                              2024
+                           </div>
+                        </div>
+                     </div>
+                     <hr class="mb0 mt3 mob-mt2"> </div>
+                  
+                 <div class="col-md-4 com__row-group-col mt3 mob-mt2">
+                     <div class="d-flex rgh1">
+                        <div>
+                           <p class="mb1"><strong>Best & Most Innovative Retail Bank Singapore</strong></p>
+                           <div class="com__co-us-par fz-14">
+                              Global Banking & Finance Review
+                              <br/>
+                              2024
+                           </div>
+                        </div>
+                     </div>
+                     <hr class="mb0 mt3 mob-mt2"> </div>
+               
+               </div>
+            </div>
+         </div>
+</div>
+</div><!--ls:end[component-1737483434479]-->
+     </div>
+     <div class="iw_component" id="iw_comp1632828996469">
+      <style>#iw_comp1632828996469{}</style><div class="d-none-soft">
+   <div id="popup-downloadocbcdigital"><h4 class="bp-title fw-700 bp-img align-middle mb2 text-center"><span>Download OCBC app</span></h4>
+<p class="text-center">Scan the respective QR code to download the app on the App Store, Google Play or Huawei App Gallery.</p>
+<div class="d-flex justify-content-center"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/qrcode_ocbc-digital.jpg" alt="" style="width: 200px; height: 200px;" /></div></div>
+</div><div class="d-none-soft">
+   <div id="popup-downloadocbcpao"><h4 class="bp-title fw-700 bp-img align-middle mb2 text-center"><span>Download OCBC Pay Anyone&trade;</span></h4>
+<p class="text-center">Scan the respective QR code to download the app on the App Store, Google Play or Huawei App Gallery.</p>
+<div class="d-flex justify-content-center"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/qrcode_ocbc-pao.jpg" alt="" style="width: 200px; height: 200px;" /></div></div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.group-1-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  
+	
+	  $('.qrcashwithdrawal-component').parent().wrapAll('<div class="section" id="qrcashwithdrawal"> </div>');
+	  
+	  
+	
+	  $('.atmservices-component').parent().wrapAll('<div class="section d-none-soft" id="atmservices"> </div>');
+	  
+	  
+	
+	  $('.otherservices-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.atm-component').parent().wrapAll('<div id="atm"> </div>');
+	  
+	  
+	
+	  $('.ourdigital-component').parent().wrapAll('<div class="section" id="section-getstarted"> </div>');
+	  
+	  
+	
+	  $('.faqs-component').parent().wrapAll('<div class="section bg-grey" id="section-faqs"> </div>');
+	  
+	  
+	
+	  $('.importantnotes-component').parent().wrapAll('<div class="section" id="section-additionalinfo"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="OCBC Bank logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Personal Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="#">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/">Malaysia</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking/index.html" class="" target="_blank">Business Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></span></p>
+                                 <p><span><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="https://internet.ocbc.com/internet-banking/" class="" target="_blank">OCBC Online Banking</a></p>
+                                          <p><a href="/personal-banking/locations" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/personal-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="/personal-banking/important-documents" class="" target="_self">Important Documents</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span><span class="text-nowrap">Get in touch with us</span></span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/personal-banking/contact-us" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Contact Us</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:+6563633333" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6363 3333</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/personal-banking/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/personal-banking/policies" class="" target="_self">Policies</a></span><span><a href="/personal-banking/notices" class="" target="_self">Notices</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year"></span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container"><p>You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/personal-banking/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/personal-banking/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</p></div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div>
+   </div>
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js?2020072301'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/analytic-v1.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/copy.js?2020042401'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/card-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/insurance-maintenance.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/chatbot-prod.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/article-langselector-v1.js'></script>
+<script>/*$('.com__lifegoals-masthead .col-6.l-m-text').append('<div class="com__onlinebanking_download-image" style="display: inline-block;padding: 20px 0;"><img src="/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/kv_ocbc-digital.png" width="280" alt="OCBC Digital"></div><a href="#section-getstarted" class="button button--primary button--red2 ml-0 ml-md-5" auto-scroll="true"><span>Download app</span></a>');*/</script>
+<script>
+/*$(document).ready(function() {
+  var _lm_for_smallScreen = '<div class="com__onlinebanking_download-image text-center d-block d-md-none"><img src="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/kv_ocbc-digital.png" width="280" alt="OCBC Digital"></div>';
+  var _lm_for_bigScreen = '<div class="col-12 text-center text-md-left pb7 pb-md-3 pt-md-3"><div class="com__onlinebanking_download-image d-none d-md-inline-block"><img src="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/digital-banking-services/kv_ocbc-digital.png" width="280" alt="OCBC Digital"></div><a onclick="s_objectID=CTA_AnchorDownload;" href="#section-getstarted" auto-scroll class="button button--primary button--red2 d-sm-inline-block d-block" style="margin: 0 25px;"><span>Download app</span></a></div>';
+  var _lm_target = $('.com__lifegoals-masthead .l-m-content').find('.l-m-mobile-image');
+  if(_lm_target) {
+    _lm_target.before(_lm_for_smallScreen);
+    _lm_target.after(_lm_for_bigScreen);
+  }
+});
+$('.com__lifegoals-masthead .l-m-content.row.align-items-center').children().wrapAll('<div></div>');
+$('.com__lifegoals-masthead .l-m-text').addClass('col-12').addClass('pl-md-0').addClass('pl-5').removeClass('col-6');*/
+</script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

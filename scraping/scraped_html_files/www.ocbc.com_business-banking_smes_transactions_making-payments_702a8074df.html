@@ -1,0 +1,1983 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Local &amp; International Payments for SMEs | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/smes/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/smes/transactions/making-payments/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="money transfer business banking,online money transfer business,transfer money to a business account,international money transfer business,international payments for business,local order payment,sme international payments,company foreign payment,corporate remittance,business payments">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Transfer money to a business account in local currency is simple with OCBC. Fast and secured way for local & international money transfer in local & foreign currencies.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[stylesheet]-->
+      <link rel="stylesheet" href="/iwov-resources/sg/ocbc/business/css/style-bb.css" type="text/css" data-ocde-desktop_or_tablet_or_phone="show">
+      <!--ls:end[stylesheet]--><!--ls:begin[stylesheet]-->
+      <link rel="stylesheet" href="/iwov-resources/sg/ocbc/business/css/table-in-table.css" type="text/css" data-ocde-desktop_or_tablet_or_phone="show">
+      <!--ls:end[stylesheet]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/smes/transactions/making-payments">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="Please insert the tezt here" class="page-making-payments"><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:ocbc business banking:smes:transactions:making payments",
+            language: "en",
+            pageCategory: "pre-login smes page",
+            bannerName: "heres where you can make your business payments",
+            channel: "smes",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "true"
+        }
+    };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1a5c4u3">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4u4">
+  <div class="iw_columns col-lg-12" id="colk1a5c4u5">
+   <div class="iw_component" id="iw_comp1583231811994">
+    <style>#iw_comp1570073690234{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#accounts" class="header__navi">Accounts</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#loans" class="header__navi">Loans</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#trades" class="header__navi">Trade</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#transactions" class="header__navi">Collections and Payments</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#runningbiz" class="header__navi">Running a business</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/international" class="" target="_self">International</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in</p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="/Premier">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <div class="dropdown__bb dropdown__second__bb d-lg-inline">
+                           <div class="dropdown__theme  dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location-option-filter" class="selectize selectize--navigation" id="header-businessBanking">
+                                 <option value="/business-banking/smes">SMEs</option>
+                                 <option value="/business-banking/enterprises">Enterprises</option>
+                                 <option value="/business-banking/corporates">Corporates</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support" class="" target="_self">Help and support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="accounts" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Accounts</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Open a Business account</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For startups or new businesses</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/business-growth-account" class="link link link-arrow-right" target="_self">Business Growth <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">No account fee</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/business-entrepreneur-account-plus" class="link link link-arrow-right" target="_self">Business Entrepreneur Plus <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Transact internationally</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/multi-currency-business-account" class="link link link-arrow-right" target="_self">Multi-Currency Business <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">100% online</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/account-opening-for-foreign-owned-companies" class="link link link-arrow-right" target="_self">Business account for foreign-owned <span class="text-nowrap">companies<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/accounts" class="button button--secondary button--link" target="_self"><span>See all Accounts</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/best-smes-accounts" class="link link link-arrow-right" target="_self">Best Business Bank Accounts for SMEs in Singapore <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/registering-your-business" class="link link link-arrow-right" target="_self">Guide to registering your <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="loans" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Loans</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Finance your business</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Fund day-to-day expenses and expansion plans</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-loans" class="link link link-arrow-right" target="_self">Business <span class="text-nowrap">Loans<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For young startups 6 months into operations</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-first-loan" class="link link link-arrow-right" target="_self">Business First <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Helping SMEs do well and do good</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/sustainable-financing" class="link link link-arrow-right" target="_self">SME Sustainable <span class="text-nowrap">Financing<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Own or refinance a property</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/commercial-property-loan" class="link link link-arrow-right" target="_self">Commercial Property <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Have ready cash on standby and pay only for what you use</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-revolving-short-term-loan" class="link link link-arrow-right" target="_self">Revolving Term <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/loans" class="button button--secondary button--link" target="_self"><span>See all Loans</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sme-loans-singapore-guide" class="link link link-arrow-right" target="_self">A guide to the best SME loans in Singapore <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sme-lending-options-2021" class="link link link-arrow-right" target="_self">SME financing in 2023 - What are the lending options for small <span class="text-nowrap">businesses?<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="trades" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Trade</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Expand international trade</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Manage my purchases</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-importsolutions" class="link link link-arrow-right" target="_self">Import <span class="text-nowrap">finance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Finance my working capital</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/loans/working-capital.page" class="link link link-arrow-right" target="_self">Open account <span class="text-nowrap">financing<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Grow my sales</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-exportsolutions" class="link link link-arrow-right" target="_self">Export <span class="text-nowrap">finance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Secure my obligations</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-otherservices" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Guarantees<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Facilitate purchases/sales as Middleman</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-otherservices" class="link link link-arrow-right" target="_self">Back-to-Back & Transferable Letter of <span class="text-nowrap">Credit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/trade" class="button button--secondary button--link" target="_self"><span>See all Trade Finance Products</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/purchase-invoice-financing-for-smes" class="link link link-arrow-right" target="_self">Understanding invoice financing (purchase) for <span class="text-nowrap">SMEs<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sales-invoice-financing-for-smes" class="link link link-arrow-right" target="_self">What SMEs must know about invoice financing <span class="text-nowrap">(sales)<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="transactions" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Collections and Payments</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Manage your payments</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Make payments</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/making-payments" class="link link link-arrow-right" target="_self">Making <span class="text-nowrap">payments<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Receive payments</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/receiving-payments" class="link link link-arrow-right" target="_self">Receiving <span class="text-nowrap">payments<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Commercial cards</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/commercial-cards" class="link link link-arrow-right" target="_self">For everyday business <span class="text-nowrap">needs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/transactions" class="button button--secondary button--link" target="_self"><span>See all transfer methods</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">&nbsp;</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>The OCBC Business Debit Card now comes in a new design!
+<p class="pt2">Earn unlimited cashback on your everyday business spend!</p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/smes/transactions/business-debit-card" class="link link link-arrow-right" target="_self">Find out <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="runningbiz" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Running a business</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Running a business</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Starting your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#starting-first-business" class="link link link-arrow-right" target="_self">Uncover blind spots and start your business <span class="text-nowrap">right<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Growing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#growing-your-business" class="link link link-arrow-right" target="_self">Grow local, go <span class="text-nowrap">international<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Managing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#managing-your-business" class="link link link-arrow-right" target="_self">Optimise your everyday <span class="text-nowrap">operations<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Scaling your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#scaling-your-business" class="link link link-arrow-right" target="_self">Take your business further, <span class="text-nowrap">faster<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/business-tools" class="button button--secondary button--link" target="_self"><span>See all resources</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Industry Expertise</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/enterprises/healthcare" class="link link link-arrow-right" target="_self">Are you an aspiring medical <span class="text-nowrap">entrepreneur?<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/enterprises/fnb" class="link link link-arrow-right" target="_self">Business solutions for F&B <span class="text-nowrap">entrepreneurs<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/enterprises" class="link link link-arrow-right" target="_blank">Find solutions for your industry-specific <span class="text-nowrap">needs<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<section id="main-wrapper">
+ <div class="container-fluid iw_section" id="sectionk1a5c4um">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4un">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uo">
+    <div class="iw_component" id="iw_comp1583231811995">
+     <!--ls:begin[component-1583231811995]--><style>#iw_comp1583231811995{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/business-banking/index.page">Business Banking</a></li>
+         <li><a href="/business-banking/smes.page">SMEs</a></li>
+         <li><a href="/business-banking/smes/transactions.page">Collections and Payments</a></li>
+         <li>Making Payments</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1583231811995]-->
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="container-fluid iw_section" id="sectionk1a5c4uu">
+  <div class="row iw_row iw_stretch" id="rowk1a5c4uv">
+   <div class="iw_columns col-lg-12" id="colk1a5c4uw">
+    <div class="iw_placeholder" id="iw_placeholder1570073690261">
+     <div class="iw_component" id="iw_comp1583231811999">
+      <style>#iw_comp1583231811999{}</style><div class="masthead-component"></div><div class="module container bp-width-med3 animate">
+   <div class="common__category-description box-med bp-curve3 bg-ash2 text-center ">
+      <h1 class="no-margin thesans"><span>Business payments online made simple in local &amp; foreign currencies</span></h1>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1583231811998">
+      <style>#iw_comp1583231811998{}</style><!--Common Category Description With Sub Navigation--><div class="masthead-component"></div><div class="module container bp-width-med4 class=&#34;owl-carousel owl-nav1 group-height&#34;">
+   <div class="common__category-list box-shadow3 bp-curve3 no-padding box-pull bg-white mobile-carousel-nav">
+      <div class="auto com__lo-nav fz-16 text-center mw--1060">
+         <div class="mc-na-main">
+            <div class="owl-carousel owl-nav1 group-height">
+               <div class="item"><a href="/business-banking/smes/transactions.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/business/img/smes/transactions/icon-overview%402x.png"></div>
+                        <p class="mh1-f">Overview</p>
+                     </div></a></div>
+               <div class="item"><a href="/business-banking/smes/transactions/commercial-cards.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/business/img/smes/transactions/icon-commcards.png"></div>
+                        <p class="mh1-f">Commercial cards</p>
+                     </div></a></div>
+               <div class="item selected"><a href="/business-banking/smes/transactions/making-payments.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/business/img/smes/transactions/icon-making-payment.png"></div>
+                        <p class="mh1-f">Making payments</p>
+                     </div></a></div>
+               <div class="item"><a href="/business-banking/smes/transactions/receiving-payments.page" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/business/img/smes/transactions/icon-receiving-payment.png"></div>
+                        <p class="mh1-f">Receiving payments</p>
+                     </div></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1739922733515">
+      <style>#iw_comp1739922733515{}</style><div class="navtabs-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">BUSINESS PAYMENTS IN LOCAL AND FOREIGN CURRENCIES</div>
+   <div class="com__tab">
+      <div class="com__tab-content com__tab--center com__tab-scroll mb4">
+         <div class="row">
+            <div class=" col-custom-9">
+               <div class="com__tab-nav has-styled-nav find-id-nav">
+                  <ul class="d-flex styled-nav align-items-center">
+                     <div class="indicator"></div>
+                     <li class="col align-items-center justify-content-center selected"><a href="#localtransfer">Local transfers</a></li>
+                     <li class="col align-items-center justify-content-center"><a href="#internationaltransfer">International transfers</a></li>
+                  </ul>
+                  <div class="border-line-wrapper">
+                     <div class="border-line"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1739922734084">
+      <style>#iw_comp1739922734084{}</style><!--One Block--><div class="navtabs-component localtransfer"></div><div class="module container bp-width-med3">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-3">
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-3 dpgt3-second">
+                  <div class="dpgt-item">
+                     <p class="dpg-smaller"><strong><h5><strong>To another OCBC Singapore account</strong></h5></strong></p>
+                  </div>
+               </div>
+               <div class="col-md-7 dpgt3-third">
+                  <div class="dpgt-item">
+                     <p><p>Make same-day fund transfers between OCBC accounts in SGD quickly, easily and free-of-charge via OCBC Velocity (Business Internet Banking).</p></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1739922734103">
+      <!--ls:begin[component-1739922734103]--><style>#iw_comp1739922734103{}</style><div class="navtabs-component localtransfer"></div><div class="section section-both" id="">
+   <div><div class="module container bp-width-med3">
+                      <div class="row ">
+                        <div class="col-md-12">
+                          <div class="row">
+                            <div class=" col-custom-8 col-custom-enforced subtitle ">
+                              <h4 class="mb-0">
+                                <p><strong>To non-OCBC bank accounts in Singapore</strong></p>
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <table class="com_table-carousel table table-small graph-bordered bg-white text-center theme theme--grey"
+                          data-table-carousel="basic">
+                          <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                          </colgroup>
+                          <thead>
+                            <tr class="graph-row">
+                              <th class="graph-item theme__bg3 align-middle"></th>
+                              <th class="graph-item theme__bg3 align-middle"><strong>Standard processing (GIRO)</strong></th>
+                              <th class="graph-item theme__bg3 align-middle"><strong>Instant processing (FAST - Fast And Secure Transfers)</strong></th>
+                              <th class="graph-item theme__bg3 align-middle"><strong>Same-day processing (MEPS-MAS ELECTRONIC Payment System)</strong></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Overview</strong></td>
+                              <td class="graph-item">
+                                Automated electronic payment service, which takes up to 2 working days
+                                for funds to be credited<br /><br />
+                                <b>NEW</b><br> Any businesses with an OCBC SGD Business Account and
+                                OCBC Velocity can set up payment to participating billing
+                                organisations in minutes with <a
+                                  href="https://www.ocbc.com/business-banking/smes/transactions/egiro">eGIRO</a>.
+                                <br /><br />
+                                <a
+                                  href="https://www.ocbc.com/business-banking/smes/transactions/egiro">Learn
+                                more</a>
+                              </td>
+                              <td class="graph-item">Instantaneous SGD transfers to participating banks</td>
+                              <td class="graph-item">Same-day funds transfers to banks for high value & time-sensitive payments. Subject to cut-off times.</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Suitable for</strong></td>
+                              <td class="graph-item">Non-urgent and recurring transfers (eg: vendor and payroll)</td>
+                              <td class="graph-item">Urgent transfers</td>
+                              <td class="graph-item">Urgent transfers</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Availability</strong></td>
+                              <td class="graph-item">Working days only subject to cut off times</td>
+                              <td class="graph-item">Anytime – 24/7, 365 days a year</td>
+                              <td class="graph-item">
+                                Working days only subject to cut off times as follow:
+                                <ul class="list-bullet">
+                                  <li>Before 4.30pm via OCBC Velocity</li>
+                                  <li>Before 3pm at OCBC branches</li>
+                                </ul>
+                                <br />
+                              </td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Transaction limit</strong></td>
+                              <td class="graph-item">Maximum of S$90 million per transaction</td>
+                              <td class="graph-item">Maximum of S$200,000 per transaction</td>
+                              <td class="graph-item">No limit</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Fees</strong></td>
+                              <td class="graph-item">
+                                <p style="text-align:left;">
+                                                      S$0.20 per transaction
+                                                    </p>
+                              </td>
+                              <td class="graph-item">S$0.50 per transaction
+                              </td>
+                              <td class="graph-item">S$20 per transaction</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="com__investment_4coltable d-none">
+                        <div class="row">
+                          <div class="col-lg-12 theme theme--grey">
+                            <div class="t-w-h-wrapper">
+                              <div graph-carousel="type2">
+                                <ul class="table__comparison-nav d-none-soft">
+                                  <li>Standard processing (GIRO)</li>
+                                  <li>Instant processing (FAST - Fast And Secure Transfers)</li>
+                                  <li>Same-day processing (MEPS-MAS ELECTRONIC Payment System)</li>
+                                </ul>
+                                <div class="pct-table2-header-fix table-group-height">
+                                  <div class="mhf-wrapper">
+                                    <div class="mhf-wrapper-table">
+                                      <table class="table__comparison-table">
+                                        <tbody>
+                                          <tr class="graph-row w-b-shadow">
+                                            <th class="graph-item tgh1 col4  text-center theme__color3">Standard processing
+                                              (GIRO)
+                                            </th>
+                                            <th class="graph-item tgh1 col4  text-center theme__color3">Instant processing
+                                              (FAST - Fast And Secure Transfers)
+                                            </th>
+                                            <th class="graph-item tgh1 col4 br-0 text-center theme__color3">Same-day
+                                              processing (MEPS-MAS ELECTRONIC Payment System)
+                                            </th>
+                                            <th class="graph-item gh1 col4 text-center d-none"></th>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="table__comparison-content table-group-height">
+                                  <table class="table__comparison-table">
+                                    <tbody>
+                                      <tr>
+                                        <td class="graph-item--width-left">
+                                          <div class="pl-co-table table1">
+                                            <table>
+                                              <tbody>
+                                                <tr class="graph-row">
+                                                  <th class="graph-item tgh1"></th>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh2"><strong>Overview</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh3"><strong>Suitable for</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh4"><strong>Availability</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh5"><strong>Transaction limit</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh6"><strong>Fees</strong></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="pl-co-table table2">
+                                            <table>
+                                              <tbody>
+                                                <tr class="graph-row w-b-shadow">
+                                                  <th class="graph-item tgh1 col4  text-center theme__color3">Standard
+                                                    processing (GIRO)
+                                                  </th>
+                                                  <th class="graph-item tgh1 col4  text-center theme__color3">Instant
+                                                    processing (FAST - Fast And Secure Transfers)
+                                                  </th>
+                                                  <th class="graph-item tgh1 col4 br-0 text-center theme__color3">Same-day
+                                                    processing (MEPS-MAS ELECTRONIC Payment System)
+                                                  </th>
+                                                  <th class="graph-item gh1 col4 d-none"></th>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh2">
+                                                    <p style="text-align:left;">
+                                                      Automated electronic payment service, which takes up to 2 working days
+                                                      for funds to be credited
+                                                    </p>
+                                                    <p style="text-align:left;">
+                                                      <b>NEW</b><br> Any businesses with an OCBC SGD Business Account and
+                                                      OCBC Velocity can set up payment to participating billing
+                                                      organisations in minutes with <A
+                                                        href="https://www.ocbc.com/business-banking/smes/transactions/egiro">eGIRO</a>.
+                                                    </p>
+                                                    <p style="text-align:left;"><A
+                                                      href="https://www.ocbc.com/business-banking/smes/transactions/egiro">Learn
+                                                      more</a>
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh2">
+                                                    <p style="text-align:left;">
+                                                      Instantaneous SGD transfers to participating banks
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh2">
+                                                    <p style="text-align:left;">
+                                                      Same-day funds transfers to banks for high value & time-sensitive
+                                                      payments. Subject to cut-off times.
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh3">
+                                                    <p style="text-align:left;">Non-urgent and recurring transfers (eg:
+                                                      vendor and payroll)
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh3">
+                                                    <p style="text-align:left;">
+                                                      Urgent transfers
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh3">
+                                                    <p style="text-align:left;">
+                                                      Urgent transfers
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh4">
+                                                    <p style="text-align:left;">
+                                                      Working days only subject to cut off times
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh4">
+                                                    <p style="text-align:left;">
+                                                      Anytime – 24/7, 365 days a year
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh4">
+                                                    <p style="text-align:left;">
+                                                      Working days only subject to cut off times as follow:
+                                                    <ul class="list-bullet" style="text-align:left;">
+                                                      <li>Before 4.30pm via OCBC Velocity</li>
+                                                      <li>Before 3pm at OCBC branches</li>
+                                                    </ul>
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh5">
+                                                    <p style="text-align:left;">
+                                                      Maximum of S$90 million per transaction
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh5">
+                                                    <p style="text-align:left;">
+                                                      Maximum of S$200,000 per transaction
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh5">
+                                                    <p style="text-align:left;">
+                                                      No limit
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align:left;">
+                                                      S$0.20 per transaction
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align:left;">
+                                                      S$0.50 per transaction
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align:left;">
+                                                      S$20 per transaction
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div></div>
+</div><!--ls:end[component-1739922734103]-->
+     </div>
+     <div class="iw_component" id="iw_comp1583231812005">
+      <style>#iw_comp1583231812005{}</style><!--One Block--><div class="navtabs-component localtransfer"></div><div class="module container bp-width-med3 section">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-3">
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-3 dpgt3-second">
+                  <div class="dpgt-item">
+                     <p class="dpg-smaller"><strong><h5><strong>Singapore Dollar Cheques</strong></h5></strong></p>
+                  </div>
+               </div>
+               <div class="col-md-7 dpgt3-third">
+                  <div class="dpgt-item">
+                     <p><ul class="list-bullet">
+<li>Cheque deposit service at any OCBC branch</li>
+<li>Additional charges apply if your cheque bounces</li>
+<li>Account will be deducted only when cheque is presented</li>
+</ul>
+View <a rel="noopener" href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide" target="_blank">business banking pricing guide</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1583231812006">
+      <style>#iw_comp1583231812006{}</style><!--One Block--><div class="navtabs-component localtransfer"></div><div class="module container bp-width-med3 section">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-3">
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-3 dpgt3-second">
+                  <div class="dpgt-item">
+                     <p class="dpg-smaller"><strong><h5><strong>Cashier's Order</strong></h5></strong></p>
+                  </div>
+               </div>
+               <div class="col-md-7 dpgt3-third">
+                  <div class="dpgt-item">
+                     <p><ul class="list-bullet">
+<li>A guaranteed cheque issued by the Bank that will not bounce</li>
+<li>To be used when your beneficiaries want assurance of guaranteed payments</li>
+<li>Amount will be deducted upfront from your account when a cashier&rsquo;s order is issued</li>
+</ul></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1601463620274">
+      <style>#iw_comp1601463620274{}</style><!--One Block--><div class="navtabs-component localtransfer"></div><div class="module container bp-width-med3 section">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-3">
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-3 dpgt3-second">
+                  <div class="dpgt-item">
+                     <p class="dpg-smaller"><strong><h5><strong>Business Debit Card</strong></h5></strong></p>
+                  </div>
+               </div>
+               <div class="col-md-7 dpgt3-third">
+                  <div class="dpgt-item">
+                     <p><ul class="list-bullet">
+<li>Consolidate your business expenses</li>
+<li>Make payments and withdraw cash easily</li>
+<li>Enjoy up to 1% cashback on your everyday business spend, with no minimum spend</li>
+</ul>
+Learn more about the <a href="/business-banking/smes/transactions/business-debit-card.page">OCBC Business Debit Card</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1739922733964">
+      <!--ls:begin[component-1739922733964]--><style>#iw_comp1739922733964{}</style><div class="navtabs-component internationaltransfer"></div><div class="" id="">
+   <div><div class="module container bp-width-med3">
+                      <div class="com_digital-payments-generic-text-wrapper">
+                        <div class="com_digital-payments-generic-text d-p-g-type-1">
+                        </div>
+                      </div>
+                      <!-- NEW TABLE -->
+                      <div>
+                        <table class="com_table-carousel table table-small graph-bordered bg-white text-center theme theme--grey"
+                          data-table-carousel="basic">
+                          <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                          </colgroup>
+                          <thead>
+                            <tr class="graph-row">
+                              <th class="graph-item theme__bg3 align-middle"></th>
+                              <th class="graph-item theme__bg3 align-middle"><strong>Outward Telegraphic Transfer (OTT)</strong></th>
+                              <th class="graph-item theme__bg3 align-middle"><strong>International Automated Clearing House (IACH)</strong></th>
+                              <th class="graph-item theme__bg3 align-middle"><strong>Network Transfer</strong></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Overview</strong></td>
+                              <td class="graph-item">
+                                Make overseas payments in more than 60 currencies
+                              </td>
+                              <td class="graph-item">Enjoy flat fee transfers without additional agent fees for payments to 7 markets</td>
+                              <td class="graph-item">Enjoy lower cost and full value transfers between OCBC accounts in ASEAN and Greater China</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Processing time</strong></td>
+                              <td class="graph-item">1-2 business days</td>
+                              <td class="graph-item">2-3 business days</td>
+                              <td class="graph-item">Same day transfers</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Supports Full Value Transfers</strong></td>
+                              <td class="graph-item">No</td>
+                              <td class="graph-item">Yes</td>
+                              <td class="graph-item">Yes</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Number of supported currencies</strong></td>
+                              <td class="graph-item">64</td>
+                              <td class="graph-item">7</td>
+                              <td class="graph-item">6</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>Fees</strong></td>
+                              <td class="graph-item">
+                                S$30 per transaction (includes commission, waived commission in lieu of exchange and cable fee)
+                              </td>
+                              <td class="graph-item">Flat fee of S$30 per transaction</td>
+                              <td class="graph-item">Flat fee of S$15 per transaction</td>
+                            </tr>
+                            <tr class="graph-row">
+                              <td class="graph-item text-center"><strong>How to get started</strong></td>
+                              <td class="graph-item"><a href="https://www.ocbc.com/business-banking/outward-telegraphic-transfer" target="_blank">Learn more</a></td>
+                              <td class="graph-item"><a href="https://www.ocbc.com/business-banking/smes/transactions/international-automated-clearing-house" target="_blank">Learn more</a></td>
+                              <td class="graph-item"><a href="https://www.ocbc.com/business-banking/digital-business-banking/network-transfer" target="_blank">Learn more</a></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="com__investment_4coltable d-none">
+                        <div class="row">
+                          <div class="col-lg-12 theme theme--grey">
+                            <div class="t-w-h-wrapper">
+                              <div graph-carousel="type2">
+                                <ul class="table__comparison-nav2 d-none-soft">
+                                  <li>Outward Telegraphic Transfer (OTT)</li>
+                                  <li>International Automated Clearing House (IACH)</li>
+                                  <li>Network Transfer</li>
+                                </ul>
+                                <div class="pct-table2-header-fix table-group-height">
+                                  <div class="mhf-wrapper">
+                                    <div class="mhf-wrapper-table">
+                                      <table class="table__comparison-table">
+                                        <tbody>
+                                          <tr class="graph-row w-b-shadow">
+                                            <th class="graph-item tgh1 col4  text-center theme__color3">Outward Telegraphic Transfer (OTT)</th>
+                                            <th class="graph-item tgh1 col4  text-center theme__color3">International Automated Clearing House (IACH)</th>
+                                            <th class="graph-item tgh1 col4 br-0 text-center theme__color3">Network Transfer</th>
+                                            <th class="graph-item gh1 col4 text-center d-none"></th>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="table__comparison-content table-group-height">
+                                  <table class="table__comparison-table">
+                                    <tbody>
+                                      <tr>
+                                        <td class="graph-item--width-left">
+                                          <div class="pl-co-table table1">
+                                            <table>
+                                              <tbody>
+                                                <tr class="graph-row">
+                                                  <th class="graph-item tgh1"></th>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh2"><strong>Overview</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh3"><strong>Processing time</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh4"><strong>Supports Full Value Transfers</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh5"><strong>Number of supported currencies</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh6"><strong>Fees</strong></td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="graph-item tgh6"><strong>How to get started</strong></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="pl-co-table table2">
+                                            <table>
+                                              <tbody>
+                                                <tr class="graph-row w-b-shadow">
+                                                  <th class="graph-item tgh1 col4  text-center theme__color3">Outward Telegraphic Transfer (OTT)</th>
+                                                  <th class="graph-item tgh1 col4  text-center theme__color3">International Automated Clearing House (IACH)</th>
+                                                  <th class="graph-item tgh1 col4 br-0 text-center theme__color3">Network Transfer</th>
+                                                  <th class="graph-item gh1 col4 d-none"></th>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh2">
+                                                    <p style="text-align:left;">
+                                                      Make overseas payments in more than 60 currencies
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh2">
+                                                    <p style="text-align:left;">
+                                                      Enjoy flat fee transfers without additional agent fees for payments to 8 markets
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh2">
+                                                    <p style="text-align:left;">
+                                                      Enjoy lower cost and full value transfers between OCBC accounts in ASEAN and Greater China
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh3">
+                                                    <p style="text-align:left;">1-2 business days
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh3">
+                                                    <p style="text-align:left;">2-3 business days</p>
+                                                  </td>
+                                                  <td class="graph-item tgh3">
+                                                    <p style="text-align:left;">Same day transfers</p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh4">
+                                                    <p style="text-align:left;">
+                                                      No
+                                                    </p>
+                                                  </td>
+                                                  <td class="graph-item tgh4">
+                                                    <p style="text-align:left;">Yes</p>
+                                                  </td>
+                                                  <td class="graph-item tgh4">
+                                                    <p style="text-align:left;">Yes</p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh5">
+                                                    <p style="text-align:left;">64</p>
+                                                  </td>
+                                                  <td class="graph-item tgh5">
+                                                    <p style="text-align:left;">8</p>
+                                                  </td>
+                                                  <td class="graph-item tgh5">
+                                                    <p style="text-align:left;">6</p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align: left;">S$30 per transaction (includes commission, waived commission in lieu of exchange and cable fee)</p>
+                                                  </td>
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align:left;">Flat fee of S$30 per transaction</p>
+                                                  </td>
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align:left;">Flat fee of S$15 per transaction</p>
+                                                  </td>
+                                                </tr>
+                                                <tr class="graph-row">
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align: left;"><a href="#" target="_blank">Learn more</a></p>
+                                                  </td>
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align: left;"><a href="https://www.ocbc.com/business-banking/smes/transactions/international-automated-clearing-house" target="_blank">Learn more</a></p>
+                                                  </td>
+                                                  <td class="graph-item tgh6">
+                                                    <p style="text-align: left;"><a href="https://www.ocbc.com/business-banking/digital-business-banking/network-transfer" target="_blank">Learn more</a></p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- NEW TABLE -->
+                    </div></div>
+</div><!--ls:end[component-1739922733964]-->
+     </div>
+     <div class="iw_component" id="iw_comp1583140142960">
+      <style>#iw_comp1583140142960{}</style><!--One Block--><div class="navtabs-component internationaltransfer"></div><div class="module container bp-width-med3 section section-both">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-3">
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-3 dpgt3-second">
+                  <div class="dpgt-item">
+                     <p class="dpg-smaller"><strong><h5><strong>Cheque (USD cheques cleared in Singapore)</strong></h5></strong></p>
+                  </div>
+               </div>
+               <div class="col-md-7 dpgt3-third">
+                  <div class="dpgt-item">
+                     <p><ul class="list-bullet">
+<li>Cheque deposit service at any OCBC branch</li>
+<li>Additional charges apply if your cheque bounces</li>
+<li>Account will be deducted only when cheque is presented</li>
+</ul>
+<p>View <a href="https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide ">business banking pricing guide</a></p></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1583140142961">
+      <style>#iw_comp1583140142961{}</style><!--One Block--><div class="navtabs-component internationaltransfer"></div><div class="module container bp-width-med3 section">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-3">
+         <div class="d-p-g-text">
+            <div class="row">
+               <div class="col-md-3 dpgt3-second">
+                  <div class="dpgt-item">
+                     <p class="dpg-smaller"><strong><h5><strong>Demand Draft</strong></h5></strong></p>
+                  </div>
+               </div>
+               <div class="col-md-7 dpgt3-third">
+                  <div class="dpgt-item">
+                     <p><ul class="list-bullet">
+<li>Foreign currency guaranteed cheque that will not bounce</li>
+<li>Amount will be deducted upfront from your account upon issuance of the demand draft</li>
+<li>Validity period of a Demand Draft is currency dependent</li>
+</ul></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1583231812001">
+      <style>#iw_comp1583231812001{}</style><div class="apps-component"></div><div class="module container bp-width-med3">
+   <div class="subcategory subcategory--black">APPS FOR ONLINE MONEY TRANSFER FOR BUSINESS</div>
+   <div class="list__col">
+      <div class="row">
+         <div class="col-custom-10">
+            <div class="row animate com__row-group-height" anim-control="parent">
+               <div class="col-md-6 com__row-group-col">
+                  <div class="list__col-single list__col-count-2">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/common/icon-business-mobile-banking-app.png" alt="OCBC business mobile banking app"></div>
+                        <div class="list__col-content flex-fill">
+                           <h4 class="mb1"><strong>OCBC Business app</strong></h4>
+                           <div class="list__col-text">
+                              <p>A simpler and more convenient way to bank on-the-go.
+
+</p><span><a href="/business-banking/smes/business-tools/business-mobile-banking" class=" link link-arrow-right" target="">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></span></div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>A simpler and more convenient way to bank on-the-go.
+
+</p><a href="/business-banking/smes/business-tools/business-mobile-banking" class=" link link-arrow-right" target="">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                  </div>
+               </div>
+               <div class="col-md-6 com__row-group-col">
+                  <div class="list__col-single list__col-count-2">
+                     <div class="list__col-wrapper rgh1">
+                        <div class="list__col-image2 bp-img text-center"><img width="80" src="/iwov-resources/sg/ocbc/business/img/common/icon-paynow-for-business.png" alt="OCBC PayNow for businesses"></div>
+                        <div class="list__col-content flex-fill">
+                           <h4 class="mb1"><strong>PayNow for businesses  </strong></h4>
+                           <div class="list__col-text">
+                              <p>Your business can now receive payments or make transactions easily with PayNow.
+
+</p><span><a href="/business-banking/smes/business-tools/paynowcorporate" class=" link link-arrow-right" target="">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></span></div>
+                        </div>
+                     </div>
+                     <div class="list__col-text list__col-text-mobile">
+                        <p>Your business can now receive payments or make transactions easily with PayNow.
+
+</p><a href="/business-banking/smes/business-tools/paynowcorporate" class=" link link-arrow-right" target="">Learn  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="container-fluid iw_section" id="sectionk1a5c4uy">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4uz">
+  <div class="iw_columns col-lg-12" id="colk1a5c4v0">
+   <div class="iw_component" id="iw_comp1583231811996">
+    <style>#iw_comp1583231811996{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.navtabs-component').parent().wrapAll('<div class="section section-both"></div>');
+	  
+	  
+	
+	  $('.apps-component').parent().wrapAll('<div class="section section-both bg-grey" id="section-apps"></div>');
+	  
+	  
+	
+	  $('.localtransfer').parent().wrapAll('<div id="localtransfer"></div>');
+	  
+	  
+	
+	  $('.internationaltransfer').parent().wrapAll('<div id="internationaltransfer"></div>');
+	  
+	  
+	
+	  $('.bg-grey').parent().wrapAll('bg-grey</div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1a5c4v8">
+ <div class="row iw_row iw_stretch" id="rowk1a5c4v9">
+  <div class="iw_columns col-lg-12" id="colk1a5c4va">
+   <div class="iw_component" id="iw_comp1583231811997">
+    <style>#iw_comp1570528883683{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1583231812000">
+    <style>#iw_comp1583231812000{}</style><div></div>
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<script>
+      
+  let dstyle = document.createElement('style');
+  let dcssRules = `
+
+div#iw_comp1739922734103, div#iw_comp1583231812006, div#iw_comp1583140142960 {
+
+  background-color: #FAFCFC;
+
+}
+
+`;
+  
+  dstyle.textContent = dcssRules;
+  document.head.appendChild(dstyle);
+</script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

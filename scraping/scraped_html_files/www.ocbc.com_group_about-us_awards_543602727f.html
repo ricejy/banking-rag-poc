@@ -1,0 +1,2430 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PMNVMPK');</script>
+<!-- End Google Tag Manager -->
+<script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+
+<style>
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: none;
+}
+
+@media (min-width: 768px){
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 {
+ display: block;
+ min-width: 168px;
+}
+
+#dummy-field__128f59c2-9d12-4f45-b952-c86327d00cb0 span {
+ display: none;
+}
+}
+
+/* investors/contact-us.page */
+#section-investor-form .com__silveryear__form-background  {
+  background: #366492;
+  background: -webkit-gradient(linear, left top, right top, from(#366492), to(#61a7db));
+  background: -o-linear-gradient(left, #366492, #61a7db 100%);
+  background: linear-gradient(to right, #366492, #61a7db 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#366492', endColorstr='#61a7db', GradientType=0 );
+  /* IE6-9 */
+}
+</style><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Banking Awards &amp; Accolades | OCBC</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/group/page/about-us/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/group/about-us/awards/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="ocbc awards">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Discover OCBC accolades since 2010, winning prestigious awards like Asiamoney's Best Securities House, Asian Banking and Finance Awards.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/group/about-us/awards.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/ospl/css/style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMNVMPK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript">
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDKWB3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+   var ocbcData = {
+      page: {
+         pageName: "sg:ocbc:group:about us:awards",
+         language: "en", //Page Language
+         pageCategory: "pre-login about us page",
+         bannerName: "commitment to excellence",
+         channel: "about us",
+         country: "sg",
+         lob: "ocbc group"
+      },
+      user: {
+         CIF: ""
+      }, //should be passed post login OCBC specific encrypted ID
+      event: {
+         pageView: "true",
+         bannerImpression: "true" //set true only when banner is visible on the page
+      }
+   };
+   </script>
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async=""></script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionk1sumfzn">
+ <div class="row iw_row iw_stretch" id="rowk1sumfzo">
+  <div class="iw_columns col-lg-12" id="colk1sumfzp">
+   <div class="iw_component" id="iw_comp1571204552818">
+    <!--ls:begin[component-1571204552818]--><style>#iw_comp1571204552818{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Image"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#about-us" class="header__navi">About Us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/group/media/release/index" class="header__navi" target="_self">Media</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investors" class="header__navi">Investors</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#sustainability" class="header__navi">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="https://www.ocbc.com/group/careers/index.page" class="header__navi" target="_self">Careers</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#research" class="header__navi">Research</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in </p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="https://www.ocbc.com" data-target="_self">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/personal-banking" data-target="_self">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.iocbc.com" data-target="_blank">OCBC Securities</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul></ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="about-us" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">About Us</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/group-business" class="link link link-arrow-right" target="_self">Group <span class="text-nowrap">Business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/corporate-strategy" class="link link link-arrow-right" target="_self">Corporate <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/our-leadership" class="link link link-arrow-right" target="_self">Our <span class="text-nowrap">Leadership<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/about-us/purpose-values-and-ambition" class="link link link-arrow-right" target="_self">Purpose and <span class="text-nowrap">Values<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/about-us/awards" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Awards<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/group/about-us/group-business" class="button button--secondary button--link" target="_self"><span>View all</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investors" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investors</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/financials" class="link link link-arrow-right" target="_self">Financial <span class="text-nowrap">results<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/annual-report-and-agm" class="link link link-arrow-right" target="_self">Annual Report and <span class="text-nowrap">AGM<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/investors/investor-information" class="link link link-arrow-right" target="_self">Investor <span class="text-nowrap">information<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/regulatory-disclosure" class="link link link-arrow-right" target="_self">Regulatory <span class="text-nowrap">disclosures<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/investors/contact-us" class="link link link-arrow-right" target="_self">Contact <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="#" class="" target="_self"><span></span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="sustainability" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Sustainability</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/index.page" class="link link link-arrow-right" target="_self">Sustainability <span class="text-nowrap">approach<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/net-zero-future.page" class="link link link-arrow-right" target="_self">Net-zero <span class="text-nowrap">future<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/community-impact.page" class="link link link-arrow-right" target="_self">Community <span class="text-nowrap">impact<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="name"><a href="/group/sustainability/one-group.page" class="link link link-arrow-right" target="_self">One <span class="text-nowrap">Group<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/responsible-business.page" class="link link link-arrow-right" target="_self">Responsible <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/sustainability/disclosures-and-resources.page" class="link link link-arrow-right" target="_self">Disclosures and <span class="text-nowrap">resources<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="research" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Research</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"> Treasury reports</div>
+                                    <div class="name"><a href="/group/research/index" class="link link link-arrow-right" target="_self">Recent <span class="text-nowrap">updates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter" class="link link link-arrow-right" target="_self">Macro <span class="text-nowrap">outlook<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=fxandrates" class="link link link-arrow-right" target="_self">FX and <span class="text-nowrap">rates<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/research-with-filter.page?category=special" class="link link link-arrow-right" target="_self">Special <span class="text-nowrap">reports<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment reports</div>
+                                    <div class="name"><a href="/group/research/investment-reports" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Company<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#sectorial" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Sectorial<i class="far fa-chevron-right"></i></span></a></div>
+                                    <div class="name"><a href="/group/research/investment-reports.page#equity" class="link link link-arrow-right" target="_self">Equity <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-highlights">
+                                 <div class="row">
+                                    <div class="col-lg-8">
+                                       <div class="tag"></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header><!--ls:end[component-1571204552818]-->
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmz4">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmz5">
+  <div class="iw_columns col-lg-12" id="colk1q5mmz6"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1571041639119">
+     <div class="iw_component" id="iw_comp1580264027319">
+      <!--ls:begin[component-1580264027319]--><style>#iw_comp1580264027319{}</style><!--Breadcrumb Component--><div class="masthead"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul></ul>
+   </div>
+</div><!--ls:end[component-1580264027319]-->
+     </div>
+     <div class="iw_component" id="iw_comp1596586479771">
+      <style>#iw_comp1596586479771{}</style><div class="masthead"></div><div class="module com__lifegoals-masthead bp-rel animate " style="background-color: #b4f0f1;">
+   <div class="l-m-wrapper" style="background-image:url(/iwov-resources/sg/ocbc/gbc/img/about-us/awards/awards-masthead-desktop.jpg); background-position:75% 50%;">
+      <div class="container bp-width-med3">
+         <div class="l-m-content row align-items-center">
+            <div class="col-6 l-m-text   text-md-left">
+               <h1>Commitment to excellence</h1>
+            </div>
+            <div class="l-m-mobile-image " style="background-image:url(/iwov-resources/sg/ocbc/gbc/img/about-us/awards/about-us-awardswewon-mobile-image.jpg); background-position:center top;"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1596586479775">
+      <style>#iw_comp1596586479775{}</style><!--Common Category Description With Sub Navigation--><div class="masthead"></div><div class="module container bp-width-med4">
+   <div class="common__category-list box-shadow3 bp-curve3 no-padding box-pull bg-white mobile-carousel-nav">
+      <div class="auto com__lo-nav fz-16 text-center mw--1060">
+         <div class="mc-na-main">
+            <div class="owl-carousel owl-nav1 group-height">
+               <div class="item"><a href="/group/about-us/group-business.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/about-us/gbc-icons-group-business%403x.jpg"></div>
+                        <p class="mh1-f">Group business</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/about-us/corporate-strategy.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/about-us/gbc-icons-corporate-strategy%403x.png"></div>
+                        <p class="mh1-f">Corporate strategy</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/about-us/our-leadership.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/about-us/gbc-icons-our-leadership%403x.png"></div>
+                        <p class="mh1-f">Our leadership</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/about-us/purpose-values-and-ambition.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/about-us/gbc-icons-purpose-and-values%403x.png"></div>
+                        <p class="mh1-f">Purpose, values and ambition</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/about-us/our-brand.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/about-us/icon_brandpromise.png"></div>
+                        <p class="mh1-f">Our brand</p>
+                     </div></a></div>
+               <div class="item selected"><a href="/group/about-us/awards.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/gbc/img/about-us/gbc-icons-awards%403x.png"></div>
+                        <p class="mh1-f">Awards</p>
+                     </div></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1596586479776">
+      <style>#iw_comp1596586479776{}</style><div class="sidebar"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-3">
+         <div class="com__tab">
+            <div class="com__tab-content com__tab-scroll">
+               <div sticky-content="">
+                  <div class="com__tab-nav has-styled-nav nav--2">
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <div class="indicator"></div>
+                        <li class="col-3 col-md-12"><a href="#awards-we-won" class="" target="_self">Awards we won</a></li>
+                        <li class="col-3 col-md-12"><a href="#awards-by-us" class="" target="_self">Awards by us</a></li>
+                     </ul>
+                     <div class="border-line-wrapper">
+                        <div class="border-line"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-9">
+         <div id="left-nav-identifier"></div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1597748321147">
+      <style>#iw_comp1597748321147{}</style><div class="sidebarcontent sidebarcontent-won"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">ALL AWARDS</div>
+   <div class="row">
+      <div class="col-custom-8 col-custom-enforced">
+         <div>
+            <div class="accordion com_toggle accordion--v2" init-mode="first" close-others="false">
+               <ul class="accordion__list">
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2025</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Awards for Excellence</div>
+                           <div class="col-sm-9 fz-16">Singapore's Best Bank for Consumers<br />Asia's Best Bank for SMEs<br />Singapore's Best Bank for SMEs<br />China's Best Bank for Sustainable Finance</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker Digital CX Awards</div>
+                           <div class="col-sm-9 fz-16">Best Retail Bank for Digital CX &ndash; Singapore<br />Best Digital CX &ndash; Account Opening and Customer Onboarding<br />Best Hybrid Customer Experience &ndash; Lifestyle Branch<br />Outstanding Digital CX &ndash; Cross Border Payments<br />Outstanding Digital CX &ndash; General Insurance</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Global Excellence in Retail Finance Awards </div>
+                           <div class="col-sm-9 fz-16">Best Wealth Management Bank in Singapore<br />Best Digital Payment Service in Asia Pacific<br />Best Employee Engagement Initiative in Asia Pacific<br />Best Personalisation Initiative in Asia Pacific</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Oracle Customer Excellence Awards</div>
+                           <div class="col-sm-9 fz-16">Finance Innovation Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance Sustainable Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Bank for Sustainable Finance - Hong Kong</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Awards for Sustainable Finance</div>
+                           <div class="col-sm-9 fz-16">Best Bank for Sustainable Finance - Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Treasurise Awards</div>
+                           <div class="col-sm-9 fz-16"><span>Best in Treasury &amp; Working Capital (Public Sector) - Singapore<br />Best in Treasury &amp; Working Capital (New Economy) - Singapore<br />Best in Treasury &amp; Working Capital (New Economy) - Malaysia</span></div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Transaction Finance Awards</div>
+                           <div class="col-sm-9 fz-16"><span>Best Cash Management Bank in Singapore<br />Best Business Digital Banking Platform in Asia Pacific<br />Best Cash Management Bank in Malaysia<br />Best Payments Bank in Hong Kong</span></div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">FinanceAsia Awards</div>
+                           <div class="col-sm-9 fz-16"><p>Best Commercial Bank for SMEs &ndash; Singapore <br />Best Commercial Bank for SMEs &ndash; Hong Kong <br />Best Commercial Bank for SMEs &ndash; Malaysia <br />Best Commercial Bank for SMEs &ndash; Indonesia</p></div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Bloomberg Businessweek Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Corporate Bank of the Year - Excellence<br />Corporate Sustainable Finance - Excellence<br />Asia Pacific Banking Services - Excellence<br />Asia Pacific Cross Border Wealth Management (Personal) - Excellence<br />Asia Pacific Cross Border Wealth Management (Premium Segment) - Excellence<br />Digital Commercial Banking - Excellence<br />Digital SME Banking - Outstanding<br />ESG Sustainability of the Year - Outstanding</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Private Banker Awards for Distinction</div>
+                           <div class="col-sm-9 fz-16">COO of the Year<br />Best Private Bank - Sustainable Investments and Impact<br />Highly Commended Private Bank - Intermediaries<br />Highly Commended International Private Bank - Digital Inovtion and Services</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Cyber Security Staff Recognition Scheme</div>
+                           <div class="col-sm-9 fz-16">Top tier 'Platinum' - Hong Kong</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Private Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Best for Sustainability - Asia<br />Best for Digital Solutions - Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Private Banker WealthTech Awards</div>
+                           <div class="col-sm-9 fz-16">Best Client Reporting Initiative<br />Best Digital Portfolio Management Initiative - Private Bank<br />Best Private Banking Technology Implementation - Front Offic</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Hong Kong Police Force</div>
+                           <div class="col-sm-9 fz-16">Effective Collaboration with Police 'Scam Response Team' - Hong Kong</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Hong Kong HR Awards</div>
+                           <div class="col-sm-9 fz-16">HR Team Of The Year 2024/25 - Hong Kong</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">MUSE Creative Awards</div>
+                           <div class="col-sm-9 fz-16">Gold award in Brand Identity - Hong Kong<br />Gold Award in Brand Strategy Campaign - Hong Kong<br />Gold in Outdoor Advertising - Hong Kong</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">PWM Wealth Tech Awards</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank for Digital Customer Experience<br />Best Private Bank in Asia for use of RegTech<br />Best Private Bank in Asia for the use of Technology<br />Best Digital Leader</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Qorus Reinvention Awards</div>
+                           <div class="col-sm-9 fz-16">APAC Innovation of the Year (Gold)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Business Awards</div>
+                           <div class="col-sm-9 fz-16">Outstanding Chief Executive of the Year</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Global Leadership Achievement Awards</div>
+                           <div class="col-sm-9 fz-16">Bank of the Year in Asia Pacific<br />CEO of the Year in Asia Pacific<br />Best Bank CEO in Singapore<br />Best Managed Bank in Singapore<br />Best Payments Bank in Hong Kong<br />Best Cash Management Bank in Malaysia<br />Best Cash Management Bank in Singapore<br />Best Business Digital Banking Platform in Asia Pacific<br />Best Tokenisation Initiative in Asia Pacific<br />Best Virtual Account Management Initiative in Asia Pacific</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Global Retail Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Virtual Account Management Initiative in Asia Pacific<br />Best Wealth Management Bank in Singapore<br />Best Digital Payment Service in Asia Pacific<br />Best Personalisation Initiative in Asia Pacific<br />Best Employee Engagement Initiative</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker CX Awards</div>
+                           <div class="col-sm-9 fz-16">Best Retail Bank of Digital CX - Singapore<br />Best Digital CX - Account Opening and Customer Onboarding<br />Outstanding Digital CX - Cross Border Payments<br />Outstanding Digital CX - General Insurance<br />Best Hybrid Customer Experience - Lifestyle Branch<br />Highly Acclaimed: Best Use of Data and Analytics for CX</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Enabling Mark by SG Enable</div>
+                           <div class="col-sm-9 fz-16">Enabling Mark (Silver) Accreditation</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Sustainable Finance Awards 2025</div>
+                           <div class="col-sm-9 fz-16">Best Sustainability-linked loan - Commodities [China Offshore], COFCO International<br />Best Social Loan - Public Sector [Hong Kong], for Hong Kong Housing Society<br />Best Green Loan - Agriculture [Indonesia] for PT IMG Sejahtera Langgeng<br />Best Green Loan [Malaysia] for LQ Retail/LQ Hotel<br />Best Green Bond - Real Estate [Singapore] for OUE Treasury</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Corporate and Investment Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Green Deal of the Year - PNB Jersey GBP210 million Islamic Green Financing<br />Debt Deal of the Year - Pantai Holdings RM15 billion Sukuk Wakalah programmes</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Wholesale Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Malaysia International Green Financing Bank of the Year</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Cross-Border Payments Initiative of the Year in Singapore<br />Sustainability Initiative of the Year in Singapore<br />Online Securities Platform of the Year - Singapore<br />Asset Management Platform of the Year - Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">TAB Global Financial Technology Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Best AI for Operational Process Automation Initiative in Asia Pacific<br />Best AI for Customer Personalisation Technology Initiative in Asia Pacific<br />Best Data and Analytics Infrastructure Initiative in Asia Pacific</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">OpenGov Asia's Recognition of Excellence Awards</div>
+                           <div class="col-sm-9 fz-16">Blockchain-based conditional payments solution<br />Quantum Key Distribution initiative</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Police Force</div>
+                           <div class="col-sm-9 fz-16">Outstanding Community Partnership Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Banking and Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Mobile Trading Platform Singapore 2025<br />Most Innovative Trading Platform Singapore 2025</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">FinanceAsia Awards</div>
+                           <div class="col-sm-9 fz-16">Best Commercial Bank - SMEs|Domestic (Singapore)<br />Best Commercial Bank - SMEs|International (Hong Kong SAR)<br />Best Commercial Bank - SMEs|International (Indonesia)<br />Best Commercial Bank - SMEs|International (Malaysia)</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2024</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IRAS</div>
+                           <div class="col-sm-9 fz-16">Tax Governance Framework (TGF) status</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Malaysia Inland Revenue Board</div>
+                           <div class="col-sm-9 fz-16">Best Taxpayer - Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia Best Financial Institutions Awards</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank in Southeast Asia <br />Best SME Bank in Singapore <br />Best SME Bank in Indonesia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Awards for Excellence</div>
+                           <div class="col-sm-9 fz-16">Best Bank for SMEs - Indonesia<br />Best Bank for Corporates in Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">FinanceAsia Awards</div>
+                           <div class="col-sm-9 fz-16">Best Commercial Bank for SMEs &ndash; Hong Kong <br />Best Commercial Bank for SMEs &ndash; Malaysia <br />Best Commercial Bank for SMEs &ndash; Indonesia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker's Global Retail Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Best Retail Bank - South East Asia&nbsp;<br />Best Retail Bank - Singapore<br />Wealth Hub of the Year<br /><span>Outstanding Marketing Initiative For a New Product</span> - OCBC Money Lock</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Banking & Finance Awards®</div>
+                           <div class="col-sm-9 fz-16">Best Retail Bank - Singapore<br />Most Innovative Retail Bank - Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking and Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">AI &amp; Machine Learning Initiative of the Year - Singapore <br />Fraud Initiative of the Year - Singapore <br />Winner of Mobile Banking &amp; Payment Initiative of the Year - Singapore<br />ASEAN SME Bank of the Year<br />Indonesia SME Bank of the Year</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Bloomberg Newsweek Financial Institution</div>
+                           <div class="col-sm-9 fz-16">SME/Business Digital Platform - Outstanding Award <br />ESG Sustainability of the Year - Outstanding Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance SME Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank in Asia-Pacific <br />Best SME Bank in Singapore <br />Best SME Bank in Indonesia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance Sustainable Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Bank for Sustainable Finance - Hong Kong and Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Banking and Finance</div>
+                           <div class="col-sm-9 fz-16">Best Mobile Trading Platform Singapore 2024 <br />Most Innovative Trading Platform Singapore 2024</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Kincentric Best Employers Award</div>
+                           <div class="col-sm-9 fz-16">Singapore's Best Employers</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">LinkedIn Top Companies</div>
+                           <div class="col-sm-9 fz-16">Best Workplace for Career Growth In Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Minister for Home Affairs</div>
+                           <div class="col-sm-9 fz-16">Operational Excellence Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Marine Money Deal</div>
+                           <div class="col-sm-9 fz-16">Bank Debt Deal of the Year with GasLog td <br />Offshore West-Export Credit Deal of the Year with Cadeler [Green Loan] <br />Green Category Deal of the Year with Hafnia [Sustainability-linked Loan]</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">OpenGov Asia's Recognition of Excellence Award</div>
+                           <div class="col-sm-9 fz-16">GovCash [Payment Mode allowing Singaporeans to withdraw government benefits in cash from our ATMs] <br />GovWallet [Digital wallet that allows Singapore Citizens to receive and use government payouts electronically] <br />OCBC GPT [Our generative AI tool] <br />OCBCx65Chulia [Our banking experience on Metaverse]</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Project Management Institute's Project </div>
+                           <div class="col-sm-9 fz-16">Winner - Group Wealth Platform 2.0 <br />2nd Runner-up - Automation of Product Catalogue Generation by Enterprise Data Management System</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Police Force</div>
+                           <div class="col-sm-9 fz-16">Outstanding Community Partnership Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SBR Technology Excellence Awards</div>
+                           <div class="col-sm-9 fz-16">AI - Banking</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Corporate Awards</div>
+                           <div class="col-sm-9 fz-16">Best Risk Management - Big Cap (Gold) <br />Best Annual Report - Big Cap (Gold)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Global Excellence in Retail Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Anti-Fraud Customer Initiative <br />Best SME Bank in Singapore <br />Best SME Bank in Asia Pacific</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Transaction Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Cash Management Bank in Singapore [2nd consecutive win] <br />Best Corporate Mobile/Digital Business Banking Initiative - OCBC Business App and OCBC Velocity [2nd consecutive win] <br />Best Collection Solution - OCBC OneCollect</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker's Digital CX Awards</div>
+                           <div class="col-sm-9 fz-16">Most Improved Customer Loyalty Program for Digital CX <br />Best Customer Experience - ATM <br />Outstanding Digital CX - General Insurance <br />Outstanding Digital CX - Mortgage Product</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Benchmark Research Awards</div>
+                           <div class="col-sm-9 fz-16">Top Investment House Rank 1 [Banks - Singapore] G3 Bonds<br />Top Investment House Highly Commended [Banks - Singapore] SGD Local Currency Bonds</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker's 2024 Global 1000 World's Strongest Banks</div>
+                           <div class="col-sm-9 fz-16">The Strongest Bank in Singapore<br />5th Strongest Bank in Asia Pacific<br />10th Strongest Bank in the World</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Environment Achievement Awards</div>
+                           <div class="col-sm-9 fz-16">Systems and Management Award<br />Leadership and Advocacy Award<br />Sustainability Workforce Transformation Achievement Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Private Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank for ESG Overall<br />Outstanding Mobile Banking Initiative</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Wealth Briefing Asia and Greater China Awards</div>
+                           <div class="col-sm-9 fz-16">Corporate Social Responsibility [Southeast Asia]<br />Overall Sustainability Offering [Southeast Asia]</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Financial Technology Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Best Operational Risk Technology Implementation<br />Best Retail Payment Technology Implementation<br />Best Big Data and Analytics Infrastructure Implementation</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IDC Future Enterprise Awards</div>
+                           <div class="col-sm-9 fz-16">Special Award for Sustainability</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Banker's Bank of the Year Awards</div>
+                           <div class="col-sm-9 fz-16">Banker of the Year - Asia Pacific<br />Banker of the Year - Indonesia<br />Banker of the Year - Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Qorus-Infosys Finacle Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Future Workforce [Gold Winner]</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">PWM/The Banker Global Private Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Best Branding in Private Banking in Asia<br />Best Chief Investment Office in Private Banking in Asia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">National Volunteer and Philanthropy Centre</div>
+                           <div class="col-sm-9 fz-16">Champion of Good</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance World's Best Treasury and Cash Management Providers</div>
+                           <div class="col-sm-9 fz-16">Asia-Pacific Best Bank for Collections - Malaysia<br />Best Bank for Cash Management - Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Sustainable Infrastructure Awards</div>
+                           <div class="col-sm-9 fz-16">Renewable Energy Deal of the Year - Solar [Japan]<br />Renewable Energy Refinancing Deal of the Year [Australia]<br />Petrochemical Deal of the Year - [Indonesia]<br />Green Project Deal of the Year [Malaysia]<br />Transport Deal of the Year [Singapore]</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Bond Connect</div>
+                           <div class="col-sm-9 fz-16">Northbound Outstanding Commercial Bank</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Securities Houses Awards</div>
+                           <div class="col-sm-9 fz-16">Best Securities House in Singapore<br />Most Innovative Securities House in Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Jobmarket Employer of Choice Awards</div>
+                           <div class="col-sm-9 fz-16">Employer of Choice Award<br />Asia Pacific Outstanding Employer Award<br />Corporate Training Award<br />Employer Brand Management Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Project Management Institute's Project of the Year Awards</div>
+                           <div class="col-sm-9 fz-16">Winner - Group Wealth Aladdin Implementation<br />2nd Runner up - Wealth Core Banking Products Upgrade</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SGX Industry Appreciation & Awards Night</div>
+                           <div class="col-sm-9 fz-16">Top New ETF by Assets under Management</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Sing Tao Service Award</div>
+                           <div class="col-sm-9 fz-16">Asia-Pacific Excellence in Banking Service - Hong Kong</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2023</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asiamoney Best Securities Houses Awards</div>
+                           <div class="col-sm-9 fz-16">Singapore's Best Securities House 2023</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking and Finance Corporate & Investment Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Green Deal of the Year - Hong Kong<br />Syndicated Loan of the Year - Hong Kong</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Cloudera APAC Data Impact Awards</div>
+                           <div class="col-sm-9 fz-16">Cloudera APAC Data Impact Awards &ndash; Transformative AI</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">CorporateTreasurer Awards</div>
+                           <div class="col-sm-9 fz-16">House Awards- Financial Institutions:<br />Best for FX/Hedging Solutions, Asia Pacific<br />Best for Digital Solutions, Asia Pacific<br />Best for FX/Hedging Solutions, Singapore<br />Best for Digital Solutions, Singapore<br />Best for Sustainable Treasury Solutions, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Financial Insights Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Asia&rsquo;s Leader in Customer Engagement for OCBC Financial OneView</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global BankTech Awards</div>
+                           <div class="col-sm-9 fz-16">Best Client Lifecycle Management Solution by a Vendor</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Hong Kong Green and Sustainable Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Outstanding Advisor for Green Industries &ndash; Visionary Green Loan Framework<br />Outstanding Facilitator for Real Estate and Hospitality&ndash; Visionary Sustainability-linked Loan Performance Metrics<br />Management Awards for Net-Zero Contribution Banking Industry &ndash; Visionary Blueprint towards Net-Zero</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IDC Future Enterprise Awards</div>
+                           <div class="col-sm-9 fz-16">Best in Future of Work (Singapore)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Minister for Home Affairs</div>
+                           <div class="col-sm-9 fz-16">Operational Excellence Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Minister for Home Affairs National Day Awards</div>
+                           <div class="col-sm-9 fz-16">Team Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Nielsen Norman Group Intranet Design Annual Award</div>
+                           <div class="col-sm-9 fz-16">NN/g Intranet Design Annual Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">PWM Wealth Tech Awards</div>
+                           <div class="col-sm-9 fz-16">Best private bank for digitally empowering RMs in Asia<br />Best client reporting platform in Asia<br />Best private bank for use of technology in Asia (highly commended)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Securities Investors Association (Singapore) Investors’ Choice Awards</div>
+                           <div class="col-sm-9 fz-16">Outstanding CEO Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SGX Appreciation and Awards</div>
+                           <div class="col-sm-9 fz-16">OCBC Securities:<br />Top 5 SGX-ST (Securities Trading) Members 2022<br />OCBC Securities and Lion Global Investors:<br />Top ETF by Trading Turnover 2022 for the Lion-OCBC Securities Hang Seng TECH ETF</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Police Force</div>
+                           <div class="col-sm-9 fz-16">Outstanding Community Partnership Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Steward Leadership 25 (SL25)</div>
+                           <div class="col-sm-9 fz-16">Steward Leadership 25 List</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Global Excellence in Retail Financial Services Awards</div>
+                           <div class="col-sm-9 fz-16">Best Life Insurance Product<br />Best Mortgage/ Home Loan Financing</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Digital Awards </div>
+                           <div class="col-sm-9 fz-16">Best API Project (Regional)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker’s Digital CX Awards</div>
+                           <div class="col-sm-9 fz-16">Outstanding Use of Digital Channels for Improved CX<br />Best Customer Experience &ndash; ATM<br />Best Technology Implementation for Digital CX Powered by a Vendor</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker Global Retail Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Winner &ndash; Best Multicurrency Account<br />Winner &ndash; Best Open Banking Initiative<br />Winner &ndash; Outstanding Omnichannel Integration by a Retail Bank<br />Highly Acclaimed &ndash; Mortgage Product of the Year</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2022</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Hong Kong Green and Sustainable Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Outstanding Advisor for Real Estate Conglomerates - Visionary Sustainability-linked Loan Performance Metrics<br />Outstanding Advisor for Greater China Corporates &ndash; Energy Transition &ndash; Visionary Green Loan Framework <br />Pioneering Organisation in Climate Disclosure Planning</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking and Finance Corporate & Investment Banking Awards </div>
+                           <div class="col-sm-9 fz-16">Corporate Client Initiative of the Year - Hong Kong</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">ABF Corporate & Investment Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Cross-border Deal of the Year &ndash; Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Adam Smith Awards Asia</div>
+                           <div class="col-sm-9 fz-16">Best Card Solution</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alliance of Public Private Cybercrime Stakeholders (APPACT) Appreciation Awards</div>
+                           <div class="col-sm-9 fz-16">Award in recognition of the strong partnership and support given to the Singapore Police Force</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia Treasury & FX Awards</div>
+                           <div class="col-sm-9 fz-16">Best FX Bank for Corporates and FIs (2014-2022) <br />Best Corporate Treasury Sales and Structuring Team (2020-2022) <br />Best FX Bank for Retail Clients <br />Best FX Bank for Structured Hedging Solutions and Proprietary Trading Ideas (Malaysia) <br />Best Online FX Platform in Southeast Asia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia Best FI Awards</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank in Southeast Asia <br />Best SME Bank in Singapore <br />Best SME Bank in Malaysia <br />Best SME Bank in Indonesia <br />Best Cash Management Bank in Malaysia <br />Best Trade Finance Bank in Singapore <br />Best Transactional Online Banking Platform Southeast Asia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Experience Awards</div>
+                           <div class="col-sm-9 fz-16">Singapore Employee Experience of the Year &ndash; Banking (MyWorld &amp; HR in your Pocket &lsquo;HIP&rsquo;)<br />Singapore Product Experience of the Year &ndash; Banking (IBOR Transition Rate Engine)<br />Singapore User Experience of the Year &ndash; Banking (GovCash)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asiamoney Best Bank Awards</div>
+                           <div class="col-sm-9 fz-16">Best Bank for SMEs Singapore &ndash; 6th Consecutive Win (2017-2022)<br />Best Bank for SMEs Indonesia &ndash; 3rd Win (2018,2019, 2022)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking and Finance Wholesale Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Singapore Domestic Cash Management Bank of the Year<br />Malaysia International Cash Management Bank of the Year<br />Indonesia Domestic Cash Management Bank of the Year<br />Singapore Domestic Trade Finance Bank of the Year</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking and Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Investment Product Innovation of the Year (OCBC Securities)<br />ASEAN SME Bank of the Year <br />SME Bank of the Year - Indonesia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asia FX Awards</div>
+                           <div class="col-sm-9 fz-16">FX House of the Year (Singapore) <br />FX House of the Year (Malaysia) <br />Best Retail FX Platform</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asia Risk Awards House of the Year</div>
+                           <div class="col-sm-9 fz-16">House of the Year, Singapore (2016-2020, 2022)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">B&S Digital Banking & Securities Awards and Bank Digital Innovation Expo (青文咨询)</div>
+                           <div class="col-sm-9 fz-16">Transaction Banking Innovation Award &ndash; China</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Cloudera Data Impact Awards</div>
+                           <div class="col-sm-9 fz-16">Cloudera Data Impact Awards 2022 &ndash; Transformation</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Digital CX Awards</div>
+                           <div class="col-sm-9 fz-16">Best Customer Experience via Mobile and Internet Banking (OCBC Financial OneView)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Market Leaders</div>
+                           <div class="col-sm-9 fz-16">SME Banking &ndash; Market Leader</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Banking and Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Bank for Sustainable Development Singapore<br />Best Corporate ESG Strategy Singapore<br />Best Corporate Sustainability Strategy Singapore<br />Best Mobile Trading Platform Singapore 2022 (OCBC Securities) <br />Most Innovative Trading Platform Singapore 2022 (OCBC Securities)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance Transaction Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Best Bank for Cash Management &ndash; Indonesia (Inaugural Win)<br />Best Bank for Cash Management &ndash; Malaysia (Inaugural Win)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance Treasury & Cash Management Awards</div>
+                           <div class="col-sm-9 fz-16">Best Bank for Cash Management in Malaysia <br />Best Bank for Cash Management in Indonesia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IBF Fellowship</div>
+                           <div class="col-sm-9 fz-16">Token of recognition for supporting and participating in SGUnited Traineeships Programme (SGUT) and SGUnited Mid-Career Pathways Programme</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">LinkedIn Top Companies</div>
+                           <div class="col-sm-9 fz-16">Top 15 Companies for career growth in Singapore and Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Malaysia Technology Excellence Awards</div>
+                           <div class="col-sm-9 fz-16">Digital Banking &ndash; Digital Implementation challenges in The Logistics &amp; Last Mile Delivery</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SIAS Investors’ Choice Awards</div>
+                           <div class="col-sm-9 fz-16">Runner-up for the Most Transparent Company Award at the SIAS Investors&rsquo; Choice Awards</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Good Design Mark</div>
+                           <div class="col-sm-9 fz-16">Singapore Good Design (SG Mark) 2022 - Gold [Category: Digital Solutions]</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Skills Future Employer Awards</div>
+                           <div class="col-sm-9 fz-16">SkillsFuture Employer Awards (GOLD)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Steward Leadership 25</div>
+                           <div class="col-sm-9 fz-16">One of the 25 initiatives on the inaugural Steward Leadership 25 (SL25) list</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Talend Data Masters Award</div>
+                           <div class="col-sm-9 fz-16">Talend Data Masters Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Excellence in Retail Financial Services Awards</div>
+                           <div class="col-sm-9 fz-16">Best Home Loan/Mortgage Product <br />Best Digital Robo-Advisory Service</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Transaction Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Trade Finance Bank in Singapore <br />Best Digital Trade Finance Platform "OCBC Velocity&rdquo;</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Islamic Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best SRI Sukuk &ndash; Malaysia<br />Best Sustainability-linked Term Financing &ndash; Malaysia<br />Best Sukuk &ndash; Malaysia<br />Best Project Finance Sukuk &ndash; Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Sustainable Infrastructure Awards</div>
+                           <div class="col-sm-9 fz-16">Renewable Energy M&amp;A Deal of the Year &ndash; Global<br />Renewable Energy M&amp;A Deal of the Year &ndash; Taiwan<br />Transport Deal of the Year &ndash; Singapore<br />Renewable Energy M&amp;A Deal of the Year, Solar &ndash; Taiwan<br />Mining Deal of the Year &ndash; Indonesia<br />LNG Deal of the Year &ndash; Australia<br />Telecom M&amp;A Deal of the Year &ndash; Australia <br />Telecom M&amp;A Deal of the Year &ndash; Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Treasuries (Treasury, Trade, Supply Chain, Risk, ESG) Awards</div>
+                           <div class="col-sm-9 fz-16">Best Treasury &amp; Working Capital in New Economy &ndash; Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker's Global Transaction Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Outstanding Account Opening and Onboarding Initiative<br />Best Bank for Cash Management in Indonesia<br />Best Bank for Trade Finance in Indonesia<br />Best Corporate Card Solution</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker’s Global Retail Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Winner of Best Mobile Banking Initiative (OCBC Financial OneView) <br />Winner of Best Multicurrency Account (Digital Foreign Exchange) <br />Winner of Best New Wealth Management Product (Digital Precious Metals) <br />Highly Acclaimed Best Bank for Employee Experience (MyWorld &amp; HR in your Pocket &lsquo;HIP&rsquo;)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Treasury Today Group’s Adam Smith Awards Asia</div>
+                           <div class="col-sm-9 fz-16">Overall Winner for Best Sustainable Treasury Solution<br />Highly Commended Winner for Best Card Solution</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">WealthBriefing MENA Awards</div>
+                           <div class="col-sm-9 fz-16">Winner for Asia-Based Private Bank Active in the Middle East and North Africa (MENA) (Bank of Singapore)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Workplace of the Year Awards</div>
+                           <div class="col-sm-9 fz-16">Gold Prize for Best Leadership Development</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2021</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">6th SG OpenGov Leadership Forum</div>
+                           <div class="col-sm-9 fz-16">Recognition of Excellence:<br />IRAS Tax Payment Initiative</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia - 15th Best Financial Institutional Awards</div>
+                           <div class="col-sm-9 fz-16">Best Trade Finance Bank in Singapore<br />Best Transactional Banking Online Platform in Southeast Asia<br />Best Cash Management Bank in Malaysia<br />Best SME Bank in Southeast Asia<br />Best SME Bank in Singapore<br />Best SME Bank in Indonesia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">ASEAN Corporate Governance Scorecard Award</div>
+                           <div class="col-sm-9 fz-16">ASEAN's Top 20 Listed Companies for Corporate Governance</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asia eCommerce Awards</div>
+                           <div class="col-sm-9 fz-16">Best eCommerce Customer Service (Bronze)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asia Pacific Syndicated Loan Market Awards</div>
+                           <div class="col-sm-9 fz-16">Syndicated Deal of the Year<br />Syndicated Leveraged and Acquisition Finance Deal of the Year</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asiamoney Asia Private Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Best for Investment Research in Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asiamoney Best Bank Awards</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank in Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banker Financial Technology Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Best Branch Digitisation Implementation</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Private Banker Awards for Distinction</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank - Fund Advisory</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asset Triple A Digital Awards</div>
+                           <div class="col-sm-9 fz-16">Best Core System Project (Regional): Group Wealth Platform</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Community Partnership Award</div>
+                           <div class="col-sm-9 fz-16">5 awards at the organisational level <br />40 awards at the individual level</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Customer Satisfaction Index of Singapore</div>
+                           <div class="col-sm-9 fz-16">Top in the Banks sub-sector<br />2nd place in the Credit Cards sub-sector</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Retail Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Highly Acclaimed:<br />Best Open Banking Initiative</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Private Banking Innovation Award</div>
+                           <div class="col-sm-9 fz-16">Outstanding Use of Technology By a Private Bank<br />Outstanding Wealth Management Technology Implementation (Front End)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">HKIB Talent Development Excellence Award</div>
+                           <div class="col-sm-9 fz-16">HKIB Talent Development Excellence Award for Human Capital Investment</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Hong Kong Banking Industry Talent Development Awards Programme</div>
+                           <div class="col-sm-9 fz-16">HKIB Talent Development Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IDC Future Enterprise Awards</div>
+                           <div class="col-sm-9 fz-16">Best in Future of Customers and Consumers: OCBC Financial OneView</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IFR Asia Awards</div>
+                           <div class="col-sm-9 fz-16">Asia-Pacific Loan of the Year<br />Deals of the Year for:<br />1. Singapore Bond: Ascendas REIT's S$300m 3% green perpetual bond<br />2. Singapore Equity Issue: Nanofilm Technologies International's S$510m SGX IPO</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">LinkedIn Top Companies List</div>
+                           <div class="col-sm-9 fz-16">#1 in 2021 LinkedIn Top Companies, Singapore<br />#8 in 2021 LinkedIn Top Companies, Malaysia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Minister for Home Affairs National Day</div>
+                           <div class="col-sm-9 fz-16">Team Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">PWM Wealth Tech Awards</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank for Digital Customer Service in Asia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SIAS Investors' Choice Awards</div>
+                           <div class="col-sm-9 fz-16">Runner Up for Singapore Corporate Governance Award (SCGA) Big Cap Category</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Exchange (SGX) Annual Awards</div>
+                           <div class="col-sm-9 fz-16">Top 5 Trading Member (Securities)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Good Design Mark</div>
+                           <div class="col-sm-9 fz-16">Singapore Good Design (SG Mark)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Governance and Transparency Index</div>
+                           <div class="col-sm-9 fz-16">Joint 4th Place</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Digital Banker’s Global Retail Banking Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Best Retail Bank &ndash; Singapore<br />Best ATM Innovation</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Tripartite Alliance Award</div>
+                           <div class="col-sm-9 fz-16">Pinnacle Award<br />Fair and Progressive Employment<br />Work-Life Excellence<br />Special Mention (Individual) - Advocate for Work-Life Harmony</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">WealthBriefing MENA Awards</div>
+                           <div class="col-sm-9 fz-16">Asia-based Private Bank Active in MENA</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2020</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">China Annual Learning & Development Conference</div>
+                           <div class="col-sm-9 fz-16">Best Practice Award on People Development (OCBC Wing Hang China)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Duty of Care Awards</div>
+                           <div class="col-sm-9 fz-16">Best Practice Award on People Development (OCBC Wing Hang China)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Private Banking Survey</div>
+                           <div class="col-sm-9 fz-16">Best Private Banking Services Overall, Philippines<br />Best Private Bank for High Net Worth Clients, Indonesia<br />Best Private Bank for High Net Worth Clients, Singapore<br />Best Private Bank for Super Affluent Clients, UAE</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Retail Banking Innovation Awards 2020 by The Digital Banker</div>
+                           <div class="col-sm-9 fz-16">Best Retail Bank Singapore<br />Automobile Lending Product of the Year<br />Digital Lending Product of the Year<br />Excellence in Digital Innovation (Personal Money)<br />Excellence in Digital Wealth Management</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">OPEX</div>
+                           <div class="col-sm-9 fz-16"><span>Best Process Transformation Project under 90 Day</span></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2019</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia - 12th Best Financial Institutional Awards</div>
+                           <div class="col-sm-9 fz-16">Best Transactional Banking Online Platform<br />Best Trade Finance Bank</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance</div>
+                           <div class="col-sm-9 fz-16">Best Bank in Asia-Pacific</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Private Banking </div>
+                           <div class="col-sm-9 fz-16">Best Private Bank in Singapore (Bank of Singapore)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">HR Excellence </div>
+                           <div class="col-sm-9 fz-16">Excellence in Leadership Development<br />Employer of the Year (Bank of Singapore)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IFR Asia</div>
+                           <div class="col-sm-9 fz-16">Singapore Bond House</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SGX Annual Awards</div>
+                           <div class="col-sm-9 fz-16">Top ASEAN SGX-ST Member (OCBC Securities)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Transaction</div>
+                           <div class="col-sm-9 fz-16">The Best Mobile Initiative, Application, or Programme - OCBC Business&nbsp;Mobile Banking&nbsp;App<br />Best API Initiative, Application or Programme<br />Best Trade Finance Bank in Singapore<br />Best Digital Trade Finance Platform Initiative, Application or Programme</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2018</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia - 12th Best Financial Institutional Awards</div>
+                           <div class="col-sm-9 fz-16">Best Transactional Banking Online Platform<br />Best Trade Finance Bank</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best Derivatives House, Southeast Asia<br />Best FX Bank for Corporates &amp; Fis, Singapore (Global Treasury)<br />Best SME Bank, Singapore<br />Best SME Bank, Southeast Asia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">SME Bank of the Year, ASEAN<br />SME Bank of the Year, Indonesia (OCBC NISP)<br />SME Bank of the Year, Malaysia (OCBC Malaysia)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asiamoney</div>
+                           <div class="col-sm-9 fz-16">Best International Bank, Myanmar</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asiamoney Best Bank</div>
+                           <div class="col-sm-9 fz-16">Asiamoney Best Bank</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Corporate Governance Asia</div>
+                           <div class="col-sm-9 fz-16">One of the Best Investor Relations Companies<br />One of the Best CEOs in Investor Relations<br />One of the Best CFOs in Investor Relations</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Excellent Service (EXSA)</div>
+                           <div class="col-sm-9 fz-16">ABS Service Excellence Champion<br />Highest number of EXSA winners across financial institutions&nbsp;four years in a row (1,955 winners)<br />Highest number of EXSA Star winners two years in a row (1,197 winners)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">HR Excellence </div>
+                           <div class="col-sm-9 fz-16">Excellence in Learning &amp; Development<br />Excellence in Woman Empowerment Strategy<br />Excellence in HR Innovation<br />Young HR Talent of the Year<br />Excellence in Leadership Development (Bank of Singapore)<br />Excellence in Corporate Wellness (Bank of Singapore)<br />Excellence in HR Change Management (Bank of Singapore)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">J.D. Power</div>
+                           <div class="col-sm-9 fz-16">Highest in Singapore Retail Banking Customer Satisfaction</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Kaplan Professional</div>
+                           <div class="col-sm-9 fz-16">Best Training, Learning &amp; Development</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Corporate</div>
+                           <div class="col-sm-9 fz-16">Best Annual Report</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker</div>
+                           <div class="col-sm-9 fz-16">Best Small Business Bank</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Excellence in Retail Financial Services International</div>
+                           <div class="col-sm-9 fz-16">Best Small Business Bank (Global Enterprise Banking)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Financial Innovation </div>
+                           <div class="col-sm-9 fz-16">Best HR Initiative, Application, or Programme - HR in Your Pocket</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Financial Technology Innovation</div>
+                           <div class="col-sm-9 fz-16">The Best Innovation Centre by Financial Institution Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Frictionless Transaction in Asia Pacific</div>
+                           <div class="col-sm-9 fz-16">Best Mobile Initiative, Application or Programme</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Treasury, Trade & Risk Management  </div>
+                           <div class="col-sm-9 fz-16">Best Supply Chain Solution (Myanmar)<br />Best Supply Chain Service Provider (Myanmar)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Treasury, Trade, Supply Chain and Risk Management </div>
+                           <div class="col-sm-9 fz-16">Best Supply Chain Solution (Myanmar)<br />Best Service Provider &ndash; Supply Chain (Myanmar)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Tripartite Alliance</div>
+                           <div class="col-sm-9 fz-16">Work Place Advocate (Work-Life Excellence Award)<br />Fair and Progressive Employment Practices (Leadership Award)</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2017</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best FX Bank for Corporates &amp; Fis, Singapore (Global Treasury)<br />Best SME Bank, Singapore<br />Best SME Bank, Southeast Asia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Aon Hewitt Best Employers</div>
+                           <div class="col-sm-9 fz-16">Best Employer, Malaysia<br />Best Employer, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asia Recruitment</div>
+                           <div class="col-sm-9 fz-16">Best Graduate Recruitment Programme - Gold<br />Best Staff Referral Programme - Gold<br />In-House Recruitment Team of the Year - Silver<br />Most Innovative and Sustainable Office Design (Singapore) - Gold<br />Most Successful Recruitment Referral Scheme (Malaysia) - Bronze</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asiamoney</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">SME Bank of the Year, ASEAN<br />SME Bank of the Year, Indonesia (OCBC NISP)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Corporate Governance Asia</div>
+                           <div class="col-sm-9 fz-16">One of the Best Investor Relations Companies</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Awards for Excellence</div>
+                           <div class="col-sm-9 fz-16">Asia's Best Bank for SMEs</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Private Banking Survey</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank for Ultra High Net Worth Clients, Philippines<br />Best Private Bank for Super Affluent Clients, Indonesia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Excellent Service (EXSA)</div>
+                           <div class="col-sm-9 fz-16">ABS Service Excellence Champion<br />Highest number of EXSA Star winners two years in a row (1,197 winners)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">FinanceAsia Country Awards for Achievement</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Banking & Finance Review </div>
+                           <div class="col-sm-9 fz-16">Best Mobile Trading App, Singapore<br />Best Online Trading Platform, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank for Entrepreneurs in Asia-Pacific (Bank of Singapore) - World's Best Private Bank</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">HR Excellence</div>
+                           <div class="col-sm-9 fz-16">Excellence in Learning &amp; Development</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IDC's Financial Insights Innovation Awards</div>
+                           <div class="col-sm-9 fz-16">Asia Pacific's Leader in Smart Payments Experience (E-Business)<br />Asia Pacific's Leader in Smart Payments Experience (Global Consumer Financial Services)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Institute of Banking and Finance (IBF)</div>
+                           <div class="col-sm-9 fz-16">IBF Inspire Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">J.D. Power</div>
+                           <div class="col-sm-9 fz-16">Highest in Singapore Retail Banking Customer Satisfaction</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2016</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best FX Bank for Corporates &amp; Fis, Singapore (Global Treasury)<br />Best Private Wealth Management Bank, Singapore (Bank of Singapore)<br />Beset Private Wealth Management Bank, Southeast Asia (Bank of Singapore)<br />Best SME Bank, Singapore<br />Best SME Bank, Singapore (Global Enterprise Banking)<br />Best SME Bank, Southeast Asia<br />Best SME Bank, Southeast Asia (Global Enterprise Banking)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Aon Hewitt Best Employers </div>
+                           <div class="col-sm-9 fz-16">Best Employer, Malaysia<br />Best Employer, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asia Risk </div>
+                           <div class="col-sm-9 fz-16">House of the Year, Singapore (Global Treasury)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">SME Bank of the Year, ASEAN<br />SME Bank of the Year, Indonesia (OCBC NISP)<br />SME Bank of the Year, Malaysia (OCBC Malaysia)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Broker Analyst Awards</div>
+                           <div class="col-sm-9 fz-16">Overall Top Award-Winning Broker, Singapore (OCBC Investment Research)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Business Management Excellence </div>
+                           <div class="col-sm-9 fz-16">Employee Engagement of the Year</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Duty of Care Awards</div>
+                           <div class="col-sm-9 fz-16">Winner of the Thought Leadership Category (Group Risk Management)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Awards for Excellence</div>
+                           <div class="col-sm-9 fz-16">Asia's Best Bank for SMEs<br />Asia's Best Bank for SMEs (Global Enterprise Banking)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">FinanceAsia Asia's Best Companies</div>
+                           <div class="col-sm-9 fz-16">One of the Best Managed Companies, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance</div>
+                           <div class="col-sm-9 fz-16">Best Developed Markets Bank: Best Bank, Singapore<br />World's 50 Safest Banks: Among the World's Top 10 Commerical Bank<br />World's 50 Safest Banks: Among the World's Top 50 Safest Banks</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance Awards</div>
+                           <div class="col-sm-9 fz-16">Best Cash Management Bank, Singapore (Best Treasury and Cash Management Provider)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Institute of Banking and Finance (IBF)</div>
+                           <div class="col-sm-9 fz-16">IBF Inspire Award</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">International Finance Magazine </div>
+                           <div class="col-sm-9 fz-16">Best Internet Bank</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Mob-Ex </div>
+                           <div class="col-sm-9 fz-16">Best App - Consumer Brand (OCBC OneTouch mobile launch campaign) - Bronze<br />Best App - Creativity (OCBC OneTouch mobile launch campaign) - Gold<br />Best App - Utility (OCBC OneTouch mobiile launch campaign) - Silver</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Randstad</div>
+                           <div class="col-sm-9 fz-16">Most Attractive Employer (Banking &amp; Financial Services Sector)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Shanghai Lujiazui Financial City Development Bureau</div>
+                           <div class="col-sm-9 fz-16">Best Integrated Bank Award (OCBC Wing Hang China)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Corporate </div>
+                           <div class="col-sm-9 fz-16">Best Managed Board (Market Capitalisation of S$1 billion &amp; above) - Gold</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Design </div>
+                           <div class="col-sm-9 fz-16">Asia's Top Design Practice - Platinum</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Good Design Mark </div>
+                           <div class="col-sm-9 fz-16">Website (FRANK by OCBC) - Gold<br />The Mighty Savers App - Gold<br />OCBC Online Investment Platform - Gold<br />OCBC Premier Banking Centre, modular chair and lounge table - Gold</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Southern Metropolis Daily</div>
+                           <div class="col-sm-9 fz-16">Best Brand Innovation Award (OCBC Wing Hang China)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">TAFEP Exemplary Employer </div>
+                           <div class="col-sm-9 fz-16">Exemplary Employer</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker</div>
+                           <div class="col-sm-9 fz-16">Best Managed Bank, Asia Pacific<br />Best Managed Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Excellence in Retail Financial Services International </div>
+                           <div class="col-sm-9 fz-16">Best Deposit Product of the Year (OCBC 360 Account)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Risk Management </div>
+                           <div class="col-sm-9 fz-16">Achievement in Operational Risk Management in Asia Pacific</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Asset Asian Awards</div>
+                           <div class="col-sm-9 fz-16"><p>Best IPO, Singapore (GIB Singapore)<br />Best Syndicated Loan, Myanmar (GIB Malaysia &amp; Yangon Branch)<br />Best Loan House, Malaysia (GIB Malaysia)</p></div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2015</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia Annual Best Deal & Solution </div>
+                           <div class="col-sm-9 fz-16">Best Loan Deal of the Year</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best Cash Management Bank, Singapore<br />Best FX Bank for Corporates &amp; Fis, Singapore (Global Treasury)<br />Best SME Bank, Singapore<br />Best SME Bank, Southeast Asia</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">Mobile Banking Initiative of the Year, Singapore (OCBC Pay Anyone)<br />SME Bank of the Year, ASEAN<br />Best SME Bank, Southeast Asia (Marquee Award)<br />Best SME Bank, Singapore<br />SME Bank of the Year, Indonesia (OCBC NISP)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Euromoney Awards for Excellence</div>
+                           <div class="col-sm-9 fz-16">Euromoney for Excellence</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Financial Insights Innovation </div>
+                           <div class="col-sm-9 fz-16">Asia's Leader in Digital Banking for OCBC Open Account Mobile App and Online Application</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Banking & Finance Review Awards</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank, Indonesia<br />Best SME Bank, Malaysia<br />Best SME Bank, Singapore<br />SME Bank of the Year, ASEAN</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance</div>
+                           <div class="col-sm-9 fz-16">Among the World's Safest Commercial banks<br />Among the World's Top 50 Safest Banks</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">IFR Asia Awards</div>
+                           <div class="col-sm-9 fz-16">Best Singapore Bond House</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">La Tofi School of CSR</div>
+                           <div class="col-sm-9 fz-16">Indonesia Green Awards (Water Resources Conservation)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">NTUC Women's Development Secretariat</div>
+                           <div class="col-sm-9 fz-16">Most Enabling Company for Dads</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Randstad </div>
+                           <div class="col-sm-9 fz-16">Most Attractive Employer (Banking &amp; Financial Services Sector)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SIAS Investors Choice</div>
+                           <div class="col-sm-9 fz-16">Most Transparent Company Award (Finance Category) - Runner Up<br />Singapore Corporate Governance Award (Big Cap Category) - Runner Up</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker</div>
+                           <div class="col-sm-9 fz-16"><p>Strongest Bank, ASEAN<br />Strongest Bank, Singapore<br />Best Trade Finance Bank, Singapore (Transaction Banking)</p></div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Excellence in Retail Financial Services International </div>
+                           <div class="col-sm-9 fz-16">Best Data &amp; Analytics Initiative (Group Customer Analytics &amp; Decisioning)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Risk Management </div>
+                           <div class="col-sm-9 fz-16">Achievement in Operational Risk Management in Asia Pacific</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Treasury, Trade & Risk Management  </div>
+                           <div class="col-sm-9 fz-16">Best SME Cash Management Solution, Singapore<br />Best SME Trade Finance Solution, Singapore<br />Best SME Treasury &amp; Working Capital, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Timetric Customer Experience in Financial Services Asia </div>
+                           <div class="col-sm-9 fz-16">Best Customer Experience for Contact Centre<br />Best Customer Experience for Collections<br />Best Customer Experience for Debt Management</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2014</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best Cash Management Bank, Singapore<br />Best Private Wealth Management Bank, Singapore (Bank of Singapore)<br />Beset Private Wealth Management Bank, Southeast Asia (Bank of Singapore) <br />Best SME Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">SME Bank of the Year, ASEAN<br />SME Bank of the Year, Indonesia (OCBC NISP)<br />SME Bank of the Year, Malaysia (OCBC Malaysia)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Banking & Finance Review Awards</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank, Indonesia<br />Best SME Bank, Malaysia<br />Best SME Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance</div>
+                           <div class="col-sm-9 fz-16">Among the World's Top 50 Safest Banks</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker</div>
+                           <div class="col-sm-9 fz-16">Best Trade Finance Bank, Singapore (Transaction Banking)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker Excellence in Retail Financial Services International </div>
+                           <div class="col-sm-9 fz-16">Best Data &amp; Analytics Initiative (Group Customer Analytics &amp; Decisioning)<br />Best Deposit Product of the Yera (OCBC 360 Account)<br />Best Small Business Bank (Global Enterprise Banking)</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2013</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best Cash Management Bank, Singapore<br />Best SME Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">SME Bank of the Year, ASEAN</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">FinanceAsia Country Awards for Achievement</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Global Finance</div>
+                           <div class="col-sm-9 fz-16">Among the World's Top 50 Safest Banks</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Randstad </div>
+                           <div class="col-sm-9 fz-16">Most Attractive Employer (Banking &amp; Financial Services Sector)</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asset Triple A Treasury, Trade & Risk Management  </div>
+                           <div class="col-sm-9 fz-16">Best SME Treasury &amp; Working Capital, Singapore</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2012</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best Cash Management Bank, Singapore<br />Best Private Wealth Management Bank, Singapore (Bank of Singapore)<br />Beset Private Wealth Management Bank, Southeast Asia (Bank of Singapore)<br />Best SME Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">SME Bank of the Year, ASEAN</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">FinanceAsia Country Awards for Achievement</div>
+                           <div class="col-sm-9 fz-16">Best Private Bank, Singapore<br />Best SME Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Singapore Corporate </div>
+                           <div class="col-sm-9 fz-16">Best Managed Board (Market Capitalisation of S$1 billion &amp; above) - Gold</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">The Asian Banker</div>
+                           <div class="col-sm-9 fz-16">Best Small Business Bank</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2011</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Asian Banking & Finance Retail Banking Awards</div>
+                           <div class="col-sm-9 fz-16">SME Bank of the Year, ASEAN</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SIAS Investors Choice </div>
+                           <div class="col-sm-9 fz-16">Most Transparent Company Award (Finance Category) - Runner Up</div>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="accordion__item">
+                     <div class="accordion__item__title">
+                        <h5><strong>2010</strong></h5>
+                     </div>
+                     <div class="accordion__item__content">
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">Alpha Southeast Asia's Best Financial Institution Awards</div>
+                           <div class="col-sm-9 fz-16">Best SME Bank, Singapore</div>
+                        </div>
+                        <div class="row mb3">
+                           <div class="col-sm-3 fz-16">SIAS Investors Choice </div>
+                           <div class="col-sm-9 fz-16">Most Transparent Company Award (Finance Category) - Runner Up</div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1597926883609">
+      <style>#iw_comp1597926883609{}</style><!--Two Block--><div class="module container bp-width-med3">
+   <div class="com_digital-payments-generic-text-wrapper ">
+      <div class="com_digital-payments-generic-text d-p-g-type-4">
+         <div class="d-p-g-text">
+            <div class="row"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1597926883610">
+      <style>#iw_comp1597926883610{}</style>
+     </div>
+     <div class="iw_component" id="iw_comp1597926883611">
+      <!--ls:begin[component-1597926883611]--><style>#iw_comp1597926883611{}</style><div class="sidebarcontent sidebarcontent-by-us"></div><div class="container bp-width-med3 module animate">
+   <div class="subcategory subcategory--black">AWARDS BY US</div>
+   <div class="row ">
+      <div class="col-md-12">
+         <div class="row">
+            <div class=" col-custom-8 col-custom-enforced subtitle ">
+               <h4 class="mb-0">OCBC Bank has been supporting the small and medium-sized enterprises (SMEs) and entrepreneurs since the 1930s. We are committed to promoting the spirit of entrepreneurship, and are a main sponsor of various business awards that recognise the accomplishments and celebrate the successes of businesses ranging from emerging enterprises to large corporates. This is in line with our ongoing commitment to support enterprises across the various stages of their business life cycle.</h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--small">
+      <div class="article__wrapper d-flex align-items-top">
+         <div class="article__thumbnail small"><img src="/iwov-resources/sg/ocbc/gbc/img/about-us/awards/about-us-group-business-singapore-510-x-210.jpg" alt-text="The Emerging Enterprise (“EE”) Award"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title"><strong>The Emerging Enterprise (“EE”) Award</strong></div>
+                  <div class="article__content"><p>The brainchild of OCBC Bank and The Business Times, the EE award was introduced in 2008. The award aims to recognise outstanding young businesses in Singapore, and marks a first in the SME industry for being an award that reaches out to smaller businesses. It is the only award in Singapore that offers prizes of close to S$500,000 worth of grants and professional services to each winner.<br /><br />The award is supported by MasterCard, RSM, SPRING Singapore, INSEAD, Acorn Marketing &amp; Research Consultants and Singtel.</p>
+<p><a class="link link-arrow-right" rel="noopener" href="https://www.ocbc.com/business-banking/emerging-enterprise-award" target="_blank">Visit website<i class="far fa-chevron-right">&nbsp;</i></a></p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1597926883611]-->
+     </div>
+     <div class="iw_component" id="iw_comp1597926883612">
+      <!--ls:begin[component-1597926883612]--><style>#iw_comp1597926883612{}</style><div class="sidebarcontent sidebarcontent-by-us"></div><div class="container bp-width-med3 module animate">
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--small">
+      <div class="article__wrapper d-flex align-items-Top">
+         <div class="article__thumbnail small"><img src="/iwov-resources/sg/ocbc/gbc/img/about-us/awards/group.jpg" alt-text="The Enterprise 50 (E50) Awards"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title"><strong>The Enterprise 50 (E50) Awards</strong></div>
+                  <div class="article__content"><p>The Enterprise 50 Awards was created in 1995 to recognise top performing local enterprises across all sectors that have contributed to the economic development in Singapore and abroad. It has since become a definitive list of the 50 most enterprising, privately-held local companies in Singapore. A strong advocate for enterprise and entrepreneurship, OCBC Bank has been sponsoring the E50 Awards since 2006.<br /><br />The award is jointly organised by The Business Times and KPMG in Singapore. Supporting partners comprise the Singapore Business Federation, Infocomm Development Authority of Singapore, International Enterprise Singapore and SPRING Singapore.</p>
+<p><a class="link link-arrow-right" rel="noopener" href="https://enterprise50.org" target="_blank">Visit website<i class="far fa-chevron-right">&nbsp;</i></a></p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1597926883612]-->
+     </div>
+     <div class="iw_component" id="iw_comp1597926883613">
+      <!--ls:begin[component-1597926883613]--><style>#iw_comp1597926883613{}</style><div class="sidebarcontent sidebarcontent-by-us"></div><div class="container bp-width-med3 module animate">
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--small">
+      <div class="article__wrapper d-flex align-items-Top">
+         <div class="article__thumbnail small"><img src="/iwov-resources/sg/ocbc/gbc/img/about-us/awards/about-us-group-business-indonesia-510-x-210.jpg" alt-text="The Business China Awards"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">The Business China Awards</div>
+                  <div class="article__content"><p>The Business China Awards honour outstanding businessmen, entrepreneurs, professionals and organisations who have contributed to enhancing relations between Singapore and China, and fostering appreciation of the Chinese language and culture. The patron of the award is former Minister Mentor Lee Kuan Yew.<br /><br />As a Singapore bank with a long history in China, OCBC Bank has been the joint presenter of the Business China Awards since its launch in 2010. Our support underscores our commitment to strengthen engagements between the two countries and to support the international development of our local enterprises</p>
+<p><a class="link link-arrow-right" rel="noopener" href="https://bcawards.businesschina.org.sg/en/" target="_blank">Visit website<i class="far fa-chevron-right">&nbsp;</i></a></p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1597926883613]-->
+     </div>
+     <div class="iw_component" id="iw_comp1597926883614">
+      <!--ls:begin[component-1597926883614]--><style>#iw_comp1597926883614{}</style><div class="sidebarcontent sidebarcontent-by-us"></div><div class="container bp-width-med3 module animate">
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--small">
+      <div class="article__wrapper d-flex align-items-Top">
+         <div class="article__thumbnail small"><img src="/iwov-resources/sg/ocbc/gbc/img/about-us/awards/about-us-group-business-greater-china-510-x-210.jpg" alt-text="The Entrepreneur of the Year Award (“EYA”)"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">The Entrepreneur of the Year Award (“EYA”)</div>
+                  <div class="article__content"><p>The Entrepreneur of the Year Award salutes and honours top local entrepreneurs who have demonstrated outstanding performance as business owners in their chosen field of entrepreneurship.<br /><br />Inaugurated in 1989 by the Rotary Club of Singapore and co-organised by the Association of Small and Medium Enterprises (ASME), OCBC Bank has been the main sponsor of the award since 2002. Our longstanding support of the award demonstrates our continued commitment to homegrown entrepreneurs and in promoting the entrepreneurial culture in Singapore.</p>
+<p><a class="link link-arrow-right" rel="noopener" href="http://www.eya.com.sg" target="_blank">Visit website<i class="far fa-chevron-right">&nbsp;</i></a></p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1597926883614]-->
+     </div>
+     <div class="iw_component" id="iw_comp1597926883615">
+      <!--ls:begin[component-1597926883615]--><style>#iw_comp1597926883615{}</style><div class="sidebarcontent sidebarcontent-by-us"></div><div class="container bp-width-med3 module animate">
+   <div class="com_digital-payments-article com_digital-payments-article--row thumbnail--small">
+      <div class="article__wrapper d-flex align-items-Top">
+         <div class="article__thumbnail small"><img src="/iwov-resources/sg/ocbc/gbc/img/about-us/awards/about-us-group-business-indonesia-510-x-210-copy.jpg" alt-text="The Edge Billion Ringgit Club (Malaysia)"></div>
+         <div class="article__details-wrapper">
+            <div class="article__details">
+               <div>
+                  <div class="article__title">The Edge Billion Ringgit Club (Malaysia)</div>
+                  <div class="article__content"><p>OCBC Bank (Malaysia) Berhad has been the main sponsor of The Edge Billion Ringgit Club since it was launched in 2010 to recognise and honour top public-listed companies in Malaysia as measured by turnover or market capitalisation.<br /><br />Corporate awards are given out covering each of the seven Bursa Malaysia designated sectors of construction, consumer products, finance, industrial products, plantations, property and REIT (combined), trading / services, hotel, and IPC and technology (combined).<br /><br />The much coveted Company of the Year Award recognises the best of corporate Malaysia and takes into account, among others, profit before tax growth, returns to shareholders, returns on equity, and corporate social responsibility initiatives.<br /><br />The Edge Billion Ringgit Club is an independent effort of The Edge newspaper although it invites external judges to help evaluate corporate social responsibility efforts.</p>
+<p><a class="link link-arrow-right" rel="noopener" href="https://brc.theedgemarkets.com" target="_blank">Visit website<i class="far fa-chevron-right">&nbsp;</i></a></p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1597926883615]-->
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmz8">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmz9">
+  <div class="iw_columns col-lg-12" id="colk1q5mmza">
+   <div class="iw_component" id="iw_comp1571041639123">
+    <style>#iw_comp1571041639123{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  
+	
+	  $('.sidebarcontent').parent().wrapAll('<div id="left-nav-content"></div>');
+	  
+	  
+	
+	  $('.sidebarcontent-won').parent().wrapAll('<div id="awards-we-won"></div>');
+	  
+	  
+	
+	  $('.sidebarcontent-by-us').parent().wrapAll('<div id="awards-by-us"></div>');
+	  
+	  
+	
+	  $('.sidebar').parent().wrapAll('<div class="section section-bottom"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionk1q5mmzc">
+ <div class="row iw_row iw_stretch" id="rowk1q5mmzd">
+  <div class="iw_columns col-lg-12" id="colk1q5mmze">
+   <div class="iw_component" id="iw_comp1583140136076">
+    <style>#iw_comp1583140136110{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-6 col-xl-6">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>OCBC Group</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/group-home.html">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbcnisp.com/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbc.com.hk/web/home.html">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label><hr>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-6">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="w-100">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                 <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                 <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="/group/investors/index" class="" target="_self">Investor information</a></span></p>
+                                          <p><span><a href="/group/about-us/international-network" class="" target="_self">International network</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/careers/" class="" target="_self">Careers</a></span></p>
+                                          <p><span><a href="/group/research/index" class="" target="_self">Research</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Contact Us</span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                 <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Contact Us</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/?pid=Mass:ocbcgroup:PeB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PersonalBanking:" class="" target="_blank">Personal Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/premier/en.page?pid=Mass:ocbcgroup:PmB:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:PremierBanking:" class="" target="_blank">Premier Banking</a></span></p>
+                                          <p><span><a href="https://www.frankbyocbc.com/?pid=Mass:ocbcgroup:FRANK:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:FRANK:" class="" target="_blank">FRANK by OCBC</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/business-banking?pid=Mass:ocbcgroup:BizBank:AlwaysOn:Branding:Sep:2022:internal:GlobalFooter:BusinessBanking:" class="" target="_blank">Business Banking</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-none d-sm-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/OCBCBank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="/group/conditions-of-access" class="" target="_self">Conditions of Access</a></span><span><a href="/group/policies" class="" target="_self">Policies</a></span><span><a href="/group/notices" class="" target="_self">Notices</a></span><span><a href="/group/fair-dealing" class="" target="_self">Fair Dealing</a></span><span><a href="/group/security" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – 2023 – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none">
+   <div id="ocbc-external-redirection-popup" class="p-0">
+      <div class="popup-content po-co-med">
+         <div class="in-co-par fz-16">
+            <h4 class="bp-title fw-700 bp-img align-middle mb3"><span>Are you sure you want to leave our site?</span></h4>
+            <div id="redirection-container">You are leaving the OCBC Bank website and about to enter a third party website that OCBC Bank has no control over and is not responsible for. Before you proceed to use the third party website, please review the terms of use and privacy policy of their website. OCBC Bank&rsquo;s <a rel="noopener" href="https://www.ocbc.com/group/conditions-of-access" target="_blank">Conditions of Access</a> and <a rel="noopener" href="https://www.ocbc.com/group/policies" target="_blank">Privacy and Security Policies</a> do not apply at third party websites.</div>
+            <div class="mt4 d-flex justify-content-between flex-row align-items-center"><a class="link redirection-stay">I would like to stay</a><a class="button button--primary button--darkblue button--size-2 redirection-next"><span>Leave website</span></a></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none"></div>
+   </div>
+   <div class="iw_component" id="iw_comp1574136653555">
+    <!--ls:begin[component-1574136653555]--><style>#iw_comp1574136653555{}</style><div></div><!--ls:end[component-1574136653555]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/gbc/js/management-team.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/ospl/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/gbc/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/personal/js/analytic.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><script>
+      dataLayer = [];
+    </script>
+    <!-- load Google Analytics -->
+    <script>
+      window['GoogleAnalyticsObject'] = 'ga';
+      window['ga'] = window['ga'] || function() {
+                (window['ga'].q = window['ga'].q || []).push(arguments)
+              };
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- (START) Adobe Analytics - Header -->
+    <script src="//assets.adobedtm.com/f8f9776f70c5/929d6c7fc7b8/launch-4fb16aaa7062.min.js" async></script>
+    <!-- (END) Adobe Analytics - Header -->
+<script>
+var tag = document.createElement('script');
+tag.src = '//www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script><!--ls:end[analytics-head]-->
+      <title>OCBC Premier Private Client World Elite&trade; Debit Card |OCBC Bank</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/premier-private-client/page/solutions/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/premier-private-client/solutions/ppc_world_elite/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/jquery-3.3.1.min.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/appendLS.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/eform/jquery-3.3.1.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/appendLS.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/fonts.css?v=2019022810' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/styles_ppc.css?v=2020041002' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/jquery.tosrus.all.css?v=2019022810' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/styles-all-sites.css?v=2020093001' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/ppc-popup.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/private/ppcworldelite-style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/insights-overwrite.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pb/pb_popup.css' media='all' />
+<link rel='canonical' href='https://www.ocbc.com/personal-banking/premier-private-client/solutions/ppc_world_elite.page'/>
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZTQ6GN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_8G2XCgS5PomuGYC","https://zn8g2xcgs5pomugyc-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_8G2XCgS5PomuGYC")).start()}catch(i){}})();
+</script><div id='ZN_8G2XCgS5PomuGYC'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjmqva6zc">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zd">
+  <div class="iw_columns col-lg-12" id="coljmqva6ze">
+   <div class="iw_component" id="iw_comp1538432993495">
+    <!--ls:begin[component-1538432993495]--><style>#iw_comp1538432993495{}</style><div class="header-top">
+   <div class="contain"><a href="https://www.ocbc.com/group/group-home.html" target="_blank"><img class="logo align-left" src="/iwov-resources/sg/ocbc/premier/images/logo.png"></a><div class="navi-top align-right desktop-only">
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://internet.ocbc.com/internet-banking/">Online Banking</a></div>
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/home.page">Personal Banking</a></div>
+         <div class="ocbc-navi-item">
+            <div class="languages"><a class="langUrl" href="/premier-private-client/solutions/ppc_world_elite.page">EN</a><a class="langUrl" href="/premier-private-client/id/solutions/ppc_world_elite.page">ID</a><a class="langUrl" href="/premier-private-client/zh/solutions/ppc_world_elite.page">ZH</a></div>
+         </div>
+      </div>
+      <div class="icon-menu mobile-only"><img src="/iwov-resources/sg/ocbc/premier/images/icon-menu.png"></div>
+      <div class="clear"></div>
+   </div>
+</div><input class="bodyClass" type="hidden" value="container page-ppcworldelite ppc-notification"><!--ls:end[component-1538432993495]-->
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zg">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zh">
+  <div class="iw_columns col-lg-12" id="coljmqva6zi">
+   <div class="iw_component" id="iw_comp1538432993499">
+    <style>#iw_comp1538432993499{}</style><div class="header-navi">
+   <div class="contain">
+      <div class="header-navi-left align-left"><a class="ppc-navi" href="./"><img width="250" src="/iwov-resources/sg/ocbc/premier/images/private/ppc-logo.png"></a></div>
+      <div class="header-navi-right align-right">
+         <div class="navi-navi">
+            <div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/index.page" class="navi-home">Home</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/privileges.page" class="navi-privileges">Privileges</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/solutions.page" class="navi-solutions">Solutions</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/services.page" class="navi-services">Services</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/insights.page" class="navi-insights">Insights</a></div>
+            </div>
+            <div class="mobile-only menu-divider"></div>
+            <div class="navi-ocbc-navi mobile-only"></div>
+         </div>
+      </div>
+      <div class="clear"></div>
+   </div>
+</div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zk">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zl">
+  <div class="iw_columns col-lg-12" id="coljmqva6zm">
+   <div class="iw_placeholder" id="iw_placeholder1538432993503">
+    <div class="iw_component" id="iw_comp1610111093048">
+     <style>#iw_comp1610111093048{}</style><div>
+   <div class="section section-1 pr-top-section bg-img bp-rel" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/background_masthead.jpg');" desktop-image="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/background_masthead.jpg" mobile-image="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/background_masthead-mobile.jpg">
+      <div class="contain inview fadeIn">
+         <div class="restrict-355">
+            <h1 class="main-title desktop-only">Bespoke privileges for your way of life</h1>
+            <h2 class="main-title mobile-only">Bespoke privileges for your way of life</h2>
+            <div class="boxes-container desktop-only">
+               <div class="box-container">
+                  <div class="white-box box-medium arial">
+                     <h5><strong>To be eligible</strong></h5>&bull; Reserved for OCBC Premier Private Client customers<br/>
+&bull; No minimum income is required</div>
+               </div>
+               <div in="fadeIn3" out="fadeOutItem" class="btn-container item-together fadeIn3"><a target="_self" href="https://www.ocbc.com/personal-banking/premier-private-client/index.page#get-us-to-contact-you"><button class="btn btn-gold">Have us contact you</button></a></div>
+            </div>
+         </div>
+         <div class="pr-to-card bp-img desktop-only"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_masthead.png"></div>
+      </div>
+      <div class="pr-to-card bp-img mobile-only"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_masthead.png"></div>
+   </div>
+   <div class="boxes-container mobile-only">
+      <div class="box-container">
+         <div class="mt1 mb1 white-box box-medium arial">
+            <h5><strong>To be eligible</strong></h5>&bull; Reserved for OCBC Premier Private Client customers<br/>
+&bull; No minimum income is required</div>
+      </div>
+      <div in="fadeIn3" out="fadeOutItem" class="btn-container item-together fadeIn3 mb1"><a target="_self" href="https://www.ocbc.com/personal-banking/premier-private-client/index.page#get-us-to-contact-you"><button class="btn btn-gold">Have us contact you</button></a></div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionkee9gzy2">
+ <div class="row iw_row iw_stretch" id="rowkee9gzy3">
+  <div class="iw_columns col-lg-12" id="colkee9gzy4">
+   <div class="iw_placeholder" id="iw_placeholder1598620670713">
+    <div class="iw_component" id="iw_comp1610111093049">
+     <style>#iw_comp1610111093049{}</style><div>
+   <div class="section section-2">
+      <div class="contain pt3 pb3 se-co-par text-center font-b" style="max-width: 670px;">
+         <h1 class="mb2 co-gray desktop-only"><br>OCBC Premier Private Client World Elite&trade; Debit Card</h1>
+         <h2 class="mb2 co-gray mobile-only"><br>OCBC Premier Private Client World Elite&trade; Debit Card</h2>
+         <p><p>Discover timeless experiences as you celebrate past achievements and embark on new ventures. Be accompanied by your OCBC Premier Private Client World Elite&trade; Debit Card on any and every occasion with bespoke lifestyle privileges and a 1% rebate on selected spend categories.</p></p>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zo">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zp">
+  <div class="iw_columns col-lg-12" id="coljmqva6zq">
+   <div class="iw_placeholder" id="iw_placeholder1538432993507">
+    <div class="iw_component" id="iw_comp1610111093050">
+     <style>#iw_comp1610111093050{}</style><div>
+   <div class="section section-3">
+      <div class="contain pt5 pb5">
+         <div class="contain" style="max-width: 860px;">
+            <ul class="pw-el-list">
+               <li>
+                  <h1 class="mb4 co-gray1 desktop-only">Exclusive privileges</h1>
+                  <h2 class="mb4 co-gray1 mobile-only">Exclusive privileges</h2>
+                  <ul toggle-content="" class="pr-prev-list col2 large">
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-rebates.png"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Rebates</h3>
+                           <h5><p>Enjoy unlimited 1% rebate* on online merchants, transport, overseas spend and <a toggle-btn="" class="underline-link bp-set"><span class="on">more</span><span class="off">more</span></a>.</p>
+<div toggle-more="" class="mt2 mb2">
+<div class="se-co-par font-a co-gray3">
+<ul>
+<li>Online merchants (iHerb, FairPrice Online, ZALORA, ASOS, Lazada)</li>
+<li>Transport (Comfort and CityCab, Grab, Go-Jek, TADA)</li>
+<li>Fast food</li>
+<li>Convenience stores (Cheers, 7-11)</li>
+<li>Overseas Spend (only for transactions made from Singapore Dollar denominated Account)</li>
+</ul>
+<p></p>
+<p>A monthly minimum spend of S$400 is required for you to enjoy the 1% rebate.</p>
+</div>
+</div></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-forexfees.png"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Enjoy no foreign currency transaction fees</h3>
+                           <h5><p>Just one account is all you need to save and transact in up to nine major currencies across the world with no conversion fee charges. Link your debit card to your <a class="underline-link" href="/personal-banking/premier-private-client/solutions/premier_global_account.page">Premier Global Savings Account</a> for greater savings. For more information, read these <a class="underline-link" href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/cards/dc-linkage-pgsa-faqs.pdf" target="_blank" rel="noopener">frequently asked questions</a>.</p></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-travelinsurance.png"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Travel insurance</h3>
+                           <h5><p>Purchase your travel tickets with your OCBC Premier Private Client World Elite&trade; Debit Card and be automatically covered by comprehensive <a class="underline-link fancybox-modal" href="#popup-travelinsurance">Travel Insurance</a> for you and your family^.</p>
+<div style="display: none;">
+<div class="popup-content" id="popup-travelinsurance">
+<h3><strong>Complimentary travel insurance</strong></h3>
+<br />
+<p><strong>Travel Accident:</strong><br />Up to USD 25,000 for Travel Accident Common Carrier - International Trips</p>
+<br />
+<p><strong>Trip Inconvenience Protection:</strong> <br />Up to USD 2,000 for Trip Cancellation<br />Up to USD 2,000 for Trip Curtailment<br />Up to USD 2,000 for Trip Postponement<br />USD 250 for delays in excess of 4 hours<br />Up to USD 25,000 for Personal Liability Abroad</p>
+<br />
+<p><strong>Baggage protection:</strong><br />Up to USD 1,000 on Personal Baggage including Laptop Computer, subject to a single item max limit of USD 200<br />USD 250 on Common Carrier Baggage Delays in excess of 4 hours<br />Up to USD 300 for Travel Documents and Personal Money</p>
+<br />
+<p><strong>For enquiries or claims:</strong><br />To file a claim, log on to <a class="section underline-link" href="https://sg.mycardbenefits.com" target="_blank" rel="noopener">https://sg.mycardbenefits.com</a> or email: <a class="underline-link" href="mailto:APAC.Mastercard@aig.com" data-url-static="true">APAC.Mastercard@aig.com</a></p>
+<br />
+<p>For more details and applicable terms and conditions, please refer to <a class="underline-link" href="https://www.ocbc.com/iwov-resources/sg/ocbc/premier/pdf/tncs-sg-mastercard-world-elite-debit-cards.pdf" target="_blank" rel="noopener">policy document.</a></p>
+</div>
+</div></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-recognition.png"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Recognition</h3>
+                           <h5><p>Be privy to a suite of bespoke services at our Premier Private Client Centre and Premier Banking Centres.</p></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-convenience.png"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Convenience</h3>
+                           <h5><p>One card is all you need to cover all payment methods. You can also withdraw cash from any OCBC ATM islandwide, or from any Mastercard/Cirrus ATM worldwide.</p>
+<p>No charges will be incurred for withdrawals made at OCBC Malaysia, OCBC Wing Hang, and OCBC NISP ATMs. Withdrawals made at MEPS participating banks&rsquo; ATMs in Malaysia will incur a flat fee of S$5.</p></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/pwe_dragonpass.jpg"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Exclusive DragonPass Access</h3>
+                           <h5><p>With VIP access to over 1,400 airport lounges worldwide, plus valuable dining offers available in airports via the mobile app, our airport pass has never been better.</p></h5>
+                           <p><a class="underline-link" href="http://mastercardtravelpass.dragonpass.com/" target="_blank">Find out more</a></p>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <h1 class="mb4 co-gray1 desktop-only">Lifestyle privileges</h1>
+                  <h2 class="mb4 co-gray1 mobile-only">Lifestyle privileges</h2>
+                  <ul toggle-content="" class="pr-prev-list col2 large">
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-retail.png"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Retail</h3>
+                           <h5><p>Indulge in some retail therapy with endless <a class="underline-link" href="https://www.ocbc.com/personal-banking/cards/card-promotions.page?main=fashion" target="_blank" rel="noopener">fashion and retail offers</a>.</p></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-dining.png"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Dining</h3>
+                           <h5><p>Enjoy the finest culinary creations with exclusive access to <a class="underline-link" href="https://www.ocbc.com/personal-banking/cards/card-promotions.page?main=dining" target="_blank" rel="noopener">top restaurants</a>.</p></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-travel.jpg"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Travel</h3>
+                           <h5><p>Redefine your travel experience with our curated <a class="underline-link" href="https://www.ocbc.com/personal-banking/cards/card-promotions.page?main=travel" target="_blank" rel="noopener">travel privileges</a>.</p></h5>
+                        </div>
+                     </li>
+                     <li toggle-set="">
+                        <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/premier/images/private/ppc-world-elite/kv_privileges-mastercardexclusives.jpg"></div>
+                        <div class="mt2">
+                           <h3 class="mb1">Mastercard® exclusives</h3>
+                           <h5><p>Enrich your passions and interests with <a class="underline-link" href="https://specials.priceless.com/en-sg/cardhome/Premier_World_Elite_Debit_Card?issuerId=201810190025&amp;productId=202002270001" target="_blank" rel="noopener">Mastercard<sup>&reg;</sup> privileges</a>.</p></h5>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+            <div class="se-co-par font-a mt3" style="max-width: 550px;"><p><a class="underline-link" href="https://www.ocbc.com/personal-banking/cards/card-promotions.page" target="_blank" rel="noopener">View more privileges</a></p></div>
+         </div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionkee9gzxy">
+ <div class="row iw_row iw_stretch" id="rowkee9gzxz">
+  <div class="iw_columns col-lg-12" id="colkee9gzy0">
+   <div class="iw_placeholder" id="iw_placeholder1598620670709">
+    <div class="iw_component" id="iw_comp1645637818663">
+     <style>#iw_comp1645637818663{}</style><div>
+   <div class="section section-3">
+      <div class="contain pt5 pb5">
+         <div class="contain" style="max-width: 860px;">
+            <ul class="pw-el-list"></ul>
+         </div>
+         <div class="mt4">
+            <h1 class="mb2 co-gray1 desktop-only">Fees and charges</h1>
+            <h2 class="mb2 co-gray1 mobile-only">Fees and charges</h2>
+            <table class="pw-el-table par-xlarge co-gray1">
+               <tbody>
+                  <tr>
+                     <td><strong>Annual fee</strong></td>
+                     <td><p>No annual fee</p></td>
+                  </tr>
+                  <tr>
+                     <td><strong>Replacement card fee</strong></td>
+                     <td><p>S$20 exclusive of GST (for lost or stolen card only)</p></td>
+                  </tr>
+                  <tr>
+                     <td><strong>Overseas ATM cash withdrawal charges</strong></td>
+                     <td><p><a class="underline-link" href="https://www.ocbc.com/personal-banking/help-and-support/atms/general.page#atms-fees-and-charges-for-atm-usage" target="_blank" rel="noopener">3% of the transaction amount</a> (Min S$5 and Max S$20). Waived for OCBC ATM network (OCBC, OCBC NISP and OCBC Wing Hang).</p></td>
+                  </tr>
+                  <tr>
+                     <td><strong>Fees for foreign currency transactions</strong></td>
+                     <td><p><a class="underline-link fancybox-modal" href="#popup-fcyfee">3.25%</a></p>
+<div style="display: none;">
+<div class="popup-content" id="popup-fcyfee">
+<h3><strong>Fees for foreign currency transactions</strong></h3>
+<br />
+<p>Foreign currency transactions, other than USD transactions, are converted to USD first before being converted to SGD based on the rate determined by the respective card associations.</p>
+<p>All foreign currency transactions are subjected to a currency conversion charge imposed by the respective card associations (1%) and a bank administrative fee (2.25%) of the foreign transaction amount.</p>
+<p>However, if your Premier Global Savings Account is linked to your OCBC Premier Private Client World Elite&trade; Debit Card and you have sufficient foreign currency funds in your account, purchases made in foreign currencies and overseas ATM cash withdrawals will be automatically deducted from your respective foreign currency account without any foreign currency transaction fees. Otherwise, we will deduct from your SGD account linked to your card and the prevailing fees for foreign currency transactions will apply accordingly.</p>
+</div>
+</div></td>
+                  </tr>
+                  <tr>
+                     <td><strong>Currency conversion fee</strong></td>
+                     <td><p><a class="fancybox-modal underline-link" href="#popup-currencyfee">2.80%</a></p>
+<div style="display: none;">
+<div class="popup-content" id="popup-currencyfee">
+<h3><strong>Currency conversion fee</strong></h3>
+<br />
+<p>An additional fee will be levied on all Visa and MasterCard transactions effected in Singapore dollars and processed overseas (including online transactions). This includes but is not limited to (i) any Visa or MasterCard retail transaction presented in foreign currency that you choose to pay in Singapore dollars via dynamic currency conversion and (ii) any online retail card transaction charged to your Visa and MasterCard cards on overseas websites in Singapore dollars. The additional fee charged is 2.8% on all converted Singapore dollar amounts for each Visa and MasterCard transaction.</p>
+</div>
+</div></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zs">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zt">
+  <div class="iw_columns col-lg-12" id="coljmqva6zu">
+   <div class="iw_placeholder" id="iw_placeholder1538432993511">
+    <div class="iw_component" id="iw_comp1645637831580">
+     <style>#iw_comp1645637831580{}</style><div><div id="apply-retrieve-container" data-lang="en" data-json="/iwov-resources/sg/ocbc/premier/json/ppc_apply_retrieve.json"></div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva6zw">
+ <div class="row iw_row iw_stretch" id="rowjmqva6zx">
+  <div class="iw_columns col-lg-12" id="coljmqva6zy">
+   <div class="iw_placeholder" id="iw_placeholder1538432993515">
+    <div class="iw_component" id="iw_comp1670463345957">
+     <!--ls:begin[component-1670463345957]--><style>#iw_comp1670463345957{}</style><div><script type="text/javascript">
+var body = $('body.page-premieripa');
+var masthead = $('.section.section-1.bg-img');
+var sibling = masthead.siblings('.boxes-container.mobile-only');
+var button1 = $('.btn.btn-gold', masthead);
+var button2 = $('.btn.btn-gold', sibling);
+$('#popup-trigger').click(function(){
+    $('.secondstepwrap').hide();
+	$('.apply_retrieve_apply').addClass('active');
+    $('.apply_retrieve_retrieve').removeClass('active');
+    $('input:radio[value="Apply"]').prop('checked', true);
+    $('input:radio[value="Retrieve"]').prop('checked', false);
+    $('.firststepwrap').attr('style', 'opacity:1;display:block;');
+    $('.firststepwrap').removeAttr("disabled");
+});
+/*$([button1, button2]).each(function(index, element) {
+element.click(function(event) {
+document.getElementById('cardsApplyNowButtonSubmitData').submit();event.preventDefault();
+});
+});*/
+</script>
+<form name="cardsApplyNowButtonSubmitData" id="cardsApplyNowButtonSubmitData" method="post" action="https://internet.ocbc.com/ipa/IPACommonV3/Agent">
+<input type="hidden" name="cardType" id="cardType" value="CC">
+<input type="hidden" name="prodData" id="prodData" value="">
+<input type="hidden" name="tracker" id="tracker" value="">
+<input type="hidden" name="facData" id="facData" value="VK7">
+<input type="hidden" name="external_link" id="external_link" value="">
+<input type="hidden" name="FacType" id="FacType" value="CC">
+<input type="hidden" name="AgentSourceCode" id="AgentSourceCode" value="">
+<input type="hidden" name="AgentID" id="AgentID" value="">
+<input type="hidden" name="AgentIntroducerID" id="AgentIntroducerID" value="">
+</form>
+<div style="display: none;">
+    <div id="popup-apply-retrieve" class="popup-content">
+    <div data-fancybox-close class="popup-bg"></div>
+        <h3>What are you here for?</h3>
+        <div class="mt3">
+            <div class="radio-wrap apply_retrieve_apply mb1">
+                <label>
+                    <input type="radio" name="apply_retrieve" value="Apply">
+                    <span class="checkmark"></span>
+                    Apply for OCBC Premier Private Client World Elite™ Debit Card
+
+                </label>
+            </div>
+            <div class="radio-wrap apply_retrieve_retrieve">               
+                <label>
+                    <input type="radio" name="apply_retrieve" value="Retrieve">
+                    <span class="checkmark"></span>
+                    Retrieve digital card details with my reference code
+                </label>
+            </div>
+            <button id="1step" class="btn btn-gold 1step disable-fst" disabled="disabled">Next</button>
+            <button id="step2" class="btn btn-gold disable-fst" disabled="disabled">Next</button>
+        </div>
+        <form class="secondstepwrap nxttwolink" target="_blank" method="get" action="/premier-private-client/solutions/ppc_world_elite.pagesubmit=true&amp;componentID=1670463345957">
+            <input type="hidden" name="refno" class="formrefno" value="" /> 
+            <h3>Please fill in the details </h3>
+            <p>Reference code</p>
+            <input type="number" class="inputcode" value="">
+            <p class="inputcodeinvalid"><small>Check your email or SMS for the code</small></p>
+            <br><br>
+            <a class="underline-link backstep1 clear-refno">Back</a>
+            <button class="btn btn-gold nxttwo">Next</button>
+        </form>
+        <button data-fancybox-close class="fancybox-close-small clear-refno" title="Close"></button>
+    </div>
+</div></div><!--ls:end[component-1670463345957]-->
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionkee9gzy6">
+ <div class="row iw_row iw_stretch" id="rowkee9gzy7">
+  <div class="iw_columns col-lg-12" id="colkee9gzy8">
+   <div class="iw_placeholder" id="iw_placeholder1598620670717"></div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva700">
+ <div class="row iw_row iw_stretch" id="rowjmqva701">
+  <div class="iw_columns col-lg-12" id="coljmqva702">
+   <div class="iw_placeholder" id="iw_placeholder1538432993519"></div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva704">
+ <div class="row iw_row iw_stretch" id="rowjmqva705">
+  <div class="iw_columns col-lg-12" id="coljmqva706">
+   <div class="iw_placeholder" id="iw_placeholder1538432993523">
+    <div class="iw_component" id="iw_comp1610111093051">
+     <style>#iw_comp1610111093051{}</style><div class="section section-5">
+   <div class="contain">
+      <h1 class="main-title desktop-only">Get in touch</h1>
+      <h2 class="main-title mobile-only">Get in touch</h2>
+      <div class="items">
+         <div class="item-33 apply-list">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/call-icon.png"></div>
+            <div class="ctas-text">
+               <div class="item-text-small regular item-text"><div class="item-text regular"><a href="tel:18004248888">1800 424 8888</a></div>
+<div class="item-text-small regular">or <a href="tel:+6564248888">(65) 6424 8888</a> (overseas)</div></div>
+            </div>
+         </div>
+         <div class="item-33 apply-list">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/centre-icon.png"></div><a target="same" href="/sites/premier-banking/locations.page"><button class="btn btn-dark">Find a Premier Centre</button></a></div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmqva708">
+ <div class="row iw_row iw_stretch" id="rowjmqva709">
+  <div class="iw_columns col-lg-12" id="coljmqva70a">
+   <div class="iw_component" id="iw_comp1538432993527">
+    <style>#iw_comp1538432993527{}</style><div>
+   <div style="display: none;"></div>
+   <div class="footer" id="footer">
+      <div class="contain">
+         <div class="footer-term-conditions">
+            <h5>Terms and conditions</h5><p>An OCBC Premier Private Client needs to maintain a minimum average monthly deposit balance of S$1,500,000 with OCBC Bank at all times. In the event that the customer&rsquo;s average monthly balance falls below S$1,500,000, the customer's OCBC Premier Private Client World Elite&trade; Debit Card will be changed to an OCBC Debit Card.</p>
+            <p><a class="underline-link" href="/iwov-resources/sg/ocbc/personal/pdf/cards/tncs-ocbc-ppc-world-debit-card.pdf" target="_blank">*Terms and Conditions Governing the Premier Private Client World Elite™ Debit Card Cash Rebates Programme</a></p>
+            <p><a class="underline-link" href="/iwov-resources/sg/ocbc/premier/pdf/tncs-sg-mastercard-world-elite-debit-cards.pdf" target="_blank">^Terms and Conditions Governing the Premier Private Client World Elite™ Debit Card Travel Insurance</a></p>
+            <p><a class="underline-link" href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-deposit-accounts" target="_blank">Terms and Conditions Governing Deposit Account</a></p>
+            <p><a class="underline-link" href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-electronic-banking-services" target="_blank">Terms and Conditions Governing Electronic Banking Services</a></p>
+            <p><a class="underline-link" href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-cards-services.page" target="_blank">OCBC Debit Cardmembers Agreement</a></p>
+         </div>
+      </div>
+      <div class="footer-bottom" style="background-image: url('/iwov-resources/images/footer_bg.jpg')">
+         <div class="contain">
+            <div class="footer-bottom-item footer-links"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/conditions-of-access.page">Conditions of Access</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/policies.page">Policies</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/notices.page">Notices</a></div>
+            <div class="footer-bottom-item footer-icons"><a class="footer-icon" href="https://www.facebook.com/OCBC.Singapore/?brand_redir=294095104090945"><img src="/iwov-resources/sg/ocbc/premier/images/icon-facebook.png"></a><a class="footer-icon" href="https://twitter.com/ocbcbank"><img src="/iwov-resources/sg/ocbc/premier/images/icon-twitter.png"></a><a class="footer-icon" href="https://www.youtube.com/user/channelocbc"><img src="/iwov-resources/sg/ocbc/premier/images/icon-youtube.png"></a><a class="footer-icon" href="https://www.linkedin.com/company-beta/165277/"><img src="/iwov-resources/sg/ocbc/premier/images/linkedin.jpg"></a><a class="footer-icon fancybox-modal" href="#popup-wechat-qrcode"><img alt="WeChat" border="0" height="15" src="/iwov-resources/sg/ocbc/premier/images/icon-wechat.png" width="15"></a></div>
+            <div class="footer-bottom-item copyright"><span>©️ Copyright 2004 – <span id="copyright-year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </span></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none;">
+   <div id="popup-wechat-qrcode" class="popup-content popup-small">
+      <div><img src="/iwov-resources/sg/ocbc/premier/images/qr_code_wechat.jpg" width="250" alt="250" style="width:100%; max-width:360px; height:auto;"></div>
+      <h4 class="main-title">WeChat ID: ocbcpremierbanking</h4>
+   </div>
+</div><!-- (START) Data Layer - Adobe Analytics -->
+<script type="text/javascript">// <![CDATA[
+var digitalData = {
+    page:
+    {
+    pageName:"SG:OCBC:Premier:PremierPrivateClient:PPCWorldEliteDebitCard",
+    channel: "Premier",
+    }
+    }
+// ]]></script>
+<script type="text/javascript">// <![CDATA[
+_satellite.pageBottom();
+$('.main-title.co-white.desktop-only').removeClass('co-white');
+$('#iw_comp1610111093049 .contain').css("max-width","100%");
+$('.mt4').addClass('contain').css("max-width","860px");
+$('.main-title.co-white.mobile-only').removeClass('co-white');
+$('.item-text-small.regular.item-text').removeClass('item-text');
+// ]]></script>
+<!-- (END) Data Layer - Adobe Analytics -->
+<script>
+$(function () {
+    $('#sectionjmeo4nv5').after('<div class="section section-bg-ash pb-line-section"><div class="contain pt5 pb5"><h1 class="thesans-plain">Important notice</h1><div class="mt2 mb1"><h5>We're making some changes to our airport benefits program. Mastercard Airport Experiences provided by LoungeKey will be replaced with <b>Mastercard Travel Pass</b> provided by DragonPass on 1 January 2024. <a class="underline-link" href="http://mastercardtravelpass.dragonpass.com" target="_blank" onclick="s_objectID=\'general-enable-disable-cash-advance\';">Find out more</a>.</h5></div></div>');
+})
+</script>
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/premier/js/jquery-3.4.1.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/select2.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery-1.7.1.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/hammer.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.tosrus.all.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.inview.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/custom.js?v=2019101101'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/secondary.js?v=20190506'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/insight_date.js?v=20200312'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/trackingtag.js?v=2019061701'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/ppc-popupfix.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/forcepopup.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/anchorlink.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.fancybox.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/main_latest.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/card-maintenance.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

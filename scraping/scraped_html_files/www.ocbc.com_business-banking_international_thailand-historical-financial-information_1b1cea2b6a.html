@@ -1,0 +1,1526 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>OCBC Thailand Historical Financial Information | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/international/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/international/thailand-historical-financial-information/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Learn more about OCBC Thailand here - access annual reports, deposit rates and fees & charges. Learn about how we can support your business needs.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/international/thailand-historical-financial-information.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDKWB3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1576827592555">
+    <style>#iw_comp1570528883679{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#accounts" class="header__navi">Accounts</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#loans" class="header__navi">Loans</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#trades" class="header__navi">Trade</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#transactions" class="header__navi">Collections and Payments</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#runningbiz" class="header__navi">Running a business</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/international" class="" target="_self">International</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in</p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="/Premier">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <div class="dropdown__bb dropdown__second__bb d-lg-inline">
+                           <div class="dropdown__theme  dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location-option-filter" class="selectize selectize--navigation" id="header-businessBanking">
+                                 <option value="/business-banking/smes">SMEs</option>
+                                 <option value="/business-banking/enterprises">Enterprises</option>
+                                 <option value="/business-banking/corporates">Corporates</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support" class="" target="_self">Help and support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="accounts" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Accounts</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Open a Business account</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For startups or new businesses</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/business-growth-account" class="link link link-arrow-right" target="_self">Business Growth <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">No account fee</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/business-entrepreneur-account-plus" class="link link link-arrow-right" target="_self">Business Entrepreneur Plus <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Transact internationally</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/multi-currency-business-account" class="link link link-arrow-right" target="_self">Multi-Currency Business <span class="text-nowrap">Account<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">100% online</div>
+                                    <div class="name"><a href="/business-banking/smes/accounts/account-opening-for-foreign-owned-companies" class="link link link-arrow-right" target="_self">Business account for foreign-owned <span class="text-nowrap">companies<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/accounts" class="button button--secondary button--link" target="_self"><span>See all Accounts</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/best-smes-accounts" class="link link link-arrow-right" target="_self">Best Business Bank Accounts for SMEs in Singapore <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/registering-your-business" class="link link link-arrow-right" target="_self">Guide to registering your <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="loans" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Loans</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Finance your business</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Fund day-to-day expenses and expansion plans</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-loans" class="link link link-arrow-right" target="_self">Business <span class="text-nowrap">Loans<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">For young startups 6 months into operations</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-first-loan" class="link link link-arrow-right" target="_self">Business First <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Helping SMEs do well and do good</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/sustainable-financing" class="link link link-arrow-right" target="_self">SME Sustainable <span class="text-nowrap">Financing<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Own or refinance a property</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/commercial-property-loan" class="link link link-arrow-right" target="_self">Commercial Property <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Have ready cash on standby and pay only for what you use</div>
+                                    <div class="name"><a href="/business-banking/smes/loans/business-revolving-short-term-loan" class="link link link-arrow-right" target="_self">Revolving Term <span class="text-nowrap">Loan<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/loans" class="button button--secondary button--link" target="_self"><span>See all Loans</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sme-loans-singapore-guide" class="link link link-arrow-right" target="_self">A guide to the best SME loans in Singapore <span class="text-nowrap">2023<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sme-lending-options-2021" class="link link link-arrow-right" target="_self">SME financing in 2023 - What are the lending options for small <span class="text-nowrap">businesses?<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="trades" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Trade</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Expand international trade</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Manage my purchases</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-importsolutions" class="link link link-arrow-right" target="_self">Import <span class="text-nowrap">finance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Finance my working capital</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/loans/working-capital.page" class="link link link-arrow-right" target="_self">Open account <span class="text-nowrap">financing<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Grow my sales</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-exportsolutions" class="link link link-arrow-right" target="_self">Export <span class="text-nowrap">finance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Secure my obligations</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-otherservices" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Guarantees<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Facilitate purchases/sales as Middleman</div>
+                                    <div class="name"><a href="https://www.ocbc.com/business-banking/smes/trade.page#section-otherservices" class="link link link-arrow-right" target="_self">Back-to-Back & Transferable Letter of <span class="text-nowrap">Credit<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/trade" class="button button--secondary button--link" target="_self"><span>See all Trade Finance Products</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Articles and guides</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/purchase-invoice-financing-for-smes" class="link link link-arrow-right" target="_self">Understanding invoice financing (purchase) for <span class="text-nowrap">SMEs<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/articles/sales-invoice-financing-for-smes" class="link link link-arrow-right" target="_self">What SMEs must know about invoice financing <span class="text-nowrap">(sales)<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/articles/overview" class="link link link-arrow-right" target="_self">See all <span class="text-nowrap">articles<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="transactions" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Collections and Payments</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Manage your payments</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Make payments</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/making-payments" class="link link link-arrow-right" target="_self">Making <span class="text-nowrap">payments<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Receive payments</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/receiving-payments" class="link link link-arrow-right" target="_self">Receiving <span class="text-nowrap">payments<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Commercial cards</div>
+                                    <div class="name"><a href="/business-banking/smes/transactions/commercial-cards" class="link link link-arrow-right" target="_self">For everyday business <span class="text-nowrap">needs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/transactions" class="button button--secondary button--link" target="_self"><span>See all transfer methods</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">&nbsp;</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>The OCBC Business Debit Card now comes in a new design!
+<p class="pt2">Earn unlimited cashback on your everyday business spend!</p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/smes/transactions/business-debit-card" class="link link link-arrow-right" target="_self">Find out <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="runningbiz" class="header__row header__row-bb row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Running a business</div>
+                  </div>
+                  <div class="d-none d-lg-block subnav-main-title col-12 col-sm-12 col-lg-2">Running a business</div>
+                  <div class="col-lg-6 col-mid-bb">
+                     <div class="header__sub-left header__sub-left-bb">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Starting your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#starting-first-business" class="link link link-arrow-right" target="_self">Uncover blind spots and start your business <span class="text-nowrap">right<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Growing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#growing-your-business" class="link link link-arrow-right" target="_self">Grow local, go <span class="text-nowrap">international<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Managing your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#managing-your-business" class="link link link-arrow-right" target="_self">Optimise your everyday <span class="text-nowrap">operations<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item header__sub-menu-item-bb">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Scaling your business</div>
+                                    <div class="name"><a href="/business-banking/smes/business-tools#scaling-your-business" class="link link link-arrow-right" target="_self">Take your business further, <span class="text-nowrap">faster<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="/business-banking/smes/business-tools" class="button button--secondary button--link" target="_self"><span>See all resources</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="header__sub-menu-articles">
+                                 <div class="row">
+                                    <div class="col-lg-4 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                       <div class="tag">Industry Expertise</div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/enterprises/healthcare" class="link link link-arrow-right" target="_self">Are you an aspiring medical <span class="text-nowrap">entrepreneur?<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-link"><a href="/business-banking/enterprises/fnb" class="link link link-arrow-right" target="_self">Business solutions for F&B <span class="text-nowrap">entrepreneurs<i class="far fa-chevron-right"></i></span></a></div>
+                                       <div class="header__sub-menu-readmore"><a href="/business-banking/enterprises" class="link link link-arrow-right" target="_blank">Find solutions for your industry-specific <span class="text-nowrap">needs<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1692494907368">
+      <!--ls:begin[component-1692494907368]--><style>#iw_comp1692494907368{}</style><!--Breadcrumb Component--><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="/business-banking/index.page">Business Banking</a></li>
+         <li><a href="/business-banking/international.page">International</a></li>
+         <li><a href="/business-banking/international/thailand.page">Thailand</a></li>
+         <li>Thailand Historical Financial Information</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1692494907368]-->
+     </div>
+     <div class="iw_component" id="iw_comp1692494907369">
+      <style>#iw_comp1692494900812{}</style><div class="masthead-component"></div><div class="module container bp-width-med3 animate">
+   <div class="common__category-description box-med bp-curve3 bg-ash2 text-center ">
+      <h1 class="no-margin thesans"><span>Historical Data</span></h1>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1692494907306">
+      <style>#iw_comp1692494907306{}</style><div class="sidebar-component"></div><div class="module container animate bp-width-med3">
+   <div class="com__bank-policies">
+      <div class="row">
+         <div class="b-p-side-nav col-lg-4 col-md-4 d-none d-md-block">
+            <div sticky-content="">
+               <div class="side-nav-with-sub">
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Historical Financial Information</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 selected"><a auto-scroll="true" href="#afi" class="" target="_self">Annual Financial Statement and Audit Report</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a auto-scroll="true" href="#sal" class="" target="_self">Summary of Assets & Liabilities</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a auto-scroll="true" href="#b2p3bb" class="" target="_self">Basel II Pillar III of the Bangkok Branch</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a auto-scroll="true" href="#lcrd-ocbcbb" class="" target="_self">LCR Disclosures of OCBC Bangkok Branch</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8 col-md-8">
+            <div class="accordion-mobile-nav-items d-none">
+               <div class="accordion-mobile-nav">
+                  <div class="accordion-mobile-nav-label"><span></span></div>
+                  <div class="accordion-mobile-nav-list"><label class="a-mobile-nav-title">Historical Financial Information</label><div class="a-mobile-nav-item selected" data-href="#afi" auto-scroll="true" target="_self">Annual Financial Statement and Audit Report</div>
+                     <div class="a-mobile-nav-item " data-href="#sal" auto-scroll="true" target="_self">Summary of Assets & Liabilities</div>
+                     <div class="a-mobile-nav-item " data-href="#b2p3bb" auto-scroll="true" target="_self">Basel II Pillar III of the Bangkok Branch</div>
+                     <div class="a-mobile-nav-item " data-href="#lcrd-ocbcbb" auto-scroll="true" target="_self">LCR Disclosures of OCBC Bangkok Branch</div>
+                  </div>
+               </div>
+            </div>
+            <div id="left-nav-identifier"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1692494907307">
+      <style>#iw_comp1692494907307{}</style><div class="accordion-component"></div><div class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">Historical Financial Information</div>
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="none" close-others="true">
+            <div class="clearfix"></div>
+            <ul class="accordion__list">
+               <li id="afi" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Annual Financial Statement and Audit Report</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Annual Financial Statements and Audit Report for the Year Ended December 31 2023<br />Announced date: 25 April 2024<br /><br /><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/Annual financial statement/OCBC FS Dec2023 Eng.pdf">English version</a><br /><br /><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/Annual financial statement/OCBC FS Dec2023 Thai_signed.pdf">Thai version</a><br /><br />Annual Financial Statements and Audit Report for the Year Ended December 31 2022<br />Announced date: 25 April 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Financial%20Statements%20and%20Independent%20Auditor's%20Report_EN%20_2022.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Financial%20Statements%20and%20Independent%20Auditor's%20Report%20_TH_2022.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Annual Financial Statements and Audit Report for the Year Ended December 31 2021<br />Announced date: 26 April 2022</p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Eng_version_2021.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Thai_version_2021.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Annual Financial Statements and Audit Report for the Year Ended December 31 2020<br />Announced date: 29 April 2021</p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Eng_version_2020.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Thai_version_2020.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Annual Financial Statements and Audit Report for the Year Ended December 31 2019<br />Announced date: April 2020</p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Eng_version_2019.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Thai_version_2019.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Annual Financial Statements and Audit Report for the Year Ended December 31 2018<br />Announced date: April 2019</p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Eng_version_2018.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Thai_version_2018.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Annual Financial Statements and Audit Report for the Year Ended December 31 2017<br />Announced date: April 2018</p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Eng_version_2017.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/Annual%20financial%20statement/Signed_FS_Thai_version_2017.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p></div>
+               </li>
+               <li id="sal" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Summary of Assets & Liabilities</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p><strong>Effective Date: 31 Oct 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20251031_sal-eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20251031_sal-thai.pdf">Thai Version</a></p>
+<p><strong>Effective Date: 30 Sep 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250930_SAL-Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250930_SAL-Thai.pdf">Thai Version</a></p>
+<p><strong>Effective Date: 31 Aug 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250831_SAL-Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250831_SAL-Thai.pdf">Thai Version</a></p>
+<p><strong>Effective Date: 31 Jul 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250731_SAL-Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250731_SAL-Thai.pdf">Thai Version</a></p>
+<p><strong>Effective Date: 30 Jun 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20250630_SAL-Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20250630_SAL-Thai.pdf">Thai Version</a></p>
+<p><strong><br>Effective Date: 31 May 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20250531_sal-eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20250531_sal-thai.pdf">Thai Version</a></p>
+<p><strong><br>Effective Date: 30 Apr 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250430_SAL-Eng.pdf">Eng version</a></p>
+<p><a href="/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250430_SAL-Thai.pdf">Thai Version</a></p>
+<p><strong><br>Effective Date: 31 Mar 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250331_SAL-Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250331_SAL-Thai.pdf">Thai Version</a></p>
+<p><strong>Effective Date: 28 Feb 2025</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20250228_sal-eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20250228_SAL-Thai.pdf">Thai Version</a><br><br><strong>Effective Date: 31 Jan 2025</strong></p>
+<p><strong></strong><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20250131_sal-eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20250131_sal-thai.pdf">Thai Version</a></p>
+<p>&nbsp;</p>
+<p><strong><br>Effective Date: 31 Dec 2024</strong></p>
+<p><strong></strong><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20241231_SAL_Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20241231_SAL_Thai.pdf">Thai Version</a></p>
+<p><strong><br><br>Effective Date: 30 Nov 2024</strong></p>
+<p><strong></strong><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20241130_SAL_Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20241130_SAL_Thai.pdf">Thai Version</a></p>
+<p><strong>Effective Date: 31 Oct 2024</strong></p>
+<p><strong></strong><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/CB 1.2 Oct 24 (Eng).pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/CB 1.2 Oct 24 (Thai).pdf">Thai Version</a></p>
+<p><strong>Effective Date: 30 Sep 2024</strong></p>
+<p><strong></strong><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/LCR/MSAL009_202140930_SAL_Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/LCR/MSAL009_202140930_SAL_TH.pdf">Thai Version</a></p>
+<p><strong>Effective Date: 31 Aug 2024</strong><strong></strong></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140831_SAL_Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140831_SAL_TH.pdf">Thai Version</a></p>
+<p><strong><br>Effective Date: 31 Jul 2024<br><br></strong><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140731_SAL_Eng.pdf">Eng version</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140731_SAL_TH.pdf">Thai Version</a><br><strong><br>Effective Date: 30 Jun 2024</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20240630_SAL_Eng.pdf">Eng version</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140630_SAL_TH.pdf">Thai version</a><br><br><strong>Effective Date: 31 May 2024</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_20240531_SAL_Eng.pdf">Eng version</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140531_SAL_Thai.pdf">Thai version</a><br><br><strong>Effective Date: 30 Apr 2024</strong><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_20240430_SAL_Eng.pdf">Eng Version</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140430_SAL_Thai.pdf">Thai Version</a><br><br>Effective Date: 31 Mar 2024</p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20240331_SAL_Eng.pdf">Eng version</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140331_SAL_Thai.pdf">Thai version</a><br><br>Effective Date: 29 Feb 2024<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_20240229_SAL_Eng.pdf">Eng version</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140229_SAL_Thai.pdf">Thai version</a><br><br>Effective Date: 31 Jan 2024 <br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20240131_SAL_Eng.pdf">Eng Version</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_202140131_SAL_Thai.pdf">Thai Version</a><br><br>Effective Date: 31 Dec 2023<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20231231_SAL_Eng.pdf">Eng Version</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20231231_SAL_Thai.pdf">Thai Version</a><br><br>Effective Date: 30 Nov 2023<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20231130_SAL_Eng.pdf">Eng Versions</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20231130_SAL_Thai.pdf">Thai Version</a><br><br>Effective Date: 31 Oct 2023<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20231031_SAL_Eng.pdf">English Versions</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Current Information/summary statement of assets and liabilities/MSAL009_20231031_SAL_Thai.pdf">Thai Versions</a><br><br>Effective Date: 30 Sep 2023<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_20230930_SAL_Eng.pdf">English Versions</a><br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/summary statement of assets and liabilities/MSAL009_20230930_SAL_Thai.pdf">Thai Versions</a><br><br>Effective Date: 31 Aug 2023<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20230831_sal_eng.pdf">English versions</a></p>
+<p><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20230831_sal_thai.pdf">Thai version</a><br><br>Effective date: 31 July 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20230731_sal_eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/summary%20statement%20of%20assets%20and%20liabilities/msal009_20230731_sal_thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a><br>Effective date: 30 June 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230630_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230630_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 May 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230531_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230531_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 30 April 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230430_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230430_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 March 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230331_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230331_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 28 February 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230228_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230228_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: January 2023</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230131_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20230131_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: December 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_202201231_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_202201231_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: November 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_202201130_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20221130_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: October 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_202201031_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20221031_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: September 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220930_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220930_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 25 August 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220831_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220831_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: July 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220731_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220731_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: June 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220630_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220630_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: May 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220531_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220531_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: April 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220430_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220430_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: March 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220331_SAL_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220331_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: February 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220228_SALEng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220228_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: January 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220131_SALEng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20220131_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: December 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20211231_SALEng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20211231_SAL_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: November 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20211130_SALEng-V1.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20211130_SALThai-V1.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: October 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20211031_SALEng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20211031_SALThai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: September 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210930_SALEng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210930_SALThai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: August 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210831_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210831_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: July 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210731_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210831_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: June 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210630_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210630_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 25 May 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210531_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210531_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: April 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210430_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210430_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: March 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210331_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210331_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: February 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210228_SAL%20-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210228_SAL%20-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: January 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210131_SAL%20-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20210131_SAL%20-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: December 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20201231_SAL%20-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20201231_SAL%20-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: November 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20201130_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20201130_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: October 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20201031_SAL%20-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20201031_SAL%20-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: September 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200930_SAL%20-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200930_SAL%20-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: August 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200831_SAL%20-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200831_SAL%20-Tha.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: July 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200731_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200731_SAL%20-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: June 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200630_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200630_SAL%20-%20Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 25 May 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200531_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200531_SAL%20-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: April 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200430_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200430_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: March 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200331_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200331_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: February 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200229_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200229_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: January 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200131_SAL-Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/MSAL009_20200131_SAL-Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: December 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Dec19_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Dec19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: November 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Nov19_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Nov19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: October 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Oct19_Eng-Adj.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Oct19_Thai-Adj.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: September 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Sep19_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Sep19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: August 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Aug19_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Aug19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: July 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/English%20Version%20Jul%2019.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/Thai%20Version%20Jul%2019.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: June 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jun19_Eng%20V1.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jun19_Thai-V1.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 25 May 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20May19_Eng%20.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20May19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: April 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Apr19_Eng%20.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Apr19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: March 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/CB1.2%20Mar19_Eng%20.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/CB1.2%20Mar19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: February 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Feb19_Eng%20.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Feb19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: January 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jan19_Eng%20.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jan19_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 December 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Dec18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Dec18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 30 November 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Nov18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Nov18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 October 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Oct18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Oct18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 September 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Sep18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Sep18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 August 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Aug18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Aug18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 July 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jul18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2_Jul18%20Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 30 June 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jun18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jun18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 May 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20May18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20May18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 30 April 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Apr18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Apr18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 March 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Mar18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Mar18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 28 February 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Feb18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Feb18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p>
+<p>Effective date: 31 January 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jan18_Eng.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>English version</a></p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/summary%20statement%20of%20assets%20and%20liabilities/CB1.2%20Jan18_Thai.pdf" target="_blank"><i class="fas fa fa-file-pdf mr-1">&nbsp;</i>Thai version</a></p></div>
+               </li>
+               <li id="b2p3bb" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Basel II Pillar III of the Bangkok Branch</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Period: December 2024 (Announced date: 29 April 2025)<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Basel II Pillar III/Pillar III-Dec2024.pdf">English version</a></p>
+<p>Period: June 2024 (Announced date: 30 October 2024)<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Basel II Pillar III/Disclosure_Pillar III_Jun 24.pdf">English version</a></p>
+<p>Period: December 2023 (Announced date: 30 April 2024)<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand international presence/Basel II Pillar III/Pillar III-Dec2023.pdf">English version</a></p>
+<p>Period: June 2023 (Announced date: 29 September 2023)<br><br><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/basel%20ii%20pillar%20iii/disclosure_pillar%20iii_jun%2023.pdf">English version</a><br><br>Period: December 2022 (Announced date: 26 April 2023)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Pillar%20III-2022.pdf" target="_blank">English version</a></p>
+<p>Announced date: 14 September 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Disclosure_Pillar_III_Jun 22.pdf" target="_blank">English version</a></p>
+<p>Announced date: 27 April 2022</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Disclosure_Pillar_III_Dec 21.pdf" target="_blank">English version</a></p>
+<p>Announced date: 15 September 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Disclosure_Pillar_III_Jun 21.pdf" target="_blank">English version</a><br><br>Announced date: 30 April 2021</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Pillar%20III-2020.pdf" target="_blank">English version</a></p>
+<p>Announced date: 15 October 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Disclosure_Pillar%20III_Jun%202020.pdf" target="_blank">English version</a></p>
+<p>Announced date: 2 April 2020</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Pillar%20III-2019.pdf" target="_blank">English version</a></p>
+<p>Announced date: 22 August 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Disclosure_Pillar%20III_Jun19.pdf" target="_blank">English version</a></p>
+<p>Announced date: 25 April 2019</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Pillar%20III-2018.pdf" target="_blank">English version</a></p>
+<p>Announced date: 30 April 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Pillar%20III-2017.pdf" target="_blank">English version</a></p>
+<p>Announced date: 30 September 2018</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/Disclosure_Pillar_III_Jun18.pdf" target="_blank">English version</a></p></div>
+               </li>
+               <li id="lcrd-ocbcbb" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>LCR Disclosures of OCBC Bangkok Branch</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Period: December 2024 (Announced date: 21 April 2025)<br /><br /><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/thailand%20international%20presence/current%20information/lcr/lcr%20disclosure%20dec24.pdf">English version</a><br /><br />Period: June 2024 (Announced date: 18 October 2024)<br /><br /><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/LCR/LCR disclosure Jun24.pdf">English version</a><br /><br />Period: December 2023 (Announced date: 9 April 2024)<br /><br /><a href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international presence/Current Information/LCR/LCR disclosure Dec23.pdf">English version</a><br /><br />Period: June 2023 (Announced date: 29 September 2023)<br /><br /><a title="English version" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR_disclosure_Jun23.pdf">English version</a><br /><br />Period: December 2022 (Announced date: 25 April 2023)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Dec22.pdf" target="_blank">English version</a></p>
+<p>Period: June 2022 (Announced date: 30 September 2022)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Jun22.pdf" target="_blank">English version</a></p>
+<p>Period: June 2021 (Announced date: 29 October 2021)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Jun21.pdf" target="_blank">English version</a></p>
+<p>Period: December 2021 (Announced date: 28 April 2022)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Dec21.pdf" target="_blank">English version</a></p>
+<p>Period: June 2020 (Announced date: 15 October 2020)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Jun20.pdf" target="_blank">English version</a></p>
+<p>Period: December 2020 (Announced date: 29 April 2021)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Dec20.pdf" target="_blank">English version</a></p>
+<p>Period: June 2019 (Announced date: 22 August 2019)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Jun19.pdf" target="_blank">English version</a></p>
+<p>Period: December 2019 (Announced date: 2 April 2020)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Dec19.pdf" target="_blank">English version</a></p>
+<p>Period: June 2018 (Announced date: 5 October 2018)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Current%20Information/LCR/LCR%20disclosure%20Jun18.pdf" target="_blank">English version</a></p>
+<p>Period: December 2018 (Announced date: 25 April 2019)</p>
+<p><a class="link" rel="noopener" href="https://www.ocbc.com/iwov-resources/sg/ocbc/business/PDF/Thailand%20international%20presence/Basel%20II%20Pillar%20III/LCR%20disclosure%20Dec18.pdf" target="_blank">English version</a></p></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"></div>');
+	  
+	  
+	
+	  $('.sidebar-component').parent().wrapAll('<div class="section bg-grey"></div>');
+	  
+	  
+	
+	  $('.accordion-component').parent().wrapAll('<div id="left-nav-content"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1574170872815">
+    <!--ls:begin[component-1574170872815]--><style>#iw_comp1574170872815{}</style><div></div><!--ls:end[component-1574170872815]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<script type="text/javascript">_satellite.pageBottom();</script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

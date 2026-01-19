@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><script>
+      dataLayer = [];
+    </script>
+    <!-- load Google Analytics -->
+    <script>
+      window['GoogleAnalyticsObject'] = 'ga';
+      window['ga'] = window['ga'] || function() {
+                (window['ga'].q = window['ga'].q || []).push(arguments)
+              };
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- (START) Adobe Analytics - Header -->
+    <script src="//assets.adobedtm.com/f8f9776f70c5/929d6c7fc7b8/launch-4fb16aaa7062.min.js" async></script>
+    <!-- (END) Adobe Analytics - Header --><!--ls:end[analytics-head]-->
+      <title>OCBC Premier Private Client Solutions | OCBC Bank</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/premier-private-client/page/solutions/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/premier-private-client/solutions/premier_global_account/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="OCBC Premier Private Client offers tailored solutions to maximise your wealth. Get in touch today.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/jquery-3.3.1.min.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/appendLS.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/fonts.css?v=2019022810' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/styles_ppc.css?v=2020110201' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/global-account.css?v=2019072403' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/jquery.tosrus.all.css?v=2019022810' media='all' />
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery-1.7.1.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/hammer.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.tosrus.all.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.inview.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.fancybox.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/main_latest.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/custom.js?v=2019101101'></script>
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/styles-all-sites.css?v=2020020403' media='all' />
+<script src='/iwov-resources/sg/ocbc/premier/js/secondary.js?v=20190506'></script>
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pbinsights.css?v=2019120801' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pba_bonus.css' media='all' />
+<link rel='canonical' href='https://www.ocbc.com/personal-banking/premier-private-client/solutions/premier_global_account'/>
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZTQ6GN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_8G2XCgS5PomuGYC","https://zn8g2xcgs5pomugyc-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_8G2XCgS5PomuGYC")).start()}catch(i){}})();
+</script><div id='ZN_8G2XCgS5PomuGYC'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjmeo4nux">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nuy">
+  <div class="iw_columns col-lg-12" id="coljmeo4nuz">
+   <div class="iw_component" id="iw_comp1540459420952">
+    <!--ls:begin[component-1540459420952]--><style>#iw_comp1540459420952{}</style><div class="header-top">
+   <div class="contain"><a href="https://www.ocbc.com/group/group-home.html" target="_blank"><img class="logo align-left" src="/iwov-resources/sg/ocbc/premier/images/logo.png"></a><div class="navi-top align-right desktop-only">
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://internet.ocbc.com/internet-banking">Online Banking</a></div>
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/home.page">Personal Banking</a></div>
+         <div class="ocbc-navi-item">
+            <div class="languages"><a class="langUrl" href="/premier-private-client/solutions/premier_global_account.page">EN</a><a class="langUrl" href="/premier-private-client/id/solutions/premier_global_account.page">ID</a><a class="langUrl" href="/premier-private-client/zh/solutions/premier_global_account.page">中文</a></div>
+         </div>
+      </div>
+      <div class="icon-menu mobile-only"><img src="/iwov-resources/sg/ocbc/premier/images/icon-menu.png"></div>
+      <div class="clear"></div>
+   </div>
+</div><input class="bodyClass" type="hidden" value="container page-ppc page-global-account"><!--ls:end[component-1540459420952]-->
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmh85a3f">
+ <div class="row iw_row iw_stretch" id="rowjmh85a3g">
+  <div class="iw_columns col-lg-12" id="coljmh85a3h">
+   <div class="iw_component" id="iw_comp1556262481030">
+    <style>#iw_comp1556262481030{}</style><div class="header-navi">
+   <div class="contain">
+      <div class="header-navi-left align-left"><a class="ppc-navi" href="./"><img width="250" src="/iwov-resources/sg/ocbc/premier/images/private/ppc-logo.png"></a></div>
+      <div class="header-navi-right align-right">
+         <div class="navi-navi">
+            <div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/index.page" class="navi-home">Home</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/privileges.page" class="navi-privileges">Privileges</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/solutions.page" class="navi-solutions">Solutions</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/services.page" class="navi-services">Services</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/insights.page" class="navi-insights">Insights</a></div>
+            </div>
+            <div class="mobile-only menu-divider"></div>
+            <div class="navi-ocbc-navi mobile-only"></div>
+         </div>
+      </div>
+      <div class="clear"></div>
+   </div>
+</div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nv5">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nv6">
+  <div class="iw_columns col-lg-12" id="coljmeo4nv7">
+   <div class="iw_placeholder" id="iw_placeholder1537695384016">
+    <div class="iw_component" id="iw_comp1540459420955">
+     <!--ls:begin[component-1540459420955]--><style>#iw_comp1540459420955{}</style><div>
+   <div style="background-image: url('/iwov-resources/sg/ocbc/premier/images/global-account/banner_global_account.jpg');" class="section section-1 pr-top-section bg-img" desktop-image="/iwov-resources/sg/ocbc/premier/images/global-account/banner_global_account.jpg" mobile-image="/iwov-resources/sg/ocbc/premier/images/global-account/banner_global_account.jpg">
+      <div class="mobile-only panel-mobile" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/global-account/banner_global_account.jpg');">
+         <h1 class="main-title">Enjoy flexibility to transact and save in ten major currencies</h1>
+      </div>
+      <div class="contain">
+         <div class="restrict-355 inview fadeIn">
+            <h1 class="main-title co-white desktop-only">Enjoy flexibility to transact and save in ten major currencies</h1>
+            <div class="boxes-container">
+               <div class="box-container">
+                  <div class="white-box box-medium arial">
+                     <h5><strong>To be eligible</strong></h5><p>Exclusively for OCBC Premier Banking and OCBC Premier Private Client customers</p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div><!--ls:end[component-1540459420955]-->
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nv9">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nva">
+  <div class="iw_columns col-lg-12" id="coljmeo4nvb">
+   <div class="iw_placeholder" id="iw_placeholder1537695384020"></div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nvg">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nvh">
+  <div class="iw_columns col-lg-12" id="coljmeo4nvi">
+   <div class="iw_placeholder" id="iw_placeholder1537695384027">
+    <div class="iw_component" id="iw_comp1586970780768">
+     <style>#iw_comp1586970780768{}</style><div><div class="section section-2">
+<div class="contain pt5 pb5">
+<div class="mt2 mb2">
+<h1 class="co-gray3 mb2 desktop-only">Premier Global Savings Account</h1>
+<h2 class="co-gray3 mb2 mobile-only">Premier Global Savings Account</h2>
+<div class="mt3 mb4">
+<div class="pr-wh-bo box-large white-box marble inview fadeIn">
+<ul class="pr-wh-list large col3">
+<li>
+<div class="pw-bo-top">
+<h4 class="par-xlarge"><strong>Instant account opening</strong></h4>
+</div>
+<h5>Premier Banking customers who have OCBC Digital Banking access can <a class="underline-link" href="https://www.ocbc.com/personal-banking/digital-banking/step-by-step-guides/application-updates/gsa-application.page" target="_blank" rel="noopener">open an account instantly</a>.</h5>
+</li>
+<li>
+<div class="pw-bo-top">
+<h4 class="par-xlarge"><strong>No conversion fees</strong></h4>
+</div>
+<h5>Use your Premier World Elite&trade; Debit Card to make transactions in AUD, CAD, CHF, EUR, GBP, HKD, JPY, NZD, and USD &ndash; no fees will be incurred.</h5>
+<h5 style="margin-top: 1em;">If you have another debit card, you can also <a class="underline-link" href="https://www.ocbc.com/personal-banking/digital-banking/step-by-step-guides/cards-management/debitcard-gsa-linkage.page" target="_blank" rel="noopener">link it to your account.</a></h5>
+</li>
+<li>
+<div class="pw-bo-top">
+<h4 class="par-xlarge"><strong>Attractive rates for 10 major currencies, 24/7</strong></h4>
+</div>
+<h5>Enjoy $0 admin fee and no fall-below-charge. Get real-time notifications on your desired FX rates using <a class="underline-link" href="/personal-banking/investments/forex-trading.page" target="_self" rel="noopener">Rate Alerts</a> and lock them in with <a class="underline-link" href="/personal-banking/investments/forex-trading.page" target="_self" rel="noopener">Auto-Execute Orders</a>.</h5>
+<h5 style="margin-top: 1em;"><a class="underline-link" href="https://www.ocbc.com/personal-banking/investments/forex-trading.page" target="_blank" rel="noopener">Find out more</a></h5>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="display: none;">
+<div id="popup-exchangerates" class="popup-content">
+<p><strong>Attractive real-time exchange rates</strong></p>
+<p>The online foreign exchange function is only available between 8am on Monday and 11.59pm on Friday.</p>
+<p>On weekends, you will see an estimated foreign exchange rate when you set up any foreign exchange transaction involving SGD or USD. If you decide to make the transaction, we will process it the next working day at the prevailing foreign exchange rates.</p>
+</div>
+</div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nvk">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nvl">
+  <div class="iw_columns col-lg-12" id="coljmeo4nvm">
+   <div class="iw_placeholder" id="iw_placeholder1537695384031"></div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nvo">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nvp">
+  <div class="iw_columns col-lg-12" id="coljmeo4nvq">
+   <div class="iw_placeholder" id="iw_placeholder1537695384035">
+    <div class="iw_component" id="iw_comp1603806792540">
+     <style>#iw_comp1603806792540{}</style><div><div class="section">
+<div class="contain pb5">
+<div class="mt2 mb2">
+<h2 class="co-gray1 mb2">How it works</h2>
+<div style="max-width: 700px;">
+<h5>With the Premier Global Savings Account, you get to enjoy the flexibility of saving and transacting in 10 major currencies and also receive preferential interest rates on selected currencies.</h5>
+</div>
+<div class="mt4 mb4" style="overflow-x: auto;">
+<table class="pr-co-table par-large font-a co-gray2">
+<tbody>
+<tr class="font-d">
+<th class="simple">&nbsp;</th>
+<th colspan="4">Interest rates (per year)</th>
+</tr>
+<tr class="pc-ta-head font-d">
+<td>Currency</td>
+<td>First<br />100,000 units</td>
+<td>Next<br />250,000 units</td>
+<td>Next<br />650,000 units</td>
+<td>1,000,000<br />units and above</td>
+</tr>
+<tr>
+<td><strong>United States Dollar (USD)</strong></td>
+<td>0.01%</td>
+<td>0.01%</td>
+<td>0.03%</td>
+<td>0.03%</td>
+</tr>
+<tr>
+<td><strong>Australian Dollar (AUD) </strong></td>
+<td>0.01%</td>
+<td>0.01%</td>
+<td>0.03%</td>
+<td>0.03%</td>
+</tr>
+<tr>
+<td><strong>New Zealand Dollar (NZD)</strong></td>
+<td>0.01%</td>
+<td>0.01%</td>
+<td>0.03%</td>
+<td>0.03%</td>
+</tr>
+<!--<tr>
+                  <td><strong>Canadian Dollar (CAD)</strong></td>
+                  <td>0.05%</td>
+                  <td>0.05%</td>
+                  <td>0.05%</td>
+                  <td>0.05%</td>
+               </tr>--> <!--<tr>
+                  <td><strong>Sterling Pound (GBP) </strong></td>
+                  <td>0.05% </td>
+                  <td>0.05% </td>
+                  <td>0.05% </td>
+                  <td>0.05% </td>
+               </tr>--></tbody>
+</table>
+</div>
+<div class="mt4 mb4" style="overflow-x: auto;">
+<table class="pr-co-table par-large font-a co-gray2">
+<tbody>
+<tr class="font-d">
+<th class="simple">&nbsp;</th>
+<th colspan="4">Interest rates (per year)</th>
+</tr>
+<tr class="pc-ta-head font-d">
+<td>Currency</td>
+<td>First<br />500,000 units</td>
+<td>Next<br />1,500,000 units</td>
+<td>Next<br />3,000,000 units</td>
+<td>5,000,000<br />units and above</td>
+</tr>
+<tr>
+<td><strong>Chinese Yuan Offshore (CNH)</strong></td>
+<td>0.02%</td>
+<td>0.05%</td>
+<td>0.10%</td>
+<td>0.20%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 class="mt1">The interest rates stated here are subjected to change without prior notice.</h5>
+<h5 class="mt1">Existing accounts with CAD, CHF, EUR, GBP, HKD and JPY do not earn any interest.</h5>
+</div>
+</div>
+</div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nvs">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nvt">
+  <div class="iw_columns col-lg-12" id="coljmeo4nvu">
+   <div class="iw_placeholder" id="iw_placeholder1537695384039">
+    <div class="iw_component" id="iw_comp1605028667804">
+     <style>#iw_comp1605028667804{}</style><div><div class="section section-3">
+<div class="contain pt5 pb5">
+<div class="mt4">
+<h1 class="mb2 co-gray1 desktop-only">Before you apply</h1>
+<h2 class="mb2 co-gray1 mobile-only">Before you apply</h2>
+<table class="pw-el-table co-gray1">
+<tbody>
+<tr>
+<td><strong>Initial deposit required</strong></td>
+<td width="50%">
+<ul class="list-two-col">
+<li>AUD 5,000</li>
+<li>CAD 5,000</li>
+<li>CNH 5,000</li>
+<li>CHF 5,000</li>
+<li>EUR 5,000</li>
+</ul>
+<ul>
+<li>GBP 5,000</li>
+<li>NZD 5,000</li>
+<li>USD 5,000</li>
+<li>HKD 50,000</li>
+<li>JPY 500,000</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Minimum end balance required daily to earn interest rate</strong></td>
+<td>
+<ul class="list-two-col">
+<li>AUD 5,000</li>
+<li>CAD 5,000</li>
+<li>CNH 5,000</li>
+<li>CHF 5,000</li>
+<li>EUR 5,000</li>
+</ul>
+<ul>
+<li>GBP 5,000</li>
+<li>NZD 5,000</li>
+<li>USD 5,000</li>
+<li>HKD 50,000</li>
+<li>JPY 500,000</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Fall below fee</strong></td>
+<td>S$0</td>
+</tr>
+<tr>
+<td><strong>Monthly statements</strong></td>
+<td>Paper or e-Statement</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nvw">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nvx">
+  <div class="iw_columns col-lg-12" id="coljmeo4nvy">
+   <div class="iw_placeholder" id="iw_placeholder1537695384043">
+    <div class="iw_component" id="iw_comp1605028667805">
+     <style>#iw_comp1605028667805{}</style><div>
+   <div class="section section-2 section-faq">
+      <div class="contain pt5 pb5">
+         <div class="mb3">
+            <h2 class="mb2 co-gray1">Questions you may have</h2>
+         </div>
+         <div class="pb-dd">
+            <div class="expandable-item">
+               <div class="expandable-header bg-img" style="background-image: url('/');">
+                  <div class="arrow"><img class="arrow-left" src="/iwov-resources/sg/ocbc/premier/images/arrow-left.png"></div>
+                  <div class="expandable-title">
+                     <h4 class="regular">How will bonus interest be calculated?</h4>
+                  </div>
+               </div>
+               <div class="expandable-content regular"><p><strong>You can earn 2 types of bonus interest:</strong></p>
+<ol>
+<li>
+<p>Wealth bonus<br />Earn 0.45% a year for 12 consecutive months on your account average daily balance, up to the first USD 150,000 when you purchase an eligible insurance/investment products from OCBC.</p>
+</li>
+<li>
+<p>Top-Up Bonus<br />For months when you increase your account average daily balance by at least USD 50,000 from the previous month; earn 0.70% a year on the incremental balances with no limit.</p>
+</li>
+</ol></div>
+            </div>
+            <div class="expandable-item">
+               <div class="expandable-header bg-img" style="background-image: url('/');">
+                  <div class="arrow"><img class="arrow-left" src="/iwov-resources/sg/ocbc/premier/images/arrow-left.png"></div>
+                  <div class="expandable-title">
+                     <h4 class="regular">What are the eligible products to qualify for Wealth bonus?</h4>
+                  </div>
+               </div>
+               <div class="expandable-content regular"><p><strong>Insurance policies (Denominated in USD only)</strong></p>
+<ul>
+<li>PremierLife Generation II (USD)</li>
+<li>Emerald Legacy Life (USD)</li>
+<li>Universal Life Plans</li>
+<li>HSBC Life Variable Annuity</li>
+</ul>
+<p><strong>Investment products (Denominated in USD only)</strong></p>
+<ul>
+<li>Unit Trust (excluding money market funds, Systematic Investment Programme (OCBC Momentum) and Unit Trusts transferred in from other financial institutions</li>
+<li>Structured deposits</li>
+<li>Bonds</li>
+<li>Equity-Linked Convertible Investments</li>
+<li>Reverse Equity-Linked Convertible Investment</li>
+<li>Structured Investments</li>
+<li>Structured Notes</li>
+</ul></div>
+            </div>
+            <div class="expandable-item">
+               <div class="expandable-header bg-img" style="background-image: url('/');">
+                  <div class="arrow"><img class="arrow-left" src="/iwov-resources/sg/ocbc/premier/images/arrow-left.png"></div>
+                  <div class="expandable-title">
+                     <h4 class="regular">What happens if I subsequently purchase another eligible insurance/investment product
+                        before the completion of my current 12-month bonus period?</h4>
+                  </div>
+               </div>
+               <div class="expandable-content regular"><p><span>The Wealth bonus earned on the account will be extended for another 12 consecutive months after the effective date of (your most recent) purchase post free-look period or 14 days, whichever is later.</span></p></div>
+            </div>
+            <div class="expandable-item">
+               <div class="expandable-header bg-img" style="background-image: url('/');">
+                  <div class="arrow"><img class="arrow-left" src="/iwov-resources/sg/ocbc/premier/images/arrow-left.png"></div>
+                  <div class="expandable-title">
+                     <h4 class="regular">When will the bonus interest be paid?</h4>
+                  </div>
+               </div>
+               <div class="expandable-content regular"><p><span>Bonus Interest will be calculated at the end of each calendar month and will be credited on the 7th business day (excluding Saturday and Sunday) of the following month.</span></p></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nw0">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nw1">
+  <div class="iw_columns col-lg-12" id="coljmeo4nw2">
+   <div class="iw_placeholder" id="iw_placeholder1537695384047"></div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nw7">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nw8">
+  <div class="iw_columns col-lg-12" id="coljmeo4nw9">
+   <div class="iw_placeholder" id="iw_placeholder1537695384054">
+    <div class="iw_component" id="iw_comp1540459420957">
+     <style>#iw_comp1540459420957{}</style><div class="section section-5">
+   <div class="contain">
+      <h1 class="main-title desktop-only">Apply now</h1>
+      <h2 class="main-title mobile-only">Apply now</h2>
+      <div class="items">
+         <div class="item-33">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/global-account/icon-comp.png"></div><a target="_blank" href="https://internet.ocbc.com/internet-banking/Login/Login?rp=%2finternet-banking%2fAccountOpening%2fIndex%3fmenuId%3d61643dd5-65de-4a03-8989-80edd2348a51%26redir%3d1"><button class="btn btn-dark">Apply online</button></a><div class="ctas-text"><div class="item-text-small regular item-text">For existing OCBC Premier <br />Private Client customers</div></div>
+         </div>
+         <div class="item-33">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/call-icon.png"></div>
+            <div class="ctas-text">
+               <div class="item-text-small regular item-text"><div class="item-text regular" style="padding-top: 0px;"><a href="tel:18004248888"> 1800 424 8888</a></div>
+<div class="item-text-small regular">or <a href="tel:+6564248888">(65) 6424 8888 (overseas)</a></div></div>
+            </div>
+         </div>
+         <div class="item-33">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/global-account/centre-icon.png"></div><a target="_blank" href="/premier-banking/locations"><button class="btn btn-dark">Find a Premier Banking Centre</button></a></div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjmeo4nwb">
+ <div class="row iw_row iw_stretch" id="rowjmeo4nwc">
+  <div class="iw_columns col-lg-12" id="coljmeo4nwd">
+   <div class="iw_component" id="iw_comp1540459420953">
+    <style>#iw_comp1540459420953{}</style><div>
+   <div style="display: none;">
+      <div id="popup-foreign-currency-deposits" class="popup-content">
+         <h5><strong>Foreign currency deposit</strong></h5><p>Foreign currency deposits are subject to exchange rate fluctuations that may provide opportunities and risks. Earnings on foreign currency deposits would be dependent on the exchanges rates prevalent at the time of their maturity if any conversion takes place. Exchange controls may be applicable from time to time to certain foreign currencies. You should therefore determine whether any foreign currency deposit is suitable for you in the light of your investment objectives, financial means and risk profile. Any pre-termination costs will be deducted from your deposit.</p></div>
+   </div>
+   <div class="footer" id="footer">
+      <div class="contain">
+         <div class="footer-term-conditions">
+            <h5>Important notes</h5>
+            <p><a class="underline-link" href="https://www.ocbc.com/personal-banking/terms-and-conditions/terms-and-conditions-governing-deposit-accounts.page" target="_blank">Terms and Conditions Governing Deposits Account</a></p>
+            <p><a class="underline-link fancybox-modal" href="#popup-foreign-currency-deposits">Foreign Currency Deposits</a></p>
+         </div>
+      </div>
+      <div class="footer-bottom" style="background-image: url('/iwov-resources/images/footer_bg.jpg')">
+         <div class="contain">
+            <div class="footer-bottom-item footer-links"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/conditions-of-access.page">Conditions of Access</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/policies.page">Policies</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/notices.page">Notices </a></div>
+            <div class="footer-bottom-item footer-icons"><a class="footer-icon" href="https://www.facebook.com/OCBC.Singapore/?brand_redir=294095104090945"><img src="/iwov-resources/sg/ocbc/premier/images/icon-facebook.png"></a><a class="footer-icon" href="https://twitter.com/ocbcbank"><img src="/iwov-resources/sg/ocbc/premier/images/icon-twitter.png"></a><a class="footer-icon" href="https://www.youtube.com/user/channelocbc"><img src="/iwov-resources/sg/ocbc/premier/images/icon-youtube.png"></a><a class="footer-icon" href="https://www.linkedin.com/company-beta/165277/"><img src="/iwov-resources/sg/ocbc/premier/images/linkedin.jpg"></a><a class="footer-icon fancybox-modal" href="#popup-wechat-qrcode"><img alt="WeChat" border="0" height="15" src="/iwov-resources/sg/ocbc/premier/images/icon-wechat.png" width="15"></a></div>
+            <div class="footer-bottom-item copyright"><span>©️ Copyright 2004 – <span id="copyright-year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </span></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none;">
+   <div id="popup-wechat-qrcode" class="popup-content popup-small">
+      <div><img src="/iwov-resources/sg/ocbc/premier/images/qr_code_wechat.jpg" width="250" alt="250" style="width:100%; max-width:360px; height:auto;"></div>
+      <h4 class="main-title">WeChat ID: ocbcpremierbanking</h4>
+   </div>
+</div><!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) --> <!-- (START) Data Layer - Adobe Analytics -->
+<script type="text/javascript">// <![CDATA[
+    var digitalData = {
+    page:
+    {
+    pageName:"SG:OCBC:Premier:PremierPrivateClient:Solutions",
+    channel: "Premier",
+    }
+    }
+    
+// ]]></script>
+<!-- (END) Data Layer - Adobe Analytics --> <!-- (START) Adobe Analytics - Footer -->
+<script type="text/javascript">// <![CDATA[
+_satellite.pageBottom();
+// ]]></script>
+<!-- (END) Adobe Analytics - Footer -->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/premier/js/insight_date.js?v=20200312'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/trackingtag.js?v=2019061701'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/ppc-popupfix.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/forcepopup.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/notification.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/anchorlink.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/sectioncolor.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

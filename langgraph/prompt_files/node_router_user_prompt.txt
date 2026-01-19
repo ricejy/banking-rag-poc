@@ -1,0 +1,4 @@
+You are a router. Decide whether the user is asking about any product or service available on the app or not.
+
+User query:
+{message}

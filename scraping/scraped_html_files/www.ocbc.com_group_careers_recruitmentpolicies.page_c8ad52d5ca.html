@@ -1,0 +1,1495 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- start of adobe launch script -->
+<script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement(‘style’); o.id=‘alloy-prehiding’,o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf(‘adobe_authoring_enabled’) !== -1, ‘.personalization-container { opacity: 0 !important }’, 3000);
+</script>
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async></script>
+<!-- end of adobe launch script -->
+<!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+        _gaq.push(['_setAccount', 'UA-31687854-1']);
+        //  _gaq.push(['_setDomainName', 'ocbc.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+        <div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/896743391/?label=k6dUCP-ggGEQ3-_MqwM&amp;guid=ON&amp;script=0" /></div>
+    </noscript>
+    <script type="text/javascript">
+        _linkedin_partner_id = "355867";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";
+            b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })();
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=355867&fmt=gif" />
+    </noscript><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Recruitment Policies | OCBC Careers Singapore</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/group/page/careers/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/group/careers/recruitmentpolicies/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/group/careers/recruitmentpolicies.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_6SxLJUh4r9mAAjs","https://zn6sxljuh4r9maajs-ocbchr.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_6SxLJUh4r9mAAjs")).start()}catch(i){}})();
+</script><div id='ZN_6SxLJUh4r9mAAjs'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T46GKJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:group:careers:recruitment policies",
+            language: "en",
+            pageCategory: "pre-login careers category page",
+            bannerName: "",
+            channel: "careers",
+            country: "sg",
+            lob: "ocbc group",
+            platform: "web"
+        },
+        user: {
+            CIF: "",
+            loginStatus: ""
+        },
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionku407llm">
+ <div class="row iw_row iw_stretch" id="rowku407lln">
+  <div class="iw_columns col-lg-12" id="colku407llo">
+   <div class="iw_component" id="iw_comp1742320873731">
+    <style>#iw_comp1632828971289{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com" target=""><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="ocbc"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#about-us" class="header__navi">About Us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="https://www.ocbc.com/group/media/release/index" class="header__navi" target="_self">Media</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investors" class="header__navi">Investors</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#sustainability" class="header__navi">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#careers" class="header__navi">Careers</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#research" class="header__navi">Research</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline"></div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="https://www.ocbc.com" data-target="_blank">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/personal-banking" data-target="_blank">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.iocbc.com" data-target="_self">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_self">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="mailto:careers@ocbc.com" class="" target="_self">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action"></div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleoff: index-->
+   <div class="header__sub" data-nosnippet="">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="about-us" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">About Us</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/group-business" class="link link link-arrow-right" target="_self">Group  <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/purpose-values-and-ambition" class="link link link-arrow-right" target="_self">Purpose and  <span class="text-nowrap">Values<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/corporate-strategy" class="link link link-arrow-right" target="_self">Corporate  <span class="text-nowrap">strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/awards" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Awards<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/our-leadership" class="link link link-arrow-right" target="_self">Our  <span class="text-nowrap">Leadership<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="https://www.ocbc.com/group/about-us/group-business" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>View all</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investors" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investors</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/investor-information" class="link link link-arrow-right" target="_self">Investor  <span class="text-nowrap">information<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/financials" class="link link link-arrow-right" target="_self">Financial  <span class="text-nowrap">results<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/regulatory-disclosure" class="link link link-arrow-right" target="_self">Regulatory  <span class="text-nowrap">disclosures<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/annual-report-and-agm" class="link link link-arrow-right" target="_self">Annual Report and  <span class="text-nowrap">AGM<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/contact-us" class="link link link-arrow-right" target="_self">Contact  <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="sustainability" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Sustainability</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/sustainability-governance" class="link link link-arrow-right" target="_self">Sustainability  <span class="text-nowrap">governance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/sustainability-framework" class="link link link-arrow-right" target="_self">Sustainability  <span class="text-nowrap">framework<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/materiality-assessment" class="link link link-arrow-right" target="_self">Materiality  <span class="text-nowrap">assessment<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/supporting-sdgs" class="link link link-arrow-right" target="_self">Supporting  <span class="text-nowrap">SDGs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/stakeholder-engagement" class="link link link-arrow-right" target="_self">Stakeholder  <span class="text-nowrap">engagement<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="careers" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Careers</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/life-at-OCBC/index" class="link link link-arrow-right" target="_self">Life at  <span class="text-nowrap">OCBC<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/divisions/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Divisions<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/students/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Students<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/blog" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Blogs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/careers/img/home/kv-opportunity_starts_here-logo.png" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Let's build the bank we need for the future we want.</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>At OCBC, your opportunity starts here.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/group/careers/index" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="research" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Research</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Treasury reports</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/index" class="link link link-arrow-right" target="_self">Recent  <span class="text-nowrap">updates<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment reports</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/investment-reports" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Company<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/research-with-filter" class="link link link-arrow-right" target="_self">Macro  <span class="text-nowrap">Outlook<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/investment-reports.page#sectorial" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Sectorial<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/research-with-filter.page?category=fxandrates" class="link link link-arrow-right" target="_self">FX and  <span class="text-nowrap">rates<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/investment-reports.page#equity" class="link link link-arrow-right" target="_self">Equity  <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/research-with-filter.page?category=special" class="link link link-arrow-right" target="_self">Special  <span class="text-nowrap">reports<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="#" class=" &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>&nbsp;</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleon: index--></header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1742320873727">
+      <!--ls:begin[component-1742320873727]--><style>#iw_comp1742320873727{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="https://www.ocbc.com/group">OCBC Group</a></li>
+         <li><a href="/group/careers/index.page">Careers</a></li>
+         <li>Recruitment Policies</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1742320873727]-->
+     </div>
+     <div class="iw_component" id="iw_comp1742346196172">
+      <style>#iw_comp1742346196172{}</style><div class="leftnav-component"></div><div class="module container animate bp-width-med3">
+   <div class="com__bank-policies">
+      <div class="row">
+         <div class="b-p-side-nav col-lg-4 col-md-4 d-none d-md-block">
+            <div sticky-content="">
+               <div class="side-nav-with-sub">
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Recruitment Privacy Policy</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 selected"><a href="#recruitment-privacy-policy" class="" target="_self">Recruitment Privacy Policy</a></li>
+                     </ul>
+                  </div>
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Jurisdiction Addendums</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#ja-china" class="" target="_self">China</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#ja-hongkong" class="" target="_self">Hong Kong</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#ja-macau" class="" target="_self">Macau</a></li>
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#ja-malaysia" class="" target="_self">Malaysia</a></li>
+                     </ul>
+                  </div>
+                  <div class="com__side-nav scrolling has-styled-nav nav--2 mb-4">
+                     <h5><strong>Country Contacts</strong></h5>
+                     <ul class="d-flex d-md-block styled-nav clearfix align-items-center owl-nav1">
+                        <li class="side-nav-item col-4 col-md-12 "><a href="#country-contacts" class="" target="_self">Country Contacts</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-8 col-md-8">
+            <div class="accordion-mobile-nav-items d-none">
+               <div class="accordion-mobile-nav">
+                  <div class="accordion-mobile-nav-label"><span></span></div>
+                  <div class="accordion-mobile-nav-list"><label class="a-mobile-nav-title">Recruitment Privacy Policy</label><div class="a-mobile-nav-item selected" data-href="#recruitment-privacy-policy" target="_self">Recruitment Privacy Policy</div><label class="a-mobile-nav-title">Jurisdiction Addendums</label><div class="a-mobile-nav-item " data-href="#ja-china" target="_self">China</div>
+                     <div class="a-mobile-nav-item " data-href="#ja-hongkong" target="_self">Hong Kong</div>
+                     <div class="a-mobile-nav-item " data-href="#ja-macau" target="_self">Macau</div>
+                     <div class="a-mobile-nav-item " data-href="#ja-malaysia" target="_self">Malaysia</div><label class="a-mobile-nav-title">Country Contacts</label><div class="a-mobile-nav-item " data-href="#country-contacts" target="_self">Country Contacts</div>
+                  </div>
+               </div>
+            </div>
+            <div id="left-nav-identifier"></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1742346196179">
+      <style>#iw_comp1742346196179{}</style><div class="policies-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="none" close-others="false">
+            <div class="clearfix">
+               <div class="float-left mb2">
+                  <h4 class="mb0"><strong>Recruitment Privacy Policy</strong></h4>
+               </div><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="recruitment-privacy-policy" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Recruitment Privacy Policy</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><ol class="list-bold list-decimal-v2">
+<li>&nbsp;<strong><u>Introduction</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;The purpose of this document (&ldquo;<strong>Recruitment Privacy Policy</strong>&rdquo;) is to inform you of how:
+<ul class="list-bullet">
+<li class="pt2">Oversea-Chinese Banking Corporation Limited;</li>
+<li>OCBC Bank (Malaysia) Berhad;</li>
+<li>OCBC Bank Limited;</li>
+<li>OCBC Bank (Hong Kong) Limited;</li>
+<li>OCBC Bank (Macau) Limited;</li>
+<li>OCBC Property Services Pte Ltd;</li>
+<li>OCBC Securities Pte Ltd;</li>
+<li>Bank of Singapore Limited; and</li>
+<li>their related corporations,</li>
+</ul>
+<p class="pt1 pb1">and their respective representatives and agents (collectively referred to as &ldquo;<strong>OCBC Group</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;, &ldquo;<strong>we</strong>&rdquo; or &ldquo;<strong>our</strong>&rdquo;) collect, use, and disclose your personal data.</p>
+</li>
+<li>&nbsp;Please refer to the <a class="smoothscroll" href="#ja-china">Jurisdiction Addendums</a> for further information on our data protection practices that might apply to you.</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Personal Data</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;&ldquo;<strong>Personal Data</strong>&rdquo; refers to any data, whether true or not, about an individual who can be identified directly or indirectly (a) from that data; or (b) from that data and other information to which we have or are likely to have access.</li>
+<li>&nbsp;Some examples of Personal Data include your full name; government identification number; contact details (e.g. telephone number(s), and mailing and email address); location of birth; your educational background, qualifications, and work experience; financial information (e.g. bank account details); personal data relating to any individuals which you provide to us (e.g. personal data of next-of-kin or dependants); and sensitive personal data (only where applicable and mandatory).</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<u><strong>Collection of Personal Data</strong></u>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;We generally collect Personal Data that you, or a third party authorised by you, knowingly and voluntarily provide to us. Generally, we collect your Personal Data in the following ways:
+<ul class="list-bullet">
+<li class="pt1">when you send an employment or job application, provide documents or information (such as your resume) in connection with any appointment as an officer, director, representative or to any other position, or when you attend interviews with us;</li>
+<li>when you submit any form, including application, declaration, proposal or referral forms;</li>
+<li>when you interact with our employees via telephone calls (which may be recorded), letters, online chat, face-to-face meetings and e-mail;</li>
+<li>where permitted or required under applicable law, such as when we seek information about you regarding your relationship with us (such as job applications) and receive your Personal Data (for example, from your ex-employers and relevant third parties);</li>
+<li>when you are within our premises, or attend events hosted by us;</li>
+<li>when you use services provided through our online and other technology platforms, such as websites and apps, including when you set up any online accounts with us;</li>
+<li>when you interact with us via our websites and platforms, or use services on our websites and platforms;</li>
+<li>from third party sources to which you have given your consent (such as our employee screening vendors) or if the collection of your Personal Data is necessary to comply with applicable laws; and</li>
+<li>when you send your Personal Data to us for any other related reasons.</li>
+</ul>
+</li>
+<li>&nbsp;You must ensure that all Personal Data provided to us is complete, accurate, true and correct. Failure on your part to do so may prevent us from properly processing your Personal Data.</li>
+<li>&nbsp;If you provide us with any Personal Data of a third party (e.g. information on your next-of-kin), you represent that, by sending such Personal Data to us, you have obtained the consent of such third parties for you to provide us with their Personal Data for assessing and evaluating your employment suitability and other relevant purposes listed below, and you have informed such third parties about how we may process their Personal Data.</li>
+<li>&nbsp;Providing your Personal Data to us is voluntary. If you do not provide us with the required Personal Data in connection with your application, we regret that we will not be able to process your application, which may affect your employment opportunities.</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Purposes for the Collection, Use and Disclosure of Your Personal Data</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;OCBC Group collects, uses, and discloses your Personal Data for the following purposes:
+<ul class="list-bullet">
+<li class="pt1">performing any obligations under or in connection with your relationship with us, conducting interviews, processing your application which includes pre-recruitment or pre-engagement checks involving your qualifications and facilitating interviews;</li>
+<li>providing or obtaining employee references and for background screening;</li>
+<li>assessing and evaluating your suitability for employment or appointment, or continued employment or appointment in any current or prospective position;</li>
+<li>processing staff referrals;</li>
+<li>verifying your identity and the accuracy of your Personal Data;</li>
+<li>preventing, detecting, and investigating any crimes, acts or defaults, or suspected crimes, acts or defaults (including fraud, money-laundering and terrorist financing);</li>
+<li>in connection with any claims, actions or proceedings (including drafting and reviewing documents, transaction documentation, obtaining legal advice, and facilitating dispute resolution), and in protecting and enforcing our contractual and legal rights and obligations;</li>
+<li>training our employees to provide better candidate experience;</li>
+<li>facilitating our compliance with any applicable rules, laws, regulations, customs, codes of practice or guidelines which are applicable to us, or which we have been advised, recommended or informed that we are expected to comply with (including disclosures to regulatory bodies, conducting audit checks, surveillance and investigation, and due diligence), internal policies, assisting law enforcement or investigations by relevant authorities, and complying with listing and other requirements or directions of the Singapore Exchange Limited and/or any other relevant securities exchange;</li>
+<li>any other purpose relating to or reasonably necessary for any of the above.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Disclosure of Personal Data</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;We will only share your Personal Data with selected third parties. When we disclose your personal data to them, we require them to ensure that your Personal Data is kept secure. Your Personal Data may be disclosed for the purposes listed above (where applicable) to third parties, which might be located outside the jurisdiction in which you are located, such as:
+<ul class="list-bullet">
+<li class="pt1">OCBC Group and their related corporations, and their respective employees, agents, and representatives;</li>
+<li>our third-party service providers, including third parties conducting mandatory background screening on behalf of OCBC Group, and analytics, search engine providers or other third parties that help us to deliver, improve and optimise our products, services, websites and platforms;</li>
+<li>relevant government regulators, ministries, statutory boards or authorities, law enforcement agencies and public officers, including the Monetary Authority of Singapore, the Accounting and Corporate Regulatory Authority, the Singapore Police Force, and the Insolvency and Public Trustee Office; and</li>
+<li>any other party to whom you authorise us to disclose your information or Personal Data.</li>
+<li>When we transfer your Personal Data to other countries, we will take steps to ensure that your personal data continues to receive a standard of protection that is at least comparable to that provided under applicable data protection laws.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Data Subject Rights</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;If you wish to submit (a) an access request for access to a copy of the personal data which we hold about you or information about the ways in which we use or disclose your personal data, (b) a correction request to correct or update any of your personal data which we hold about you, or (c) withdraw your consent in writing, you may submit your request in writing to the email address provided below.</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Security of Personal Data</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;OCBC Group has put in place safeguards to protect your Personal Data. This includes an administrative, physical and technical measures such as encryption, authentication and access controls, and regular reviews of our systems and software, regular training for staff, internal and external audits, and an organisation-wide data protection management programme.</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Retention of Personal Data</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;Your Personal Data will be retained if the purpose for which it was collected remains reasonable, and for other legal or business purposes for which the retention of your Personal Data may be necessary.</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Use of Cookies and Artificial Intelligence</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;OCBC Group is committed to harnessing advanced technology to deliver efficient and innovative services to our candidates and staff and to enhance our processes. As part of this commitment, OCBC Group uses Artificial Intelligence (&ldquo;<strong>AI</strong>&rdquo;) across our business. By using AI, we aim to enhance our evaluation of candidates, and enhance our hiring practices and your recruitment experience with us. Our HR team reviews any results to ensure fairness and accuracy. Please refer to our AI Policy <a href="/personal-banking/policies#policies-artificial-intelligence-policy">here</a>.</li>
+<li>&nbsp;Our websites and platforms use cookies, web beacons, tracking links and similar technologies to improve your experience, understand your preferences, analyse site traffic and personalise content. Cookies are files stored on your web browser or device that help our website remember your preferences and other information. When you visit our website again, your browser reads the cookie and shares the information with the website or platform that set the cookie. Web beacons are small graphics that track your interactions with our websites. These technologies also help us run and improve our websites and platforms, remember your preferences, understand and show relevant advertising to you, and understand browsing history.</li>
+<li>&nbsp;Some of the cookies we use come from third-party providers who help us analyse visitor statistics, gauge effectiveness of our communications and provide better information. If you don't want to use cookies, you can delete them or change your browser settings. However, this may affect your user experience and limit access to certain parts of our websites. Even if you delete our cookies, our system will issue new ones when you visit our websites or click on a link in an email. For more information, please refer to:
+<ul class="list-bullet">
+<li class="pt2"><a rel="noopener" href="https://www.facebook.com/policies/cookies/" target="_blank">Facebook Pixel</a></li>
+<li><a rel="noopener" href="https://support.google.com/chrome/answer/95647?hl=en" target="_blank">Chrome</a></li>
+<li><a rel="noopener" href="https://www.apple.com/legal/privacy/en-ww/cookies/#:~:text=If%20you%20want%20to%20disable,out%20how%20to%20disable%20cookies" target="_blank">Safari</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Third-Party Sites</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;OCBC Group&rsquo;s websites may contain links to third-party websites. We are not responsible for the privacy practices of such websites. If you visit these third-party websites, you should review their privacy policies. Some of these third-party websites may be branded with the OCBC logo, even if we do not operate or maintain them.</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Contact Us</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;Please contact <a href="#country-contacts">Group Human Resources</a> if you have any questions or if you wish to make any request.</li>
+</ol>
+</li>
+<li class="pt2">&nbsp;<strong><u>Changes to Policy</u></strong>
+<ol class="list-decimal-v2">
+<li class="pt1">&nbsp;This Recruitment Privacy Policy applies in conjunction with any other notices, contractual clauses and consent clauses that apply in relation to the collection, use and disclosure of your Personal Data by OCBC Group.</li>
+<li>&nbsp;We may revise this Recruitment Privacy Policy from time to time without any prior notice. You may determine if any such revision has taken place by referring to the date on which this Recruitment Privacy Policy was last updated. Your continued use of our services constitutes your acknowledgement and acceptance of such changes.</li>
+</ol>
+</li>
+</ol>
+<p class="pt2">Effective Date: 5<sup>th</sup> May 2025 <br />Last Updated: 5<sup>th</sup> May 2025</p></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1742346196180">
+      <style>#iw_comp1742346196180{}</style><div class="policies-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="none" close-others="false">
+            <div class="clearfix">
+               <div class="float-left mb2">
+                  <h4 class="mb0"><strong>Juridisction Addendums</strong></h4>
+               </div><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="ja-china" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>China</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Effective Date: 5<sup>th</sup> May 2025 <br />Last Updated: 1<sup>st</sup> July 2024</p>
+<p class="text-center"><strong>个人信息出境暨单独同意授权书</strong></p>
+<p class="pt1 pb2">华侨银行有限公司（简称&ldquo;华侨银行中国&rdquo;）深知个人信息对候选人/员工（简称&ldquo;您&rdquo;）的重要性，会竭尽全力保护个人信息的安全可靠。华侨银行中国始终致力于维持您对我们的信任，恪守依法合规、最少必要、权责一致等原则处理您所提供的个人信息。 <br /><br />您特此同意华侨银行中国及其关联方根据适用的数据保护政策（包括RECRUITMENT PRIVACY POLICY以及JUDISDICTION ADDENDUMS）收集、使用和披露您的个人信息，以处理和管理您的申请、请求以及用于其他相关人力资源管理目的。 <br /><br />若您成为华侨银行中国的员工后，请您知悉，华侨银行中国基于《中华人民共和国个人信息保护法》在合法、正当、必要范围内按照依法制定的劳动规章制度实施人力资源管理所必需的个人信息处理无需取得您的同意，您的个人信息适用不时修订、更新并依法公示的劳动规章制度中所述的个人信息保护规则进行处理。 <br /><br />此外，为切实尊重和保障您的合法权益，请您理解，华侨银行中国仍需就（敏感）个人信息的委托和/或共同处理、向第三方提供、向境外跨境传输（共享）、自动化决策等场景下处理人力资源管理活动中所涉及的个人信息进一步以书面明示的方式告知您并取得您的单独同意。 <br /><br />为实现上述目的，华侨银行中国在您的指示或知情的前提下可能将您的个人信息向华侨银行集团共享，华侨银行集团处理（敏感）个人信息时的行为由其自行负责，但华侨银行中国会要求华侨银行集团遵循所适用的数据保护原则，约束其对（敏感）个人信息采取严格的安全保护措施，并严格遵守相关法律法规与监管要求。清单如示：</p>
+<table class="table table-responsive table-bordered" style="border-collapse: collapse; width: 100%;" border="0">
+<tbody>
+<tr>
+<td><strong>境外接受方名称</strong></td>
+<td><strong>联系方式</strong></td>
+<td><strong>个人信息处理目的</strong></td>
+<td><strong>个人信息处理方式</strong></td>
+<td><strong>个人信息种类</strong></td>
+<td><strong>权利行使方式及流程</strong></td>
+</tr>
+<tr>
+<td>新加坡华侨银行股份有限公司</td>
+<td>电话：(65) 6363 3333</td>
+<td>人力资源管理目的</td>
+<td>收集、存储、使用、加工、传输、提供、公开、删除</td>
+<td>人身份信息、个人联系信息、个人婚姻状态、个人教育程度、紧急情况下被授权的他人联系信息</td>
+<td>根据官网联系方式，联系新加坡华侨银行股份有限公司</td>
+</tr>
+</tbody>
+</table>
+<p class="pt2">如果您需要行使包括不限于查阅、补充、更正、删除个人信息，撤回授权同意等权利，或了解华侨银行中国有关员工个人信息和隐私保护相关实践，请联系华侨银行中国： <br /><br />联系部门：华侨银行有限公司人力资源部 <br /><br />住所：中国（上海）自由贸易试验区源深路1155号华侨银行大厦 <br /><br />电子邮件： <a href="mailto:ChinaRecruitment@ocbc.com">ChinaRecruitment@ocbc.com</a> <br /><br />联系电话：<a href="tel:+862158200200">+86 21 58200200</a>（转人力资源部招聘组） <br /><br />官方网站：<a rel="noopener" href="https://www.ocbc.com.cn/CN/inc/inc_footer/statement/" target="_blank">https://www.ocbc.com.cn/CN/inc/inc_footer/statement/</a></p>
+<p class="pt2"><strong>本人声明</strong>： <br /><br />若本授权书所记载个人信息的种类中含有非您本人的（敏感）个人信息的（例如，您近亲属的个人信息），本人确认在签署本授权书前已取得个人信息主体的单独同意，即为本授权书之目的授权同意华侨银行中国处理相关个人信息，否则应由您本人承担相应法律责任。 <br /><br />本授权书自本人签署之日起生效，至处理目的全部实现（包括相关手续被驳回或全部办结）之日止，但无论处理目的是否已实现，本人同意华侨银行中国保留本授权书及相关个人信息以供备查。 <br /><br />本授权书的效力、解释、履行及管辖均适用于中华人民共和国法律（为本授权书之目的，不包括香港特别行政区、澳门特别行政区和台湾地区法律）。 <br /><br />本人已充分知悉并理解上述内容，一经签署即以单独同意的方式作出授权。</p></div>
+               </li>
+               <li id="ja-hongkong" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Hong Kong</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Effective Date: 5<sup>th</sup> May 2025 <br />Last Updated: 5<sup>th</sup> May 2025</p>
+<p>For further information on how OCBC Bank (Hong Kong) Limited collects, uses, discloses and processes personal data, please refer to our Privacy Policy &amp; Personal Information Collection Statement at: <a rel="noopener" href="https://www.ocbc.com.hk/webpages/en-us/html/disclaimer/privacy.html" target="_blank">https://www.ocbc.com.hk/webpages/en-us/html/disclaimer/privacy.html</a>.</p></div>
+               </li>
+               <li id="ja-macau" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Macau</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>OCBC Bank (Macau) Limited (&ldquo;<strong>OCBC Macau</strong>&rdquo;) Notice to Job Applicants Relating to the Macau Personal Data Protection Act (the &ldquo;<strong>Act</strong>&rdquo;) (this &ldquo;<strong>Notice</strong>&rdquo;)</p>
+<p>Effective Date: 5<sup>th</sup> May 2025 <br />Last Updated: 5<sup>th</sup> May 2025</p>
+<p>OCBC Macau, with registered office as at to-date at 241 Avenida de Almeida Ribeiro Macau with the Macau Commercial and Moveable Properties Registry under number 376 (SO), shall be deemed as the controller of the data that OCBC Macau may collect about you. <br /><br />This Notice applies to the collection, use, storage, and disclosure of your personal information in the Macao Special Administrative Region. This Recruitment Privacy Policy also applies to job applicants. In the event of any discrepancy between this Policy and this Notice, the Notice shall prevail. <br /><br />Please carefully read the following information to ensure that you are aware and understand this Notice in addition to the Recruitment Privacy Policy. OCBC Macau will handle your Personal Data in accordance with Personal Data Protection Act, Recruitment Privacy Policy and this Notice.</p>
+<p class="pt2"><strong>Data Access Requests / Data Correction Requests</strong></p>
+<ol class="list-roman-lower">
+<li>The job applicants have the right:
+<ol class="list-alpha-lower">
+<li class="pt1">to check whether we hold data about you and to access such data;</li>
+<li>to require us to correct any data relating to you which is inaccurate; and</li>
+<li>to ascertain our policies and practices in relation to data and to be informed of the kind of data held by us.</li>
+</ol>
+</li>
+<li>In accordance with the provisions of the Personal Data Protection Act, OCBC Macau have the right to charge a reasonable fee for the processing of any data access request.</li>
+<li>The job applicants should send written requests for access to data or correction of data or for information regarding policies and practices and kinds of data held to:
+<p class="pt1">Head of Human Resources Department <br />OCBC Bank (Macau) Limited <br />15/F Centro Comercial do Grupo Brillhantismo, <br />181 &ndash; 187 Alameda Dr. Carlos D&rsquo;Assmpcao, <br />Macau</p>
+</li>
+</ol>
+<p class="pt2"><strong>Changes to this Notice</strong></p>
+<p>OCBC Macau may revise this Notice from time to time. You may determine if any such revision has taken place by referring to the date on which this Notice was last updated, e.g., you undertake to <a href="#ja-macau">visit</a> on a regular basis and acknowledge that any changes to this Notice will be published there. Your continued use of our services constitutes your acknowledgement and acceptance of such changes.</p></div>
+               </li>
+               <li id="ja-malaysia" class="accordion__item">
+                  <div class="accordion__item__title">
+                     <h5><strong>Malaysia</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><p>Effective Date: 5<sup>th</sup> May 2025<br />Last Updated: 5<sup>th</sup> May 2025</p>
+<p>By clicking into the website and providing your personal data, you represent and warrant that you are providing your latest personal data to OCBC Bank (Malaysia) Berhad, OCBC Al-Amin Bank Berhad and e2 Power Sdn. Bhd (collectively &ldquo;<strong>OCBC Malaysia</strong>&rdquo;). For further information on how OCBC Malaysia collects, uses, discloses and process personal data, please refer to the OCBC Malaysia Security and Privacy Policy at: <a rel="noopener" href="https://www.ocbc.com.my/group/security-privacy" target="_blank">https://www.ocbc.com.my/group/security-privacy</a>.</p></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1742346196181">
+      <style>#iw_comp1742346196181{}</style><div class="policies-component"></div><div class="module container bp-width-med3 animate">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="accordion com_toggle accordion--v2" init-mode="none" close-others="false">
+            <div class="clearfix">
+               <div class="float-left mb2">
+                  <h4 class="mb0"><strong>Country Contacts</strong></h4>
+               </div><a class="accordion__button link fz-14 float-right link--underline d-none d-md-block" href="#"><span class="accordion__button-show-all">Expand all</span><span class="accordion__button-hide-all">Collapse all</span></a></div>
+            <ul class="accordion__list">
+               <li id="country-contacts" class="accordion__item selected">
+                  <div class="accordion__item__title">
+                     <h5><strong>Country Contacts</strong></h5>
+                  </div>
+                  <div class="accordion__item__content"><table class="table table-bordered" style="border-collapse: collapse; width: 100%;" border="0">
+<tbody>
+<tr style="height: 54px;">
+<td style="width: 50%; height: 54px; text-align: center;"><strong>Country</strong></td>
+<td style="height: 54px; text-align: center;"><strong>Contact</strong></td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px;">Singapore</td>
+<td style="height: 36px;"><a href="mailto:tae_ocbcsingapore@ocbc.com">tae_ocbcsingapore@ocbc.com</a></td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px;">China</td>
+<td style="height: 36px;"><a href="mailto:tae_ocbccn@ocbc.com">tae_ocbccn@ocbc.com</a></td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px;">Macau</td>
+<td style="height: 36px;"><a href="mailto:tae_ocbcmo@ocbc.com">tae_ocbcmo@ocbc.com</a></td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px;">Malaysia</td>
+<td style="height: 36px;"><a href="mailto:tae_ocbcmy@ocbc.com">tae_ocbcmy@ocbc.com</a></td>
+</tr>
+<tr style="height: 36px;">
+<td style="height: 36px;">Hong Kong</td>
+<td style="height: 36px;"><a href="mailto:tae_ocbchk@ocbc.com">tae_ocbchk@ocbc.com</a></td>
+</tr>
+</tbody>
+</table></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1742320873721">
+    <style>#iw_comp1742320873721{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.leftnav-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.policies-component').parent().wrapAll('<div id="left-nav-content"></div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+   <div class="iw_component" id="iw_comp1742320873723">
+    <style>#iw_comp1601463609293{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-6 col-xl-6">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>OCBC Group</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/group-home.html">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbcnisp.com/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbcwhhk.com/">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label><hr>
+                        </div>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/personal-banking/" class="" target="_self">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking" class="" target="_self">Business Banking</a></span></p>
+                           <p><span><a href="https://www.iocbc.com" class="" target="_self">OCBC Securities</a></span></p>
+                        </div>
+                        <hr>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-6">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="w-100">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/media/release/index" class="" target="_self">Media</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_self">Investors</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/careers/index.page" class="" target="_self">Careers</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/research/index" class="" target="_self">Research</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/group/media/release/index" class="" target="_self">Media</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_self">Investors</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/careers/index.page" class="" target="_self">Careers</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/research/index" class="" target="_self">Research</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>For inquiries on</span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_blank">Investors Relations</a></span></p>
+                                 <p><span><a href="mailto:corpcomms@ocbc.com" class="" target="_blank">Media</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_blank">Personal Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/business-banking/help-and-support" class="" target="_blank">Corporate Banking</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">For inquiries on</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_blank">Investors Relations</a></span></p>
+                                          <p><span><a href="mailto:corpcomms@ocbc.com" class="" target="_blank">Media</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_blank">Personal Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/business-banking/help-and-support" class="" target="_blank">Corporate Banking</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-none d-sm-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/OCBCBank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/security" class="" target="_self">Security & Privacy</a></span><span><a href="https://www.ocbc.com/group/conditions-of-access" class="" target="_self">Disclaimer</a></span><span><a href="/group/careers/recruitmentpolicies" class="" target="_self">Recruitment Policies</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year"></span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><div style="display: none"></div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1742320873722">
+    <!--ls:begin[component-1742320873722]--><style>#iw_comp1742320873722{}</style><div></div><!--ls:end[component-1742320873722]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/careers/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/careers/js/analytic.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

@@ -1,0 +1,1534 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!-- start of adobe launch script -->
+<script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement(‘style’); o.id=‘alloy-prehiding’,o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf(‘adobe_authoring_enabled’) !== -1, ‘.personalization-container { opacity: 0 !important }’, 3000);
+</script>
+<script src="https://assets.adobedtm.com/f8f9776f70c5/0bff5181279c/launch-8b264ef01a0b.min.js" async></script>
+<!-- end of adobe launch script -->
+<!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+        _gaq.push(['_setAccount', 'UA-31687854-1']);
+        //  _gaq.push(['_setDomainName', 'ocbc.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+    <noscript>
+        <div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/896743391/?label=k6dUCP-ggGEQ3-_MqwM&amp;guid=ON&amp;script=0" /></div>
+    </noscript>
+    <script type="text/javascript">
+        _linkedin_partner_id = "355867";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";
+            b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })();
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=355867&fmt=gif" />
+    </noscript><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Careers at OCBC</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/group/page/careers/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/group/careers/index/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/group/careers/index.page">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_6SxLJUh4r9mAAjs","https://zn6sxljuh4r9maajs-ocbchr.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_6SxLJUh4r9mAAjs")).start()}catch(i){}})();
+</script><div id='ZN_6SxLJUh4r9mAAjs'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T46GKJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:group:careers:index",
+            language: "en",
+            pageCategory: "pre-login careers category page",
+            bannerName: "",
+            channel: "careers",
+            country: "sg",
+            lob: "ocbc group",
+            platform: "web"
+        },
+        user: {
+            CIF: "",
+            loginStatus: ""
+        },
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+</script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionku407llm">
+ <div class="row iw_row iw_stretch" id="rowku407lln">
+  <div class="iw_columns col-lg-12" id="colku407llo">
+   <div class="iw_component" id="iw_comp1632828971289">
+    <style>#iw_comp1632828971289{}</style><header class="" id="header">
+   <div class="header__main">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com" target=""><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="ocbc"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#about-us" class="header__navi">About Us</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="https://www.ocbc.com/group/media/release/index" class="header__navi" target="_self">Media</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#investors" class="header__navi">Investors</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#sustainability" class="header__navi">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#careers" class="header__navi">Careers</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="#research" class="header__navi">Research</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline"></div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div>
+                           <p>You are in</p>
+                           <div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="https://www.ocbc.com" data-target="_blank">OCBC Group</option>
+                                 <option value="https://www.ocbc.com/personal-banking" data-target="_blank">Personal Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking" data-target="_self">Premier Banking</option>
+                                 <option value="https://www.ocbc.com/business-banking" data-target="_self">Business Banking</option>
+                                 <option value="https://www.iocbc.com" data-target="_self">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments" data-target="_self">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="mailto:careers@ocbc.com" class="" target="_self">Contact Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action"></div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleoff: index-->
+   <div class="header__sub" data-nosnippet="">
+      <div class="container bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view">
+               <div id="about-us" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">About Us</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/group-business" class="link link link-arrow-right" target="_self">Group  <span class="text-nowrap">business<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/purpose-values-and-ambition" class="link link link-arrow-right" target="_self">Purpose and  <span class="text-nowrap">Values<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/corporate-strategy" class="link link link-arrow-right" target="_self">Corporate  <span class="text-nowrap">strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/awards" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Awards<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/about-us/our-leadership" class="link link link-arrow-right" target="_self">Our  <span class="text-nowrap">Leadership<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="https://www.ocbc.com/group/about-us/group-business" class="button button--secondary button--link &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>View all</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="investors" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Investors</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/investor-information" class="link link link-arrow-right" target="_self">Investor  <span class="text-nowrap">information<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/financials" class="link link link-arrow-right" target="_self">Financial  <span class="text-nowrap">results<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/regulatory-disclosure" class="link link link-arrow-right" target="_self">Regulatory  <span class="text-nowrap">disclosures<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/annual-report-and-agm" class="link link link-arrow-right" target="_self">Annual Report and  <span class="text-nowrap">AGM<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/investors/contact-us" class="link link link-arrow-right" target="_self">Contact  <span class="text-nowrap">us<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="sustainability" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Sustainability</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/sustainability-governance" class="link link link-arrow-right" target="_self">Sustainability  <span class="text-nowrap">governance<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/sustainability-framework" class="link link link-arrow-right" target="_self">Sustainability  <span class="text-nowrap">framework<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/materiality-assessment" class="link link link-arrow-right" target="_self">Materiality  <span class="text-nowrap">assessment<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/supporting-sdgs" class="link link link-arrow-right" target="_self">Supporting  <span class="text-nowrap">SDGs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/sustainability/stakeholder-engagement" class="link link link-arrow-right" target="_self">Stakeholder  <span class="text-nowrap">engagement<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+               <div id="careers" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Careers</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Overview<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/life-at-OCBC/index" class="link link link-arrow-right" target="_self">Life at  <span class="text-nowrap">OCBC<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/divisions/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Divisions<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/students/index" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Students<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text d-flex flex-column-reverse">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="/group/careers/blog" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Blogs<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row"></div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-featured">
+                                 <div class="row">
+                                    <div class="col-lg-2 line-wrapper">
+                                       <div class="line"></div>
+                                    </div>
+                                    <div class="col-lg-6"><img src="/iwov-resources/sg/ocbc/careers/img/home/kv-opportunity_starts_here-logo.png" alt=""></div>
+                                    <div class="col-lg-4">
+                                       <div class="tag">Let's build the bank we need for the future we want.</div>
+                                       <div class="header__sub-menu-link">
+                                          <p><p>At OCBC, your opportunity starts here.</p></p>
+                                       </div>
+                                       <div class="header__sub-menu-readmore"><a href="/group/careers/index" class="link link link-arrow-right" target="_self">Find out  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></a></div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div id="research" class="header__row row ">
+                  <div class="col-lg-12 d-block d-lg-none">
+                     <div class="header__sub-mobile-section">Research</div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-left">
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Treasury reports</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/index" class="link link link-arrow-right" target="_self">Recent  <span class="text-nowrap">updates<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">Investment reports</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/investment-reports" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Company<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/research-with-filter" class="link link link-arrow-right" target="_self">Macro  <span class="text-nowrap">Outlook<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag"></div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/investment-reports.page#sectorial" class="link link link-arrow-right" target="_self"> <span class="text-nowrap">Sectorial<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/research-with-filter.page?category=fxandrates" class="link link link-arrow-right" target="_self">FX and  <span class="text-nowrap">rates<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/investment-reports.page#equity" class="link link link-arrow-right" target="_self">Equity  <span class="text-nowrap">Strategy<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-lg-6">
+                              <div class="header__sub-menu-item ">
+                                 <div class="header__sub-menu-item-text ">
+                                    <div class="tag">&nbsp;</div>
+                                    <div class="name"><a href="https://www.ocbc.com/group/research/research-with-filter.page?category=special" class="link link link-arrow-right" target="_self">Special  <span class="text-nowrap">reports<i class="far fa-chevron-right"></i></span></a></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div class="header__sub-menu-readmore d-flex align-items-center"><a href="#" class=" &#xA;&#x9;&#x9;&#x9;&#x9;  " target="_self"><span>&nbsp;</span></a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="header__sub-right">
+                        <div class="row"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--googleon: index--></header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1627991945010">
+      <!--ls:begin[component-1627991945010]--><style>#iw_comp1627991945010{}</style><!--Breadcrumb Component--><div class="masthead-component"></div><div id="common-breadcrumb__block-id" class="module container bp-width-med3">
+   <div class="com__breadcrumbs fz-13">
+      <ul>
+         <li><a href="https://www.ocbc.com/group">OCBC Group</a></li>
+         <li>Careers</li>
+      </ul>
+   </div>
+</div><!--ls:end[component-1627991945010]-->
+     </div>
+     <div class="iw_component" id="iw_comp1627991945015">
+      <style>#iw_comp1627991945015{}</style><div class="masthead-component"></div><div class="bp-rel bp-banner mob-mb1 animate featured__hero featured__hero-feathero">
+   <div class="bp-banner bp-ab d-none d-lg-block" style="background-image: url('/iwov-resources/sg/ocbc/careers/img/home/OCBC Careers_Banner 1_3840x1000_230424.jpg'); background-position: 80% 50%;"></div>
+   <div class="bp-banner-main container bp-width-med3">
+      <div class="row flex-row-reverse align-items-center feature__image">
+         <div class="col-lg-6">
+            <div class="bp-banner banner-wide d-none d-md-block d-lg-none tab-pull-left tab-pull-right" style="background-image: url('/iwov-resources/sg/ocbc/careers/img/home/OCBC Careers_Banner 1_3840x1000_230424.jpg'); background-position: 100% 50%;"></div>
+            <div class="bp-img wide d-block d-sm-block d-md-none tab-pull-left tab-pull-right"><img src="/iwov-resources/sg/ocbc/careers/img/home/OCBC Careers_Banner 1_3840x1000_230424.jpg" alt=""></div>
+         </div>
+         <div class="col-lg-6 pt8 pb8 mob-pt3 mob-pb3">
+            <div class="feature__image--text feature__image--width-longer">
+               <div class="com__par co-black">
+                  <h1 class="feature__image--title co-black">Opportunity Starts Here</h1>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1670463307937">
+      <style>#iw_comp1670463307937{}</style><!--Common Category Description With Sub Navigation--><div class="masthead-component"></div><div class="module container bp-width-med4">
+   <div class="common__category-list box-shadow3 bp-curve3 no-padding box-pull bg-white mobile-carousel-nav">
+      <div class="auto com__lo-nav fz-16 text-center mw--1060">
+         <div class="mc-na-main">
+            <div class="owl-carousel owl-nav1 group-height">
+               <div class="item selected"><a href="/group/careers/index.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/careers/img/home/icon-overview.png"></div>
+                        <p class="mh1-f">Overview</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/careers/life-at-OCBC/index.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/careers/img/icon_lifeatocbc.png"></div>
+                        <p class="mh1-f">Life at OCBC</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/careers/divisions/index.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/careers/img/home/icon-divisions.png"></div>
+                        <p class="mh1-f">Divisions</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/careers/students/index.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/careers/img/home/icon-students.png"></div>
+                        <p class="mh1-f">Students</p>
+                     </div></a></div>
+               <div class="item"><a href="/group/careers/blog.page?" target="_self">
+                     <div>
+                        <div class="bp-img"><img width="50" src="/iwov-resources/sg/ocbc/careers/img/icon_blog.png"></div>
+                        <p class="mh1-f">Blogs</p>
+                     </div></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1670463307938">
+      <!--ls:begin[component-1670463307938]--><style>#iw_comp1670463307938{}</style><div class="intro-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3">
+<div class="row">
+<div class="col-custom-8 col-custom-enforced">
+<h4><b>Purposeful work. A friendly supportive team. Industry
+pioneering challenges. An open learning culture. And
+commitment to creating positive environmental and
+economic impact. Build the future of financial services
+with the longest established Singapore bank.</b></h4
+<p class="mb4"></p>
+</div>
+</div>
+</div></div>
+</div><!--ls:end[component-1670463307938]-->
+     </div>
+     <div class="iw_component" id="iw_comp1627991940823">
+      <!--ls:begin[component-1627991940823]--><style>#iw_comp1627991940823{}</style><div class="getstarted-component"></div><div class="" id="">
+   <div><div class="module container bp-width-med3 animate"><div class="com_has-header com_search-banner">
+                    <div class="com_se-ba-main">
+                        <div class="container bp-width-med3">
+                            <h2 class="text-center mt-0"><strong>Start building the future of banking now</strong></h2>
+                            <div class="text-center">
+                                <a class="button button--primary button--red2 button--link" target="_blank" href="https://ocbc.wd102.myworkdayjobs.com/External?Entity=6ab8fe885f6e100796eff37a95d20000" cta-id="Careers-Index-StartBuildingFuture-SeeAllOCBCJobs"><span>See all OCBC jobs</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bp-banner bp-ab d-none d-md-block" style="background-image: url('/iwov-resources/sg/ocbc/careers/img/home/banner_findarole.jpg');"></div>
+                    <div class="bp-banner bp-ab d-block d-md-none" style="background-image: url('/iwov-resources/sg/ocbc/careers/img/home/banner_findarole.jpg'); background-position: calc(100% + 80px) 50%;"></div>
+                </div></div></div>
+</div><!--ls:end[component-1627991940823]-->
+     </div>
+     <div class="iw_component" id="iw_comp1627991940844">
+      <style>#iw_comp1627991940844{}</style><div class="lifeatocbc-component"></div><div class="module container bp-width-med3">
+   <div class="parent__account">
+      <div class="subcategory subcategory--black">Life at OCBC</div>
+      <div class="feature__list feature__full-block d-flex ">
+         <div class="d-flex align-items-center flex-column flex-md-row w-100">
+            <div class="flex flex-column feature__list-row w-100">
+               <div class="feature__list--image"><img src="/iwov-resources/sg/ocbc/careers/img/home/20221110_OCBC_Innovation_1883_cropped2.jpg"></div>
+               <div class="feature__list--blocks d-flex">
+                  <div class="feature__list--header d-flex flex-column">
+                     <div class="feature__list--header__content flex-fill justify-content-center  d-flex flex-column">
+                        <div class="feature__teaser feature__teaser--no-background w-100">
+                           <div class="feature__teaser-content">
+                              <p class="feature__teaser-category text--bold"></p>
+                              <h2 class="mb2">Transform banking with a people-first culture </h2>
+                              <div class="feature__teaser-expanded-content">
+                                 <p><p>Work with great people who make each other better. Take your talent and ambition as far as you like. And mix and match the right benefits for your lifestyle. We might be on a journey of transformation. But banking will always be first and foremost about people and relationships.</p></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="feature__list--image--mobile"><img src="/iwov-resources/sg/ocbc/careers/img/home/20221110_OCBC_Innovation_1883_cropped2.jpg"></div>
+                  <div class="feature__list--content">
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/group/careers/life-at-OCBC/index#cultureandvalues" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Culture and Values</p><h4>Purpose driven, values led, people focused</h4>
+<p class="mb-0">It&rsquo;s not just what you do. It&rsquo;s the way you do it, too.<br>We exist to unlock opportunity for people. That starts with unlocking opportunity for you.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/group/careers/life-at-OCBC/index#learninganddevelopment" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Learning and Transformation</p><h4>Always on, future ready open learning</h4>
+<p class="mb-0">Learn what you like, when you like, at your own pace.<br>At OCBC you&rsquo;re in control of your career growth and development now and forever.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/group/careers/life-at-OCBC/index#benefits" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Benefits</p><h4>Your wellbeing served your way</h4>
+<p class="mb-0">Choose your benefits to fit your lifestyle and preferences perfectly. <br>Mix and match from an award winning suite of holistic flexible benefits.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1627991940861">
+      <style>#iw_comp1627991940861{}</style><div class="students-component"></div><div class="module container bp-width-med3">
+   <div class="parent__account">
+      <div class="subcategory subcategory--black">Students</div>
+      <div class="feature__list feature__full-block d-flex feature__list--right-thumbnail">
+         <div class="d-flex align-items-center flex-column flex-md-row w-100">
+            <div class="flex flex-column feature__list-row w-100">
+               <div class="feature__list--image"><img src="/iwov-resources/Images/student_2.jpg"></div>
+               <div class="feature__list--blocks d-flex">
+                  <div class="feature__list--header d-flex flex-column">
+                     <div class="feature__list--header__content flex-fill justify-content-center  d-flex flex-column">
+                        <div class="feature__teaser feature__teaser--no-background w-100">
+                           <div class="feature__teaser-content">
+                              <p class="feature__teaser-category text--bold"></p>
+                              <h2 class="mb2">Launch your career at the forefront of Banking</h2>
+                              <div class="feature__teaser-expanded-content">
+                                 <p><p>Students. Graduates. All disciplines. All welcome.<br />At OCBC your talent, tenacity, curiosity, and compassion matter more than what or where you studied. If you have the ambition, we have the industry shaping challenges and opportunities that will help you be the best version of you.</p></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="feature__list--image--mobile"><img src="/iwov-resources/Images/student_2.jpg"></div>
+                  <div class="feature__list--content">
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/group/careers/students/index#programmes" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Programmes</p><h4>An entry point for everyone</h4>
+<p class="mb-0">From our flagship Graduate Talent Programme to specialist Programmes, find the right entry point for your interest and experience.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/group/careers/students/index#internships" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Internships</p><h4>Real exposure, real world experience</h4>
+<p class="mb-0">STEM students, Penultimate Year Students, Undergraduates at local and overseas universities build real world experience and earn course credits with OCBC.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                     <div class="feature__teaser feature__teaser--no-background"><a class="feature__teaser-link" href="/group/careers/students/index#scholarships" target="_self">
+                           <div class="feature__teaser-content">
+                              <div class="feature__teaser-contents">
+                                 <p class="feature__teaser-category text--bold">Scholarships</p><h4>Pursue your passion, your way</h4>
+<p class="mb-0">Whether you&rsquo;re a local student or based overseas, if you have outstanding academic results, you may be eligible pursue your passion with our full support.</p></div><span class="feature__teaser-link-icon"><i class="fal fa-chevron-right"></i></span></div></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1627991946088">
+      <style>#iw_comp1627991946088{}</style><div class="ourdivisions-component"></div><div anim-control="parent" class="module container bp-width-med3 animate">
+   <div class="subcategory subcategory--black">OUR DIVISIONS</div>
+   <div class="lifegoals__two-col">
+      <div class="row flex-row-reverse">
+         <div class="col-md-6">
+            <div class="lifegoals__two-col--text">
+               <h3 class="bold">Do what you love with the bank that does it all.</h3>
+               <div class="lifegoals__two-col--description"><p>Consumer, Commercial and Corporate banking. Specialist Financial and Wealth Management Services. Treasury and Securities. Risk Management. FinTech. Cyber Security. Digital transformation and more.<br /><br />As Asia&rsquo;s 2nd largest bank in terms of assets under management, we offer opportunities across the full range of financial products and services.</p></div>
+               <p class="lifegoals__two-col--link"><a cta-id="Careers-Index-OurDivisions-SeeDivisions" href="/group/careers/divisions/index" class="link " target="_self">See  <span class="text-nowrap">Divisions<i class="far fa-chevron-right"></i></span></a></p>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="lifegoals__two-col--image"><img src="/iwov-resources/sg/ocbc/careers/img/home/20221109_OCBC_Learning_0980_cropped.jpg" alt=""></div>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1716854172938">
+      <!--ls:begin[component-1716854172938]--><style>#iw_comp1716854172938{}</style><div class="awards-components"></div><div class="" id="">
+   <div><!-- title (optional) -->
+<div class="module container bp-width-med3">
+    <div class="subcategory subcategory--black mb3">Awards and Achievements</div>
+</div>
+<!-- title end -->
+
+<div class="module container bp-width-med3">
+    <div class="list-three-col-two-row-without-description  list__col bp-par-height2 list__col-sticky-available theme theme--green group-height">
+        <div class="row list__col-content animate" anim-control="parent">
+            <div class="col-custom-10">
+                <div class="row com__row-group-height">
+                    <div class="list-three-col-two-row-without-description__item col-12 col-md-4 com__row-group-col">
+                        <div class="list__col-single co-is-set d-md-flex flex-flow flex-column flex-sm-row">
+                            <div class="list-three-col-two-row-without-description__text text-left">
+                                <div class="rgh1 mb1">
+                                    <h4><strong>Mentoring SG Corporate Excellence Award 2025</strong></h4>
+                                </div>
+                                <p>Mentoring SG</p>
+                            </div>
+                        </div>
+                    </div>
+
+<div class="list-three-col-two-row-without-description__item col-12 col-md-4 com__row-group-col">
+                        <div class="list__col-single co-is-set d-md-flex flex-flow flex-column flex-sm-row">
+                            <div class="list-three-col-two-row-without-description__text text-left">
+                                <div class="rgh1 mb1">
+                                    <h4><strong>#5 in 2024 LinkedIn Top Companies, Singapore</strong></h4>
+                                </div>
+                                <p>LinkedIn Top Companies List</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-three-col-two-row-without-description__item col-12 col-md-4 com__row-group-col">
+                        <div class="list__col-single co-is-set d-md-flex flex-flow flex-column flex-sm-row">
+                            <div class="list-three-col-two-row-without-description__text text-left">
+                                <div class="rgh1 mb1">
+                                    <h4><strong>Kincentric Best Employers Awards 2023</strong></h4>
+                                </div>
+                                <p>Kincentric</p>
+                            </div>
+                        </div>
+                    </div>
+
+ </div></div>
+</div><!--ls:end[component-1716854172938]-->
+     </div>
+     <div class="iw_component" id="iw_comp1670463307981">
+      <style>#iw_comp1670463307981{}</style><!--One Block--><div class="blog-component"></div><div class="module container bp-width-med3">
+   <div class="com_digital-payments-generic-text-wrapper">
+      <div class="com_digital-payments-generic-text d-p-g-type-1">
+         <div class="subcategory subcategory--black">Our People</div>
+         <div class="d-p-g-text">
+            <p><p>Want to know what it&rsquo;s really like to work at OCBC Bank?<br />From industry first innovations to leadership mentoring, career growth, and community volunteering hear first hand from some of our team members.</p>
+<div class="mt2"><a href="/group/careers/blog.page">See all <span>articles&nbsp;<i class="far fa-chevron-right">&nbsp;</i></span></a></div></p>
+         </div>
+      </div>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1627991945040">
+      <style>#iw_comp1627991945040{}</style><div class="blog-component"></div><div class="module container bp-width-med3 animate career-blog-carousel show-description-date">
+   <ul class="com__article-list com__list-4 com__row-group-height">
+      <li class="com__row-group-col" data-category="Learning" data-publishdate="2025/11/10">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/careers/img/blogs/harnessing-the-power-of-data-storytelling-xian-ling-journey-at-ocbc/careers_blog_xianling_680x510px.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Harnessing the Power of Data Storytelling: Xian Ling’s Journey at OCBC</h3>
+                  <p>Discover how Xian Ling effectively applied the data analytics skillsets he gained and the exciting possibilities that opened up for him.</p>
+               </div>
+               <div class="com__al-ca-col"><a class="border-0" target="_blank" href="/group/careers/blog/harnessing-the-power-of-data-storytelling-xian-ling-journey-at-ocbc"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></a></div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="Polytechnic Internship" data-publishdate="2025/10/07">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/careers/img/blogs/big-wins-bigger-lessons-what-i-gained-from-ignite/careers_blog_bella_masthead_680x510.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Big Wins, Bigger Lessons: What I Gained from Ignite</h3>
+                  <p>What happens when a cybersecurity student dares to step outside his comfort zone? For Regan Cho, a passionate Infocomm Security Management student at Singapore Polytechnic, that meant diving into the world of tech innovation through OCBC’s Ignite Programme. </p>
+               </div>
+               <div class="com__al-ca-col"><a class="border-0" target="_blank" href="/group/careers/blog/big-wins-bigger-lessons-what-i-gained-from-ignite"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></a></div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="Graduate Talent Programme" data-publishdate="2025/09/04">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/careers/img/blogs/discovering-wealth-management-calling-through-rotations/careers_blog_lynette_kek_680x510.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Discovering Wealth Management Calling Through Rotations</h3>
+                  <p>Lynette Kek, 25, spent her university years running a social media marketing agency. After coming across OCBC’s purpose - to enable people and communities to realise their aspirations - she felt inspired to pursue something more meaningful. That led her to join the Graduate Talent Programme in 2023.</p>
+               </div>
+               <div class="com__al-ca-col"><a class="border-0" target="_blank" href="/group/careers/blog/discovering-wealth-management-calling-through-rotations"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></a></div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="Wellbeing" data-publishdate="2025/08/14">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/careers/img/blogs/ocbc-celebrates-the-enabling-mark-silver-accreditation-award/careers_enabling_mark_680x510.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">OCBC celebrates the Enabling Mark Silver Accreditation Award</h3>
+                  <p></p>
+               </div>
+               <div class="com__al-ca-col"><a class="border-0" target="_self" href="/group/careers/blog/ocbc-celebrates-the-enabling-mark-silver-accreditation-award"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></a></div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="University Internship" data-publishdate="2025/05/21">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/careers/img/blogs/frankpreneurship-ideation-day-2025/OCBC Website_FRANKpreneurship_680x510.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Igniting Ideas: A Recap of FRANKpreneurship Ideation Day 2025</h3>
+                  <p>FRANKpreneurship Ideation Day is an experience that brings together penultimate-year university students for a day of creativity, collaboration, and networking. </p>
+               </div>
+               <div class="com__al-ca-col"><a class="border-0" target="_self" href="/group/careers/blog/frankpreneurship-ideation-day-2025"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></a></div>
+            </div>
+         </div>
+      </li>
+      <li class="com__row-group-col" data-category="Polytechnic Internship" data-publishdate="2025/03/05">
+         <div class="com__ar-li-set">
+            <div class="bp-img wide"><img src="/iwov-resources/sg/ocbc/careers/img/blogs/real-world-experience-deepened-love-for-tech/Careers_Blog_Palani_Sujitha_680x510.jpg"></div>
+            <div class="com__ar-li-capt">
+               <div class="com__al-ca-col rgh1">
+                  <h3 class="bold" style="min-height: 88px;margin-bottom: 20px;">Real world experience deepened love for tech </h3>
+                  <p>Sujitha Palani, a third-year Information Technology student at Temasek Polytechnic, transformed into a more professional and adaptable “Sujitha 2.0” through undergoing the Ignite programme.</p>
+               </div>
+               <div class="com__al-ca-col"><a class="border-0" target="_self" href="/group/careers/blog/real-world-experience-deepened-love-for-tech"><span class="link link link-arrow-right">Read  <span class="text-nowrap">more<i class="far fa-chevron-right"></i></span></span></a></div>
+            </div>
+         </div>
+      </li>
+   </ul>
+</div>
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.group-1-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.masthead-component').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  
+	
+	  $('.getstarted-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.lifeatocbc-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.students-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.ourdivisions-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.awards-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  
+	
+	  $('.blog-component').parent().wrapAll('<div class="section"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+   <div class="iw_component" id="iw_comp1601463609293">
+    <style>#iw_comp1601463609293{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-6 col-xl-6">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/gbc/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>OCBC Group</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="https://www.ocbc.com/group/group-home.html">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbcnisp.com/home.aspx">Indonesia</option>
+                                    <option value="https://www.ocbcwhhk.com/">Hong Kong</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label><hr>
+                        </div>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/personal-banking/" class="" target="_self">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/business-banking" class="" target="_self">Business Banking</a></span></p>
+                           <p><span><a href="https://www.iocbc.com" class="" target="_self">OCBC Securities</a></span></p>
+                        </div>
+                        <hr>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-6">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="w-100">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/media/release/index" class="" target="_self">Media</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_self">Investors</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/careers/index.page" class="" target="_self">Careers</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/research/index" class="" target="_self">Research</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/group/media/release/index" class="" target="_self">Media</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_self">Investors</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/careers/index.page" class="" target="_self">Careers</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/group/research/index" class="" target="_self">Research</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="common__footer-content--col footer-useful-links">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>For inquiries on</span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_blank">Investors Relations</a></span></p>
+                                 <p><span><a href="mailto:corpcomms@ocbc.com" class="" target="_blank">Media</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_blank">Personal Banking</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/business-banking/help-and-support" class="" target="_blank">Corporate Banking</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">For inquiries on</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><span><a href="https://www.ocbc.com/group/investors/contact-us.page" class="" target="_blank">Investors Relations</a></span></p>
+                                          <p><span><a href="mailto:corpcomms@ocbc.com" class="" target="_blank">Media</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/personal-banking/help-and-support" class="" target="_blank">Personal Banking</a></span></p>
+                                          <p><span><a href="https://www.ocbc.com/business-banking/help-and-support" class="" target="_blank">Corporate Banking</a></span></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-none d-sm-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/OCBCBank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/security" class="" target="_self">Security & Privacy</a></span><span><a href="https://www.ocbc.com/group/conditions-of-access" class="" target="_self">Disclaimer</a></span><span><a href="/group/careers/recruitmentpolicies" class="" target="_self">Recruitment Policies</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year"></span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><div style="display: none"></div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1571204553615">
+    <!--ls:begin[component-1571204553615]--><style>#iw_comp1571204553615{}</style><div></div><!--ls:end[component-1571204553615]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/careers/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/careers/js/analytic.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

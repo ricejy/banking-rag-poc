@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><base href=/ ><title>VDP</title><meta charset=utf-8><meta name=description content="Vulnerability Disclosure Policy"><meta name=format-detection content="telephone=no"><meta name=msapplication-tap-highlight content=no><meta name=viewport content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"><style>:root {
+        --loader-url: url("data:image/svg+xml,%3C!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL --%3E%3Csvg width='38' height='38' viewBox='0 0 38 38' xmlns='http://www.w3.org/2000/svg' stroke='rgba(255,255,255,.3)'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(1 1)' stroke-width='2'%3E%3Ccircle stroke-opacity='.5' cx='18' cy='18' r='18'/%3E%3Cpath d='M36 18c0-9.94-8.06-18-18-18'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 18 18' to='360 18 18' dur='1.5s' repeatCount='indefinite'/%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #loadingscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: none ;
+      }
+
+      #loadingscreen.fadeout {
+        transform: translateY(100vh);
+        transition: transform  ease-out .5s .2s ;
+        pointer-events: none;
+      }
+
+      #loadingscreen:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      #loadingscreen::before {
+        background-image: var(--loader-url);
+        background-size: 270px;
+        background-position: calc(50% - 10px) calc(30%);
+        background-repeat: no-repeat;
+        background-color: #333;
+      }</style><script defer src=/static/front/js/vendor.5c152fb4.js></script><script defer src=/static/front/js/app.3e842148.js></script><link href=/static/front/css/vendor.d24e72a2.css rel=stylesheet><link href=/static/front/css/app.0e325d94.css rel=stylesheet></head><body><div id=q-app></div><div id=loadingscreen ontransitionend="this.style.display='none'"></div></body></html>

@@ -1,0 +1,800 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><script>
+      dataLayer = [];
+    </script>
+    <!-- load Google Analytics -->
+    <script>
+      window['GoogleAnalyticsObject'] = 'ga';
+      window['ga'] = window['ga'] || function() {
+                (window['ga'].q = window['ga'].q || []).push(arguments)
+              };
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PZTQ6GN');</script>
+    <!-- End Google Tag Manager -->
+    <!-- (START) Adobe Analytics - Header -->
+    <script src="//assets.adobedtm.com/f8f9776f70c5/929d6c7fc7b8/launch-4fb16aaa7062.min.js" async></script>
+    <!-- (END) Adobe Analytics - Header -->
+<script>
+var tag = document.createElement('script');
+tag.src = '//www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script><!--ls:end[analytics-head]-->
+      <title>OCBC Premier Private Client | OCBC Bank</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/premier-private-client/page/index/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/premier-private-client/index/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="private banking,wealth management,private wealth management">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Maximise your wealth with our expertise. Access investments that are not available to retail investors, and get them tailored for you & enjoy opportunities to discuss investment trends regularly with OCBC Wealth Panel.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/jquery-3.3.1.min.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/premier/js/eform/appendLS.js" type="text/javascript" data-ocde-="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/fonts.css?v=2019022810' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/styles_ppc.css?v=2020041002' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/global-account.css?v=2019072403' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/jquery.tosrus.all.css?v=2019022810' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/styles-all-sites.css?v=2020093001' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pbinsights.css?v=2019120801' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/ppc-popup.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/dplus-howitworks.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/insights-overwrite.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/slick.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/slick-theme.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/privileges-pbenhance.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/solutions-pbenhance.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/ppc/styles_home.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/insights-custom.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/custom.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/premier/css/pb/premier-vi.css' media='all' />
+<link rel='canonical' href='https://www.ocbc.com/personal-banking/premier-private-client/index.page'/>
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZTQ6GN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_8G2XCgS5PomuGYC","https://zn8g2xcgs5pomugyc-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_8G2XCgS5PomuGYC")).start()}catch(i){}})();
+</script><div id='ZN_8G2XCgS5PomuGYC'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!-- <div class="iw_viewport-wrapper">   
+    <div class="premier-notification" style="display: block;"><div class="contain"><label class="box-left bold">Announcement</label><button data-fancybox-close="" class="fancybox-close-small" title="Close"></button><div class="clr"></div><div class="box-right"><p><a class="underline-link" href="https://www.ocbc.com/personal-banking/premier-private-client/index#footer" target="_blank">Our banking hours will be revised, from 1 April 2023. For more info, go to Premier Private Client > scroll down to Important notes</a>.</p> </div></div></div> --><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionkad664px">
+ <div class="row iw_row iw_stretch" id="rowkad664py">
+  <div class="iw_columns col-lg-12" id="colkad664pz">
+   <div class="iw_component" id="iw_comp1589847529324">
+    <!--ls:begin[component-1589847529324]--><style>#iw_comp1589847529324{}</style><div class="header-top">
+   <div class="contain"><a href="https://www.ocbc.com/group/group-home.html" target="_blank"><img class="logo align-left" src="/iwov-resources/sg/ocbc/premier/images/logo.png"></a><div class="navi-top align-right desktop-only">
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://internet.ocbc.com/internet-banking">Online Banking</a></div>
+         <div class="ocbc-navi-item"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/home.page">Personal Banking</a></div>
+         <div class="ocbc-navi-item">
+            <div class="languages"><a class="langUrl" href="/premier-private-client/index.page">EN</a><a class="langUrl" href="/premier-private-client/id/index.page">ID</a><a class="langUrl" href="/premier-private-client/zh/index.page">中文</a></div>
+         </div>
+      </div>
+      <div class="icon-menu mobile-only"><img src="/iwov-resources/sg/ocbc/premier/images/icon-menu.png"></div>
+      <div class="clear"></div>
+   </div>
+</div><input class="bodyClass" type="hidden" value="container page-home page-notification page-premier-private-client page-en"><!--ls:end[component-1589847529324]-->
+   </div>
+   <div class="iw_placeholder" id="iw_placeholder1589847529316">
+    <div class="iw_component" id="iw_comp1614733712848">
+     <style>#iw_comp1614733712848{}</style><div class="header-navi">
+   <div class="contain">
+      <div class="header-navi-left align-left"><a class="ppc-navi" href="./"><img width="250" src="/iwov-resources/sg/ocbc/premier/images/private/ppc-logo.png"></a></div>
+      <div class="header-navi-right align-right">
+         <div class="navi-navi">
+            <div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/index.page" class="navi-home">Home</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/privileges.page" class="navi-privileges">Privileges</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/solutions.page" class="navi-solutions">Solutions</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/services.page" class="navi-services">Services</a></div>
+               <div class="navi-item"><a href="/personal-banking/premier-private-client/insights.page" class="navi-insights">Insights</a></div>
+            </div>
+            <div class="mobile-only menu-divider"></div>
+            <div class="navi-ocbc-navi mobile-only"></div>
+         </div>
+      </div>
+      <div class="clear"></div>
+   </div>
+</div>
+    </div>
+    <div class="iw_component" id="iw_comp1614733712849">
+     <style>#iw_comp1614733712849{}</style><div>
+   <div style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/panel1-d.jpg');" class="section section-1 bg-img" desktop-image="/iwov-resources/sg/ocbc/premier/images/private/panel1-d.jpg" mobile-image="/iwov-resources/sg/ocbc/premier/images/private/panel1-m@2x.jpg">
+      <div class="mobile-only panel-mobile" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/panel1-d.jpg');">
+         <h1 class="main-title">Grow your wealth in Singapore and beyond</h1>
+      </div>
+      <div class="contain">
+         <div class="restrict-355 inview fadeIn">
+            <h1 class="main-title desktop-only">Grow your wealth in Singapore and beyond</h1>
+            <div class="boxes-container">
+               <div class="box-container">
+                  <div class="white-box box-medium arial"><h5 style="font-size: 18px;"><strong>Become an OCBC Premier Private Client</strong></h5><ul>
+   <li>You must have S$1.5 million in deposits and/or investments; and</li>
+   <li>Qualify as an  <a class="underline-link fancybox-modal" href="#popup-accreditedinvestor" onclick="s_objectID='footer';">Accredited Investor</a></li>
+</ul>
+<div style="display: none;">
+   <div id="popup-accreditedinvestor" class="popup-content">
+      <h5><strong>Accredited Investor Eligibility Requirements</strong></h5>
+      <p>(1) The value of your net personal assets exceed S$2 million (or its equivalent in a foreign currency), subject that the value of your primary residence being capped at S$1 million; or</p>
+      <p>(2) Your income in the preceding 12 months is no less than S$300,000 (or its equivalent in a foreign currency); or</p>
+      <p>(3) The value of your financial assets (net of any related liabilities) exceed S$1 million (or its equivalent in a foreign currency).</p>
+      <p>Accredited Investors (AIs) are assumed to be better informed, and better able to access resources to protect their own interests, and therefore require less regulatory protection. Investors who agree to be treated as AIs therefore forgo the benefit of certain regulatory safeguards. For example, issuers of securities are exempted from issuing a full prospectus registered with the Monetary Authority of Singapore in respect of offers that are made only to AIs, and intermediaries are exempted from a number of business conduct requirements when dealing with AIs. You should consult a professional adviser if you do not understand any consequence of being treated as an AI.</p>
+   </div>
+</div></div>
+               </div>
+               <div in="fadeIn3" out="fadeOutItem" class="btn-container item-together fadeIn3"><a target="_self" href="#get-us-to-contact-you"><button class="btn btn-gold">Get started with us</button></a></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+    </div>
+    <div class="iw_component" id="iw_comp1614733712830">
+     <style>#iw_comp1614733712830{}</style><div>
+   <div class="section section-3 bg-img" mobile-image="/iwov-resources/sg/ocbc/premier/images/private/mobilebanner_elevate-journey.jpg" desktop-image="/iwov-resources/sg/ocbc/premier/images/private/banner_elevate-journey.jpg" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/banner_elevate-journey.jpg');">
+      <div class="mobile-only panel-mobile" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/banner_elevate-journey.jpg');"></div>
+      <div class="contain">
+         <div delay="450" class="overlay-box inview fadeOut upcoming-webinar">
+            <h1 class="main-title desktop-only">Elevate your wealth journey</h1>
+            <h2 class="main-title mobile-only">Elevate your wealth journey</h2><p class="arial" style="line-height: 22px; font-size: 16px;">At the new OCBC Premier Private Client Centre, you can hold private meetings with your Client Advisor and get inspired by the breathtaking views of the city skyline at our outdoor terraces.</p>
+<p><a class="underline-link" href="/personal-banking/premier-private-client/privileges.page#discover-wealth-opportunities-in-luxury" rel="noopener">Learn more</a></p><a class="underline-link" href="" target=""></a></div>
+      </div>
+   </div>
+</div>
+    </div>
+    <div class="iw_component" id="iw_comp1614733712831">
+     <style>#iw_comp1614733712831{}</style><div>
+   <div class="section section-3 bg-img" mobile-image="/iwov-resources/sg/ocbc/premier/images/private/PPC-index-mobile.jpg" desktop-image="/iwov-resources/sg/ocbc/premier/images/private/PPC-index-desktop.jpg" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/PPC-index-desktop.jpg');">
+      <div class="mobile-only panel-mobile" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/PPC-index-desktop.jpg');"></div>
+      <div class="contain">
+         <div delay="450" class="overlay-box inview fadeOut upcoming-webinar">
+            <h1 class="main-title desktop-only">Get in-depth insights from the OCBC Wealth Panel</h1>
+            <h2 class="main-title mobile-only">Get in-depth insights from the OCBC Wealth Panel</h2><p class="arial" style="line-height: 22px; font-size: 16px;">At OCBC Premier Private Client, your queries deserve the right expertise. Get better perspectives on different markets from our OCBC Wealth Panel who are on hand to provide you with detailed advice that is considered and personalised.</p>
+<p><a class="underline-link" href="/personal-banking/premier-private-client/services.page" rel="noopener">Learn more</a></p><a class="underline-link" href="" target=""></a></div>
+      </div>
+   </div>
+</div>
+    </div>
+    <div class="iw_component" id="iw_comp1614733712832">
+     <style>#iw_comp1614733712832{}</style><div>
+   <div class="section section-3 bg-img" mobile-image="/iwov-resources/sg/ocbc/premier/images/private/mobilebanner_ai-solutions.jpg" desktop-image="/iwov-resources/sg/ocbc/premier/images/private/banner_ai-solutions.jpg" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/banner_ai-solutions.jpg');">
+      <div class="mobile-only panel-mobile" style="background-image: url('/iwov-resources/sg/ocbc/premier/images/private/banner_ai-solutions.jpg');"></div>
+      <div class="contain">
+         <div delay="450" class="overlay-box inview fadeOut upcoming-webinar">
+            <h1 class="main-title desktop-only">Exclusive solutions for Accredited Investors</h1>
+            <h2 class="main-title mobile-only">Exclusive solutions for Accredited Investors</h2><p class="arial" style="line-height: 22px; font-size: 16px;">Access investments that are not available to retail investors and get them exclusively tailored to your needs as an Accredited Investor. Bespoke wealth solutions include alternative funds, structured investments, and legacy planning.</p>
+<p><a class="underline-link" href="/personal-banking/premier-private-client/solutions.page" rel="noopener">Learn more</a></p><a class="underline-link" href="" target=""></a></div>
+      </div>
+   </div>
+</div>
+    </div>
+    <div class="iw_component" id="iw_comp1614733712834">
+     <!--ls:begin[component-1614733712834]--><style>#iw_comp1614733712834{}</style><script src="/iwov-resources/sg/ocbc/premier/eform/js/jquery.min.js"></script><script src="/iwov-resources/sg/ocbc/premier/eform/js/bootstrap.min.js"></script><script src="/iwov-resources/sg/ocbc/premier/eform/js/moment.min.js"></script><script src="/iwov-resources/sg/ocbc/premier/eform/js/bootstrap-datetimepicker.min.js"></script><link href="/iwov-resources/sg/ocbc/premier/eform/css/bootstrap.min.css" rel="stylesheet"><link href="/iwov-resources/sg/ocbc/premier/eform/css/bootstrap-datetimepicker.min.css" rel="stylesheet"><link href="/iwov-resources/sg/ocbc/premier/eform/css/fontawesome.css" rel="stylesheet"><link href="/iwov-resources/sg/ocbc/premier/eform/css/fonts.css" rel="stylesheet"><link href="/iwov-resources/sg/ocbc/premier/eform/css/select2.css" rel="stylesheet"><link href="/iwov-resources/sg/ocbc/eform/css/form.css" rel="stylesheet"><link href="/iwov-resources/sg/ocbc/premier/eform/css/style-2.css" rel="stylesheet"><script src="/iwov-resources/sg/ocbc/premier/eform/js/webfont.js"></script><div id="generated_form_display"></div><script>
+ (function (w) {
+	w.URLSearchParams = w.URLSearchParams || function (searchString) {
+	  var self = this;
+	  self.searchString = searchString;
+	  self.get = function (name) {
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+		if (results == null) {
+		  return null;
+		}
+		else {
+		  return decodeURI(results[1]) || 0;
+		}
+	  };
+	}
+
+  })(window);
+
+//hardcoded data
+var urlParams = new URLSearchParams(window.location.search);
+var refid = urlParams.get("refid");
+var formid = urlParams.get("formid");
+window.sessionStorage.setItem("reference_id", null);
+window.sessionStorage.setItem("form_id", null);
+if(refid !== null && formid !== null && refid !== undefined && formid !== undefined) { 
+	window.sessionStorage.setItem("reference_id", refid);
+	window.sessionStorage.setItem("form_id", formid);
+}  
+window.sessionStorage.setItem("form_builder_data", JSON.stringify([{"field_id":"g2iKOH","type":"section-break-field","isActive":false,"options":{"type_id":"section-field__3ee7c4f7-2fcf-4444-9768-be8a52229ce4","type_label":"Section Field","type_name":"section__34d8b98d-1f8f-407f-a075-89dc158eeaca","type_title":"Get in touch","type_column_alignment":"top-down","type_displayed":["1","2"],"type_column_section":"2","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":null}},{"field_id":"DqOHMz","type":"static-data-field","isActive":true,"field_value":null,"options":{"type_id":"static-data-field__5d473b65-ae5c-4a8a-b48e-d849aa56014b","type_name":"static-data__36a7d8b2-1816-491a-96f5-b545b64b3352","type_label":"<p>Start your Premier Private Client relationship with us today. <br>Deposit or invest a minimum of S$1.5 million in fresh funds and qualify as an accredited investor.</p>","type_required":false,"section":"g2iKOH","position":"single","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"4rMHWv","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__04d75a88-d34b-4c42-a048-a3ae99ae6da8","type_name":"radio__75928cc1-ed52-4f20-a58d-44a1008333c2","type_label":"Salutation","type_items":["Mr","Mrs","Ms","Dr"],"type_selected":"Option 1","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio-inline","type_required":true,"type_required_message":"Please select your salutation","type_help_text":"","section":"g2iKOH","position":"left","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"jqxsYi","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__5dc522a6-cee3-4c46-8976-b1583821c157","type_name":"name__2fe635e1-389d-4772-b65d-0d9762665652","type_placeholder":"","type_label":"Name","type_required":true,"type_required_message":"Please enter your name","type_help_text":"","type_is_number":false,"type_number_range":"","section":"g2iKOH","position":"right","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"MaR7I8","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__cf94555f-06b9-4068-bc62-5a720cb2bcf6","type_name":"name__c4f7b5ac-17aa-4366-8203-450a69c77f07","type_placeholder":"","type_label":"Last 4 characters of NRIC or Passport No. (eg. 567A)","type_required":true,"type_required_message":"Please select alst 4 characters of NRIC or Passport No.","type_help_text":"","type_is_number":false,"type_number_range":"","section":"g2iKOH","position":"left","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"BLiyxM","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__c16a3ed5-e19a-495d-a8c8-0a2568054071","type_name":"name__8786237b-7f5e-46ec-86ae-815425c23137","type_placeholder":"","type_label":"Contact Number","type_required":true,"type_required_message":"Please insert your contact number","type_help_text":"","type_is_number":true,"type_number_range":"","section":"g2iKOH","position":"right","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"QJUalw","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__d82f1d68-1c0a-4927-a4dc-f4ae1f0fc15f","type_name":"name__008d848f-5541-4425-ae3a-1f5f0472029a","type_placeholder":"","type_label":"Remarks","type_required":false,"type_required_message":null,"type_help_text":"","type_is_number":false,"type_number_range":"","section":"g2iKOH","position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"P9jSoh","type":"terms-conditions-field","isActive":false,"field_value":"Yes","options":{"type_id":"terms-conditions-field__fe0c55c6-0d61-473c-a8cb-93a238abebeb","type_name":"terms-conditions__f6db1ed9-86db-4965-a56e-241a9f986afb","type_label":"<p>By submitting this form, I hereby consent for Oversea-Chinese Banking Corporation Limited and its related corporations (collectively, the \"OCBC Group\") to collect, use and disclose my personal data submitted in this form for the purposes of contacting me about the establishment of an OCBC Premier Private Client relationship (including sharing information about any related products or services offered by OCBC Group, as requested) and addressing my enquiry specified herein, in accordance with <a href=\"https://www.ocbc.com/personal-banking/policies\" target=\"_blank\">OCBC's Data Protection Policy</a>.</p>","type_required":true,"type_required_message":"Please check the terms and conditions","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":"g2iKOH","position":"single"}}]));
+window.sessionStorage.setItem("form_builder_settings", JSON.stringify({"form_subtitle":"&nbsp;","form_heading":"Premier Private Client Contact Form","form_id":"ppc-index","form_expiry_date":"01/12/2026","form_expiry_message":"expired","form_max_submissions":null,"form_max_submission_text":null,"save_exit_enable":false,"form_submit_type":"Redirect to a page","form_submit_redirecturl":"https://www.ocbc.com/personal-banking/premier-private-client/thank-you","form_submit_message":"THank you for your interest. We will contact you by the next working day.","form_saveexit_message":"Thank you for saving the form.","file-name":"/templatedata/premier/eform/data/Form-ppc-index.xml","branchName":"premier","suite_id":"suitid","save-event":"saveEvent","saveExit-event":"saveExitEvent"}));
+</script><script src="/iwov-resources/sg/ocbc/eform/js/form_generator.js?20201001"></script><script src="/iwov-resources/sg/ocbc/premier/eform/js/script-2.js"></script><!--ls:end[component-1614733712834]-->
+    </div>
+    <div class="iw_component" id="iw_comp1614733712835">
+     <style>#iw_comp1614733712835{}</style><div class="section section-5">
+   <div class="contain">
+      <h1 class="main-title desktop-only"></h1>
+      <h2 class="main-title mobile-only"></h2>
+      <div class="items">
+         <div class="item-33 apply-list">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/call-icon.png"></div>
+            <div class="ctas-text">
+               <div class="item-text-small regular item-text"><div class="ctas-text">
+<div class="item-text regular"><!-- <a href="tel:18007736437">1800 773 6437<br> (1800 PREMIER) </a> --> <a href="tel:18004248888">1800 424 8888</a></div>
+<div class="item-text-small regular">or <a href="tel:6564248888">(65) 6424 8888 (overseas)</a></div>
+</div></div>
+            </div>
+         </div>
+         <div class="item-33 apply-list">
+            <div class="ctas"><img src="/iwov-resources/sg/ocbc/premier/images/centre-icon.png"></div><a target="_blank" href="/sites/premier-banking/locations.page"><button class="btn btn-dark">Find a Premier Banking Centre</button></a></div>
+      </div>
+   </div>
+</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionkad664q9">
+ <div class="row iw_row iw_stretch" id="rowkad664qa">
+  <div class="iw_columns col-lg-12" id="colkad664qb">
+   <div class="iw_component" id="iw_comp1589847529328">
+    <style>#iw_comp1589847529328{}</style><div>
+   <div style="display: none;"></div>
+   <div class="footer" id="footer">
+      <div class="contain">
+         <div class="footer-term-conditions">
+            <h5></h5><h3>Notices</h3>
+<p><strong>Revision to interest rates for OCBC Premier Dividend+ Savings Account on 1 November 2025</strong></p>
+<p>We will revise interest rates for the OCBC Premier Dividend+ Savings Account on 1 November 2025. For more information, visit <a href="http://ocbc.com/notices" target="_blank" rel="noopener">ocbc.com/notices</a>.</p>
+<p><strong>Revision of Fees and Charges guides from 1 October 2025</strong></p>
+<p>The following fees will be revised or introduced -</p>
+<p><u>Safe Deposit Box (SDB)</u></p>
+<ul class="list-bullet list-nospace">
+<li>Key Deposit (For new SDB opened from 1 October 2025) : S$330</li>
+<li>Charge for loss of 1 key: S$220 (before GST)</li>
+<li>Charge for loss of 2 keys: S$330 (before GST)</li>
+<li>Force opening charges: S$130 (before GST)</li>
+<li>Appointment cancellation fee: S$130 (before GST)</li>
+</ul>
+<p class="mt-3">Our pricing guides will be revised to reflect these changes -</p>
+<ul class="list-bullet list-nospace">
+<li><a class="link" href="/iwov-resources/sg/ocbc/premier/pdf/pb-fees-and-charges.pdf" target="_self">Premier Banking Fees and Charges guide</a></li>
+<li><a class="link" href="/iwov-resources/sg/ocbc/premier/pdf/ppc-fees-and-charges.pdf" target="_self">Premier Private Client Fees and Charges guide</a></li>
+</ul>
+<p><strong>Revision to interest rates for OCBC Premier Dividend+ Savings Account on 1 August 2025.</strong></p>
+<p>In line with prevailing market conditions, we will revise interest rates for the OCBC Premier Dividend+ Savings Account on 1 August 2025. For more information, visit <a class="underline-link" href="https://www.ocbc.com/personal-banking/notices" target="_blank" rel="noopener">ocbc.com/notices</a>.</p>
+<!-- <p><strong>Change in the way we display certain fees for securities</strong></p>
+<p>On 28 April 2025, we will change the way we display our sale of securities and brokerage fees. They will be shown on our website instead of in our OCBC Premier Private Client Fees and Charges guide.</p>
+<p>For details, read our revised <a class="underline-link" href="/iwov-resources/sg/ocbc/premier/pdf/premier-private-client-banking-fees-and-charges-wef-28-apr-25.pdf" target="_blank" rel="noopener">OCBC Premier Private Client Fees and Charges guide</a> which will take effect on 28 April 2025.</p>
+<p><strong>Revision to maximum commission fee for certain Outward Remittances</strong></p>
+<p>On 1 March 2025, the maximum commission fee that may be charged for over-the-counter Telegraphic Transfers from SGD accounts to non-OCBC accounts will be revised to S$60 (from S$50).</p>
+<p>This revision will be reflected under the &lsquo;Remittances&rsquo; section of the OCBC Premier Private Client Fees and Charges Guide.</p>
+<p>You may view the revised guide (which takes effect from 1 March 2025) <a class="underline-link" href="/iwov-resources/sg/ocbc/premier/pdf/premier-private-client-banking-fees-and-charges.pdf" target="_blank" rel="noopener">here</a>.</p>
+<p><strong>Revision to certain Terms and Conditions</strong></p>
+<p>On 1 February 2025, we will revise the following Terms and Conditions:</p>
+<ul class="mb0 mt1">
+<li>OCBC Premier Banking and OCBC Premier Private Client Terms and Conditions</li>
+<li>Structured Deposits Terms &amp; Conditions</li>
+<li>Terms and Conditions Governing Precious Metals Account</li>
+</ul>
+<p>Here is how you can view the details:</p>
+<ul class="mb0 mt1">
+<li><a class="underline-link" href="/iwov-resources/sg/ocbc/personal/pdf/tncs-ocbc-pb-and-ppc-wef1feb25.pdf" target="_blank" rel="noopener">OCBC Premier Banking and OCBC Premier Private Client Terms and Conditions</a></li>
+<li><a class="underline-link" href="https://www.ocbc.com/personal-banking/investments/structured-deposits" target="_blank" rel="noopener">Structured Deposits Terms &amp; Conditions</a></li>
+<li><a class="underline-link" href="https://www.ocbc.com/personal-banking/investments/precious-metals-account.page" target="_blank" rel="noopener">Terms and Conditions Governing Precious Metals Account&nbsp;</a></li>
+</ul> --><!-- <p><strong>Revision to certain Terms and Conditions</strong></p>
+                        <p>On 1 February 2025, we will revise the following Terms and Conditions:</p>
+                        <ul>
+                            <li>OCBC Premier Banking and OCBC Premier Private Client Terms and Conditions</li>
+                            <li>Structured Deposits Terms &amp; Conditions</li>
+                            <li>Terms and Conditions Governing Precious Metals Account</li>
+                        </ul>
+                        <p>Here is how you can view the details:</p>
+                        <ul>
+                            <li><p><a href="#" class="underline-link" target="_blank">OCBC Premier Banking and OCBC Premier Private Client Terms and Conditions</a></p></li>
+                            <li><p><a href="https://www.ocbc.com/personal-banking/investments/structured-deposits" class="underline-link" target="_blank">Structured Deposits Terms &amp; Conditions</a></p></li>
+                            <li><p><a href="https://www.ocbc.com/personal-banking/investments/precious-metals-account.page" class="underline-link" target="_blank">Terms and Conditions Governing Precious Metals Account</a></p></li>
+                        </ul> -->
+<p>&nbsp;</p>
+<!-- <p><strong>Inclusion of fee for FX Capped Return investments in our OCBC Premier Private Client Fees and Charges guide</strong></p>
+                        <p>On 1 December 2024, we will update the Investment Business section of our OCBC Premier Private Client Fees and Charges guide to include a fee for FX Capped Return investments.</p>
+                        <p>For details, read our <a href="/iwov-resources/sg/ocbc/premier/pdf/premier-private-client-banking-fees-and-charges-wef1dec24.pdf" class="underline-link" target=" _blank">revised OCBC Premier Private Client Fees and Charges guide</a> which will take effect on 1 December 2024.</p>
+                        <p><strong>Revision in Premier Banking and Premier Private Client Terms &amp; Conditions from 1 December</strong></p>
+                        <p>The <a href="/iwov-resources/sg/ocbc/premier/pdf/tncs-ocbc-pb-and-ppc.pdf" class="underline-link" target="_blank" rel="noopener">OCBC Premier Banking and OCBC Premier Private Client Terms and Conditions</a> will be revised with effect from 1 December 2024 to reflect updates to Section A: General Terms and Conditions Applicable to All Services.</p> -->
+<p class="pb1">&nbsp;</p>
+<h3 class="mt10">Terms and Conditions</h3>
+<p><a class="underline-link" href="https://www.ocbc.com/iwov-resources/sg/ocbc/premier/pdf/tncs-governing-ocbc-ppc-client-referral-programme.pdf" target="_blank" rel="noopener">Terms and Conditions of OCBC Premier Private Client Referral Programme</a></p>
+<p><a class="underline-link" href="/iwov-resources/sg/ocbc/premier/pdf/tncs-ocbc-pb-and-ppc.pdf" target="_blank" rel="noopener">OCBC Premier Banking and OCBC Premier Private Client Terms and Conditions</a></p>
+<p><a class="underline-link" href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/ppc-welcome-rewards-brochure.pdf" target="_blank" rel="noopener">Terms and Conditions Governing OCBC Premier Private Client Welcome Reward Programme</a></p>
+<p><a class="underline-link" href="https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/investments/terms_and_conditions_governing_ocbc_investment_products_and_services%28premier%29%20%281%29.pdf" target="_blank" rel="noopener">Terms and Conditions Governing OCBC Investment Products and Services</a></p>
+<p><a class="underline-link" href="/personal-banking/premier-banking/assets/pdf/terms%20and%20conditions%20governing%20ocbc%20premier%20dividend%20savings%20account.pdf" target="_blank" rel="noopener">Terms and Conditions Governing OCBC Premier Dividend+ Savings Account Interest Rates</a></p>
+<p><a class="underline-link" href="/iwov-resources/sg/ocbc/premier/pdf/premier-private-client-banking-fees-and-charges.pdf" target="_blank" rel="noopener">OCBC Premier Private Client Fees and Charges Guide</a></p>
+<p class="pb1">&nbsp;</p>
+<h3 class="mt1">Important Notes</h3>
+<p><a class="underline-link" href="/iwov-resources/sg/ocbc/personal/pdf/notices/deposit-insurance-scheme.pdf" target="_blank" rel="noopener">Deposit Insurance Scheme</a></p>
+<p><a class="underline-link" href="https://www.ocbc.com/iwov-resources/sg/ocbc/premier/pdf/cross_border_marketing_disclaimers.pdf" target="_blank" rel="noopener">Cross-border Marketing Disclaimers</a></p>
+<p><a class="underline-link" href="/iwov-resources/sg/ocbc/premier/pdf/ppc-product-summary-and-tncs.pdf" target="_blank" rel="noopener">Product Summary and Terms and Conditions</a></p></div>
+      </div>
+      <div class="footer-bottom" style="background-image: url('/iwov-resources/images/footer_bg.jpg')">
+         <div class="contain">
+            <div class="footer-bottom-item footer-links"><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/conditions-of-access.page">Conditions of Access</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/policies.page">Policies</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/personal-banking/notices.page">Notices</a><a class="underline-link" target="_blank" href="https://www.ocbc.com/group/vdp.page">Report vulnerability</a></div>
+            <div class="footer-bottom-item footer-icons"><a class="footer-icon" href="https://www.facebook.com/OCBC.Singapore/?brand_redir=294095104090945"><img src="/iwov-resources/sg/ocbc/premier/images/icon-facebook.png"></a><a class="footer-icon" href="https://twitter.com/ocbcbank"><img src="/iwov-resources/sg/ocbc/premier/images/icon-twitter.png"></a><a class="footer-icon" href="https://www.youtube.com/user/channelocbc"><img src="/iwov-resources/sg/ocbc/premier/images/icon-youtube.png"></a><a class="footer-icon" href="https://www.linkedin.com/company-beta/165277/"><img src="/iwov-resources/sg/ocbc/premier/images/linkedin.jpg"></a><a class="footer-icon fancybox-modal" href="#popup-wechat-qrcode"><img alt="WeChat" border="0" height="15" src="/iwov-resources/sg/ocbc/premier/images/icon-wechat.png" width="15"></a></div>
+            <div class="footer-bottom-item copyright"><span>©️ Copyright 2004 – <span id="copyright-year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W</span></div>
+         </div>
+      </div>
+   </div>
+</div><div style="display: none;">
+   <div id="popup-wechat-qrcode" class="popup-content popup-small">
+      <div><img src="/iwov-resources/sg/ocbc/premier/images/qr_code_wechat.jpg" width="250" alt="250" style="width:100%; max-width:360px; height:auto;"></div>
+      <h4 class="main-title">WeChat ID: ocbcpremierbanking</h4>
+   </div>
+</div><!-- Google Tag Manager (noscript) --><noscript><span contentEditable="false" style="display: none; visibility: hidden;" data-mce-object="iframe" class="mce-preview-object mce-object-iframe" data-mce-p-sandbox="" data-mce-p-src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ"><iframe width="0" height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ" style="display: none; visibility: hidden;" frameborder="0" sandbox=""></iframe><span class="mce-shim"></span></span></noscript><!-- End Google Tag Manager (noscript) --><!-- (START) Data Layer - Adobe Analytics --><script type="text/javascript">// <![CDATA]
+var digitalData = {
+    page:
+    {
+    pageName:"SG:OCBC:Premier:PremierPrivateClient:Homepage",
+    channel: "Premier",
+    }
+    }
+// [></script><!-- (END) Data Layer - Adobe Analytics --><!-- (START) Adobe Analytics - Footer --><script type="text/javascript">// <!]CDATA[
+                var digitalData = {
+                    page:
+                    {
+                    pageName:"SG:OCBC:Premier:PremierPrivateClient:Homepage",
+                    channel: "Premier",
+                    }
+                    }
+                // ]>
+              </script><!-- (END) Data Layer - Adobe Analytics --><!-- (START) Adobe Analytics - Footer --><!-- (END) Adobe Analytics - Footer --><!-- (START) Notification Banner --><!-- (START) Notification Banner --><script type="text/javascript">window.document.body.classList.add('page-notification');</script><script src="/iwov-resources/sg/ocbc/premier/js/notification.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/premier/js/notification.js"></script><script src="/iwov-resources/sg/ocbc/premier/js/popup-reward.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/premier/js/popup-reward.js"></script><script src="/iwov-resources/sg/ocbc/premier/js/be-rewarded-section.js" type="text/javascript" data-mce-src="/iwov-resources/sg/ocbc/premier/js/be-rewarded-section.js"></script>
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/premier/js/jquery-3.4.1.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/select2.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery-1.7.1.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/hammer.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.tosrus.all.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.inview.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/custom.js?v=2019101101'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/secondary.js?v=20190506'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/insight_date.js?v=20200312'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/trackingtag.js?v=2019061701'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/ppc-popupfix.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/forcepopup.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/anchorlink.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/jquery.fancybox.min.js?v=2019022810'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/slick.min.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/privileges-pbenhance.js'></script>
+<script src='/iwov-resources/sg/ocbc/premier/js/main_latest.js?v=2019022810'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE HTML><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <!--ls:headTopBegin[script]--><script>
+//prehiding snippet for Adobe Target with asynchronous Launch deployment
+!function(e,a,n,t){var i=e.head;if(i){ if (a) return; var o=e.createElement("style"); o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}} (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+</script>
+
+<!-- (START) Adobe Analytics - Launch --> 
+<script src="https://assets.adobedtm.com/f8f9776f70c5/e2c54ed4eb02/launch-ENe47d6e8203a74b2599494a0807cd7706.min.js" async></script> 
+<!-- (END) Adobe Analytics - Launch -->
+
+<!-- Google Tag Manager -->
+<script> 
+(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T46GKJ'); 
+</script> 
+<!-- End Google Tag Manager -->
+<!--ls:headTopEnd[script]--><!--ls:begin[analytics-head]--><!--ls:end[analytics-head]-->
+      <title>Make an Enquiry, Feedback or Complaint | OCBC Business Banking SG</title>
+      <!--grid-layout--><!--ls:begin[stylesheet]-->
+      <style type="text/css">
+          
+          .iw_container
+          {
+            max-width:1080px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .iw_stretch
+          {
+            min-width: 100% !important;
+          }
+        </style><script type="text/javascript">
+	// script to add keyup event and make escape functional to exit from preview
+	// only if it is a preview environment.
+	var frame = window.frameElement;
+	if (frame && frame.src.indexOf("/iw-preview") != -1) {
+		document.addEventListener("DOMContentLoaded", function () {
+			document.body.addEventListener("keyup", function (event) {
+				var key = event.keyCode;
+				if (key === 27) {
+					frame.parentElement.ownerDocument.dispatchEvent(new KeyboardEvent('keyup', {keyCode: key}));
+				}
+			});
+		});
+	}
+	</script><script type="text/javascript">
+    // A simplified version of AjaxRequest.class.js
+    // So component events doesn't require to add AjaxRequest.class.js as resources
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+    
+    AjaxCall.METHOD_POST = 'POST';
+    AjaxCall.METHOD_GET  = 'GET';
+    AjaxCall.ACTIVEX_MSXML2_XMLHTTP = 'Msxml2.XMLHTTP';
+    AjaxCall.ACTIVEX_LEGACY_XMLHTTP = 'Microsoft.XMLHTTP';
+    AjaxCall.CONTENT_TYPE_URL_ENCODED = 'application/x-www-form-urlencoded';
+    AjaxCall.CONTENT_TYPE = 'Content-Type';
+    AjaxCall.DELIM_QS = '?';
+    AjaxCall.DELIM_PARAM = '&';
+    AjaxCall.DELIM_KEY_VALUE = '=';
+    AjaxCall.READY_STATE_COMPLETE      = 4;
+    AjaxCall.STATUS_OK        = 200;
+    AjaxCall.STATUS_NOT_FOUND = 404;
+    AjaxCall.ERROR_CREATE_REQUEST = 'Unable to create ActiveX XMLHttpRequest.'
+    AjaxCall.ERROR_REQUEST_STATE = 'Error in XMLHttpRequest [$code/$text]';
+
+    /**
+     * Constructor creates an encapsulated XMLHttpRequest object. Both parameters
+     * to the constructor are optional, and may be configured later.
+     *
+     * @param url             the url to which the request is sent
+     * @param handlerFunction the function to invoke and pass the response
+     *                        xml dom and the response text
+     * @param errorHandlerFunction the function to invoke and pass as argument errorHandlerFunction(request) the entire HTTPXMLRequest instance to
+     *                        when the AJAX request failed, for most cases
+     * @param method          HTTP method: POST or GET
+     * @param isDebugMode     indicator for debug mode
+     */
+    function AjaxCall(url, handlerFunction, errorHandlerFunction, method, isDebugMode)
+    {
+      this.mUrl          = url;
+      this.mHandler      = handlerFunction;
+      this.mErrorHandler = errorHandlerFunction;
+      this.mMethod       = method;
+      this.mDebug        = isDebugMode;
+      
+      this.mMethod = (this.mMethod == null) ? this.mMethod = AjaxCall.METHOD_POST : this.mMethod;
+      this.mDebug = (this.mDebug == null) ? this.mDebug = false : this.mDebug;
+
+      this.mAsynchronous = true;
+
+      this.mContentType = null;
+      this.mRequestBody = null;
+
+      this.mParams = new Array();
+      this.mComponentId = null;
+    }
+
+   /**
+    * Sets a request parameter. The key and value are automatically url-encoded.
+    *
+    * @param key   the request parameter key
+    * @param value the request parameter value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setParameter = function(key, value)
+    {
+      this.mParams[this.mParams.length] = encodeURIComponent(key)
+          + AjaxCall.DELIM_KEY_VALUE + encodeURIComponent(value);
+      return this;
+    }
+
+   /**
+    * Sets a request body
+    *
+    * @param value the request body value
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setBody = function(value)
+    {
+      this.mRequestBody = value;
+      return this;
+    }
+
+   /**
+    * Sets a component id
+    *
+    * @param componentId   the component id
+    * @return a self-reference for method chaining
+    */
+    AjaxCall.prototype.setComponentId = function(componentId)
+    {
+      this.mComponentId = componentId;
+      return this;
+    }
+
+    /**
+     * Submits the request to the url using the data configured in the object.
+     */
+    AjaxCall.prototype.submit = function()
+    {
+      var request = null;
+
+      // INSTANTIATE THE XMLHttpRequest
+      if (window.XMLHttpRequest)
+      {
+        request = new XMLHttpRequest();
+      }
+
+      // SET THE READY STATE CHANGE HANDLER
+
+      // cannot reference object member from the anonymous function
+      var handlerFunction  = this.mHandler;
+      var errorHandlerFunction = this.mErrorHandler;
+      var showResponseText = this.mDebug;
+      var componentId  = this.mComponentId;
+      
+      
+      /**
+       * Triggered when there is a handler for the response
+       */
+      var readyStateChangeFunction = function() {
+        if (AjaxCall.READY_STATE_COMPLETE == request.readyState)
+        {
+          if (AjaxCall.STATUS_OK == request.status)
+          {
+            if (showResponseText)
+            {
+              window.open().document.write('<xmp>' + request.responseText + '</xmp>');
+            }
+
+            if (handlerFunction) // only invoke if defined
+            {
+              handlerFunction(request.responseXML, request.responseText, request, componentId);
+            }
+          }
+          else
+          {
+            if(errorHandlerFunction)
+            {
+              errorHandlerFunction(request);
+            }
+            else
+            {
+              alert(AjaxCall.ERROR_REQUEST_STATE
+                .replace(/\$code/, request.status)
+                .replace(/\$text/, request.statusText));
+            }
+          }
+        }
+      }
+
+      // PREPARE THE REQUEST PROPERTIES AND ANY DEFAULTS
+      
+      var url    = this.mUrl;
+      var body   = this.mRequestBody;
+      var type   = this.mContentType;
+      var params = this.mParams.join(AjaxCall.DELIM_PARAM);
+
+      // if no parameters are set, then there is no need to dispatch them
+      if (params.length > 0)
+      {
+        var paramDelim = (0 > url.indexOf("?"))   // if a url already has a query
+                       ? AjaxCall.DELIM_QS     // string delimiter (?), use an
+                       : AjaxCall.DELIM_PARAM  // ampersand (&) instead
+
+        if (body != null)      // User-set request body, all params go in
+        {                      // the query string for both POST and GET.
+          url += paramDelim + params;
+        }
+        else                   // no request body
+        {
+          if (this.mMethod == AjaxCall.METHOD_GET)
+          {
+            url += paramDelim + params;
+          }
+          else
+          {
+            body = params;
+
+            if (type == null)  // assign default if no type is set
+            {
+              type = AjaxCall.CONTENT_TYPE_URL_ENCODED;
+            }
+          }
+        }
+      }
+
+      // SUBMIT THE REQUEST
+      if(this.mAsynchronous)
+      {
+        if(this.mHandler != null || ( this.mHandler == null && this.mDebug == true) ) // no need to fire a handler if it was null in the first place. FF issue.
+        {
+          request.onreadystatechange = readyStateChangeFunction;
+        }
+      }
+
+      request.open(this.mMethod, url, this.mAsynchronous);
+
+      if (type != null)
+      {
+        request.setRequestHeader(AjaxCall.CONTENT_TYPE, type);
+      }
+
+      request.send(body);
+
+      return request;
+    }
+    </script><script type="text/javascript">
+    // Scripts to handle the flow to update components based on the action
+    // TODO: Keep it in the same files as embedded-layout.page.xml in POC, we can consider to move it to another file or not later
+    // TODO: Need to maintain a dependency to the extenal files it references
+
+    const IW_PREVIEW_HOST_NAME = "iw-preview";
+    const INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER = "update_page_parameter";
+    const INSTRUCTION_TYPE_REFRESH_COMPONENT = "refresh_component";
+    const INSTRUCTION_TYPE_NAVIGATE_TO_PAGE = "navigate_to_page";
+    
+    var invokeActionURL = "/site/business-banking/page/business-banking-enquiry-form/component/$componentId/datum/$datumId/eventAction/$eventActionId/invokeAction.action";
+    var componentRenderURL = "/business-banking/business-banking-enquiry-form/$componentId.async.RENDER";
+    var variantId = "";
+    var siteApplicationType = "java";
+    var updatePageParameterMap = [];
+    var eventTriggerID = "";
+    var eventDataJson;
+    // An array of events that are already executed
+    var eventsExecuted = [];
+
+    //boolean to check if valid json string
+    function parseJSON(str) {
+      try 
+      {
+        var parsedJSON = JSON.parse(str.trim());
+        if (parsedJSON) {
+		      if (typeof parsedJSON === "object") {
+			      return parsedJSON;
+		      }
+        }
+      }
+      catch (e) 
+      {
+        return null;
+      }
+
+      return null;
+    }
+
+    // currently it only support in runtime server
+    // and it always return all componentId from the page
+    // this is called from component, and needs to pass in the 
+    // componentId(it can its id or other component id) and 
+    // datumId (the datum id of a ComponentEventAction datum)
+    function invokeAction(componentId, datumId, eventActionId, eventData) {
+
+      eventDataJson = eventData;
+      // ex: eventTriggerID: 1702053980345:INTERACTION:onClick
+      eventTriggerID = componentId+":"+datumId+":"+eventActionId;
+      //If the Site is .NET type, do not trigger invokeAction call
+      if(siteApplicationType != null && siteApplicationType == "dotnet")
+      {
+        return;
+      }
+      var url = invokeActionURL.replace(/\$componentId/, componentId).replace(/\$datumId/, datumId).replace(/\$eventActionId/, eventActionId);
+      var request = new AjaxCall(url, handleComponentList, handleAjaxError, AjaxCall.METHOD_POST, false);
+      var requestBody = {};
+
+      if(variantId)
+      {
+        request.setParameter("variantId", variantId);
+      }
+
+      if(!eventsExecuted.includes(eventTriggerID))
+      {
+        //flag to tell if we need to evaluate event trigger variants for ComponentEventTrigger datums
+        //We should not be evaluating event trigger variants when an event is invoked for first time
+        requestBody.evaluateEventTrigger = false;
+        eventsExecuted.push(eventTriggerID);
+      }
+
+      var pageParametersMapJson = {};
+      for (var key in updatePageParameterMap ) {
+        pageParametersMapJson[key] = updatePageParameterMap[key];
+      }
+
+      if (eventData) 
+      {
+        requestBody = parseJSON(eventData);
+        if (requestBody !== null) {
+          requestBody.PageParameters = pageParametersMapJson;
+          request.setBody(JSON.stringify(requestBody));
+          request.submit();
+        }
+        else {
+          console.error("Invalid JSON for EventData");
+        }
+      }
+      else {
+        requestBody.EventData = {};
+        requestBody.PageParameters = pageParametersMapJson;
+        request.setBody(JSON.stringify(requestBody));
+        request.submit();
+      }
+
+    }
+    
+    // Handler for the response returned from invokeAction.action Ajax call
+    // retrieve the information from the response and trigger another Ajax call to refresh the component
+    function handleComponentList(xmlDoc, text) {
+      var invokeActionResponse = JSON.parse(text);      
+      
+      if(invokeActionResponse.actionResults && Array.isArray(invokeActionResponse.actionResults)) {
+        var componentIdList = [];
+        
+        for (var actionResult of invokeActionResponse.actionResults ) {
+          if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_UPDATE_PAGE_PARAMETER) {
+            updatePageParameterMap = [];
+            if(actionResult.objects) {
+              var keys = Object.keys(actionResult.objects);
+              if(keys && Array.isArray(keys)) {
+                for (var key of keys ) {
+                  updatePageParameterMap[key] = actionResult.objects[key];
+                }
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_REFRESH_COMPONENT) {
+            if(actionResult.objects && actionResult.objects.objectIds && Array.isArray(actionResult.objects.objectIds)) {
+              for (var componentId of actionResult.objects.objectIds ) {
+                componentIdList.push(componentId);
+              }
+            }
+          } else if(actionResult.instructionType && actionResult.instructionType === INSTRUCTION_TYPE_NAVIGATE_TO_PAGE) {
+            if(actionResult.objects.objectIds) {
+              // Navigate to the first page from the action results
+              window.location.href = actionResult.objects.objectIds[0];
+            }
+          }
+        }
+        
+        if(componentIdList.length > 0) {
+          for (var componentId of componentIdList ) {
+            var url = componentRenderURL.replace(/\$componentId/, componentId);
+            var request = new AjaxCall(url, handleComponentRefresh, handleAjaxError, AjaxCall.METHOD_GET, false);
+            request.setComponentId(componentId);
+            request.setParameter("eventTriggerID",eventTriggerID);
+            if(eventDataJson)
+            {
+            request.setParameter("eventData",eventDataJson);
+            }
+            if(url.includes(IW_PREVIEW_HOST_NAME)){
+              request.setParameter("variantId", variantId);
+            }
+            for (var key in updatePageParameterMap ) {
+              request.setParameter(key, updatePageParameterMap[key]);
+            }
+        
+            request.submit();
+          }
+        }
+      }
+    }
+    
+    // Handler for the response returned from component .async.render Ajax call
+    // retrieve the response and updated the div containing the componendid
+    function handleComponentRefresh(xmlDoc, text, request, componentId) {
+      var componentElem = document.getElementById("iw_comp" + componentId);      
+      componentElem.innerHTML = text;
+      // explicitly recreate script elements to ensure they are executed
+      const sources = componentElem.querySelectorAll("script");
+      sources.forEach(source => {
+        const target = document.createElement('script');
+        // add contents of element if it exists
+        if(source.innerHTML) target.innerHTML = source.innerHTML;
+        // copy all attributes
+        [...source.attributes].forEach(attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) });
+        source.after(target);
+        // remove original element when done
+        source.remove();
+      });
+    }
+    
+    // Error handler for Ajax call
+    function handleAjaxError(request) {
+      var url = new URL(request.responseURL);
+      
+      // temporary show mssage as the service is not available in iw-preview yet
+      if(url.pathname.includes(IW_PREVIEW_HOST_NAME)){
+        alert("The service is not available in /iw-preview");
+      } else {
+        alert(AjaxCall.ERROR_REQUEST_STATE
+          .replace(/\$code/, request.status)
+          .replace(/\$text/, request.statusText));
+      }      
+    }
+    
+    </script><link rel="stylesheet" type="text/css" href="/iwov-resources/grid/bootstrap/4.6.0/bootstrap-grid.min.css">
+      <!--ls:end[stylesheet]--><!--ls:begin[canonical]--><!--ls:end[canonical]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[meta-keywords]-->
+      <meta name="keywords" content="">
+      <!--ls:end[meta-keywords]--><!--ls:begin[meta-description]-->
+      <meta name="description" content="Got a query? Reach out to us via our online enquiry form for all business banking enquiries, feedback or complaints. Receive unlimited support 24/7 from us.">
+      <!--ls:end[meta-description]--><!--ls:begin[custom-meta-data]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <!--ls:end[custom-meta-data]--><!--ls:begin[meta-robots]-->
+      <meta name="robots" content="">
+      <meta name="robots" content="">
+      <!--ls:end[meta-robots]--><!--ls:begin[meta-vpath]-->
+      <meta name="vpath" content="">
+      <!--ls:end[meta-vpath]--><!--ls:begin[meta-page-locale-name]-->
+      <meta name="page-locale-name" content="">
+      <!--ls:end[meta-page-locale-name]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/jquery.min.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[script]--><script src="/iwov-resources/sg/ocbc/personal/js/page-script.js" type="text/javascript" data-ocde-desktop_or_tablet_or_phone="show"></script>
+      <!--ls:end[script]--><!--ls:begin[canonical]--><link rel="canonical" href="https://www.ocbc.com/business-banking/business-banking-enquiry-form">
+      <!--ls:end[canonical]--><!--ls:begin[head-injection]--><link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/business/css/style.css' media='all' />
+<link rel='stylesheet' href='/iwov-resources/sg/ocbc/personal/css/print.css' media='all' />
+<!--ls:end[head-injection]--><!--ls:begin[head-injection]--><!--ls:end[og/twitter]--><!--ls:begin[tracker-injection]--><!--ls:end[tracker-injection]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:begin[script]--><!--ls:end[script]--><!--ls:headBottomBegin[script]--><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T46GKJ "
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js'; _gaq.push(['_require', 'inpage_linkid', pluginUrl]); _gaq.push(['_setAccount', 'UA-31687854-1']);
+// _gaq.push(['_setDomainName', 'ocbc.com']);
+_gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+                        'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+<script type="text/javascript">
+					var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+				</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){ this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null}; this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "}; this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0}; this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}}; this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};}; try{(new g(100,"r","QSI_S_ZN_e5OSyQ3RhTEmaGi","https://zne5osyq3rhtemagi-ocbc.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_e5OSyQ3RhTEmaGi")).start()}catch(i){}})();
+</script><div id="ZN_e5OSyQ3RhTEmaGi"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<!--ls:headBottomEnd[script]--></head>
+   <body id="" class=""><!--ls:begin[body]--><!--ls:begin[body_injection_top]--><script>
+    var ocbcData = {
+        page: {
+            pageName: "sg:ocbc:business:enquiryform",
+            language: "en",
+            pageCategory: "pre-login business banking enquiry form page",
+            bannerName: "",
+            channel: "business banking enquiry form",
+            country: "sg",
+            lob: "ocbc business banking"
+        },
+        user: {
+            CIF: ""
+        },
+form: {
+                formName: "enquiry form:how can we help you with your corporate account?",
+                formId: "", //dynamic random id to be created and passed on the thank you page
+                formType: "enquiry form",
+                formStepName: "form loaded"
+            }, 
+        event: {
+            pageView: "true",
+            bannerImpression: "false"
+        }
+    };
+    </script><!--ls:end[body_injection_top]--><!--ls:begin[analytics-body-top]--><!--ls:end[analytics-body-top]-->
+      <div class="iw_viewport-wrapper"><div class="container-fluid iw_section" id="sectionjztq8wo2">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo3">
+  <div class="iw_columns col-lg-12" id="coljztq8wo4">
+   <div class="iw_component" id="iw_comp1576827592555">
+    <style>#iw_comp1570073690234{}</style><header class="" id="header">
+   <div class="header__main header__main--bb">
+      <div class="container bp-width-med3">
+         <div class="header__row row align-items-center justify-content-between">
+            <div class="header__logo col-12 col-sm-12 col-lg-2">
+               <div class="logo fl bp-img wide"><a href="https://www.ocbc.com/group/gateway" target=""><img src="/iwov-resources/sg/ocbc/business/img/logo_ocbc.png" alt="OCBC"></a></div>
+               <div class="clr"></div>
+            </div>
+            <div class="header__mobile col-12 col-sm-12 col-lg-10">
+               <div class="header__main--primary">
+                  <div class="d-flex justify-content-start flex-column flex-lg-row flex-center justify-content-lg-between">
+                     <hr class="first">
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/smes" class="" target="_self">SMEs</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/enterprises" class="" target="_self">Enterprises</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/corporates" class="" target="_self">Corporates</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/financial-institutions" class="" target="_self">Financial Institutions</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <div class="header__main--navi flex-fill">
+                        <ul>
+                           <li><a href="/business-banking/sustainability" class="" target="_self">Sustainability</a></li>
+                           <li class="divider"></li>
+                        </ul>
+                     </div>
+                     <hr class="last">
+                     <div class="header__main--action d-none d-lg-inline">
+                        <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="header__main--secondary">
+                  <div class="d-flex justify-content-lg-between">
+                     <div class="header__main--web-location">
+                        <div class="dropdown__bb">
+                           <p>You are in </p><br class="web__display"><div class="dropdown__theme dropdown__theme--3 dropdown__theme--bold"><select name="header-page-location" class="selectize" id="header__page_location">
+                                 <option value="/Business">Business Banking</option>
+                                 <option value="https://www.ocbc.com/premier-banking">Premier Banking</option>
+                                 <option value="/personal">Personal Banking</option>
+                                 <option value="/group/about-us/group-business">OCBC Group</option>
+                                 <option value="https://www.iocbc.com/index.page">OCBC Securities</option>
+                                 <option value="https://www.ocbc.com/fx-and-investments">FX and Investments</option></select></div>
+                        </div>
+                        <hr>
+                     </div>
+                     <div class="header__main--web-etc">
+                        <ul>
+                           <li><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></li>
+                           <li><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></li>
+                           <li><a href="/business-banking/contact-us" class="" target="_self">Contact us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <hr>
+               </div>
+            </div>
+            <div class="header__mobile--bar  d-lg-none d-block">
+               <div class="header__main--action">
+                  <div class="page__opt1"><a href="https://velocity.ocbc.com/login.html" class="link" target="_blank">Login</a></div>
+               </div>
+               <div class="menu-bar"><span></span><span></span></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="header__sub header-bb">
+      <div class="container container-bb bp-width-med3">
+         <div class="header__hidden">
+            <div class="header__sub--view"></div>
+         </div>
+      </div>
+   </div>
+</header>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wo6">
+ <div class="row iw_row iw_stretch" id="rowjztq8wo7">
+  <div class="iw_columns col-lg-12" id="coljztq8wo8"><!-- Wrap Multi place holder component with <section id='main-wrapper'> tag -->
+   <section id="main-wrapper">
+    <div class="iw_placeholder" id="iw_placeholder1566904104293">
+     <div class="iw_component" id="iw_comp1627991928176">
+      <style>#iw_comp1627991928176{}</style><div class="group-1-component"></div><div class="module container bp-width-med3 animate">
+   <div class="common__category-description box-med bp-curve3 bg-ash2 text-center ">
+      <h1 class="no-margin thesans"><span>How can we help you with your Corporate Account?</span></h1>
+   </div>
+</div>
+     </div>
+     <div class="iw_component" id="iw_comp1627991928148">
+      <!--ls:begin[component-1627991928148]--><style>#iw_comp1627991928148{}</style><div class=""><script src="/iwov-resources/sg/ocbc/eform/js/jquery.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/moment.min.js"></script><script src="/iwov-resources/sg/ocbc/eform/js/bootstrap-datetimepicker.min.js"></script><link href="/iwov-resources/sg/ocbc/eform/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+   <link href="/iwov-resources/sg/ocbc/eform/css/form.css?2020061201" rel="stylesheet"><script src="/iwov-resources/sg/ocbc/eform/js/webfont.js"></script><div id="generated_form_display"></div><script>
+	 (function (w) {
+		w.URLSearchParams = w.URLSearchParams || function (searchString) {
+		  var self = this;
+		  self.searchString = searchString;
+		  self.get = function (name) {
+			var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+			if (results == null) {
+			  return null;
+			}
+			else {
+			  return decodeURI(results[1]) || 0;
+			}
+		  };
+		}
+
+	  })(window);
+	
+    //hardcoded data
+	var urlParams = new URLSearchParams(window.location.search);
+	var maxTotalfile = "Total files size has exceeded 10MB limit";
+	var refid = urlParams.get("refid");
+	var formid = urlParams.get("formid");
+	window.sessionStorage.setItem("reference_id", null);
+	window.sessionStorage.setItem("form_id", null);
+	if(refid !== null && formid !== null && refid !== undefined && formid !== undefined) { 
+		window.sessionStorage.setItem("reference_id", refid);
+		window.sessionStorage.setItem("form_id", formid);
+	}  
+    window.sessionStorage.setItem("form_builder_data", JSON.stringify([{"field_id":"AZwSGD","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__b05079bf-8da3-4d27-b081-ac9cd9123db7","type_name":"static-data__c2c3d4b9-624c-4793-ba61-ff3452e17da1","type_label":"<p><strong>Business Banking (for corporate accounts) </strong></p><p>Please note that account-related enquiries should only be sent through secured email via OCBC Velocity.</p><p>If you do not have OCBC Velocity, please fill out the form below and we will respond to you as soon as we can during working hours – Monday to Friday, 8am to 8pm (excluding public holidays).<br><p>For time-sensitive requests such as fraud reporting and recalling of funds, please call our Business Banking hotline.\n<p>Effective 3 July 2023, we will be charging an SGD Cheque deposit fee of SGD 0.75 per cheque. This will be reflected as “TRANS CHARGE” in your monthly statements. For more information, please refer <a href=\"https://www.ocbc.com/business-banking/notices\">here</a>.\n\n<br><p><strong>Personal Banking</strong></p><p>If you have questions about your personal accounts, please contact our Personal Banking hotline at <a href=\"tel:18003633333\">1800 363 3333</a> or provide your feedback <a href=\"https://www.ocbc.com/personal-banking/customer-feedback-form\">here</a>.</p>","type_required":false,"section":null,"position":"single","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"n5k6cQ","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__58481ce8-d0b9-48d2-93ab-d2ffffc459e5","type_name":"name__7735feb7-a364-4e4b-acf8-1bae668625d7","type_placeholder":"","type_label":"Name","type_required":true,"type_required_message":"Fill in your full name","type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"0zKCij","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__b08d14db-ad10-4384-b28c-4076a09c02d7","type_name":"name__98918da8-7d23-4bd5-bc38-5ef219545c51","type_placeholder":"","type_label":"Company Name","type_required":true,"type_required_message":"Fill in your company's name","type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"1BuYyy","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__9f7063f9-9f19-4134-b4c8-7457fdc80159","type_name":"name__538cbb84-8886-490b-9301-e781246c799f","type_placeholder":"","type_label":"Company UEN","type_required":true,"type_required_message":"Fill in your company's UEN","type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"yKXnCI","type":"dropdown-field","isActive":false,"field_value":null,"options":{"type_id":"dropdown-field__81cd398c-6561-4aa9-b738-067587b24fc3","type_name":"dropdown__a9a84091-9b84-4e0a-8270-b033fecc8671","type_placeholder":"Select one option","type_label":"Existing OCBC Business Banking Customer?","type_items":["Yes","No"],"type_selected":null,"type_required":true,"type_required_message":"Please select if you are an existing OCBC Business Banking customer","type_help_text":"","section":null,"position":"single","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"4FqvbG","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__daf6171b-7d50-433f-a4a7-5c49dba3d5ff","type_name":"name__5c17d1f4-94b9-46c0-a133-30134f565d3f","type_placeholder":"","type_label":"Email Address","type_required":true,"type_required_message":"Fill in your email address","type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"mCC1xV","type":"text-field","isActive":false,"field_value":null,"options":{"type_id":"text-field__43bf072b-16a1-44da-99d3-398f99affdf1","type_name":"name__524e28c1-b320-4c3a-a47b-bcee02277402","type_placeholder":"","type_label":"Contact Number","type_required":true,"type_required_message":"Fill in your contact number","type_help_text":"","type_is_number":false,"type_number_range":"","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"[\\+\\d]?(\\d{2,3}[-\\.\\s]??\\d{2,3}[-\\.\\s]??\\d{4}|\\(\\d{3}\\)\\s*\\d{3}[-\\.\\s]??\\d{4}|\\d{3}[-\\.\\s]??\\d{4})","default_value":null,"conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"fkRyIw","type":"dropdown-field","isActive":false,"field_value":null,"options":{"type_id":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","type_name":"dropdown__e94be2f1-bafb-4bbe-83bb-03c49ad104a8","type_placeholder":"Select one option","type_label":"What is it regarding?","type_items":["Give Compliments","Business Account Opening","OCBC Velocity or Business Mobile Banking","Account Related Enquiry","Business Debit Card","Foreign Worker Account Opening","Audit Confirmation","Request for Waiver","Business Loan Enquiry","Trade Related Enquiry","Merchant Related Enquiry","Make a Complaint"],"type_selected":null,"type_required":true,"type_required_message":"Select your enquiry type","type_help_text":"","section":null,"position":"single","type_tooltip":"","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null}},{"field_id":"QAv7dU","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__27fa9eac-6b93-4f97-aad5-fc840c9ee891","type_name":"radio__63a8326b-e411-4a15-b0d4-91474c17e8e8","type_label":"What is your account opening enquiry about?","type_items":["New Account Opening (Singapore Registered)","New Account Opening (Foreign Registered)","Subsequent Account Opening (Singapore Registered)","Subsequent Account Opening (Foreign Registered)"],"type_selected":null,"type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio","type_required":true,"type_required_message":"Required","type_help_text":"","section":null,"position":"single","type_tooltip":"","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Business Account Opening","action":"show"}},{"field_id":"acaue8","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__bfb06c91-6722-4191-b8a9-d81d2e900b20","type_name":"static-data__43cf0080-7998-4786-975b-605065995f46","type_label":"<p>For businesses incorporated in Singapore, click <a href=\"https://www.ocbc.com/digital-services/web/sg2/obs-customer-sme/globao?source1=BBEnquiryForm\">here</a> to open an account instantly with MyInfo.</p><p>Otherwise, please provide your business' country of incorporation and nature of business below.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__27fa9eac-6b93-4f97-aad5-fc840c9ee891","expression":"equal","condition_value":"New Account Opening (Singapore Registered)","action":"show"}},{"field_id":"rCsUJi","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__7aff31fe-2b57-408c-804f-0cf6fc61d08e","type_name":"static-data__414310df-3426-49b8-bf8a-9f4f4eced1f5","type_label":"<p>For businesses incorporated overseas, please provide your business' country of incorporation and nature of business below.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__27fa9eac-6b93-4f97-aad5-fc840c9ee891","expression":"equal","condition_value":"New Account Opening (Foreign Registered)","action":"show"}},{"field_id":"Hh1bqD","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__1e5c2d1e-98ad-45e4-8262-5448b5e371e9","type_name":"static-data__088fe7b9-af4e-4705-801c-11b3b5697ce1","type_label":"<p>Please provide the new currency account that you wish to open.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__27fa9eac-6b93-4f97-aad5-fc840c9ee891","expression":"equal","condition_value":"Subsequent Account Opening (Singapore Registered)","action":"show"}},{"field_id":"18Am3Z","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__1d88cc67-acd0-4078-b16b-8c80de4280a7","type_name":"static-data__a63310a2-a581-413c-9fe7-ee91d1395880","type_label":"<p>For businesses incorporated overseas, please provide your business' country of incorporation below.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__27fa9eac-6b93-4f97-aad5-fc840c9ee891","expression":"equal","condition_value":"Subsequent Account Opening (Foreign Registered)","action":"show"}},{"field_id":"hTiSGb","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__ccd07407-4ce3-4e07-ad33-69aad8ba3d98","type_name":"radio__6a5ee12c-1d70-4d15-bb22-98bc49ed37a3","type_label":"Select an option","type_items":["Forms Enquiry","Login Enquiry","Digital Token Enquiry"],"type_selected":"Login Enquiry","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio","type_required":true,"type_required_message":"Required","type_help_text":"","section":null,"position":"default","type_tooltip":"","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"OCBC Velocity or Business Mobile Banking","action":"show"}},{"field_id":"1gb20f","type":"static-data-field","isActive":true,"field_value":null,"options":{"type_id":"static-data-field__1b94274d-bda0-4081-b94f-af87b7e2cb2a","type_name":"static-data__d3fc06f2-522f-4b1a-bfb3-3079060650d0","type_label":"<p>To apply for OCBC Velocity or make changes to your existing profile, <a href=\"https://www.ocbc.com/business-banking/webform-amv/\">click here</a>.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__ccd07407-4ce3-4e07-ad33-69aad8ba3d98","expression":"equal","condition_value":"Forms Enquiry","action":"show"}},{"field_id":"i2R2In","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__5c8d43f0-170b-4368-bbb2-08735ce3ca47","type_name":"static-data__1c809432-550b-4c3b-8eba-5f04fdd22b72","type_label":"<p>For new users, please check your registered email for your login credentials. You may click <a href=\"https://www.ocbc.com/business-banking/help-and-support/business-internet-banking/login\">here </a> for more information.</p><p>If you have forgotten your password, or locked your user account, click <a href=\"https://velocity.ocbc.com/login.html\">here</a> to return to the log in page. Select 'Forgot / Unlock' and enter your login credentials to proceed.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__ccd07407-4ce3-4e07-ad33-69aad8ba3d98","expression":"equal","condition_value":"Login Enquiry","action":"show"}},{"field_id":"TRKAxF","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__132220a0-0acc-4638-ad6d-53ece6913de2","type_name":"static-data__3aaf3b36-c6cd-421f-9661-d10cd31ca620","type_label":"<p>If you have changed your mobile phone, please activate your OneToken (digital token) on your new mobile device. Click <a href=\"https://www.ocbc.com/business-banking/help-and-support/mobile-banking/registration#business-mobile-registration-q3\">here </a> for more information.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__ccd07407-4ce3-4e07-ad33-69aad8ba3d98","expression":"equal","condition_value":"Digital Token Enquiry","action":"show"}},{"field_id":"aHalNj","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__ea99f629-0e5d-4b24-891b-3984acf54760","type_name":"radio__8764dff6-1c17-4104-9abf-a4eb2ef9ad3a","type_label":"What is your account enquiry about?","type_items":["Update Business Account Details","Transaction Enquiries","Fees and Charges","Account Closure Enquiry"],"type_selected":"Account Closure Enquiry","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio","type_required":true,"type_required_message":"Required","type_help_text":"","section":null,"position":"single","type_tooltip":"","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Account Related Enquiry","action":"show"}},{"field_id":"G21jWO","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__d8ee5a87-51d5-4fac-88e2-6e802dbb53aa","type_name":"static-data__0ca63409-c63f-49db-ab71-776c29fabf4d","type_label":"<p>You may refer to <a href=\"https://www.ocbc.com/business-banking/help-and-support/account-details/business-account-details\">this page</a> for details.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__ea99f629-0e5d-4b24-891b-3984acf54760","expression":"equal","condition_value":"Update Business Account Details","action":"show"}},{"field_id":"NmqCIT","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__46edc0ab-41e8-4dda-aad1-99279e465ed0","type_name":"static-data__e92415a5-5ec0-44fb-84ef-f0871ee3d235","type_label":"<p>To make a payment, you may refer to our <a href=\"https://www.ocbc.com/business-banking/digital-business-banking/additional-support.page\">easy-to-follow video guides</a> for the steps.</p><p>To check your transaction status, please log in to OCBC Velocity and select ‘Transactions (For cash transactions)’ followed by ‘Transaction Status’.</p><p>To view your account transactions, please log in to OCBC Velocity and select ‘Accounts’ followed by ‘Statement’ to proceed.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__ea99f629-0e5d-4b24-891b-3984acf54760","expression":"equal","condition_value":"Transaction Enquiries","action":"show"}},{"field_id":"KCf2VO","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__a258bb6e-e90f-4f9d-a76f-46a83053bba0","type_name":"static-data__68acfe06-b251-4b7c-95c7-571ebda67274","type_label":"<p>You may refer to the <a href=\"https://www.ocbc.com/business-banking/help-and-support/accounts-and-services/business-pricing-guide\">Business Banking Pricing Guide</a>.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__ea99f629-0e5d-4b24-891b-3984acf54760","expression":"equal","condition_value":"Fees and Charges","action":"show"}},{"field_id":"164493","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__62e5fbae-6678-44c0-9189-10ec0d74d35a","type_name":"static-data__53f73137-ab9c-4f4e-9926-36385d2780b1","type_label":"<p>Before we can help you close your company’s account(s), we need you to provide us with a letter of instruction.</p><br><p>Please draft one with the following information:<ol class=\"list-decimal\"><li>The company’s name and account number(s)</li><li>Your preferred method for settlement, if there are funds in the account(s):<ol class=\"list-alpha-lower\"><li>Have us transfer the remaining funds to another account (please include the bank account information); or</li><li>Have us issue a Cashier’s Order or Demand Draft in the company’s name</li></ol></li><li>Your authorisation for us to deduct any charges that may apply upon closing the account(s).</li><li>Your instruction for us to cancel any electronic banking services provided for the account(s).</li></ol><p>This letter of instruction must be signed by the authorised person(s) stated in your company’s signing mandate.</p><br><p>You can then submit it at any of our branches or mail/courier it to the following address:<br>OCBC Bank<br>Attn: Account Services<br>31 Tampines Ave 4 #01-01/03<br>OCBC Tampines Centre 2<br>Singapore 529680</p><br><p>If your request is successful, we will close the account(s) and send a final statement to the mailing address registered in our records. Otherwise, we will send you a letter to inform you that we were unable to process your request.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__ea99f629-0e5d-4b24-891b-3984acf54760","expression":"equal","condition_value":"Account Closure Enquiry","action":"show"}},{"field_id":"4hnrrI","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__ad55c1c0-6c68-4afe-96be-68c9f47fe1f8","type_name":"static-data__f7ddcf9d-402d-4943-9919-b7fa721a5b68","type_label":"<p>To apply for a Business Debit Card, please complete the <a href=\"https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/ocbc-business-cards/ocbc-bdc-application-form.pdf\">Application Form</a>.</p><p>If you are an existing cardholder, please complete the <a href=https://www.ocbc.com/assets/pdf/forms/ocbc%20business%20card/ocbc-business-card-maintenance-form.pdf>Maintenance Form for OCBC Business Debit Card</a> to perform updates.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Business Debit Card","action":"show"}},{"field_id":"PLUquO","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__f915084c-a4ee-4083-a6f4-e6d65cd0e8ad","type_name":"radio__85dd0c6b-3c64-4b99-be58-9fb81fb14c77","type_label":"Which branch would you like to open your account at?","type_items":["Tiong Bahru Plaza","Waterway Point"],"type_selected":"Tiong Bahru Plaza","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio","type_required":true,"type_required_message":"Required","type_help_text":"","section":null,"position":"single","type_tooltip":"","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Foreign Worker Account Opening","action":"show"}},{"field_id":"FjyE2S","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__4543e90e-e3ff-4000-babe-74593b768bcc","type_name":"radio__18dff2e6-e9ad-44f7-bd40-42bb01441180","type_label":"Please indicate your industry","type_items":["Manufacturing","Construction","Marine & Shipping","Cleaning"],"type_selected":"Manufacturing","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio","type_required":true,"type_required_message":"Required","type_help_text":"","section":null,"position":"default","type_tooltip":"","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Foreign Worker Account Opening","action":"show"}},{"field_id":"jBex9l","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__e1377263-f088-442c-8199-5d95596eeb81","type_name":"static-data__37fb7c6a-28f7-4e7e-b2b9-f4d67435eadf","type_label":"<p>Here is how you can make an appointment for your foreign worker to open an account.</p><br><p><b>Things to note before making an appointment</b></p>\n<ul class=\"list-dot mb2\">\n<li>As the employer, you must have an OCBC Business Account. If not, please go to <a href=https://www.ocbc.com/business-banking/smes/accounts.page>this page</a> to find out how to open one.</li>\n<li>Your foreign worker must have a valid passport and work permit.</li></ul>\n<br><p>\n<b>How to make an appointment </b></p>\n<p>If the above requirements are met, you may make an appointment by taking these steps:</p>\n<ol class=\"list-decimal\"><li>Ensure that the company name, email address and mobile number match that in our records</li>\n<li>Select your preferred branch</li></ol>\n<br><p>We will contact you within seven working days to make an appointment for your worker to visit our branch.</p>\n<p>Do note that up to two appointments can be made using one business account at a time. Appointments can be scheduled between Mondays and Fridays (excluding public holidays) on a first come, first served basis.</p>\n<br><p>To make a change to the appointment, you will need to submit a new request.</p>\n<br><p><b>On the day of your appointment</b></p>\n<p>Ensure that your foreign worker goes to the branch that you selected. He or she should bring:\n<ol class=\"list-decimal\">\n<li>His/her original passport (for Malaysians, his/her original Malaysian identity card)</li>\n<li>His/her original work permit</li>\n<li>Proof of work permit validity – print the “Work Permit Validity” page that can be accessed via Work Permit Online (WPOL)</li>\n<li>At least S$1,000 in cash to deposit in the account – S$500 will be kept in the account till it is closed</li>\n<li>Any of the following documents which show your foreign worker’s residential address:<ul class=\"list-dot mb2\"><li>Telephone bill</li>\n<li>Bank statement</li>\n<li>Correspondence from a government agency dated no earlier than three months from your worker’s appointment date (e.g. Ministry of Manpower – e-printout of Employment Pass (EP) Online, Work Permit Online (WPOL) or Online Foreign Worker Address Service (OFWAS))</li></ul></li></ol></p>\n<br><p>Your foreign worker should take a queue number when he/she arrives at the branch.</p><br><p>If he/she did not show up at the branch, we will treat the appointment as cancelled.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Foreign Worker Account Opening","action":"show"}},{"field_id":"li29UC","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__35eca22e-8c15-41b8-b1ea-535d53aa4577","type_name":"static-data__9ffc4612-f8d0-4e43-a82b-83df45e93c36","type_label":"<p><b>Request an audit confirmation</b></p><p>You can request an audit confirmation by completing our <a href='https://www.ocbc.com/business-banking/webform/?action=request-for-audit-confirmation' target='_blank'>online form</a>. You will need to have SingPass login credentials and the SingPass mobile app.</p><p>If you do not have SingPass login credentials, please complete the <a href='https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/forms/account%20activities/Audit-Confirmation-Request-Form.pdf' target='_blank'>Audit Confirmation Request form</a>.</p>\n<br><p><b>Check the status of your request</b></p><p>Please fill up the form below and include these details:</p><ul class=\"list-dot mb2\"><li>Date of request (e.g. 10 January 2021)</li><li>Company's full name (e.g. ABC Pte Ltd)</li><li>The audit firm's name (e.g. XYZ PAC Pte Ltd)</li><li>Period requested for audit confirmation (e.g. FYE 31 December 2020)</li><li>Mode of submission (if via courier, please provide the tracking number and courier company)</li></ul>\n","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Audit Confirmation","action":"show"}},{"field_id":"qfaxW1","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__db0ebe2f-5e48-44c9-9ffd-0b6d51f56f67","type_name":"static-data__2384895d-6bff-4fec-b60e-b8c7cf919121","type_label":"<p>For faster response, you may request a waiver of fees charged to your account by sending us a <a href=\"https://velocity.ocbc.com/login.html\">secured email via OCBC Velocity</a>.</p>\n<p>Do not have OCBC Velocity? Complete this online form and we will get back to you as soon as we can. Please include these details:</p>\n<ol class=\"list-decimal\">\n<li>Your account number</li>\n<li>The amount and date that the fee was charged</li>\n<li>The reason for requesting a waiver</li></ol><p>Do note that your request for a waiver is subject to approval. We will review your request and inform you of the outcome.</p>\n","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Request for Waiver","action":"show"}},{"field_id":"JyLl51","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__082fadde-18e7-4c72-9ea6-7ed8e5d5b5ef","type_name":"static-data__774babd0-a0c3-41c6-b395-2c07453a78d2","type_label":"<p>To apply for unsecured loans, you may <a href='https://api.whatsapp.com/send?phone=+65-90218880&text=I%27m%20interested%20to%20know%20more%20about%20unsecured%20loans,%20please%20tell%20me%20more.' target='_blank'>WhatsApp us</a> or <a href='mailto:bizloan@ocbc.com?subject=Business%20Loans%20Enquiry&body=Company%20Name:%0d%0aContact%20Person:%0d%0aContact%20Number%20or%20Email%20Address:%0d%0aRemarks:' target='_blank'>send us an email</a>.</p><p>To apply for secured loans, you may <a href='https://api.whatsapp.com/send?phone=+65-90218880&text=I%27m%20interested%20to%20know%20more%20about%20secured%20loans,%20please%20tell%20me%20more.' target='_blank'>WhatsApp us</a> or <a href='mailto:cpl@ocbc.com?subject=Secured%20Loans%20Enquiry&body=Company%20Name%20or%20Individual%20Name:%0d%0aContact%20Person:%0d%0aContact%20Number%20or%20Email%20Address:%0d%0aRemarks:' target='_blank'>send us an email</a>.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Business Loan Enquiry","action":"show"}},{"field_id":"6b0I70","type":"radio-field","isActive":false,"field_value":null,"options":{"type_id":"radio-field__b8f2d971-6bb0-474c-9594-91a3d7475434","type_name":"radio__b5c82340-cc9c-4c2c-a827-47a87deea94d","type_label":"What is your trade enquiry about?","type_items":["Ad Hoc Bankers Guarantee","Other Trade Enquiry"],"type_selected":"Other Trade Enquiry","type_displayed":["radio","radio-inline"],"type_displayed_selected":"radio","type_required":true,"type_required_message":"Required","type_help_text":"","section":null,"position":"default","type_tooltip":"","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Trade Related Enquiry","action":"show"}},{"field_id":"9YPF6a","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__1c6c8791-613e-4515-99b3-d50937e059d0","type_name":"static-data__a6a87273-a4d9-408b-97e6-4d25ad1c58cb","type_label":"<p>We wish to inform you that our ad-hoc Banker’s Guarantees (BG) can be secured against a cash margin or a Fixed Deposit (FD).</p><br><p><b>Secured Against Cash Margin</b></p><p>If you would like to secure your BG against a cash margin, you will need to download the following forms:</p><ol class=\"list-decimal\"><li><a href=\"https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/forms/trade-services/business-bg-application.pdf\">Application Form (without credit facility)</a></li><li>OCBC Standard Banker's Guarantee Formats (optional)</li><ul class=\"list-dot mb2\"><li><a href=\"https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/forms/trade-services/ocbc-standard-performance-guarantee-format.pdf\">Performance Guarantee Format</a></li><li><a href=\"https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/forms/trade-services/ocbc-standard-advance-payment-guarantee-format.pdf\">Advance Payment Guarantee Format</a></li><li><a href=\"https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/forms/trade-services/ocbc-standard-payment-guarantee-format.pdf\">Payment Guarantee Format</a></li></ul></ol><br><p>You have two options for submission: <ol class=\"list-decimal\"><li>Email application<ul class=\"list-dot mb2\"><li>Email the completed forms to <a href=\"malito:BusinessBG@ocbc.com\">BusinessBG@ocbc.com</a></li><li>We will call you the next working day</li></ul></li><li>Walk-in application<ul class=\"list-dot mb2\"><li>Submit the completed forms at OCBC Centre Branch, 65 Chulia Street, #01-01 OCBC Centre, Singapore 049513 (Monday to Friday, 9am to 4:30pm\nSaturday, 9am to 11:30am</li></ul></li></ol></p><p>All applications are subject to our acceptance and approval.</p><br><p><b>Secured Against FD</b></p><p>For BG secured against a FD, the authorised persons will have to visit any of our Business Banking Centres, as some of the documents are only available at the centres. Please note the following details: <ul class=\"list-dot mb2\"><li>If there is no existing FD account, please arrange to open one. The account opening procedure will apply.</li><li>For FD registered in the private company’s name, you will need to appoint a lawyer to file a Charge with ACRA. The legal fees incurred will be borne by you and is estimated to be S$400 on top of the commission charges.</li><li>After the BG expires, you will have to arrange with the lawyer to remove the Charge with ACRA at your own expense.</li></ul></p><p>Please also note that if the security provider is a citizen of the Republic of China, Myanmar, Indonesia, Thailand, Germany, Netherlands or Italy, spousal consent is required from the security provider's spouse. The signature on the spousal consent form must be duly witnessed by a law firm.</p><p>You may view our <a href=\"https://www.ocbc.com/iwov-resources/sg/ocbc/business/pdf/trade/bg-sblc-pricing-guide.pdf\">Banker’s Guarantee and Standby Letter of Credit Pricing Guide</a> for details.</p>\n","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__b8f2d971-6bb0-474c-9594-91a3d7475434","expression":"equal","condition_value":"Ad Hoc Bankers Guarantee","action":"show"}},{"field_id":"ixobbc","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__0c276eb3-b0aa-4a86-a31c-eb7a06582381","type_name":"static-data__c70ad561-d890-4f05-9a5b-647ea8a08e3e","type_label":"<p>Please call our Trade hotline at <a href=\"tel:6563187777\">+65 6318 7777</a> (9am to 6pm on Monday to Friday, excluding public holidays).</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"radio-field__b8f2d971-6bb0-474c-9594-91a3d7475434","expression":"equal","condition_value":"Other Trade Enquiry","action":"show"}},{"field_id":"Q1DkBY","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__d9ec3655-ecd0-41bf-9d44-a3d585649af7","type_name":"static-data__f45bce44-ad10-4744-b03c-3db052866441","type_label":"<p>To request new credit card terminal or merchant related enquiries, please email <a href=\"mailto:Merchantrelations_creditcards@ocbc.com\">Merchantrelations_creditcards@ocbc.com</a> or call <a href=\"tel:65301652\">6530 1652</a>.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Merchant Related Enquiry","action":"show"}},{"field_id":"k9xFEU","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__3c73265d-f284-4a20-aa5a-69ca2311156b","type_name":"static-data__0d8a4223-1204-4eb6-b96e-55cb76fa2e30","type_label":"<p>Thank you for leaving a compliment.</p><p>If you have questions about your personal accounts, please contact our Personal Banking hotline at <a href=\"tel:1800 363 3333\">1800 363 3333</a> or provide your feedback <a href=\"https://www.ocbc.com/personal-banking/customer-feedback-form\">here</a>.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Give Compliments","action":"show"}},{"field_id":"wy15yL","type":"static-data-field","isActive":false,"field_value":null,"options":{"type_id":"static-data-field__a11c35d5-ac92-4c27-9a49-ac9660ca855d","type_name":"static-data__0716479d-a100-493a-9b00-775f15ada13b","type_label":"<p> Please share your concerns with us below.</p><p>If you have feedback about your personal accounts, please contact our Personal Banking hotline at <a href=\"tel:1800 363 3333\">1800 363 3333</a> or provide your feedback <a href=\"https://www.ocbc.com/personal-banking/customer-feedback-form\">here</a>.</p>","type_required":false,"section":null,"position":"single","conditional_logic":true,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Make a Complaint","action":"show"}},{"field_id":"n7L8rX","type":"textbox-field","isActive":false,"field_value":null,"options":{"type_id":"textbox-field__73fc6556-86b5-4366-88d5-afd27e89f766","type_name":"name__f696ea97-c2b4-4751-a1f8-24fe8f108b30","type_placeholder":"","type_label":"Enquiry","type_required":true,"type_required_message":"Fill in your enquiry","type_help_text":"","type_no_rows":"6","section":null,"position":"single","type_tooltip":"","min_length":"","max_length":"","regex":"","default_value":null,"conditional_logic":false,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"equal","condition_value":"Make a Complaint","action":"show"}},{"field_id":"CtHaJU","type":"file-upload-field","isActive":false,"field_value":null,"options":{"type_id":"file-upload-field__37468914-773a-4dc5-8dea-51396d32e47c","type_name":"file-upload__75a5e1e4-224e-43c5-9a6f-74fc216018bf","type_label":"Select file to upload","type_size_limit":"2","type_multiple":1,"type_required":false,"type_file_types":"application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,image/jpeg,image/gif,image/png,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain","type_help_text":"The maximum file size that is accepted is 4Mb per document. You may upload up to 4 documents.","thumbnails":true,"thumbnail_width":150,"thumbnail_height":100,"section":null,"position":"single","conditional_logic":false,"precondition_field":"dropdown-field__68a383f4-5ac5-42b6-bf17-f4af44eb1011","expression":"regex","condition_value":{"label":"Digits","value":"^[0-9]+$"},"action":"show","type_tooltip":"You've uploaded more than 5 documents. Please upload a maximum of 4 documents only."}},{"field_id":"YUM6yt","type":"terms-conditions-field","isActive":false,"field_value":"Yes","options":{"type_id":"terms-conditions-field__675452b9-87ae-4cab-a899-2e1374aeee79","type_name":"terms-conditions__469063fa-b530-4367-bcc0-e9a9f35d6a5d","type_label":"By checking this box, I confirm that I provide my consent, or have obtained consent to provide, the information in this form.\n<br><br>\nI also confirm that I have obtained consent from the person(s) whose personal data is provided in this form for the collection, use and disclosure of such person(s)’ personal data for the purposes of processing this request, and for other applicable purposes as set out in the OCBC Data Protection Policy available at: <a href=\"/business-banking/bank-policies\">www.ocbc.com/business-banking/bank-policies</a>.","type_required":true,"type_required_message":"Agreement","conditional_logic":false,"precondition_field":null,"expression":"","condition_value":null,"action":null,"section":null,"position":"single"}}]));
+    window.sessionStorage.setItem("form_builder_settings", JSON.stringify({"form_subtitle":"Enquiry Form","form_heading":"Enquiry Form","form_id":"bb-online-feedback-form","form_expiry_date":"31/12/2030","form_expiry_message":"This form has expired.","form_max_submissions":null,"form_max_submission_text":null,"save_exit_enable":false,"form_submit_type":"Show submission message","form_submit_redirecturl":"","form_submit_message":"<p>Thank you for submitting your enquiry.</p><p>We will, within three business days, get in touch with you - by email or phone - between 8am and 8pm, Monday to Friday (excluding public holidays). Do note that all calls will be recorded for training and quality purposes.</p><p>To provide you with a quicker response, we wish to inform you that you may receive our templated email reply to your enquiry (if applicable).</p><p>If you would like to follow up on your enquiry, you may quote the reference number listed below.</p> ","form_saveexit_message":"Thank you for saving the form.","branchName":"business","file-name":"/templatedata/personal/eform/data/business-Form-bb-online-feedback-form.xml","suite_id":"suitid","save-event":"saveEvent","saveExit-event":"saveExitEvent"}));
+    </script><script src="/iwov-resources/sg/ocbc/eform/js/business/form_generator.js?2020072801"></script></div><!--ls:end[component-1627991928148]-->
+     </div>
+    </div>
+   </section>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8woi">
+ <div class="row iw_row iw_stretch" id="rowjztq8woj">
+  <div class="iw_columns col-lg-12" id="coljztq8wok">
+   <div class="iw_component" id="iw_comp1566904104305">
+    <style>#iw_comp1566904104305{}</style><script>
+	  
+	   $(document).ready(function(){
+	   
+	  
+	
+	  $('.group-1-component').parent().wrapAll('<div class="section"></div>');
+	  
+	  
+	
+	  $('.group-2-component').parent().wrapAll('<div class="section section-masthead"> </div>');
+	  
+	  
+	
+	  $('.spacer').parent().wrapAll('<div class="section"> </div>');
+	  
+	  });
+	  
+	</script>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="container-fluid iw_section" id="sectionjztq8wom">
+ <div class="row iw_row iw_stretch" id="rowjztq8won">
+  <div class="iw_columns col-lg-12" id="coljztq8woo">
+   <div class="iw_component" id="iw_comp1566904104309">
+    <style>#iw_comp1566904104309{}</style><footer class="" id="footer">
+   <section class="common__footer">
+      <div class="container bp-width-med3">
+         <div class="row top common__footer-widgets">
+            <div class="col-md-4 col-lg-3 col-xl-5">
+               <div class="row">
+                  <div class="col-12 col-lg-12 col-xl-12">
+                     <div class="d-md-inline-block">
+                        <div class="logo bp-img wide"><img src="/iwov-resources/sg/ocbc/personal/img/logo_ocbc.png" alt="Ocbc Logo"></div>
+                        <div class="common__footer-content--col">
+                           <p class="text--bold mb-1 footer__widgets__title"><span>Business Banking</span></p><label class="mb-0 countryselect" for="country"> You are in 
+                              												<span><select class="text--bold" name="country" id="country">
+                                    <option value="">Singapore</option>
+                                    <option value="https://www.ocbc.com.my/group/group-home.html">Malaysia</option>
+                                    <option value="https://www.ocbc.com.cn/group/CN/group-home.html">China</option>
+                                    <option value="https://www.ocbc.id">Indonesia</option></select></span><i class="fa fa-chevron-down accordion__item__collapse-icon"></i></label></div>
+                        <hr>
+                        <div class="common__footer-content--col borderbottom">
+                           <p><span><a href="https://www.ocbc.com/premier-banking" class="" target="_blank">Premier Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/personal-banking" class="" target="_blank">Personal Banking</a></span></p>
+                           <p><span><a href="https://www.ocbc.com/group/index.html" class="" target="_blank">OCBC Group</a></span></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <hr class="d-block d-md-none">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-7">
+               <div class="d-flex justify-content-between flex-lg-row flex-column">
+                  <div class="pr-lg-4 pr-xl-5 w-100 flex-fill">
+                     <div class="row justify-content-md-end">
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col">
+                              <div class="d-none d-sm-block pr-0 pr-xl-5">
+                                 <p class="text--bold footer__widgets__title"><span>Useful links</span></p>
+                                 <p><span><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></span></p>
+                                 <p><span><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></span></p>
+                                 <p><span><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></span></p>
+                                 <p><span><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></span></p>
+                              </div>
+                              <div class="d-sm-none">
+                                 <div class="accordion">
+                                    <div class="accordion__item">
+                                       <div class="accordion__item__title d-flex justify-content-between align-items-center">
+                                          <p class="text--bold footer__widgets__title">Useful links</p><i class="fz-20 fa fa-chevron-down accordion__item__collapse-icon"></i></div>
+                                       <div class="accordion__item__content">
+                                          <p><a href="/business-banking/digital-business-banking" class="" target="_self">Digital Business Banking</a></p>
+                                          <p><a href="/business-banking/contact-us" class="" target="_self">ATM and Branch locator</a></p>
+                                          <p><a href="/business-banking/help-and-support" class="" target="_self">Help and Support</a></p>
+                                          <p><a href="https://www.ocbc.com/group/vdp" class="" target="_self">Report Vulnerability</a></p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-4 col-xl-4">
+                           <div class="common__footer-content--col getintouch borderbottom2">
+                              <p class="text--bold footer__widgets__title"><span>Get in touch with us</span></p>
+                              <div class="row">
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="enquiryform">
+                                       <p><span><a href="/business-banking/business-banking-enquiry-form" class="" target="_self"><i class="fal fa-file-alt"></i>&nbsp;&nbsp;<span class="">Enquiry Form</span></a></span></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-6 col-sm-12 col-lg-12 mb1">
+                                    <div class="callus">
+                                       <p><span><a href="tel:65381111" class="" target="_self"><i class="fal fa-phone"></i>&nbsp;&nbsp;<span class="">+65 6538 1111</span></a></span></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <hr class="d-block d-lg-none">
+                  <div class="d-flex flex-lg-column common__footer-socials flex-row justify-content-md-end justify-content-lg-start"><span><a href="https://www.facebook.com/ocbcbank" class="" target="_blank"><i class="fab fa-facebook-f"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.twitter.com/ocbcbank" class="" target="_blank"><i class="fab fa-twitter"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.youtube.com/channelocbc" class="" target="_blank"><i class="fab fa-youtube"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span><span><a href="https://www.linkedin.com/company/ocbc-bank" class="" target="_blank"><i class="fab fa-linkedin-in"></i></a></span><span class="d-inline-block d-lg-none">
+									&nbsp
+									&nbsp
+									&nbsp
+								</span></div>
+               </div>
+            </div>
+         </div>
+         <div class="d-flex flex-column flex-lg-row justify-content-between bottom">
+            <div class="links d-flex flex-column flex-sm-row"><span><a href="https://www.ocbc.com/group/conditions-of-access.html" class="" target="_self">Conditions of Access</a></span><span><a href="/business-banking/bank-policies" class="" target="_self">Policies</a></span><span><a href="/business-banking/notices" class="" target="_self">Notices</a></span><span><a href="https://www.ocbc.com/group/security/online/index.html" class="" target="_self">Security</a></span></div>
+            <div id="copyright">
+© Copyright 2004 – <span id="year">2021</span> – OCBC Bank. All Rights Reserved. Co. Reg. No.: 193200032W </div>
+         </div>
+      </div>
+   </section>
+</footer><div style="display: none"></div><script src=""></script>
+   </div>
+   <div class="iw_component" id="iw_comp1574170872815">
+    <!--ls:begin[component-1574170872815]--><style>#iw_comp1574170872815{}</style><div></div><!--ls:end[component-1574170872815]-->
+   </div>
+  </div>
+ </div>
+</div></div><script src='/iwov-resources/sg/ocbc/personal/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/script.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/custom.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/analytic.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/chatbot-trigger.js'></script>
+<script src='/iwov-resources/sg/ocbc/business/js/schemagenerator.js'></script>
+<!--$ASP_FORM_END[]--><!--ls:end[body]--><!--ls:begin[page_track]--><!--ls:end[page_track]--></body>
+</html>
