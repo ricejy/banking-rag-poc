@@ -3,7 +3,7 @@ from langgraph.types import Command
 from langgraph.checkpoint.memory import MemorySaver
 import uuid
 import chatbot_nodes
-from streamlit_float import *
+from streamlit_float import float_init, float_parent, float_css_helper
 
 st.set_page_config(
     page_title="MB Banking Chatbot PoC",
@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# float_init(theme=True, include_unstable_primary=False)
+float_init()
 
 memory = MemorySaver()
 
@@ -51,10 +51,10 @@ def streaming_helper(events):
 
 tab_poc, tab_description, tab_settings = st.tabs(["PoC Demo", "Description", "Settings"])
 with tab_description:
-    st.subheader("Goal", divider= True)
+    st.subheader("Description", divider= True)
 
 with tab_settings:
-    st.subheader("Placeholder", divider= True)
+    st.subheader("Settings", divider= True)
 
 with tab_poc:
     have_input = False
@@ -67,12 +67,17 @@ with tab_poc:
         print("Status as below ===")
         st.status(st.session_state.status_message)
     with st.container():
-        # button_b_pos = "1rem"
-        # button_css = float_css_helper(width="2.2rem", bottom = button_b_pos, transition=0)
-        # float_parent(css=button_css)
-
+        input_css = float_css_helper(
+            bottom="1rem",
+            left="5%",
+            right="5%",
+            width="90%",
+            transition=0,
+            aligh="center"
+        )
+        float_parent(css=input_css)
         if prompt := st.chat_input("Ask your questions here!"):
-            have_input= True
+            have_input = True
             st.session_state.messages.append({"role": "user", "content": prompt})
     
     if have_input:
