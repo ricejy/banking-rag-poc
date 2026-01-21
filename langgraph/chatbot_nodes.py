@@ -13,6 +13,7 @@ from langgraph.types import Command, interrupt, StreamWriter
 # import json, requests
 import re
 import chromadb
+import time
 from chromadb import Documents, EmbeddingFunction, Embeddings
 from sentence_transformers import SentenceTransformer
 from guardrails import Guard
@@ -32,14 +33,12 @@ available_products_services = """
     2. Unit Trust
     3. Insurance 
     4. Dispute Card Transactions
-    5. Money Lock
 """
 deeplink_list = {
     "Precious Metals" : "https://internet.ocbc.com/internet-banking/digital/iis/PublicPushNotification/Redirect?code=pm-buysell",
     "Unit Trust" : "https://internet.ocbc.com/internet-banking/digital/iis/PublicPushNotification/Redirect?code=ut-products",
     "Insurance" : "https://internet.ocbc.com/internet-banking/digital/iis/PublicPushNotification/Redirect?code=banca",
     "Dispute Card Transactions" : "https://internet.ocbc.com/internet-banking/digital/iis/PublicPushNotification/Redirect?code=dispute",
-    "Money Lock": "https://internet.ocbc.com/internet-banking/digital/iis/PublicPushNotification/Redirect?code=moneylock"
 }
 
 class MyEmbeddingFunction(EmbeddingFunction):
@@ -170,6 +169,7 @@ class Prod_Services_Query(BaseModel):
 #     return
 
 def node_router(state: State, writer: StreamWriter) -> Command[Literal["in_app", "faq"]]:
+    print("================ STARTING NEW QUERY ================")
     writer({"router": True})
     # Router is fed as struct so LLM return structured output
     llm_router = create_llm_instance(llm_model, Router)
@@ -192,7 +192,7 @@ def node_router(state: State, writer: StreamWriter) -> Command[Literal["in_app",
         user_prompt = file.read()
     
     print("=== Routing Node ===")
-    print(state)
+    # print(state)
 
     # NOTE: need to change the indexing for this later on since router node will not be at top of list. 
     user_prompt = user_prompt.format(message= state["msg_history"][-1].content)
@@ -201,7 +201,7 @@ def node_router(state: State, writer: StreamWriter) -> Command[Literal["in_app",
     # separate into its own node going forward
     # guard_result = llm_guard.invoke([SystemMessage(guard_prompt.format(user_input=user_prompt))])
     # if guard_result.is_jailbreak:
-    if "suicide" in user_prompt:
+    if "die" in user_prompt or "suicide" in user_prompt or "unfiltered" in user_prompt:
         writer({"is_jailbreak": True})
         goto=END
         return Command(goto=goto)
@@ -213,7 +213,7 @@ def node_router(state: State, writer: StreamWriter) -> Command[Literal["in_app",
         goto="error page"
         return Command(goto=goto)
     
-    print(result)
+    # print(result)
     writer({"in_app": result.in_app})
     print("=== END ROUTING NODE ===")
 
@@ -264,7 +264,13 @@ def node_inapp(state: State, writer: StreamWriter):
     last_user = next(
     m for m in reversed(state["msg_history"]) if isinstance(m, HumanMessage)
     )
+    print("==== SEARCHING VECTOR DATABASE ====")
+    start_time = time.perf_counter()
     docs = retrieve_documents(last_user.content, 10)
+    end_time = time.perf_counter()
+    duration = end_time - start_time
+    print(f"Retrieval took: {duration} seconds")
+    print("==== END VECTOR SEARCH ====")
 
     print("=== NOW GENERATE FINAL RESPONSE TO OUTPUT TO USER ===")
     writer({"generate_final_response": True})
@@ -275,14 +281,16 @@ def node_inapp(state: State, writer: StreamWriter):
     with open(prod_service_generation_system_prompt, 'r') as file:
         system_prompt = file.read()
 
-    system_prompt = system_prompt.format(history = history, product_or_service = result.product_or_service, deeplink = deeplink, retrieved_docs = docs)
-    final_response_stream = llm_prod_svc.stream([SystemMessage(system_prompt)])
+    system_prompt = system_prompt.format(history = history, product_or_service = result.product_or_service, deeplink = deeplink, retrieved_docs= docs)
+    
+    final_response_stream = llm_prod_svc.stream([SystemMessage(system_prompt)], original_query= history)
     final_response = ""
     for f in final_response_stream:
         writer({"partial_response": f.content.replace("$", "\\$")})
         final_response = final_response + f.content
     if deeplink:
         writer({"deeplink": deeplink, "product_or_service": result.product_or_service})
+    print("=== RESPONSE GENERATED ===")
 
 def node_faq(state: State, writer: StreamWriter):
     print("=== At FAQ NODE ===")
@@ -306,18 +314,25 @@ def node_faq(state: State, writer: StreamWriter):
     last_user = next(
     m for m in reversed(state["msg_history"]) if isinstance(m, HumanMessage)
     )
+    print("==== SEARCHING VECTOR DATABASE ====")
+    start_time = time.perf_counter()
     docs = retrieve_documents(last_user.content, 10)
+    end_time = time.perf_counter()
+    duration = end_time - start_time
+    print(f"Retrieval took: {duration} seconds")
+    print("==== END VECTOR SEARCH ====")
 
-    system_prompt = system_prompt.format(history= history, docs=docs)
+    system_prompt = system_prompt.format(history= history, docs= docs)
 
     print("=== NOW GENERATE FINAL RESPONSE TO OUTPUT TO USER ===")
     writer({"generate_final_response": True})
 
-    final_response_stream = llm_faq.stream([SystemMessage(system_prompt)])
+    final_response_stream = llm_faq.stream([SystemMessage(system_prompt)], original_query= history)
     final_response = ""
     for f in final_response_stream:
         writer({"partial_response": f.content.replace("$", "\\$")})
         final_response = final_response + f.content
+    print("=== RESPONSE GENERATED ===")
 
 # Create graph and build -> with main function
 print("Creating Graph...")
