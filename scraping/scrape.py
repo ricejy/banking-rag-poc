@@ -14,9 +14,7 @@ class OcbcSpider(scrapy.Spider):
     name = "ocbc_spider"
     allowed_domains = ["ocbc.com"]
     start_urls = [
-        "https://www.ocbc.com/personal-banking/investments/precious-metals-account",
-        "https://www.ocbc.com/personal-banking/security/secure-banking-ways/dispute-card-transactions",
-        "https://www.ocbc.com/personal-banking/security/secure-banking-ways/ocbc-moneylock"
+        "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/notices/personal-banking-fees-and-charges.pdf"
     ]
 
     custom_settings = {
@@ -44,11 +42,18 @@ class OcbcSpider(scrapy.Spider):
         )
 
     def parse(self, response: scrapy.http.Response):
+        if self._is_pdf_response(response):
+            self._store_response_pdf(response)
+            
         if self._is_html_response(response):
             self._store_response_html(response)
 
         for link in self.link_extractor.extract_links(response):
             yield response.follow(link.url, callback=self.parse)
+
+    def _is_pdf_response(self, response: scrapy.http.Response) -> bool:
+        content_type = response.headers.get(b"Content-Type", b"").decode("latin1")
+        return "application/pdf" in content_type or response.url.lower().endswith(".pdf")
 
     def _is_html_response(self, response: scrapy.http.Response) -> bool:
         content_type = response.headers.get(b"Content-Type", b"").decode("latin1")
@@ -62,6 +67,18 @@ class OcbcSpider(scrapy.Spider):
         url_hash = hashlib.sha1(url.encode("utf-8")).hexdigest()[:10]
         filename = f"{parsed.netloc}_{safe_path}_{url_hash}.html"
         file_path = self.output_dir / filename
+
+        file_path.write_bytes(response.body)
+    
+    def _store_response_pdf(self, response: scrapy.http.Response) -> None:
+        url = response.url
+        parsed = urlparse(url)
+        path = parsed.path.strip("/") or "index"
+        safe_path = re.sub(r"[^A-Za-z0-9._-]+", "_", path)
+        url_hash = hashlib.sha1(url.encode("utf-8")).hexdigest()[:10]
+        filename = f"{parsed.netloc}_{safe_path}_{url_hash}.pdf"
+        pdf_dir = Path(__file__).resolve().parent / "scraped_pdf_files"
+        file_path = pdf_dir / filename
 
         file_path.write_bytes(response.body)
 
