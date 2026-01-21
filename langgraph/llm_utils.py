@@ -56,7 +56,7 @@ class llm_instance():
             cache[self.llm_model.model_name][k] = final
             update_cache(cache)
 
-        print(final)
+        # print(final)
         # if self.jailbreak and self.check_jailbreak(final):
         #     raise AssertionError
         
@@ -66,20 +66,21 @@ class llm_instance():
         else:
             return mock_response(final)
     
-    def stream(self, msg_list, reference_list = None, *args, **kwargs):
-        print("length")
-        print(len(msg_list))
-        query = " ".join([msg.content for msg in msg_list])
-        hashobj = hashlib.sha256(query.encode())
+    def stream(self, msg_list, original_query = None, *args, **kwargs):
+        # print("length")
+        # print(len(msg_list))
+        print(original_query)
+        # query = " ".join([msg.content for msg in msg_list])
+        hashobj = hashlib.sha256(original_query.encode())
         k = str(int.from_bytes(hashobj.digest(), 'big'))
 
         if self.cache_toggle and self.llm_model.model_name in cache:
             if k in cache[self.llm_model.model_name]:
                 print("hit cache")
-                sleep(2)
+                sleep(1)
                 words = cache[self.llm_model.model_name][k].split(" ")
                 for w in words:
-                    sleep(0.1)
+                    sleep(0.05)
                     yield mock_response(w+" ")
                 return
             
@@ -100,7 +101,7 @@ class llm_instance():
         # if self.jailbreak and self.check_jailbreak(final):
         #     raise AssertionError
 
-def create_llm_instance(model, struct=None, jailbreak=False, cache_toggle=False, original_question=None, context=None):
+def create_llm_instance(model, struct=None, jailbreak=False, cache_toggle=True, original_question=None, context=None):
     if not struct:
         llm = ChatOpenAI(
             model=model,
@@ -110,10 +111,10 @@ def create_llm_instance(model, struct=None, jailbreak=False, cache_toggle=False,
         )
         return llm_instance(llm, jailbreak=jailbreak, cache_toggle=cache_toggle)
     else:
-        print("structured output")
+        # print("structured output")
         schema = struct.model_json_schema()
         schema["additionalProperties"] = False
-        print(schema)
+        # print(schema)
         llm = ChatOpenAI(
             model=model,
             temperature=0,
