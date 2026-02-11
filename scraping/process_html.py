@@ -78,7 +78,17 @@ def html_to_markdown(html: str) -> str:
 
 URL_PREFIXES: list[str] = [
     "https://www.ocbc.com/personal-banking/security/secure-banking-ways/",
-    "https://www.ocbc.com/personal-banking/investments/precious-metals-account"
+    "https://www.ocbc.com/personal-banking/investments/precious-metals-account",
+    "https://www.ocbc.com/personal-banking/deposits",
+    "https://www.ocbc.com/personal-banking/cards",
+    "https://www.ocbc.com/personal-banking/loans",
+    "https://www.ocbc.com/personal-banking/insurance",
+    "https://www.ocbc.com/personal-banking/investments",
+    "https://www.ocbc.com/personal-banking/",
+    "https://www.ocbc.com/personal-banking/digital-banking",
+    "https://www.ocbc.com/personal-banking/security/overview",
+    "https://www.ocbc.com/personal-banking/locations?p=1",
+    "https://internet.ocbc.com/"
 ]
 
 
@@ -104,8 +114,8 @@ def iter_matching_html_files(
 
 def main() -> None:
     base_dir = Path(__file__).resolve().parent
-    poc_dir = base_dir / "poc_html_files"
-    output_dir = base_dir / "processed_markdown_files"
+    poc_dir = base_dir / "scraped_html_files"
+    output_dir = base_dir / "processed_markdown_files_1"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     url_prefixes = URL_PREFIXES

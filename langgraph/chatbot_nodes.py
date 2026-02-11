@@ -16,7 +16,7 @@ import chromadb
 import time
 from chromadb import Documents, EmbeddingFunction, Embeddings
 from sentence_transformers import SentenceTransformer
-from guardrails import Guard
+# from guardrails import Guard
 
 
 # Define embedding model first, we will use bge-en-large-v1.5 as before
@@ -202,6 +202,7 @@ def node_router(state: State, writer: StreamWriter) -> Command[Literal["in_app",
     # guard_result = llm_guard.invoke([SystemMessage(guard_prompt.format(user_input=user_prompt))])
     # if guard_result.is_jailbreak:
     if "die" in user_prompt or "suicide" in user_prompt or "unfiltered" in user_prompt:
+        time.sleep(3)
         writer({"is_jailbreak": True})
         goto=END
         return Command(goto=goto)

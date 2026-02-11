@@ -5,6 +5,16 @@ from langchain_core.messages import HumanMessage, SystemMessage
 import hashlib
 from time import sleep
 from openai import OpenAI
+from mlx_lm import load, generate
+
+import os
+from dotenv import load_dotenv
+
+# Load variables from .env file
+load_dotenv()
+
+# Access the API key using os.environ
+API_KEY = os.environ.get("API_KEY")
 
 # CACHE FOR POC (if needed)
 cache_path = "langgraph/cache/cache.json"
@@ -69,7 +79,7 @@ class llm_instance():
     def stream(self, msg_list, original_query = None, *args, **kwargs):
         # print("length")
         # print(len(msg_list))
-        print(original_query)
+        # print(original_query)
         # query = " ".join([msg.content for msg in msg_list])
         hashobj = hashlib.sha256(original_query.encode())
         k = str(int.from_bytes(hashobj.digest(), 'big'))
@@ -110,6 +120,13 @@ def create_llm_instance(model, struct=None, jailbreak=False, cache_toggle=True, 
             # extra_body = {"guardrails_meta_data":}
         )
         return llm_instance(llm, jailbreak=jailbreak, cache_toggle=cache_toggle)
+
+        # USE LOCAL BELOW
+        # model, tokenizer = load(
+        #     "mlx-community/gemma-3-12b-it-4bit-DWQ",
+        #     tokenizer_config={"trust_remote_code": True}
+        # )
+        # return llm_instance()
     else:
         # print("structured output")
         schema = struct.model_json_schema()
