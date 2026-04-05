@@ -19,8 +19,6 @@ The goal is a customer experience where the chatbot behaves like a knowledgeable
 
 The PoC is served as a Streamlit web app that simulates the in-app chatbot experience.
 
-![OCBC Logo](langgraph/resources/images/ocbc_logo.png)
-
 ---
 
 ## Architecture Overview
